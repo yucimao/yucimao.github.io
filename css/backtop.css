@@ -1,0 +1,20 @@
+/*  Back Top Button  */
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  margin-left: 1040px;
+}
+#back-top a {
+  width: 70px;
+  height: 70px;
+  display: block;
+  background: url(/img/Back-Top_Arrow.png) no-repeat center center;
+  border-radius: 20px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 3s;
+}
+#back-top a:hover {
+  background-color: #aaa;
+}
+/*  Back Top Button  End */

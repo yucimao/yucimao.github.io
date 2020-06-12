@@ -1,0 +1,749 @@
+---
+layout: page
+description: "无聊按钮"
+permalink: wuliaoanniu
+---
+<title>无聊按钮 - 猫球社长</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<br />
+<style>
+        body {
+                margin: 0;
+                padding: 0;
+        }
+
+        .fxk {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 10%);
+        }
+
+        a.xcan {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                color: #fff;
+                font-size: 24px;
+                text-decoration: none;
+                font-family: sans-serif;
+                box-sizing: border-box;
+                background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+                background-size: 400%;
+                border-radius: 30px;
+                z-index: 1;
+        }
+
+        a.xcan:hover {
+                animation: animate 8s linear infinite;
+        }
+
+        @keyframes animate {
+                0% {
+                        background-position: 0%;
+                }
+
+                100% {
+                        background-position: 400%;
+                }
+        }
+
+        a.xcan:before {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+                z-index: -1;
+                background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+                background-size: 400%;
+                border-radius: 40px;
+                opacity: 0;
+                transition: 0.5s;
+        }
+
+        a.xcan:hover:before {
+                filter: blur(20px);
+                opacity: 1;
+                animation: animate 8s linear infinite;
+        }
+</style>
+
+<div class="fxk"><p><input type="checkbox" name="jxms" checked="checked" id="jxms"/><label for="jxms">惊喜模式</label></p></div>
+<a class="xcan sbyslj" onclick="按钮()">无聊按钮</a></body>
+
+<p id="标签A"></p>
+<script>
+function 按钮() {
+        var 惊喜模式 = 0;
+        var checks = document.getElementsByTagName("input"), cnt = 0, count = 0;
+        for (var i = 0; i < checks.length; i++) {
+                if (checks[i].type == "checkbox") {
+                        count += 1;
+                        if (checks[i].checked != false) {
+                                惊喜模式 = 1;
+                        }
+                }
+        }
+
+var 网站链接;
+var 网站标题;
+var 网站说明;
+
+var 随机数=Math.round(Math.random()*126); //0-数字？
+
+
+if(随机数==0){
+    网站链接="https://space.bilibili.com/515330";
+    网站标题="猫球社长的B站主页";
+    网站说明="";
+}
+if(随机数==1){
+    网站链接="https://8zt.cc/";
+    网站标题="一句毒鸡汤";
+    网站说明="";
+}
+if(随机数==2){
+    网站链接="https://lovelive.tools/";
+    网站标题="一句土味情话";
+    网站说明="";
+}
+if(随机数==3){
+    网站链接="https://chp.shadiao.app/?from_shadiao";
+    网站标题="一句彩虹屁";
+    网站说明="";
+}
+if(随机数==4){
+    网站链接="https://nmsl.shadiao.app/?from_chp";
+    网站标题="一句骂人的话";
+    网站说明="";
+}
+if(随机数==5){
+    网站链接="https://www.jinrishici.com/";
+    网站标题="一句诗词";
+    网站说明="";
+}
+if(随机数==6){
+    网站链接="http://protobot.org/#zh";
+    网站标题="随机来一个奇怪的任务";
+    网站说明="";
+}
+if(随机数==7){
+    网站链接="http://programmingexcuses.com/";
+    网站标题="一句程序员常说的话";
+    网站说明="";
+}
+if(随机数==8){
+    网站链接="https://generative.fm/";
+    网站标题="自动生成的音乐电台";
+    网站说明="";
+}
+if(随机数==9){
+    网站链接="https://thispersondoesnotexist.com/";
+    网站标题="生成一张人像";
+    网站说明="";
+}
+if(随机数==10){
+    网站链接="https://www.thiswaifudoesnotexist.net/";
+    网站标题="生成一个二次元女生头像";
+    网站说明="";
+}
+if(随机数==11){
+    网站链接="https://pokemon.alexonsager.net/";
+    网站标题="生成一个新的宝可梦";
+    网站说明="";
+}
+if(随机数==12){
+    网站链接="http://www.mazegenerator.net/";
+    网站标题="随机生成迷宫";
+    网站说明="";
+}
+if(随机数==13){
+    网站链接="https://wangyasai.github.io/PerlinNoisePainter/";
+    网站标题="星空油漆字";
+    网站说明="";
+}
+if(随机数==14){
+    网站链接="https://www.nihaowua.com/";
+    网站标题="一句很污的话";
+    网站说明="";
+}
+if(随机数==15){
+    网站链接="https://wangyasai.github.io/Noise-flow-field-painter/";
+    网站标题="梵高风格绘图";
+    网站说明="";
+}
+if(随机数==16){
+    网站链接="http://gogoame.sumbioun.com/";
+    网站标题="来一场文字雨";
+    网站说明="";
+}
+if(随机数==17){
+    网站链接="https://paveldogreat.github.io/WebGL-Fluid-Simulation/";
+    网站标题="模拟流体";
+    网站说明="";
+}
+if(随机数==18){
+    网站链接="https://influencermarketinghub.com/";
+    网站标题="猫咪万花镜";
+    网站说明="";
+}
+if(随机数==19){
+    网站链接="https://aidn.jp/ugomoji/";
+    网站标题="让字符抖动起来";
+    网站说明="可以做一个瑟瑟发抖的颜文字gif";
+}
+if(随机数==20){
+    网站链接="https://aidn.jp/m/kemo/";
+    网站标题="把你输入的话弹出来";
+    网站说明="";
+}
+if(随机数==21){
+    网站链接="https://aidn.jp/m/sugoi/";
+    网站标题="把你的三句话从屏幕下面弹跳出来";
+    网站说明="";
+}
+if(随机数==22){
+    网站链接="http://nekofont.upat.jp/";
+    网站标题="猫咪摆出字母";
+    网站说明="";
+}
+if(随机数==23){
+    网站链接="http://turnyournameintoaface.com/";
+    网站标题="用你的名字生成一个像素人像";
+    网站说明="";
+}
+if(随机数==24){
+    网站链接="https://random.dog/";
+    网站标题="看看狗";
+    网站说明="";
+}
+if(随机数==25){
+    网站链接="https://suulnnka.github.io/BullshitGenerator/index.html";
+    网站标题="狗屁不通文章生成器";
+    网站说明="";
+}
+if(随机数==26){
+    网站链接="http://www.rgbchallenge.com/";
+    网站标题="看RGB猜颜色";
+    网站说明="";
+}
+if(随机数==27){
+    网站链接="https://www.yikm.net/";
+    网站标题="小霸王，其乐无穷";
+    网站说明="";
+}
+if(随机数==28){
+    网站链接="https://aidn.jp/mikutap/";
+    网站标题="点击屏幕让miku唱歌";
+    网站说明="";
+}
+if(随机数==29){
+    网站链接="https://www.madeon.fr/adventuremachine/";
+    网站标题="在线打碟";
+    网站说明="";
+}
+if(随机数==30){
+    网站链接="http://couplet.msra.cn/app/couplet.aspx";
+    网站标题="自动对对联";
+    网站说明="";
+}
+if(随机数==31){
+    网站链接="https://taiko.bui.pm/";
+    网站标题="太鼓达人";
+    网站说明="";
+}
+if(随机数==32){
+    网站链接="https://www.yibilian.cn/";
+    网站标题="一笔连";
+    网站说明="";
+}
+if(随机数==33){
+    网站链接="https://www.cleverbot.com/";
+    网站标题="一个脑子很混乱的聊天机器人";
+    网站说明="可以用拼音聊天";
+}
+if(随机数==34){
+    网站链接="http://msgjug.com/project/killblack2/";
+    网站标题="消灭黑块";
+    网站说明="";
+}
+if(随机数==35){
+    网站链接="http://msgjug.com/project/crosspuzzle/";
+    网站标题="十字消除";
+    网站说明="";
+}
+if(随机数==36){
+    网站链接="http://msgjug.com/p_findiff/index.html";
+    网站标题="汉字找不同";
+    网站说明="";
+}
+if(随机数==37){
+    网站链接="http://msgjug.com/p_life/page.html";
+    网站标题="逗比人生";
+    网站说明="";
+}
+if(随机数==38){
+    网站链接="http://www.papertoilet.com/";
+    网站标题="拉一卷卫生纸";
+    网站说明="";
+}
+if(随机数==39){
+    网站链接="http://emojisandearthporn.com/";
+    网站标题="在一堆emoji表情里找到唯一不会动的那个";
+    网站说明="";
+}
+if(随机数==40){
+    网站链接="http://findingho.me/";
+    网站标题="山峦飞行";
+    网站说明="";
+}
+if(随机数==41){
+    网站链接="http://weavesilk.com/";
+    网站标题="用光纹画一张对称的画";
+    网站说明="";
+}
+if(随机数==42){
+    网站链接="https://worlds-highest-website.com/zh/#pos1";
+    网站标题="世界让最长的网页";
+    网站说明="你能划到最底端么？";
+}
+if(随机数==43){
+    网站链接="https://playsnake.org/";
+    网站标题="贪吃蛇";
+    网站说明="";
+}
+if(随机数==44){
+    网站链接="https://playtictactoe.org/";
+    网站标题="井字棋";
+    网站说明="";
+}
+if(随机数==45){
+    网站链接="https://neave.com/wobble/";
+    网站标题="让色块摇摆";
+    网站说明="";
+}
+if(随机数==46){
+    网站链接="http://seoi.net/penint/";
+    网站标题="把你的简笔画变成傻吊";
+    网站说明="";
+}
+if(随机数==47){
+    网站链接="http://flipanim.com/";
+    网站标题="画一张gif图";
+    网站说明="";
+}
+if(随机数==48){
+    网站链接="https://m.saolei.org.cn/";
+    网站标题="玩扫雷";
+    网站说明="";
+}
+if(随机数==49){
+    网站链接="http://jisuanti.com/";
+    网站标题="练习心算";
+    网站说明="";
+}
+if(随机数==50){
+    网站链接="https://aidn.jp/twintail/";
+    网站标题="Miku双马尾的角度";
+    网站说明="";
+}
+if(随机数==51){
+    网站链接="https://aidn.jp/nyancat/";
+    网站标题="彩虹猫点击游戏";
+    网站说明="";
+}
+if(随机数==52){
+    网站链接="https://cummingordrumming.com/";
+    网站标题="摇滚乐还是要滚床单";
+    网站说明="";
+}
+if(随机数==53){
+    网站链接="http://www.lookingatsomething.com/";
+    网站标题="滑动屏幕：从晴天到雨天";
+    网站说明="";
+}
+if(随机数==54){
+    网站链接="http://www.somestill.com/";
+    网站标题="静止球和会动的球";
+    网站说明="";
+}
+if(随机数==55){
+    网站链接="https://hanziyuan.net/#home";
+    网站标题="古汉字和字源";
+    网站说明="";
+}
+if(随机数==56){
+    网站链接="https://zh.moegirl.org/Special:随机页面";
+    网站标题="随机一页萌娘百科";
+    网站说明="";
+}
+if(随机数==57){
+    网站链接="http://timelineofearth.com/";
+    网站标题="地球演化时间表";
+    网站说明="";
+}
+if(随机数==58){
+    网站链接="http://www.distancetomars.com/";
+    网站标题="火星有多远？";
+    网站说明="";
+}
+if(随机数==59){
+    网站链接="http://www.nongli.net/sxwnl/";
+    网站标题="寿星天文历";
+    网站说明="";
+}
+if(随机数==60){
+    网站链接="http://airpano.org.cn/";
+    网站标题="360度假装旅游";
+    网站说明="";
+}
+if(随机数==61){
+    网站链接="https://influencermarketinghub.com/";
+    网站标题="看看在你无聊的这段时间，大佬们又赚了多少钱";
+    网站说明="";
+}
+if(随机数==62){
+    网站链接="https://tophub.today/";
+    网站标题="今日热搜榜";
+    网站说明="";
+}
+if(随机数==63){
+    网站链接="https://www.passportindex.org/";
+    网站标题="各国护照";
+    网站说明="";
+}
+if(随机数==64){
+    网站链接="https://myweirdhabits.com/";
+    网站标题="你有这个习惯么？";
+    网站说明="看看大家有没有这个习惯";
+}
+if(随机数==65){
+    网站链接="http://willyoupressthebutton.com/";
+    网站标题="你会选择按下么？";
+    网站说明="看看大家会不会按";
+}
+if(随机数==66){
+    网站链接="https://www.foldnfly.com/";
+    网站标题="纸飞机折法大全";
+    网站说明="";
+}
+if(随机数==67){
+    网站链接="http://www.colors.commutercreative.com/";
+    网站标题="147个颜色和它们的名字";
+    网站说明="";
+}
+if(随机数==68){
+    网站链接="https://othersideoftheglobe.com/";
+    网站标题="看看与你在地球另一端是哪个地方";
+    网站说明="";
+}
+if(随机数==69){
+    网站链接="https://time.is/";
+    网站标题="现在几点了？";
+    网站说明="";
+}
+if(随机数==70){
+    网站链接="http://www.globalrichlist.com/";
+    网站标题="看看你多有钱";
+    网站说明="";
+}
+if(随机数==71){
+    网站链接="http://www.secaibi.com/howbigisspace/";
+    网站标题="天空有多高？";
+    网站说明="";
+}
+if(随机数==72){
+    网站链接="https://neal.fun/spend/";
+    网站标题="尝试花光比尔盖茨的钱";
+    网站说明="";
+}
+if(随机数==73){
+    网站链接="https://cybermap.kaspersky.com/";
+    网站标题="全球网络攻击实况";
+    网站说明="";
+}
+if(随机数==74){
+    网站链接="https://zh.flightaware.com/live/";
+    网站标题="实时飞机地图";
+    网站说明="";
+}
+if(随机数==75){
+    网站链接="https://zoom.earth/";
+    网站标题="台风地图";
+    网站说明="";
+}
+if(随机数==76){
+    网站链接="http://www.sdmz.net/map/";
+    网站标题="四大名著地图";
+    网站说明="";
+}
+if(随机数==77){
+    网站链接="https://www.lightpollutionmap.info/";
+    网站标题="全球光污染地图";
+    网站说明="";
+}
+if(随机数==78){
+    网站链接="https://zoom.earth/";
+    网站标题="探索地球的卫星图像";
+    网站说明="";
+}
+if(随机数==79){
+    网站链接="https://staratlas.com/";
+    网站标题="星空图";
+    网站说明="";
+}
+if(随机数==80){
+    网站链接="https://www.meteorshowers.org/";
+    网站标题="从太空看流星雨";
+    网站说明="";
+}
+if(随机数==81){
+    网站链接="http://aqicn.org/city/beijing/cn/";
+    网站标题="实时pm2.5指数";
+    网站说明="";
+}
+if(随机数==82){
+    网站链接="https://www.ventusky.com/";
+    网站标题="风雨气温图";
+    网站说明="";
+}
+if(随机数==83){
+    网站链接="https://www.noradsanta.org/";
+    网站标题="看看圣诞老人到哪了";
+    网站说明="";
+}
+if(随机数==84){
+    网站链接="https://www.buttsss.com/";
+    网站标题="圆屁屁";
+    网站说明="";
+}
+if(随机数==85){
+    网站链接="http://www.nooooooooooooooo.com/";
+    网站标题="NOOOOOO按钮";
+    网站说明="";
+}
+if(随机数==86){
+    网站链接="https://chickenonaraft.com/";
+    网站标题="木筏上的鸡";
+    网站说明="";
+}
+if(随机数==87){
+    网站链接="http://www.howmanypizzasdoineed.com/";
+    网站标题="算算要几个披萨够你们吃饱";
+    网站说明="";
+}
+if(随机数==88){
+    网站链接="http://doughnutkitten.com/";
+    网站标题="坐在甜甜圈上的猫咪";
+    网站说明="";
+}
+if(随机数==89){
+    网站链接="http://www.geektyper.com/mobile/";
+    网站标题="装作自己是个黑客";
+    网站说明="";
+}
+if(随机数==90){
+    网站链接="http://www.muchbetterthanthis.com/";
+    网站标题="看两个人影接吻";
+    网站说明="";
+}
+if(随机数==91){
+    网站链接="http://fakeupdate.net/mobile/android/";
+    网站标题="安卓系统正在升级中";
+    网站说明="";
+}
+if(随机数==92){
+    网站链接="http://fakeupdate.net/mobile/apple/";
+    网站标题="IOS系统正在升级中";
+    网站说明="";
+}
+if(随机数==93){
+    网站链接="http://fakeupdate.net/mobile/windows/";
+    网站标题="Windows手机系统正在升级中";
+    网站说明="";
+}
+if(随机数==94){
+    网站链接="https://www.dialupsound.com/";
+    网站标题="模拟用猫上网";
+    网站说明="";
+}
+if(随机数==95){
+    网站链接="https://neave.tv/";
+    网站标题="无上下文电视台：点击屏幕换台";
+    网站说明="注意：可能沙雕或者精神污染";
+}
+if(随机数==96){
+    网站链接="http://www.clicktoremove.com/";
+    网站标题="点击去除字母";
+    网站说明="";
+}
+if(随机数==97){
+    网站链接="http://v1.windows93.net/";
+    网站标题="Windows93系统";
+    网站说明="";
+}
+if(随机数==98){
+    网站链接="http://www.pixelthoughts.co/";
+    网站标题="把你的杂念输入进去并开始冥想";
+    网站说明="60秒后你的杂念就会消失";
+}
+if(随机数==99){
+    网站链接="https://lia.ustc-zzzz.net/";
+    网站标题="一个顶俩生成器";
+    网站说明="输入一个成语，为你想办法把它接成一个顶俩";
+}
+if(随机数==100){
+    网站链接="https://colornames.org/random/";
+    网站标题="给每一个颜色命名";
+    网站说明="随机或者指定一个RGB颜色，如果它还没有名字，你就可以给它起个名字啦";
+}
+if(随机数==101){
+    网站链接="https://cat-bounce.com/";
+    网站标题="弹跳猫咪";
+    网站说明="";
+}
+if(随机数==102){
+    网站链接="https://ilove.works/";
+    网站标题="我爱工作";
+    网站说明="";
+}
+if(随机数==103){
+    网站链接="https://www.stick-of-gum.com/";
+    网站标题="来个口香糖？";
+    网站说明="";
+}
+if(随机数==104){
+    网站链接="https://ertdfgcvb.xyz/";
+    网站标题="炫酷代码";
+    网站说明="";
+}
+if(随机数==105){
+    网站链接="http://www.showmore.ch/";
+    网站标题="更多，更多，更多……";
+    网站说明="";
+}
+if(随机数==106){
+    网站链接="https://aidn.jp/omikuji/";
+    网站标题="Miku神签";
+    网站说明="";
+}
+if(随机数==107){
+    网站链接="https://aidn.jp/m/iine/";
+    网站标题="一按就会跑的心";
+    网站说明="";
+}
+if(随机数==108){
+    网站链接="http://hmpg.net/";
+    网站标题="欢迎来到互联网的尽头";
+    网站说明="你可以放下手机去做点别的什么了";
+}
+if(随机数==109){
+    网站链接="https://rrke.cc/";
+    网站标题="无法访问";
+    网站说明="";
+}
+if(随机数==110){
+    网站链接="https://5318008.com/";
+    网站标题="奶子";
+    网站说明="";
+}
+if(随机数==111){
+    网站链接="http://www.astrohamster.com/";
+    网站标题="太空仓鼠";
+    网站说明="";
+}
+if(随机数==112){
+    网站链接="http://www.7billionworld.com/";
+    网站标题="这里有70亿人";
+    网站说明="";
+}
+if(随机数==113){
+    网站链接="http://magic-sketchpad.glitch.me/";
+    网站标题="和AI合作画画";
+    网站说明="";
+}
+if(随机数==114){
+    网站链接="http://p.timepill.net/";
+    网站标题="时间胶囊";
+    网站说明="";
+}
+if(随机数==115){
+    网站链接="http://billionbirthday.com/";
+    网站标题="算算你出生后的10亿秒是哪天";
+    网站说明="";
+}
+if(随机数==116){
+    网站链接="https://www.rainymood.com/";
+    网站标题="听雨";
+    网站说明="";
+}
+if(随机数==117){
+    网站链接="http://www.ziliao6.com/fm/";
+    网站标题="随机听歌";
+    网站说明="";
+}
+if(随机数==118){
+    网站链接="http://ondream.org/";
+    网站标题="看看别人做的梦";
+    网站说明="";
+}
+if(随机数==119){
+    网站链接="https://aidn.jp/m/mitishirube/";
+    网站标题="替你选择前进方向";
+    网站说明="";
+}
+if(随机数==120){
+    网站链接="https://strobe.cool/";
+    网站标题="让世界变得扭曲、变形";
+    网站说明="注意：对光敏感者不要点";
+}
+if(随机数==121){
+    网站链接="http://virtocean.com/";
+    网站标题="听海的声音";
+    网站说明="";
+}
+if(随机数==122){
+    网站链接="http://nsf.mimoe.cc/";
+    网站标题="红白机音乐";
+    网站说明="";
+}
+if(随机数==123){
+    网站链接="http://www.shushubuyue.net/";
+    网站标题="随机匿名聊天";
+    网站说明="";
+}
+if(随机数==124){
+    网站链接="http://www.asciimation.co.nz/";
+    网站标题="字符演绎的星球大战";
+    网站说明="";
+}
+if(随机数==125){
+    网站链接="http://touchpianist.com/";
+    网站标题="点屏幕听钢琴曲";
+    网站说明="";
+}
+if(随机数==126){
+    网站链接="https://getnote.cf/";
+    网站标题="临时记事本或者聊天用";
+    网站说明="具体请点击网页下方的“使用说明”";
+}
+
+if(惊喜模式==0){
+    var 显示="【"+网站标题+"】\n"+网站说明+"\n\n前往？";
+    var 弹窗=confirm(显示);
+    if(弹窗==true){惊喜模式=1};
+}
+
+if(惊喜模式==1){
+
+    window.open(网站链接);
+}
+
+}
+</script>
