@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
 
+    <!-- 加载动画 -->
     <style>
         .spinner {
           margin: 100px auto;
@@ -64,15 +65,11 @@
                 display: none;
                 justify-content:center;
                 align-items:center;
-                
-                /*里面内容居中使用flex在父元素添加三行代码display:flex;justify-content:center;
-                align-items:center;*/
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                /*上面四行代码,让这个fixed铺满整个画面*/
                 background-color: rgb(116, 184, 229);
                 z-index: 1;
             }
@@ -90,13 +87,12 @@
                 <div class="rect5"></div>
             </div>
         </div>
+        <!-- 加载动画结束 -->
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Icons -->
-<!--
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
--->
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/> -->
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
@@ -111,12 +107,5 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
