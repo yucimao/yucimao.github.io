@@ -12,7 +12,6 @@
 悬停按钮：[姚楚霞](https://github.com/yaochuxia/hover)  
 页面跳转：[程序小白](https://www.cnblogs.com/gonghuixin/p/11095322.html)  
 推箱子：[舜岳](https://github.com/shunyue1320/sokoban)  
-大致关键词：[卜卜口](https://github.com/itorr/magiconch.com)  
   
 **猫球翻译器的翻译和解释来自网络和朋友们**  
 [小鸡词典](https://jikipedia.com/)  
