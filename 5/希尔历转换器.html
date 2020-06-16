@@ -1,0 +1,195 @@
+---
+layout: page
+description: "希尔历转换器"
+permalink: xel
+---
+<title>希尔历转换器 - 猫球社长</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<br/>
+<script src="/5/new/希尔历.js"></script>
+<script>
+
+var A盖亚年=new Date().getFullYear();
+var A盖亚月=new Date().getMonth()+1;
+var A盖亚日=new Date().getDate();
+
+document.write("<b>今天的日期</b><br/>盖亚历："+A盖亚年+"年"+A盖亚月+"月"+A盖亚日+"日<br/>希尔历："+ A年 +"年" + A月+"月"+ A天数 +"日");
+
+</script>
+<br/><br/><br/>
+<b>盖亚历</b> -转换-&#62; <b>希尔历</b><br/>
+盖亚历：<input type="text" id="B盖亚年" style="width:50px" value="">年
+<input type="text" id="B盖亚月" style="width:20px">月
+<input type="text" id="B盖亚日" style="width:20px">日
+
+<script>
+function B盖亚转希尔()
+{
+let B输入年=document.getElementById("B盖亚年").value;
+let B输入月=document.getElementById("B盖亚月").value;
+let B输入日=document.getElementById("B盖亚日").value;
+let B时间A = new Date('146-6-21');
+let B时间B = new Date(B输入年+"-"+B输入月+"-"+B输入日);
+let B时间C = B时间B - B时间A;
+let B天数 = Math.floor(B时间C / (24 * 3600 * 1000));
+let B月;
+let B年 = 4300 + parseInt(B天数/47619)*100; //世纪
+	B天数 = B天数 % 47619; //剩余天数
+let B结束=0;
+
+if(B天数<476){ //00年
+B月=parseInt(B天数/34)+1;
+B天数=B天数%34+1;
+B结束=1;}
+
+if(B天数>475){ //其他情况
+B天数=B天数-476;
+B年=B年+1+parseInt(B天数/2381)*5;}
+B天数=B天数%2381;
+
+if(B天数>1903){ //闰年
+B天数=B天数-1904;
+B年=B年+4;
+B结束=2;}
+
+if(B天数==306 && B结束==2){
+	B月=9;
+	B天数=35;
+	B结束=1;}
+
+if(B天数>306 && B结束==2){
+	B天数=B天数-307;
+	B月=10+parseInt(B天数/34);
+	B天数=B天数%34+1;
+	B结束=1;}
+
+if(B天数<306 && B结束==2){
+	B月=1+parseInt(B天数/34);
+	B天数=B天数%34+1;
+	B结束=1;}
+
+if(B结束==0){
+	B年=B年+parseInt(B天数/476);
+	B天数=B天数%476;
+	B月=1+parseInt(B天数/34);
+	B天数=1+B天数%34;}
+
+let B结果="希尔历："+B年 +"年" + B月+"月"+ B天数 +"日"
+
+if (B输入年<147){
+B结果="年份不能低于147年";}
+
+if (B输入月<1 || B输入月>12 || B输入日<1 || B输入日>31){
+B结果="请输入正确的日期";}
+
+let B小月=0;
+let B闰年=0;
+let B算闰年;
+
+if (B输入月==4 || B输入月==6 || B输入月==9 || B输入月==11){
+B小月=1;}
+
+if (B小月==1 && B输入日>30){
+B结果="请输入正确的日期";}
+
+B算闰年 = B输入年%400;
+if (B算闰年==0){B闰年=1;}
+
+B算闰年 = B输入年%100;
+if (B算闰年==0 && B闰年==0){B闰年=2;}
+
+B算闰年 = B输入年%4;
+if (B算闰年==0 && B闰年==0){B闰年=1;}
+
+if (B闰年==1 && B输入月==2 && B输入日>29){B结果="请输入正确的日期";}
+if (B闰年!=1 && B输入月==2 && B输入日>28){B结果="请输入正确的日期";}
+
+document.getElementById("B盖亚转希尔").innerHTML=B结果}
+</script>
+
+<button type="button" onclick="B盖亚转希尔()">转成希尔历</button>
+<br/><div id="B盖亚转希尔">年不能低于147，1-12月，1-31日。</div>
+
+<br/><br/><br/>
+<b>希尔历</b> -转换-&#62; <b>盖亚历</b><br/>
+希尔历：
+<input type="text" id="C年" style="width:50px">年
+<input type="text" id="C月" style="width:20px">月
+<input type="text" id="C日" style="width:20px">日
+
+<script>
+function C希尔转盖亚()
+{
+let C希尔年=document.getElementById("C年").value;
+let C希尔月=document.getElementById("C月").value;
+let C希尔日=document.getElementById("C日").value;
+
+let C输入年=C希尔年;
+let C输入月=C希尔月;
+let C输入日=C希尔日;
+
+let C日子;
+C希尔年=C希尔年-4400;
+C日子=parseInt(C希尔年/100)*47619;
+C希尔年=C希尔年%100;
+let C结束=0;
+
+if(C希尔年==0){ //00年
+C希尔月 = C希尔月-1;
+C日子=C日子+C希尔月*34;
+C日子=C日子 + C希尔日 - 1; //按日子算每年第一天是xx年0月0日
+C结束=1;
+}
+
+if(C结束==0){
+C日子=C日子+parseInt(C希尔年/5)*2381; //多少个5年
+C希尔年=C希尔年%5; //有多少不到5年
+}
+
+if(C希尔年==0 && C结束==0){
+C日子=C日子-1;
+}
+
+if(C希尔年==0 && C结束==0 && C希尔月>9){  //闰年
+C日子=C日子+1;
+}
+
+if(C结束==0){
+C希尔月=C希尔月-1;
+C日子=C日子+C希尔年*476+C希尔月*34;
+
+C希尔日=C希尔日-1;
+C日子 = C日子 + C希尔日;
+}
+
+C日子=C日子-44981;
+
+var date = new Date("400-01-01");
+    var tomorrow = date.setDate(new Date(date).getDate() + C日子); //10天后的日期
+    console.log(date);
+
+var C盖亚年=date.getFullYear();
+var C盖亚月=date.getMonth()+1;
+var C盖亚日=date.getDate();
+
+let C结果="盖亚历："+C盖亚年 +"年" + C盖亚月+"月"+ C盖亚日 +"日";
+
+if (C输入年<4400){C结果="年份不能低于4400年";}
+if (C输入月<1 || C输入月>14){C结果="请输入正确的日期";}
+if (C输入日<1){C结果="请输入正确的日期";}
+if (C输入日>35){C结果="请输入正确的日期";}
+if (C输入月!=9 && C输入日>34){C结果="请输入正确的日期";}
+
+let C算闰年=C输入年%100;
+if (C算闰年==0 && C输入月==9 && C输入日>34){C结果="请输入正确的日期";}
+C算闰年=C输入年%5;
+if (C算闰年!=0 && C输入日>34){C结果="请输入正确的日期";}
+
+document.getElementById("C希尔转盖亚").innerHTML=C结果}
+
+</script>
+
+<button type="button" onclick="C希尔转盖亚()">转成盖亚历</button>
+<br/><div id="C希尔转盖亚">年不能低于4400，1-14月，1-35日。</div>
+<br/><br/><br/>
+<br/>
