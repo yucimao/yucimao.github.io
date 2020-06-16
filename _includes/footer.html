@@ -12,8 +12,8 @@
     </div>
 </footer>
 
-<!-- jQuery
-<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script> -->
+<!-- jQuery -->
+<!--<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
@@ -30,3 +30,11 @@
     })
 </script>
 <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!-- 关闭加载动画 -->
+<script>
+    window.onload=function(){
+        var siteWelcome = document.getElementById('siteWelcome');
+        siteWelcome.classList.remove('active');
+    }
+</script>
