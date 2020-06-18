@@ -5,6 +5,7 @@ permalink: tv
 ---
 <title>猫球tv - 猫球社长</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<script src="/js/jquery.min.js"></script>
 <br>
 <a href="#音乐频道" class="anniu">音乐频道</a><br/>
 <a href="#搬运和剪辑" class="anniu">搬运和剪辑</a><br/>

@@ -12,6 +12,12 @@ permalink: 404.html
 	八成是我把哪里的链接写错了……</font>
 	<br/><br/><br/>　
 
+<script> //提前结束加载动画
+	window.onload=function(){
+		var siteWelcome = document.getElementById('siteWelcome');
+		siteWelcome.classList.remove('active');
+	}
+</script>
 
 <div id="a"></div>
 <script src="/5/new/农历.js"></script>
@@ -24,12 +30,11 @@ var b;
 var c;
 
 if (id==0){
-	b="<img src='/img/ico.jpg' width='113' alt='被咬的猫球'>这里什么都没有<br/>只有一个被咬的猫球";}
+	b="<img src='/img/ico/ico.jpg' width='113' alt='被咬的猫球'>这里什么都没有<br/>只有一个被咬的猫球";}
 if (id==1){
 	b="<img src='/img/其他/20160101.jpg' width='100%' alt='草方块'><br/>这里什么都没有<br/>只有一个草方块";}
 if (id==2){
 	b="<img src='/img/其他/20200514.jpg' width='163' alt='虚胖猫球'>这里什么都没有<br/>只有一个被抓住的猫球";}
-
 if (id==3){
 	b="这里什么都没有<br/>只有一只可爱的小幽灵<br/><div style='left: 0px; position: absolute; top: 100px;'><iframe src='/5/404/小幽灵.html' frameborder='0' width='1000' height='460'></iframe></div>"}
 if (id==4){
