@@ -217,18 +217,18 @@ var 日期="<b>盖亚历</b> " + 盖亚历 + "<br/><b>农历</b> " + 农历 + "<
 
 var 节日="";
 
-var 盖亚历节日 = "<script src=\5\备忘日历\盖亚历" + "\\" + 盖亚月 + "." + 盖亚日 + ".js><\/script>";
+var 盖亚历节日 = "<script src=\\5\\备忘日历\\盖亚历\\"+盖亚月+"."+盖亚日+".js><\/script>";
     document.write(盖亚历节日);
 
-var 盖亚历节日星期 = "<script src=\5\备忘日历\盖亚历星期" +"\\"+盖亚月+"."+第x个+"."+星期+".js><\/script>";
+var 盖亚历节日星期 = "<script src=\\5\\备忘日历\\盖亚历星期\\"+盖亚月+"\."+第x个+"."+星期+"\.js><\/script>";
     document.write(盖亚历节日星期);
 
-var 盖亚历节日星期倒数 = "<script src=\5\备忘日历\盖亚历星期倒数" + "\\" + 盖亚月 +"."+倒数第x个+"."+星期+".js><\/script>";
+var 盖亚历节日星期倒数 = "<script src=\\5\\备忘日历\\盖亚历星期倒数\\"+盖亚月+"\."+倒数第x个+"."+星期+"\.js><\/script>";
     document.write(盖亚历节日星期倒数);
 
 if(闰!=1){
-var 农历节日 = "<script src=\5\备忘日历\农历"+"\\"+cMont+"."+cDay+".js><\/script>";
+var 农历节日 = "<script src=\\5\\备忘日历\\农历\\"+cMont+"\."+cDay+"\.js><\/script>";
     document.write(农历节日);}
 
-var 希尔历节日 = "<script src=\5\备忘日历\希尔历"+"\\"+希尔月+"."+希尔日+".js><\/script>";
+var 希尔历节日 = "<script src=\\5\\备忘日历\\希尔历\\"+希尔月+"\."+希尔日+"\.js><\/script>";
     document.write(希尔历节日);
