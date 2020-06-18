@@ -9,20 +9,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            <a class="navbar-brand" href="/">猫球社长</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ site.baseurl }}/">返回主页</a>
+                    <a href="/">返回主页</a>
                 </li>
-                {% for page in site.pages %}{% if page.title %}
                 <li>
-                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    <a href="/notice">公告</a>
                 </li>
-                {% endif %}{% endfor %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
