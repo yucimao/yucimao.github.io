@@ -222,6 +222,7 @@ hr.small {
     color: #ffffff;
     padding: 20px;
     text-shadow:5px 5px 2px;
+    color: #808080;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
@@ -231,6 +232,7 @@ hr.small {
     color: #ffffff;
     padding: 20px;
     text-shadow:5px 5px 2px;
+    color: #808080;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
