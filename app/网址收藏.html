@@ -1,0 +1,429 @@
+---
+layout: page
+description: "网址收藏"
+permalink: wangzhi
+---
+<title>网址收藏 - 猫球社长</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<br/>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<script>//关闭加载动画
+    window.onload=function(){
+        var siteWelcome = document.getElementById('siteWelcome');
+        siteWelcome.classList.remove('active');}
+</script>
+<style>
+    * {list-style: none;
+    line-height:2.4;}
+.select_wrapper {
+    line-height: 36px;
+	border-radius: 3px;
+	cursor: pointer;
+	position: relative;
+    border-style:solid;
+	border-width:medium;
+    border-color:#00a2ff;
+    border-radius: 20px;}
+.select_wrapper:hover {background: rgba(187, 205, 255, 0.767);}
+.select_wrapper span {
+	display: block;
+	margin: 0 30px 0 15px;}
+.select_wrapper .select_inner {
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 0px 0px 10px rgba(66, 69, 255, 0.3);
+	color: #00a2ff;
+	display: none;
+	position: absolute;
+    width: 100%;
+    z-index: 3;}
+.select_wrapper .select_inner li:hover {background: #eee;}
+.select_wrapper .select_inner li:last-child {
+	border: none;
+	border-radius: 0 0 5px 5px;}
+.select_wrapper .select_inner li:first-child {border-radius: 5px 5px 0 0;}
+/* 选项 —— 输入框 */
+a{
+    font-size:1.1em;
+	text-decoration:none;
+	color:#58a4dd;}
+.menuDiv:hover{background:rgba(88,164,221,.1);}
+h4{color:#5c5c5c;}
+#输入框 input{
+	ime-mode:inactive;
+	ime-mode:disabled;
+	border:none;
+	font-size:1.4em;
+	padding:.5em .7em;
+	max-width:30em;
+	width:100%;
+	background:#F8F8F8;
+	box-shadow:
+		0 0 0 1px #DDD inset,
+		0 1px 2px rgba(0,0,0,.2);
+	transition: box-shadow .3s ease;
+	border-radius:4px;
+	text-align:center;
+	-webkit-appearance:none;
+    border-style:solid;
+	border-width:medium;
+    border-color:#00a2ff;
+    border-radius: 20px;}
+#输入框 input:focus{
+	box-shadow:
+		0 0 0 2px #58a4dd inset,
+		0 3px 3px rgba(0,0,0,.2) inset;}
+</style>
+<script src="/js/jquery.min.js"></script>
+    <script>
+    var LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) {return decodeURI(tmp[2]);}
+    return "";}
+var wzsc2=GetQueryString("wz");
+$(function () {
+$("#dataSet div").each(function () {
+    $(this).hide();
+            if ($(this).text().indexOf($.trim(wzsc2[0])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[1])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[2])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[3])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[4])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[5])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[6])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[7])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[8])) >= 0
+            && $(this).text().indexOf($.trim(wzsc2[9])) >= 0
+            ) {$(this).show();}})})</script>
+<script>
+$(function () {
+    $("#searchBox").keyup(function () {
+        var wzsc = $("#searchBox").val();
+        wzsc = wzsc.split(" ");
+        $("#dataSet div").each(function () {
+            $(this).hide();
+            if ($(this).text().indexOf($.trim(wzsc[0])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[1])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[2])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[3])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[4])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[5])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[6])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[7])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[8])) >= 0
+            && $(this).text().indexOf($.trim(wzsc[9])) >= 0
+            ) {$(this).show();}})})})</script>
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('.selectbox').wrap('<div class="select_wrapper"></div>')
+        $('.selectbox').parent().prepend('<span>'+ $(this).find(':selected').text() +'</span>');
+        $('.selectbox').parent().children('span').width($('.selectbox').width());	
+        $('.selectbox').css('display', 'none');					
+        $('.selectbox').parent().append('<ul class="select_inner"></ul>');
+        $('.selectbox').children().each(function(){
+            var opttext = $(this).text();
+            var optval = $(this).val();
+            $('.selectbox').parent().children('.select_inner').append('<li id="' + optval + '">' + opttext + '</li>');
+        });
+        $('.selectbox').parent().find('li').on('click', function (){
+            var cur = $(this).attr('id');
+            $('.selectbox').parent().children('span').text($(this).text());
+            $('.selectbox').children().removeAttr('selected');
+            $('.selectbox').children('[value="'+cur+'"]').attr('selected','selected');
+            var 站外搜索=$('.selectbox').val();
+            var 搜索内容=$("#searchBox").val();
+            if (站外搜索 == "百度"){搜索内容="https://www.baidu.com/s?wd="+搜索内容;}
+            if (站外搜索 == "小鸡词典"){搜索内容="https://jikipedia.com/search?phrase="+搜索内容;}
+            if (站外搜索 == "必应"){搜索内容="https://cn.bing.com/search?q="+搜索内容;}
+            if (站外搜索 == "知乎"){搜索内容="https://www.zhihu.com/search?q="+搜索内容;}
+            if (站外搜索 == "微信"){搜索内容="https://weixin.sogou.com/weixin?query="+搜索内容;}
+            if (站外搜索 == "PornHub"){搜索内容="https://www.pornhub.com/video/search?search="+搜索内容;}
+            if (站外搜索 == "茶杯狐"){搜索内容="https://www.cupfox.com/search?key="+搜索内容;}
+            if (站外搜索 == "Yandex"){搜索内容="https://yandex.ru/search/touch/?text="+搜索内容;}
+            if (站外搜索 == "萌娘百科"){搜索内容="https://zh.moegirl.org/index.php?search="+搜索内容;}
+
+            if (站外搜索 != "站外搜索"){
+            window.location.href=搜索内容;}});
+            $('.selectbox').parent().on('click', function (){
+            $(this).find('ul').slideToggle('fast');});});
+    </script>
+<body onload="document.getElementById('searchBox').focus()">
+<center>　　<br/>　<span class="qibiaoti">网址收藏</span>
+                <div id='tag_cloud'>
+                    <form id="输入框" autocomplete="off">
+            <input type="text" id="searchBox" placeholder="多个关键词用空格分隔"/></form>
+<form action='#' method='post' style="width:90%">
+	<fieldset>
+		<select class="selectbox" id="" name="">
+            <option value="站外搜索">站外搜索</option>
+            <option value="百度">百度（广告多、流氓、结果全）</option>
+            <option value="必应">必应</option>
+            <option value="知乎">知乎</option>
+            <option value="微信">微信</option>
+            <option value="小鸡词典">小鸡词典（网络流行语）</option>
+            <option value="萌娘百科">萌娘百科（二次元）</option>
+            <option value="茶杯狐">茶杯狐（影视剧）</option>
+            <option value="Yandex">Yandex（俄罗斯、网慢、不和谐）</option>
+            <option value="PornHub">PornHub（视频、未成年禁入）</option>
+		</select>
+    </fieldset>
+</form>
+</center>
+<ul id="dataSet">
+<div class="menuDiv"><h4><a href="/">猫球的博客</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/richang">猫球和二扯的日常</a></h4><ul>猫球二扯日常</ul></div>
+<div class="menuDiv"><h4><a href="/tv">猫球tv</a></h4><ul>猫球TV</ul></div>
+<div class="menuDiv"><h4><a href="/xiaojuchang">猫球小剧场</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/yimeng">异梦系列</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/wanyoxui">猫球二扯玩游戏</a></h4><ul>猫球游戏实况 猫球和二扯玩游戏</ul></div>
+<div class="menuDiv"><h4><a href="/wuyonggonglue">无用攻略</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/xiangce">猫球相册</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/zatan">猫球杂谈</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/pvoink">pvo占领世界</a></h4><ul>PVO占领世界</ul></div>
+<div class="menuDiv"><h4><a href="/xiaogongju">猫球小工具</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/mqfyq">猫球翻译器</a> - 翻译饭圈、ACG等网络缩写和暗语</h4><ul>猫译器</ul></div>
+<div class="menuDiv"><h4><a href="/xel">希尔历转换器</a></h4><ul>盖亚历</ul></div>
+<div class="menuDiv"><h4><a href="/wuliaoanniu">无聊按钮</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/sjly/nvquan">女权与数据</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.bilibili.com">哔哩哔哩</a> - 哔哩哔哩 (゜-゜)つロ 干杯~</h4><ul>B站 b站 bilibili BILIBILI</ul></div>
+<div class="menuDiv"><h4><a href="//live.bilibili.com">哔哩哔哩直播</a></h4><ul>B站直播 b站直播 bilibili BILIBILI</ul></div>
+<div class="menuDiv"><h4><a href="//acfun.cn">AcFun</a> - 天下漫友是一家</h4><ul>A站 a站 acfun ACFUN</ul></div>
+<div class="menuDiv"><h4><a href="//space.bilibili.com/515330">猫球的B站频道</a> - 根据心情做视频，感谢支持。</h4><ul>猫球B站 猫球b站 哔哩哔哩</ul></div>
+<div class="menuDiv"><h4><a href="//live.bilibili.com/71449">猫球的B站直播间</a> - 主要做视频，随缘做直播。</h4><ul>猫球直播间 哔哩哔哩</ul></div>
+<div class="menuDiv"><h4><a href="//www.google.com">Google搜索</a></h4><ul>GOOGLE google 谷歌搜索</ul></div>
+<div class="menuDiv"><h4><a href="//www.baidu.com">百度搜索</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//cn.bing.com">Bing搜索</a></h4><ul>BING bing 必应搜索</ul></div>
+<div class="menuDiv"><h4><a href="//tv.cctv.com/live">央视直播</a></h4><ul>cctv直播 CCTV直播 中央电视台 看电视</ul></div>
+<div class="menuDiv"><h4><a href="//www.weibo.com">新浪微博</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.weibo.com/pvoink">猫球的微博</a> - 被限流中……</h4><ul>猫球微博</ul></div>
+<div class="menuDiv"><h4><a href="//www.zhihu.com">知乎</a> - 与世界分享你刚编的故事</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.zhihu.com/people/limaoqiu">猫球的知乎</a> - 日常被禁言……</h4><ul>猫球知乎</ul></div>
+<div class="menuDiv"><h4><a href="//www.github.com">GitHub</a> - 全球最大的同性交友网站</h4><ul>github GITHUB</ul></div>
+<div class="menuDiv"><h4><a href="//www.github.com/LiMaoQiu">猫球的GitHub</a></h4><ul>猫球GitHub 猫球GITHUB 猫球github 猫球的GitHub 猫球的GITHUB 猫球的github</ul></div>
+<div class="menuDiv"><h4><a href="//gitee.com">码云</a></h4><ul>Git git GIT 马云</ul></div>
+<div class="menuDiv"><h4><a href="//c.runoob.com/front-end/61">菜鸟工具</a> - WEB在线编辑</h4><ul>html HTML css CSS js JS web</ul></div>
+<div class="menuDiv"><h4><a href="//c.runoob.com/front-end/58">菜鸟工具</a> - 进制转换</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//store.steampowered.com">Steam</a> - 游戏商城</h4><ul>游戏平台 STEAM steam 蒸汽平台</ul></div>
+<div class="menuDiv"><h4><a href="//www.epicgames.com/store/zh-CN">Epic</a> - 游戏商城</h4><ul>游戏平台 EPIC epic 游戏商城</ul></div>
+<div class="menuDiv"><h4><a href="http://pixiv.net">Pixiv</a> - 日本插画、漫画社区</h4><ul>绅士福利 P站 p站 pixiv PIXIV</ul></div>
+<div class="menuDiv" style="display:none;"><h4><a href="//pornhub.com">Pornhub</a> (未成年禁入)</h4><ul>绅士福利 P站 p站 pornhub PORNHUB 福利视频</ul></div>
+<div class="menuDiv"><h4><a href="//www.douyu.com/directory/all">斗鱼直播</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://www.4399.com">4399小游戏</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://www.7k7k.com">7k7k小游戏</a></h4><ul>7K7K小游戏</ul></div>
+<div class="menuDiv"><h4><a href="//wanga.me">拼命玩游戏</a></h4><ul>小游戏</ul></div>
+<div class="menuDiv"><h4><a href="http://crazyflasher.ys168.com">闪客快打</a> - 经典Flash小游戏</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.lofter.com">乐乎</a> - 网易轻博客</h4><ul>老福特 lofter LOFTER</ul></div>
+<div class="menuDiv"><h4><a href="//open.163.com">网易公开课</a></h4><ul>学习</ul></div>
+<div class="menuDiv"><h4><a href="//photo.poco.cn">POCO</a> - 摄影社区</h4><ul>poco</ul></div>
+<div class="menuDiv"><h4><a href="http://www.fsbus.com">摄影巴士</a> - 摄影技巧</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://www.cnu.cc">CNU视觉联盟</a> - 摄影社区</h4><ul>cnu视觉联盟</ul></div>
+<div class="menuDiv"><h4><a href="http://www.cnu.cc/tags/%E7%A7%81%E6%88%BF?page=1">CNU视觉联盟 - 私房区</a></h4><ul>cnu视觉联盟 绅士福利 摄影 照片</ul></div>
+<div class="menuDiv"><h4><a href="http://192.168.1.1">路由器管理</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://www.jikipedia.com">小鸡词典</a> - 查网络流行语</h4><ul>翻译器</ul></div>
+<div class="menuDiv"><h4><a href="//mzh.moegirl.org">萌娘百科</a> - 万物皆可萌</h4><ul>萌百</ul></div>
+<div class="menuDiv"><h4><a href="//bcy.net">半次元</a> - ACG爱好者社区</h4><ul>acg 二次元 cosplay COSPLAY</ul></div>
+<div class="menuDiv"><h4><a href="//iirose.com">蔷薇花园</a> - 小清新聊天室</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//twitter.com">推特</a></h4><ul>TWITTER twitter</ul></div>
+<div class="menuDiv"><h4><a href="//www.tumblr.com">汤不热</a> - 凉了</h4><ul>TUMBLR tumblr</ul></div>
+<div class="menuDiv"><h4><a href="//www.cbaigui.com">知妖</a> - 中国妖怪百集</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://zuoyoo.com">克苏鲁百科</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//cybermap.kaspersky.com/cn">卡巴斯基 网络威胁实时地图</a></h4><ul>黑客</ul></div>
+<div class="menuDiv"><h4><a href="//ps.gaoding.com">在线PS</a></h4><ul>在线ps</ul></div>
+<div class="menuDiv"><h4><a href="http://www.scp-wiki.net">SCP基金会</a> - Secure, Contain, Protect</h4><ul>scp基金会</ul></div>
+<div class="menuDiv"><h4><a href="http://scp-wiki-cn.wikidot.com">SCP基金会中国分部</a> - 控制，收容，保护</h4><ul>scp基金会中国分部</ul></div>
+<div class="menuDiv"><h4><a href="//tinify.cn">TinyPNG</a> - 图片无损压缩</h4><ul>tinypng TINYPNG</ul></div>
+<div class="menuDiv"><h4><a href="//www.picdiet.com/zh-cn">picdiet</a> - 图片无损压缩</h4><ul>PICDIET</ul></div>
+<div class="menuDiv"><h4><a href="//www.smartresize.com/zh-cn">SmartResize</a> - 批量剪裁图片</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//convertio.co/zh">Convertio</a> - 在线转换文件</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//cli.im">草料二维码</a></h4><ul>生成二维码</ul></div>
+<div class="menuDiv"><h4><a href="//mail.163.com">网易邮箱</a></h4><ul>163</ul></div>
+<div class="menuDiv"><h4><a href="//mail.qq.com">QQ邮箱</a></h4><ul>qq邮箱 腾讯</ul></div>
+<div class="menuDiv"><h4><a href="//note.youdao.com/web">有道云笔记</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.pixelsquid.com">在线3D模型</a></h4><ul>在线3d模型</ul></div>
+<div class="menuDiv" style="display:none;"><h4><a href="//konachan.wjcodes.com">konachan</a> (未成年禁入) - 动漫美女壁纸</h4><ul>绅士福利</ul></div>
+<div class="menuDiv"><h4><a href="//www.ostagram.me/?locale=cn">将一张图片渲染成另一张的风格</a></h4><ul>生成器</ul></div>
+<div class="menuDiv"><h4><a href="//www.flvcd.com">硕鼠</a> - 下载视频</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://www.galmoe.com">B站封面提取</a></h4><ul>b站封面提取 哔哩哔哩</ul></div>
+<div class="menuDiv"><h4><a href="//iqiyi.com">爱奇艺</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://qiluo.net">古国天使</a> - 正史、传说、奇幻</h4><ul>历史 资料 写作</ul></div>
+<div class="menuDiv"><h4><a href="http://xuanpai.sinaapp.com">玄派网</a> - 写作辅助、生成器</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.gn00.com">技术宅论坛</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.gn00.com/f-921-1.html">技术宅 - 文学讨论区</a></h4><ul>写作</ul></div>
+<div class="menuDiv"><h4><a href="http://www.dilidili.com">嘀哩嘀哩</a> - 兴趣使然的无名小站</h4><ul>D站 d站 动漫</ul></div>
+<div class="menuDiv"><h4><a href="//www.5dm.tv">5动漫</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.cnki.net">知网</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.semanticscholar.org">SemanticScholar</a> - 学术搜索引擎</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://duososo.com">多搜搜</a> - 图片素材搜索</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.iconfinder.com">Iconfinder</a> - ico图标素材搜索</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//ypppt.com">优品PPT模板</a></h4><ul>优品ppt模版</ul></div>
+<div class="menuDiv"><h4><a href="//www.palettable.io">色卡</a> - 选择一个颜色，点“喜欢”或者“不喜欢”，根据选择推荐搭配的颜色</h4><ul>配色</ul></div>
+<div class="menuDiv"><h4><a href="//pigment.shapefactory.co">色卡：前后景配色推荐</a></h4><ul>配色 背景色</ul></div>
+<div class="menuDiv"><h4><a href="//gradient.shapefactory.co">色卡：渐变色推荐</a></h4><ul>配色</ul></div>
+<div class="menuDiv"><h4><a href="http://zhongguose.com">色卡：中国色</a></h4><ul>配色</ul></div>
+<div class="menuDiv" style="display:none;"><h4><a href="//www.zgyxyd.com/xx301">小X福利导航</a> (未成年禁入)</h4><ul>绅士福利 搜索</ul></div>
+<div class="menuDiv"><h4><a href="http://rarbgprx.org/torrents">RARBG</a> - 高清无字幕英文电影资源</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="http://nyaa.si">Nyaa</a> - 无字幕动漫资源</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//tokyotosho.info">东京图书馆</a> - 无字幕动漫资源</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.dongmanhuayuan.com">动漫花园</a> - 动漫资源</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.miobt.com">miobt</a> - 动漫资源</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//ai.binwang.me/couplet">王斌给您对对联</a></h4><ul>自动对对联</ul></div>
+<div class="menuDiv"><h4><a href="//petalica-paint.pixiv.dev/index_zh.html">Petalica Paint</a> - AI自动上色</h4><ul>ai</ul></div>
+<div class="menuDiv"><h4><a href="//www.pexels.com/zh-cn">pexels</a> - 免费素材图片</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//unsplash.com">unsplash</a> - 免费素材图片</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.asklib.com">问答库</a> - 题库问答学习平台</h4><ul>搜题</ul></div>
+<div class="menuDiv" style="display:none;"><h4><a href="http://moeimg.net">二次萌工口</a> (未成年禁入)</h4><ul>动漫 绅士福利</ul></div>
+<div class="menuDiv" style="display:none;"><h4><a href="//www.jiadiandm.net/wxdm1.html">好看动漫 - 无修区</a> (未成年禁入)</h4><ul>绅士福利</ul></div>
+<div class="menuDiv" style="display:none;"><h4><a href="http://dorcel-handsoff.com/#movies">QSPL</a> (未成年禁入) - 双手打字以示清白的视频网站</h4><ul>欧美 绅士福利</ul></div>
+<div class="menuDiv"><h4><a href="//cosplay.center">Cosplay Center</a> - 欧美cosplay</h4><ul>COSPLAY 绅士福利</ul></div>
+<div class="menuDiv"><h4><a href="//thiscatdoesnotexist.com">这只猫不存在</a> - 生成一只不存在的猫</h4><ul>AI自动生成 ai自动生成</ul></div>
+<div class="menuDiv"><h4><a href="//link.hhtjim.com">音乐软件转外链</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//fanyi.baidu.com">百度翻译</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//translate.google.cn">谷歌翻译</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.remove.bg/zh">自动抠图</a></h4><ul>在线PS 在线ps</ul></div>
+<div class="menuDiv"><h4><a href="http://kedou.workerman.net">蝌蚪聊天室</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//wenyan-lang.lingdong.works/ide.html">用文言文编程</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/biji/maiyagao">笔记：买牙膏</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/biji/tiaoshuiguo">笔记：挑水果</a></h4><ul>买水果 时令水果</ul></div>
+<div class="menuDiv"><h4><a href="/biji/dagezenmeban">笔记：打嗝怎么办</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/biji/zufang">笔记：租房</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/biji/chufang">笔记：猫球厨房</a></h4><ul>菜谱 做菜 食谱</ul></div>
+<div class="menuDiv"><h4><a href="/xiangce/fdj/">放大镜效果测试</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="/biji/tupian">笔记：图片收藏</a></h4><ul>放大镜效果测试</ul></div>
+<div class="menuDiv"><h4><a href="//nugine.github.io/mirage-tank-wasm-app">双层图（幻影坦克图）生成</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//dos.zczc.cz">在线dos游戏</a></h4><ul>DOS</ul></div>
+<div class="menuDiv"><h4><a href="//www.likefont.com">在线识别字体</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//tieba.baidu.com">百度贴吧</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//yun.baidu.com">百度网盘</a></h4><ul>百度云</ul></div>
+<div class="menuDiv"><h4><a href="//taobao.com">淘宝网</a></h4><ul>购物 网购</ul></div>
+<div class="menuDiv"><h4><a href="//www.facebook.com">Facebook</a> - 脸书</h4><ul>facebook FACEBOOK</ul></div>
+<div class="menuDiv"><h4><a href="//instagram.com">Instagram</a></h4><ul>instagram INSTAGRAM</ul></div>
+<div class="menuDiv"><h4><a href="//www.jd.com">京东</a></h4><ul>购物 网购</ul></div>
+<div class="menuDiv"><h4><a href="https://archiveofourown.org">AO3</a> - 同人作品平台</h4><ul>ao3</ul></div>
+<div class="menuDiv"><h4><a href="https://www.youtube.com">YouTube</a></h4><ul>youtube YOUTUBE youtubi</ul></div>
+<div class="menuDiv"><h4><a href="//www.tmall.com">天猫</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="///www.toutiao.com">今日头条</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//y.qq.com">QQ音乐</a></h4><ul>qq音乐</ul></div>
+<div class="menuDiv"><h4><a href="//music.163.com">网易云音乐</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//guokr.com">果壳</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//douban.com">豆瓣</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//ixigua.com">西瓜视频</a> - 科技有意思</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//lizhi.fm">荔枝FM</a></h4><ul>荔枝fm 广播</ul></div>
+<div class="menuDiv"><h4><a href="//duitang.com">堆糖</a> - 美图壁纸兴趣社区</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//csdn.net">CSDN</a> - 专业开发者社区</h4><ul>csdn</ul></div>
+<div class="menuDiv"><h4><a href="http://runoob.com">菜鸟教程</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//zcool.com.cn">站酷</a> - 设计师互动平台</h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//missevan.com">猫耳FM</a> - 来自二次元的声音</h4><ul>猫耳fm 广播</ul></div>
+<div class="menuDiv"><h4><a href="http://u17.com">有妖气漫画</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//kuaikanmanhua.com">快看漫画</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//www.danmu9.com/sticker">生成表情包：兔子</a> - 发出xx的声音</h4><ul>表情包生成器</ul></div>
+<div class="menuDiv"><h4><a href="//linshiyouxiang.net">临时邮箱</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//qzone.qq.com">QQ空间</a></h4><ul>qq空间 腾讯 博客</ul></div>
+<div class="menuDiv"><h4><a href="http://shan-shui-inf.lingdong.works">生成水墨画</a></h4><ul></ul></div>
+<div class="menuDiv"><h4><a href="//cloud.tencent.com">腾讯云</a></h4><ul>域名</ul></div>
+
+
+<!--pvopvo
+
+<div class="menuDiv"><h4><a href="//">
+</a>
+</h4><ul>
+</ul></div>
+
+-->
+
+
+<div class="menuDiv"><h4><br/><a href="//github.com/itorr/magiconch.com">神奇海螺</a> - 本页的灵感来源</h4><ul></ul></div><!-- 最初借用了大佬的代码，后来发现和我想要的效果不一样，就自己写了 -->
+
+</ul></div>
+
+<script type="text/javascript">
+    function MenuSwitch(className) {
+        this._elements = [];
+        this._default = -1;
+        this._className = className;
+        this._previous = false;
+    }
+    MenuSwitch.prototype.setDefault = function (id) {
+        this._default = Number(id);
+    }
+    MenuSwitch.prototype.setPrevious = function (flag) {
+        this._previous = Boolean(flag);
+    }
+    MenuSwitch.prototype.collectElementbyClass = function () {
+        this._elements = [];
+        var allelements = document.getElementsByTagName("div");
+        for (var i = 0; i < allelements.length; i++) {
+            var mItem = allelements[i];
+            if (typeof mItem.className == "string" && mItem.className == this._className) {
+                var h3s = mItem.getElementsByTagName("h4");
+                var uls = mItem.getElementsByTagName("ul");
+                if (h3s.length == 1 && uls.length == 1) {
+                    h3s[0].style.cursor = "hand";
+                    if (this._default == this._elements.length) {
+                        uls[0].style.display = "none";
+                    } else {
+                        uls[0].style.display = "none";
+                    }
+                    this._elements[this._elements.length] = mItem;
+                }
+            }
+        }
+    }
+    MenuSwitch.prototype.open = function (mElement) {
+        var uls = mElement.getElementsByTagName("ul");
+        uls[0].style.display = "none";
+    }
+    MenuSwitch.prototype.close = function (mElement) {
+        var uls = mElement.getElementsByTagName("ul");
+        uls[0].style.display = "none";
+    }
+    MenuSwitch.prototype.isOpen = function (mElement) {
+        var uls = mElement.getElementsByTagName("ul");
+        return uls[0].style.display == "none";
+    }
+    MenuSwitch.prototype.toggledisplay = function (header) {
+        var mItem;
+        if (window.addEventListener) {
+            mItem = header.parentNode;
+        } else {
+            mItem = header.parentElement;
+        }
+        if (this.isOpen(mItem)) {
+            this.close(mItem);
+        } else {
+            this.open(mItem);
+        }
+        if (!this._previous) {
+            for (var i = 0; i < this._elements.length; i++) {
+                if (this._elements[i] != mItem) {
+                    var uls = this._elements[i].getElementsByTagName("ul");
+                    uls[0].style.display = "none";
+                }
+            }
+        }
+    }
+    MenuSwitch.prototype.init = function () {
+        var instance = this;
+        this.collectElementbyClass();
+        if (this._elements.length == 0) {
+            return;
+        }
+        for (var i = 0; i < this._elements.length; i++) {
+            var h3s = this._elements[i].getElementsByTagName("h4");
+            if (window.addEventListener) {
+                h3s[0].addEventListener("click", function () { instance.toggledisplay(this); }, false);
+            } else {
+                h3s[0].onclick = function () { instance.toggledisplay(this); }
+            }
+        }
+    }
+</script>
+
+<script language="javascript">
+    var mSwitch = new MenuSwitch("menuDiv");
+    mSwitch.setDefault(0);
+    mSwitch.setPrevious(false);
+    mSwitch.init();
+</script>
+</body>

@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="48" tileheight="80" nextobjectid="101">
+ <tileset firstgid="1" name="bg" tilewidth="48" tileheight="80">
+  <image source="bg.png" width="484" height="493"/>
+ </tileset>
+ <layer name="ground" width="10" height="10">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAAcAAAAIAAAACQAAAAoAAAALAAAADAAAAA0AAAAOAAAADwAAABAAAAARAAAAEgAAABMAAAAUAAAAFQAAABYAAAAXAAAAGAAAABkAAAAaAAAAGwAAABwAAAAdAAAAHgAAAB8AAAAgAAAAIQAAACIAAAAjAAAAJAAAACUAAAAmAAAAJwAAACgAAAApAAAAKgAAACsAAAAsAAAALQAAAC4AAAAvAAAAMAAAADEAAAAyAAAAMwAAADQAAAA1AAAANgAAADcAAAA4AAAAOQAAADoAAAA7AAAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </data>
+ </layer>
+ <objectgroup name="way">
+  <object id="1" x="119.167" y="535" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="2003"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="3" x="144.083" y="507.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="1"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="4" x="130.083" y="478.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="2"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="5" x="130.583" y="450.417" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="3"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="6" x="144.083" y="422.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="4"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="7" x="116.167" y="394.083" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="5"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="8" x="87.8333" y="408.667" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="6"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="9" x="59.1288" y="408.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="7"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="10" x="31.4015" y="394.28" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="8"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="12" x="17.5833" y="366.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="9"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="14" x="17.25" y="338.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="10"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="15" x="17.25" y="309.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="11"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="16" x="17.5834" y="281.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="12"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="17" x="17.9167" y="252.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="13"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="18" x="31.9167" y="225.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="14"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="19" x="59.9167" y="211.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="15"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="20" x="88.9167" y="211.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="16"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="21" x="116.917" y="224.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="17"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="22" x="144.917" y="196.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="18"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="23" x="130.917" y="168.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="19"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="24" x="130.25" y="140.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="20"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="25" x="144.25" y="112.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="21"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="26" x="173.25" y="98.5833" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="22"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="27" x="201.917" y="97.9167" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="23"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="28" x="229.25" y="97.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="24"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="29" x="257.583" y="97.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="25"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="30" x="286.25" y="97.9166" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="26"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="31" x="338.75" y="83.75" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="2001"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="32" x="314.583" y="111.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="27"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="33" x="328.583" y="140.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="28"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="34" x="327.917" y="168.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="29"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="35" x="314.583" y="196.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="30"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="36" x="342.19" y="224.947" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="31"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="37" x="370.886" y="211.068" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="32"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="38" x="398.917" y="211.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="33"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="39" x="427.583" y="224.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="34"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="40" x="441.583" y="253.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="35"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="41" x="441.583" y="281.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="36"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="42" x="441.583" y="310.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="37"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="43" x="441.583" y="338.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="38"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="44" x="441.917" y="366.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="39"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="45" x="453.25" y="419.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="2002"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="46" x="426.917" y="394.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="40"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="47" x="399.25" y="408.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="41"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="48" x="370.917" y="408.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="42"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="49" x="341.25" y="394.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="43"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="50" x="313.917" y="421.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="44"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="51" x="327.583" y="451.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="45"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="52" x="328.25" y="479.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="46"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="53" x="313.917" y="507.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="47"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="54" x="285.917" y="521.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="48"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="55" x="257.25" y="521.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="49"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="56" x="228.917" y="520.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="50"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="57" x="200.583" y="521.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="51"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="58" x="172.25" y="520.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="52"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="60" x="229.083" y="478.417" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="60"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="61" x="228.583" y="450.417" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="61"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="62" x="228.583" y="422.417" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="62"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="63" x="228.916" y="394.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="63"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="64" x="229.25" y="366.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="64"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="65" x="228.917" y="337.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="65"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="66" x="257.25" y="309.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="85"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="67" x="285.917" y="309.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="84"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="68" x="314.25" y="309.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="83"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="69" x="341.917" y="309.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="82"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="70" x="370.583" y="309.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="81"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="71" x="398.25" y="309.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="80"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="72" x="229.917" y="281.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="95"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="73" x="229.917" y="253.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="94"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="74" x="229.917" y="225.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="93"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="75" x="229.25" y="197.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="92"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="76" x="229.583" y="168.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="91"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="77" x="229.917" y="140.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="90"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="78" x="201.25" y="309.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="75"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="79" x="172.917" y="309.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="74"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="80" x="144.583" y="309.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="73"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="81" x="116.25" y="309.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="72"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="82" x="87.9167" y="309.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="71"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="83" x="59.9167" y="309.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="70"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="84" x="4.58335" y="199.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="2000"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="85" x="17.0833" y="463.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="1000"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="86" x="16.5833" y="520.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="1001"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="87" x="72.0833" y="463.417" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="1002"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="88" x="73.0833" y="520.917" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="180"/>
+    <property name="id" value="1003"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="89" x="383.333" y="463.75" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="1004"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="90" x="439.667" y="463.583" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="1005"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="91" x="383.5" y="520.083" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="1006"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="92" x="440.333" y="520.75" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="90"/>
+    <property name="id" value="1007"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="93" x="16.8333" y="97.6667" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="1008"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="94" x="74.0833" y="97.6667" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="1010"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="95" x="17.5833" y="154.667" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="1009"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="96" x="73.5833" y="154.667" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="id" value="1011"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="97" x="383.75" y="97.9166" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="1012"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="98" x="383.917" y="155.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="1013"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="99" x="439.25" y="97.9167" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="1014"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="100" x="439.25" y="154.25" width="26.8333" height="26.1667">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="id" value="1015"/>
+   </properties>
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

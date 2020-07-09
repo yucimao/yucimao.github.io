@@ -1,0 +1,78 @@
+---
+permalink: xiangce/fdj/
+---
+<title>放大镜效果 - 猫球社长</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<script src="/js/jquery.min.js"></script>
+<br/>
+<style>
+	#输入框 input{
+		ime-mode:inactive;
+		ime-mode:disabled;
+	
+		border:none;
+		
+		font-size:1.4em;
+		padding:.5em .7em;
+		max-width:30em;
+		width:100%;
+		background:#F8F8F8;
+		
+		box-shadow:
+			0 0 0 1px #DDD inset,
+			0 1px 2px rgba(0,0,0,.2);
+		
+		transition: box-shadow .3s ease;
+	
+		border-radius:4px;
+	
+		text-align:center;
+		-webkit-appearance:none;
+
+		border-style:solid;
+		border-width:medium;
+    	border-color:#00a2ff;
+    	border-radius: 20px;
+	
+	}
+	</style>
+
+<script src="/js/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $("#输入").keyup(function () 
+    {
+	var b = "";
+    var 输入 = document.getElementById("输入").value;
+	var 输入2 = document.getElementById("输入2").value;
+	var s = "200";
+	if (输入2>0){s=输入2};
+	var sz = 输入.split(",");
+	for (i = 0; i < sz.length; i++) {
+		b=b+"<iframe src='/xiangce/fdjxg/?t="+sz[i]+"&s="+s+"' width='100%' height='100%'></iframe>"
+	}
+document.getElementById("a").innerHTML=b;
+})
+
+$("#输入2").keyup(function () 
+{
+	var b = "";
+    var 输入 = document.getElementById("输入").value;
+	var 输入2 = document.getElementById("输入2").value;
+	var s = "200";
+	if (输入2>0){s=输入2};
+	var sz = 输入.split(",");
+	for (i = 0; i < sz.length; i++) {
+		b=b+"<iframe src='/xiangce/fdjxg/?t="+sz[i]+"&s="+s+"' width='100%' height='100%'></iframe>"
+	}
+document.getElementById("a").innerHTML=b;
+})
+
+})
+</script>
+
+<form id="输入框" autocomplete="off">
+	<input type="text" id='输入' placeholder="maoqiu"></input></form>圆的尺寸：<input type="text" id='输入2' value="200" ></input>
+	<div id="a"><iframe src='/xiangce/fdjxg/?t=maoqiu&s=500' width='100%' height='100%'></iframe></div>
