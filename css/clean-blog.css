@@ -219,16 +219,18 @@ hr.small {
     font-size: 20px;
   }
   .navbar-custom .navbar-brand {
-    color: #0098B9;
+    color: #ffffff;
     padding: 20px;
+    text-shadow:5px 5px 2px;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
     color: #0085a1;
   }
   .navbar-custom .nav li a {
-    color: #0098B9;
+    color: #ffffff;
     padding: 20px;
+    text-shadow:5px 5px 2px;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
