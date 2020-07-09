@@ -221,6 +221,8 @@ hr.small {
   .navbar-custom .navbar-brand {
     color: #a1d0da;
     padding: 20px;
+    text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;
+    cursor:default;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
@@ -229,6 +231,8 @@ hr.small {
   .navbar-custom .nav li a {
     color: #a1d0da;
     padding: 20px;
+    text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;
+    cursor:default;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
