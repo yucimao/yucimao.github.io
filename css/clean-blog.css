@@ -220,6 +220,8 @@ hr.small {
   }
   .navbar-custom .navbar-brand {
     color: #404040;
+    text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    cursor:default;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
