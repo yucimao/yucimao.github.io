@@ -221,7 +221,7 @@ hr.small {
   .navbar-custom .navbar-brand {
     color: #ffffff;
     padding: 20px;
-    text-shadow: #000 2px 0 0, #404040 0 2px 0, #404040 -2px 0 0, #404040 0 -2px 0;
+    text-shadow: #404040 3px 0 0, #404040 0 3px 0, #404040 -3px 0 0, #404040 0 -3px 0;
     cursor:default;
   }
   .navbar-custom .navbar-brand:hover,
@@ -233,7 +233,7 @@ hr.small {
   .navbar-custom .nav li a {
     color: #ffffff;
     padding: 20px;
-    text-shadow: #404040 2px 0 0, #404040 0 2px 0, #404040 -2px 0 0, #404040 0 -2px 0;
+    text-shadow: #404040 3px 0 0, #404040 0 3px 0, #404040 -3px 0 0, #404040 0 -3px 0;
     cursor:default;
   }
   .navbar-custom .nav li a:hover,
