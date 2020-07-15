@@ -4,12 +4,12 @@ header-img: "img/index.jpg"
 tagline: "cn"  
 description: "你好，我是李猫球。"  # 一句话描述你的博客
 baseurl: ""
-url: "http://limaoqiu.github.io"  # 此处填写你的博客地址 
+url: "https://limaoqiu.com"  # 此处填写你的博客地址 
 
 # About/contact
 owner: 
   name: "李猫球" # 填写作者信息：名字
-  email: haibin218@163.com # 填写作者信息：邮箱
+  email: 123719932@qq.com # 填写作者信息：邮箱
   bio: "你好，我是李猫球。" # 填写作者信息：博客描述
 
 # Data
