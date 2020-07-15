@@ -16,11 +16,11 @@ while (p.length > 0) { i = parseInt(Math.random() * p.length);
 
 var b = 0;
 var c = a.length;
-</script>
+</script><br/>
 <center>
-<p id="标签A" style="font-size:7em;border:5px solid #74b8e5;">无</p>
+<span id="标签A" style="font-size:7em;border:5px solid #74b8e5;">无</span><br/><br/>
 <button type="button" onclick="标签B()" style="font-size:1.2em;">换一个词</button>
-</center>
+</center><br/>
 <script>
 function 标签B()
 {
@@ -33,4 +33,24 @@ function 标签B()
     p.splice(i,1); };
         b=0;}
 }
+</script>
+
+<center><span>倒计时：</span><span id="标签C" style="font-size:2em">0</span><br/>
+    <span>每局时间（秒）：</span><br/><input type="text" id="wzsc" value="60"/>
+    <button type="button" onclick="标签D()" style="font-size:1em;">开始计时</button>
+
+
+
+</center>
+
+<script>
+function 标签D(){
+
+var c=100;
+    function checkTime(){
+        var wzsc = document.getElementById("wzsc").value;
+        c=c-1;
+        document.getElementById("标签C").innerHTML=wzsc;
+    }
+    setInterval("checkTime()","1000");}
 </script>
