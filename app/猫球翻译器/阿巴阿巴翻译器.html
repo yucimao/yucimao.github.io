@@ -1,0 +1,113 @@
+---
+layout: page2  
+permalink: mqfyq/abab
+---
+<title>阿巴阿巴翻译器 - 猫球社长</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<br/>
+<center>
+	　<br/>　<span class="qibiaoti">阿巴阿巴<br>翻译器</span>　</center>
+<style>
+	#输入框 textArea {
+		ime-mode: inactive;
+		ime-mode: disabled;
+		border: none;
+		font-size: 1.4em;
+		padding: .5em .7em;
+		max-width: 30em;
+		width: 70%;
+		background: #F8F8F8;
+		box-shadow:
+			0 0 0 1px #DDD inset,
+			0 1px 2px rgba(0, 0, 0, .2);
+		transition: box-shadow .3s ease;
+		border-radius: 4px;
+		text-align: center;
+		-webkit-appearance: none;
+	}
+
+	#输入框 textArea:focus {
+		box-shadow:
+			0 0 0 2px #58a4dd inset,
+			0 3px 3px rgba(0, 0, 0, .2) inset;
+	}
+</style>
+<form id="输入框" autocomplete="off">
+	<textArea id='输入' placeholder="阿巴阿巴→普通文字 或者 普通文字→阿巴阿巴" style="width:100%;"></textArea><br>
+	<button type="button" onclick="转换()" style="font-size:1em;">开始转换</button>
+	<button type="button" onclick="复制()" style="font-size:1em;">复制</button>
+</form>
+
+
+
+<script>
+	function 转换() {
+		var 输入 = document.getElementById("输入").value;
+		var lkkg = "​／‌／‍"
+		lkkg = lkkg.split("／");
+		var 替换;
+		if (输入.indexOf(lkkg[0]) != -1 || 输入.indexOf(lkkg[1]) != -1 || 输入.indexOf(lkkg[2]) != -1) {
+			输入=输入.split(lkkg[2]+lkkg[2])
+		输入=输入[1];
+			替换 = new RegExp(lkkg[0], "g");
+			输入 = 输入.replace(替换, '0');
+			替换 = new RegExp(lkkg[1], "g");
+			输入 = 输入.replace(替换, '1');
+			替换 = new RegExp(lkkg[2], "g");
+			输入 = 输入.replace(替换, '2');
+
+			function binaryToStr(str) {
+				var result = [];
+				var list = str.split("2");
+				for (var i = 0; i < list.length; i++) {
+					var item = list[i];
+					var asciiCode = parseInt(item, 2);
+					var charValue = String.fromCharCode(asciiCode);
+					result.push(charValue);
+				}
+				return result.join("");
+			}
+
+			输入 = binaryToStr(输入);
+		}
+		else {
+			function strToBinary(str) {
+				var result = [];
+				var list = str.split("");
+				for (var i = 0; i < list.length; i++) {
+					if (i != 0) {
+						result.push("2");
+					}
+					var item = list[i];
+					var binaryStr = item.charCodeAt().toString(2);
+					result.push(binaryStr);
+				}
+				return result.join("");
+			}
+
+			输入 = strToBinary(输入);
+
+			替换 = new RegExp('0', "g");
+			输入 = 输入.replace(替换, lkkg[0]);
+			替换 = new RegExp('1', "g");
+			输入 = 输入.replace(替换, lkkg[1]);
+			替换 = new RegExp('2', "g");
+			输入 = 输入.replace(替换, lkkg[2]);
+			输入 = "阿巴" + lkkg[2] + lkkg[2] + 输入 + lkkg[2] + lkkg[2] + "阿巴";
+
+		}
+
+		var t = document.getElementById("输入");
+		t.value = 输入;
+	}
+
+	function 复制() {
+		var input = document.getElementById("输入");
+		input.select();
+		document.execCommand("copy");
+	}
+</script>
+<br><br>
+<small>
+	关于“阿巴阿巴”的争议：<a href="https://www.zhihu.com/question/385376128/answer/1349156238">“阿巴阿巴阿巴是个什么梗？”</a>
+</small>
