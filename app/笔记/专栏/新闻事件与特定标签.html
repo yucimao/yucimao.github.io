@@ -1,0 +1,132 @@
+---
+layout: page2  
+permalink: biji/xinwenbiaoqian
+---
+<title>新闻事件与特定标签</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/><br/>
+<style>h4 {list-style: none;line-height:2.4;color:#006699;cursor:pointer;}a{cursor:pointer;}#输入框 input{ime-mode:inactive;ime-mode:disabled;border:none;font-size:1.4em;padding:.5em .7em;max-width:30em;width:100%;background:#F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0,0,0,.2);transition: box-shadow .3s ease;border-radius:4px;text-align:center;-webkit-appearance:none;}#输入框 input:focus{box-shadow:	0 0 0 2px #58a4dd inset,0 3px 3px rgba(0,0,0,.2) inset;}.sx{color:#000000;font-size:1px;}small{color:#404040}.heimu2 {background-color: #252525;color: #252525;transition: color 0.2s;}.heimu2:hover {color: #ffffff;}</style>
+<script src="/js/jquery.min.js"></script>
+<script>$(function () {$("#searchBox").keyup(function () {var wzsc = $("#searchBox").val();wzsc = wzsc.split(" ");$("#dataSet h4").each(function () {$(this).hide();$("#dataSet ul").hide();if ($(this).text().indexOf($.trim(wzsc[0])) >= 0 && $(this).text().indexOf($.trim(wzsc[1])) >= 0 && $(this).text().indexOf($.trim(wzsc[2])) >= 0 && $(this).text().indexOf($.trim(wzsc[3])) >= 0 && $(this).text().indexOf($.trim(wzsc[4])) >= 0 && $(this).text().indexOf($.trim(wzsc[5])) >= 0 && $(this).text().indexOf($.trim(wzsc[6])) >= 0 && $(this).text().indexOf($.trim(wzsc[7])) >= 0 && $(this).text().indexOf($.trim(wzsc[8])) >= 0 && $(this).text().indexOf($.trim(wzsc[9])) >= 0) {$(this).show();}})})})</script>
+<body onload="document.getElementById('searchBox').focus()"><center>　<br/>　<span class="qibiaoti">新闻事件：国内</span>　</center>
+<div id='tag_cloud'><form id="输入框" autocomplete="off"><center><input type="text" id="searchBox" placeholder="关键词以空格分隔"/></center></form>
+<ul id="dataSet"><br/><br/>
+
+（其中“标题省”等标注代表“媒体报道在标题注明省份”，“内容”指在正文中标注，“无”表示没有标注）
+
+<div class="menuDiv"><h4><small>参考标签</small></h4><ul>
+媒体报道地名：省、市、略（指县、区、街道等）、无（前面可以加“标题”、“内容”）
+常见区域和省份：东北、河南、山东、江浙沪<br>
+群体：师生、环卫工、公司、宠物
+事件：杀人、盗窃、哄抢
+其他：男杀女、女杀男
+<br><br>
+<table border="1">
+<tr><td colspan="3">统计</td><td colspan="4">标题</td><td colspan="4">内容</td></tr>
+<tr><td>地区</td><td>事件</td><td>歧视</td>
+    <!--地区         事件    歧视
+        省        市       略       无         省        市       略       无-->
+    <td>省</td><td>市</td><td>略</td><td>无</td><td>省</td><td>市</td><td>略</td><td>无</td></tr>
+
+<tr><td>东北</td><td>0</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>省</td><td>市</td><td>略</td><td>无</td><td>省</td><td>市</td><td>略</td><td>无</td></tr>
+<tr><td>江浙沪</td><td>5</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>0</td><td>2</td><td>0</td><td>4</td><td>0</td><td>3</td><td>0</td><td>3</td></tr>
+
+<tr><td>河南</td><td>1</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>浙江</td><td>5</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>0</td><td>2</td><td>0</td><td>4</td><td>0</td><td>3</td><td>0</td><td>3</td></tr>
+<tr><td>广西</td><td>1</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>南京</td><td>1</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>安徽</td><td>1</td><td>0</td>
+    <!--地区         事件数    地域黑
+        省        市       略       无         省        市       略       无-->
+    <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>湖南</td><td>1</td><td>0</td>
+    <!--地区         事件    歧视
+        省        市       略       无         省        市       略       无-->
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+
+</table>
+</ul></div>
+
+<!--
+<div class="menuDiv"><h4><small>年月</small> 
+<span class="sx"></span></h4><ul>
+</ul></div>
+-->
+
+
+<!-- 2020年 -->
+
+<div class="menuDiv"><h4><small>2020年7月</small> 物业私自将业主别墅租给剧组，导致房屋损坏赔三百万
+<span class="sx">标题市 内容市 江浙沪 浙江 杭州</span></h4><ul>媒体：标题和内容报道市名<br>舆论：物业的法律责任、业主真有钱</ul></div>
+
+<div class="menuDiv"><h4><small>2020年7月</small> 暴雨致渔场涨水,市民不顾危险捞鱼，场主损失惨重
+<span class="sx">标题省 内容市 安徽 合肥 哄抢</span></h4><ul>媒体：标题报道省名<br>舆论：群体哄抢不道德、场主可怜</ul></div>
+
+<div class="menuDiv"><h4><small>2020年7月</small> 大学生频繁偷外卖
+<span class="sx">标题无 内容无 南京 师生 盗窃</span></h4><ul>媒体：标题和内容未报道地区、家庭困难、兄弟姐妹都辍学了、偷外卖是因为贫穷和饥饿<br>舆论：大学生吃不起饭是一个国家的悲哀<br>后续：经查，是他曾经被偷外卖，于是产生报复和占便宜心理，不是因为饿</ul></div>
+
+<div class="menuDiv"><h4><small>2020年7月</small> 高考考生因题目太难撕毁他人答题卡
+<span class="sx">标题省 内容省 河南 平顶山 师生</span></h4><ul>媒体：标题和内容报道省名<br>舆论：不道德、精神有问题、判罚太轻</ul></div>
+
+<div class="menuDiv"><h4><small>2020年7月</small> 女子离奇失踪在化粪池被找到，系丈夫杀害分尸
+<span class="sx">标题市 内容市 江浙沪 浙江 杭州 杀人 男杀女</span></h4><ul>媒体：标题和内容报道市名<br>舆论：恐婚恐男，指责网友用“化粪池”玩梗
+</ul></div>
+
+<div class="menuDiv"><h4><small>2020年6月</small> 烧烤摊乱扔垃圾，环卫工以牙还牙，堆起垃圾山
+<span class="sx">标题省 内容省 广西 钦州 环卫工</span></h4><ul>媒体：标题和内容报道省名<br>舆论：环卫工做得好
+</ul></div>
+
+<div class="menuDiv"><h4><small>2020年5月</small> 公司团建越野，18人掉队6人失联
+<span class="sx">标题无 内容市 江浙沪 浙江 杭州 公司</span></h4><ul>媒体：标题未报道地名，内容报道市名<br>舆论：公司和老板有毛病，浪费警力
+</ul></div>
+
+<div class="menuDiv"><h4><small>2020年4月</small> 学生强奸罪仅“留校察看”
+<span class="sx">标题无 内容无 江浙沪 浙江 杭州 师生</span></h4><ul>媒体：标题和内容未报道地名<br>舆论：指责学校
+</ul></div>
+
+<div class="menuDiv"><h4><small>2019年9月</small> 因女儿与同学有摩擦，父亲杀害9岁男孩
+<span class="sx">标题无 内容无 江浙沪 浙江 温州</span></h4><ul>媒体：标题和内容未报道地区，警方通报标注街名<br>舆论：指责杀人犯、呼吁重视校园暴力
+</ul></div>
+
+<div class="menuDiv"><h4><small>2019年3月</small> 女企业家遭男友家暴致死,6岁女儿目睹全过程
+<span class="sx">标题无 内容无 江浙沪 浙江 温州 男杀女</span></h4><ul>媒体：标题和内容未报道地区，仅报道受害者的市<br>舆论：恐婚、恐男、媒体将家暴致死说成是“拳击身亡”转移重点
+</ul></div>
+
+<div class="menuDiv"><h4><small>2018年12月</small>  环卫工驱赶乱排便小狗，被狗主人用木棍抽打头部，致其晕倒
+<span class="sx">标题无 内容略 湖南 宠物 环卫工</span></h4><ul>媒体：标题未报道地区，内容报道略<br>舆论：狗主人群体普遍不文明
+</ul></div>
+
+<!--
+<div class="menuDiv"><h4><small>年月</small> 
+<span class="sx"></span></h4><ul>媒体：<br>舆论：
+</ul></div>
+-->
+
+
+</ul></div>
+<script type="text/javascript">function MenuSwitch(className) {this._elements = [];this._default = -1;this._className = className;this._previous = false;}MenuSwitch.prototype.setDefault = function (id) {this._default = Number(id);}
+MenuSwitch.prototype.setPrevious = function (flag) {this._previous = Boolean(flag);}
+MenuSwitch.prototype.collectElementbyClass = function () {this._elements = [];var allelements = document.getElementsByTagName("div");for (var i = 0; i < allelements.length; i++) {var mItem = allelements[i];if (typeof mItem.className == "string" && mItem.className == this._className) {var h3s = mItem.getElementsByTagName("h4");var uls = mItem.getElementsByTagName("ul");if (h3s.length == 1 && uls.length == 1) {h3s[0].style.cursor = "hand";if (this._default == this._elements.length) {uls[0].style.display = "block";} else {uls[0].style.display = "none";}this._elements[this._elements.length] = mItem;}}}}
+MenuSwitch.prototype.open = function (mElement) {var uls = mElement.getElementsByTagName("ul");uls[0].style.display = "block";}
+MenuSwitch.prototype.close = function (mElement) {var uls = mElement.getElementsByTagName("ul");uls[0].style.display = "none";}
+MenuSwitch.prototype.isOpen = function (mElement) {var uls = mElement.getElementsByTagName("ul");return uls[0].style.display == "block";}
+MenuSwitch.prototype.toggledisplay = function (header) {var mItem;if (window.addEventListener) {mItem = header.parentNode;} else {mItem = header.parentElement;}if (this.isOpen(mItem)) {this.close(mItem);} else {this.open(mItem);}if (!this._previous) {for (var i = 0; i < this._elements.length; i++) {if (this._elements[i] != mItem) {var uls = this._elements[i].getElementsByTagName("ul");uls[0].style.display = "none";}}}}
+MenuSwitch.prototype.init = function () {var instance = this;this.collectElementbyClass();if (this._elements.length == 0) {return;}for (var i = 0; i < this._elements.length; i++) {var h3s = this._elements[i].getElementsByTagName("h4");if (window.addEventListener) {h3s[0].addEventListener("click", function () { instance.toggledisplay(this); }, false);} else {h3s[0].onclick = function () { instance.toggledisplay(this); }}}}</script>
+<script language="javascript">var mSwitch = new MenuSwitch("menuDiv");mSwitch.setDefault(0);mSwitch.setPrevious(false);mSwitch.init();</script>
+</body>
