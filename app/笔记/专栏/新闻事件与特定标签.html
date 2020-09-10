@@ -3,7 +3,7 @@ layout: page2
 permalink: biji/xinwenbiaoqian
 ---
 <title>新闻事件与特定标签</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/><br/>
-<style>h4 {list-style: none;line-height:2.4;color:#006699;cursor:pointer;}a{cursor:pointer;}#输入框 input{ime-mode:inactive;ime-mode:disabled;border:none;font-size:1.4em;padding:.5em .7em;max-width:30em;width:100%;background:#F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0,0,0,.2);transition: box-shadow .3s ease;border-radius:4px;text-align:center;-webkit-appearance:none;}#输入框 input:focus{box-shadow:	0 0 0 2px #58a4dd inset,0 3px 3px rgba(0,0,0,.2) inset;}.sx{color:#000000;font-size:1px;}small{color:#404040}.heimu2 {background-color: #252525;color: #252525;transition: color 0.2s;}.heimu2:hover {color: #ffffff;}</style>
+<style>th{background:#ffcbbf;}h4 {list-style: none;line-height:2.4;color:#006699;cursor:pointer;}a{cursor:pointer;}#输入框 input{ime-mode:inactive;ime-mode:disabled;border:none;font-size:1.4em;padding:.5em .7em;max-width:30em;width:100%;background:#F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0,0,0,.2);transition: box-shadow .3s ease;border-radius:4px;text-align:center;-webkit-appearance:none;}#输入框 input:focus{box-shadow:	0 0 0 2px #58a4dd inset,0 3px 3px rgba(0,0,0,.2) inset;}.sx{color:#000000;font-size:1px;}small{color:#404040}.heimu2 {background-color: #252525;color: #252525;transition: color 0.2s;}.heimu2:hover {color: #ffffff;}</style>
 <script src="/js/jquery.min.js"></script>
 <script>$(function () {$("#searchBox").keyup(function () {var wzsc = $("#searchBox").val();wzsc = wzsc.split(" ");$("#dataSet h4").each(function () {$(this).hide();$("#dataSet ul").hide();if ($(this).text().indexOf($.trim(wzsc[0])) >= 0 && $(this).text().indexOf($.trim(wzsc[1])) >= 0 && $(this).text().indexOf($.trim(wzsc[2])) >= 0 && $(this).text().indexOf($.trim(wzsc[3])) >= 0 && $(this).text().indexOf($.trim(wzsc[4])) >= 0 && $(this).text().indexOf($.trim(wzsc[5])) >= 0 && $(this).text().indexOf($.trim(wzsc[6])) >= 0 && $(this).text().indexOf($.trim(wzsc[7])) >= 0 && $(this).text().indexOf($.trim(wzsc[8])) >= 0 && $(this).text().indexOf($.trim(wzsc[9])) >= 0) {$(this).show();}})})})</script>
 <body onload="document.getElementById('searchBox').focus()"><center>　<br/>　<span class="qibiaoti">新闻事件与特定标签</span>　</center>
@@ -14,89 +14,88 @@ permalink: biji/xinwenbiaoqian
 （略：指区县、街道等）<br>
 （为方便记录，直辖市也记录为“省”，直辖市的区县记录为“市”）<br>
 
-<div class="menuDiv"><h4><small>参考标签</small><br><span style="color:#000000;font-weight:lighter">
+<div class="menuDiv"><h4><small>参考标签</small></h4><ul>
     群体：师生、环卫工、公司、宠物<br>
     事件：杀人、盗窃、哄抢、强奸<br>
-    其他：男杀女、女杀男<br></span>
+    其他：男杀女、女杀男<br>
+<br>
+</ul></div>
 
 <table border="1">
-<tr><th>统计</th><th rowspan="2">事<br>件</th><th rowspan="2">歧<br>视</th><th rowspan="2">杀<br>人</th><th rowspan="2">盗<br>抢</th><th rowspan="2">斗<br>殴</th><th rowspan="2">强<br>奸</th><th colspan="4">标题</th><th colspan="4">内容</th><th>备注</th></tr>
-<tr><th>地区</th>
+<tr><td>统计</td><th rowspan="2" style="background:#ffffff">事<br>件</th><th rowspan="2" style="background:#ffffff">歧<br>视</th><th rowspan="2" style="background:#ffffff">杀<br>人</th><th rowspan="2" style="background:#ffffff">盗<br>抢</th><th rowspan="2" style="background:#ffffff">斗<br>殴</th><th rowspan="2" style="background:#ffffff">强<br>奸</th><th colspan="4" style="background:#ffffff">标题</th><th colspan="4" style="background:#ffffff">内容</th><th style="background:#ffffff">备注</th></tr>
+<tr><th style="background:#ffffff">地区</th>
     <!--地区         事件    歧视
         省        市       略       无         省        市       略       无-->
-    <th>省</th><th>市</th><th>略</th><th>无</th><th>省</th><th>市</th><th>略</th><th>无</th>
-    <th>仅粗略划分</th></tr>
+    <th style="background:#ffffff">省</th><th style="background:#ffffff">市</th><th style="background:#ffffff">略</th><th style="background:#ffffff">无</th><th style="background:#ffffff">省</th><th style="background:#ffffff">市</th><th style="background:#ffffff">略</th><th style="background:#ffffff">无</th>
+    <td>(仅粗略划分)</td></tr>
 
-<tr><th>东北</th><td>2</td><th>2</th><td>0</td><td>1</td><td>0</td><td>0</td>
+<tr><td>东北</td><td>2</td><th>2</th><td>0</td><td>1</td><td>0</td><td>0</td>
     <!--地区         事件数    地域黑    杀人      盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
     <td>黑龙江 吉林 辽宁</td></tr>
 
-<tr><th>江浙沪皖</th><th>16</th><td>0</td><th>7</th><th>3</th><td>0</td><th>2</th>
+<tr><td>江浙沪皖</td><th>16</th><td>0</td><th>7</th><th>3</th><td>0</td><th>2</th>
     <!--地区            事件数    地域黑     杀人       盗抢      斗殴       强奸
         省        市        略        无        省        市        略        无-->
     <td>2</td><td>7</td><td>0</td><th>8</th><td>1</td><th>9</th><td>0</td><td>6</td>
     <td>江苏 浙江 上海 安徽</td></tr>
 
-<tr><th>京津冀</th><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<tr><td>京津冀</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
     <!--地区           事件    歧视       杀人       盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
     <td>北京 天津 河北</td></tr>
 
-<tr><th>两广</th><td>12</td><td>0</td><td>2</td><td>0</td><th>4</th><td>0</td>
+<tr><td>两广</td><td>12</td><td>0</td><td>2</td><td>0</td><th>4</th><td>0</td>
     <!--地区         事件     歧视       杀人      盗抢      斗殴       强奸
         省        市        略        无         省        市       略        无-->
     <th>3</th><td>2</td><td>0</td><td>7</td><th>8</th><td>2</td><td>0</td><td>2</td>
     <td>广东 广西</td></tr>
 
-<tr><th>云贵川</th><td>5</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td>
+<tr><td>云贵川</td><td>5</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td>
     <!--地区           事件      歧视      杀人      盗抢      斗殴       强奸
         省        市        略        无         省        市       略        无-->
     <td>2</td><td>0</td><td>0</td><th>3</th><th>3</th><td>0</td><td>1</td><td>1</td>
     <td>云南 贵州 四川 重庆</td></tr>
 
-<tr><th>陕甘宁</th><td>4</td><td>0</td><td>3</td><td>0</td><td>1</td><td>1</td>
+<tr><td>陕甘宁</td><td>4</td><td>0</td><td>3</td><td>0</td><td>1</td><td>1</td>
     <!--地区           事件      歧视      杀人      盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>1</td><th>3</th><td>0</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td>
     <td>陕西 甘肃 宁夏</td></tr>
 
-<tr><th>北部</th><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
+<tr><td>北部</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
     <!--地区         事件    歧视        杀人      盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td>
     <td>山西 山东 内蒙古</td></tr>
 
-<tr><th>中部</th><td>7</td><td>0</td><td>3</td><td>0</td><td>1</td><td>1</td>
+<tr><td>中部</td><td>7</td><td>0</td><td>3</td><td>0</td><td>1</td><td>1</td>
     <!--地区         事件     歧视       杀人      盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>2</td><td>0</td><td>0</td><th>5</th><th>6</th><td>0</td><td>1</td><td>0</td>
     <td>河南 湖北 湖南</td></tr>
 
-<tr><th>西部</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<tr><td>西部</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
     <!--地区         事件    歧视        杀人      盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
     <td>新疆 青海 西藏</td></tr>
 
-<tr><th>南部</th><td>2</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td>
+<tr><td>南部</td><td>2</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td>
     <!--地区         事件    歧视        杀人      盗抢      斗殴       强奸
         省        市        略        无         省        市       略       无-->
     <td>0</td><td>0</td><td>0</td><th>2</th><th>2</th><td>0</td><td>0</td><td>0</td>
     <td>江西 福建 海南</td></tr>
 
-<tr><th>港澳台</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<tr><td>港澳台</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
     <!--地区         事件       歧视       杀人      盗抢      斗殴       强奸
         省        市       略       无         省        市       略       无-->
     <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
     <td>香港 澳门 台湾</td></tr>
 
 </table>
-
-</h4><ul>
-</ul></div>
 
 <!--
 <div class="menuDiv"><h4><small>年月</small> 
