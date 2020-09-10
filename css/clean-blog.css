@@ -33,7 +33,8 @@ a {
 .qibiaoti{
   font-size:3.5em;
 	color:#0bb1f5;
-	font-weight:bold;
+  font-weight:bold;
+  cursor:default;
 }
 
 .anniu {
