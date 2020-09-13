@@ -11,7 +11,7 @@ function GetQueryString(name) {let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$
 if (tmp = rs) {return decodeURI(tmp[2]);} return "";}
 let i=GetQueryString("i"); let f=GetQueryString("f");
 if (f>0){} else {f=1;}
-let 打印 = '<script src=\\5\\随机题库\\i\\'+i+'\.js><center>　<br>　<span class="qibiaoti">'+i+'</span>　</center><\/script><input type="text" id="w" value="'+f+'" style="width:40px">';
+let 打印 = '<script src=\\5\\随机题库\\i\\'+i+'\.js><\/script><center>　<br>　<span class="qibiaoti">'+i+'</span>　</center><input type="text" id="w" value="'+f+'" style="width:40px">';
 document.write(打印);
 </script>
 <button type="button" onclick="按钮()" style="font-size:1em;">抽取</button><br>
