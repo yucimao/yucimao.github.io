@@ -6,11 +6,6 @@ permalink: sjtk/1
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <br />
 <script src="/js/jquery.min.js"></script>
-<script>
-
-    let dy1 = '<center>　<br>　<span class="qibiaoti">' + "i" + '<\/span>　<\/center><input type="text" id="w" value="' + "3" + '" style="width:40px">';
-    document.write(dy1);
-</script>
 <button type="button" onclick="按钮()" style="font-size:1em;">抽取</button><br>
 <span id="结果"></span>
 <div id="dy2"></div>
@@ -43,6 +38,8 @@ permalink: sjtk/1
             let i = GetQueryString("i"); let f = GetQueryString("f");
             if (f > 0) { } else { f = 1; }
             window.pvo = LIBS['/5/随机题库/i/' + i + '.json']
+            let dy1 = '<center>　<br>　<span class="qibiaoti">' + "i" + '<\/span>　<\/center><input type="text" id="w" value="' + "3" + '" style="width:40px">';
+            document.write(dy1);
         })
 
     });
