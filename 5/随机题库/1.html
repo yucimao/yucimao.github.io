@@ -1,0 +1,34 @@
+---
+layout: page2  
+permalink: sjtk/1
+---
+<title>随机题库 - 猫球社长</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<br/>
+<script>
+let LocString = String(window.document.location.href);
+function GetQueryString(name) {let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+if (tmp = rs) {return decodeURI(tmp[2]);} return "";}
+let i=GetQueryString("i"); let f=GetQueryString("f");
+if (f>0){} else {f=1;}
+let 打印 = '<script src=\\5\\随机题库\\i\\'+i+'\.js><\/script><input type="text" id="w" value="'+f+'" style="width:40px">';
+document.write(打印);
+</script>
+<button type="button" onclick="按钮()" style="font-size:1em;">抽取</button><br>
+<span id="结果"></span>
+
+<script>
+function 按钮(){
+    let w = document.getElementById("w").value;
+    let ja;
+    for (let ka=0;ka<w;ka++){
+    let 随机数 = Math.floor((Math.random()*pvo.length));
+    ja += "<br><br>" + pvo[随机数];
+    }
+
+
+
+    document.getElementById("结果").innerHTML=ja;
+    }
+</script>
+
