@@ -11,7 +11,7 @@ function GetQueryString(name) {let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$
 if (tmp = rs) {return decodeURI(tmp[2]);} return "";}
 let i=GetQueryString("i"); let f=GetQueryString("f");
 if (f>0){} else {f=1;}
-let dy1 = '<script src=\\5\\随机题库\\i\\'+i+'\.js><\/script><center>　<br>　<span class="qibiaoti">'+i+'</span>　</center><input type="text" id="w" value="'+f+'" style="width:40px">';
+let dy1 = '<script src=\\5\\随机题库\\i\\'+i+'\.js><\/script><center>　<br>　<span class="qibiaoti">'+i+'<\/span>　<\/center><input type="text" id="w" value="'+f+'" style="width:40px">';
 document.write(dy1);
 </script>
 <button type="button" onclick="按钮()" style="font-size:1em;">抽取</button><br>
@@ -57,13 +57,10 @@ for (let kb=1;临时1.length>kb;kb++){
         }
     }
     if (临时2[0].indexOf("／") != -1){
-
-        function pvo(){
-            let 随机数 = Math.floor(Math.random()*pvo.length);
+        function 按钮(){
+        let 随机数 = Math.floor(Math.random()*pvo.length);
         结果+=pvo[随机数];
         }
-
-
     }
     结果+=临时2[1];
 }
