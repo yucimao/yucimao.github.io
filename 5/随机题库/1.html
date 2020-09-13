@@ -8,8 +8,8 @@ permalink: sjtk/1
 <script src="/js/jquery.min.js"></script>
 <script>
 
-    // let dy1 = '<script src=\\5\\随机题库\\i\\' + i + '\.js><\/script><center>　<br>　<span class="qibiaoti">' + i + '<\/span>　<\/center><input type="text" id="w" value="' + f + '" style="width:40px">';
-    // document.write(dy1);
+    let dy1 = '<center>　<br>　<span class="qibiaoti">' + i + '<\/span>　<\/center><input type="text" id="w" value="' + f + '" style="width:40px">';
+    document.write(dy1);
 </script>
 <button type="button" onclick="按钮()" style="font-size:1em;">抽取</button><br>
 <span id="结果"></span>
@@ -42,7 +42,7 @@ permalink: sjtk/1
             }
             let i = GetQueryString("i"); let f = GetQueryString("f");
             if (f > 0) { } else { f = 1; }
-            
+            window.pvo = LIBS['/5/随机题库/i/' + i + '.json']
         })
 
     });
@@ -52,7 +52,7 @@ permalink: sjtk/1
         let w = document.getElementById("w").value;
         let 开关 = 0;
         let 结果 = " ";
-        let pvo2 = LIBS['/5/随机题库/i/' + i + '.json']
+        let pvo2 = pvo;
 
         for (let ka = 0; ka < w; ka++) {
             let 随机数 = Math.floor(Math.random() * pvo2.length);
