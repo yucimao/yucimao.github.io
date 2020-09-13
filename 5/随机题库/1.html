@@ -16,7 +16,7 @@ document.write(dy1);
 </script>
 <button type="button" onclick="按钮()" style="font-size:1em;">抽取</button><br>
 <span id="结果"></span>
-<div id="dy2"></div>
+<head id="dy2"></head>
 <script>
 function 按钮(){
     let w = document.getElementById("w").value;
@@ -57,10 +57,8 @@ for (let kb=1;临时1.length>kb;kb++){
         }
     }
     if (临时2[0].indexOf("／") != -1){
-        $(function (){
         let 随机数 = Math.floor(Math.random()*pvo.length);
         结果+=pvo[随机数];
-        }
     }
     结果+=临时2[1];
 }
