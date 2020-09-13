@@ -5,7 +5,6 @@ permalink: sjtk/1
 <title>随机题库 - 猫球社长</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <br/>
-<script src="/js/jquery.min.js"></script>
 <script>
 let LocString = String(window.document.location.href);
 function GetQueryString(name) {let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
@@ -23,10 +22,11 @@ function 按钮(){
     let w = document.getElementById("w").value;
     let 开关 = 0;
     let 结果 = " ";
+    let pvo2 = pvo;
 
 for (let ka=0;ka<w;ka++){
-    let 随机数 = Math.floor(Math.random()*pvo.length);
-    结果 += "<br><br>" + pvo[随机数];}
+    let 随机数 = Math.floor(Math.random()*pvo2.length);
+    结果 += "<br><br>" + pvo2[随机数];}
 
 while (开关==0){
 if (结果.indexOf("[") != -1){
@@ -40,9 +40,8 @@ for (let kb=1;临时1.length>kb;kb++){
     if (临时2[0].indexOf("／") != -1){
         let 替换 = new RegExp('／', 'g');
         let 临时3 = 临时2[0].replace(替换,'');
-        $.getScript("/5/随机题库/i/测试1.js");
-        //let dy2 = '<script src=\\5\\随机题库\\i\\'+临时3+'\.js><\/script>';
-          //  document.getElementById("dy2").innerHTML=dy2;
+        let dy2 = '<script src=\\5\\随机题库\\i\\'+临时3+'\.js><\/script>';
+        document.getElementById("dy2").innerHTML=dy2;
     }
     else{
         if (临时2[0].indexOf("-") != -1){    //如果是0-5
@@ -58,8 +57,13 @@ for (let kb=1;临时1.length>kb;kb++){
         }
     }
     if (临时2[0].indexOf("／") != -1){
-        let 随机数 = Math.floor(Math.random()*pvo2.length);
-        结果+=pvo2[随机数];
+
+        function pvo(){
+            let 随机数 = Math.floor(Math.random()*pvo.length);
+        结果+=pvo[随机数];
+        }
+
+
     }
     结果+=临时2[1];
 }
