@@ -9,16 +9,20 @@ permalink: sjtk/1
 <div id="dy1"></div>
 <span id="结果"></span>
 <script>
-let LocString = String(window.document.location.href);
-function GetQueryString(name) {
-let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
-if (tmp = rs) { return decodeURI(tmp[2]); } return "";}
-let i = GetQueryString("i"); let f = GetQueryString("f");
-if (f > 0) { } else { f = 1; }
-i = i.split("／");
-let ib = '/5/随机题库/i/'+i[0]+'.json';
-for (let ia = 1; i.length > ia; ia++) {ib += '/5/随机题库/i/'+i[ia]+'.json';}
-ib = ib.split("／");
+    let LocString = String(window.document.location.href);
+    function GetQueryString(name) {
+        let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+        if (tmp = rs) { return decodeURI(tmp[2]); } return "";
+    }
+    let i = GetQueryString("i"); let f = GetQueryString("f");
+    if (f > 0) { } else { f = 1; }
+    i = i.split("／");
+    let ib = '/5/随机题库/i/' + i[0] + '.json';
+    if (i.length > 1) {
+        for (let ia = 1; i.length > ia; ia++) { ib += '/5/随机题库/i/' + i[ia] + '.json'; }
+    }
+    ib = ib.split("／");
+    let ic = ib[0];
     let LIBS = {}
     $(function () {
         const LIB_URLS = ib;
@@ -39,8 +43,8 @@ ib = ib.split("／");
         }
 
         LoadAll(function () {
-            window.pvo = LIBS['/5/随机题库/i/' + i + '.json']
-            let dy1 = '<center>　<br>　<span class="qibiaoti">' + i + '<\/span>　<\/center><input type="text" id="w" value="' + f + '" style="width:40px"><button type="button" onclick="按钮()" style="font-size:1em;">抽取<\/button><br>';
+            window.pvo = LIBS[ic]
+            let dy1 = '<center>　<br>　<span class="qibiaoti">' + i[0] + '<\/span>　<\/center><input type="text" id="w" value="' + f + '" style="width:40px"><button type="button" onclick="按钮()" style="font-size:1em;">抽取<\/button><br>';
             document.getElementById("dy1").innerHTML = dy1;
         })
     });
@@ -75,10 +79,6 @@ ib = ib.split("／");
 
                         let 随机数 = Math.floor(Math.random() * val.length);
                         结果 += val[随机数];
-
-                        //let dy2 = '<script src=\\5\\随机题库\\i\\' + 临时3 + '\.js><\/script>';
-                        //document.write(dy2);
-                        //document.getElementById("dy2").innerHTML=dy2;
                     }
                     else {
                         if (临时2[0].indexOf("-") != -1) {    //如果是0-5
