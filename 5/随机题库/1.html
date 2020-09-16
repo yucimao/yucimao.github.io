@@ -58,7 +58,12 @@ permalink: sjtk/1
 
         for (let ka = 0; ka < w; ka++) {
             let 随机数 = Math.floor(Math.random() * pvo2.length);
-            结果 += "<hr>" + pvo2[随机数];
+            if (pvo2[随机数].indexOf("】") != -1) {
+                let 临时1 = new Array();
+                临时1 = pvo2[随机数].split("】");
+                结果 += "<hr>" + 临时1[1];
+            }
+            else { 结果 += "<hr>" + pvo2[随机数]; }
         }
 
         while (开关 == 0) {
@@ -78,7 +83,13 @@ permalink: sjtk/1
                         console.log(val)
 
                         let 随机数 = Math.floor(Math.random() * val.length);
-                        结果 += val[随机数];
+
+                        if (val[随机数].indexOf("】") != -1) {
+                            let 临时4 = new Array();
+                            临时4 = val[随机数].split("】");
+                            结果 += 临时4[1];
+                        }
+                        else { 结果 += val[随机数]; }
                     }
                     else {
                         if (临时2[0].indexOf("-") != -1) {    //如果是0-5
