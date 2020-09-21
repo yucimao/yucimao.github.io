@@ -122,9 +122,9 @@ permalink: sjtk/1
         }
         let 替换 = new RegExp('　', 'g');
         结果 = 结果.replace(替换, '<br>');
-        替换 = new RegExp('［', 'g');
+        替换 = new RegExp('［1:', 'g');
         结果 = 结果.replace(替换, '<span class=\"heimu2\">');
-        替换 = new RegExp('］', 'g');
+        替换 = new RegExp(':1］', 'g');
         结果 = 结果.replace(替换, '<\/span>');
         document.getElementById("结果").innerHTML = 结果;
     }
