@@ -16,11 +16,11 @@ a{cursor:pointer;}
 <script src="/js/jquery.min.js">
 </script>
 <script>
-$(function () {$("#searchBox").keyup(function () {var wzsc = $("#searchBox").val();wzsc = wzsc.split(" ");$("#dataSet h4").each(function () {$(this).hide();$("#dataSet ul").hide();
+$(function () {$("#searchBox").keyup(function () {var wzsc = $("#searchBox").val();wzsc = wzsc.split(" ");$("#dataSet div").each(function () {$(this).hide();$("#dataSet ul").hide();
 if ($(this).text().indexOf($.trim(wzsc[0])) >= 0 && $(this).text().indexOf($.trim(wzsc[1])) >= 0 && $(this).text().indexOf($.trim(wzsc[2])) >= 0 && $(this).text().indexOf($.trim(wzsc[3])) >= 0 && $(this).text().indexOf($.trim(wzsc[4])) >= 0 && $(this).text().indexOf($.trim(wzsc[5])) >= 0 && $(this).text().indexOf($.trim(wzsc[6])) >= 0 && $(this).text().indexOf($.trim(wzsc[7])) >= 0 && $(this).text().indexOf($.trim(wzsc[8])) >= 0 && $(this).text().indexOf($.trim(wzsc[9])) >= 0) {$(this).show();}})})})
 </script>
 <script>
-function tion(){$('#dataSet h4').show();$("#dataSet ul").hide();$("#dataSet h4").each(function () {$(this).hide();if ($(this).text().indexOf($.trim(sg)) >= 0) {$(this).show();}});}
+function tion(){$('#dataSet div').show();$("#dataSet ul").hide();$("#dataSet div").each(function () {$(this).hide();if ($(this).text().indexOf($.trim(sg)) >= 0) {$(this).show();}});}
 </script>
 <body onload="document.getElementById('searchBox').focus()">
 <center>　<br/>　<span class="qibiaoti">海龟汤</span>　</center>
@@ -32,7 +32,7 @@ function tion(){$('#dataSet h4').show();$("#dataSet ul").hide();$("#dataSet h4")
     <b>不合理</b>：故事有不合理之处或者漏洞，经不起深思，适当引导玩家，否则容易由于漏洞陷入错误中走不出来。<br>
 </ul></div>
 
-<div class="menuDiv"><h4>什么是海龟汤？</h4><ul>
+<div class="menuDiv"><h4>海龟汤怎么玩？</h4><ul>
     至少2人，一人扮演“上帝”，其他人是“玩家”，上帝讲述故事的开头和结尾，其他玩家通过提问来猜故事过程，上帝只能回答“是”、“否”、“不重要”。<br>
     <br>
     比如，“小明在餐厅喝了一碗海龟汤，然后就自杀了。”<br>
@@ -453,7 +453,7 @@ A和B睡下后，这个假C把假门拆下，自己从真门撤出，然后把�
 <br><span class="heimu2">
 她的男友是双胞胎，她杀的是男友的弟弟，但她不知道，晚上睡觉的时候男友回来了，以为见了鬼，害怕的自杀了。</span></ul></div>
 
-<div class="menuDiv"><h4>死者和剪刀 <small>★</small></h4><ul>
+<div class="menuDiv"><h4>死者和剪刀 <small>★★</small></h4><ul>
     一个女人死了，身上没有伤痕，旁边有一把剪刀。<br>
 <br><span class="heimu2">
     呼吸机的氧气管被人剪断了。</span></ul></div>
