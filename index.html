@@ -10,7 +10,6 @@ description: "pvo占领世界"
 <style>h4{color:#006699;cursor:pointer;}</style>
 
 <small>
-
 <div style="width:30%;float:left;">
 <script>document.write(日期);</script>
 <br><br>
@@ -132,20 +131,20 @@ onMouseOut="this.src='/img/标签图标/QQ3.jpg'"
 width="12.5%" alt="QQ：123719932" align="left" ></a>
 
 <div class="sbys">
-    　<!-- 这里有一个全角空格 -->
-    <br/><br/><br/><br/>
-    <br/><small>
-    电子邮箱：123719932@qq<a onclick="B()">.</a>com<br/>
-    </small></div>
-    <br/>
-    <div id="A"></div>
-    <script>
-    function B()
-    {document.getElementById("A").innerHTML="<a href='/tags/'>标签</a>";}
-    </script>
-    <br/><br/>
-    <p id="dy0"></p>
-    </div>
+　<!-- 这里有一个全角空格 -->
+<br/><br/><br/><br/>
+<br/><small>
+电子邮箱：123719932@qq<a onclick="B()">.</a>com<br/>
+</small></div>
+<br/>
+<div id="A"></div>
+<script>
+function B()
+{document.getElementById("A").innerHTML="<a href='/tags/'>标签</a>";}
+</script>
+<br/><br/>
+<p id="dy0"></p>
+</div>
 
 <script>
 window.onload=function(){
@@ -154,16 +153,6 @@ var dy1="";
 for (var i = 0; i < dy0.length; i++) {
         dy1 += '<img width="1px" src="/img/标签图标/' + dy0[i] + '.jpg"/>';
     };
-    dy1='<div>'+dy1+'</div>';
-    document.getElementById("dy0").innerHTML=dy1;}
-    </script>
-
-
-
-
-
-
-
-
-
-
+dy1='<div>'+dy1+'</div>';
+document.getElementById("dy0").innerHTML=dy1;}
+</script>
