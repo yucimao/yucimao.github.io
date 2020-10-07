@@ -65,7 +65,7 @@ $(function () {
     $("#searchBox").keyup(function () {
         var wzsc = $("#searchBox").val();
         wzsc = wzsc.split(" ");
-        $("#dataSet h4").each(function () {
+        $("#dataSet div").each(function () {
             $(this).hide();
             $("#dataSet ul").hide();
             if ($(this).text().indexOf($.trim(wzsc[0])) >= 0
@@ -83,10 +83,10 @@ $(function () {
 
 <script>
     function tion(){
-        $('#dataSet h4').show();
+        $('#dataSet div').show();
         $("#dataSet ul").hide();
 
-        $("#dataSet h4").each(function () {
+        $("#dataSet div").each(function () {
             $(this).hide();
         
         if ($(this).text().indexOf($.trim(sg)) >= 0) {
