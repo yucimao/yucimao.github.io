@@ -7,6 +7,8 @@ permalink: pvoink
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <script src="/js/jquery.min.js"></script>
 <br>
+<a onclick="随机一个pvo()" class="anniu">随机一个pvo</a>
+<br>
 <a href="https://www.bilibili.com/video/av56038615/">两个颜色一样的pvo（含有强烈色彩和闪烁，谨慎观看）</a><br/>
 <a href="https://www.bilibili.com/video/av47527527/">在《PiKUNiKU》画</a><br/>
 <a href="https://www.bilibili.com/video/av43464297/">用《迷你沙盒》画</a><br/>
@@ -17,5 +19,14 @@ permalink: pvoink
 
 
 
-
+<script>
+    function 随机一个pvo() {
+        var sjpvo=new Array("/5/404/文字幕.html",
+        "/5/404/黑客帝国.html",
+        "/5/404/彩色文字.html",
+        "/5/404/悬浮pvo.html")
+        var 随机数 = Math.floor(Math.random()*sjpvo.length);
+        window.open(sjpvo[随机数]); 
+    }
+    </script>
 
