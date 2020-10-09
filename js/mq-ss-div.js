@@ -4,7 +4,7 @@ $(function () { //搜索
         wzsc = wzsc.split(" ");
         $("#dataSet div").each(function () {
             $(this).hide();
-            //$("#dataSet ul").hide();
+            $("#dataSet ul").hide();
             if ($(this).text().indexOf($.trim(wzsc[0])) >= 0
                 && $(this).text().indexOf($.trim(wzsc[1])) >= 0
                 && $(this).text().indexOf($.trim(wzsc[2])) >= 0
