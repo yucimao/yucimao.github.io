@@ -5,7 +5,8 @@ $(function () { //搜索
         $("#dataSet div").each(function () {
             $(this).hide();
             $("#dataSet ul").hide();
-            if ($(this).text().indexOf($.trim(wzsc[0])) >= 0
+            if (wzsc=="" || 
+            $(this).text().indexOf($.trim(wzsc[0])) >= 0
                 && $(this).text().indexOf($.trim(wzsc[1])) >= 0
                 && $(this).text().indexOf($.trim(wzsc[2])) >= 0
                 && $(this).text().indexOf($.trim(wzsc[3])) >= 0
