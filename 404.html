@@ -11,6 +11,7 @@ permalink: 404.html
 	八成是我把哪里的链接写错了……</font><br><br>
 
 <script>
+		alert("测试1")
 var url = window.location.href;
 
 if (url.indexOf("github.io/") != -1) {
@@ -21,14 +22,24 @@ if (url.indexOf(".com/") != -1) {
 url = url.split(".com/");
 url = url[1];}
 
+alert("测试2")
+
 url = "[" + url + "]";
 var urls = new Array(
 	"[猫球翻译器]/mqfyq");
 
+	alert("测试3")
+
 for (var i = 0 ; i < urls.length ; i++) {
+
+	alert("测试4")
+
 if (urls[i].indexOf(url) != -1) {
+
+	alert("测试5")
+
 	var tz = urls[i].split("]");
 	window.location.href=tz[1];
-	alert(tz[1])
+	alert("测试6")
 	}}
 </script>
