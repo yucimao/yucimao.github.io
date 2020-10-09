@@ -1,6 +1,10 @@
 $(function () { //搜索
     $("#searchBox").keyup(function () {
         var wzsc = $("#searchBox").val();
+        if (wzsc3 == "0"){
+            wzsc = wzsc2;
+            wzsc3 = "1";
+        }
         wzsc = wzsc.split(" ");
         $("#dataSet div").each(function () {
             $(this).hide();

@@ -5,10 +5,4 @@ function GetQueryString(name) {
     return "";
 }
 var wzsc2 = GetQueryString("wz");
-$(function () {
-    $("#dataSet h4").each(function () {
-        $(this).hide();
-        if ($(this).text().indexOf($.trim(wzsc2)) >= 0
-        ) { $(this).show(); }
-    })
-})
+var wzsc3 = "0";
