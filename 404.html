@@ -13,6 +13,11 @@ permalink: 404.html
 <script>
 var url = window.location.href;
 
+if (url.indexOf("?ceshi=") != -1) {
+url = url.split("?ceshi=");
+alert(url[1])
+}
+
 if (url.indexOf("github.io/") != -1) {
 url = url.split("github.io/");
 url = url[1];}
@@ -23,17 +28,13 @@ url = url[1];}
 
 url = "[" + url + "]";
 var urls = new Array(
-	"[猫球翻译器]/mqfyq");
+	"[%E7%8C%AB%E7%90%83%E7%BF%BB%E8%AF%91%E5%99%A8]/mqfyq",	//猫球翻译器
+	"[%E7%8C%AB%E8%AF%91%E5%99%A8]/mqfyq"	//猫译器
+	);
 
 for (var i = 0 ; i < urls.length ; i++) {
-	alert(urls[i])
-	alert(url)
 if (urls[i].indexOf(url) != -1) {
-
-
-
 	var tz = urls[i].split("]");
 	window.location.href=tz[1];
-
 	}}
 </script>
