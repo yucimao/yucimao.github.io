@@ -18,18 +18,54 @@ description: "猫球社长"
 .sy25{width:50%;}
 .sy125{width:25%;}
 }
-</style>
 
+/* 悬停弹窗 */
+div.xttza{ 
+    position: relative; 
+    } 
+#xttzb{ 
+    position: absolute; 
+    top: 20px; 
+    width: 350px; 
+    max-height: 250px; /* 设置最大高度，当高度达到此值时出现滚动条 */ 
+    z-index: 10; 
+    background-color: #ffffff; 
+    overflow: auto; /* 自动添加滚动条 */ 
+    box-shadow:0px 0px 10px #000; /* 外阴影 */ 
+    display: none; /* 默认隐藏 */
+    } 
+</style> 
+<script> 
+//悬停弹窗
+function showInform(){ 
+document.getElementById("xttzb").style.display='block'; 
+} 
+function hiddenInform(event){ 
+var informDiv = document.getElementById('xttzb'); 
+var x=event.clientX; 
+var y=event.clientY; 
+var divx1 = informDiv.offsetLeft; 
+var divy1 = informDiv.offsetTop; 
+var divx2 = informDiv.offsetLeft + informDiv.offsetWidth; 
+var divy2 = informDiv.offsetTop + informDiv.offsetHeight; 
+if( x < divx1 || x > divx2 || y < divy1 || y > divy2){ 
+document.getElementById('xttzb').style.display='none'; 
+}}
+</script>
 <small>
 <div>
-<div style="width:15em;float:left;">
-<script>document.write(日期);</script>
+<div class="xttza" style="width:15em;float:left;">
+    <div id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()"> 
+       <script>document.write(日期);</script>
+    </div>
+    <div id="xttzb" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)"> 
+    <table id="informTable"> 
+       <script>document.write(节日);</script>
+    </table> 
+    </div> 
 </div>
 <b>公告</b><br>
 暂无公告
-</div>
-<div style="width:15em;position:absolute;left:-240px;">
-<script>document.write(节日);</script>
 </div>
 </small>
 <br>
