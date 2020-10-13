@@ -215,8 +215,7 @@ var dy0=new Array("猫球和二扯的日常","猫球tv","小剧场","异梦系�
 var dy1;
 for (var i = 0; i < dy0.length; i++) {
 
-    var img = new Image();
-img.src = "/img/标签图标/"+dy0[i]+"3.jpg";
+    var img = "/img/标签图标/"+dy0[i]+"3.jpg";
 img.onload = function() { 
   document.getElementById(dy0[i]).src = img; 
   dy1 += '<img width="1px" src="/img/标签图标/' + dy0[i] + '2.jpg"/>';
