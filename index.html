@@ -39,9 +39,9 @@ div.xttza{
 <small>
 <div>
 <div class="xttza" style="width:16em;float:left;">
-    <small><div id="btn" onMouseOver="document.getElementById('xttzb').style.display='block'" onMouseOut="document.getElementById('xttzb').style.display='none'"> 
-       <script>document.write(日期);</script>
-    </div></small>
+    <div id="btn" onMouseOver="document.getElementById('xttzb').style.display='block'" onMouseOut="document.getElementById('xttzb').style.display='none'"> 
+        <small><script>document.write(日期);</script></small>
+    </div>
     <div id="xttzb" onMouseOver="document.getElementById('xttzb').style.display='block'" onMouseOut="document.getElementById('xttzb').style.display='none'"> 
     <table id="informTable">
        <script>document.write(节日);</script>
@@ -214,7 +214,7 @@ var dy0=new Array("猫球和二扯的日常","猫球tv","小剧场","异梦系�
 "相册","杂谈","pvo","小工具","哔哩哔哩","新浪微博","知乎","网易云音乐","github","QQ")
 var dy1;
 
-img.onload = function() {
+window.onload=function(){
     for (var i = 0; i < dy0.length; i++) {
   document.getElementById(dy0[i]).src = "/img/标签图标/"+dy0[i]+"3.jpg"; 
   dy1 += '<img width="1px" src="/img/标签图标/' + dy0[i] + '2.jpg"/>';
