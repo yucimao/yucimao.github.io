@@ -30,22 +30,37 @@ a {
   color: #006699;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px){ /*电脑*/
 .qibiaoti{
   font-size:3.5em;
 	color:#0bb1f5;
   font-weight:bold;
   cursor:default;
 }
+
+img.tubiao {
+	opacity:0.8;
+	filter:alpha(opacity=80); 
+	transition: all 0.3s;
+	position:relative;
+}
+img.tubiao:hover {
+	opacity:1.0;
+	filter:alpha(opacity=100);
+	transform: scale(1.2);
+	z-index:10;
 }
 
-@media screen and (max-width: 767px){
+}
+
+@media screen and (max-width: 767px){ /*手机*/
 .qibiaoti{
   font-size:2.3em;
 	color:#0bb1f5;
   font-weight:bold;
   cursor:default;
 }
+
 }
 
 .anniu {
@@ -111,21 +126,6 @@ a.heise:hover {
 	color:#000000;
 	cursor:default;
 }
-
-img.tubiao {
-	opacity:0.8;
-	filter:alpha(opacity=80); 
-	transition: all 0.3s;
-	position:relative;
-}
-img.tubiao:hover {
-	opacity:1.0;
-	filter:alpha(opacity=100);
-	transform: scale(1.2);
-	z-index:10;
-}
-
-
 
 a:hover,
 a:focus {
