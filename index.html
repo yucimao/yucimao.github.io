@@ -8,15 +8,17 @@ description: "猫球社长"
 <script src="/js/jquery.min.js"></script>
 <script src="/5/备忘日历/备忘日历.js"></script>
 <style>h4{color:#006699;cursor:pointer;}
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px){ /*电脑*/
 .sy50{width:50%;}
 .sy25{width:25%;}
 .sy125{width:12.5%;}
+#xttzb{width:340%;}
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px){ /*手机*/
 .sy50{width:100%}
 .sy25{width:50%;}
 .sy125{width:25%;}
+#xttzb{width:200%;}
 }
 
 /* 悬停弹窗 */
@@ -26,7 +28,6 @@ div.xttza{
 #xttzb{ 
     position: absolute; 
     top: 70px; 
-    width: 70%;
     max-height: 400px; /* 设置最大高度，当高度达到此值时出现滚动条 */ 
     z-index: 10; 
     background-color: #ffffff; 
@@ -59,7 +60,7 @@ document.getElementById('xttzb').style.display='none';
        <script>document.write(日期);</script>
     </div></small>
     <div id="xttzb" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)"> 
-    <table id="informTable"> 
+    <table id="informTable"> <a onclick="document.getElementById('xttzb').style.display='none'" style="float:right;">关闭</a>
        <script>document.write(节日);</script>
     </table> 
     </div> 
