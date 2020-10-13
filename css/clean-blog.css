@@ -61,16 +61,6 @@ img.tubiao:hover {
   cursor:default;
 }
 
-img.tubiao {
-  opacity:0.8;
-  filter:alpha(opacity=80); 
-}
-
-img.tubiao:hover {
-  opacity:1.0;
-  filter:alpha(opacity=100);
-}
-
 } /*手机*/
 
 .anniu {
