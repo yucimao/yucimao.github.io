@@ -25,7 +25,7 @@ div.xttza{
     } 
 #xttzb{ 
     position: absolute; 
-    top: 90px; 
+    top: 70px; 
     width: 500px; 
     max-height: 400px; /* 设置最大高度，当高度达到此值时出现滚动条 */ 
     z-index: 10; 
@@ -55,19 +55,18 @@ document.getElementById('xttzb').style.display='none';
 <small>
 <div>
 <div class="xttza" style="width:16em;float:left;">
-    <div id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()"> 
+    <small><div id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()"> 
        <script>document.write(日期);</script>
-    </div>
+    </div></small>
     <div id="xttzb" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)"> 
     <table id="informTable"> 
        <script>document.write(节日);</script>
     </table> 
     </div> 
 </div>
-<b>公告</b><br>
+<small><b>公告</b><br>
 暂无公告
-</div>
-</small>
+</small></div>
 <br>
 <div style="height:100%;width:100%;float:left;">
 
