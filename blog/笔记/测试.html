@@ -1,0 +1,57 @@
+---
+layout: page2  
+permalink: ceshi20201013
+---
+<script src="/js/jquery.min.js"></script>
+<script src="/5/备忘日历/备忘日历.js"></script>
+<style type="text/css"> 
+    div.xttza{ 
+    position: relative; 
+    } 
+    #xttzb{ 
+    position: absolute; 
+    top: 20px; 
+    width: 350px; 
+    max-height: 250px; /* 设置最大高度，当高度达到此值时出现滚动条 */ 
+    z-index: 10; 
+    background-color: #ffffff; 
+    overflow: auto; /* 自动添加滚动条 */ 
+    box-shadow:0px 0px 10px #000; /* 外阴影 */ 
+    display: none; /* 默认隐藏 */ 
+    } 
+   
+    
+   </style> 
+   <script type="text/javascript"> 
+    //显示悬浮层 
+    function showInform(){ 
+    document.getElementById("xttzb").style.display='block'; 
+    // document.getElementById("xttzb").css("display","block"); 
+    } 
+    //隐藏悬浮层 
+    function hiddenInform(event){ 
+    var informDiv = document.getElementById('xttzb'); 
+    var x=event.clientX; 
+    var y=event.clientY; 
+    var divx1 = informDiv.offsetLeft; 
+    var divy1 = informDiv.offsetTop; 
+    var divx2 = informDiv.offsetLeft + informDiv.offsetWidth; 
+    var divy2 = informDiv.offsetTop + informDiv.offsetHeight; 
+    if( x < divx1 || x > divx2 || y < divy1 || y > divy2){ 
+    document.getElementById('xttzb').style.display='none'; 
+    } 
+    
+    } 
+    
+    
+   </script> 
+    <div class="xttza">
+    <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()"> 
+       <script>document.write(日期);</script>
+    </a>
+    <div id="xttzb" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)"> 
+    <table id="informTable"> 
+       <script>document.write(节日);</script>
+    </table> 
+    </div> 
+   </div>
