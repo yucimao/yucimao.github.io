@@ -218,7 +218,7 @@ for (var i = 0; i < dy0.length; i++) {
     var img = new Image();
 img.src = "/img/标签图标/"+dy0[i]+"3.jpg";
 img.onload = function() { 
-  document.getElementById(dy0[i]).src = this.src; 
+  document.getElementById(dy0[i]).src = img.src; 
   dy1 += '<img width="1px" src="/img/标签图标/' + dy0[i] + '2.jpg"/>';
 }
     };
