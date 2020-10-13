@@ -38,7 +38,8 @@ a {
 .heimu2:hover {
     color: #ffffff;
 }
-
-ul{
-    margin:0px;padding:0px;
+@media screen and (min-width: 768px){
+    ul{
+        margin:0px;padding:0px;
+    }
 }
