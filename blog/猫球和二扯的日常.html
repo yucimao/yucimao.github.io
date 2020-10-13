@@ -11,7 +11,13 @@ permalink: richang
         cursor:pointer;
         color:#006699;
     }
+    .menuDiv h4{
+    list-style: none;
+    line-height: 2.4;
+    color: #006699;
+    cursor: pointer;}
 </style>
+<div class="menuDiv"><h4></h4><ul></ul></div>
 <br>
 <a href="/maoqiu" target="_blank">李猫球是谁？</a><br/>
 <hr>
@@ -32,13 +38,13 @@ permalink: richang
 
 <a name="旅行" class="heise"><strong><font size="5">旅行</font></strong></a><br>
 
-<details><summary><font class="fontbs"><b>2019年 大连</b></font></summary>
+<div class="menuDiv"><h4>2019年 大连</h4><ul>
 <a href="https://www.bilibili.com/video/av61288991" target="_blank">第1天：到达大连、星海广场</a><br/>
 <a href="https://www.bilibili.com/video/av65359103" target="_blank">第2天：大连森林动物园</a><br/>
 <a href="https://www.bilibili.com/video/BV1LJ411K7Hy" target="_blank">第3天：圣亚海洋公园</a><br/>
 <a href="https://www.bilibili.com/video/BV11K411V7TM" target="_blank">第4天：黑石礁</a><br/>
 <a href="https://www.bilibili.com/video/BV1Kt4y1D7JA" target="_blank">第5天：东港</a><br/>
-</details>
+</ul></div>
 
 <b>2018年</b><br/>
 <a href="https://www.bilibili.com/video/BV1zW411277T" target="_blank">长春动物园</a><br/>
@@ -49,33 +55,30 @@ permalink: richang
 
 <a name="漫画" class="heise"><strong><font size="5">漫画</font></strong></a><br>
 
-<details><summary><font class="fontbs">《猫球和二扯的日常》</font></summary>
+<div class="menuDiv"><h4>《猫球和二扯的日常》</h4><ul>
 <a href="https://h.bilibili.com/20035174" target="_blank">影子</a><br/>
 <a href="https://h.bilibili.com/20092156" target="_blank">双标</a><br/>
 <a href="https://h.bilibili.com/23983677" target="_blank">FLAG</a><br/>
 <a href="https://h.bilibili.com/28273552" target="_blank">采访</a><br/>
 <a href="https://h.bilibili.com/29598493" target="_blank">灭口</a><br/>
-</details>
+</ul></div>
 
-<details>
-<summary><font class="fontbs">《二扯和猫猫》</font></summary>
+<div class="menuDiv"><h4>《二扯和猫猫》</h4><ul>
 <a href="https://h.bilibili.com/33933484" target="_blank">01 两只(<s>猫</s>)猪</a><br/>
 <a href="https://h.bilibili.com/33933958" target="_blank">02 撸猫的第一次尝试</a><br/>
 <a href="https://h.bilibili.com/33934026" target="_blank">03 撸猫的第二次尝试</a><br/>
-</details>
+</ul></div>
 
-<details>
-<summary><font class="fontbs">《二扯寝室的日常》</font></summary>
+<div class="menuDiv"><h4>《二扯寝室的日常》</h4><ul>
 <a href="https://h.bilibili.com/24738138" target="_blank">01 大哥的逃生之路</a><br/>
 <a href="https://h.bilibili.com/26360974" target="_blank">02 喝酒之后</a><br/>
-</details>
+</ul></div>
 
-<details>
-<summary><font class="fontbs">《阴阳师》</font></summary>
+<div class="menuDiv"><h4>《阴阳师》</h4><ul>
 <a href="https://h.bilibili.com/8079365" target="_blank">01 十连抽</a><br/>
 <a href="https://h.bilibili.com/8079518" target="_blank">02 三非会谈</a><br/>
 <a href="https://h.bilibili.com/8097779" target="_blank">03 锦鲤二扯</a><br/>
-</details>
+</ul></div>
 
 <br/>
 <hr>
@@ -106,18 +109,4 @@ permalink: richang
 <a href="https://www.bilibili.com/video/BV1tK411L7BA" target="_blank">2200年奥数比赛</a><br/>
 <a href="https://www.bilibili.com/video/BV1E54y1d7iB" target="_blank">小鸟与藏宝图</a><br/>
 
-<script>
-    var a;
-    window.onload=function(){
-    var allA = document.querySelectorAll('.fontbs');
-    var clickNum = {};
-    for (var i=0;i<allA.length;i++) {
-    allA[i].onclick=function(){
-    var nextNum = Number(this.getAttribute('num'));
-    this.setAttribute('num',1+nextNum);
-    if (this.getAttribute('num')%2!=0){
-      this.style.cssText='color:#808080';}
-    else{this.style.cssText='color:006699'}
-    }}}
-    </script>
-    
+<script src="/js/mq-zk.js"></script>
