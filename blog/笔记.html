@@ -8,7 +8,7 @@ permalink: biji/index
     　<br/>　<span class="qibiaoti">笔记</span>　</center>
 <br/>
 <style>
-    .tsx {  /*右侧提示框*/
+    .tsx {  /*底部提示框*/
         position: relative;
         display: inline-block;
     }
@@ -16,7 +16,7 @@ permalink: biji/index
     .tsx .tsxt {
         border: 1px solid #c0c0c0;
         visibility: hidden;
-        width: 120px;
+        width: 500px;
         background-color: #fff;
         text-align: center;
         border-radius: 6px;
@@ -25,12 +25,13 @@ permalink: biji/index
         /* 定位 */
         position: absolute;
         z-index: 1;
-        top: -5px;
-        left: 105%;
+        top: 80%;
+        left: 50%;
+        margin-left: -60px;
     }
     
     .tsx:hover .tsxt {
-        transform:translateX(20px);
+        transform:translate(0,20px);
         transition:all 0.5s;
         visibility: visible;
     }
