@@ -7,10 +7,38 @@ permalink: biji/index
 <center>
     　<br/>　<span class="qibiaoti">笔记</span>　</center>
 <br/>
-
+<style>
+    .tsx {  /*底部提示框*/
+        position: relative;
+        display: inline-block;
+    }
+    
+    .tsx .tsxt {
+        border: 1px solid #c0c0c0;
+        visibility: hidden;
+        width: 120px;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        
+        /* 定位 */
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+    
+    .tsx:hover .tsxt {
+        visibility: visible;
+    }
+    </style>
 <fieldset>
     <legend>吃喝</legend>
-    <a href="/biji/chufang" class="anniu">猫球厨房</a>
+    <div class="tsx"><a href="/biji/chufang" class="anniu">猫球厨房</a>
+        <span class="tsxt">底部提示框</span>
+        </div>
     <a href="/biji/tiaoshuiguo" class="anniu">挑水果</a>
     </fieldset>
 <br/>
