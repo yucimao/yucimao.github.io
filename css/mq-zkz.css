@@ -1,0 +1,14 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #404040;
+  overflow-x: hidden;
+}
+a {
+  color: #006699;
+}
+a:hover,
+a:focus {
+  color: #0085a1;
+}

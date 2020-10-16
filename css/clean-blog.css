@@ -576,7 +576,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #00c9d7;
+  -webkit-tap-highlight-color: #00c9d7;/*webkit-tap-highlight-color: #00c9d7;*/
 }
 
 
