@@ -88,5 +88,5 @@ function zk() {
     var yd = "／"+zka;
     var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" +zka+ "\"></iframe><p id=\"加载\">加载中..</p>";
     document.getElementById(yd).innerHTML=dy;
-    document.getElementById(加载).innerHTML="";
+    document.getElementById(加载).innerHTML="　";
 }
