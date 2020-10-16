@@ -86,6 +86,6 @@ mSwitch.init();
 
 function zk() {
     var yd = "／"+zka;
-    var dy = "<iframe src=\"/i/zk/" + zka + ".html\" frameborder=\"0\" width=\"100%\" height=\"50px\" height=\"100%\" onload=\"height=this.Document.body.scrollHeight+30;\"></iframe>";
+    var dy = "<iframe src=\"/i/zk/" + zka + ".html\" frameborder=\"0\" width=\"100%\" height=\"50px\" onload=\"height=this.Document.body.scrollHeight+30;\"></iframe>";
     document.getElementById(yd).innerHTML=dy;
 }
