@@ -86,6 +86,6 @@ mSwitch.init();
 
 function zk() {
     var yd = "／"+zka;
-    var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"20\" id=\"／／" +zka+ "\"></iframe><p id=\"加载\">加载中..</p>";
+    var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"20\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
     document.getElementById(yd).innerHTML=dy;
 }
