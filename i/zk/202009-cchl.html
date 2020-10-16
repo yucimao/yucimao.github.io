@@ -27,6 +27,8 @@
 <script>
 $(function(){
 var bodyH = $(document).height();
-window.parent.document.getElementById("dyiframe").height=bodyH;
+var bodyJ = window.location.href.split('/i/zk/')[1];
+bodyJ = "／／"+bodyJ;
+window.parent.document.getElementById(bodyJ).height=bodyH;
 });
 </script>
