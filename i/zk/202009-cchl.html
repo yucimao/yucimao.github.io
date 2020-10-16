@@ -1,14 +1,18 @@
 <script src="/js/jquery.min.js"></script>
 <script>
-if(top.location!=self.location){  
+$(function(){
 var bodyH = $(document).height();
 var bodyJ = window.location.href.split('/i/zk/')[1];
 bodyJ = "／／"+bodyJ;
 window.parent.document.getElementById(bodyJ).height=bodyH;
 window.parent.document.getElementById("加载").innerHTML="";
-}
-else{
-    alert('测试')
+});
+</script>
+<p id="上级"></p>
+<script>
+if(top.location==self.location){
+var 返回="<a href=\"/ceshi\" target=\"_blank\">返回</a>"
+document.getElementById("上级").innerHTML=返回;
 }
 </script>
 媒体曝出2018年长春交警购买哈雷摩托车，质疑有必要买这么贵的摩托车吗？事情上了热搜，多家媒体、电视台报道。<br>
