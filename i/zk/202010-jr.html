@@ -19,12 +19,7 @@
 
 <script>
 $(function(){
-var winH = $(window).height();
 var bodyH = $(document).height();
-if(bodyH > winH){
 window.parent.document.getElementById("dyiframe").height=bodyH;
-}else{
-window.parent.document.getElementById("dyiframe").height=winH;
-}
 });
 </script>
