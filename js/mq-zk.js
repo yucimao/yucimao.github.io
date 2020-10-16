@@ -83,3 +83,9 @@ var mSwitch = new MenuSwitch("menuDiv");
 mSwitch.setDefault(0);
 mSwitch.setPrevious(false);
 mSwitch.init();
+
+function zk() {
+    var yd = "／"+zka;
+    var dy = "<iframe src=\"/i/zk/" + zka + ".html\" frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>";
+    document.getElementById(yd).innerHTML=dy;
+}
