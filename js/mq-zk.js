@@ -86,6 +86,7 @@ mSwitch.init();
 
 function zk() {
     var yd = "／"+zka;
+    document.getElementById(yd).innerHTML="加载中……";
     var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" +zka+ "\"></iframe>";
     document.getElementById(yd).innerHTML=dy;
 }
