@@ -6,8 +6,8 @@ permalink: mq
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <script src="/js/jquery.min.js"></script>
 <center>
-    　<br/>　<span class="qibiaoti">不存在的页面</span>　</center>
-<br/>
+    　<br>　<span class="qibiaoti">不存在的页面</span>　</center>
+<br>
 <script>
     $(function () {
         $("#输入").keyup(function () 
@@ -18,5 +18,49 @@ document.getElementById("a").innerHTML=dy;
 })
     })
 </script>
-<input type="text" id='输入'></input><br><br>
-<div id="a"></div>
+
+<div>
+<input type="text" id='输入'></input>
+<div id="a">　</div>
+</div>
+
+<br><br>
+
+<div>
+<input id="zuo" style="width:50px"/> 
+<select id="算数" onclick="算数()">
+    <option value="除">/</option>
+  </select> 
+<input id="you" style="width:50px"/> = <input id="jg" style="width:50px"/>　
+<button onclick="计算()">计算</button> <button onclick="复制()">复制</button> <button onclick="清空()">清空</button> <button onclick="自动()">自动</button>
+</div>
+
+<script>
+function 计算(){
+    let 左=document.getElementById("zuo").value;
+    let 右=document.getElementById("you").value;
+    let 算数=document.getElementById("算数").value;
+    if (算数=="除"){
+    var 结果 = Math.round(左 / 右 * 10000) / 100.00 + "%";
+}
+    document.getElementById('jg').value = 结果;
+}
+
+function 复制(){
+    let url = document.querySelector('#jg');
+    url.select(); // 选择对象
+    document.execCommand("Copy");
+}
+
+function 清空(){
+    document.getElementById('jg').value = "";
+    document.getElementById('zuo').value = "";
+    document.getElementById('you').value = "";
+}
+
+function 自动(){
+    计算();
+    复制();
+    清空();
+}
+</script>
