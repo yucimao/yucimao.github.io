@@ -1,5 +1,5 @@
 $(function(){   //展开的子页面
-    var bodyH = $(document).height();
+    var bodyH = $(document).height()+20;
     var bodyJ = window.location.href.split('/i/zk/')[1];
     var bodyK = "／／"+bodyJ;
     var bodyL = "／"+bodyJ+"／";
