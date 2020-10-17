@@ -3,7 +3,7 @@ layout: page
 description: "猫球tv"
 permalink: tv
 ---
-<title>猫球tv - 猫球社长</title>
+<title>猫球tv - 猫球博客</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <script src="/js/jquery.min.js"></script>
 <br>

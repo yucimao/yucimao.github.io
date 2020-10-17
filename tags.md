@@ -2,7 +2,7 @@
 layout: page
 description: "标签"  
 ---
-<title>标签 - 猫球社长</title>
+<title>标签 - 猫球博客</title>
 <br>
 
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
