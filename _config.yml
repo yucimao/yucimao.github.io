@@ -3,7 +3,6 @@ title: 猫球博客 # 你的博客名字，可以定义修订
 header-img: "img/index.jpg"
 tagline: "cn"  
 description: "这里是猫球和二扯的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。"  # 一句话描述你的博客
-keywords: "猫球,李猫球,猫球社长,猫球和二扯,pvo,pvo占领世界"  
 baseurl: ""
 url: "https://limaoqiu.com"  # 此处填写你的博客地址 
 
