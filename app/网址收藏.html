@@ -70,10 +70,7 @@ h4{color:#5c5c5c;}
 #输入框 input:focus{
 	box-shadow:
 		0 0 0 2px #58a4dd inset,
-        0 3px 3px rgba(0,0,0,.2) inset;}
-.juzhong{
-    text-align:center;
-}
+		0 3px 3px rgba(0,0,0,.2) inset;}
 </style>
 <script src="/js/jquery.min.js"></script>
     <script>
@@ -151,9 +148,8 @@ $(function () {
             $(this).find('ul').slideToggle('fast');});});
     </script>
 <body onload="document.getElementById('searchBox').focus()">
-<div class="qibiaoti">网址收藏</div>
+<center>　　<br/>　<span class="qibiaoti">网址收藏</span>
                 <div id='tag_cloud'>
-                    <div class="juzhong">
                     <form id="输入框" autocomplete="off">
             <input type="text" id="searchBox" placeholder="多个关键词用空格分隔"/></form>
 <form action='#' method='post' style="width:90%">
@@ -172,7 +168,7 @@ $(function () {
 		</select>
     </fieldset>
 </form>
-</div>
+</center>
 <ul id="dataSet">
 <div class="menuDiv"><h4><a href="/">猫球的博客</a></h4><ul></ul></div>
 <div class="menuDiv"><h4><a href="/richang">猫球和二扯的日常</a></h4><ul>猫球二扯日常</ul></div>
