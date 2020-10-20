@@ -10,8 +10,6 @@ a {
 }
 
 #输入框 input {
-    ime-mode: inactive;
-    ime-mode: disabled;
     border: none;
     font-size: 1.4em;
     padding: .5em .7em;
