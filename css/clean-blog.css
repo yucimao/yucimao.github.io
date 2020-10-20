@@ -32,9 +32,12 @@ a {
 
 @media screen and (min-width: 768px){ /*电脑*/
 .qibiaoti{
+  position:relative;
+  top:90px;
   font-size:3.5em;
 	color:#0bb1f5;
   font-weight:bold;
+  text-align:center;
   cursor:default;
 }
 
@@ -55,9 +58,12 @@ img.tubiao:hover {
 
 @media screen and (max-width: 767px){ /*手机*/
 .qibiaoti{
+  position:relative;
+  top:40px;
   font-size:2.3em;
 	color:#0bb1f5;
   font-weight:bold;
+  text-align:center;
   cursor:default;
 }
 
