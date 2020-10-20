@@ -38,6 +38,16 @@ a {
   cursor:default;
 }
 
+.biaotib{
+  text-align:center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size:3.5em;
+	color:#0bb1f5;
+  font-weight:bold;
+  cursor:default;
+}
+
 img.tubiao {
 	opacity:0.8;
 	filter:alpha(opacity=80); 
@@ -55,6 +65,16 @@ img.tubiao:hover {
 
 @media screen and (max-width: 767px){ /*手机*/
 .qibiaoti{
+  font-size:2.3em;
+	color:#0bb1f5;
+  font-weight:bold;
+  cursor:default;
+}
+
+.biaotib{
+  text-align:center;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
   font-size:2.3em;
 	color:#0bb1f5;
   font-weight:bold;
