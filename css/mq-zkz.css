@@ -14,7 +14,9 @@ a:focus {
 }
 
 @media screen and (min-width: 768px){ /*电脑*/
-  .qbt{
+  .biaotib{
+    text-align:center;
+    margin-top: 1.2em;
     font-size:3.5em;
     color:#0bb1f5;
     font-weight:bold;
@@ -23,7 +25,9 @@ a:focus {
 } /*电脑*/
 
 @media screen and (max-width: 767px){ /*手机*/
-  .qbt{
+  .biaotib{
+    text-align:center;
+    margin-top: 1.2em;
     font-size:2.3em;
     color:#0bb1f5;
     font-weight:bold;
