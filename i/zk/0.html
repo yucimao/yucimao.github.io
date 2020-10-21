@@ -1,5 +1,5 @@
 ---
-permalink: i/zk/
+permalink: i/zk/0
 ---
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="/css/mq-zkz.css">
@@ -9,60 +9,23 @@ permalink: i/zk/
 <script>if(top.location==self.location){var 返回="<div class=\"qbt\">【】</div><a href=\"/\">limaoqiu.com</a> / <a href=\"【】\">【】</a>";
 document.getElementById("上级").innerHTML=返回;}</script>
 
-<pre>
-200001-dbfzl        地域黑-东北         “东北犯罪率高”
-200001-hsh          地域黑-东北         “东北到处都是黑社会”
-200001-dbmwh        地域黑-东北         “东北人没文化”
-200001-mybh         地域黑-东北         “东北没有被黑”
-200001-dbqh         地域黑-东北         “东北气候恶劣”
-200001-dbbkr        地域黑-东北         “东北不抗日”
-200001-dbky         地域黑-东北         “东北口音”
-200001-bsdbr        地域黑-东北         不是东北人的东北人-媒体作恶
-200001-bsdbrb       地域黑-东北         不是东北人的东北人-网友舆论
-200001-dqgzzd       地域黑-东北         地区和关注重点
-200001-cjjqr        推荐-大乱斗         超级机器人大战
-200001-kof          推荐-大乱斗         拳皇
-200001-jbvs         推荐-大乱斗         街霸vs系列
-200001-qhwing       推荐-大乱斗         拳皇wing
-200001-ssvshy       推荐-大乱斗         死神vs火影
-200001-ywvshzw      推荐-大乱斗         妖尾vs海贼王
-200001-jump         推荐-大乱斗         JUMP大乱斗
+<input id="zk_a" style="width:100px"/><button onclick="zk_获取()">获取</button>
 
-200900-dmmx         推荐-大乱斗         动漫明星大乱斗
+<script>
+function zk_获取(){
+    let zk_bh=new Date().getTime()-1600000000000;
+    zk_bh+="。";
+    zk_bh = zk_bh.substr(0, zk_bh.length - 5);
 
-201200-wdphw        推荐-大乱斗         无敌破坏王
-
-201400-scwu         推荐-大乱斗         SCWU
-
-201507-xsdz         推荐-大乱斗         像素大战
-
-201712-dbks         地域黑-东北         “东北人喜欢玩快手”
-
-201800-rttdld       推荐-大乱斗         任天堂明星大乱斗：特别版
-201800-wdphw        推荐-大乱斗         无敌破坏王2
-201804-xj           地域黑-东北         “东北人偷香蕉”事件
-201804-dbrdr        地域黑-东北         “东北瑞典人”
-201809-wsds         推荐-大乱斗         无双大蛇3
-201812-zysj         地域黑-东北         赵宇事件
-
-201910-fdqxsfz      地域黑-东北         分地区刑事犯罪排名
-201911-dbsxd        地域黑-东北         东北三兄弟大战香港暴徒
-
-202001-dbrcyw       地域黑-东北         “东北人爱吃野味”
-202002-ysbys        地域黑-东北         支援湖北，一省包一市
-202004-hrbycs       地域黑-东北         哈尔滨一传十
-202007-nllg         地域黑-中国         “中国奴隶劳工制造”
-202008-dd           地域黑-东北         滴滴醉酒乘车安全透明度报告
-202009-cchl         地域黑-东北         长春交警买哈雷
-202009-ncs          地域黑-东北         “你瞅啥”
-202010-jr           地域黑-东北         “精日分子大多数是东北人”
-202010-mssj         酒仙笔记            魔兽世界
-202010-sbpkjb       酒仙笔记            赛博朋克酒保行动
-202010-clx          酒仙笔记            楚留香
-202010-fzjh         酒仙笔记            放置江湖
-202010-yys          酒仙笔记            阴阳师
-202010-jnbjt        酒仙笔记            江南百景图
-202010-gsjc         酒仙笔记            怪兽酒场
-202010-yzjg         酒仙笔记            勇者酒馆
-202010-xbxxz        酒仙笔记            想不想修真
-</pre>
+    let zk_b=document.getElementById("zk_a").value;
+    if (zk_bh == zk_b){
+        document.getElementById('zk_a').value = "重复";
+    }
+    else{
+        document.getElementById('zk_a').value = zk_bh;
+    let zk_url = document.querySelector('#zk_a');
+        zk_url.select(); // 选择对象
+        document.execCommand("Copy");
+    }
+}
+</script>

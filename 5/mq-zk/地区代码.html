@@ -9,8 +9,8 @@ permalink: i/zk/202010-dqdm
 <script>if(top.location==self.location){var 返回="<div class=\"qbt\">地区代码</div><a href=\"/\">limaoqiu.com</a> / <a href=\"/mq\">不存在的页面</a><br/>反对地域黑的过程中需要用其他地区的事件做例子，为防止因此出现新的地域黑，我会将例子中的地名用代号表示，这个页面仅用于方便我个人查询，链接不会公开，如果有人无意中打开这个网页，请关掉它，谢谢。";
 document.getElementById("上级").innerHTML=返回;}</script>
 
-<input type="text" id="searchBox" placeholder="地名（省略“省”、“市”等）"/><br>
-<div id="dy"></div>
+<input type="text" id="dqdm_searchBox" placeholder="地名（省略“省”、“市”等）"/><br>
+<div id="dqdm_dy"></div>
 
 <script>
 var dqdm = new Array(
@@ -758,16 +758,20 @@ var dqdm = new Array(
 "澳门　O省　港澳台　澳门"
 );
 $(function () {
-$("#searchBox").keyup(function () {
-let jg = "";
-let wzsc = $("#searchBox").val();
-for (let i = 0; dqdm.length > i; i++) {
-let ls = dqdm[i].split("　");
-if(ls[3]==wzsc){
-    jg+="<br>"+ls[0]+" "+ls[3]+"　"+ls[1]+"　"+ls[2];
+$("#dqdm_searchBox").keyup(function () {
+let dqdm_jg = "";
+let dqdm_wzsc = $("#dqdm_searchBox").val();
+for (let dqdm_i = 0; dqdm.length > dqdm_i; dqdm_i++) {
+let dqdm_ls = dqdm[dqdm_i].split("　");
+if(dqdm_ls[3]==dqdm_wzsc){
+    dqdm_jg+="<br>"+dqdm_ls[0]+" "+dqdm_ls[3]+"　"+dqdm_ls[1]+"　"+dqdm_ls[2];
 }
 }
-document.getElementById("dy").innerHTML = jg;
+document.getElementById("dqdm_dy").innerHTML = dqdm_jg;
 })
 })
 </script>
+
+<br/>
+<br/>
+<br/>
