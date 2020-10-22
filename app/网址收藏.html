@@ -116,7 +116,7 @@ $(function () {
 <script type="text/javascript">
     $(document).ready(function (){
         $('.selectbox').wrap('<div class="select_wrapper"></div>')
-        $('.selectbox').parent().prepend('<span>'+ $(this).find(':selected').text() +'</span>');
+        $('.selectbox').parent().prepend('<span class="juzhong">'+ $(this).find(':selected').text() +'</span>');
         $('.selectbox').parent().children('span').width($('.selectbox').width());	
         $('.selectbox').css('display', 'none');					
         $('.selectbox').parent().append('<ul class="select_inner"></ul>');
@@ -150,10 +150,9 @@ $(function () {
 <body onload="document.getElementById('searchBox').focus()">
 <div class="biaotib">网址收藏</div>
                 <div id='tag_cloud'>
-                    <div class="juzhong">
-                    <form id="输入框" autocomplete="off">
+                    <form id="输入框" autocomplete="off" class="juzhong">
             <input type="text" id="searchBox" placeholder="多个关键词用空格分隔"/></form>
-<form action='#' method='post' style="width:90%">
+<form action='#' method='post' style="width:90%;margin: 0 auto;">
 	<fieldset>
 		<select class="selectbox" id="" name="">
             <option value="站外搜索">站外搜索</option>
@@ -169,7 +168,6 @@ $(function () {
 		</select>
     </fieldset>
 </form>
-</div>
 <ul id="dataSet">
 <div class="menuDiv"><h4><a href="/">猫球的博客</a></h4><ul></ul></div>
 <div class="menuDiv"><h4><a href="/richang">猫球和二扯的日常</a></h4><ul>猫球二扯日常</ul></div>
