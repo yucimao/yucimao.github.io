@@ -117,7 +117,7 @@ $(function () {
     $(document).ready(function (){
         $('.selectbox').wrap('<div class="select_wrapper"></div>')
         $('.selectbox').parent().prepend('<span class="juzhong">'+ $(this).find(':selected').text() +'</span>');
-        $('.selectbox').parent().children('span').width($('.selectbox').width());	
+        //$('.selectbox').parent().children('span').width($('.selectbox').width());	
         $('.selectbox').css('display', 'none');					
         $('.selectbox').parent().append('<ul class="select_inner"></ul>');
         $('.selectbox').children().each(function(){
