@@ -60,6 +60,10 @@ document.getElementById("上级").innerHTML=返回;}</script>
     let ys = GetQueryString("ys");  //颜色样式 ?ys=
     let ysA = "#FFFFFF";    //白字
     let ysB = "#252F68";    //深蓝背景
+    let y = GetQueryString("y");
+    let s = GetQueryString("s");
+    if (y.lenght>0){ysA = "#"+y;}
+    if (s.lenght>0){ysB = "#"+s;}
 
     if (ys == "a"){
         ysA = "#FFFFFF";    //白字
