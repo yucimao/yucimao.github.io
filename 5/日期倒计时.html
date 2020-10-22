@@ -32,8 +32,10 @@ document.getElementById("上级").innerHTML=返回;}</script>
         return "";
     }
     let rq = GetQueryString("rq");
+    let bug = "0";
     if (rq.length<3){
         rq = "2000-1-1";
+        bug = "1";
     }
     else{
         let 临时 = rq.split("-");
@@ -114,7 +116,8 @@ document.getElementById("上级").innerHTML=返回;}</script>
  
         if (Day < 0) {
             clearInterval(timer); // 清除定时器
-            document.getElementById('endTips').innerHTML = '就是今天！<br/><small>（如果没出bug的话）</small>';
+            if (bug == "1"){document.getElementById('endTips').innerHTML = '日期错误';}
+            else{document.getElementById('endTips').innerHTML = '就是今天！<br/><small>（如果没出bug的话）</small>';}
             document.getElementById('wrapDate').style.display = 'none';
             return;
         }
