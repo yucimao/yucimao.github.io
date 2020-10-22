@@ -11,13 +11,13 @@ document.getElementById("上级").innerHTML=返回;}</script>
 
 <style>
 .wrap-date {font-size:0; list-style:none outside none; margin-top:8px;}
-.wrap-date li {width:80px; display:inline-block; *display:inline; *zoom:1; text-align:center; font-size:24px; padding:1px 0 5px; margin-right:3px;}
+.wrap-date li {min-width:58px;border-radius:15px;display:inline-block; *display:inline; *zoom:1; text-align:center; font-size:24px; padding:1px 0 5px; margin-right:3px;}
 .date {font-family:Tahoma; font-size:50px;}
 #endTips {width:300px;color:#999; background:#e9e9e9; line-height:2.4em; text-align:center; margin-top:15px;}
 </style>
  
    <ul class="wrap-date" id="wrapDate">
-       <li id="timeDayB"><span id="timeDay" class="date">0</span><br/>天</li>
+       <li id="timeDayB"><span id="timeDay" class="date" style="margin:5px;">0</span><br/>天</li>
        <li id="timeHourB"><span id="timeHour" class="date">0</span><br/>时</li>
        <li id="timeMinB"><span id="timeMin" class="date">0</span><br/>分</li>
        <li id="timeSecB"><span id="timeSec" class="date">0</span><br/>秒</li>
