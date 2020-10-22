@@ -41,9 +41,19 @@ document.getElementById("上级").innerHTML=返回;}</script>
         text-align: center;
         margin-top: 15px;
     }
+
+    .mydz {
+        color:#535353;
+        min-width:1px;
+        font-size:19px;
+        position:relative;
+        top:3px;
+    }
 </style>
 
 <ul class="wrap-date" id="wrapDate">
+    <span class="mydz">距离</span><li id="timeBiaoti" style="border-radius: 12px"><span id="timeBT" class="data"></span></li><span class="mydz">还有:</span>
+    <br /><li></li><br />
     <li id="timeDayB"><span id="timeDay" class="date" style="margin:5px;">0</span><br />天</li>
     <li id="timeHourB"><span id="timeHour" class="date">0</span><br />时</li>
     <li id="timeMinB"><span id="timeMin" class="date">0</span><br />分</li>
@@ -119,6 +129,13 @@ document.getElementById("上级").innerHTML=返回;}</script>
     document.getElementById("timeHourB").style.background = ysB;
     document.getElementById("timeMinB").style.background = ysB;
     document.getElementById("timeSecB").style.background = ysB;
+    document.getElementById("timeBiaoti").style.background = ysB;
+
+    let bt = GetQueryString("bt");
+    if (bt.length<1){
+        bt = "目标日期";
+    }
+    document.getElementById('timeBT').innerHTML = bt;
 
 </script>
 
