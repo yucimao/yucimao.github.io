@@ -57,13 +57,28 @@ document.getElementById("上级").innerHTML=返回;}</script>
         }
     }
     
-    let ys = GetQueryString("ys");
-    let ysA = "#ffffff";
-    let ysB = "#252f68";
+    let ys = GetQueryString("ys");  //颜色样式 ?ys=
+    let ysA = "#FFFFFF";    //白字
+    let ysB = "#252F68";    //深蓝背景
 
     if (ys == "a"){
-        ysA = "#000000";
-        ysB = "#606060";
+        ysA = "#FFFFFF";    //白字
+        ysB = "#606060";    //灰背景
+    }
+
+    if (ys == "b"){
+        ysA = "#FFFFFF";    //白字
+        ysB = "#479AC7";    //浅蓝背景
+    }
+
+    if (ys == "c"){
+        ysA = "#FFFFFF";    //白字
+        ysB = "#ED6111";    //橙色背景
+    }
+
+    if (ys == "d"){
+        ysA = "#FFFFFF";    //白字
+        ysB = "#FBBEC3";    //粉色背景
     }
 
     document.getElementById("wrapDate").style.color = ysA;
