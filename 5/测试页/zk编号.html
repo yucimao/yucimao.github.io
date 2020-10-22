@@ -12,12 +12,12 @@ document.getElementById("上级").innerHTML=返回;}</script>
 <input id="zk_a" style="width:100px"/><button onclick="zk_获取()">获取</button>
 
 <script>
+    var zk_b = "0";
 function zk_获取(){
     let zk_bh=new Date().getTime()-1600000000000;
     zk_bh+="。";
     zk_bh = zk_bh.substr(0, zk_bh.length - 5);
 
-    let zk_b=document.getElementById("zk_a").value;
     if (zk_bh == zk_b){
         document.getElementById('zk_a').value = "重复";
     }
@@ -26,6 +26,7 @@ function zk_获取(){
     let zk_url = document.querySelector('#zk_a');
         zk_url.select(); // 选择对象
         document.execCommand("Copy");
+        zk_b = zk_bh;
     }
 }
 </script>
