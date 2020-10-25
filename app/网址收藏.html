@@ -6,6 +6,11 @@ permalink: wangzhi
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <script src="/js/jquery.min.js"></script>
 <style>
+    * {
+        list-style: none;
+        line-height: 2.4;
+    }
+
     ul>a {
         font-weight: bold;
         display: block;
@@ -70,17 +75,17 @@ permalink: wangzhi
     button {
         font-size: 1.2em;
         color: #666666;
-        padding: .23em;
+        padding: .1em;
         background: #F8F8F8;
         border-style: solid;
         border-width: medium;
-        border-color: #00a2ff;
+        border-color: #6b6b6b;
         border-radius: 17px;
         outline: none;
     }
 
     button:hover {
-        color: #0085a1;
+        color: #2c2c2c;
         box-shadow:
             0 1px 0 1px #DDD inset,
             0 1px 2px rgba(0, 0, 0, .2);
@@ -106,7 +111,8 @@ permalink: wangzhi
             <option value="//yandex.ru/search/touch/?text=">Yandex（俄罗斯、网慢）</option>
             <option value="//www.pornhub.com/video/search?search=">PornHub（视频、未成年禁入）</option>
         </select>
-        <button type="button" onclick="随机排序()">随机排序</button> <button type="button" onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
+        <button type="button" onclick="随机排序()">随机显示</button> <button type="button"
+            onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
     </div>
     <div id="结果"></div>
     <script>
@@ -345,7 +351,7 @@ permalink: wangzhi
             }
             randFun(随机);
 
-            for (let i2 = 0; 随机.length > i2; i2++) {
+            for (let i2 = 0; 5 > i2; i2++) {
                 随机临时 = 随机[i2].split("／");
                 随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
             }
