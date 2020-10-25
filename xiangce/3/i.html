@@ -1,3 +1,6 @@
+---
+permalink: xiangce3
+---
 <script src="/js/jquery.min.js"></script>
 <img id="img" src="" />
 <div id="dy"></div>
@@ -9,6 +12,7 @@
         return "";
     }
     let dz = GetQueryString("u");
+    let wdz = GetQueryString("w");
     let ms = GetQueryString("c");
     let di = "data:image/" + GetQueryString("j") + ";base64,";
 
@@ -41,36 +45,39 @@
         "Z": "Ζ"
     }
 
-    if (dz=="mq"){
-        document.getElementById("dy").innerHTML="<input id=\"mq1\"/><button onclick=\"mq2()\">获取</button>";
+    if (dz == "mq") {
+        document.getElementById("dy").innerHTML = "<input id=\"mq1\"/><button onclick=\"mq2()\">获取</button>";
     }
-    else{
-        dz = "/5/测试页/ceshi/" + dz + ".json";
+    else {
+        if (wdz != "1") {
+            dz = "/xiangce/3/o/" + dz + ".json";
+        }
+
         let dt;
-    $.ajaxSettings.async = false;
-    $.getJSON(dz, function (data) {
-        dt = data;
-    });
-    let 替换;
-    dt = di+dt;
-    for (let i = 0; ms.length > i; i++) {
-        替换 = new RegExp(hx[ms[i]], "g");
-        dt = dt.replace(替换, ms[i]);
-    }
-    document.getElementById("img").src = dt;
+        $.ajaxSettings.async = false;
+        $.getJSON(dz, function (data) {
+            dt = data;
+        });
+        let 替换;
+        dt = di + dt;
+        for (let i = 0; ms.length > i; i++) {
+            替换 = new RegExp(hx[ms[i]], "g");
+            dt = dt.replace(替换, ms[i]);
+        }
+        document.getElementById("img").src = dt;
 
     }
 
-    function mq2(){
-        let mq3=document.getElementById("mq1").value;
+    function mq2() {
+        let mq3 = document.getElementById("mq1").value;
         mq3 = mq3.split(";base64,")[1];
         let 替换;
         for (let i = 0; ms.length > i; i++) {
-        替换 = new RegExp(ms[i], "g");
-        mq3 = mq3.replace(替换, hx[ms[i]]);
-    }
-    mq3 = "[\""+mq3+"\"]";
-    document.getElementById('mq1').value = mq3;
+            替换 = new RegExp(ms[i], "g");
+            mq3 = mq3.replace(替换, hx[ms[i]]);
+        }
+        mq3 = "[\"" + mq3 + "\"]";
+        document.getElementById('mq1').value = mq3;
         let mq4 = document.querySelector('#mq1');
         mq4.select();
         document.execCommand("Copy");
