@@ -47,8 +47,10 @@
     else{
         dz = "/5/测试页/ceshi/" + dz + ".json";
         let dt;
+        alert("1")
     $.ajaxSettings.async = false;
     $.getJSON(dz, function (data) {
+        alert("2")
         dt = data;
     });
 
