@@ -47,13 +47,12 @@
     else{
         dz = "/5/测试页/ceshi/" + dz + ".json";
         let dt;
-        alert("1")
     $.ajaxSettings.async = false;
     $.getJSON(dz, function (data) {
-        alert(data)
         dt = data;
+        alert(dt)
     });
-
+    alert(dt)
     let 替换;
 
     for (let i = 0; ms.length > i; i++) {
