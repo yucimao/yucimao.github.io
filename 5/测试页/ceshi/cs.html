@@ -50,15 +50,14 @@
     $.ajaxSettings.async = false;
     $.getJSON(dz, function (data) {
         dt = data;
-        alert(dt)
     });
-    alert(dt)
     let 替换;
 
     for (let i = 0; ms.length > i; i++) {
         替换 = new RegExp(hx[ms[i]], "g");
         dt = dt.replace(替换, ms[i]);
     }
+    alert(di+dt)
     document.getElementById("img").src = di + dt;
 
     }
