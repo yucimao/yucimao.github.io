@@ -27,18 +27,18 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
     <div class="juzhong">
         <select id="菜单" onclick="菜单()">
             <option value="无">站外搜索</option>
-            <option value="//www.baidu.com/s?wd=">百度（广告多、流氓、结果全）</option>
-            <option value="//cn.bing.com/search?q=">必应</option>
-            <option value="//www.zhihu.com/search?q=">知乎</option>
-            <option value="//weixin.sogou.com/weixin?query=">微信</option>
-            <option value="//jikipedia.com/search?phrase=">小鸡词典（网络流行语）</option>
-            <option value="//zh.moegirl.org/index.php?search=">萌娘百科（二次元）</option>
-            <option value="//www.cupfox.com/search?key=">茶杯狐（影视剧）</option>
-            <option value="//yandex.ru/search/touch/?text=">Yandex（俄罗斯、网慢）</option>
-            <option value="//www.pornhub.com/video/search?search=">PornHub（视频、未成年禁入）</option>
+            <option value="https://www.baidu.com/s?wd=">百度（广告多、流氓、结果全）</option>
+            <option value="https://cn.bing.com/search?q=">必应</option>
+            <option value="https://www.zhihu.com/search?q=">知乎</option>
+            <option value="https://weixin.sogou.com/weixin?query=">微信</option>
+            <option value="https://jikipedia.com/search?phrase=">小鸡词典（网络流行语）</option>
+            <option value="https://zh.moegirl.org/index.php?search=">萌娘百科（二次元）</option>
+            <option value="https://www.cupfox.com/search?key=">茶杯狐（影视剧）</option>
+            <option value="https://yandex.ru/search/touch/?text=">Yandex（俄罗斯、网慢）</option>
+            <option value="https://www.pornhub.com/video/search?search=">PornHub（视频、未成年禁入）</option>
         </select>
-        <button type="button" onclick="随机排序()">随机显示</button> <button type="button"
-            onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
+        <button type="button" onclick="随机排序()">随机显示</button> 
+        <button type="button" onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
     </div>
     <div><br /></div>
     <div id="结果"></div>
@@ -46,9 +46,8 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
         function 菜单() {
             let 菜单 = document.getElementById("菜单").value;
             if (菜单 != "无") {
-                let 搜索 = document.getElementById("输入").value;
-                window.location.href = 菜单 + 搜索;
-                document.getElementById("菜单").innerHTML = "站外搜索";
+                let 搜索 = 菜单 + document.getElementById("输入").value;
+                window.location.href = 搜索;
             }
         }
     </script>
