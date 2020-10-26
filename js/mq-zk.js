@@ -85,8 +85,9 @@ mSwitch.setPrevious(false);
 mSwitch.init();
 
 function zk() {
+    window.location.href="#／"+zka;
     if(document.getElementById("／"+zka)){
-        window.location.href="#／"+zka;
+        
         window.scrollBy(0, -50);
     }
     else{
