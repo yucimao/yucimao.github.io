@@ -86,7 +86,7 @@ mSwitch.init();
 
 function zk() {
     window.location.href="#／"+zka;
-    window.scrollBy(0, -30);
+    window.scrollBy(0, -70);
     var yd = "／"+zka;
     var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"20\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
     document.getElementById(yd).innerHTML=dy;
