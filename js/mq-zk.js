@@ -84,16 +84,20 @@ mSwitch.setDefault(0);
 mSwitch.setPrevious(false);
 mSwitch.init();
 
+let zkld="／";
+
 function zk() {
     window.location.href="#／"+zka;
-    if(document.getElementById("／"+zka)){
-        
-        window.scrollBy(0, -50);
-    }
-    else{
-        window.scrollBy(0, -200);
-    }
+        if (zkld=="／"||zkld!=zka){
+            zkld=zka;
+            window.scrollBy(0, -20);
+        }
+        else{
+            zkld="／";
+            window.scrollBy(0, -150);
+        }
+
     var yd = "／"+zka;
-    var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"20\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
+    var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"50\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
     document.getElementById(yd).innerHTML=dy;
 }
