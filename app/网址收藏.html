@@ -6,85 +6,15 @@ permalink: wangzhi
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <script src="/js/jquery.min.js"></script>
 <style>
-    ul>a {
-        font-weight: bold;
-        display: block;
-        line-height: 50px;
-        font-size: 1.1em;
-        text-decoration: none;
-        color: #58a4dd;
-    }
-
-    ul>a:hover {
-        color: #0085a1;
-        background: #eef6fc;
-    }
-
-    ul>a>span {
-        color: #5c5c5c
-    }
-
-    input {
-        line-height: 36px;
-        font-size: 1.4em;
-        text-align: center;
-        padding: .5em .7em;
-        max-width: 30em;
-        width: 100%;
-        background: #F8F8F8;
-        border-style: solid;
-        border-width: medium;
-        border-color: #00a2ff;
-        border-radius: 20px;
-        outline: none;
-    }
-
-    input:focus {
-        box-shadow:
-            0 1px 0 1px #DDD inset,
-            0 1px 2px rgba(0, 0, 0, .2);
-    }
-
-    select {
-        font-size: 1.2em;
-        color: #666666;
-        padding: .3em .5em;
-        max-width: 7em;
-        background: #F8F8F8;
-        box-shadow:
-            0 0 0 1px #DDD inset,
-            0 1px 2px rgba(0, 0, 0, .2);
-        border-width: medium;
-        border-color: #00a2ff;
-        border-radius: 17px;
-        outline: none;
-    }
-
-    select:hover {
-        color: #0085a1;
-        box-shadow:
-            0 1px 0 1px #DDD inset,
-            0 1px 2px rgba(0, 0, 0, .2);
-    }
-
-    button {
-        font-size: 1.2em;
-        color: #666666;
-        padding: .1em;
-        background: #F8F8F8;
-        border-style: solid;
-        border-width: medium;
-        border-color: #6b6b6b;
-        border-radius: 17px;
-        outline: none;
-    }
-
-    button:hover {
-        color: #2c2c2c;
-        box-shadow:
-            0 1px 0 1px #DDD inset,
-            0 1px 2px rgba(0, 0, 0, .2);
-    }
+ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
+ul>a:hover {color: #0085a1;background: #eef6fc;}
+ul>a>span {color: #5c5c5c}
+input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
+input:focus {box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
+select {font-size: 1.2em;color: #666666;padding: .3em .5em;max-width: 7em;background: #F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);border-width: medium;border-color: #00a2ff;border-radius: 17px;outline: none;}
+select:hover {color: #0085a1;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
+button {font-size: 1.2em;color: #666666;padding: .1em;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #6b6b6b;border-radius: 17px;outline: none;}
+button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
 </style>
 
 <body onload="document.getElementById('输入').focus()">
@@ -96,7 +26,7 @@ permalink: wangzhi
     <div style="line-height:0.5;"><br /></div>
     <div class="juzhong">
         <select id="菜单" onclick="菜单()">
-            <option value="无">站外搜索</option>
+            <option>站外搜索</option>
             <option value="//www.baidu.com/s?wd=">百度（广告多、流氓、结果全）</option>
             <option value="//cn.bing.com/search?q=">必应</option>
             <option value="//www.zhihu.com/search?q=">知乎</option>
@@ -115,10 +45,10 @@ permalink: wangzhi
     <script>
         function 菜单() {
             let 菜单 = document.getElementById("菜单").value;
-            if (菜单 != "无") {
+            if (菜单) {
                 let 搜索 = document.getElementById("输入").value;
                 window.location.href = 菜单 + 搜索;
-                document.getElementById("菜单").innerHTML = "";
+                document.getElementById("菜单").innerHTML = "站外搜索";
             }
         }
     </script>
@@ -294,6 +224,7 @@ permalink: wangzhi
             "生成水墨画／http://shan-shui-inf.lingdong.works／",
             "腾讯云／//cloud.tencent.com／域名",
             "自由钢琴【在线弹钢琴】／//www.autopiano.cn／",
+            "颜色代码表／//encycolorpedia.cn/",
 
             "神奇海螺【本页的灵感来源】／//magiconch.com／"  //  "／／",
         );
