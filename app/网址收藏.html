@@ -26,7 +26,7 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
     <div style="line-height:0.5;"><br /></div>
     <div class="juzhong">
         <select id="菜单" onclick="菜单()">
-            <option>站外搜索</option>
+            <option value="无">站外搜索</option>
             <option value="//www.baidu.com/s?wd=">百度（广告多、流氓、结果全）</option>
             <option value="//cn.bing.com/search?q=">必应</option>
             <option value="//www.zhihu.com/search?q=">知乎</option>
@@ -45,7 +45,7 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
     <script>
         function 菜单() {
             let 菜单 = document.getElementById("菜单").value;
-            if (菜单) {
+            if (菜单 != "无") {
                 let 搜索 = document.getElementById("输入").value;
                 window.location.href = 菜单 + 搜索;
                 document.getElementById("菜单").innerHTML = "站外搜索";
