@@ -90,7 +90,7 @@ function zk() {
         window.scrollBy(0, -50);
     }
     else{
-        window.scrollBy(0, -100);
+        window.scrollBy(0, -200);
     }
     var yd = "／"+zka;
     var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"20\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
