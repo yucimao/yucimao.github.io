@@ -7,9 +7,14 @@ permalink: game/szjylx
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <style>
     td {
+        font-size:2.5em;
         width: 1.5em;
         text-align: center;
         cursor: pointer;
+    }
+
+    td:hover{
+        background: #e1fff6;
     }
 
     .dui {
@@ -69,8 +74,8 @@ permalink: game/szjylx
     }
 </style>
 
-选择难度，记住数字顺序，点击开始，按顺序点击方块。
-<br /><br />
+<div>选择难度，记住数字顺序，点击开始，按顺序点击方块。</div>
+<br />
 
 <div id="dy_nd" style="display:block">
     <button onclick="难度(N=1)">难度1</button>
@@ -82,6 +87,10 @@ permalink: game/szjylx
 
 <div id="dy_ks" style="display:none">
     <button onclick="开始()">开始</button>
+</div>
+
+<div id="dy_tx" style="display:none">
+    　　　<button onclick="投降()">投降</button>
 </div>
 
 
@@ -99,7 +108,7 @@ permalink: game/szjylx
     let dataY;
     let dy;
     let dy1;
-    let data1 = new Array("1", "2", "3", "　", "　");
+    let data1 = new Array("1", "2", "3", "4", "5");
     let data2 = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9");
     let data3 = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9",
         "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　")
@@ -109,6 +118,7 @@ permalink: game/szjylx
     function 难度() {
         document.getElementById("dy_nd").style.display = "none";
         document.getElementById("dy_ks").style.display = "block";
+        document.getElementById("dy_tx").style.display = "none";
         let data0;
         if (N == 1) { dataY = data1 }
         if (N == 2) { dataY = data2 }
@@ -137,6 +147,9 @@ permalink: game/szjylx
         document.getElementById("dy").innerHTML = dy;
     }
     function 开始() {
+        document.getElementById("dy_nd").style.display = "none";
+        document.getElementById("dy_ks").style.display = "none";
+        document.getElementById("dy_tx").style.display = "block";
         Y = 0;
         dy1 = "<table border=\"1\"><tr>";
         if (N == 1 || N == 2) {
@@ -150,7 +163,7 @@ permalink: game/szjylx
             dy += "</tr></table>";
             document.getElementById("dy").innerHTML = dy1;
         }
-        if (N == 1) { T = 2 }
+        if (N == 1) { T = 4 }
         if (N == 2 || N == 3) { T = 8 }
         if (N == 4) { T = 24 }
         if (N == 3 || N == 4) {
@@ -168,6 +181,12 @@ permalink: game/szjylx
             document.getElementById("dy").innerHTML = dy1;
         }
     }
+    function 投降(){
+        document.getElementById("dy").innerHTML = dy + "<br/><span class=\"cuo\">游戏结束。</span><br/><br/>选择难度重新开始。";
+            document.getElementById("dy_nd").style.display = "block";
+            document.getElementById("dy_ks").style.display = "none";
+            document.getElementById("dy_tx").style.display = "none";
+    }
     function 按钮() {
         if (G == dataY[Y]) {
             let dydt = "B" + G;
@@ -177,6 +196,7 @@ permalink: game/szjylx
                 document.getElementById("dy").innerHTML = dy + "<br/><span class=\"dui\">恭喜！</span><br/><br/>选择难度重新开始。";
                 document.getElementById("dy_nd").style.display = "block";
                 document.getElementById("dy_ks").style.display = "none";
+                document.getElementById("dy_tx").style.display = "none";
             }
             Y += 1;
         }
@@ -184,6 +204,7 @@ permalink: game/szjylx
             document.getElementById("dy").innerHTML = dy + "<br/><span class=\"cuo\">点错了，游戏失败。</span><br/><br/>选择难度重新开始。";
             document.getElementById("dy_nd").style.display = "block";
             document.getElementById("dy_ks").style.display = "none";
+            document.getElementById("dy_tx").style.display = "none";
         }
     }
 </script>
