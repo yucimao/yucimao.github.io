@@ -7,7 +7,7 @@ permalink: wangzhi
 <script src="/js/jquery.min.js"></script>
 <style>
 ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
-ul>a:hover {color: #0085a1;background: #eef6fc;}
+ul>a:hover {color: #0085a1;background: #eef6fc;text-decoration: none;}
 ul>a>span {color: #5c5c5c}
 input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
 input:focus {box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
@@ -225,7 +225,8 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
             "腾讯云／//cloud.tencent.com／域名",
             "自由钢琴【在线弹钢琴】／//www.autopiano.cn／",
             "颜色代码表／//encycolorpedia.cn／",
-            "EDD动漫【次元避风港】／http://www.edddh.com／edd动漫 e站",
+            "EDD动漫【次元避风港】／http://www.edddh.com／edd动漫 e站 绅士福利 无修",
+            "数字记忆练习／/game/szjylx／",
 
             "神奇海螺【本页的灵感来源】／//magiconch.com／"  //  "／／",
         );
@@ -245,7 +246,9 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
                 let 过程 = "0";
                 let 过程2 = "0";
                 for (let i2 = 0; 输入.length > i2; i2++) {
-                    if (data[i].indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
+                    let 临时2=data[i].split("／");
+                    临时2=临时2[0]+临时2[2];
+                    if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
                     else { 过程 = "1"; }
                 }
                 if (过程 == "0") {
