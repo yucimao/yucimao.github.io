@@ -46,7 +46,7 @@ function zk() {
         document.getElementById(zkb).style.display = "block";
         window.scrollBy(0, -150);
     }
-    if (zka[0] == "【") {
+    if (zka[0] != "【") {
         let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
         document.getElementById(yd).innerHTML = dy;
     }
