@@ -83,7 +83,7 @@ function 随机排序() {
 
     for (let i2 = 0; 随机.length > i2; i2++) {
         随机临时 = 随机[i2].split("／");
-        随机结果 += "<div class=\"menuDiv\"><h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul></div>";
+        随机结果 += "<div class=\"menuDiv\"><h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\"></ul></div>";
     }
     document.getElementById("结果").innerHTML = 随机结果;
 }
