@@ -1,5 +1,4 @@
 $("#输入").keyup(function () {
-    zkb = "／";
     let 输入 = $("#输入").val();
     let 输入2 = 输入.split(" ");
     let 结果 = "";
