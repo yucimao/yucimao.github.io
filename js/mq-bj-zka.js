@@ -60,7 +60,7 @@ function GetQueryString(name) {
     return "";
 }
 var wza = GetQueryString("wz");
-if(waz){
+if(wza){
     document.getElementById("输入").value = wza;
     $("input").keyup();
 }
