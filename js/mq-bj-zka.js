@@ -25,8 +25,8 @@ $("#输入").keyup(function () {
     document.getElementById("结果").innerHTML = 打印;
 }).keyup();
 
-let zkb = "／";
-document.getElementById("／" + data[0].split("／")[1]).style.display = "block";
+let zkb = "／" + data[0].split("／")[1];
+document.getElementById(zkb).style.display = "block";
 
 function zk() {
     if (document.getElementById(zkb) != null) {
