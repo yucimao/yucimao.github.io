@@ -1,4 +1,7 @@
+let zkb = "／";
+
 $("#输入").keyup(function () {
+    zkb = "／";
     let 输入 = $("#输入").val();
     let 输入2 = 输入.split(" ");
     let 结果 = "";
@@ -25,8 +28,6 @@ $("#输入").keyup(function () {
     document.getElementById("结果").innerHTML = 打印;
 }).keyup();
 
-let zkb = "／";
-
 function zk() {
     if (document.getElementById(zkb) != null) {
         document.getElementById(zkb).style.display = "none";
@@ -49,7 +50,6 @@ function zk() {
 
 let sg;
 function tion() {
-    zkb = "／";
     document.getElementById("输入").value = sg;
     $("input").keyup();
 }
