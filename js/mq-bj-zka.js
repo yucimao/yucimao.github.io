@@ -17,10 +17,10 @@ $("#输入").keyup(function () {
             else { 过程 = "1"; }
         }
         if (过程 == "0" || 输入.length == 0) {
-            结果 += "<div class=\"menuDiv\"><h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul></div>";
+            结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul>";
         }
         if (过程 != "0" && 过程2 == "1") {
-            结果2 += "<div class=\"menuDiv\"><h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul></div>";
+            结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul>";
         }
     }
 
@@ -66,7 +66,7 @@ if (wza) {
     $("input").keyup();
 }
 
-function 随机排序() {
+function 随机排序() {   //<a onclick="随机排序()">随机</a>
     let 随机结果 = "";
     let 随机临时;
 
@@ -81,7 +81,7 @@ function 随机排序() {
 
     for (let i2 = 0; 随机.length > i2; i2++) {
         随机临时 = 随机[i2].split("／");
-        随机结果 += "<div class=\"menuDiv\"><h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\"></ul></div>";
+        随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\"></ul>";
     }
     document.getElementById("结果").innerHTML = 随机结果;
 }
