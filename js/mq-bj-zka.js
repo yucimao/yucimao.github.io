@@ -1,5 +1,7 @@
+let zkb = "／" + data[0].split("／")[1];
+
 $("#输入").keyup(function () {
-    let zkb = "／" + data[0].split("／")[1];
+    zkb = "／" + data[0].split("／")[1];
     let 输入 = $("#输入").val();
     let 输入2 = 输入.split(" ");
     let 结果 = "";
