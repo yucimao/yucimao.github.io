@@ -67,19 +67,17 @@ if (wza) {
 }
 
 function 随机排序() {
-    let 随机 = data;
     let 随机结果 = "";
     let 随机临时;
-    function randFun(随机) {
-        for (let i = 0, len = 随机.length; i < len; i++) {
-            let index = parseInt(Math.random() * (len - 1));
-            let tempValue = 随机[i];
-            随机[i] = 随机[index];
-            随机[index] = tempValue;
-        }
-        return 随机;
+
+    let p = Array.from(data), i, a = [];
+    while (p.length > 0) {
+    i = parseInt(Math.random() * p.length);
+    a.push(p[i]);
+    p.splice(i, 1);
     }
-    randFun(随机);
+
+    let 随机=a;
 
     for (let i2 = 0; 随机.length > i2; i2++) {
         随机临时 = 随机[i2].split("／");
