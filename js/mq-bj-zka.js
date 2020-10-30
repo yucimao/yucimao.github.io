@@ -46,3 +46,21 @@ function zk() {
     let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
     document.getElementById(yd).innerHTML = dy;
 }
+
+let sg;
+function tion() {
+    document.getElementById("输入").value = sg;
+    $("input").keyup();
+}
+
+var LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) { return decodeURI(tmp[2]); }
+    return "";
+}
+var wza = GetQueryString("wz");
+if(waz){
+    document.getElementById("输入").value = wza;
+    $("input").keyup();
+}
