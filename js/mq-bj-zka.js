@@ -1,6 +1,3 @@
-let zkb = data[0].split("／")[1];
-document.getElementById(zkb).style.display = "block";
-
 $("#输入").keyup(function () {
     zkb = "／";
     let 输入 = $("#输入").val();
@@ -28,6 +25,9 @@ $("#输入").keyup(function () {
     let 打印 = 结果 +"<br/><hr><br/>"+ 结果2;
     document.getElementById("结果").innerHTML = 打印;
 }).keyup();
+
+let zkb = data[0].split("／")[1];
+document.getElementById(zkb).style.display = "block";
 
 function zk() {
     if (document.getElementById(zkb) != null) {
