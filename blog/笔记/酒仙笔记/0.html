@@ -1,38 +1,30 @@
 ---
-layout: page2
+layout: page2  
 permalink: jiuxian
 ---
 <title>酒仙笔记 - 猫球博客</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="/css/mq-bj.css">
 <script src="/js/jquery.min.js"></script>
-<script src="/js/mq-sswz-h4.js"></script>
-<script src="/js/mq-ss-div.js"></script>
-<body onload="document.getElementById('searchBox').focus()">
+<body onload="document.getElementById('输入').focus()">
 <div class="biaotib">酒仙笔记</div>
-<div id='tag_cloud'><form id="输入框" autocomplete="off"><input type="text" id="searchBox" placeholder="关键词以空格分隔"/></form>
-<div id="dataSet"><br/><br/>
-<div class="menuDiv"><h4></h4><ul></ul></div>
-
-<div class="menuDiv"><h4 onclick="zk(zka='202010-mssj')">魔兽世界 <small>艾泽拉斯酒仙笔记</small></h4><ul id="／202010-mssj"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-fzjh')">放置江湖</h4><ul id="／202010-fzjh"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-clx')">楚留香</h4><ul id="／202010-clx"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-yys')">阴阳师</h4><ul id="／202010-yys"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-jnbjt')">江南百景图</h4><ul id="／202010-jnbjt"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-sbpkjb')">赛博朋克：酒保行动</h4><ul id="／202010-sbpkjb"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-gsjc')">怪兽酒场</h4><ul id="／202010-gsjc"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-yzjg')">勇者酒馆</h4><ul id="／202010-yzjg"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='202010-xbxxz')">想不想修真</h4><ul id="／202010-xbxxz"></ul></div>
-
-<!--
-<div class="menuDiv"><h4></h4><ul>
-</ul></div>
-
-<div class="menuDiv"><h4 onclick="zk(zka='')"></h4><ul id="／"></ul></div>
-
--->
-
-
-</div></div>
-<script src="/js/mq-zk.js"></script>
+<form id="输入框" autocomplete="off"><a onclick="tion(sg='')">展示全部</a><input type="text" id="输入" placeholder="多个关键词用空格分隔"/></form>
+<br/><br/>
+<div id="结果"></div>
+<br/><br/><br/><br/>
+<script>
+let data = new Array(
+"",
+"魔兽世界 <small>艾泽拉斯酒仙笔记</small>／407122",
+"放置江湖／407124",
+"楚留香／407125",
+"阴阳师／407127",
+"江南百景图／407128",
+"赛博朋克：酒保行动／407130",
+"怪兽酒场／407131",
+"勇者酒馆／407133",
+"想不想修真／407134"
+)
+</script>
+<script src="/js/mq-bj-zka.js"></script>
 </body>
