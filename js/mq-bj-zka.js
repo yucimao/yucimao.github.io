@@ -26,6 +26,7 @@ $("#输入").keyup(function () {
 }).keyup();
 
 let zkb = data[0].split("／")[1];
+alert(zkb)
 document.getElementById(zkb).style.display = "block";
 
 function zk() {
