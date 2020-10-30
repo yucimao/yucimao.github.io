@@ -49,6 +49,7 @@ function zk() {
 
 let sg;
 function tion() {
+    zkb = "／";
     document.getElementById("输入").value = sg;
     $("input").keyup();
 }
@@ -60,7 +61,7 @@ function GetQueryString(name) {
     return "";
 }
 var wza = GetQueryString("wz");
-if(wza){
+if (wza) {
     document.getElementById("输入").value = wza;
     $("input").keyup();
 }
