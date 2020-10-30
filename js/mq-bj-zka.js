@@ -1,5 +1,9 @@
+/*
+<a onclick="随机排序()">随机</a>
+"标题／编号／搜索关键词" zk模式
+"标题／【ID】／搜索关键词／内容" 直接显示模式
+*/
 let zkb;
-
 $("#输入").keyup(function () {
     zkb = "／";
     let 输入 = $("#输入").val();
@@ -70,7 +74,7 @@ if (wza) {
     $("input").keyup();
 }
 
-function 随机排序() {   //<a onclick="随机排序()">随机</a>
+function 随机排序() {
     let 随机结果 = "";
     let 随机临时;
 
