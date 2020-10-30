@@ -65,3 +65,25 @@ if (wza) {
     document.getElementById("输入").value = wza;
     $("input").keyup();
 }
+
+function 随机排序() {
+    let 随机 = data;
+    let 随机结果 = "";
+    let 随机临时;
+    function randFun(随机) {
+        for (let i = 0, len = 随机.length; i < len; i++) {
+            let index = parseInt(Math.random() * (len - 1));
+            let tempValue = 随机[i];
+            随机[i] = 随机[index];
+            随机[index] = tempValue;
+        }
+        return 随机;
+    }
+    randFun(随机);
+
+    for (let i2 = 0; 随机.length > i2; i2++) {
+        随机临时 = 随机[i2].split("／");
+        随机结果 += "<div class=\"menuDiv\"><h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul></div>";
+    }
+    document.getElementById("结果").innerHTML = 随机结果;
+}
