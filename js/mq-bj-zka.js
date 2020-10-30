@@ -1,4 +1,5 @@
-let zkb = "／";
+let zkb = data[0].split("／")[1];
+document.getElementById(zkb).style.display = "block";
 
 $("#输入").keyup(function () {
     zkb = "／";
@@ -17,14 +18,14 @@ $("#输入").keyup(function () {
             else { 过程 = "1"; }
         }
         if (过程 == "0" || 输入.length == 0) {
-            结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul>";
+            结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">"+临时[3]+"</ul>";
         }
         if (过程 != "0" && 过程2 == "1") {
-            结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\"></ul>";
+            结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">"+临时[3]+"</ul>";
         }
     }
 
-    let 打印 = 结果 + 结果2;
+    let 打印 = 结果 +"<br/><hr><br/>"+ 结果2;
     document.getElementById("结果").innerHTML = 打印;
 }).keyup();
 
@@ -81,7 +82,7 @@ function 随机排序() {   //<a onclick="随机排序()">随机</a>
 
     for (let i2 = 0; 随机.length > i2; i2++) {
         随机临时 = 随机[i2].split("／");
-        随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\"></ul>";
+        随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">"+随机临时[3]+"</ul>";
     }
     document.getElementById("结果").innerHTML = 随机结果;
 }
