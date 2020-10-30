@@ -1,7 +1,7 @@
-let zkb = "／" + data[0].split("／")[1];
+let zkb;
 
 $("#输入").keyup(function () {
-    zkb = "／" + data[0].split("／")[1];
+    zkb = "／";
     let 输入 = $("#输入").val();
     let 输入2 = 输入.split(" ");
     let 结果 = "";
@@ -28,7 +28,7 @@ $("#输入").keyup(function () {
     document.getElementById("结果").innerHTML = 打印;
 }).keyup();
 
-
+zkb = "／" + data[0].split("／")[1];
 document.getElementById(zkb).style.display = "block";
 
 function zk() {
@@ -46,7 +46,7 @@ function zk() {
         document.getElementById(zkb).style.display = "block";
         window.scrollBy(0, -150);
     }
-    if (zka != "0") {
+    if (zka[0] == "【") {
         let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
         document.getElementById(yd).innerHTML = dy;
     }
