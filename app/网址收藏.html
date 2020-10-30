@@ -238,10 +238,7 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
                 回车 = 回车.split("／")[1];
             }
             if (window.event.keyCode == 13) location = 回车;
-            if (window.event.keyCode == 27){
-                document.getElementById("输入").value = "";
-                $("input").keyup();
-            };
+            if (window.event.keyCode == 27) document.getElementById("输入").value = "";
 
             let 输入 = $("#输入").val().toLowerCase().split(" ");   //获取输入内容 换成小写 用空格分隔
             let 结果 = "";
