@@ -59,7 +59,7 @@ function zk() {
 let sg;
 function tion() {
     if (sg[0] == "+") {
-        let 替换 = new RegExp('+', "g");
+        let 替换 = new RegExp('\+', "g");
         sg = sg.replace(替换, ' ');
         sg = document.getElementById("输入").value + sg;
     }
