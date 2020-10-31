@@ -28,7 +28,7 @@ $("#输入").keyup(function () {
         }
     }
 
-    let 打印 = 结果 + "<br/><hr><br/>" + 结果2;
+    let 打印 = 结果 + "<br/><hr>" + 结果2;
     document.getElementById("结果").innerHTML = 打印;
 }).keyup();
 
@@ -61,9 +61,7 @@ function tion() {
     if (sg[0] == "+") {
         sg = document.getElementById("输入").value + " " + sg;
     }
-    else {
-        document.getElementById("输入").value = sg;
-    }
+    document.getElementById("输入").value = sg;
     $("input").keyup();
 }
 
