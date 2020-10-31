@@ -210,3 +210,15 @@ document.getElementById("上级").innerHTML=返回;}</script>
 <a onclick="tion(sg='砂糖橘')">砂糖橘</a>、
 <a onclick="tion(sg='香蕉')">香蕉</a>、
 <a onclick="tion(sg='番石榴')">番石榴</a>
+
+<script>
+let sg;
+function tion() {
+    if (sg[0] == "+") {
+        sg = sg.replace(/\+/g, ' ')
+        sg = window.parent.document.document.getElementById("输入").value + sg;
+    }
+    window.parent.document.document.getElementById("输入").value = sg;
+    $("input").keyup();
+}
+</script>
