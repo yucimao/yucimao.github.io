@@ -13,7 +13,7 @@ document.getElementById("上级").innerHTML=返回;}</script>
 <br/>
 <b>1月</b><br/>
 <a onclick="tion(sg='菠萝')">菠萝</a>、
-<a onclick="tion(sg='甘蔗')">甘蔗</a>、
+<a onclick="tion(sg='+甘蔗')">甘蔗</a>、
 <a onclick="tion(sg='番石榴')">番石榴</a>
 <br/><br/>
 <b>2月</b><br/>
@@ -218,7 +218,7 @@ function tion() {
         sg = sg.replace(/\+/g, ' ')
         sg = window.parent.document.document.getElementById("输入").value + sg;
     }
-    window.parent.document.document.getElementById("输入").value = sg;
+    window.parent.document.document.getElementById("输入").innerHTML = sg;
     $("input").keyup();
 }
 </script>
