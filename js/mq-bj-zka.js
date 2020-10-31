@@ -59,7 +59,9 @@ function zk() {
 let sg;
 function tion() {
     if (sg[0] == "+") {
-        sg = document.getElementById("输入").value + " " + sg;
+        let 替换 = new RegExp('+', "g");
+        sg = sg.replace(替换, ' ');
+        sg = document.getElementById("输入").value + sg;
     }
     document.getElementById("输入").value = sg;
     $("input").keyup();
