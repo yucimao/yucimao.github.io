@@ -214,11 +214,7 @@ document.getElementById("上级").innerHTML=返回;}</script>
 <script>
 let sg;
 function tion() {
-    if (sg[0] == "+") {
-        sg = sg.replace(/\+/g, ' ')
-        sg = window.parent.document.document.getElementById("输入").value + sg;
-    }
-    window.parent.document.document.getElementById("输入").innerHTML = sg;
-    $("input").keyup();
+    $(window.top.document).find("#输入").val(sg);
+
 }
 </script>
