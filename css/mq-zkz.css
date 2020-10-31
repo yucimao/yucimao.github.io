@@ -5,33 +5,49 @@ body {
   color: #404040;
   overflow-x: hidden;
 }
+
 a {
   color: #006699;
 }
-a:hover,
-a:focus {
+
+a:hover, a:focus {
   color: #0085a1;
 }
 
-@media screen and (min-width: 768px){ /*电脑*/
-  .qbt{
-    text-align:center;
+@media screen and (min-width: 768px) {
+  /*电脑*/
+  .qbt {
+    text-align: center;
     margin-top: 1.2em;
-    font-size:3.5em;
-    color:#0bb1f5;
-    font-weight:bold;
-    cursor:default;
+    font-size: 3.5em;
+    color: #0bb1f5;
+    font-weight: bold;
+    cursor: default;
   }
-} /*电脑*/
+}
 
-@media screen and (max-width: 767px){ /*手机*/
-  .qbt{
-    text-align:center;
+/*电脑*/
+
+@media screen and (max-width: 767px) {
+  /*手机*/
+  .qbt {
+    text-align: center;
     margin-top: 1.2em;
-    font-size:2.3em;
-    color:#0bb1f5;
-    font-weight:bold;
-    cursor:default;
+    font-size: 2.3em;
+    color: #0bb1f5;
+    font-weight: bold;
+    cursor: default;
   }
+}
 
-  } /*手机*/
+/*手机*/
+
+.heimu2 {
+  background-color: #252525;
+  color: #252525;
+  transition: color 0.2s;
+}
+
+.heimu2:hover {
+  color: #ffffff;
+}

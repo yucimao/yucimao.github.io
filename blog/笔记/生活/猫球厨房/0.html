@@ -1,0 +1,64 @@
+---
+layout: page2  
+permalink: biji/chufang
+---
+<title>猫球厨房 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/css/mq-bj.css">
+<script src="/js/jquery.min.js"></script>
+<body onload="document.getElementById('输入').focus()">
+<div class="biaotib">猫球厨房</div>
+<form id="输入框" autocomplete="off"><a onclick="tion(sg='')">展示全部</a><input type="text" id="输入" placeholder="多个关键词用空格分隔"/></form>
+<br/><br/>
+<div id="结果"></div>
+<br/><br/><br/><br/>
+<script>
+let data = new Array(
+"通用技巧／【0】／／"+
+"<a onclick=\"tion(sg='放油')\">放油</a>、"+
+"<a onclick=\"tion(sg='去腥')\">去腥</a>"+
+"<br/>"+
+"<b>调料</b><br/>"+     //
+"<a onclick=\"tion(sg='红烧')\">红烧</a>、"+
+"<a onclick=\"tion(sg='宫爆')\">宫爆</a>、"+
+"<a onclick=\"tion(sg='勾芡')\">勾芡</a>、"+
+"<a onclick=\"tion(sg='照烧')\">照烧</a>、"+
+"<a onclick=\"tion(sg='咖喱')\">咖喱</a>、"+
+"<a onclick=\"tion(sg='韩国味')\">韩国味</a>"+
+"<br/><br/>"+
+"<b>做法</b><br/>"+
+"<a onclick=\"tion(sg='炒菜')\">炒菜</a>、"+
+"<a onclick=\"tion(sg='水煮')\">水煮</a>、"+
+"<a onclick=\"tion(sg='煎炸')\">煎炸</a>、"+
+"<a onclick=\"tion(sg='煲汤')\">煲汤</a>、"+
+"<a onclick=\"tion(sg='沙拉')\">沙拉</a>"+
+"<br/><br/>"+
+"<b>食材</b><br/>"+
+"<a onclick=\"tion(sg='大米')\">大米</a>、"+
+"<a onclick=\"tion(sg='肉类')\">肉类</a>、"+
+"<a href=\"/biji/tiaoshuiguo\" target=\"_blank\">水果</a>、"+
+"<a onclick=\"tion(sg='虾蟹')\">虾蟹</a>",
+
+"红烧／【红烧】／调料／老抽上色＋生抽调味＋糖",
+"宫爆／【宫爆】／调料／生抽＋水淀粉（或豆瓣酱，也有凝固的作用）＋干辣椒＋糖＋醋＋葱白",
+"勾芡／【勾芡】／调料／淀粉＋各种液体预热凝固",
+"照烧／【照烧】／调料／蜂蜜＋日本酱油",
+"咖喱／【咖喱】／调料／熬咖喱加椰浆",
+"韩国味／【韩国味】／调料／韩国大酱＋韩国辣酱",
+
+"大米／415024／食材／",
+"肉类／415028／食材／",
+"虾蟹／415033／食材／",
+
+"炒菜／415038／做法／",
+"煎炸／415045／做法／",
+"水煮／415047／做法／",
+"煲汤／415052／做法／",
+"沙拉／415055／做法／",
+
+"放油／415059／技巧／",
+"去腥／415061／技巧／"
+)
+</script>
+<script src="/js/mq-bj-zka.js"></script>
+</body>
