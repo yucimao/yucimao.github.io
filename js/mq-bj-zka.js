@@ -58,7 +58,12 @@ function zk() {
 
 let sg;
 function tion() {
-    document.getElementById("输入").value = sg;
+    if (sg[0] == "+") {
+        sg = document.getElementById("输入").value + " " + sg;
+    }
+    else {
+        document.getElementById("输入").value = sg;
+    }
     $("input").keyup();
 }
 
