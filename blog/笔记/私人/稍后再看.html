@@ -1,0 +1,138 @@
+---
+layout: page2
+permalink: make
+---
+<title>稍后再看 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<script src="/js/jquery.min.js"></script>
+<style>
+ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
+ul>a:hover {color: #0085a1;background: #eef6fc;text-decoration: none;}
+ul>a>span {color: #5c5c5c}
+input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
+input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
+select {font-size: 1.2em;color: #666666;padding: .3em .5em;max-width: 7em;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);border-width: medium;border-color: #00a2ff;border-radius: 17px;outline: none;}
+select:hover {color: #0085a1;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
+button {font-size: 1.2em;color: #666666;padding: .1em;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #6b6b6b;border-radius: 17px;outline: none;}
+button:hover {color: #2c2c2c;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
+</style>
+
+<body onload="document.getElementById('输入').focus()">
+<div class="biaotib">稍后再看</div>
+<form autocomplete="off" class="juzhong">
+    <input type="text" style="display:none" />
+    <input type="text" id="输入" placeholder="多个关键词用空格分隔" />
+</form>
+<div style="line-height:0.5;"><br /></div>
+<div class="juzhong"><button type="button" onclick="随机排序()">随机显示</button></div>
+<div><br /></div>
+<div id="结果"></div>
+<script>
+let data = new Array(
+
+    //娱乐博主
+    "单立人素描喜剧／https://space.bilibili.com/470647022／",
+
+    //回忆
+    "第十放映室【金刚：骷髅岛】／https://b23.tv/av9817076/p1／",
+    "翡珀翠庭 噬魂师【舞台剧】／https://b23.tv/av7811986／",
+    "史前动物【flash动画】／https://b23.tv/av17722934／",
+    "熊猫人之谜【开场动画】／https://b23.tv/av25270900／",
+
+    "游戏风云【羊驼乐队】／https://b23.tv/av399015／",
+    "游戏风云【神牧很忙】／https://b23.tv/av3840596／",
+    "游戏风云【眼保健操】／https://b23.tv/av5463681／",
+    "游戏风云【休闲街区 2013-11-05】／https://b23.tv/av11701916／",
+    "游戏风云【休闲街区 古墓丽影：崛起】／https://b23.tv/av3383730／",
+    "游戏风云【花絮 兔兔纸唱《小幸运》】／https://b23.tv/av12943232／",
+
+    //魔术
+    "魔术【戒指穿过皮筋】／https://v.douyin.com/bXNaT3/／",
+    "魔术【瞬间变牌】／https://v.douyin.com/bA5atM/／",
+    "魔术【骰子换位】／https://v.douyin.com/pAmsfk/／",
+    "魔术【咬断橡皮筋复原】／https://v.douyin.com/bHeTfy/／",
+
+    //剪辑
+    "剪辑 思路【无特效转场】／https://b23.tv/av68520626／",
+
+    //有趣的视频
+    "HipHop创始人／https://b23.tv/av34283905／创死人",
+    "MC版JOJO的奇妙冒险OP／https://b23.tv/av521550／",
+    "把眼睛放在球上／https://b23.tv/av11197632／",
+    "陈奕迅去周杰伦演唱会／https://b23.tv/av6996272／",
+    "广电 剪了又剪／https://b23.tv/av56352402／",
+    "全明星版《快乐崇拜》／https://b23.tv/av2457954／",
+    "铁齿铜牙纪晓岚【灾民还算人么】／https://b23.tv/av157947／",
+    "黑道父子／https://b23.tv/av51322513／",
+    "武术盛会特效版／https://b23.tv/av1702363/p1／",
+    "听着很像就叫抄袭么／https://b23.tv/av8860777／",
+    "一分钟看完《狮子王》／https://b23.tv/av60642632／",
+    "如果我们变成了半机器人／https://www.bilibili.com/video/av67258816／",
+
+    "／／"  //  "／／",
+);
+
+    let 回车 = "javascript:void(0);";
+    $("#输入").keyup(function () {
+        if (回车.split("／").length > 1) {
+            回车 = 回车.split("／")[1];
+        }
+        if (window.event.keyCode == 13) location = 回车;
+        if (window.event.keyCode == 27) document.getElementById("输入").value = "";
+
+        let 输入 = $("#输入").val().toLowerCase().split(" ");   //获取输入内容 换成小写 用空格分隔
+        let 结果 = "";
+        let 结果2 = "";
+        for (let i = 0; data.length > i; i++) {
+            let 临时 = data[i].split("／");
+            let 过程 = "0";
+            let 过程2 = "0";
+            for (let i2 = 0; 输入.length > i2; i2++) {
+                let 临时2 = data[i].split("／");
+                临时2 = 临时2[0] + 临时2[2];
+                if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
+                else { 过程 = "1"; }
+            }
+            if (过程 == "0") {
+                结果 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
+                回车 += "／" + 临时[1];
+            }
+            if (过程 != "0" && 过程2 == "1") {
+                结果2 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
+            }
+        }
+
+        let 打印 = 结果 + "<br/><hr>" + 结果2;
+        let 替换 = new RegExp('【', "g");
+        打印 = 打印.replace(替换, '<span> - ');
+        替换 = new RegExp('】', "g");
+        打印 = 打印.replace(替换, '</span>');
+        document.getElementById("结果").innerHTML = 打印;
+    })
+
+    function 随机排序() {
+        let 随机结果 = "";
+        let 随机临时;
+
+        let p = Array.from(data), i, a = [];
+        while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+
+        let 随机 = a;
+
+        for (let i2 = 0; 5 > i2; i2++) {
+            随机临时 = 随机[i2].split("／");
+            随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
+        }
+
+        let 替换 = new RegExp('【', "g");
+        随机结果 = 随机结果.replace(替换, '<span> - ');
+        替换 = new RegExp('】', "g");
+        随机结果 = 随机结果.replace(替换, '</span>');
+        document.getElementById("结果").innerHTML = 随机结果;
+    }
+</script>
+</body>

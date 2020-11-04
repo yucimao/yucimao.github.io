@@ -80,7 +80,6 @@ if (wza) {
 }
 
 function 随机排序() {
-    alert(打印)
     let 随机结果 = "";
     let 随机临时;
 
