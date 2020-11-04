@@ -1,0 +1,56 @@
+---
+layout: page2  
+permalink: biji/ktv
+---
+<title>KTV歌单 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/css/mq-bj.css">
+<script src="/js/jquery.min.js"></script>
+<body onload="document.getElementById('输入').focus()">
+<div class="biaotib">KTV歌单</div>
+<form id="输入框" autocomplete="off"><a onclick="tion(sg='')">展示全部</a><input type="text" id="输入" placeholder="多个关键词用空格分隔"/></form>
+<br/><br/>
+<a onclick="随机排序()">随机排序</a>
+<div id="结果"></div>
+<br/><br/><br/><br/>
+<script>
+let data = new Array(
+"／／／",
+"《Super Star》麦田守望者／／／",
+"《爱的初体验》张震岳／／／",
+"《成长的路口》咖啡因乐队／／／",
+"《城市》张悬／／／",
+"《春风十里》孟大宝／／／",
+"《当那枫叶红》费玉清／／／",
+"《干物女（WeiWei）》／／／",
+"《给自己的歌》李宗盛／／／",
+"《公路》纵贯线／／／",
+"《河蟹你全家》／／／",
+"《假行僧》／／／",
+"《尽在一笑中》／／／",
+"《礼物》／／／",
+"《恋曲1990》纵贯线／／／",
+"《闷》王菲／／／",
+"《千本幼女》／／／",
+"《秋天》龙宽／／／",
+"《神的随波逐流》／／／",
+"《素颜》许嵩／／／",
+"《天黑黑》张学友／／／",
+"《新长征路上的摇滚》／／／",
+"《演歌》陈珊妮／／／",
+"《野狼disco》宝石Gem／／／",
+"《又是下雨天》／／／",
+"A《啊朋友 再见》／／／",
+"A《烦恼歌》张学友／／／",
+"A《男孩别哭》海龟先生／／／",
+"B《DEAR JOHN》比莉／／／",
+"B《五虎》慢慢说／／／",
+"C《Super MT》／／／",
+"D《我叫MT》／／／",
+"E《我的天坑》／／／",
+"E《一个人》铃凯 吴青峰／／／",
+"S《思念是一种病》张震岳／／／"
+)
+</script>
+<script src="/js/mq-bj-zka.js"></script>
+</body>
