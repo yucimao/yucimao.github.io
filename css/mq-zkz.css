@@ -14,6 +14,12 @@ a:hover, a:focus {
   color: #0085a1;
 }
 
+blockquote {
+  color:#808080;
+  border-left: .4em solid #c0c0c0;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
 @media screen and (min-width: 768px) {
   /*电脑*/
   .qbt {

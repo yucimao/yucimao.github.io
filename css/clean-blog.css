@@ -30,6 +30,30 @@ a {
   color: #006699;
 }
 
+em {
+  font-style:normal;
+  position: relative;
+}
+em:before {
+  content: ".";
+  position: absolute;
+  top: 0.4em;
+  left: 0.45em;
+  font-weight: bold;
+}
+blockquote {
+  color:#808080;
+  border-left: .4em solid #c0c0c0;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.zhushi {
+  color:#6A9955;
+}
+.zhushi:before{
+  content: "//";
+}
+
 @media screen and (min-width: 768px){ /*电脑*/
 .qibiaoti{
   font-size:3.5em;
