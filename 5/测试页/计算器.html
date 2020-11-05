@@ -16,9 +16,61 @@ document.getElementById("上级").innerHTML=返回;}</script>
       </select> 
     <input id="jsq_you" style="width:50px"/> = <input id="jsq_jg" style="width:50px"/>　
     <button onclick="jsq_计算()">计算</button> <button onclick="jsq_复制()">复制</button> <button onclick="jsq_清空()">清空</button> <button onclick="jsq_自动()">自动</button>
-    </div>
-    
-    <script>
+</div>
+<div>
+    <input id="jsq_b" style="width:40%"/><br/>
+    <div id="jsq_b0">（只有加减乘除，按照由左向右顺序计算）</div>
+</div>
+
+<script>
+$("#jsq_b").keyup(function () {
+    let jsq_b1=document.getElementById("jsq_b").value;
+    let jsq_b2=new Array();
+    let jsq_b3=0;
+    let jsq_b4=new Array();
+    let jsq_b5=0;
+    let jsq_b6=0;
+    for(let i=0;i<jsq_b1.length;i++){
+        if(jsq_b1[i]>-1){
+            if(isNaN(jsq_b2[jsq_b3])){
+                jsq_b2[jsq_b3]=jsq_b1[i]+"";
+            }
+            else{
+                jsq_b2[jsq_b3]+=jsq_b1[i]+"";
+            }
+        }
+        else{
+            jsq_b4[jsq_b5]=jsq_b1[i];
+            jsq_b3+=1;
+            jsq_b5+=1;
+        }
+    }
+    let jsq_b7=jsq_b2.length-1;
+    for(let i=0;i<jsq_b7;i++){
+        let jsq_i=jsq_b2[i];
+        jsq_i*=1;
+        if(i==0){
+            jsq_b6=jsq_i;
+        }
+        jsq_i=jsq_b2[i+1];
+        jsq_i*=1;
+        if(jsq_b4[i]=="+"){
+            jsq_b6=jsq_b6+jsq_i;
+        }
+        if(jsq_b4[i]=="-"){
+            jsq_b6=jsq_b6-jsq_i;
+        }
+        if(jsq_b4[i]=="x"){
+            jsq_b6=jsq_b6*jsq_i;
+        }
+        if(jsq_b4[i]=="/"){
+            jsq_b6=jsq_b6/jsq_i;
+        }
+    }
+document.getElementById('jsq_b0').innerHTML = jsq_b6;
+})
+
+
     function jsq_计算(){
         let jsq_左=document.getElementById("jsq_zuo").value;
         let jsq_右=document.getElementById("jsq_you").value;
