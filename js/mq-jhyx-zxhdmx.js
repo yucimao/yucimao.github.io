@@ -9,15 +9,33 @@ let nv = GetQueryString("m").split(" ");
 let p;
 let dy = "";
 
+if (top.location == self.location) {
+    let dy0 = "男玩家 <input id=\"男生\" style=\"width:70%\" placeholder=\"用空格分隔\"\/><br\/>女玩家 <input id=\"女生\" style=\"width:70%\" placeholder=\"用空格分隔\"\/><br\/><button onclick=\"刷新()\">确定<\/button>"
+    document.getElementById("yd0").innerHTML = dy0;
+}
+else {
+    for (let i = 0; i < nan.length; i++) {
+        dy += "<button onclick=\"玩家(p='" + nan[i] + "／男')\">" + nan[i] + "</button><br/>";
+    }
 
-for (let i = 0; i < nan.length; i++) {
-    dy += "<button onclick=\"玩家(p='" + nan[i] + "／男')\">" + nan[i] + "</button><br/>";
+    for (let i = 0; i < nv.length; i++) {
+        dy += "<button onclick=\"玩家(p='" + nv[i] + "／女')\">" + nv[i] + "</button><br/>";
+    }
+    document.getElementById("yd").innerHTML = dy;
 }
 
-for (let i = 0; i < nv.length; i++) {
-    dy += "<button onclick=\"玩家(p='" + nv[i] + "／女')\">" + nv[i] + "</button><br/>";
+function 刷新() {
+    nan = document.getElementById("男生").value.split(" ");
+    nv = document.getElementById("女生").value.split(" ");
+    for (let i = 0; i < nan.length; i++) {
+        dy += "<button onclick=\"玩家(p='" + nan[i] + "／男')\">" + nan[i] + "</button><br/>";
+    }
+
+    for (let i = 0; i < nv.length; i++) {
+        dy += "<button onclick=\"玩家(p='" + nv[i] + "／女')\">" + nv[i] + "</button><br/>";
+    }
+    document.getElementById("yd").innerHTML = dy;
 }
-document.getElementById("yd").innerHTML = dy;
 
 function 玩家() {
     let 随机数 = Math.floor(Math.random() * data.length);
@@ -26,6 +44,20 @@ function 玩家() {
     let dy2 = data[随机数];
     let lin1;
     let 替换;
+
+
+    boll = dy2.indexOf("／");
+    if (boll > 0) {
+        if (p[1] == "男") {
+            let lin3 = dy2.split("／");
+            dy2 = lin3[0];
+        }
+        if (p[1] == "女") {
+            let lin3 = dy2.split("／");
+            dy2 = lin3[1];
+        }
+    }
+
 
     boll = dy2.indexOf("［同］");
     if (boll > 0) {
@@ -80,6 +112,7 @@ function 玩家() {
             }
         }
     }
+
     if (dy2 != "x") {
         boll = dy2.indexOf("［异］");
         if (boll > 0) {
