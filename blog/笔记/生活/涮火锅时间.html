@@ -118,11 +118,11 @@ permalink: biji/shuanhuoguo
         let dy = "";
         for (let i = 0; i < data.length; i++) {
             if (data[i] == 0) {
-                dy += "<p><b>" + data2[i] + "<\/b> <span class=\"ke\">←可以吃啦ヾ(≧▽≦*)o<\/span> " + "<button onclick=\"删除(bn=" + i + ")\">删除<\/button><\/p>";
+                dy += "<br\/><b>" + data2[i] + "<\/b> <span class=\"ke\">←可以吃啦ヾ(≧▽≦*)o<\/span> " + "<button onclick=\"删除(bn=" + i + ")\">删除<\/button>";
             }
             else {
                 data[i] = data[i] - 1;
-                dy += "<p><b>" + data2[i] + "<\/b>：还有" + data[i] + "秒 " + "<button onclick=\"删除(bn=" + i + ")\">删除<\/button><\/p>";
+                dy += "<br\/><b>" + data2[i] + "<\/b>：还有" + data[i] + "秒 " + "<button onclick=\"删除(bn=" + i + ")\">删除<\/button>";
             }
         }
 
