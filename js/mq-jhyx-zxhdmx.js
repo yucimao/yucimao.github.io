@@ -1,0 +1,116 @@
+let LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) { return decodeURI(tmp[2]); }
+    return "";
+}
+let nan = GetQueryString("h").split(" ");
+let nv = GetQueryString("m").split(" ");
+let p;
+let dy = "";
+
+
+for (let i = 0; i < nan.length; i++) {
+    dy += "<button onclick=\"玩家(p='" + nan[i] + "／男')\">" + nan[i] + "</button><br/>";
+}
+
+for (let i = 0; i < nv.length; i++) {
+    dy += "<button onclick=\"玩家(p='" + nv[i] + "／女')\">" + nv[i] + "</button><br/>";
+}
+document.getElementById("yd").innerHTML = dy;
+
+function 玩家() {
+
+    let 随机数 = Math.floor(Math.random() * data.length);
+    p = p.split("／"); //p[0]玩家名 p[1]性别
+    let boll;
+    let dy2 = data[随机数];
+    let lin1;
+    let 替换;
+
+    boll = dy2.indexOf("［同］");
+    if (boll > 0) {
+        if (p[1] == "男") {
+            if (nan.length < 2) {
+                dy2 = "x";
+            }
+            else {
+                lin1 = nan;
+
+                let lin2 = Array.from(lin1), i, a = [];
+                while (lin2.length > 0) {
+                    i = parseInt(Math.random() * lin2.length);
+                    a.push(lin2[i]);
+                    lin2.splice(i, 1);
+                }
+                lin1 = a;
+                let lin3;
+                if (lin1[0] == p[0]) {
+                    lin3 = lin1[1];
+                }
+                else {
+                    lin3 = lin1[0];
+                }
+                替换 = new RegExp('［同］', "g");
+                dy2 = dy2.replace(替换, lin3);
+            }
+        }
+        if (p[1] == "女") {
+            if (nv.length < 2) {
+                dy2 = "x";
+            }
+            else {
+                lin1 = nv;
+
+                let lin2 = Array.from(lin1), i, a = [];
+                while (lin2.length > 0) {
+                    i = parseInt(Math.random() * lin2.length);
+                    a.push(lin2[i]);
+                    lin2.splice(i, 1);
+                }
+                lin1 = a;
+                let lin3;
+                if (lin1[0] == p[0]) {
+                    lin3 = lin1[1];
+                }
+                else {
+                    lin3 = lin1[0];
+                }
+                替换 = new RegExp('［同］', "g");
+                dy2 = dy2.replace(替换, lin3);
+            }
+        }
+    }
+    if (dy2 != "x") {
+        boll = dy2.indexOf("［异］");
+        if (boll > 0) {
+            if (p[1] == "男") {
+                if (nv.length < 1) {
+                    dy2 = "x";
+                }
+                else {
+                    随机数 = Math.floor(Math.random() * nv.length);
+                    替换 = new RegExp('［异］', "g");
+                    dy2 = dy2.replace(替换, nv[随机数]);
+                }
+            }
+            if (p[1] == "女") {
+                if (nan.length < 1) {
+                    dy2 = "x";
+                }
+                else {
+                    随机数 = Math.floor(Math.random() * nan.length);
+                    替换 = new RegExp('［异］', "g");
+                    dy2 = dy2.replace(替换, nan[随机数]);
+                }
+            }
+
+        }
+    }
+    if (dy2 == "x") {
+        dy2 = "恭喜你逃过一劫。"
+    }
+
+    document.getElementById("yd2").innerHTML = dy2;
+
+}

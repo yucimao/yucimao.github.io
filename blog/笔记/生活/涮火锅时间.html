@@ -18,7 +18,8 @@ permalink: biji/shuanhuoguo
 <button onclick="分类a()">按种类分</button><button onclick="分类b()">按时间分</button>
 <div id="yd2"></div>
 <br />
-<button onclick="清空()">清空</button>
+<button onclick="清空()">全部清空</button><br/>
+<input id="名字" style="width:120px" placeholder="名字"/><input id="时间" style="width:120px" placeholder="时间（秒）"/><button onclick="添加()">添加</button>
 <div id="yd"></div>
 <script>
     let 按种类分 = "" +
@@ -104,6 +105,17 @@ permalink: biji/shuanhuoguo
     let data = new Array;
     let data2 = new Array;
     let an;
+
+    function 添加(){
+        let nan1=document.getElementById("名字").value;
+        let nan2=document.getElementById("时间").value;
+        let i1 = data.length;
+        nan2 *= 1;
+        data[i1] = nan2;
+        data2[i1] = nan1;
+        document.getElementById('名字').value = "";
+        document.getElementById('时间').value = "";
+    }
 
     function 按钮() {
         let i1 = data.length;
