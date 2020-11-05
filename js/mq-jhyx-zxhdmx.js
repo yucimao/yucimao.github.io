@@ -10,7 +10,7 @@ let p;
 let dy = "";
 
 if (top.location == self.location) {
-    let dy0 = "男玩家 <input id=\"男生\" style=\"width:70%\" placeholder=\"用空格分隔\"\/><br\/>女玩家 <input id=\"女生\" style=\"width:70%\" placeholder=\"用空格分隔\"\/><br\/><button onclick=\"刷新()\">确定<\/button>"
+    let dy0 = "<h2 style=\"color:#0bb1f5\">真心话大冒险 - " + dt + "</h2>男玩家 <input id=\"男生\" style=\"width:70%\" placeholder=\"用空格分隔\"\/><br\/>女玩家 <input id=\"女生\" style=\"width:70%\" placeholder=\"用空格分隔\"\/><br\/><button onclick=\"刷新()\">确定<\/button>"
     document.getElementById("yd0").innerHTML = dy0;
 }
 else {
