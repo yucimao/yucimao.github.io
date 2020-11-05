@@ -20,7 +20,6 @@ for (let i = 0; i < nv.length; i++) {
 document.getElementById("yd").innerHTML = dy;
 
 function 玩家() {
-
     let 随机数 = Math.floor(Math.random() * data.length);
     p = p.split("／"); //p[0]玩家名 p[1]性别
     let boll;
@@ -104,13 +103,35 @@ function 玩家() {
                     dy2 = dy2.replace(替换, nan[随机数]);
                 }
             }
-
         }
     }
+
+    if (dy2 != "x") {
+        boll = dy2.indexOf("［全］");
+        if (boll > 0) {
+            lin1 = nan.concat(nv);
+            let lin2 = Array.from(lin1), i, a = [];
+            while (lin2.length > 0) {
+                i = parseInt(Math.random() * lin2.length);
+                a.push(lin2[i]);
+                lin2.splice(i, 1);
+            }
+            lin1 = a;
+            let lin3;
+            if (lin1[0] == p[0]) {
+                lin3 = lin1[1];
+            }
+            else {
+                lin3 = lin1[0];
+            }
+            替换 = new RegExp('［全］', "g");
+            dy2 = dy2.replace(替换, lin3);
+        }
+    }
+
     if (dy2 == "x") {
         dy2 = "恭喜你逃过一劫。"
     }
 
     document.getElementById("yd2").innerHTML = dy2;
-
 }
