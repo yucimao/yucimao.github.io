@@ -57,3 +57,10 @@ blockquote {
 .heimu2:hover {
   color: #ffffff;
 }
+
+.zhushi {
+  color:#6A9955;
+}
+.zhushi:before{
+  content: "//";
+}
