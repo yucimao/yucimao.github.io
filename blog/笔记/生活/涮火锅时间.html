@@ -7,7 +7,7 @@ permalink: biji/shuanhuoguo
 <div class="biaotib">涮火锅时间</div>
 
 <style>
-    * {
+    *:not(small) {
         font-size: 1.05em;
     }
 
@@ -17,7 +17,7 @@ permalink: biji/shuanhuoguo
 </style>
 <button onclick="分类a()">按种类分</button><button onclick="分类b()">按时间分</button>
 <div id="yd2"></div>
-<br />
+<small>（肉类等食材根据厚度不同时间会有差异，这里的时间仅供参考）</small><br />
 <button onclick="清空()">全部清空</button><br/>
 <input id="名字" style="width:120px" placeholder="名字"/><input id="时间" style="width:120px" placeholder="时间（秒）"/><button onclick="添加()">添加</button>
 <div id="yd"></div>
@@ -44,6 +44,7 @@ permalink: biji/shuanhuoguo
         "<button onclick=\"按钮(an='虾滑／180')\">虾滑<\/button>" +
         "<button onclick=\"按钮(an='蟹肉棒／120')\">蟹肉棒<\/button>" +
         "<button onclick=\"按钮(an='巴沙鱼／120')\">巴沙鱼<\/button>" +
+        "<button onclick=\"按钮(an='泥鳅／900')\">泥鳅<\/button>" +
         "<br\/>青菜 " +
         "<button onclick=\"按钮(an='海带／300')\">海带<\/button>" +
         "<button onclick=\"按钮(an='青菜／60')\">青菜<\/button>" +
@@ -62,6 +63,7 @@ permalink: biji/shuanhuoguo
         "<br\/>15分钟 " +
         "<button onclick=\"按钮(an='无骨凤爪／900')\">无骨凤爪<\/button>" +
         "<button onclick=\"按钮(an='脑花／900')\">脑花<\/button>" +
+        "<button onclick=\"按钮(an='泥鳅／900')\">泥鳅<\/button>" +
         "<br\/>10分钟 " +
         "<button onclick=\"按钮(an='老肉片／600')\">老肉片<\/button>" +
         "<button onclick=\"按钮(an='牛肉丸／600')\">牛肉丸<\/button>" +
