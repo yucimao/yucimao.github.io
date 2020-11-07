@@ -19,7 +19,7 @@ document.getElementById("上级").innerHTML=返回;}</script>
 </div>
 <br/>
 <div>
-    <input id="jsq_b" style="width:40%"/><br/>
+    <input id="jsq_b" style="width:40%" autocomplete="off"/><br/>
     <div id="jsq_b0">（只有加减乘除，按照由左向右顺序计算）</div>
 </div>
 
@@ -32,7 +32,7 @@ $("#jsq_b").keyup(function () {
     let jsq_b5=0;
     let jsq_b6=0;
     for(let i=0;i<jsq_b1.length;i++){
-        if(jsq_b1[i]>-1){
+        if(jsq_b1[i]>-1||jsq_b1[i]=="."){
             if(isNaN(jsq_b2[jsq_b3])){
                 jsq_b2[jsq_b3]=jsq_b1[i]+"";
             }
