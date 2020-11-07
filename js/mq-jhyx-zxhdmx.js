@@ -165,6 +165,9 @@ function 玩家() {
     if (dy2 == "x") {
         dy2 = "恭喜你逃过一劫。"
     }
+    else{
+        dy2=p[0]+"：<hr>"+dy2;
+    }
 
     document.getElementById("yd2").innerHTML = dy2;
 }
