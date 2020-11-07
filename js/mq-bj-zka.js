@@ -54,6 +54,7 @@ function zk() {
     if (zka[0] != "【") {
         let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
         document.getElementById(yd).innerHTML = dy;
+        console.log("/i/zk/"+zka);
     }
 }
 
