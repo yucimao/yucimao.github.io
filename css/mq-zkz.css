@@ -36,22 +36,13 @@ blockquote {
 
 @media screen and (max-width: 767px) {
   /*手机*/
-  /*.qbt {
+  .qbt {
     text-align: center;
     margin-top: 1.2em;
     font-size: 2.3em;
     color: #0bb1f5;
     font-weight: bold;
     cursor: default;
-  }*/
-  .qbt {
-    text-align: center;
-    margin-top: 1.2em;
-    font-size: 5em;
-    color: #ff0000;
-    font-weight: bold;
-    cursor: default;
-  }
 }
 
 /*手机*/
