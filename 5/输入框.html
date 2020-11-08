@@ -1,27 +1,22 @@
 ---
 layout: page2  
-permalink: mq
+permalink: x
 ---
-<title>不存在的页面 - 猫球博客</title>
+<title>输入框 - 猫球博客</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="/css/mq-bj.css">
 <script src="/js/jquery.min.js"></script>
 <body onload="document.getElementById('输入').focus()">
-<div class="biaotib">不存在的页面</div>
+<div class="biaotib">输入框</div>
 <form id="输入框" autocomplete="off"><a onclick="tion(sg='')">展示全部</a><input type="text" id="输入" placeholder="多个关键词用空格分隔"/></form>
 <br/><br/>
 <div id="结果"></div>
 <br/><br/><br/><br/>
 <script>
-let data = new Array(
-"／／／",
-"地区代码／410905／／",
-"计算器／410907／／",
-"zk编号／410909／／",
-"codeURI编码／336177／／",
-"文字转BASE64／484632／／",
-"图片转BASE64／363433／／"
-)
+$("#输入").keyup(function () {
+let 输入 = $("#输入").val();
+let dy = "<iframe src=\"/i/x/" + 输入 + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + 输入 + "\"></iframe><p id=\"／" + 输入 + "／\">加载中..</p>";
+        document.getElementById("结果").innerHTML = dy;
+});
 </script>
-<script src="/js/mq-bj-zka.js"></script>
 </body>
