@@ -79,33 +79,32 @@ permalink: wuliaoanniu
         animation: animate 8s linear infinite;
     }
 
-    .toubu{
-        color:#404040;
+    .toubu {
+        color: #404040;
         font-weight: 800;
-  height: 50px;
-  padding: 15px 15px;
-  line-height: 20px;
+        height: 50px;
+        padding: 8px 6px;
+        line-height: 20px;
         text-decoration: none;
     }
 
-    .toubu:hover{
-        color:#0085A1;
+    .toubu:hover {
+        color: #0085A1;
     }
 
-    .toubuzuo{
+    .toubuzuo {
         float: left;
-  font-size: 18px;
+        font-size: 18px;
     }
 
-    .toubuyou{
+    .toubuyou {
         display: table;
-  content: " ";
-    float: right;
-  font-size: 12px;
+        float: right;
+        font-size: 12px;
     }
 </style>
 <a href="/" class="toubu toubuzuo">猫球博客</a>
-<a href="/" class="toubu toubuyou">公告</a> <a href="/" class="toubu toubuyou">返回主页</a>
+<a href="/" class="toubu toubuyou">　公告</a> <a href="/" class="toubu toubuyou">返回主页　</a>
 <a class="xcan" onclick="按钮()">无聊按钮</a>
 <div class="fxk"><input type="checkbox" name="jxms" checked="checked" id="jxms" /><label for="jxms">　惊喜模式</label></div>
 <div id="yd" style="display:none"></div>
@@ -265,7 +264,21 @@ permalink: wuliaoanniu
     if (wz == "1") {
         let 随机数 = Math.floor(Math.random() * data.length);
         let 临时 = data[随机数].split("／");
-        location.href = 临时[1];
+        let dy = 临时[0];
+            if (临时[2] != "") {
+                dy += "<br/>" + 临时[2];
+            }
+            document.getElementById("yd").style.display = "block";
+            let num = 3;
+        window.onload = function(){
+            let s = window.setInterval(function(){
+                document.getElementById("yd").innerHTML = dy+"<br/><br/>将在"+num+"秒后跳转";
+                num--;
+                if(num<=0){
+                    location.href = 临时[1];
+                }
+            }, 1000);
+        }
     }
 
     function 按钮() {
@@ -288,10 +301,10 @@ permalink: wuliaoanniu
             let 弹窗 = confirm(显示);
             if (弹窗 == true) { 惊喜模式 = 1 };
         }
-        else{
-            let dy=临时[0];
-            if(临时[2]!=""){
-                dy+="<br/>"+临时[2];
+        else {
+            let dy = 临时[0];
+            if (临时[2] != "") {
+                dy += "<br/>" + 临时[2];
             }
             document.getElementById("yd").innerHTML = dy;
             document.getElementById("yd").style.display = "block";
