@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #66677c;
+  cursor: url(../img/hearthstone-cursor.png) 10 2, auto;
+  overflow: hidden;
+}
+body:active {
+  cursor: url(../img/hearthstone-click.png) 10 2, auto;
+}
+body:after {
+  background-color: #66677c;
+  content: '';
+  will-change: transform;
+  z-index: -1;
+}
+
+.card {
+  left: 0;
+  top: 0;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  width: 250px;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+.card:active {
+  cursor: url(../img/hearthstone-grab.png) 10 2, auto;
+}
+
+.card-image {
+  display: block;
+  pointer-events: none;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  will-change: transform;
+  user-drag: none;
+  -webkit-user-select: none;
+    -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  -webkit-user-drag: none;
+  user-drag: none;
+}

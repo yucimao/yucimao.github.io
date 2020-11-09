@@ -1,0 +1,323 @@
+---
+layout: page2
+permalink: wangzhi
+---
+<title>网址收藏 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<script src="/js/jquery.min.js"></script>
+<style>
+ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
+ul>a:hover {color: #0085a1;background: #eef6fc;text-decoration: none;}
+ul>a>span {color: #5c5c5c}
+input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
+input:focus {box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
+select {font-size: 1.2em;color: #666666;padding: .3em .5em;max-width: 7em;background: #F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);border-width: medium;border-color: #00a2ff;border-radius: 17px;outline: none;}
+select:hover {color: #0085a1;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
+button {font-size: 1.2em;color: #666666;padding: .1em;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #6b6b6b;border-radius: 17px;outline: none;}
+button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
+</style>
+
+<body onload="document.getElementById('输入').focus()">
+    <div class="biaotib">网址收藏</div>
+    <form autocomplete="off" class="juzhong">
+        <input type="text" style="display:none" />
+        <input type="text" id="输入" placeholder="多个关键词用空格分隔" />
+    </form>
+    <div style="line-height:0.5;"><br /></div>
+    <div class="juzhong">
+        <select id="菜单" onclick="菜单()">
+            <option value="无">站外搜索</option>
+            <option value="https://www.baidu.com/s?wd=">百度（广告多、流氓、结果全）</option>
+            <option value="https://cn.bing.com/search?q=">必应</option>
+            <option value="https://www.zhihu.com/search?q=">知乎</option>
+            <option value="https://weixin.sogou.com/weixin?query=">微信</option>
+            <option value="https://jikipedia.com/search?phrase=">小鸡词典（网络流行语）</option>
+            <option value="https://zh.moegirl.org/index.php?search=">萌娘百科（二次元）</option>
+            <option value="https://www.cupfox.com/search?key=">茶杯狐（影视剧）</option>
+            <option value="https://yandex.ru/search/touch/?text=">Yandex（俄罗斯、网慢）</option>
+            <option value="https://www.pornhub.com/video/search?search=">PornHub（视频、未成年禁入）</option>
+        </select>
+        <button type="button" onclick="随机排序()">随机显示</button> 
+        <button type="button" onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
+    </div>
+    <div><br /></div>
+    <div id="结果"></div>
+    <script>
+        function 菜单() {
+            let 菜单 = document.getElementById("菜单").value;
+            if (菜单 != "无") {
+                let 搜索 = 菜单 + document.getElementById("输入").value;
+                window.location.href = 搜索;
+                document.getElementById("菜单").innerHTML = "";
+            }
+        }
+    </script>
+    <script>
+        let data = new Array(
+            "猫球的博客／https://limaoqiu.com／",
+            "猫球和二扯的日常／/richang／猫球二扯日常",
+            "猫球tv／/tv／猫球TV",
+            "猫球小剧场／/xiaojuchang／",
+            "异梦系列／/yimeng／",
+            "猫球二扯玩游戏／/wanyoxui／猫球游戏实况 猫球和二扯玩游戏",
+            "无用攻略／/wuyonggonglue／",
+            "酒仙笔记／/jiuxian／",
+            "猫球相册／/xiangce／",
+            "猫球杂谈／/zatan／",
+            "稍后再看／/make／马克 make 收藏 一会再看",
+            "猫球家族／/maoqiujiazu／猫球和二扯 秃子 傻子 猪又 胡糊",
+            "pvo占领世界／/pvoink／",
+            "猫球小工具／/xiaogongju／",
+            "猫球翻译器【翻译饭圈、ACG等网络缩写和暗语】／/mqfyq／猫译器",
+            "阿巴阿巴翻译器／/mqfyq/abab／啊吧啊吧",
+            "希尔历转换器／/xel／盖亚历",
+            "无聊按钮／/wuliaoanniu／",
+            "猫球笔记／/zatan／杂谈",
+            "随机题库／/sjtk/0／",
+            "买牙膏／/biji/maiyagao／",
+            "挑水果／/biji/tiaoshuiguo／买水果 时令水果",
+            "打嗝怎么办／/biji/dagezenmeban／",
+            "租房／/biji/zufang／",
+            "猫球厨房／/biji/chufang／菜谱 做菜 食谱",
+            "放大镜效果测试／/xiangce/fdj/／",
+            "图片收藏／/biji/tupian／放大镜效果测试",
+            "投诉方式／/biji/tousu／举报",
+            "聚会游戏／/juhuiyouxi／",
+            "对中国的地域黑／/diyuhei/zhongguo／",
+            "中国各地的地域黑／/diyuhei/zggd／",
+            "对东北的地域黑／/diyuhei/dongbei／",
+            "对男性的地域黑／/diyuhei/nanxing／女权",
+            "中国和东北／/diyuhei/cn-db／地域黑",
+            "东北和东北／/diyuhei/db-db／地域黑",
+            "新闻事件与特定标签／/biji/xinwenbiaoqian／地域黑",
+            "MQ基金会／/mqf／mqf mq基金会 问题基金会",
+            "女权与数据／/nvquan／",
+            "性别互换／/nvquan/xingbiehuhuan／女权",
+            "海龟汤【聚会游戏】／/haiguitang／",
+            "涮火锅时间／/biji/shuanhuoguo／",
+            "大乱斗类作品【好物推荐】／/tuijian/daluandou／",
+            "哔哩哔哩【哔哩哔哩 (゜-゜)つロ 干杯~】／https://www.bilibili.com／b站 bilibili",
+            "哔哩哔哩直播／https://live.bilibili.com／b站直播 bilibili",
+            "AcFun【天下漫友是一家】／https://www.acfun.cn／a站 acfun",
+            "猫球的B站频道【根据心情做视频，感谢支持。】／https://space.bilibili.com/515330／猫球b站 哔哩哔哩 猫球tv",
+            "猫球的B站直播间【主要做视频，随缘做直播。】／https://live.bilibili.com/71449／猫球b站 猫球直播间 哔哩哔哩 猫球tv",
+            "Google搜索／https://www.google.com／google 谷歌搜索",
+            "百度搜索／https://www.baidu.com／",
+            "Bing搜索／https://cn.bing.com／BING 必应搜索",
+            "央视直播／https://tv.cctv.com/live/cctv1/／cctv直播 中央电视台 看电视",
+            "央视直播：CCTV13／https://tv.cctv.com/live/cctv13/／cctv直播 cctv13 中央电视台 看电视",
+            "新浪微博／https://www.weibo.com／",
+            "猫球的微博／https://www.weibo.com/pvoink／猫球微博",
+            "知乎【与世界分享你刚编的故事】／https://www.zhihu.com／",
+            "猫球的知乎【日常被禁言】／https://www.zhihu.com/people/limaoqiu／猫球知乎",
+            "GitHub【全球最大的同性交友网站】／https://www.github.com／github",
+            "猫球的GitHub／https://www.github.com/LiMaoQiu／github",
+            "码云／https://gitee.com／Git git GIT 马云",
+            "菜鸟工具【WEB在线编辑】／https://c.runoob.com/front-end/61／html css js web",
+            "菜鸟工具【进制转换】／https://c.runoob.com/front-end/58／",
+            "Steam【游戏商城】／https://store.steampowered.com／游戏平台 steam 蒸汽平台",
+            "Epic【游戏商城】／https://www.epicgames.com/store/zh-CN／游戏平台 epic",
+            "Pixiv【日本插画、漫画社区】／http://pixiv.net／绅士福利 p站 pixiv 画师",
+            "Pornhub【<small>(未成年禁入)</small>】／https://pornhub.com／绅士福利 p站 pornhub 福利视频",
+            "斗鱼直播／https://www.douyu.com/directory/all／",
+            "4399小游戏／http://www.4399.com／flash 网页游戏",
+            "7k7k小游戏／http://www.7k7k.com／flash 网页游戏",
+            "拼命玩游戏／https://wanga.me／flash 网页游戏 小游戏",
+            "闪客快打【经典Flash小游戏】／http://crazyflasher.ys168.com／",
+            "乐乎【网易轻博客】／https://www.lofter.com／老福特 lofter",
+            "网易公开课／https://open.163.com／学习 网课 云课堂",
+            "POCO【摄影社区】／https://photo.poco.cn／poco",
+            "摄影巴士【摄影技巧】／http://www.fsbus.com／",
+            "CNU视觉联盟【摄影社区】／http://www.cnu.cc／cnu视觉联盟",
+            "CNU视觉联盟【私房区】／http://www.cnu.cc/tags/%E7%A7%81%E6%88%BF?page=1／cnu视觉联盟 绅士福利 摄影 照片",
+            "路由器管理／http://192.168.1.1／",
+            "小鸡词典【查网络流行语】／http://www.jikipedia.com／翻译器",
+            "萌娘百科【万物皆可萌】／https://mzh.moegirl.org／萌百",
+            "半次元【ACG爱好者社区】／https://bcy.net／acg 二次元 cosplay",
+            "蔷薇花园【小清新聊天室】／https://iirose.com/#s=56b331ffaac6c／",
+            "推特／https://twitter.com／twitter",
+            "汤不热【凉了】／https://www.tumblr.com／tumblr",
+            "知妖【中国妖怪百集】／https://www.cbaigui.com／",
+            "克苏鲁百科／http://zuoyoo.com／",
+            "卡巴斯基【网络威胁实时地图】／https://cybermap.kaspersky.com/cn／黑客",
+            "在线PS／https://ps.gaoding.com／在线ps",
+            "SCP基金会【Secure, Contain, Protect】／http://www.scp-wiki.net／scp基金会",
+            "SCP基金会中国分部【控制，收容，保护】／http://scp-wiki-cn.wikidot.com／scp基金会",
+            "TinyPNG【图片无损压缩】／https://tinify.cn／tinypng 修图",
+            "picdiet【图片无损压缩】／https://www.picdiet.com/zh-cn／修图",
+            "SmartResize【批量剪裁图片】／https://www.smartresize.com/zh-cn／修图",
+            "Convertio【在线转换文件】／https://convertio.co/zh／",
+            "草料二维码／https://cli.im／生成二维码",
+            "网易邮箱／https://mail.163.com／163",
+            "QQ邮箱／https://mail.qq.com／qq邮箱 腾讯",
+            "有道云笔记／https://note.youdao.com/web／有道笔记 网易 163",
+            "在线3D模型／https://www.pixelsquid.com／在线3d模型",
+            "konachan【<small>(未成年禁入)</small> 动漫美女壁纸】／https://konachan.wjcodes.com／绅士福利",
+            "将一张图片渲染成另一张的风格／https://www.ostagram.me/?locale=cn／生成器",
+            "硕鼠【下载视频】／https://www.flvcd.com／",
+            "B站封面提取／http://www.galmoe.com／b站封面提取 哔哩哔哩",
+            "爱奇艺／https://iqiyi.com／",
+            "古国天使【正史、传说、奇幻】／http://qiluo.net／历史 资料 写作",
+            "玄派网【写作辅助、生成器】／http://xuanpai.sinaapp.com／",
+            "技术宅论坛／https://www.gn00.com／",
+            "技术宅【文学讨论区】／https://www.gn00.com/f-921-1.html／写作",
+            "5动漫／https://www.5dm.tv／",
+            "知网／https://www.cnki.net／",
+            "SemanticScholar【学术搜索引擎】／https://www.semanticscholar.org／",
+            "多搜搜【图片素材搜索】／http://duososo.com／",
+            "Iconfinder【ico图标素材搜索】／https://www.iconfinder.com／",
+            "优品PPT模板／https://ypppt.com／优品ppt模版",
+            "色卡【选择一个颜色，点“喜欢”或者“不喜欢”，根据选择推荐搭配的颜色】／https://www.palettable.io／配色",
+            "色卡【前后景配色推荐】／https://pigment.shapefactory.co／配色 背景色",
+            "色卡【渐变色推荐】／https://gradient.shapefactory.co／配色",
+            "色卡【中国色】／http://zhongguose.com／配色",
+            "小X福利导航【<small>(未成年禁入)</small>】／https://www.zgyxyd.com/xx301／绅士福利 搜索",
+            "RARBG【高清无字幕英文电影资源】／http://rarbgprx.org/torrents／",
+            "Nyaa【无字幕动漫资源】／http://nyaa.si／",
+            "东京图书馆【无字幕动漫资源】／https://tokyotosho.info／",
+            "动漫花园【动漫资源】／https://www.dongmanhuayuan.com／",
+            "miobt【动漫资源】／https://www.miobt.com／",
+            "王斌给您对对联／https://ai.binwang.me/couplet／自动对对联",
+            "Petalica Paint【AI自动上色】／https://petalica-paint.pixiv.dev/index_zh.html／",
+            "pexels【免费素材图片】／https://www.pexels.com/zh-cn／",
+            "unsplash【免费素材图片】／https://unsplash.com／",
+            "问答库【题库问答学习平台】／https://www.asklib.com／搜题",
+            "二次萌工口【<small>(未成年禁入)</small>】／http://moeimg.net／动漫 绅士福利",
+            "好看动漫【无修区<small>(未成年禁入)</small>】／https://www.jiadiandm.net/wxdm1.html／绅士福利",
+            "QSPL【<small>(未成年禁入)</small>双手打字以示清白的视频网站】／http://dorcel-handsoff.com/#movies／欧美 绅士福利",
+            "Cosplay Center【欧美cosplay】／https://cosplay.center／绅士福利",
+            "这只猫不存在【生成一只不存在的猫】／https://thiscatdoesnotexist.com／ai自动生成",
+            "音乐软件转外链／https://link.hhtjim.com／",
+            "百度翻译／https://fanyi.baidu.com／",
+            "谷歌翻译／https://translate.google.cn／",
+            "自动抠图／https://www.remove.bg/zh／在线ps",
+            "蝌蚪聊天室／http://kedou.workerman.net／",
+            "用文言文编程／https://wenyan-lang.lingdong.works/ide.html／",
+            "双层图（幻影坦克图）生成／https://nugine.github.io/mirage-tank-wasm-app／",
+            "在线dos游戏／https://dos.zczc.cz／",
+            "在线识别字体／https://www.likefont.com／",
+            "百度贴吧／https://tieba.baidu.com／",
+            "百度网盘／https://yun.baidu.com／百度云",
+            "淘宝网／https://taobao.com／购物 网购",
+            "Facebook【脸书】／https://www.facebook.com／facebook",
+            "Instagram／https://instagram.com／instagram",
+            "京东／https://www.jd.com／购物 网购",
+            "AO3【同人作品平台】／https://archiveofourown.org／ao3",
+            "YouTube／https://www.youtube.com／youtube youtubi",
+            "天猫／https://www.tmall.com／",
+            "今日头条／https:///www.toutiao.com／",
+            "QQ音乐／https://y.qq.com／qq音乐",
+            "网易云音乐／https://music.163.com／",
+            "网易云游戏／https://cg.163.com／",
+            "网易见外工作台／https://jianwai.youdao.com／",
+            "果壳／https://guokr.com／",
+            "豆瓣／https://douban.com／",
+            "西瓜视频【科技有意思】／https://ixigua.com／",
+            "荔枝FM／https://lizhi.fm／荔枝fm 广播",
+            "堆糖【美图壁纸兴趣社区】／https://duitang.com／",
+            "Wallhaven【壁纸】／https://wallhaven.cc／",
+            "CSDN【专业开发者社区】／https://csdn.net／csdn",
+            "菜鸟教程／http://runoob.com／",
+            "站酷【设计师互动平台】／https://zcool.com.cn／",
+            "猫耳FM【来自二次元的声音】／https://missevan.com／猫耳fm 广播",
+            "有妖气漫画／http://u17.com／",
+            "快看漫画／https://kuaikanmanhua.com／",
+            "生成表情包：兔子【发出xx的声音】／https://www.danmu9.com/sticker／表情包生成器",
+            "临时邮箱／https://linshiyouxiang.net／",
+            "QQ空间／https://qzone.qq.com／qq空间 腾讯 博客",
+            "生成水墨画／http://shan-shui-inf.lingdong.works／",
+            "腾讯云／https://cloud.tencent.com／域名",
+            "自由钢琴【在线弹钢琴】／https://www.autopiano.cn／",
+            "颜色代码表／https://encycolorpedia.cn／",
+            "EDD动漫【次元避风港】／http://www.edddh.com／edd动漫 e站 绅士福利 无修",
+            "数字记忆练习／/game/szjylx／",
+            "KTV歌单【猫球私人网页】／/biji/ktv／ktv 唱歌",
+            "神奇海螺【本页的灵感来源】／https://magiconch.com／",
+            "小霸王游戏／https://www.yikm.net／",
+            "生成中世纪小镇地图／http://fantasycities.watabou.ru／",
+            "自动生成的音乐电台／https://generative.fm／",
+            "生成一张人像／https://thispersondoesnotexist.com／",
+            "生成一个二次元女生头像／https://www.thiswaifudoesnotexist.net／",
+            "生成一个新的宝可梦／https://pokemon.alexonsager.net／",
+            "随机生成迷宫／http://www.mazegenerator.net／",
+            "古汉字和字源／https://hanziyuan.net/#home／",
+            "今日热搜榜／https://tophub.today／",
+            "抉择按钮【你会选择按下么？】／http://willyoupressthebutton.com／",
+            "圆屁屁【来看屁股】／https://www.buttsss.com／",
+            "假装自己是黑客／http://www.geektyper.com/mobile／",
+            "无上下文电台【<small>（点击屏幕换台 可能沙雕或者精神污染）</small>】／https://neave.tv／",
+            "听雨／https://www.rainymood.com／",
+            "听海的声音／http://virtocean.com／",
+            "临时记事本／https://getnote.cf／",
+            "叔叔不约【随机匿名聊天】／http://www.shushubuyue.net／",
+            "生成水墨画／http://shan-shui-inf.lingdong.works／",
+            "在线弹钢琴／https://www.autopiano.cn／",
+
+            "　／/mq／pvo"  //  "名字【说明】／地址／关键词",
+        );
+
+        let 回车 = "javascript:void(0);";
+        $("#输入").keyup(function () {
+            if (回车.split("／").length > 1) {
+                回车 = 回车.split("／")[1];
+            }
+            if (window.event.keyCode == 13) location = 回车;
+            if (window.event.keyCode == 27) document.getElementById("输入").value = "";
+
+            let 输入 = $("#输入").val().toLowerCase().split(" ");   //获取输入内容 换成小写 用空格分隔
+            let 结果 = "";
+            let 结果2 = "";
+            for (let i = 0; data.length > i; i++) {
+                let 临时 = data[i].split("／");
+                let 过程 = "0";
+                let 过程2 = "0";
+                for (let i2 = 0; 输入.length > i2; i2++) {
+                    let 临时2=data[i].split("／");
+                    临时2=临时2[0]+临时2[2];
+                    if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
+                    else { 过程 = "1"; }
+                }
+                if (过程 == "0") {
+                    结果 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
+                    回车 += "／" + 临时[1];
+                }
+                if (过程 != "0" && 过程2 == "1") {
+                    结果2 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
+                }
+            }
+
+            let 打印 = 结果 +"<br/><hr>"+ 结果2;
+            let 替换 = new RegExp('【', "g");
+            打印 = 打印.replace(替换, '<span> - ');
+            替换 = new RegExp('】', "g");
+            打印 = 打印.replace(替换, '</span>');
+            document.getElementById("结果").innerHTML = 打印;
+        })
+
+        function 随机排序() {
+            let 随机结果 = "";
+            let 随机临时;
+
+            let p = Array.from(data), i, a = [];
+            while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+
+            let 随机 = a;
+
+            for (let i2 = 0; 5 > i2; i2++) {
+                随机临时 = 随机[i2].split("／");
+                随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
+            }
+
+            let 替换 = new RegExp('【', "g");
+            随机结果 = 随机结果.replace(替换, '<span> - ');
+            替换 = new RegExp('】', "g");
+            随机结果 = 随机结果.replace(替换, '</span>');
+            document.getElementById("结果").innerHTML = 随机结果;
+        }
+    </script>
+
+</body>

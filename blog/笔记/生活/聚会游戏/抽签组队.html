@@ -1,0 +1,101 @@
+---
+permalink: i/zk/441805
+---
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/css/mq-zkz.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/mq-zkz.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>抽签组队</title><p id="上级"></p>
+<script>if(top.location==self.location){var 返回="<div class=\"qbt\">抽签组队</div><a href=\"/\">limaoqiu.com</a> / <a href=\"/juhuiyouxi\">聚会游戏</a>";
+document.getElementById("上级").innerHTML=返回;}</script>
+
+<input type="text" id="输入" placeholder="输入玩家名字 空格分隔" />
+<div id="cqzd_1">　</div>
+<div id="cqzd_2">　<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+
+<script>
+    let cqzd;
+
+    function 分队() {
+        let 输入 = document.getElementById("输入").value.split(" ");
+        let 人数 = 输入.length;
+
+        let p = Array.from(输入), i, a = [];
+            while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+            let 队伍=0;
+            let 随机排序 = a;
+            let 临时人数=0;
+            let 结果=new Array();
+        for (let i=0;i<人数;i++){
+            if (临时人数==0){
+                结果[队伍]=随机排序[i];
+            }
+            else{
+                结果[队伍]+=随机排序[i];
+            }
+            
+            临时人数+=1;
+            if(临时人数==cqzd){
+                临时人数=0;
+                队伍+=1;
+            }
+            else{
+                结果[队伍]+="、";
+            }
+        }
+        let dy="";
+        for (let i=0;i<结果.length;i++){
+            let 临时=i+1;
+            dy += "队伍"+临时+"："+结果[i]+"<br/>";
+        }
+        document.getElementById("cqzd_2").innerHTML = dy;
+    }
+
+    function 清空() {
+        document.getElementById("输入").value = "";
+        document.getElementById("cqzd_1").innerHTML = "　";
+        document.getElementById("cqzd_2").innerHTML = "　";
+    }
+
+    $("#输入").keyup(function () {
+        document.getElementById("cqzd_2").innerHTML = "　";
+        let 输入 = document.getElementById("输入").value.split(" ");
+        let 人数 = 输入.length;
+
+        let 算整除 = "";
+        let 结果 = "";
+        if (人数 < 4) { document.getElementById("cqzd_1").innerHTML = 人数+"人没法组队"; }
+        else {
+            for (let i = 2; i < 人数; i++) {
+                let 临时 = 人数 / i;
+                临时 = String(临时).indexOf(".") + 1;
+                if (临时 > 0) { }
+                else {
+                    算整除 += i + "／";
+                }
+            }
+
+            if (算整除 == "／"||算整除 == "") {
+                document.getElementById("cqzd_1").innerHTML = 人数+"人没法组队";
+            }
+            else{
+                算整除=算整除.split("／");
+                for (let i=0;i<算整除.length;i++){
+                    if (算整除[i]==""){
+                        结果+="<button onclick=\"清空()\">清空</button><br/>"
+                    }
+                    else{
+                        结果+="<button onclick=\"分队(cqzd='"+算整除[i]+"')\">分成"+算整除[i]+"个队伍</button><br/>"
+                    }
+                }
+                document.getElementById("cqzd_1").innerHTML = 结果;
+            }
+        }
+    })
+
+</script>

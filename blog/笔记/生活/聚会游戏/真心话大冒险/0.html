@@ -1,0 +1,54 @@
+---
+layout: page2  
+permalink: juhuiyouxi/zxhdmx
+---
+<title>聚会游戏：真心话大冒险 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/css/mq-bj.css">
+<script src="/js/jquery.min.js"></script>
+<div class="biaotib">真心话大冒险</div>
+
+男玩家 <input id="男生" style="width:70%" placeholder="用空格分隔"/><br/>
+女玩家 <input id="女生" style="width:70%" placeholder="用空格分隔"/><br/>
+<br/>
+<button onclick="按钮(i='458894')">网友分享的库</button>
+<br/>
+<button onclick="按钮(i='458981')">普通版</button>
+<button onclick="按钮(i='459105')">高难度版</button>
+<button onclick="按钮(i='459082')">情侣聚会版</button>
+<button onclick="按钮(i='459279')">写手画手玩法</button>
+
+<br/>
+<div id="yd"></div>
+
+<script>
+    let i;
+    function 按钮(){
+        let han=document.getElementById("男生").value;
+        let mei=document.getElementById("女生").value;
+        
+        let dy= "点击要执行的玩家名：<iframe src=\"/i/zk/" + i + "?h=" + han + "&m=" + mei + "\" frameborder=\"0\" width=\"100%\" height=\"1000px\"></iframe>";
+        document.getElementById("yd").innerHTML = dy;
+    }
+</script>
+
+<!--
+    ［全］替换成随机一个玩家名
+    ［异］替换成随机一个异性玩家名
+    ［同］替换成随机一个同性玩家名
+    如果没有可被替换的玩家名，则显示“恭喜你逃过一劫。”
+    "A／B" 男玩家显示问题A，女玩家显示问题B。
+-->
+
+<br/><br/><br/>
+<a onclick="调试()">.</a>
+<div id="ydts"></div>
+
+<script>
+    function 调试(){
+        let dyts=""+
+        "<button onclick=\"按钮(i='459045')\">无节操版<\/button>"+
+        "<button onclick=\"按钮(i='459256')\">丧心病狂版<\/button>"
+        document.getElementById("ydts").innerHTML = dyts;
+    }
+</script>
