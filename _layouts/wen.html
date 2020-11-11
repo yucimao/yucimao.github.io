@@ -64,22 +64,21 @@ span.auth{
 <div id="上级"></div>
 <script>if(top.location==self.location){
 var 上级dy=
-"<a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}"+
+"<div class=\"body\"><a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}"+
 "<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>"+
 "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div><hr>";
 ;
 document.getElementById("上级").innerHTML=上级dy;}</script>
 
-<div class="body">
+
 
 {{ content }}
 
-</div>
+
 
 <div id="下级"></div>
 <script>if(top.location==self.location){
-var 下级dy=
-"<hr><div class=\"auth\"><span class=\"auth\">{% if page.wen_index %}<a href=\"{{ page.wen_index }}\">目录</a>{% else %}目录{% endif %}</span><span class=\"auth\">{% if page.wen_pre %}<a href=\"{{ page.wen_pre }}\">上一页</a>{% else %}上一页{% endif %}</span><span class=\"suth\">{% if page.wen_next %}<a href=\"{{ page.wen_next }}\">下一页</a>{% else %}下一页{% endif %}</span></div>";
+var 下级dy="<hr><div class=\"auth\"><span class=\"auth\">{% if page.wen_index %}<a href=\"{{ page.wen_index }}\">目录</a>{% else %}目录{% endif %}</span><span class=\"auth\">{% if page.wen_pre %}<a href=\"{{ page.wen_pre }}\">上一页</a>{% else %}上一页{% endif %}</span><span class=\"suth\">{% if page.wen_next %}<a href=\"{{ page.wen_next }}\">下一页</a>{% else %}下一页{% endif %}</span></div></div>";
 document.getElementById("下级").innerHTML=下级dy;}</script>
 
 </body>
