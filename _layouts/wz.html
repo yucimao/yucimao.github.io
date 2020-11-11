@@ -8,7 +8,11 @@ html,body{
     padding:0;
 }
 
-.nav a {
+#nav {
+    position:absolute;
+    width:100%;
+}
+#nav a {
     color: #404040;
     font-weight: 800;
     height: 50px;
@@ -16,14 +20,14 @@ html,body{
     line-height: 20px;
     text-decoration: none;
 }
-.nav a:hover {
+#nav a:hover {
     color: #0085A1;
 }
-.nav :first-child {
+#nav :first-child {
     float: left;
     font-size: 18px;
 }
-.nav :not(:first-child) {
+#nav :not(:first-child) {
     float: right;
     font-size: 12px;
 }
@@ -172,7 +176,7 @@ button:hover {color: #2c2c2c;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(
     </div>
 </div> <!--加载动画结束-->
 
-<div class="nav">
+<div id="nav">
 <a href="/">{{ site.title }}</a>
 {{ page.nav_url }}<a href="/">返回主页</a></div>
 <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>

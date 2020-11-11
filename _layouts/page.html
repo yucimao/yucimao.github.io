@@ -46,7 +46,39 @@ layout: default
         font-weight: 800;
     }
 
-    @media (min-width: 768px) { /*电脑*/
+    @media (max-width: 767px) { /*小于767px*/
+        #nav+span {
+            position: absolute;
+            left: 35%;
+            top: 8%;
+            font-size: 30px;
+        }
+
+        div.body {
+            position: relative;
+            top: 20px;
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    @media (min-width: 768px) { /*大于768*/
+        #nav+span {
+            position: absolute;
+            left: 35%;
+            top: 15%;
+            font-size: 60px;
+        }
+
+        div.body {
+            position: relative;
+            top: 20px;
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+    @media (min-width: 950px) { /*大于950*/
         #nav+span {
             position: absolute;
             left: 35%;
@@ -60,23 +92,9 @@ layout: default
             width: 65%;
             margin: auto;
         }
-    } /*电脑*/
+    }
 
-    @media (max-width: 767px) { /*手机*/
-        #nav+span {
-            position: absolute;
-            left: 35%;
-            top: 15%;
-            font-size: 30px;
-        }
 
-        div.body {
-            position: relative;
-            top: 20px;
-            width: 100%;
-            margin: auto;
-        }
-    } /*手机*/
 
     #back-top {
         position: fixed;
