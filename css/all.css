@@ -50,6 +50,10 @@ transform: scale(1.2);
 z-index: 10;
 }
 
+.heise{
+color: #404040;
+}
+
 em {
 font-style:normal;
 position: relative;
