@@ -23,6 +23,13 @@ layout: default
     font-weight: bold;
     cursor: default;
     }
+
+    div.body {
+        position: relative;
+        top: 20px;
+        width: 65%;
+        margin: auto;
+    }
 } /*电脑*/
 
 @media screen and (max-width: 767px) { /*手机*/
@@ -32,6 +39,13 @@ layout: default
     color: #0bb1f5;
     font-weight: bold;
     cursor: default;
+    }
+
+    div.body {
+        position: relative;
+        top: 20px;
+        width: 100%;
+        margin: auto;
     }
 } /*手机*/
 
@@ -56,7 +70,11 @@ var 上级dy=
 ;
 document.getElementById("上级").innerHTML=上级dy;}</script>
 
+<div class="body">
+
 {{ content }}
+
+</div>
 
 <div id="下级"></div>
 <script>if(top.location==self.location){
