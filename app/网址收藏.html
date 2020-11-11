@@ -1,27 +1,10 @@
 ---
-layout: page2
+layout: wz
 title: 网址收藏
 nav_text: 网址收藏
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: wangzhi
 ---
-<style>
-ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
-ul>a:hover {color: #0085a1;background: #eef6fc;text-decoration: none;}
-ul>a>span {color: #5c5c5c}
-input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
-input:focus {box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
-select {font-size: 1.2em;color: #666666;padding: .3em .5em;max-width: 7em;background: #F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);border-width: medium;border-color: #00a2ff;border-radius: 17px;outline: none;}
-select:hover {color: #0085a1;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
-button {font-size: 1.2em;color: #666666;padding: .1em;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #6b6b6b;border-radius: 17px;outline: none;}
-button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);}
-</style>
-
-<body onload="document.getElementById('输入').focus()">
-    <form autocomplete="off" class="juzhong">
-        <input type="text" style="display:none" />
-        <input type="text" id="输入" placeholder="多个关键词用空格分隔" />
-    </form>
     <div style="line-height:0.5;"><br /></div>
     <div class="juzhong">
         <select id="菜单" onclick="菜单()">
@@ -36,11 +19,10 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
             <option value="https://yandex.ru/search/touch/?text=">Yandex（俄罗斯、网慢）</option>
             <option value="https://www.pornhub.com/video/search?search=">PornHub（视频、未成年禁入）</option>
         </select>
-        <button type="button" onclick="随机排序()">随机显示</button> 
         <button type="button" onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
     </div>
     <div><br /></div>
-    <div id="结果"></div>
+    <div id="结果x"></div>
     <script>
         function 菜单() {
             let 菜单 = document.getElementById("菜单").value;
@@ -254,69 +236,4 @@ button:hover {color: #2c2c2c;box-shadow:0 1px 0 1px #DDD inset,0 1px 2px rgba(0,
 
             "　／/mq／pvo"  //  "名字【说明】／地址／关键词",
         );
-
-        let 回车 = "javascript:void(0);";
-        $("#输入").keyup(function () {
-            if (回车.split("／").length > 1) {
-                回车 = 回车.split("／")[1];
-            }
-            if (window.event.keyCode == 13) location = 回车;
-            if (window.event.keyCode == 27) document.getElementById("输入").value = "";
-
-            let 输入 = $("#输入").val().toLowerCase().split(" ");   //获取输入内容 换成小写 用空格分隔
-            let 结果 = "";
-            let 结果2 = "";
-            for (let i = 0; data.length > i; i++) {
-                let 临时 = data[i].split("／");
-                let 过程 = "0";
-                let 过程2 = "0";
-                for (let i2 = 0; 输入.length > i2; i2++) {
-                    let 临时2=data[i].split("／");
-                    临时2=临时2[0]+临时2[2];
-                    if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
-                    else { 过程 = "1"; }
-                }
-                if (过程 == "0") {
-                    结果 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
-                    回车 += "／" + 临时[1];
-                }
-                if (过程 != "0" && 过程2 == "1") {
-                    结果2 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
-                }
-            }
-
-            let 打印 = 结果 +"<br/><hr>"+ 结果2;
-            let 替换 = new RegExp('【', "g");
-            打印 = 打印.replace(替换, '<span> - ');
-            替换 = new RegExp('】', "g");
-            打印 = 打印.replace(替换, '</span>');
-            document.getElementById("结果").innerHTML = 打印;
-        })
-
-        function 随机排序() {
-            let 随机结果 = "";
-            let 随机临时;
-
-            let p = Array.from(data), i, a = [];
-            while (p.length > 0) {
-            i = parseInt(Math.random() * p.length);
-            a.push(p[i]);
-            p.splice(i, 1);
-        }
-
-            let 随机 = a;
-
-            for (let i2 = 0; 5 > i2; i2++) {
-                随机临时 = 随机[i2].split("／");
-                随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
-            }
-
-            let 替换 = new RegExp('【', "g");
-            随机结果 = 随机结果.replace(替换, '<span> - ');
-            替换 = new RegExp('】', "g");
-            随机结果 = 随机结果.replace(替换, '</span>');
-            document.getElementById("结果").innerHTML = 随机结果;
-        }
     </script>
-
-</body>

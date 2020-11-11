@@ -105,6 +105,10 @@ transition: color 0.2s;
 color: #ffffff;
 }
 
+.juzhong{
+text-align: center;
+}
+
 @media screen and (min-width: 768px){ /*电脑*/
 
 } /*电脑*/
