@@ -5,7 +5,6 @@ nav_text: 网址收藏
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: wangzhi
 ---
-    <div style="line-height:0.5;"><br /></div>
     <div class="juzhong">
         <select id="菜单" onclick="菜单()">
             <option value="无">站外搜索</option>
@@ -19,10 +18,11 @@ permalink: wangzhi
             <option value="https://yandex.ru/search/touch/?text=">Yandex（俄罗斯、网慢）</option>
             <option value="https://www.pornhub.com/video/search?search=">PornHub（视频、未成年禁入）</option>
         </select>
+        <button type="button" onclick="随机排序()">随机显示</button> 
         <button type="button" onclick="window.location.href ='/wuliaoanniu?wz=1'">无聊按钮</button>
     </div>
     <div><br /></div>
-    <div id="结果x"></div>
+    <div id="结果"></div>
     <script>
         function 菜单() {
             let 菜单 = document.getElementById("菜单").value;
