@@ -13,9 +13,6 @@ layout: default
     window.parent.document.getElementById(bodyL).innerHTML="";
     });
 </script>
-<p id="上级"></p>
-<script>if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div><a href=\"/\">limaoqiu.com</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
-document.getElementById("上级").innerHTML=返回;}</script>
 
 <style>
 @media screen and (min-width: 768px) { /*电脑*/
@@ -43,6 +40,10 @@ document.getElementById("上级").innerHTML=返回;}</script>
 
 </head>
 <body>
+
+<p id="上级"></p>
+<script>if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div><a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
+document.getElementById("上级").innerHTML=返回;}</script>
 
 {{ content }}
 
