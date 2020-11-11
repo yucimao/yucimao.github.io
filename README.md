@@ -1,7 +1,7 @@
 
 ## 感谢 ##
 **对GitHub和代码一窍不通，感谢大佬们的分享**  
-博客模板：[cnfeat/blog.io](https://github.com/cnfeat/blog.io) [陈素封](cnfeat.com)  
+旧博客模板：[cnfeat/blog.io](https://github.com/cnfeat/blog.io) [陈素封](cnfeat.com)  
 文字描边：[你不知道的巨蟹](https://www.cnblogs.com/tu-0718/p/11331193.html)  
 优化和建议：[保险岛](https://github.com/wangdakanga)  
 按钮、变量：[菜鸟教程](https://www.runoob.com/)  

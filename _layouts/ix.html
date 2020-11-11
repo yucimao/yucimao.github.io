@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<script src="/js/jquery.min.js"></script>
+<script>window.parent.document.getElementById("结果x").style.display = "block";</script>
+
+<style>
+@media screen and (min-width: 768px) { /*电脑*/
+    .qbt {
+    text-align: center;
+    margin-top: 1.2em;
+    font-size: 3.5em;
+    color: #0bb1f5;
+    font-weight: bold;
+    cursor: default;
+    }
+} /*电脑*/
+
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {
+    text-align: center;
+    margin-top: 1.2em;
+    font-size: 2.3em;
+    color: #0bb1f5;
+    font-weight: bold;
+    cursor: default;
+    }
+} /*手机*/
+</style>
+
+</head>
+<body>
+
+{{ content }}
+
+</body>

@@ -1,86 +1,191 @@
 ---
 layout: default
 ---
-
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}'); background-size: 100%; ">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-
-
 <style>
-.stroke {
-  text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;
-  cursor:default;
-}
+    html,body{
+        margin:0;
+        padding:0;
+   }
 
-@media only screen and (min-width: 768px) {
-  .navbar-custom {
-    background: transparent;
-    border-bottom: 1px solid transparent;
-  }
-  .navbar-custom body {
-    font-size: 20px;
-  }
-  .navbar-custom .navbar-brand {
-    color: #ffffff;
-  }
-  .navbar-custom .navbar-brand:hover,
-  .navbar-custom .navbar-brand:focus {
-    color: #0085a1;
-  }
-  .navbar-custom .nav li a {
-    color: #ffffff;
-  }
-  .navbar-custom .nav li a:hover,
-  .navbar-custom .nav li a:focus {
-    color: #0085a1;
-  }
-}
+    #nav {
+        width: 100%;
+        background-image: url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    #nav:after {
+        content: "";
+        display: block;
+        padding-bottom: 40%;
 
-.navbar-custom.is-fixed .navbar-brand {
-    color: #404040;
-  }
-  .navbar-custom.is-fixed .navbar-brand:hover,
-  .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
-  }
-  .navbar-custom.is-fixed .nav li a {
-    color: #404040;
-  }
-  .navbar-custom.is-fixed .nav li a:hover,
-  .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
-  }
+    }
+    #nav a {
+        color: #{% if page.nav_color %}{{ page.nav_color }}{% else %}{{ site.nav_color }}{% endif %};
+        font-weight: 800;
+        height: 50px;
+        padding: 15px 15px;
+        line-height: 20px;
+        text-decoration: none;
+    }
+    #nav a:hover {
+        color: #0085A1;
+    }
+    #nav :first-child {
+        float: left;
+        font-size: 18px;
+    }
+    #nav :not(:first-child) {
+        float: right;
+        font-size: 12px;
+    }
+
+    #nav+span {
+        color: #fff;
+        text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;
+        cursor: default;
+        font-weight: 800;
+    }
+
+    @media (min-width: 768px) { /*电脑*/
+        #nav+span {
+            position: absolute;
+            left: 35%;
+            top: 25%;
+            font-size: 70px;
+        }
+
+        div.body {
+            position: relative;
+            top: 20px;
+            width: 65%;
+            margin: auto;
+        }
+    } /*电脑*/
+
+    @media (max-width: 767px) { /*手机*/
+        #nav+span {
+            position: absolute;
+            left: 35%;
+            top: 15%;
+            font-size: 30px;
+        }
+
+        div.body {
+            position: relative;
+            top: 20px;
+            width: 100%;
+            margin: auto;
+        }
+    } /*手机*/
+
+    #back-top {
+        position: fixed;
+        left: 85%;
+        bottom: 10%;
+    }
+    #back-top a {
+        width: 70px;
+        height: 70px;
+        display: block;
+        background: url(/img/back-top.png) no-repeat center center;
+        border-radius: 20px;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        transition: 2s;
+    }
+    #back-top a:hover {
+        transform: translate(0px, 20px);
+        -ms-transform: translate(0px, 20px);
+        -webkit-transform: translate(0px, 20px);
+    }
+    #back-top a:active {
+        transform: translate(0px, -400px);
+        -ms-transform: translate(0px, -400px);
+        -webkit-transform: translate(0px, -400px);
+    }
+
+    footer {
+        position: relative;
+        top: 300px;
+    }
+    footer img {
+        position: relative;
+        bottom: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /*加载动画*/
+    .jiazaidonghua {
+        margin: 100px auto;
+        width: 50px;
+        height: 60px;
+        text-align: center;
+        font-size: 10px;
+    }
+    .jiazaidonghua>div {
+        background-color: #ffffff;
+        height: 100%;
+        width: 6px;
+        display: inline-block;
+        -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+        animation: stretchdelay 1.2s infinite ease-in-out;
+    }
+    .jiazaidonghua .jzdhrect2 {-webkit-animation-delay: -1.1s;animation-delay: -1.1s;}
+    .jiazaidonghua .jzdhrect3 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
+    .jiazaidonghua .jzdhrect4 {-webkit-animation-delay: -0.9s;animation-delay: -0.9s;}
+    .jiazaidonghua .jzdhrect5 {-webkit-animation-delay: -0.8s;animation-delay: -0.8s;}
+    @-webkit-keyframes stretchdelay {0%,40%,100% {-webkit-transform: scaleY(0.4)}20% {-webkit-transform: scaleY(1.0)}}
+    @keyframes stretchdelay {0%,40%,100% {transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}20% {transform: scaleY(1.0);-webkit-transform: scaleY(1.0);}}
+    .site-welcome {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(116, 184, 229);
+        z-index: 101;
+    }
+    .site-welcome.active {
+        display: flex;
+    }
+    /*加载动画结束*/
 </style>
 
+</head>
+<body>
 
-<br><br><div class="stroke">
-                    <span class="subheading"><h1>{{ page.description }}</h1></span>
-<br><br><br></div>
-
-                </div>
-            </div>
-        </div>
+<!--加载动画-->
+<div class="site-welcome active" id="siteWelcome">
+    <div class="jiazaidonghua">
+        <div class="jzdhrect1"></div>
+        <div class="jzdhrect2"></div>
+        <div class="jzdhrect3"></div>
+        <div class="jzdhrect4"></div>
+        <div class="jzdhrect5"></div>
+        <span style="color:#ffffff">加载中...</span>
     </div>
-</header>
+</div> <!--加载动画结束-->
 
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
+<div id="nav">
+<a href="/">{{ site.title }}</a>
+{{ page.nav_url }}<a href="/">返回主页</a></div>
+<span>{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
+<div class="body">
 
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
+{{ content }}
+
+<div id="back-top"><a href="#top"></a></div>
+<footer><a href="/mq"><img class="tubiao" src="/img/footer.png" /></a></footer>
+
 </div>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			{{ content }}
-		</div>
-	</div>
-</div>
+<script> //关闭加载动画
+    var siteWelcome = document.getElementById('siteWelcome');
+    siteWelcome.classList.remove('active');
+</script>
 
-<hr>
+</body>

@@ -1,37 +1,19 @@
 ---
-layout: page2  
+layout: biji
+title: 日期倒计时
+nav_text: 日期倒计时
+nav_url: <a href="/zatan">笔记</a>
 permalink: rqdjs
 ---
-<title>日期倒计时 - 猫球博客</title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-<link rel="stylesheet" href="/css/mq-bj.css">
-<script src="/js/jquery.min.js"></script>
-<script src="/js/mq-sswz-h4.js"></script>
-<script src="/js/mq-ss-div.js"></script>
-<body onload="document.getElementById('searchBox').focus()">
-<div class="biaotib">日期倒计时</div>
-<div id='tag_cloud'><form id="输入框" autocomplete="off"><a onclick="window.location.href=window.location.href.split('?wz=')[0].split('#')[0]">展示全部</a><input type="text" id="searchBox" placeholder="多个关键词用空格分隔"/></form>
-<div id="dataSet"><br/><br/>
-<div class="menuDiv"><h4><small></small></h4><ul></ul></div>
+<script>
+let data = new Array(
+"／／／",
 
-<div class="menuDiv"><h4 onclick="zk(zka='rqdjs?rq=3-16&y=808080&s=b3e1e1&bt=%E7%8C%AB%E7%90%83%E7%94%9F%E6%97%A5')">猫球生日</h4><ul id="／rqdjs?rq=3-16&y=808080&s=b3e1e1&bt=%E7%8C%AB%E7%90%83%E7%94%9F%E6%97%A5"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='rqdjs?rq=9-16&y=808080&s=ffcbbf&bt=%E4%BA%8C%E6%89%AF%E7%94%9F%E6%97%A5')">二扯生日</h4><ul id="／rqdjs?rq=9-16&y=808080&s=ffcbbf&bt=%E4%BA%8C%E6%89%AF%E7%94%9F%E6%97%A5"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='rqdjs?rq=10-17&y=808080&s=fadecd&bt=%E7%8C%AA%E5%8F%88%E7%94%9F%E6%97%A5')">猪又生日</h4><ul id="／rqdjs?rq=10-17&y=808080&s=fadecd&bt=%E7%8C%AA%E5%8F%88%E7%94%9F%E6%97%A5"></ul></div>
-<div class="menuDiv"><h4 onclick="zk(zka='rqdjs?rq=10-22&y=ffffff&s=de5e2d&bt=%E8%83%A1%E7%B3%8A%E7%94%9F%E6%97%A5')">胡糊生日</h4><ul id="／rqdjs?rq=10-22&y=ffffff&s=de5e2d&bt=%E8%83%A1%E7%B3%8A%E7%94%9F%E6%97%A5"></ul></div>
+"猫球生日／0316?rq=3-16&y=808080&s=b3e1e1&bt=%E7%8C%AB%E7%90%83%E7%94%9F%E6%97%A5／／",
+"二扯生日／0316?rq=9-16&y=808080&s=ffcbbf&bt=%E4%BA%8C%E6%89%AF%E7%94%9F%E6%97%A5／／",
+"猪又生日／0316?rq=10-17&y=808080&s=fadecd&bt=%E7%8C%AA%E5%8F%88%E7%94%9F%E6%97%A5／／",
+"胡糊生日／0316?rq=10-22&y=ffffff&s=de5e2d&bt=%E8%83%A1%E7%B3%8A%E7%94%9F%E6%97%A5／／",
 
-<!--
-
-<div class="menuDiv"><h4></h4><ul>
-</ul></div>
-
-<div class="menuDiv"><h4 onclick="zk(zka='')"></h4><ul id="／"></ul></div>
-
--->
-
-
-</div></div>
-
-<br/><br/><br/><br/>
-
-<script src="/js/mq-zk.js"></script>
-</body>
+"／／／"
+)
+</script>

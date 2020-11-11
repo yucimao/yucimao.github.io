@@ -1,0 +1,325 @@
+---
+layout: default
+---
+<script src="/js/jquery.min.js"></script>
+<style>
+html,body{
+    margin:0;
+    padding:0;
+}
+
+h4 {
+    list-style: none;
+    line-height: 1.4;
+    color: #006699;
+    cursor: pointer;
+}
+
+#nav a {
+    color: #404040;
+    font-weight: 800;
+    height: 50px;
+    padding: 15px 15px;
+    line-height: 20px;
+    text-decoration: none;
+}
+#nav a:hover {
+    color: #0085A1;
+}
+#nav :first-child {
+    float: left;
+    font-size: 18px;
+}
+#nav :not(:first-child) {
+    float: right;
+    font-size: 12px;
+}
+
+a {
+cursor: pointer;
+}
+
+small {
+    color:#777777;
+    font-weight: 400;
+}
+
+#输入框 input {
+border: none;
+font-size: 1.4em;
+padding: .5em .7em;
+max-width: 30em;
+width: 100%;
+background: #F8F8F8;
+box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);
+transition: box-shadow .3s ease;
+border-radius: 4px;
+text-align: center;
+-webkit-appearance: none;
+}
+#输入框 input:focus {
+box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;
+}
+
+@media screen and (min-width: 768px){ /*电脑*/
+.biaotib{
+text-align:center;
+position: relative;
+top:40px;
+font-size:3.5em;
+color:#0bb1f5;
+font-weight:bold;
+cursor:default;
+}
+
+div.body {
+    position: relative;
+    top: 50px;
+    width: 65%;
+    margin: auto;
+}
+} /*电脑*/
+
+@media screen and (max-width: 768px){ /*手机*/
+.biaotib{
+text-align:center;
+position: relative;
+top:70px;
+font-size:2.3em;
+color:#0bb1f5;
+font-weight:bold;
+cursor:default;
+}
+
+div.body {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    margin: auto;
+}
+
+ul{
+    margin:0px;padding:0px;
+}
+} /*手机*/
+
+#back-top {
+    position: fixed;
+    left: 85%;
+    bottom: 10%;
+}
+
+#back-top a {
+    width: 70px;
+    height: 70px;
+    display: block;
+    background: url(/img/back-top.png) no-repeat center center;
+    border-radius: 20px;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    transition: 2s;
+}
+#back-top a:hover {
+    transform: translate(0px, 20px);
+    -ms-transform: translate(0px, 20px);
+    -webkit-transform: translate(0px, 20px);
+}
+#back-top a:active {
+    transform: translate(0px, -400px);
+    -ms-transform: translate(0px, -400px);
+    -webkit-transform: translate(0px, -400px);
+}
+
+footer {
+    position: relative;
+    top: 300px;
+}
+footer img {
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*加载动画*/
+.jiazaidonghua {
+    margin: 100px auto;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    font-size: 10px;
+}
+.jiazaidonghua>div {
+    background-color: #ffffff;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+.jiazaidonghua .jzdhrect2 {-webkit-animation-delay: -1.1s;animation-delay: -1.1s;}
+.jiazaidonghua .jzdhrect3 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
+.jiazaidonghua .jzdhrect4 {-webkit-animation-delay: -0.9s;animation-delay: -0.9s;}
+.jiazaidonghua .jzdhrect5 {-webkit-animation-delay: -0.8s;animation-delay: -0.8s;}
+@-webkit-keyframes stretchdelay {0%,40%,100% {-webkit-transform: scaleY(0.4)}20% {-webkit-transform: scaleY(1.0)}}
+@keyframes stretchdelay {0%,40%,100% {transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}20% {transform: scaleY(1.0);-webkit-transform: scaleY(1.0);}}
+.site-welcome {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(116, 184, 229);
+    z-index: 101;
+}
+.site-welcome.active {
+    display: flex;
+}
+/*加载动画结束*/
+</style>
+
+</head>
+<body onload="document.getElementById('输入').focus()">
+
+<!--加载动画-->
+<div class="site-welcome active" id="siteWelcome">
+    <div class="jiazaidonghua">
+        <div class="jzdhrect1"></div>
+        <div class="jzdhrect2"></div>
+        <div class="jzdhrect3"></div>
+        <div class="jzdhrect4"></div>
+        <div class="jzdhrect5"></div>
+        <span style="color:#ffffff">加载中...</span>
+    </div>
+</div> <!--加载动画结束-->
+
+<div id="nav">
+<a href="/">{{ site.title }}</a>
+{{ page.nav_url }}<a href="/">返回主页</a></div>
+
+<div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+<div class="body">
+<form id="输入框" autocomplete="off"><a onclick="tion(sg='')">展示全部</a><input type="text" id="输入" placeholder="多个关键词用空格分隔"/></form>
+<br/><br/>
+<a onclick="随机排序()">随机排序</a><br/>
+<div id="结果"></div>
+
+{{ content }}
+
+<div id="back-top"><a href="#top"></a></div>
+<footer><a href="/mq"><img class="tubiao" src="/img/footer.png" /></a></footer>
+
+</div>
+
+<script> //关闭加载动画
+    var siteWelcome = document.getElementById('siteWelcome');
+    siteWelcome.classList.remove('active');
+</script>
+
+<script>
+/*
+<a onclick="随机排序()">随机</a>
+<a onclick="tion(sg='关键词')">链接</a> 搜索关键词 '+关键词'则是在已有的输入后面加关键词
+"标题／编号／搜索关键词" zk模式
+"标题／【ID】／搜索关键词／内容" 直接显示模式
+*/
+let zkb;
+$("#输入").keyup(function () {
+    zkb = "／";
+    let 输入 = $("#输入").val();
+    let 输入2 = 输入.split(" ");
+    let 结果 = "";
+    let 结果2 = "";
+    for (let i = 0; data.length > i; i++) {
+        let 临时 = data[i].split("／");
+        let 过程 = "0";
+        let 过程2 = "0";
+        for (let i2 = 0; 输入2.length > i2; i2++) {
+            let 临时2 = data[i].split("／");
+            临时2 = 临时2[0] + 临时2[2];
+            if (临时2.indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程2 = "1"; }
+            else { 过程 = "1"; }
+        }
+        if (过程 == "0" || 输入.length == 0) {
+            结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+        }
+        if (过程 != "0" && 过程2 == "1") {
+            结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+        }
+    }
+
+    let 打印 = 结果 + "<br/><hr>" + 结果2;
+    document.getElementById("结果").innerHTML = 打印;
+}).keyup();
+
+zkb = "／" + data[0].split("／")[1];
+document.getElementById(zkb).style.display = "block";
+
+function zk() {
+    if (document.getElementById(zkb) != null) {
+        document.getElementById(zkb).style.display = "none";
+    }
+    let yd = "／" + zka;
+    window.location.href = "#" + yd;
+    if (yd == zkb) {
+        zkb = "／";
+        window.scrollBy(0, -20);
+    }
+    else {
+        zkb = "／" + zka;
+        document.getElementById(zkb).style.display = "block";
+        window.scrollBy(0, -150);
+    }
+    if (zka[0] != "【") {
+        let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
+        document.getElementById(yd).innerHTML = dy;
+        console.log("/i/zk/"+zka);
+    }
+}
+
+let sg;
+function tion() {
+    if (sg[0] == "+") {
+        sg = sg.replace(/\+/g, ' ')
+        sg = document.getElementById("输入").value + sg;
+    }
+    document.getElementById("输入").value = sg;
+    $("input").keyup();
+}
+
+var LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) { return decodeURI(tmp[2]); }
+    return "";
+}
+var wza = GetQueryString("wz");
+if (wza) {
+    document.getElementById("输入").value = wza;
+    $("input").keyup();
+}
+
+function 随机排序() {
+    let 随机结果 = "";
+    let 随机临时;
+
+    let p = Array.from(data), i, a = [];
+    while (p.length > 0) {
+        i = parseInt(Math.random() * p.length);
+        a.push(p[i]);
+        p.splice(i, 1);
+    }
+    let 随机 = a;
+
+    for (let i2 = 0; 随机.length > i2; i2++) {
+        随机临时 = 随机[i2].split("／");
+        随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
+    }
+    document.getElementById("结果").innerHTML = 随机结果;
+}
+</script>
+
+</body>

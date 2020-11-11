@@ -1,22 +1,10 @@
 ---
 layout: page2
 permalink: sjtk/1
+title: 随机题库
+nav_url: <a href="/xiaogongju">小工具</a>
 ---
-<title>随机题库 - 猫球博客</title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<br />
 <script src="/js/jquery.min.js"></script>
-<style>
-    .heimu2 {
-      background-color: #252525;
-      color: #252525;
-      transition: color 0.2s;
-    }
-    
-    .heimu2:hover {
-      color: #ffffff;
-    }
-    </style>
 <div id="dy1"></div>
 <span id="结果"></span>
 <script>
@@ -123,7 +111,7 @@ permalink: sjtk/1
         let 替换 = new RegExp('　', 'g');
         结果 = 结果.replace(替换, '<br>');
         替换 = new RegExp('［1:', 'g');
-        结果 = 结果.replace(替换, '<span class=\"heimu2\">');
+        结果 = 结果.replace(替换, '<span class=\"heimu\">');
         替换 = new RegExp(':1］', 'g');
         结果 = 结果.replace(替换, '<\/span>');
         document.getElementById("结果").innerHTML = 结果;

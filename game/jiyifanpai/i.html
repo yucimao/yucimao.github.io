@@ -1,10 +1,9 @@
 ---
 layout: page2
-description: "记忆翻牌"
+title: 记忆翻牌
+nav_text: 记忆翻牌
 permalink: game/jiyifanpai/game
 ---
-<title>记忆翻牌 - 猫球社长</title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 <style type="text/css">
 
 	html,body{
@@ -98,22 +97,17 @@ permalink: game/jiyifanpai/game
 		}
 	}
 	</style>
-	<center>　<br/>　<h3>记忆翻牌</h3></center>
 	<div class="page_mengceng"></div>
 	<div class="card_border"></div>
-	
-	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript">
-		
 	var ary=[0,1,2,3,4,5,6,7];
-	
 	ary.push(...ary);
 	var num=ary.length;
 	var time=ary.length;
 	var DomAry=[]
 	var dobleAry_index=[];
 	var dobleAry_Num=[];
-	
+
 	(function(){
 		for(var j=0;j<time;j++){
 			var random=Math.floor(Math.random()*num);
@@ -127,7 +121,7 @@ permalink: game/jiyifanpai/game
 		  }
 		}
 	})()
-	
+
 	var el=document.getElementsByClassName("card_backImg");
 	for(var i=0;i<el.length;i++){
 		var a=el[i];
@@ -154,6 +148,6 @@ permalink: game/jiyifanpai/game
 			}
 		};
 	}
-	
+
 	</script><br/>
 <center>	<a href="javascript:location.reload();" style="color:#ffffff">重新开始</a></center>
