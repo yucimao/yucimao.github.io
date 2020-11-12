@@ -41,19 +41,6 @@ a img:focus {
 cursor: pointer;
 }
 
-.tubiao {
-opacity: 0.8;
-filter: alpha(opacity=80);
-transition: all 0.3s;
-position: relative;
-}
-.tubiao:hover {
-opacity: 1.0;
-filter: alpha(opacity=100);
-transform: scale(1.2);
-z-index: 10;
-}
-
 .heise{
 color: #404040;
 }
@@ -114,6 +101,19 @@ text-align: center;
 }
 
 @media screen and (min-width: 768px){ /*电脑*/
+
+.tubiao {
+opacity: 0.8;
+filter: alpha(opacity=80);
+transition: all 0.3s;
+position: relative;
+}
+.tubiao:hover {
+opacity: 1.0;
+filter: alpha(opacity=100);
+transform: scale(1.2);
+z-index: 10;
+}
 
 } /*电脑*/
 
