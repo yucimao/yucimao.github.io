@@ -2,6 +2,214 @@
 permalink: mqfyq2
 ---
 <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    
+        #nav {
+            position: absolute;
+            width: 100%;
+        }
+    
+        #nav a {
+            color: #404040;
+            font-weight: 800;
+            height: 50px;
+            padding: 15px 15px;
+            line-height: 20px;
+            text-decoration: none;
+        }
+    
+        #nav a:hover {
+            color: #0085A1;
+        }
+    
+        #nav :first-child {
+            float: left;
+            font-size: 18px;
+        }
+    
+        #nav :not(:first-child) {
+            float: right;
+            font-size: 12px;
+        }
+    
+        @media screen and (min-width: 768px) {
+    
+            /*电脑*/
+            .biaotib {
+                text-align: center;
+                position: relative;
+                top: 40px;
+                font-size: 3.5em;
+                color: #0bb1f5;
+                font-weight: bold;
+                cursor: default;
+            }
+    
+            div.body {
+                position: relative;
+                top: 50px;
+                width: 65%;
+                margin: auto;
+            }
+    
+            #back-top {
+                position: fixed;
+                left: 85%;
+                bottom: 10%;
+            }
+    
+            #back-top a {
+                width: 70px;
+                height: 70px;
+                display: block;
+                background: url(/img/back-top.png) no-repeat center center;
+                border-radius: 20px;
+                -webkit-transition: 2s;
+                -moz-transition: 2s;
+                transition: 2s;
+            }
+    
+            #back-top a:hover {
+                transform: translate(0px, 20px);
+                -ms-transform: translate(0px, 20px);
+                -webkit-transform: translate(0px, 20px);
+            }
+    
+            #back-top a:active {
+                transform: translate(0px, -400px);
+                -ms-transform: translate(0px, -400px);
+                -webkit-transform: translate(0px, -400px);
+            }
+        }
+    
+        /*电脑*/
+    
+        @media screen and (max-width: 768px) {
+    
+            /*手机*/
+            .biaotib {
+                text-align: center;
+                position: relative;
+                top: 50px;
+                font-size: 2.3em;
+                color: #0bb1f5;
+                font-weight: bold;
+                cursor: default;
+            }
+    
+            div.body {
+                position: relative;
+                top: 50px;
+                width: 96%;
+                margin: auto;
+            }
+        }
+    
+        /*手机*/
+    
+        footer {
+            position: relative;
+            top: 300px;
+        }
+    
+        footer img {
+            position: relative;
+            bottom: 50px;
+            display: block;
+            margin: 0 auto;
+        }
+    
+        /*加载动画*/
+        .jiazaidonghua {
+            margin: 100px auto;
+            width: 50px;
+            height: 60px;
+            text-align: center;
+            font-size: 10px;
+        }
+    
+        .jiazaidonghua>div {
+            background-color: #ffffff;
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+    
+            -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+            animation: stretchdelay 1.2s infinite ease-in-out;
+        }
+    
+        .jiazaidonghua .jzdhrect2 {
+            -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+        }
+    
+        .jiazaidonghua .jzdhrect3 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+    
+        .jiazaidonghua .jzdhrect4 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+    
+        .jiazaidonghua .jzdhrect5 {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+    
+        @-webkit-keyframes stretchdelay {
+    
+            0%,
+            40%,
+            100% {
+                -webkit-transform: scaleY(0.4)
+            }
+    
+            20% {
+                -webkit-transform: scaleY(1.0)
+            }
+        }
+    
+        @keyframes stretchdelay {
+    
+            0%,
+            40%,
+            100% {
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+            }
+    
+            20% {
+                transform: scaleY(1.0);
+                -webkit-transform: scaleY(1.0);
+            }
+        }
+    
+        .site-welcome {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(116, 184, 229);
+            z-index: 101;
+        }
+    
+        .site-welcome.active {
+            display: flex;
+        }
+    
+        /*加载动画结束*/
+    </style>
+<style>
 #输入框 textArea{
 	ime-mode:inactive;
 	ime-mode:disabled;
@@ -26,6 +234,36 @@ permalink: mqfyq2
 }
 </style>
 <script src="/js/jquery.min.js"></script>
+<div class="site-welcome active" id="siteWelcome">
+        <div class="jiazaidonghua">
+            <div class="jzdhrect1"></div>
+            <div class="jzdhrect2"></div>
+            <div class="jzdhrect3"></div>
+            <div class="jzdhrect4"></div>
+            <div class="jzdhrect5"></div>
+            <span style="color:#ffffff">加载中...</span>
+        </div>
+    </div>
+    <!--加载动画结束-->
+
+    <div id="nav">
+        <a href="/">{{ site.title }}</a>
+        {{ page.nav_url }}<a href="/">返回主页</a></div>
+    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="body">
+
+
+        {{ content }}
+
+        <div id="back-top"><a href="#top"></a></div>
+        <footer><a href="/mq"><img class="tubiao" src="/img/footer.png" /></a></footer>
+
+    </div>
+
+    <script> //关闭加载动画
+        var siteWelcome = document.getElementById('siteWelcome');
+        siteWelcome.classList.remove('active');
+    </script>
 <script>
         var rT=true;
         var bT=true;
