@@ -81,7 +81,11 @@ var 上级dy=
 "<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>"+
 "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div><hr>";
 document.getElementById("上级").innerHTML=上级dy;
-document.getElementById("wen_body").className = 'body';}</script>
+document.getElementById("wen_body").className = 'body';}
+else{
+var 上级dy="{% if page.wen_auth %}作者：{{ page.wen_auth }}<br/><br/>{% else %}{% endif %}";
+document.getElementById("上级").innerHTML=上级dy;
+}</script>
 
 {{ content }}
 
