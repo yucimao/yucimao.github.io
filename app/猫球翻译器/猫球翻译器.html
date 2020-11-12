@@ -1,10 +1,131 @@
 ---
-layout: page2
 title: 猫球翻译器
 nav_text: 猫球翻译器
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: mqfyq
 ---
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav {
+        position: absolute;
+        width: 100%;
+    }
+
+    #nav a {
+        color: #404040;
+        font-weight: 800;
+        height: 50px;
+        padding: 15px 15px;
+        line-height: 20px;
+        text-decoration: none;
+    }
+
+    #nav a:hover {
+        color: #0085A1;
+    }
+
+    #nav :first-child {
+        float: left;
+        font-size: 18px;
+    }
+
+    #nav :not(:first-child) {
+        float: right;
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 768px) {
+
+        /*电脑*/
+        .biaotib {
+            text-align: center;
+            position: relative;
+            top: 40px;
+            font-size: 3.5em;
+            color: #0bb1f5;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        div.body {
+            position: relative;
+            top: 50px;
+            width: 65%;
+            margin: auto;
+        }
+
+        #back-top {
+            position: fixed;
+            left: 85%;
+            bottom: 10%;
+        }
+
+        #back-top a {
+            width: 70px;
+            height: 70px;
+            display: block;
+            background: url(/img/back-top.png) no-repeat center center;
+            border-radius: 20px;
+            -webkit-transition: 2s;
+            -moz-transition: 2s;
+            transition: 2s;
+        }
+
+        #back-top a:hover {
+            transform: translate(0px, 20px);
+            -ms-transform: translate(0px, 20px);
+            -webkit-transform: translate(0px, 20px);
+        }
+
+        #back-top a:active {
+            transform: translate(0px, -400px);
+            -ms-transform: translate(0px, -400px);
+            -webkit-transform: translate(0px, -400px);
+        }
+    }
+
+    /*电脑*/
+
+    @media screen and (max-width: 768px) {
+
+        /*手机*/
+        .biaotib {
+            text-align: center;
+            position: relative;
+            top: 50px;
+            font-size: 2.3em;
+            color: #0bb1f5;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        div.body {
+            position: relative;
+            top: 50px;
+            width: 96%;
+            margin: auto;
+        }
+    }
+
+    /*手机*/
+
+    footer {
+        position: relative;
+        top: 300px;
+    }
+
+    footer img {
+        position: relative;
+        bottom: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
 <style>
 .jieguo {
         font-size: 1.2em;
@@ -34,9 +155,8 @@ permalink: mqfyq
                 0 3px 3px rgba(0, 0, 0, .2) inset;
 }
 </style>
-<script>
-        document.getElementById("siteWelcome").style.display = "none";
-</script>
+
+<body onload="document.getElementById('输入').focus()">
 <script>
 var rT = true;
 var bT = true;
@@ -276,8 +396,12 @@ var autoTextarea = function (elem, extra, maxHeight) {
         change();
 };
 </script>
+    <div id="nav">
+        <a href="/">{{ site.title }}</a>
+        {{ page.nav_url }}<a href="/">返回主页</a></div>
+    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="body">
 
-<body onload="document.getElementById('输入').focus()">
 <!-- 能不能好好说话 -->
 <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
@@ -337,4 +461,8 @@ fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.andro
 <a href="https://lab.magiconch.com/nbnhhsh/" target="_blank"><b>能不能好好说话？</b></a>：拼音缩写查询，没有匹配的词也会给出可能的解释。<br />
 <a href="https://zh.moegirl.org/" target="_blank"><b>萌娘百科</b></a>：各种流行、冷门的梗。<br />
 
+<div id="back-top"><a href="#top"></a></div>
+<footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
+
+</div>
 </body>
