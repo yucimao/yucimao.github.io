@@ -2,13 +2,25 @@
 layout: ix
 permalink: z/ceshi
 ceshi1: [a,b,c]
-ceshi2: ["a","b","c"]
+ceshi2: ["name":"a","text":"b"]
 ceshi3: abc
 ---
 
-{{ page.ceshi1[0] }}
+{{ page.ceshi1.0 }}
 ——
 {{ page.ceshi2[0] }}
 ——
-{{ ceshi3 }}
 
+{{ page.ceshi2.name }}
+
+——
+
+{ % for i in page.ceshi1 %}
+{{ i }}
+{% endfor %}
+
+——
+
+{ % for i in page.ceshi1 %}
+{{ page.ceshi1.0 }}
+{% endfor %}
