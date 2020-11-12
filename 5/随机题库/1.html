@@ -4,7 +4,16 @@ permalink: sjtk/1
 title: 随机题库
 nav_url: <a href="/xiaogongju">小工具</a>
 ---
-<script src="/js/jquery.min.js"></script>
+<style>
+    .biaotic{
+  text-align:center;
+  margin-top: 1em;
+  font-size:2.3em;
+	color:#0bb1f5;
+  font-weight:bold;
+  cursor:default;
+}
+</style>
 <div id="dy1"></div>
 <span id="结果"></span>
 <script>
@@ -44,7 +53,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
 
         LoadAll(function () {
             window.pvo = LIBS[ic]
-            let dy1 = '<div class="biaotib">' + n + '<\/div><input type="text" id="w" value="' + f + '" style="width:40px"><button type="button" onclick="按钮()" style="font-size:1em;">抽取<\/button><br>';
+            let dy1 = '<div class="biaotic">' + n + '<\/div><input type="text" id="w" value="' + f + '" style="width:40px"><button type="button" onclick="按钮()" style="font-size:1em;">抽取<\/button><br>';
             document.getElementById("dy1").innerHTML = dy1;
         })
     });
