@@ -4,6 +4,7 @@ nav_text: 猫球翻译器
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: mqfyq
 ---
+<span style="display: none;">.</span>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -173,31 +174,6 @@ permalink: mqfyq
 </style>
 
 <body onload="document.getElementById('输入').focus()">
-
-    <div id="nav">
-        <a href="/">{{ site.title }}</a>
-        {{ page.nav_url }}<a href="/">返回主页</a></div>
-    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-    <div class="body">
-
-<!-- 能不能好好说话 -->
-<script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
-<script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
-<br />
-
-
-<div style="text-align: center">
-        <form id="输入框" autocomplete="off">
-                <textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
-
-        <p id="标签" class="jieguo"></p>
-
-        <script>
-                var text = document.getElementById("输入");
-                autoTextarea(text);
-        </script>
-</div>
-
 <script>
 var rT = true;
 var bT = true;
@@ -437,7 +413,29 @@ var autoTextarea = function (elem, extra, maxHeight) {
         change();
 };
 </script>
+    <div id="nav">
+        <a href="/">{{ site.title }}</a>
+        {{ page.nav_url }}<a href="/">返回主页</a></div>
+    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="body">
 
+<!-- 能不能好好说话 -->
+<script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+<br />
+
+
+<div style="text-align: center">
+        <form id="输入框" autocomplete="off">
+                <textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
+
+        <p id="标签" class="jieguo"></p>
+
+        <script>
+                var text = document.getElementById("输入");
+                autoTextarea(text);
+        </script>
+</div>
 <br /><br />
 
 用于将饭圈缩写、二次元梗等翻译成简单易懂的语言。<br />
