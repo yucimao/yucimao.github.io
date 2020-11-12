@@ -1,4 +1,6 @@
 ---
+title: 猫球翻译器
+nav_text: 猫球翻译器
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: mqfyq
 ---
@@ -6,6 +8,16 @@ permalink: mqfyq
 <html lang="zh">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ site.keywords }},{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="shortcut icon" href="/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/all.css">
+    <base rel="noopener noreferrer" />
 
 <style>
     html,
@@ -158,7 +170,7 @@ permalink: mqfyq
                 0 3px 3px rgba(0, 0, 0, .2) inset;
 }
 </style>
-
+</head>
 <body onload="document.getElementById('输入').focus()">
 <script>
 var rT = true;
@@ -415,7 +427,7 @@ var autoTextarea = function (elem, extra, maxHeight) {
         <form id="输入框" autocomplete="off">
                 <textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
 
-        <p id="标签"></p>
+        <p id="标签" class="jieguo"></p>
 
         <script>
                 var text = document.getElementById("输入");
