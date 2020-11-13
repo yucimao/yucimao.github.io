@@ -15,7 +15,9 @@ permalink: xiangce3
     let wdz = GetQueryString("w");
     let ms = GetQueryString("c");
     let di = "data:image/" + GetQueryString("j") + ";base64,";
-
+    if (ms.length>6){
+        ms="0";
+    }
     let hx = {
         "A": "Α",
         "B": "Β",
