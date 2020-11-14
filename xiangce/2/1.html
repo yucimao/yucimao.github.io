@@ -45,7 +45,7 @@ permalink: xiangce/fdj
 	if (输入2>0){s=输入2};
 	var sz = 输入.split(",");
 	for (i = 0; i < sz.length; i++) {
-		b=b+"<iframe src='/xiangce/fdjxg/?t="+sz[i]+"&s="+s+"' width='100%' height='100%'></iframe>"
+		b=b+"<iframe src='/xiangce/fdjxg/?t="+sz[i]+"&s="+s+"' width='100%' height='550px'></iframe>"
 	}
 document.getElementById("a").innerHTML=b;
 })
@@ -59,7 +59,7 @@ $("#输入2").keyup(function ()
 	if (输入2>0){s=输入2};
 	var sz = 输入.split(",");
 	for (i = 0; i < sz.length; i++) {
-		b=b+"<iframe src='/xiangce/fdjxg/?t="+sz[i]+"&s="+s+"' width='100%' height='100%'></iframe>"
+		b=b+"<iframe src='/xiangce/fdjxg/?t="+sz[i]+"&s="+s+"' width='100%' height='550px'></iframe>"
 	}
 document.getElementById("a").innerHTML=b;
 })
@@ -69,4 +69,4 @@ document.getElementById("a").innerHTML=b;
 
 <form id="输入框" autocomplete="off">
 	<input type="text" id='输入' placeholder="maoqiu"></input></form>圆的尺寸：<input type="text" id='输入2' value="200" ></input>
-	<div id="a"><iframe src='/xiangce/fdjxg/?t=maoqiu&s=500' width='100%' height='100%'></iframe></div>
+	<div id="a"><iframe src='/xiangce/fdjxg/?t=maoqiu&s=500' width='100%' height='550px'></iframe></div>
