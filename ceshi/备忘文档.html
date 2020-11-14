@@ -1,7 +1,30 @@
-<title>备忘文档</title>
+<title>备忘文档 - 猫球博客</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://yucimao.github.io/css/all.css">
 <script src="/js/jquery.min.js"></script>
-<style>td{min-width:2em;}a{cursor:pointer;}div.body {position: relative;width: 60%;margin: auto;}.tsx {position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 600px;background-color: #fff;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}#back-top {position: fixed;left: 85%;bottom: 10%;}#back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}</style>
+<style>td{min-width:2em;}a{cursor:pointer;}div.body {position: relative;width: 60%;top:1em;margin: auto;}.tsx {position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 600px;background-color: #fff;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}#back-top {position: fixed;left: 85%;bottom: 10%;}#back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}</style>
+
+<div class="index">
+    <br/><br/>
+
+    <a href="#layout">页面模板</a>（_layouts布局）<br/>
+    <br/>
+    
+    <a href="#小工具用法"><b>小工具用法</b></a>：<br/>
+    <a href="#相册2">相册2</a>（放大镜效果）<br/>
+    <a href="#相册3">相册3</a>（BASE64加密）<br/>
+    <a href="#随机题库">随机题库</a><br/>
+    <a href="#备忘日历">备忘日历</a><br/>
+    <br/>
+    
+    <a href="#常用html">常用html</a><br/>
+    <a href="#常用样式">常用样式</a><br/>
+    <a href="#配色">配色</a><br/>
+    <br/>
+    
+    <a href="#域名查重">域名查重</a><br/>
+</div>
+
 <div class="body">
 <div id="back-top"><a href="#top"></a></div>
 
@@ -34,28 +57,11 @@
 
 <h1>备忘文档</h1>
 
-<a href="#layout">页面模板</a>
-<br/>
+<hr/><br/>
 
-<a href="#小工具用法">小工具用法</a>：
-<a href="#相册2">相册2</a>（放大镜效果）、
-<a href="#相册3">相册3</a>（BASE64加密）、
-<a href="#随机题库">随机题库</a>、
-<a href="#备忘日历">备忘日历</a>
-<br/>
-
-<a href="#常用html">常用html</a>、
-<a href="#常用样式">常用样式</a>、
-<a href="#配色">配色</a>
-<br/>
-
-<a href="#域名查重">域名查重</a>
-
-<br/><hr/><br/>
-
-<a name="layout"></a><h2>页面模板</h2>
+<a name="layout"></a><h2>#页面模板</h2>
 layout: ？　<span class="zhushi">使用的_layouts布局</span><br/>
-<div class="tsx"><small>（格式参考）</small><span class="tsxt">
+<div class="tsx"><small>（格式参考←）</small><span class="tsxt">
 ---<br/>
 layout: page<br/>
 nav_color: ffffff<br/>
@@ -91,7 +97,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
     <tr><td><a onclick="复(制='zk_height: ？')">zk_height: </a></td><td>300</td><td>zk在biji中增加的额外高度</td></tr>
 </table>
 <br/>
-<a name="layout_page"></a><b>主页</b> 默认无js<br/>
+<a name="layout_page"></a><b>#主页</b> 默认无js<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: page<br/>
@@ -112,7 +118,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
-<a name="layout_page2"></a><b>小工具</b> 默认有js<br/>
+<a name="layout_page2"></a><b>#小工具</b> 默认有js<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: page2<br/>
@@ -129,7 +135,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
-<a name="layout_biji"></a><b>笔记：搜索zk</b> 默认有js<br/>
+<a name="layout_biji"></a><b>#笔记：搜索zk</b> 默认有js<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: biji<br/>
@@ -155,7 +161,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
-<a name="layout_zk"></a><b>笔记的子页面</b> 默认有js<br/>
+<a name="layout_zk"></a><b>#笔记的子页面</b> 默认有js<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: zk<br/>
@@ -177,7 +183,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
-<a name="layout_wz"></a><b>网址收藏</b> 默认有js<br/>
+<a name="layout_wz"></a><b>#网址收藏</b> 默认有js<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: wz<br/>
@@ -195,7 +201,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
-<a name="layout_wen"></a><b>文章、小说</b> 默认有js 也可作为笔记的子页面<br/>
+<a name="layout_wen"></a><b>#文章、小说</b> 默认有js 也可作为笔记的子页面<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: wen<br/>
@@ -223,7 +229,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
-<a name="layout_ix"></a><b>不存在的页面</b> 默认有js<br/>
+<a name="layout_ix"></a><b>#不存在的页面</b> 默认有js<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: ix
@@ -235,11 +241,11 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/><hr><br/>
 
-<a name="小工具用法"></a><h2>小工具用法</h2>
+<a name="小工具用法"></a><h2>#小工具用法</h2>
 
 <br/>
 
-<a name="相册2"></a><h3>相册2 <small>（放大镜效果）</small></h3>
+<a name="相册2"></a><h3>#相册2 <small>（放大镜效果）</small></h3>
 玩法1：鼠标移动时局部放大。<br/>
 玩法2：鼠标移动时部分内容改变（比如抄袭对比）。<br/>
 <b>图片文件</b>：分为两份，先展示的图片在/xiangce/2/0/（文件以.jpg为扩展名）。<br/>
@@ -252,7 +258,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/>
 
-<a name="相册3"></a><h3>相册3 <small>（BASE64加密）</small></h3>
+<a name="相册3"></a><h3>#相册3 <small>（BASE64加密）</small></h3>
 <b>加密</b><br/>
 1.在<a href="https://yucimao.github.io/i/zk/363433" target="_blank">/i/zk/363433</a>将图片转成BASE64代码。<br/>
 2.在/xiangce3?u=mq&c=<input id="相册3密码" style="width:50px"  placeholder="密码"/>
@@ -270,14 +276,14 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/>
 
-<a name="随机题库"></a><h3>随机题库</h3>
+<a name="随机题库"></a><h3>#随机题库</h3>
 /sjtk/1?i=<input id="随机题库地址" style="width:70px"  placeholder="地址/地址"/>&f=<input id="随机题库每次抽取" style="width:60px"  placeholder="每次抽取数"/>&n=<input id="随机题库标题" style="width:50px"  placeholder="标题"/><button onclick="随机题库复制()">复制</button><button onclick="随机题库清空()">清空</button><br/>
 <span class="zhushi">文件存放位置：/5/随机题库/i/ 文件后缀名：.json</span><br/>
 <script>function 随机题库复制(){let 随机题库地址=document.getElementById("随机题库地址").value;let 随机题库每次抽取=document.getElementById("随机题库每次抽取").value;let 随机题库标题=document.getElementById("随机题库标题").value;let 随机题库打印 = "/sjtk/1?i="+随机题库地址+"&f="+随机题库每次抽取+"&n="+随机题库标题;document.getElementById('复制').value = 随机题库打印;let 随机题库复制 = document.querySelector('#复制');随机题库复制.select();document.execCommand("Copy");}function 随机题库清空(){document.getElementById('随机题库地址').value = "";document.getElementById('随机题库每次抽取').value = "";document.getElementById('随机题库标题').value = "";}</script>
 
 <br/>
 
-<a name="备忘日历"></a><h3>备忘日历 <small>/5/备忘日历/</small></h3>
+<a name="备忘日历"></a><h3>#备忘日历 <small>/5/备忘日历/</small></h3>
 <div style="background-color: #1E1E1E;color:#D4D4D4">
 <span style="color:#9CD0C6">节日</span>+=<span style="color:#CE9178">"&lt;b&gt;节日名&lt;/b&gt; &lt;small&gt;阳历?月?日&lt;/small&gt;&lt;br/&gt;节日说明&lt;br/&gt;"</span><br/>
 <span class="zhushi">显示已过年份：</span><br/>
@@ -293,7 +299,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 【代码预览】</td></tr>
 -->
 
-<h2>常用html</h2><a name="常用html"></a>
+<a name="常用html"></a><h2>#常用html</h2>
 <table>
     <tr><td><a onclick="复(制='&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;')">复制</a></td>
         <td>用于固定手机版比例，放在没有layout: page的网页<br/>
@@ -305,7 +311,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/><hr><br/>
 
-<h2>常用样式 <small>/css/all.css</small></h2><a name="常用样式"></a>
+<a name="常用样式"></a><h2>#常用样式 <small>/css/all.css</small></h2>
 <table>
     <tr><td><a onclick="复(制='&lt;a class=&quot;heise&quot;&gt;&lt;/a&gt;')">复制</a></td>
         <td>让超链接用普通文字颜色<br/>
@@ -335,7 +341,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/><hr><br/>
 
-<a name="配色"></a><h2>配色</h2>
+<a name="配色"></a><h2>#配色</h2>
 <small>（点击颜色代码直接复制）</small>
 <style>table.配色 td{padding:5;background-color: fff;}table.配色 tr td:nth-child(even){background-color: #505050;min-width:.2em;}table.配色 a{color:#404040;font-family: '宋体'}</style>
 <table class="配色">
@@ -357,7 +363,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/><hr><br/>
 
-<h2>域名查重</h2><a name="域名查重"></a>
+<a name="域名查重"></a><h2>#域名查重</h2>
 <input id="域名查重" style="width:60%"  placeholder="域名查重"/>
 <p id="域名查重结果"></p>
 <script>$("#域名查重").keyup(function () {let 域名查重输入 = $("#域名查重").val();let 域名查重结果="没有重复，可以放心使用。";for(let i=0;域名查重data.length>i;i++){if(域名查重data[i].split("／")[0]==域名查重输入){域名查重结果="有重复的记录：<br/><b>"+域名查重data[i].split("／")[1]+"</b>";}}域名查重结果+="<br/><iframe src=\"https://yucimao.github.io/" + 域名查重输入 + "\" frameborder=\"1\" width=\"100%\" height=\"200px\"></iframe>";document.getElementById("域名查重结果").innerHTML = 域名查重结果;})</script>
@@ -367,5 +373,4 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 </div>
 
 <input id="复制" style="position:absolute;top:-100px"/>
-<script>let 制;function 复(){
-document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+<script>let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
