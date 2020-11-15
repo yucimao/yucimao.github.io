@@ -98,6 +98,7 @@ layout: default
                 var 上级dy = "{% if page.wen_auth %}作者：{{ page.wen_auth }}<br/><br/>{% else %}{% endif %}";
                 document.getElementById("上级").innerHTML = 上级dy;
             }</script>
+            <div id="屏幕宽度"></div>
 
         {{ content }}
 
@@ -107,6 +108,20 @@ layout: default
     <script>if(top.location==self.location){
         var 下级dy="<hr><div class=\"auth\"><span class=\"auth\">{% if page.wen_index %}<a href=\"{{ page.wen_index }}\">目录</a>{% else %}目录{% endif %}</span><span class=\"auth\">{% if page.wen_pre %}<a href=\"{{ page.wen_pre }}\">上一页</a>{% else %}上一页{% endif %}</span><span class=\"suth\">{% if page.wen_next %}<a href=\"{{ page.wen_next }}\">下一页</a>{% else %}下一页{% endif %}</span></div></div>"+
         "<footer><a href=\"/maoqiu\"><img class=\"tubiao\" src=\"/img/footer.png\" /></a></footer>";
-        document.getElementById("下级").innerHTML=下级dy;}</script>
+        document.getElementById("下级").innerHTML=下级dy;}
+        let a="0";
+        function 屏宽(){
+            if(a=="0"){
+            a="1";
+            let 屏宽dy="<style>@media screen and (min-width: 768px){div.body {width:96%}}</style>"
+            document.getElementById("屏幕宽度").innerHTML = 屏宽dy;
+            }
+            else{
+                a="0";
+                let 屏宽dy="<style>@media screen and (min-width: 768px){div.body {width:65%}}</style>"
+                document.getElementById("屏幕宽度").innerHTML = 屏宽dy;
+            }
+        }
+        </script>
 
 </body>
