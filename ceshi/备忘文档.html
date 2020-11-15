@@ -31,24 +31,57 @@
 <script>let 域名查重data = new Array(
 "404／错误页面",
 "beiwang／备忘记录",
-"biji／猫球笔记",
+
+"biji／猫球笔记（改为杂谈）",
+"biji/maiyagao／买牙膏",
+"biji/tiaoshuiguo／挑水果",
+"biji/dagezenmeban／打嗝怎么办",
+"biji/zufang／租房笔记",
+"biji/chufang／猫球厨房",
+"biji/tousu／投诉方式",
+"biji/xinwenbiaoqian／新闻与特定标签",
+"biji/shuanhuoguo／涮火锅时间",
+"biji/ktv／KTV歌单",
+
+"diyuhei/zhongguo／对中国的地域黑",
+"diyuhei/zggd／中国各地的地域黑",
+"diyuhei/dongbei／对东北的地域黑",
+"diyuhei/nanxing／对男性的地域黑",
+"diyuhei/cn-db／中国和东北",
+"diyuhei/db-db／东北和东北",
+
 "erche／二扯是谁",
+
+"game/szjylx／数字记忆练习",
+
 "haiguitang／聚会游戏：海龟汤",
+"jiuxian／酒仙笔记",
 "juhuiyouxi／聚会游戏",
 "make／稍后再看（收藏的网址）",
 "maoqiu／猫球是谁",
+"maoqiujiazu／猫球家族",
 "mq／调试工具（不存在的页面）",
 "mqf／MQ基金会",
 "mqfyq／猫球翻译器",
 "myq／猫球翻译器",
-"pvoink／猫球杂谈",
+"nvquan／女权与数据",
+"nvquan/xingbiehuhuan／性别互换",
+"pvoink／pvo占领世界",
+"qq／QQ",
 "richang／猫球和二扯的日常",
 "sjtk／随机题库",
+"tv／猫球TV",
+
+"tuijian/daluandou／大乱斗类推荐",
+"tuijian/bgmjiemu／适合当BGM的节目",
+
 "wanyouxi／猫球二扯玩游戏",
 "wuliaoanniu／无聊按钮",
+"wuyonggonglue／无用攻略",
 "wz／网址收藏",
 "xel／希尔历转换器",
 "xiangce／猫球相册",
+"xiangce/fdj／相册放大镜",
 "xiaojuchang／猫球小剧场",
 "xiaogongju／猫球小工具",
 "yimeng／异梦系列",
@@ -76,6 +109,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
     <tr><td><a onclick="复(制='layout: page2')">layout: page2</a></td><td>小工具</td><td><a href="#layout_page2">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: biji')">layout: biji</a></td><td>带zk搜索的笔记</td><td><a href="#layout_biji">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: zk')">layout: zk</a></td><td>biji的子页面</td><td><a href="#layout_zk">参考</a></td></tr>
+    <tr><td><a onclick="复(制='layout: book')">layout: book</a></td><td>文章、小说目录</td><td><a href="#layout_book">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: wen')">layout: wen</a></td><td>文章、小说 可作为biji的子页面</td><td><a href="#layout_wen">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: wz')">layout: wz</a></td><td>网址收藏</td><td><a href="#layout_wz">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: ix')">layout: ix</a></td><td>不存在的页面</td><td><a href="#layout_ix">参考</a></td></tr>
@@ -122,10 +156,10 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: page2<br/>
-        title: &nbsp;<br/>
-        nav_text: &nbsp;<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
         nav_url: &lt;a href="/"&gt;&lt;/a&gt;<br/>
-        permalink: &nbsp;
+        permalink:&nbsp;
         </td><td>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
@@ -139,10 +173,10 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: biji<br/>
-        title: &nbsp;<br/>
-        nav_text: &nbsp;<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
         nav_url: &lt;a href="/？"&gt;&lt;/a&gt;<br/>
-        permalink: &nbsp;
+        permalink:&nbsp;
         <hr>
         &lt;script&gt;<br/>
         let data = new Array(<br/>
@@ -165,12 +199,12 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: zk<br/>
-        title: &nbsp;<br/>
-        nav_text: &nbsp;<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
         nav_url: &lt;a href=\"/？\"&gt;？&lt;/a&gt;<br/>
         permalink: i/zk/<br/>
-        zk_ly: &nbsp;<br/>
-        zk_height: &nbsp;
+        zk_ly:&nbsp;<br/>
+        zk_height:&nbsp;
         </td>
         <td>
         <br/>
@@ -187,10 +221,10 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: wz<br/>
-        title: &nbsp;<br/>
-        nav_text: &nbsp;<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
         nav_url: &lt;a href="/？"&gt;&lt;/a&gt;<br/>
-        permalink: &nbsp;
+        permalink:&nbsp;
         </td>
         <td>
         <br/>
@@ -201,19 +235,49 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td></tr>
 </table>
 <br/>
+<a name="layout_book"></a><b>#文章、小说目录</b> 默认有js<br/>
+<table>
+    <tr style="line-height:1.2em;"><td style="min-width:16em;">
+        layout: wen<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
+        nav_url: &lt;a href="/？"&gt;？&lt;/a&gt; / &lt;a href="/？"&gt;？&lt;/a&gt;<br/>
+        permalink: <br/>
+        wen_auth:&nbsp;<br/>
+        wen_sta:&nbsp;
+        <hr>
+        &lt;script&gt;<br/>
+        let data = new Array(<br/>
+        "／／"<br/>
+        )<br/>
+        &lt;/script&gt;
+        </td>
+        <td>
+        <br/>
+        本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
+        标题文字<br/>
+        导航栏链接 可留空 多个中间用“ / ”分隔<br/>
+        本页地址（最前无需/）<br/>
+        作者名 可留空<br/>
+        状态（连载中、已完结等） 可留空
+        <hr>
+        "编号／标题" 编号使用zk编号
+        </td></tr>
+</table>
+<br/>
 <a name="layout_wen"></a><b>#文章、小说</b> 默认有js 也可作为笔记的子页面<br/>
 <table>
     <tr style="line-height:1.2em;"><td style="min-width:16em;">
         layout: wen<br/>
-        title: &nbsp;<br/>
-        nav_text: &nbsp;<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
         nav_url: &lt;a href=\"/？\"&gt;？&lt;/a&gt; / &lt;a href=\"/？\"&gt;？&lt;/a&gt;<br/>
         permalink: i/zk/<br/>
-        wen_index: &nbsp;<br/>
-        wen_pre: &nbsp;<br/>
-        wen_next: &nbsp;<br/>
-        wen_auth: &nbsp;<br/>
-        wen_time: &nbsp;<br/>
+        wen_index:&nbsp;<br/>
+        wen_pre:&nbsp;<br/>
+        wen_next:&nbsp;<br/>
+        wen_auth:&nbsp;<br/>
+        wen_time:&nbsp;<br/>
         </td>
         <td>
         <br/>
@@ -342,6 +406,14 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <br/><hr><br/>
 
 <a name="配色"></a><h2>#配色</h2>
+
+<div id="配色测试结果" style="background-color:#000;color:#fff;">（输入代码测试颜色）</div>
+文字颜色：#<input id="配色测试文字" style="width:6em"  placeholder="FFFFFF"/><br/>
+背景颜色：#<input id="配色测试背景" style="width:6em"  placeholder="000000"/>
+<script>$("#配色测试背景").keyup(function () {let 配色测试a = $("#配色测试背景").val();if(配色测试a.length==6){配色测试a="#"+配色测试a;let 配色测试b = document.getElementById("配色测试结果");配色测试b.style.backgroundColor=配色测试a;}else{let 配色测试b = document.getElementById("配色测试结果");配色测试b.style.backgroundColor="#000";}});$("#配色测试文字").keyup(function () {let 配色测试a = $("#配色测试文字").val();if(配色测试a.length==6){配色测试a="#"+配色测试a;let 配色测试b = document.getElementById("配色测试结果");配色测试b.style.color=配色测试a;}else{let 配色测试b = document.getElementById("配色测试结果");配色测试b.style.color="#fff";}})</script>
+
+<br/><br/>
+
 <small>（点击颜色代码直接复制）</small>
 <style>table.配色 td{padding:5;background-color: fff;}table.配色 tr td:nth-child(even){background-color: #505050;min-width:.2em;}table.配色 a{color:#404040;font-family: '宋体'}</style>
 <table class="配色">
@@ -393,11 +465,11 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <span class="vsc2">.vsc7</span><span class="vsc3"> { </span><span class="vsc4">color</span><span class="vsc3">:</span><span class="vsc7"> ⬛</span><span class="vsc5">#B5CEA8</span>
 </td>
 <td style="border:solid 1px #1E1E1E;"><span class="vsc3">
-;}　<span class="vsc0">&lt;/　&gt;</span><br/>
-;}　<span class="vsc0">&lt;</span><span class="vsc1">span</span><span class="vsc0">&gt;</span><br/>
-;}　<span class="vsc2">.vsc</span><br/>
-;}　<span class="vsc3">{　;}</span><br/>
-;}　<span class="vsc4">class</span>=<br/>
+;}　<span class="vsc0">&lt;　&gt;　&lt;/　&gt;</span><br/>
+;}　<span class="vsc0">&lt;</span><span class="vsc1">span</span><span class="vsc0">&gt;</span>　<span class="vsc1">let</span> <span class="vsc4">i</span>=<span class="vsc7">0</span>;<br/>
+;}　<span class="vsc2">.vsc2</span>{　<span class="vsc2">alert</span>(<span class="vsc4">a</span>)<br/>
+;}　<span class="vsc3">{　;}</span>　<span class="vsc4">a</span><span class="vsc3">[0]</span><br/>
+;}　<span class="vsc4">class</span>=　<span class="vsc1">let</span> <span class="vsc4">a</span>;<br/>
 ;}　<span class="vsc5">"内容"</span><br/>
 ;}　<span class="vsc6">//注释</span><br/>
 ;}　<span class="vsc7">600px</span></span></td>
@@ -409,7 +481,8 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 <a name="域名查重"></a><h2>#域名查重</h2>
 <input id="域名查重" style="width:60%"  placeholder="域名查重"/>
 <p id="域名查重结果"></p>
-<script>$("#域名查重").keyup(function () {let 域名查重输入 = $("#域名查重").val();let 域名查重结果="没有重复，可以放心使用。";for(let i=0;域名查重data.length>i;i++){if(域名查重data[i].split("／")[0]==域名查重输入){域名查重结果="有重复的记录：<br/><b>"+域名查重data[i].split("／")[1]+"</b>";}}域名查重结果+="<br/><iframe src=\"https://yucimao.github.io/" + 域名查重输入 + "\" frameborder=\"1\" width=\"100%\" height=\"200px\"></iframe>";document.getElementById("域名查重结果").innerHTML = 域名查重结果;})</script>
+<script>
+$("#域名查重").keyup(function () {let 域名查重输入 = $("#域名查重").val();let 域名查重结果="没有重复，可以放心使用。";for(let i=0;域名查重data.length>i;i++){if(域名查重data[i].split("／")[0]==域名查重输入){域名查重结果="有重复的记录：<br/><b>"+域名查重data[i].split("／")[1]+"</b>";}}域名查重结果+="<br/><iframe src=\"https://yucimao.github.io/" + 域名查重输入 + "\" frameborder=\"1\" width=\"100%\" height=\"200px\"></iframe>";document.getElementById("域名查重结果").innerHTML = 域名查重结果;})</script>
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
