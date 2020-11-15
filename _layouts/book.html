@@ -45,12 +45,18 @@ $("#输入").keyup(function () {
     for (let i = 0; data.length > i; i++) {
         let 临时 = data[i].split("／");
         let 过程 = "0";
+
+        if(临时[0]=="hr"){
+            结果+="<hr><h3>"+临时[1]+"</h3>";
+        }
+        else{
             for (let i2 = 0; 输入2.length > i2; i2++) {
                 if (临时[1].indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程 = "1"; }
             }
             if(过程=="1"||输入==""){
                 结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span>"+临时[1]+"</span>";
             }
+        }
     }
     document.getElementById("contents").innerHTML = 结果;
 }).keyup();
