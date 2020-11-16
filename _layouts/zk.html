@@ -61,11 +61,10 @@ layout: default
                     window.parent.document.getElementById(bodyK).height = bodyH;
                     window.parent.document.getElementById(bodyL).innerHTML = "";
 
-                    $(function () {
+                    window.onload = function () {
                     bodyH = $(document).height();
                     window.parent.document.getElementById(bodyK).height = bodyH;
-                    
-                });
+                    }
             }
             </script>
 
