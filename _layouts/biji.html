@@ -226,7 +226,7 @@ layout: default
         <form id="输入框" autocomplete="off"><a onclick="tion(sg='')">展示全部</a><input type="text" id="输入"
                 placeholder="多个关键词用空格分隔" /></form>
         <br /><br />
-        <a onclick="随机排序()">随机排序</a><br />
+        <div id="前言"><a onclick="随机排序()">随机排序</a><br /></div>
         <div id="结果"></div>
 
         {{ content }}
@@ -242,12 +242,7 @@ layout: default
     </script>
 
     <script>
-        /*
-        <a onclick="随机排序()">随机</a>
-        <a onclick="tion(sg='关键词')">链接</a> 搜索关键词 '+关键词'则是在已有的输入后面加关键词
-        "标题／编号／搜索关键词" zk模式
-        "标题／【ID】／搜索关键词／内容" 直接显示模式
-        */
+        if(dady){document.getElementById("前言").innerHTML = dady;}
         let zka;
         let zkb;
         $("#输入").keyup(function () {
