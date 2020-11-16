@@ -3,9 +3,7 @@ layout: default
 ---
 <script src="/js/jquery.min.js"></script>
 <style>
-    @media screen and (min-width: 768px) {
-
-        /*电脑*/
+    @media screen and (min-width: 768px) { /*电脑*/
         .qbt {
             text-align: center;
             margin-top: 1.2em;
@@ -21,13 +19,9 @@ layout: default
             width: 65%;
             margin: auto;
         }
-    }
+    } /*电脑*/
 
-    /*电脑*/
-
-    @media screen and (max-width: 767px) {
-
-        /*手机*/
+    @media screen and (max-width: 767px) { /*手机*/
         .qbt {
             text-align: center;
             margin-top: 1.2em;
@@ -43,9 +37,7 @@ layout: default
             width: 96%;
             margin: auto;
         }
-    }
-
-    /*手机*/
+    } /*手机*/
 </style>
 
 </head>
@@ -59,7 +51,7 @@ layout: default
             document.getElementById("上级").innerHTML=返回;
             document.getElementById("wen_body").className = 'body';}
             else{
-                $(function () {   //展开的子页面
+                   //展开的子页面
 
                     var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
                     var bodyJ = window.location.href.split('/i/zk/')[1];
@@ -69,10 +61,10 @@ layout: default
                     window.parent.document.getElementById(bodyK).height = bodyH;
                     window.parent.document.getElementById(bodyL).innerHTML = "";
 
-                    window.onload = function () {
+                    $(function () {
                     bodyH = $(document).height();
                     window.parent.document.getElementById(bodyK).height = bodyH;
-                    }
+                    
                 });
             }
             </script>
