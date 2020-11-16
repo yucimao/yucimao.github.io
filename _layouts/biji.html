@@ -231,18 +231,18 @@ layout: default
 
         {{ content }}
 
+        <script> //关闭加载动画
+            var siteWelcome = document.getElementById('siteWelcome');
+            siteWelcome.classList.remove('active');
+        </script>
+
         <div id="back-top"><a href="#top"></a></div>
         <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
 
     </div>
 
-    <script> //关闭加载动画
-        var siteWelcome = document.getElementById('siteWelcome');
-        siteWelcome.classList.remove('active');
-    </script>
-
     <script>
-        if(dady!=undefined){document.getElementById("前言").innerHTML = dady;}
+        if(typeof dady!=='undefined'){document.getElementById("前言").innerHTML = dady;}
         let zka;
         let zkb;
         $("#输入").keyup(function () {
