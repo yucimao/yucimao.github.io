@@ -1,89 +1,36 @@
 ---
 layout: default
 ---
-<script src="/js/jquery.min.js"></script>
 <script>
-    if(top.location!=self.location){
-       //展开的子页面
-
+    if(top.location!=self.location){//展开的子页面
         var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
         var bodyJ = window.location.href.split('/i/zk/')[1];
         var bodyK = "／／" + bodyJ;
         var bodyL = "／" + bodyJ + "／";
-
         window.parent.document.getElementById(bodyK).height = bodyH;
         window.parent.document.getElementById(bodyL).innerHTML = "";
 
         window.onload = function () {
         bodyH = $(document).height();
-        window.parent.document.getElementById(bodyK).height = bodyH;
+        window.parent.document.getElementById(bodyK).height = bodyH;}
         }
-    }
 </script>
 
 <style>
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) { /*电脑*/
+        .qbt {text-align: center;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        div.body {position: relative;top: 20px;width: 65%;margin: auto;}
+    } /*电脑*/
 
-        /*电脑*/
-        .qbt {
-            text-align: center;
-            font-size: 3.5em;
-            color: #0bb1f5;
-            font-weight: bold;
-            cursor: default;
-        }
+    @media screen and (max-width: 767px) { /*手机*/
+        .qbt {text-align: center;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+    } /*手机*/
 
-        div.body {
-            position: relative;
-            top: 20px;
-            width: 65%;
-            margin: auto;
-        }
-    }
-
-    /*电脑*/
-
-    @media screen and (max-width: 767px) {
-
-        /*手机*/
-        .qbt {
-            text-align: center;
-            font-size: 2.3em;
-            color: #0bb1f5;
-            font-weight: bold;
-            cursor: default;
-        }
-
-        div.body {
-            position: relative;
-            top: 20px;
-            width: 96%;
-            margin: auto;
-        }
-    }
-
-    /*手机*/
-
-    div.auth {
-        text-align: center;
-    }
-
-    span.auth {
-        margin: 0px 20px 0px 20px;
-    }
-
-    footer {
-        position: relative;
-        top: 300px;
-        z-index: -1001;
-    }
-
-    footer img {
-        position: relative;
-        bottom: 50px;
-        display: block;
-        margin: 0 auto;
-    }
+    div.auth {text-align: center;}
+    span.auth {margin: 0px 20px 0px 20px;}
+    footer {position: relative;top: 300px;z-index: -1001;}
+    footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 </style>
 
 </head>
@@ -91,19 +38,19 @@ layout: default
 <body>
 
     <div id="上级" class="body"></div>
-
     <div id="wen_body">
-        <script>if (top.location == self.location) {
-                var 上级dy =
-                    "<a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}" +
-                    "<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>" +
-                    "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div><hr>";
-                document.getElementById("上级").innerHTML = 上级dy;
-                document.getElementById("wen_body").className = 'body';
-            };</script>
-            <div id="屏幕宽度"></div>
+    <script>
+    if (top.location == self.location) {
+        var 上级dy =
+            "<a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}" +
+            "<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>" +
+            "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div><hr>";
+        document.getElementById("上级").innerHTML = 上级dy;
+        document.getElementById("wen_body").className = 'body';};
+    </script>
+    <div id="屏幕宽度"></div>
 
-        {{ content }}
+    {{ content }}
 
     </div>
 

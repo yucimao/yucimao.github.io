@@ -1,40 +1,42 @@
 ---
 layout: default
 ---
-<script src="/js/jquery.min.js"></script>
 <style>
-#contents span{background-color:#fff; display:inline-block; border-top:2px solid #ddd;padding: 10px;}
-#contents span:hover{background: #eee;}
-#输入{width:15%;}
-@media screen and (min-width: 768px) {/*电脑*/
-.qbt {text-align: center;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
-div.body {position: relative;top: 20px;width: 65%;margin: auto;}
-#contents span{width:30%;text-align:center;}
-}/*电脑*/
-@media screen and (max-width: 767px) {/*手机*/
-.qbt {text-align: center;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-div.body {position: relative;top: 20px;width: 96%;margin: auto;}
-#contents span{width:100%;}
-}/*手机*/
-div.auth {text-align: center;}
-span.auth {margin: 0px 20px 0px 20px;}
-footer {position: relative;top: 300px;z-index: -1001;}
-footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+    #contents span{background-color:#fff; display:inline-block; border-top:2px solid #ddd;padding: 10px;}
+    #contents span:hover{background: #eee;}
+    #输入{width:15%;}
+
+    @media screen and (min-width: 768px) {/*电脑*/
+        .qbt {text-align: center;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        div.body {position: relative;top: 20px;width: 65%;margin: auto;}
+        #contents span{width:30%;text-align:center;}
+    }/*电脑*/
+
+    @media screen and (max-width: 767px) {/*手机*/
+        .qbt {text-align: center;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+        #contents span{width:100%;}
+    }/*手机*/
+
+    div.auth {text-align: center;}
+    span.auth {margin: 0px 20px 0px 20px;}
+    footer {position: relative;top: 300px;z-index: -1001;}
+    footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 </style>
 
 <div class="body">
-<a href="/">猫球博客</a> {% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}
-<div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-<div class="auth"><span class="auth">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class="auth">状态：{% if page.wen_sta %}{{ page.wen_sta }}{% else %} - {% endif %}</span><input id="输入" placeholder="搜索" autocomplete="off"/></div>
-<hr>
-<a href="#最新章节" name="返回顶部"><div class="auth"><span class="auth">最新章节</span></div></a>
-<br/>
-<div id="contents"></div>
+    <a href="/">猫球博客</a> {% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}
+    <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="auth"><span class="auth">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class="auth">状态：{% if page.wen_sta %}{{ page.wen_sta }}{% else %} - {% endif %}</span><input id="输入" placeholder="搜索" autocomplete="off"/></div>
+    <hr>
+    <a href="#最新章节" name="返回顶部"><div class="auth"><span class="auth">最新章节</span></div></a>
+    <br/>
+    <div id="contents"></div>
 
-{{ content }}
+    {{ content }}
 
-<a href="#返回顶部" name="最新章节"><div class="auth" style="border-top:2px solid #ddd"><br/><span class="auth">返回顶部</span></div></a>
-<footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png"/></a></footer>
+    <a href="#返回顶部" name="最新章节"><div class="auth" style="border-top:2px solid #ddd"><br/><span class="auth">返回顶部</span></div></a>
+    <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png"/></a></footer>
 </div>
 
 <script>
