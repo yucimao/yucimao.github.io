@@ -43,7 +43,7 @@ layout: default
 
 {% if page.book_item %}
 if(localStorage.getItem("{{ page.book_item }}")){
-    let sckd=localStorage.getItem("{{ page.book_item }}");
+    let sckd=localStorage.getItem("{{ page.book_item }}").split("／");
     sckd = "上次看到：<a href=\"" + sckd[1] + "\" target=\"_blank\">"+ sckd[0] +"</a>";
     document.getElementById("上次看到").innerHTML = sckd;
 }
