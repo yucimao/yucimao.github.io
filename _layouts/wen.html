@@ -1,21 +1,6 @@
 ---
 layout: default
 ---
-<script>
-    if(top.location!=self.location){//展开的子页面
-        var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
-        var bodyJ = window.location.href.split('/i/zk/')[1];
-        var bodyK = "／／" + bodyJ;
-        var bodyL = "／" + bodyJ + "／";
-        window.parent.document.getElementById(bodyK).height = bodyH;
-        window.parent.document.getElementById(bodyL).innerHTML = "";
-
-        window.onload = function () {
-        bodyH = $(document).height();
-        window.parent.document.getElementById(bodyK).height = bodyH;}
-        }
-</script>
-
 <style>
     @media screen and (min-width: 768px) { /*电脑*/
         .qbt {text-align: center;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
@@ -47,6 +32,18 @@ layout: default
             "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div><hr>";
         document.getElementById("上级").innerHTML = 上级dy;
         document.getElementById("wen_body").className = 'body';}
+        else{
+        var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
+        var bodyJ = window.location.href.split('/i/zk/')[1];
+        var bodyK = "／／" + bodyJ;
+        var bodyL = "／" + bodyJ + "／";
+        window.parent.document.getElementById(bodyK).height = bodyH;
+        window.parent.document.getElementById(bodyL).innerHTML = "";
+
+        window.onload = function () {
+        bodyH = $(document).height();
+        window.parent.document.getElementById(bodyK).height = bodyH;}
+        }
         {% if page.book_item %}localStorage.setItem("{{ page.book_item }}", "{{ page.nav_text }}／/{{ page.permalink }}");{% else %}{% endif %}
         let p_link = "{{ page.permalink }}".split("/");
         localStorage.setItem(p_link[2], "1");
