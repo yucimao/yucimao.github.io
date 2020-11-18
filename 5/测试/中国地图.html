@@ -161,20 +161,20 @@ let zgdt_d= { //"省份名字" : "链接"
 
 <pre><code>
 
-&amp;lt;style>
+&lt;style>
 table {border-spacing: 0;border-collapse: collapse;border: 1px solid #ccc;}tr {background: #fff;vertical-align:top;}tr:hover {background: #eee;}td {border: 1px solid #ccc;}th {background: #eee;font-weight: normal;text-align: center;border: 1px solid #ccc;}
 td{border-width:1;border-color:#fff;border-style:solid;cursor:default;background-color: #fff;}
 [class]{border-color:#000000;border-width:0;}
 .oooo{border-width:0 0 0 0;}.aooo{border-width:5 0 0 0;}.oaoo{border-width:0 5 0 0;}.ooao{border-width:0 0 5 0;}.oooa{border-width:0 0 0 5;}.aaoo{border-width:5 5 0 0;}.aoao{border-width:5 0 5 0;}.aooa{border-width:5 0 0 5;}.oaao{border-width:0 5 5 0;}.oaoa{border-width:0 5 0 5;}.ooaa{border-width:0 0 5 5;}.aaao{border-width:5 5 5 0 ;}.aaoa{border-width:5 5 0 5 ;}.aoaa{border-width:5 0 5 5 ;}.oaaa{border-width:0 5 5 5 ;}.aaaa{border-width:5 5 5 5 ;}
 .aA{background-color: #F5FDC0;}.aB{background-color: #C5E4D0;}.aC{background-color: #F8C7D0;}.aD{background-color: #C7CDE0;}.aE{background-color: #FAE0B0;}.aF{background-color: #FFFDD0;}.aG{background-color: #F3DBB0;}.aH{background-color: #FAE0B0;}.aI{background-color: #CBE6D0;}.aJ{background-color: #F6BAD0;}.aK{background-color: #C5E4D0;}.aL{background-color: #F8C7D0;}.aM{background-color: #FAE0B0;}.aN{background-color: #C7CDE0;}.aO{background-color: #A1CBB0;}.aP{background-color: #C5E4D0;}.aQ{background-color: #FFFDD0;}.aR{background-color: #FFFDD0;}.aS{background-color: #F8C7D0;}.aT{background-color: #FADFC0;}.aU{background-color: #FFFDD0;}.aV{background-color: #FAE0B0;}.aW{background-color: #F8C7D0;}.aX{background-color: #F8C7D0;}.aY{background-color: #F8C7D0;}.aZ{background-color: #FFFDD0;}.a2{background-color: #FAE0B0;}.a3{background-color: #C5E4D0;}.a4{background-color: #F8C7D0;}.a5{background-color: #FAE0B0;}.a6{background-color: #C7CDE0;}.a7{background-color: #C7E3D0;}.a8{background-color: #C5E4D0;}.a9{background-color: #EFBBC0;}
 #zgdt_box {font-size:2em;background-color: #fff;position: absolute;}
-&amp;lt;/style>
+&lt;/style>
 
-&amp;lt;div id="zgdt_yd">&amp;lt;/div>
-&amp;lt;div id="zgdt_yd2">&amp;lt;/div>
-&amp;lt;div id="zgdt_box" style="display:none">&amp;lt;/div>
+&lt;div id="zgdt_yd">&lt;/div>
+&lt;div id="zgdt_yd2">&lt;/div>
+&lt;div id="zgdt_box" style="display:none">&lt;/div>
 
-&amp;lt;script>
+&lt;script>
 let zgdt_b=new Array( //改样式的省份 比如"黑龙江","吉林","辽宁"
 "黑龙江"
 );
@@ -214,7 +214,7 @@ let zgdt_dm = {
 "新疆" : "2","甘肃" : "3","陕西" : "4","宁夏" : "5","青海" : "6","内蒙古" : "F","河北" : "L","北京" : "A","天津" : "I","山西" : "K","山东" : "R","河南" : "E","黑龙江" : "B","吉林" : "C","辽宁" : "D","江苏" : "S","安徽" : "7","上海" : "G","浙江" : "Y","江西" : "J","福建" : "H","西藏" : "X","四川" : "M","重庆" : "N","云南" : "Q","贵州" : "P","湖北" : "U","湖南" : "V","广西" : "W","广东" : "Z","海南" : "T","台湾" : "8","香港" : "9","澳门" : "O"
 }
 
-let zgdt_dy="&amp;lt;style>";
+let zgdt_dy="&lt;style>";
 
 if (zgdt_b.length != 0) {
     zgdt_dy += "[class^=\"a" + zgdt_dm[zgdt_b[0]] + "\"]";
@@ -225,23 +225,23 @@ if (zgdt_b.length != 0) {
     }
 }
 
-zgdt_dy+="{box-shadow: inset 100px 100px #74B8E5;}&amp;lt;/style>"; //改样式
-zgdt_dy+="&amp;lt;table>";
+zgdt_dy+="{box-shadow: inset 100px 100px #74B8E5;}&lt;/style>"; //改样式
+zgdt_dy+="&lt;table>";
 
 for(let i=0;zgdt.length>i;i++){
-    zgdt_dy+="&amp;lt;tr>";
+    zgdt_dy+="&lt;tr>";
     let zgdt_ls = zgdt[i].split(",");
     for(let i2=0;zgdt_ls.length>i2;i2++){
         if(zgdt_ls[i2]=="0"){
-            zgdt_dy+="&amp;lt;td>&amp;nbsp;　&amp;nbsp;&amp;lt;/td>";
+            zgdt_dy+="&lt;td>&amp;nbsp;　&amp;nbsp;&lt;/td>";
         }
         else{
-            zgdt_dy+="&amp;lt;td class=\"a"+zgdt_ls[i2]+"\" onmouseover=\"dt(dta='"+ zgdt_ls[i2] +"')\" onmouseout=\"dtb()\" onclick=\"dtc(dtd='"+ zgdt_ls[i2] +"')\">&amp;nbsp;　&amp;nbsp;&amp;lt;/td>";
+            zgdt_dy+="&lt;td class=\"a"+zgdt_ls[i2]+"\" onmouseover=\"dt(dta='"+ zgdt_ls[i2] +"')\" onmouseout=\"dtb()\" onclick=\"dtc(dtd='"+ zgdt_ls[i2] +"')\">&nbsp;　&nbsp;&lt;/td>";
         }
     }
-    zgdt_dy+="&amp;lt;/tr>";
+    zgdt_dy+="&lt;/tr>";
 }
-zgdt_dy+="&amp;lt;/table>";
+zgdt_dy+="&lt;/table>";
 
 document.getElementById("zgdt_yd").innerHTML = zgdt_dy;
 
@@ -262,9 +262,9 @@ let dta;
 
 function dt(){
     dta=dta.split(" ")[0];
-    let dta2="&amp;lt;style>.a"+dta+"{box-shadow: inset 100px 100px #74B8E580;}&amp;lt;/style>"; //鼠标经过颜色
+    let dta2="&lt;style>.a"+dta+"{box-shadow: inset 100px 100px #74B8E580;}&lt;/style>"; //鼠标经过颜色
     let dta3=zgdt_dm[dta];
-    if(zgdt_c[dta3]){dta3+="&amp;lt;small>："+zgdt_c[dta3]+"&amp;lt;/small>";}
+    if(zgdt_c[dta3]){dta3+="&lt;small>："+zgdt_c[dta3]+"&lt;/small>";}
 
     document.getElementById("zgdt_yd2").innerHTML = dta2;
     document.getElementById("zgdt_box").innerHTML = dta3;
@@ -282,7 +282,7 @@ function dtc(){
     dtd=zgdt_dm[dtd];
     if(zgdt_d[dtd]){window.open(zgdt_d[dtd]);}
 }
-&amp;lt;/script>
+&lt;/script>
 
 </code></pre>
 
