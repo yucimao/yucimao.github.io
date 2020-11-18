@@ -73,5 +73,49 @@
 <input id="复制" style="position:absolute;top:-100px"/>
 <script>let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
 
+<br/>
+<hr>
+<br/>
+
+<h2>代码着色</h2>
+<small>（和配色不同，这是自动上色）</small><br/>
+
+<link href="/5/new/highlight/vsc.css" rel="stylesheet"/>
+<script src="/5/new/highlight/highlight.js"></script>
+<pre><code>
+
+&lt;link href="/5/new/highlight/vsc.css" rel="stylesheet"/>
+&lt;script src="/5/new/highlight/highlight.js">&lt;/script>
+
+&lt;pre>&lt;code>
+代码内容
+&lt;/code>&lt;/pre>
+
+&lt;script>
+    hljs.initHighlightingOnLoad();
+    var allpre = document.getElementsByTagName("pre");
+    for(i = 0; i &lt; allpre.length; i++) {
+       var onepre = document.getElementsByTagName("pre")[i];
+       var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+       onepre.innerHTML = '&lt;code id="mycode">'+mycode+'&lt;/code>';
+    }
+&lt;/script>
+
+
+
+</code></pre>
+
+记得把&lt;和&amp;用转义符，否则代码会显示出错。
+
+<script>
+    hljs.initHighlightingOnLoad();
+    var allpre = document.getElementsByTagName("pre");
+    for(i = 0; i < allpre.length; i++) {
+       var onepre = document.getElementsByTagName("pre")[i];
+       var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+       onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
+    }
+</script>
+
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
