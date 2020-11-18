@@ -48,6 +48,7 @@ layout: default
 
     footer {position: relative;top: 300px;}
     footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+    .yidu:after {position: relative;top:1.2em;content: "（已读）";font-size:.5em;color:#808080;font-weight:normal;}
 
     /*加载动画*/
     .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
@@ -89,7 +90,7 @@ layout: default
             <input type="text" id="输入" placeholder="多个关键词用空格分隔" />
             <a onclick="tion(sg='')">展示全部</a></form>
         <br /><br />
-        <div id="前言"><a onclick="随机排序()">随机排序</a></div>
+        <div id="前言"><a onclick="随机排序()">随机排序</a><a onclick="显示未读()">只显示未读</a></div>
         <hr>
         <div id="结果"></div>
 
@@ -129,10 +130,20 @@ layout: default
                 }
                 if (过程 == "0" || 输入.length == 0) {
                     datb[datb.length] = data[i];
-                    结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+                    if(localStorage.getItem(临时[1])){
+                        结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+                    }
+                    else{
+                        结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+                    }
                 }
                 if (过程 != "0" && 过程2 == "1") {
-                    结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+                    if(localStorage.getItem(临时[1])){
+                        结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+                    }
+                    else{
+                        结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+                    }
                 }
             }
 
@@ -202,9 +213,27 @@ layout: default
 
             for (let i2 = 0; 随机.length > i2; i2++) {
                 随机临时 = 随机[i2].split("／");
-                随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
+                if(localStorage.getItem(随机临时[1])){
+                    随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\" class=\"yidu\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
+                }
+                else{
+                    随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
+                }
             }
             document.getElementById("结果").innerHTML = 随机结果;
+        }
+
+        function 显示未读() {
+            let 未读结果 = "";
+            let 未读临时;
+            for (let i=0;datb.length>i;i++){
+                未读临时 = datb[i].split("／");
+                if(localStorage.getItem(未读临时[1])){}
+                else{
+                    未读结果 += "<h4 onclick=\"zk(zka='" + 未读临时[1] + "')\">" + 未读临时[0] + "</h4><ul id=\"／" + 未读临时[1] + "\" style=\"display:none;\">" + 未读临时[3] + "</ul>";
+                }
+            }
+            document.getElementById("结果").innerHTML = 未读结果;
         }
     </script>
 

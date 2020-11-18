@@ -90,7 +90,9 @@ layout: default
 
     <script>
         let 回车 = "javascript:void(0);";
+        let datb = data;
         $("#输入").keyup(function () {
+            datb=new Array();
             if (回车.split("／").length > 1) {
                 回车 = 回车.split("／")[1];
             }
@@ -111,6 +113,7 @@ layout: default
                     else { 过程 = "1"; }
                 }
                 if (过程 == "0") {
+                    datb[datb.length] = data[i];
                     结果 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
                     回车 += "／" + 临时[1];
                 }
@@ -131,7 +134,7 @@ layout: default
             let 随机结果 = "";
             let 随机临时;
 
-            let p = Array.from(data), i, a = [];
+            let p = Array.from(datb), i, a = [];
             while (p.length > 0) {
                 i = parseInt(Math.random() * p.length);
                 a.push(p[i]);

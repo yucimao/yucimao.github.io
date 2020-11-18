@@ -22,6 +22,7 @@ layout: default
     span.auth {margin: 0px 20px 0px 20px;}
     footer {position: relative;top: 300px;z-index: -1001;}
     footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+    .yidu:after {content: "（已读）";font-size:.5em;color:#808080;font-weight:normal;}
 </style>
 
 <div class="body">
@@ -66,7 +67,12 @@ $("#输入").keyup(function () {
                 if (临时[1].indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程 = "1"; }
             }
             if(过程=="1"||输入==""){
-                结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span>"+临时[1]+"</span>";
+                if(localStorage.getItem(临时[0])){
+                    结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span class=\"yidu\">"+临时[1]+"</span>";
+                }
+                else{
+                    结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span>"+临时[1]+"</span>";
+                }
             }
         }
     }
