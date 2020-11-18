@@ -1,0 +1,43 @@
+---
+layout: zk
+title: 代码着色
+nav_text: 代码着色
+nav_url: <a href=\"/mq\">不存在的页面</a>
+permalink: i/zk/568459
+---
+
+<style>
+    textarea {height: 10em;color: #AEAFAD;-webkit-text-fill-color: #AEAFAD;caret-color: #AEAFAD;background-color: #1E1E1E;font-size: 1.4em;line-height: 36px;border-style: solid;border-width: 2px;border-color: #404040;}
+    button {font-size: 1.4em;}
+    </style>
+        <textarea id="输入" style="width:100%" autocomplete="off" contenteditable="true"></textarea>
+        <button onclick="转换()">转换</button>
+        <br /><br />
+        <div id="vscdy"></div>
+        <input id="vsc_复制" style="position:absolute;top:-100px" />
+        <script>
+            function 转换() {
+                let 输入 = document.getElementById("输入").value;
+                let 替换;
+    
+                let vsc = new Array(
+                    "&／&amp;",
+                    "<／&lt;",
+                    "\n／<br/>"
+                );
+    
+                for (let i = 0; vsc.length > i; i++) {
+                    let 临时 = vsc[i].split("／");
+    
+                    替换 = new RegExp(临时[0], "g");
+                    输入 = 输入.replace(替换, 临时[1]);
+                }
+    
+    
+    输入="<link href=\"/5/new/highlight/vsc.css\" rel=\"stylesheet\"/><script src=\"/5/new/highlight/highlight.js\"><\/script><pre><code>"+输入+"</code></pre><script>hljs.initHighlightingOnLoad();var allpre = document.getElementsByTagName(\"pre\");for(i = 0; i < allpre.length; i++) {var onepre = document.getElementsByTagName(\"pre\")[i];var mycode = document.getElementsByTagName(\"pre\")[i].innerHTML;onepre.innerHTML = '<code id=\"mycode\">'+mycode+'</code>';}<\/script>";
+                document.getElementById("vscdy").innerHTML = 输入;
+                document.getElementById('vsc_复制').value = 输入;
+                let vsc_复制 = document.querySelector('#vsc_复制');
+                vsc_复制.select(); document.execCommand("Copy");
+            }
+        </script>

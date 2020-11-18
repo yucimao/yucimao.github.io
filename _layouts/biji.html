@@ -16,19 +16,20 @@ layout: default
 
     #输入框 {text-align:center;vertical-align:middle;}
     #输入框 input {
-        border: none;
+        line-height: 36px;
         font-size: 1.4em;
+        text-align: center;
         padding: .5em .7em;
         max-width: 30em;
         width: 80%;
         background: #F8F8F8;
-        box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);
-        transition: box-shadow .3s ease;
-        border-radius: 4px;
-        text-align: center;
-        -webkit-appearance: none;
+        border-style: solid;
+        border-width: medium;
+        border-color: #00a2ff;
+        border-radius: 20px;
+        outline: none;
     }
-    #输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}
+    #输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
 
     @media screen and (min-width: 768px) { /*电脑*/
         .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
@@ -72,7 +73,8 @@ layout: default
             <div class="jzdhrect2"></div>
             <div class="jzdhrect3"></div>
             <div class="jzdhrect4"></div>
-            <div class="jzdhrect5"></div><span style="color:#ffffff">加载中...</span>
+            <div class="jzdhrect5"></div>
+            <span style="color:#ffffff">加载中...</span>
         </div>
     </div>
 
@@ -82,8 +84,10 @@ layout: default
 
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
-        <form id="输入框" autocomplete="off"><input type="text" id="输入"
-                placeholder="多个关键词用空格分隔" /><a onclick="tion(sg='')">展示全部</a></form>
+        <form id="输入框" autocomplete="off">
+            <input type="text" style="display:none" />
+            <input type="text" id="输入" placeholder="多个关键词用空格分隔" />
+            <a onclick="tion(sg='')">展示全部</a></form>
         <br /><br />
         <div id="前言"><a onclick="随机排序()">随机排序</a></div>
         <hr>
