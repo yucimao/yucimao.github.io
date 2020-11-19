@@ -1,1 +1,1 @@
-节日+="<b>高考日</b> <small>阳历6月7日</small><br/>"
+节日+="<b>高考日</b>&nbsp;<small>阳历6月7日</small><br/>"

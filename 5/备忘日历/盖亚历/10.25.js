@@ -1,1 +1,1 @@
-节日+="<b>pvo纪念日</b> <small>阳历10月25日</small><br/>"
+节日+="<b>pvo纪念日</b>&nbsp;<small>阳历10月25日</small><br/>"

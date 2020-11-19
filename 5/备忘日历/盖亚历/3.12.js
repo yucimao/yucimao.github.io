@@ -1,3 +1,3 @@
-节日+="<b>植树节</b> <small>阳历3月12日</small><br/>"
-节日+="<b>世界反对网络审查日</b> <small>阳历3月12日</small><br/>"
-节日+="<b>毛里求斯国庆</b> <small>阳历3月12日</small><br/>"
+节日+="<b>植树节</b>&nbsp;<small>阳历3月12日</small><br/>"
+节日+="<b>世界反对网络审查日</b>&nbsp;<small>阳历3月12日</small><br/>"
+节日+="<b>毛里求斯国庆</b>&nbsp;<small>阳历3月12日</small><br/>"
