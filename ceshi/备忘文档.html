@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="zh">
+
 <title>备忘文档 - 猫球博客</title>
 <link rel="stylesheet" href="https://yucimao.github.io/css/all.css">
 <link rel="stylesheet" href="https://yucimao.github.io/css/vsc.css">
@@ -24,6 +27,9 @@
     <br/>
     
     <a href="#域名查重">域名查重</a><br/>
+    <br/>
+
+    <a href="#其他">其他</a><br/>
 </div>
 
 <div class="body">
@@ -188,7 +194,8 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <hr>
         &lt;a onclick="随机排序()"&gt;随机排序&lt;/a&gt;<br/>
         &lt;a onclick="tion(sg='关键词')"&gt;链接&lt;/a&gt;<br/>
-        或者：(sg='+关键词')
+        或者：(sg='+关键词')<br/>
+        &lt;a onclick="显示未读()"&gt;只显示未读&lt;/a&gt;
         </td><td>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
@@ -197,14 +204,16 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         本页地址（最前无需/）
         <hr>
         <br/>
-        内容被打印在输入框和结果之间 留空为随机排序<br/>
+        内容被打印在输入框和结果之间<br/>
+        留空为默认（展示全部、随机排序、只显示未读）<br/>
         "标题／编号／关键词／" 编号使用zk编号<br/>
         "标题／【编号】／关键词／内容" 编号随意，需要保证唯一
-        <br/><br/><br/>
+        <br/><br/>
         <hr>
         将所有内容随机排序显示<br/>
-        搜索关键词<br/>
-        则是在已有的输入后面加关键词
+        搜索关键词 空值为展示全部<br/>
+        则是在已有的输入后面加关键词<br/>
+        排除用户查看过的内容
         </td></tr>
 </table>
 <br/>
@@ -492,9 +501,18 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
 <script>
 $("#域名查重").keyup(function () {let 域名查重输入 = $("#域名查重").val();let 域名查重结果="没有重复，可以放心使用。";for(let i=0;域名查重data.length>i;i++){if(域名查重data[i].split("／")[0]==域名查重输入){域名查重结果="有重复的记录：<br/><b>"+域名查重data[i].split("／")[1]+"</b>";}}域名查重结果+="<br/><iframe src=\"https://yucimao.github.io/" + 域名查重输入 + "\" frameborder=\"1\" width=\"100%\" height=\"200px\"></iframe>";document.getElementById("域名查重结果").innerHTML = 域名查重结果;})</script>
 
+<br/><hr><br/>
+
+<a name="其他"></a><h2>#其他</h2>
+<a href="i/像素中国地图.html" target="_blank">像素中国地图</a><br/>
+<a href="i/b站直播个人简介.html" target="_blank">B站直播个人简介</a><br/>
+
+
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
 </div>
 
-<input id="复制" style="position:absolute;top:-100px"/>
+<input id="复制" style="position:absolute;top:-1000px"/>
 <script>let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+</html>
