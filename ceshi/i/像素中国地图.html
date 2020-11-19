@@ -9,11 +9,23 @@
 <h3>效果</h3>
 
 <style>
-table {border-spacing: 0;border-collapse: collapse;border: 1px solid #ccc;}tr {background: #fff;vertical-align:top;}tr:hover {background: #eee;}td {border: 1px solid #ccc;}th {background: #eee;font-weight: normal;text-align: center;border: 1px solid #ccc;}
+table {border-spacing: 0;border-collapse: collapse;border: 1px solid #ccc;}tr {background: #fff;vertical-align:top;}
+tr:hover {background: #eee;}td {border: 1px solid #ccc;}th {background: #eee;font-weight: normal;text-align: center;border: 1px solid #ccc;}
 td{border-width:1;border-color:#fff;border-style:solid;cursor:default;background-color: #fff;}
 [class]{border-color:#000000;border-width:0;}
-.oooo{border-width:0 0 0 0;}.aooo{border-width:5 0 0 0;}.oaoo{border-width:0 5 0 0;}.ooao{border-width:0 0 5 0;}.oooa{border-width:0 0 0 5;}.aaoo{border-width:5 5 0 0;}.aoao{border-width:5 0 5 0;}.aooa{border-width:5 0 0 5;}.oaao{border-width:0 5 5 0;}.oaoa{border-width:0 5 0 5;}.ooaa{border-width:0 0 5 5;}.aaao{border-width:5 5 5 0 ;}.aaoa{border-width:5 5 0 5 ;}.aoaa{border-width:5 0 5 5 ;}.oaaa{border-width:0 5 5 5 ;}.aaaa{border-width:5 5 5 5 ;}
-.aA{background-color: #F5FDC0;}.aB{background-color: #C5E4D0;}.aC{background-color: #F8C7D0;}.aD{background-color: #C7CDE0;}.aE{background-color: #FAE0B0;}.aF{background-color: #FFFDD0;}.aG{background-color: #F3DBB0;}.aH{background-color: #FAE0B0;}.aI{background-color: #CBE6D0;}.aJ{background-color: #F6BAD0;}.aK{background-color: #C5E4D0;}.aL{background-color: #F8C7D0;}.aM{background-color: #FAE0B0;}.aN{background-color: #C7CDE0;}.aO{background-color: #A1CBB0;}.aP{background-color: #C5E4D0;}.aQ{background-color: #FFFDD0;}.aR{background-color: #FFFDD0;}.aS{background-color: #F8C7D0;}.aT{background-color: #FADFC0;}.aU{background-color: #FFFDD0;}.aV{background-color: #FAE0B0;}.aW{background-color: #F8C7D0;}.aX{background-color: #F8C7D0;}.aY{background-color: #F8C7D0;}.aZ{background-color: #FFFDD0;}.a2{background-color: #FAE0B0;}.a3{background-color: #C5E4D0;}.a4{background-color: #F8C7D0;}.a5{background-color: #FAE0B0;}.a6{background-color: #C7CDE0;}.a7{background-color: #C7E3D0;}.a8{background-color: #C5E4D0;}.a9{background-color: #EFBBC0;}
+.oooo{border-width:0 0 0 0;}.aooo{border-width:5px 0 0 0;}.oaoo{border-width:0 5px 0 0;}.ooao{border-width:0 0 5px 0;}
+.oooa{border-width:0 0 0 5px;}.aaoo{border-width:5px 5px 0 0;}.aoao{border-width:5px 0 5px 0;}.aooa{border-width:5px 0 0 5px;}
+.oaao{border-width:0 5px 5px 0;}.oaoa{border-width:0 5px 0 5px;}.ooaa{border-width:0 0 5px 5px;}.aaao{border-width:5px 5px 5px 0 ;}
+.aaoa{border-width:5px 5px 0 5px ;}.aoaa{border-width:5px 0 5px 5px ;}.oaaa{border-width:0 5px 5px 5px ;}.aaaa{border-width:5px 5px 5px 5px ;}
+.aA{background-color: #F5FDC0;}.aB{background-color: #C5E4D0;}.aC{background-color: #F8C7D0;}.aD{background-color: #C7CDE0;}
+.aE{background-color: #FAE0B0;}.aF{background-color: #FFFDD0;}.aG{background-color: #F3DBB0;}.aH{background-color: #FAE0B0;}
+.aI{background-color: #CBE6D0;}.aJ{background-color: #F6BAD0;}.aK{background-color: #C5E4D0;}.aL{background-color: #F8C7D0;}
+.aM{background-color: #FAE0B0;}.aN{background-color: #C7CDE0;}.aO{background-color: #A1CBB0;}.aP{background-color: #C5E4D0;}
+.aQ{background-color: #FFFDD0;}.aR{background-color: #FFFDD0;}.aS{background-color: #F8C7D0;}.aT{background-color: #FADFC0;}
+.aU{background-color: #FFFDD0;}.aV{background-color: #FAE0B0;}.aW{background-color: #F8C7D0;}.aX{background-color: #F8C7D0;}
+.aY{background-color: #F8C7D0;}.aZ{background-color: #FFFDD0;}.a2{background-color: #FAE0B0;}.a3{background-color: #C5E4D0;}
+.a4{background-color: #F8C7D0;}.a5{background-color: #FAE0B0;}.a6{background-color: #C7CDE0;}.a7{background-color: #C7E3D0;}
+.a8{background-color: #C5E4D0;}.a9{background-color: #EFBBC0;}
 #zgdt_box {font-size:2em;background-color: #fff;position: absolute;}
 </style>
 
@@ -57,8 +69,10 @@ let zgdt=new Array(
 "0,0,0,0,0,0,0,0,0,0,0,T aoaa,T aaao,0,0,0,0,0,0,0,0,0,0");
 
 let zgdt_dm = {
-"2" : "新疆","3" : "甘肃","4" : "陕西","5" : "宁夏","6" : "青海","F" : "内蒙古","L" : "河北","A" : "北京","I" : "天津","K" : "山西","R" : "山东","E" : "河南","B" : "黑龙江","C" : "吉林","D" : "辽宁","S" : "江苏","7" : "安徽","G" : "上海","Y" : "浙江","J" : "江西","H" : "福建","X" : "西藏","M" : "四川","N" : "重庆","Q" : "云南","P" : "贵州","U" : "湖北","V" : "湖南","W" : "广西","Z" : "广东","T" : "海南","8" : "台湾","9" : "香港","O" : "澳门",
-"新疆" : "2","甘肃" : "3","陕西" : "4","宁夏" : "5","青海" : "6","内蒙古" : "F","河北" : "L","北京" : "A","天津" : "I","山西" : "K","山东" : "R","河南" : "E","黑龙江" : "B","吉林" : "C","辽宁" : "D","江苏" : "S","安徽" : "7","上海" : "G","浙江" : "Y","江西" : "J","福建" : "H","西藏" : "X","四川" : "M","重庆" : "N","云南" : "Q","贵州" : "P","湖北" : "U","湖南" : "V","广西" : "W","广东" : "Z","海南" : "T","台湾" : "8","香港" : "9","澳门" : "O"
+"2" : "新疆","3" : "甘肃","4" : "陕西","5" : "宁夏","6" : "青海","F" : "内蒙古","L" : "河北","A" : "北京","I" : "天津","K" : "山西","R" : "山东","E" : "河南","B" : "黑龙江","C" : "吉林","D" : "辽宁","S" : "江苏","7" : "安徽",
+"G" : "上海","Y" : "浙江","J" : "江西","H" : "福建","X" : "西藏","M" : "四川","N" : "重庆","Q" : "云南","P" : "贵州","U" : "湖北","V" : "湖南","W" : "广西","Z" : "广东","T" : "海南","8" : "台湾","9" : "香港","O" : "澳门",
+"新疆" : "2","甘肃" : "3","陕西" : "4","宁夏" : "5","青海" : "6","内蒙古" : "F","河北" : "L","北京" : "A","天津" : "I","山西" : "K","山东" : "R","河南" : "E","黑龙江" : "B","吉林" : "C","辽宁" : "D","江苏" : "S","安徽" : "7",
+"上海" : "G","浙江" : "Y","江西" : "J","福建" : "H","西藏" : "X","四川" : "M","重庆" : "N","云南" : "Q","贵州" : "P","湖北" : "U","湖南" : "V","广西" : "W","广东" : "Z","海南" : "T","台湾" : "8","香港" : "9","澳门" : "O"
 }
 
 let zgdt_dy="<style>";
@@ -164,7 +178,8 @@ let zgdt_d= { //"省份名字" : "链接"
 
 <pre><code>
 &lt;style>
-table {border-spacing: 0;border-collapse: collapse;border: 1px solid #ccc;}tr {background: #fff;vertical-align:top;}tr:hover {background: #eee;}td {border: 1px solid #ccc;}th {background: #eee;font-weight: normal;text-align: center;border: 1px solid #ccc;}
+table {border-spacing: 0;border-collapse: collapse;border: 1px solid #ccc;}tr {background: #fff;vertical-align:top;}tr:hover {background: #eee;}td {border: 1px solid #ccc;}
+th {background: #eee;font-weight: normal;text-align: center;border: 1px solid #ccc;}
 td{border-width:1;border-color:#fff;border-style:solid;cursor:default;background-color: #fff;}
 [class]{border-color:#000000;border-width:0;}
 .oooo{border-width:0 0 0 0;}.aooo{border-width:5 0 0 0;}.oaoo{border-width:0 5 0 0;}.ooao{border-width:0 0 5 0;}
@@ -223,8 +238,10 @@ let zgdt=new Array(
 "0,0,0,0,0,0,0,0,0,0,0,T aoaa,T aaao,0,0,0,0,0,0,0,0,0,0");
 
 let zgdt_dm = {
-"2" : "新疆","3" : "甘肃","4" : "陕西","5" : "宁夏","6" : "青海","F" : "内蒙古","L" : "河北","A" : "北京","I" : "天津","K" : "山西","R" : "山东","E" : "河南","B" : "黑龙江","C" : "吉林","D" : "辽宁","S" : "江苏","7" : "安徽","G" : "上海","Y" : "浙江","J" : "江西","H" : "福建","X" : "西藏","M" : "四川","N" : "重庆","Q" : "云南","P" : "贵州","U" : "湖北","V" : "湖南","W" : "广西","Z" : "广东","T" : "海南","8" : "台湾","9" : "香港","O" : "澳门",
-"新疆" : "2","甘肃" : "3","陕西" : "4","宁夏" : "5","青海" : "6","内蒙古" : "F","河北" : "L","北京" : "A","天津" : "I","山西" : "K","山东" : "R","河南" : "E","黑龙江" : "B","吉林" : "C","辽宁" : "D","江苏" : "S","安徽" : "7","上海" : "G","浙江" : "Y","江西" : "J","福建" : "H","西藏" : "X","四川" : "M","重庆" : "N","云南" : "Q","贵州" : "P","湖北" : "U","湖南" : "V","广西" : "W","广东" : "Z","海南" : "T","台湾" : "8","香港" : "9","澳门" : "O"
+"2" : "新疆","3" : "甘肃","4" : "陕西","5" : "宁夏","6" : "青海","F" : "内蒙古","L" : "河北","A" : "北京","I" : "天津","K" : "山西","R" : "山东","E" : "河南","B" : "黑龙江","C" : "吉林","D" : "辽宁","S" : "江苏","7" : "安徽",
+"G" : "上海","Y" : "浙江","J" : "江西","H" : "福建","X" : "西藏","M" : "四川","N" : "重庆","Q" : "云南","P" : "贵州","U" : "湖北","V" : "湖南","W" : "广西","Z" : "广东","T" : "海南","8" : "台湾","9" : "香港","O" : "澳门",
+"新疆" : "2","甘肃" : "3","陕西" : "4","宁夏" : "5","青海" : "6","内蒙古" : "F","河北" : "L","北京" : "A","天津" : "I","山西" : "K","山东" : "R","河南" : "E","黑龙江" : "B","吉林" : "C","辽宁" : "D","江苏" : "S","安徽" : "7",
+"上海" : "G","浙江" : "Y","江西" : "J","福建" : "H","西藏" : "X","四川" : "M","重庆" : "N","云南" : "Q","贵州" : "P","湖北" : "U","湖南" : "V","广西" : "W","广东" : "Z","海南" : "T","台湾" : "8","香港" : "9","澳门" : "O"
 }
 
 let zgdt_dy="&lt;style>";
