@@ -1,0 +1,53 @@
+---
+permalink: xiangce3/jiami
+---
+<input type="text" style="display:none" />
+<input type="text" id="输入" style="width:80%;font-size: 1.4em;" placeholder="输入内容" autocomplete="off" /><br />
+<input type="text" id="密码" style="width:30%;min-width:12em;font-size: 1.2em;" placeholder="密码" autocomplete="off" /><br/>
+<button onclick="加密()">加密</button>
+<button onclick="复制()">复制</button><br/>
+
+<script>
+	let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	function 加密(){
+		let 输入 = document.getElementById("输入").value;
+		let 替换 = new RegExp('data:image/', "g");
+		输入 = 输入.replace(替换, '【');
+		替换 = new RegExp(';base64,', "g");
+        输入 = 输入.replace(替换, '】');
+		let 密码 = document.getElementById("密码").value;
+		let wzjm_b="";
+		let wzjm_c="";
+		for(let i=0;密码.length>i;i++){
+			if(wzjm_b.indexOf(密码[i]) != -1){}
+			else{
+				wzjm_b+=密码[i];
+			}
+		}
+		for(let i=0;wzjm.length>i;i++){
+			if(wzjm_b.indexOf(wzjm[i]) != -1){}
+			else{
+				wzjm_b+=wzjm[i];
+			}
+		}
+
+		替换 = new RegExp('', "g");
+        输入 = 输入.replace(替换, '／');
+
+		for(let i=0;wzjm_b.length>i;i++){
+			let 临时="／"+wzjm[i];
+			let 临时b=wzjm_b[i];
+
+			替换 = new RegExp(临时, "g");
+        	输入 = 输入.replace(替换, 临时b);
+		}
+		替换 = new RegExp("／", "g");
+        输入 = 输入.replace(替换, "");
+		document.getElementById('输入').value = 输入;
+	}
+
+	function 复制(){
+		let 复制 = document.querySelector('#输入');
+		复制.select();document.execCommand("Copy");
+	}
+</script>

@@ -57,7 +57,10 @@ permalink: xiangce3
 		}
 		替换 = new RegExp("／", "g");
         输入 = 输入.replace(替换, "");
-		输入 = window.decodeURIComponent(atob(输入));
+		替换 = new RegExp("【", "g");
+        输入 = 输入.replace(替换, "data:image/");
+        替换 = new RegExp("】", "g");
+        输入 = 输入.replace(替换, ";base64,");
 
     document.getElementById("img").src = 输入;
 </script>
