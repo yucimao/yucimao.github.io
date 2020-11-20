@@ -63,9 +63,9 @@ nav_url: <a href="/xiaogongju">小工具</a>
     let sjtk = { "0": 临时2 }; //题库
     临时 = GetJson.responseText.split("］")[0].split("［")[1];
     document.getElementById("标题").innerHTML = 临时;
+    let 临时抽取 = "";
 
     function 抽取() {
-        let 临时抽取 = "";
         document.getElementById("打印").innerHTML = "抽取中……";
         let 不重复抽取 = 0;
         let 次数 = document.getElementById("抽取次数").value;
@@ -97,7 +97,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
                 }
             }
         }
-        if (临时抽取.length < 1) {
+        if (临时抽取.length <= 1) {
             结果 += "<tr><td>（题库已经抽空，再次点击“抽取”将重新开始。）</td></tr>";
         }
         while (结果.indexOf("［") != -1) {
