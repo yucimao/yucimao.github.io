@@ -24,7 +24,6 @@ nav_url: <a href="/xiaogongju">小工具</a>
 <input type="checkbox" name="不重复抽取" id="不重复抽取" /><label for="不重复抽取">不重复抽取</label>
 <br /><br />
 <div id="打印"></div>
-<div id="打印2"></div>
 
 <script type="text/javascript">
     let LocString = String(window.document.location.href);
@@ -72,7 +71,6 @@ nav_url: <a href="/xiaogongju">小工具</a>
     }
 
     function 抽取() {
-        document.getElementById("打印2").innerHTML = "抽取中……";
         let 不重复抽取 = 0;
         let 次数 = document.getElementById("抽取次数").value;
         let checks = document.getElementsByTagName("input"), cnt = 0, count = 0;
@@ -167,6 +165,5 @@ nav_url: <a href="/xiaogongju">小工具</a>
         结果 = 结果.replace(替换, '<br/>');
         结果 = "<table>" + 结果 + "</table>";
         document.getElementById("打印").innerHTML = 结果;
-        document.getElementById("打印2").innerHTML = "";
     }
 </script>

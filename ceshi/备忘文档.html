@@ -381,6 +381,9 @@ let xiangce3 = 1; <span class="zhushi">加这句会将本页&lt;img id="img" src
 <br/>
 
 <a name="随机题库"></a><h3>#随机题库</h3>
+/sjtk?t=题库地址&c=抽取次数（留空为1）<br/>
+<br/>
+<b>旧版</b><br/>
 /sjtk/1?i=<input id="随机题库地址" style="width:70px"  placeholder="地址/地址"/>&f=<input id="随机题库每次抽取" style="width:60px"  placeholder="每次抽取数"/>&n=<input id="随机题库标题" style="width:50px"  placeholder="标题"/><button onclick="随机题库复制()">复制</button><button onclick="随机题库清空()">清空</button><br/>
 <span class="zhushi">文件存放位置：/5/随机题库/i/ 文件后缀名：.json</span><br/>
 <script>function 随机题库复制(){let 随机题库地址=document.getElementById("随机题库地址").value;let 随机题库每次抽取=document.getElementById("随机题库每次抽取").value;let 随机题库标题=document.getElementById("随机题库标题").value;let 随机题库打印 = "/sjtk/1?i="+随机题库地址+"&f="+随机题库每次抽取+"&n="+随机题库标题;document.getElementById('复制').value = 随机题库打印;let 随机题库复制 = document.querySelector('#复制');随机题库复制.select();document.execCommand("Copy");}function 随机题库清空(){document.getElementById('随机题库地址').value = "";document.getElementById('随机题库每次抽取').value = "";document.getElementById('随机题库标题').value = "";}</script>
