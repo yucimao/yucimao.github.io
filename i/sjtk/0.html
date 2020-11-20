@@ -4,10 +4,6 @@ permalink: sjtk
 title: 随机题库
 nav_url: <a href="/xiaogongju">小工具</a>
 ---
-<!-- <link rel="stylesheet" href="https://yucimao.github.io/css/all.css">
-<script src="/js/jquery.min.js"></script> -->
-<!-- 测试结束把上面这两个删掉 -->
-
 <style>
     .biaotic {
         text-align: center;
@@ -119,15 +115,13 @@ nav_url: <a href="/xiaogongju">小工具</a>
                         新抽取 = sjtk[临时2[0]];
                     }
                     else {
+                        let 临时5 = 临时2;
                         if (临时2[1] == "/") {
-                            JsonUrl = "/i/sjtk" + t + 临时2 + ".json";
+                            临时5 = t + 临时5;
                             替换 = new RegExp('//', "g");
-                            JsonUrl = JsonUrl.replace(替换, '/');
+                            临时5 = JsonUrl.replace(临时5, '/');
                         }
-                        else {
-                            JsonUrl = "/i/sjtk" + 临时2 + ".json";
-                        }
-
+                        JsonUrl = "/i/sjtk" + 临时5 + ".json";
                         GetJson = $.ajax({
                             url: JsonUrl,
                             type: "GET",
@@ -142,8 +136,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
                         }
                         let 替换 = new RegExp('^／', "g");
                         新抽取 = 新抽取.replace(替换, '');
-                        临时3 = 临时2[0];
-                        sjtk[临时3] = 新抽取;
+                        sjtk[临时5] = 新抽取;
                     }
                     新抽取 = 新抽取.split("／");
                     随机数 = Math.floor(Math.random() * 新抽取.length);
