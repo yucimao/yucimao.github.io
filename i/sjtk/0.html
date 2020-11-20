@@ -79,10 +79,10 @@ nav_url: <a href="/xiaogongju">小工具</a>
         }
         let 结果 = "";
         if (临时抽取.length < 1) {
-            console.log(sjtk["0"]);
-            let 临时抽取 = sjtk["0"].split("／");
+            console.log("1："+sjtk["0"]);
+            临时抽取 = sjtk["0"].split("／");
         }
-        console.log(临时抽取);
+        console.log("2："+临时抽取);
         for (let i = 0; 次数 > i; i++) {
             if (临时抽取.length < 1) {
                 break;
@@ -90,6 +90,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
             else {
                 let 随机数 = Math.floor(Math.random() * 临时抽取.length);
                 结果 += "<tr><td>" + 临时抽取[随机数] + "</td></tr>";
+                console.log("3"+临时抽取);
                 if (不重复抽取 == 1) {
                     临时抽取.splice(随机数, 1);
                 }
