@@ -15,7 +15,7 @@
     
     <a href="#小工具用法"><b>小工具用法</b></a>：<br/>
     <a href="#相册2">相册2</a> <small>放大镜效果</small><br/>
-    <a href="#相册3">相册3</a> <small>BASE64加密（准备废弃）</small><br/>
+    <a href="#相册3">相册3</a> <small>BASE64加密</small><br/>
     <a href="#随机题库">随机题库</a><br/>
     <a href="#备忘日历">备忘日历</a><br/>
     <a href="#日期倒计时">日期倒计时</a><br/>
@@ -360,21 +360,15 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 
 <br/>
 
-<a name="相册3"></a><h3>#相册3 <small>（BASE64加密）准备废弃</small></h3>
+<a name="相册3"></a><h3>#相册3 <small>（BASE64加密）</small></h3>
 <b>加密</b><br/>
 1.在<a href="https://yucimao.github.io/i/zk/363433" target="_blank">/i/zk/363433</a>将图片转成BASE64代码。<br/>
-2.在/xiangce3?u=mq&c=<input id="相册3密码" style="width:50px"  placeholder="密码"/>
-<button onclick="相册3跳转()">跳转</button>将代码加密。
-<span class="zhushi">密码是大写英文A-Z，不能超过6位。</span><br/>
-3.将代码存成.json文件，放在/xiangce/3/o/（或其他文件夹）。<br/>
+2.在<a href="https://yucimao.github.io/xiangce3/jiami" target="_blank">/xiangce3/jiami</a>将代码加密。<br/>
+3.将代码存成.json文件，放在/xiangce/3/o/（或其他位置）。<br/>
 <br/>
 <b>解密</b><br/>
-/xiangce3?u=<input id="相册3地址" style="width:50px"  placeholder="地址"/>&c=<input id="相册3密码2" style="width:50px"  placeholder="密码"/>&j=<input id="相册3扩展名" style="width:50px"  placeholder="扩展名"/><input id="相册3外部链接" style="width:6em"  placeholder="外部链接:1"/><button onclick="相册3复制()">复制</button><button onclick="相册3清空()">清空</button><br/>
-地址：默认为/xiangce/3/o/内的文件，不需要写.json<br/>
-如果地址不在这个路径，则需要在外部链接中填入1。<br/>
-扩展名：如jpg、png，需要和加密时保持一致。<br/>
-<span class="zhushi">链接格式：/xiangce3?u=地址&c=密码&j=扩展名&w=外部链接</span><br/>
-<script>function 相册3跳转(){let 相册3密码=document.getElementById("相册3密码").value;window.open("https://yucimao.github.io/xiangce3?u=mq&c="+相册3密码);}function 相册3复制(){let 相册3地址=document.getElementById("相册3地址").value;let 相册3密码2=document.getElementById("相册3密码2").value;let 相册3扩展名=document.getElementById("相册3扩展名").value;let 相册3外部链接=document.getElementById("相册3外部链接").value;let 相册3打印 = "/xiangce3?u="+相册3地址+"&c="+相册3密码2+"&j="+相册3扩展名;if(相册3外部链接=="1"){相册3打印+="&w=1";}document.getElementById('复制').value = 相册3打印;let 相册3复制 = document.querySelector('#复制');相册3复制.select();document.execCommand("Copy");}function 相册3清空(){document.getElementById('相册3地址').value = "";document.getElementById('相册3密码2').value = "";document.getElementById('相册3扩展名').value = "";document.getElementById('相册3外部链接').value = "";}</script>
+/xiangce3?u=地址&c=密码<br/>
+如果是/xiangce/3/o/内的文件，地址不需要写.json<br/>
 
 <br/>
 
@@ -498,6 +492,7 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
 
 <a name="常用js"></a><h2>#常用js</h2>
 <a href="i/获取json到变量.html" target="_blank">获取json到变量</a><br/>
+判断变量存在：if(typeof 变量!=="undefined")<br/>
 
 <br/><hr><br/>
 

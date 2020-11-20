@@ -3,64 +3,15 @@ permalink: xiangce3
 ---
 <script src="/js/jquery.min.js"></script>
 <img id="img" src="" />
-<div id="dy"></div>
-<script type="text/javascript">
+<script>
     let LocString = String(window.document.location.href);
     function GetQueryString(name) {
         let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
         if (tmp = rs) { return decodeURI(tmp[2]); }
         return "";
     }
-    let 密码 = GetQueryString("x");
-    let wz = GetQueryString("u");
-
-    if(wz.indexOf("://") != -1){}
-    else{wz="/xiangce/3/o/"+wz+".json";}
-
-    let GetJson = $.ajax({
-        url: wz,
-        type: "GET",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-        }
-    });
-        GetJson = GetJson.responseText;
-
-    let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let 输入 = GetJson;
-
-    let wzjm_b="";
-		let wzjm_c="";
-		for(let i=0;密码.length>i;i++){
-			if(wzjm_b.indexOf(密码[i]) != -1){}
-			else{
-				wzjm_b+=密码[i];
-			}
-		}
-		for(let i=0;wzjm.length>i;i++){
-			if(wzjm_b.indexOf(wzjm[i]) != -1){}
-			else{
-				wzjm_b+=wzjm[i];
-			}
-		}
-
-		let 替换 = new RegExp('', "g");
-        输入 = 输入.replace(替换, '／');
-
-		for(let i=0;wzjm_b.length>i;i++){
-			let 临时="／"+wzjm_b[i];
-			let 临时b=wzjm[i];
-
-			替换 = new RegExp(临时, "g");
-        	输入 = 输入.replace(替换, 临时b);
-		}
-		替换 = new RegExp("／", "g");
-        输入 = 输入.replace(替换, "");
-		替换 = new RegExp("【", "g");
-        输入 = 输入.replace(替换, "data:image/");
-        替换 = new RegExp("】", "g");
-        输入 = 输入.replace(替换, ";base64,");
-
-    document.getElementById("img").src = 输入;
+    let xiangce3_m = GetQueryString("x");
+    let xiangce3_wz = GetQueryString("u");
+    let xiangce3 = 1;
 </script>
+<script src="/xiangce/3/i.js"></script>
