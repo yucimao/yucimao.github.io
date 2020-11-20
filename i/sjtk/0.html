@@ -110,10 +110,10 @@ nav_url: <a href="/xiaogongju">小工具</a>
                 临时2 = 临时[i].split("］")[0];
                 if (临时2[0] == "/") {
                     let 临时5 = 临时2;
-                    if(临时2[1]=="/"){
+                    if (临时2[1] == "/") {
                         临时5 = t + 临时5;
-                            替换 = new RegExp('//', "g");
-                            临时5 = JsonUrl.replace(临时5, '/');
+                        替换 = new RegExp('//', "g");
+                        临时5 = JsonUrl.replace(临时5, '/');
                     }
                     let 新抽取 = "";
                     if (sjtk[临时5]) {
