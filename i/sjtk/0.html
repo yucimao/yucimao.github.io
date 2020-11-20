@@ -159,8 +159,6 @@ nav_url: <a href="/xiaogongju">小工具</a>
                 结果 += 临时[i].split("］")[1];
             }
         }
-        替换 = new RegExp(' ', "g");
-        结果 = 结果.replace(替换, '&#160;');
         替换 = new RegExp('\n', "g");
         结果 = 结果.replace(替换, '<br/>');
         结果 = "<table>" + 结果 + "</table>";
