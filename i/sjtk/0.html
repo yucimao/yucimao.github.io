@@ -110,17 +110,17 @@ nav_url: <a href="/xiaogongju">小工具</a>
             for (let i = 1; 临时.length > i; i++) {
                 临时2 = 临时[i].split("］")[0];
                 if (临时2[0] == "/") {
-                    let 新抽取 = "";
-                    if (sjtk[临时2[0]]) {
-                        新抽取 = sjtk[临时2[0]];
-                    }
-                    else {
-                        let 临时5 = 临时2;
-                        if (临时2[1] == "/") {
-                            临时5 = t + 临时5;
+                    let 临时5 = 临时2;
+                    if(临时2[1]=="/"){
+                        临时5 = t + 临时5;
                             替换 = new RegExp('//', "g");
                             临时5 = JsonUrl.replace(临时5, '/');
-                        }
+                    }
+                    let 新抽取 = "";
+                    if (sjtk[临时5]) {
+                        新抽取 = sjtk[临时5];
+                    }
+                    else {
                         JsonUrl = "/i/sjtk" + 临时5 + ".json";
                         GetJson = $.ajax({
                             url: JsonUrl,
