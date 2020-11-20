@@ -42,8 +42,8 @@ nav_url: <a href="/xiaogongju">小工具</a>
     else { c = 1; }
     document.getElementById("抽取次数").value = c;
 
-    let JsonUrl = "/i/sjtk/" + t + ".json"; //获取json的url
-    let GetJson = $.ajax({ //获取json
+    let JsonUrl = "/i/sjtk/" + t + ".json";
+    let GetJson = $.ajax({
         url: JsonUrl,
         type: "GET",
         dataType: "json",
@@ -65,6 +65,15 @@ nav_url: <a href="/xiaogongju">小工具</a>
     document.getElementById("标题").innerHTML = 临时;
     let 临时抽取 = "";
 
+    if (t.indexOf("/") != -1) {
+        临时 = t.split("/");
+        临时2 = 临时.length - 1;
+        t = "";
+        for (let i = 0; 临时.length > i; i++) {
+            t += "/" + 临时[i];
+        }
+    }
+
     function 抽取() {
         document.getElementById("打印").innerHTML = "抽取中……";
         let 不重复抽取 = 0;
@@ -81,7 +90,6 @@ nav_url: <a href="/xiaogongju">小工具</a>
         let 结果 = "";
 
         if (临时抽取.length < 1) {
-            console.log(临时抽取 + 临时抽取.length)
             临时抽取 = sjtk["0"].split("／");
         }
         for (let i = 0; 次数 > i; i++) {
@@ -111,8 +119,16 @@ nav_url: <a href="/xiaogongju">小工具</a>
                         新抽取 = sjtk[临时2[0]];
                     }
                     else {
-                        JsonUrl = "/i/sjtk" + 临时2 + ".json"; //获取json的url
-                        GetJson = $.ajax({ //获取json
+                        if (临时2[1] == "/") {
+                            JsonUrl = "/i/sjtk" + t + 临时2 + ".json";
+                            替换 = new RegExp('//', "g");
+                            JsonUrl = JsonUrl.replace(替换, '/');
+                        }
+                        else {
+                            JsonUrl = "/i/sjtk" + 临时2 + ".json";
+                        }
+
+                        GetJson = $.ajax({
                             url: JsonUrl,
                             type: "GET",
                             dataType: "json",
