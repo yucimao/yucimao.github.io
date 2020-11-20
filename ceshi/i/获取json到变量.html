@@ -13,7 +13,7 @@
         success: function (data) {
         }
     });
-    if (GetJson.responseText[0] == "[") {
+    if (GetJson.responseText[0] == "[" || GetJson.responseText[0] == "{") {
         GetJson = $.parseJSON(GetJson["responseText"])
     }
     else {
