@@ -366,9 +366,17 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
 2.在<a href="https://yucimao.github.io/xiangce3/jiami" target="_blank">/xiangce3/jiami</a>将代码加密。<br/>
 3.将代码存成.json文件，放在/xiangce/3/o/（或其他位置）。<br/>
 <br/>
-<b>解密</b><br/>
+<b>查看</b><br/>
 /xiangce3?u=地址&c=密码<br/>
 如果是/xiangce/3/o/内的文件，地址不需要写.json<br/>
+<br/>
+<b>使用</b><br/>
+可以在其他网页用这种方法展示图片，需要以下变量和js：<br/>
+let xiangce3_m = 密码;<br/>
+let xiangce3_wz = 地址;<br/>
+let xiangce3 = 1; <span class="zhushi">加这句会将本页&lt;img id="img" src="" />的src替换为图片的base64编码</span><br/>
+&lt;script src="/xiangce/3/i.js">&lt;/script><br/>
+<span class="zhushi">变量xiangce3_sr是图片的base64编码</span>
 
 <br/>
 
