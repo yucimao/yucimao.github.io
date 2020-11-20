@@ -63,7 +63,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
     let sjtk = { "0": 临时2 }; //题库
     临时 = GetJson.responseText.split("］")[0].split("［")[1];
     document.getElementById("标题").innerHTML = 临时;
-    let 临时抽取;
+    let 临时抽取 = "";
 
     function 抽取() {
         let 不重复抽取 = 0;
@@ -150,7 +150,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
         结果 = 结果.replace(替换, '&#160;');
         替换 = new RegExp('\n', "g");
         结果 = 结果.replace(替换, '<br/>');
-        结果 = "<table>"+结果+"</table>";
+        结果 = "<table>" + 结果 + "</table>";
         document.getElementById("打印").innerHTML = 结果;
     }
 </script>
