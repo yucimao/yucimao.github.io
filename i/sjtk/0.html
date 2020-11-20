@@ -81,6 +81,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
         let 结果 = "";
 
         if (临时抽取.length < 1) {
+            console.log(临时抽取 + 临时抽取.length)
             临时抽取 = sjtk["0"].split("／");
         }
         for (let i = 0; 次数 > i; i++) {
@@ -137,8 +138,9 @@ nav_url: <a href="/xiaogongju">小工具</a>
                     if (临时2.indexOf("-") != -1) {
                         let 临时3 = 临时2.split("-");
                         let 临时4 = 临时3[1] - 临时3[0];
-                        随机数 = Math.floor(Math.random() * 临时4 + 临时3[0]);
-                        结果 += 随机数;
+                        随机数 = Math.floor(Math.random() * 临时4);
+                        临时3 = 临时3[0] * 1 + 随机数;
+                        结果 += 临时3;
                     }
                     if (临时2.indexOf(",") != -1) {
                         let 临时3 = 临时2.split(",");
