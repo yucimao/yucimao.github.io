@@ -79,7 +79,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
         }
         let 结果 = "";
         if (临时抽取.length < 1) {
-            临时抽取 = sjtk["0"].split("／");
+            let 临时抽取 = sjtk["0"].split("／");
         }
         for (let i = 0; 次数 > i; i++) {
             if (临时抽取.length < 1) {
@@ -107,7 +107,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
                         新抽取 = sjtk[临时2[0]];
                     }
                     else {
-                        JsonUrl = "/i/sjtk" + 临时2[0] + ".json"; //获取json的url
+                        JsonUrl = "/i/sjtk" + 临时2 + ".json"; //获取json的url
                         GetJson = $.ajax({ //获取json
                             url: JsonUrl,
                             type: "GET",
