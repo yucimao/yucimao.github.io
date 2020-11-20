@@ -65,6 +65,8 @@ nav_url: <a href="/xiaogongju">小工具</a>
     document.getElementById("标题").innerHTML = 临时;
 
     function 抽取() {
+        let 临时抽取 = "";
+        document.getElementById("打印").innerHTML = "抽取中……";
         let 不重复抽取 = 0;
         let 次数 = document.getElementById("抽取次数").value;
         let checks = document.getElementsByTagName("input"), cnt = 0, count = 0;
@@ -78,8 +80,6 @@ nav_url: <a href="/xiaogongju">小工具</a>
         }
         let 结果 = "";
 
-        if(typeof 临时抽取!=="undefined"){}
-        else{let 临时抽取 = "";}
         if (临时抽取.length < 1) {
             临时抽取 = sjtk["0"].split("／");
         }
