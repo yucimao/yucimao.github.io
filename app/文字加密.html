@@ -1,0 +1,145 @@
+---
+layout: page2
+title: 文字加密
+nav_text: 文字加密
+nav_url: <a href="/xiaogongju">小工具</a>
+permalink: wenzijiami
+---
+<input type="text" style="display:none" />
+<input type="text" id="输入" style="width:80%;font-size: 1.4em;" placeholder="输入内容" autocomplete="off" /><br />
+<input type="text" id="密码" style="width:30%;min-width:12em;font-size: 1.2em;" placeholder="密码" autocomplete="off" /><br/>
+<button onclick="加密()">加密</button>
+<button onclick="解密()">解密</button>
+<button onclick="复制()">复制</button><br/>
+<br/>
+<span class="zhushi">随便写的，原理很简单，不保证安全可靠。</span><br/>
+<span class="zhushi">密码只能输入大小写英文和数字，尽量包含更多的不重复字符（重复字符无效），不要用abcd这类按顺序排列的密码。</span>
+
+<script>
+	let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	function 加密(){
+		let 输入 = document.getElementById("输入").value;
+		输入 = window.btoa(window.encodeURIComponent(输入));
+		let 密码 = document.getElementById("密码").value;
+		let wzjm_b="";
+		let wzjm_c="";
+		for(let i=0;密码.length>i;i++){
+			if(wzjm_b.indexOf(密码[i]) != -1){}
+			else{
+				wzjm_b+=密码[i];
+			}
+		}
+		for(let i=0;wzjm.length>i;i++){
+			if(wzjm_b.indexOf(wzjm[i]) != -1){}
+			else{
+				wzjm_b+=wzjm[i];
+			}
+		}
+
+		let 替换 = new RegExp('', "g");
+        输入 = 输入.replace(替换, '／');
+
+		for(let i=0;wzjm_b.length>i;i++){
+			let 临时="／"+wzjm[i];
+			let 临时b=wzjm_b[i];
+
+			替换 = new RegExp(临时, "g");
+        	输入 = 输入.replace(替换, 临时b);
+		}
+		替换 = new RegExp("／", "g");
+        输入 = 输入.replace(替换, "");
+		document.getElementById('输入').value = 输入;
+	}
+	function 解密(){
+		let 输入 = document.getElementById("输入").value;
+		let 密码 = document.getElementById("密码").value;
+		let wzjm_b="";
+		let wzjm_c="";
+		for(let i=0;密码.length>i;i++){
+			if(wzjm_b.indexOf(密码[i]) != -1){}
+			else{
+				wzjm_b+=密码[i];
+			}
+		}
+		for(let i=0;wzjm.length>i;i++){
+			if(wzjm_b.indexOf(wzjm[i]) != -1){}
+			else{
+				wzjm_b+=wzjm[i];
+			}
+		}
+
+		let 替换 = new RegExp('', "g");
+        输入 = 输入.replace(替换, '／');
+
+		for(let i=0;wzjm_b.length>i;i++){
+			let 临时="／"+wzjm_b[i];
+			let 临时b=wzjm[i];
+
+			替换 = new RegExp(临时, "g");
+        	输入 = 输入.replace(替换, 临时b);
+		}
+		替换 = new RegExp("／", "g");
+        输入 = 输入.replace(替换, "");
+		输入 = window.decodeURIComponent(atob(输入));
+		document.getElementById('输入').value = 输入;
+	}
+	function 复制(){
+		let 复制 = document.querySelector('#输入');
+		复制.select();document.execCommand("Copy");
+	}
+
+
+	let 开启高级模式 = 0;
+	function 摇骰子() {
+		let 输入 = document.getElementById("输入").value;
+		let 抽取 = 输入;
+		if (输入 > 0) {
+			抽取 = "1";
+			for (let i = 1; 输入 > i; i++) {
+				let 临时 = i + 1;
+				抽取 += " " + 临时;
+			}
+		}
+		抽取 = 抽取.split(" ");
+		let 次数 = 1;
+		let 不重复抽取 = 0;
+		if (开启高级模式 == 1) {
+			次数 = document.getElementById("抽取次数").value;
+			if (次数 > 0) { }
+			else {
+				次数 = 1;
+			}
+			let checks = document.getElementsByTagName("input"), cnt = 0, count = 0;
+			for (let i = 0; i < checks.length; i++) {
+				if (checks[i].type == "checkbox") {
+					count += 1;
+					if (checks[i].checked != false) {
+						不重复抽取 = 1;
+					}
+				}
+			}
+		}
+
+		let 结果 = "";
+		for (let i = 0; 次数 > i; i++) {
+			if (抽取.length < 1) {
+				结果 += "<br/>（没有更多选项）";
+				break;
+			}
+			else {
+				let 随机数 = Math.floor(Math.random() * 抽取.length);
+				结果 += "<br/>" + 抽取[随机数];
+				if (不重复抽取 == 1) {
+					抽取.splice(随机数, 1);
+				}
+			}
+		}
+		document.getElementById('结果').innerHTML = 结果;
+	}
+	function 高级模式() {
+		开启高级模式 = 1;
+		let 选项 = "<button onclick=\"摇骰子()\">摇骰子<\/button> <input id=\"抽取次数\" style=\"width:6em\" placeholder=\"抽取次数\" autocomplete=\"off\"/> " +
+			"<input type=\"checkbox\" name=\"不重复抽取\" id=\"不重复抽取\" \/><label for=\"不重复抽取\">不重复抽取<\/label>";
+		document.getElementById('选项').innerHTML = 选项;
+	}
+</script>
