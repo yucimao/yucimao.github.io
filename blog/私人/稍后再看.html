@@ -5,7 +5,7 @@ nav_text: 稍候再看
 nav_url: <a href="/zatan">笔记</a>
 permalink: make
 ---
-<div class="juzhong"><button type="button" onclick="随机排序()">随机显示</button><a onclick="展开()">　</a><input type="text" id="密码" style="width:10%;display: none;" autocomplete="off" /><button id="解密" onclick="解密()" style="display: none;">解密</button></div>
+<div id="juzhong" class="juzhong"><button type="button" onclick="随机排序()">随机显示</button><a onclick="展开()">　</a></div>
 <div><br /></div>
 <div id="结果"></div>
 <script src="/js/mq-wzjm.js"></script>
@@ -85,8 +85,8 @@ let wzjm_输入;
 let wzjm_密码;
 
 function 展开(){
-document.getElementById("密码").style.display = "block";
-document.getElementById("解密").style.display = "block";
+    let juzhongdy = "<button type=\"button\" onclick=\"随机排序()\">随机显示</button><input type=\"text\" id=\"密码\" style=\"width:10%;\" autocomplete=\"off\" \/><button onclick=\"解密()\">解密</button>";
+    document.getElementById("juzhong").innerHTML = juzhongdy;
 }
 
 function 解密(){
@@ -98,5 +98,8 @@ for(let i=0;data.length>i;i++){
     结果+=wzjm_输入+"［／］";
 }
 data=结果.split("［／］");
+
+let juzhongdy="<button type=\"button\" onclick=\"随机排序()\">随机显示</button>";
+document.getElementById("juzhong").innerHTML = juzhongdy;
 }
 </script>

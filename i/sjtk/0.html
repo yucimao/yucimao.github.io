@@ -29,6 +29,8 @@ nav_url: <a href="/xiaogongju">小工具</a>
 <br /><br />
 <div id="打印"></div>
 
+<script src="/js/mq-wzjm.js"></script>
+
 <script type="text/javascript">
     let LocString = String(window.document.location.href);
     function GetQueryString(name) {
@@ -38,6 +40,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
     }
     let t = GetQueryString("t"); //题库地址
     let c = GetQueryString("c"); //每次抽取次数
+    let wzjm_密码 = GetQueryString("m");
     if (c > 0) { }
     else { c = 1; }
     document.getElementById("抽取次数").value = c;
@@ -54,8 +57,18 @@ nav_url: <a href="/xiaogongju">小工具</a>
 
     let 临时 = GetJson.responseText.split("[");
     let 临时2 = "";
-    for (let i = 1; 临时.length > i; i++) {
-        临时2 += "／" + 临时[i].split("]")[0];
+    let wzjm_输入;
+    if (临时[0].indexOf("／wzjm") != -1) {
+        for (let i = 1; 临时.length > i; i++) {
+            wzjm_输入 = 临时[i].split("]")[0];
+            wzjm_解密();
+            临时2 += "／" + wzjm_输入;
+        }
+    }
+    else {
+        for (let i = 1; 临时.length > i; i++) {
+            临时2 += "／" + 临时[i].split("]")[0];
+        }
     }
     let 替换 = new RegExp('^／', "g");
     临时2 = 临时2.replace(替换, '');
@@ -134,9 +147,20 @@ nav_url: <a href="/xiaogongju">小工具</a>
                             }
                         });
                         let 临时3 = GetJson.responseText.split("[");
-                        for (let i = 1; 临时3.length > i; i++) {
-                            新抽取 += "／" + 临时3[i].split("]")[0];
+
+                        if (临时3[0].indexOf("／wzjm") != -1) {
+                            for (let i = 1; 临时3.length > i; i++) {
+                                wzjm_输入 = 临时3[i].split("]")[0];
+                                wzjm_解密();
+                                新抽取 += "／" + wzjm_输入;
+                            }
                         }
+                        else {
+                            for (let i = 1; 临时3.length > i; i++) {
+                                新抽取 += "／" + 临时3[i].split("]")[0];
+                            }
+                        }
+
                         let 替换 = new RegExp('^／', "g");
                         新抽取 = 新抽取.replace(替换, '');
                         sjtk[临时5] = 新抽取;
