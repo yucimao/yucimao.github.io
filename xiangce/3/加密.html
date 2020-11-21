@@ -7,45 +7,23 @@ permalink: xiangce3/jiami
 <button onclick="加密()">加密</button>
 <button onclick="复制()">复制</button><br/>
 
+<script src="/js/mq-wzjm.js"></script>
+
 <script>
-	let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	let wzjm_输入;
+	let wzjm_密码;
 	function 加密(){
-		let 输入 = document.getElementById("输入").value;
-		let 替换 = new RegExp('data:image/', "g");
-		输入 = 输入.replace(替换, '【');
-		替换 = new RegExp(';base64,', "g");
-        输入 = 输入.replace(替换, '】');
-		let 密码 = document.getElementById("密码").value;
-		let wzjm_b="";
-		let wzjm_c="";
-		for(let i=0;密码.length>i;i++){
-			if(wzjm_b.indexOf(密码[i]) != -1){}
-			else{
-				wzjm_b+=密码[i];
-			}
-		}
-		for(let i=0;wzjm.length>i;i++){
-			if(wzjm_b.indexOf(wzjm[i]) != -1){}
-			else{
-				wzjm_b+=wzjm[i];
-			}
-		}
-
-		替换 = new RegExp('', "g");
-        输入 = 输入.replace(替换, '／');
-
-		for(let i=0;wzjm_b.length>i;i++){
-			let 临时="／"+wzjm[i];
-			let 临时b=wzjm_b[i];
-
-			替换 = new RegExp(临时, "g");
-        	输入 = 输入.replace(替换, 临时b);
-		}
-		替换 = new RegExp("／", "g");
-        输入 = 输入.replace(替换, "");
-		document.getElementById('输入').value = 输入;
+		wzjm_输入 = document.getElementById("输入").value;
+		wzjm_密码 = document.getElementById("密码").value;
+		wzjm_加密();
+		document.getElementById('输入').value = wzjm_输入;
 	}
-
+	function 解密(){
+		wzjm_输入 = document.getElementById("输入").value;
+		wzjm_密码 = document.getElementById("密码").value;
+		wzjm_解密();
+		document.getElementById('输入').value = wzjm_输入;
+	}
 	function 复制(){
 		let 复制 = document.querySelector('#输入');
 		复制.select();document.execCommand("Copy");

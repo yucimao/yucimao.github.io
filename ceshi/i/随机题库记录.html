@@ -6,7 +6,66 @@ permalink: ceshi/sjtk
 ---
 <div id="结果"></div>
 <script>
-let data = new Array(
+    let LocString = String(window.document.location.href);
+    function GetQueryString(name) {
+        let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+        if (tmp = rs) { return decodeURI(tmp[2]); }
+        return "";
+    }
+    let t = GetQueryString("t"); //题库地址
+
+if(t){
+    let JsonUrl = "/i/sjtk/" + t + ".json";
+    let GetJson = $.ajax({
+        url: JsonUrl,
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+        }
+    });
+
+    let 临时 = GetJson.responseText.split("[");
+    let 临时2 = "";
+    for (let i = 1; 临时.length > i; i++) {
+        临时2 += "【】记录【】" + 临时[i].split("]")[0]+"／／";
+    }
+    let 替换 = new RegExp('\n', "g");
+    临时2 = 临时2.replace(替换, '/n');
+    替换 = new RegExp('^【】记录【】', "g");
+    临时2 = 临时2.replace(替换, '');
+    let data = 临时2.split("【】记录【】");
+}
+else{
+    let data = new Array(
+
+    // 写文
+
+    // - 剧情
+    "593100 剧情：恐怖-开局／／",
+    "593116 剧情：悬疑-动机／／",
+
+    // - 练习
+    "592978 练习：你的人物会怎样做／／",
+
+    // - 灵感
+    "593125 灵感：魔幻／／",
+    "593131 灵感：夏天／／",
+    "593134 灵感：现代／／",
+
+    // - 设定
+    "593943 疾病／／",
+    "593947 普通天气／／",
+    "593961 形象 路人／／",
+    "593970 中国人名／／",
+    "593972 中国人名：明星名字打乱／／",
+
+    // 生活
+
+    "593395 一会吃点啥／／",
+    "593400 出去玩点啥／／",
+
+    // - 聚会游戏
     "588745 念绕口令／／",
     "588747 念台词／／",
     "588853 谁最可能做什么／／",
@@ -21,4 +80,5 @@ let data = new Array(
 
     "／／"  //  "／／",
 );
+}
 </script>
