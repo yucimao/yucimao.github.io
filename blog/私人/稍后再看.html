@@ -78,7 +78,7 @@ let data = new Array(
 /*毕达哥拉斯装置*/"FQQ2FQBCFPi1FQQ4FQFBFQFBFQQ1FPizFQA1FQQ2FPfkFPd5FQQ2FPi2FQBCFQQ4FQAzFPd1FQQ3FQFAFQBBFQRCFQFeFPfCWDN0YDIjI0AjIiUjIiV3Z3YuUljsWSFpXCiuU29tFPFCZljiVS8jIiVkRhB3YzMxIRQ3JiAjNQUjMiIjKAU=",
 /*为什么火箭队是史上最蠢的犯罪组织*/"FQQ0FQE4FQFaFQQ0FQFkFPdwFQQ0FQE5FPd4FQQ3FPdxFQBkFQQ3FQBBFQBAFQQ5FPi4FPjCFQQ2FPi4FQBCFQQ1FPfCFQEyFQQ0FQE4FPfaFQQ2FPjeFPdwFQQ4FQAwFQAyFQQ3FPjaFPd0FQQ3FPfaFQBCFQQ3FQFAFQBaFQQ3FQFkFPd0FQQ3FQFkFPd3FQRCFQFeFPfCWDN0YDIjI0AjIiUjIiV3Z3YuUljsWSFpXCiuU29tFPFCZljiVS8jIiVkRhByYzMxISd3OBojNQUjMiIjKAU=",
 
-/**/"／／"
+/**/""
 );
 
 let wzjm_输入;
@@ -90,14 +90,13 @@ document.getElementById("解密").style.display = "block";
 }
 
 function 解密(){
-wzjm_输入="";
-for(let i=0;data.length>i;i++){
-    wzjm_输入+=data[i]+"FQRCFQFeFQFkFQRCFQFeFPfCFQRCFQFeFQFA";
-}
+let 结果="";
 wzjm_密码 = document.getElementById("密码").value;
-console.log(wzjm_输入);
-console.log(wzjm_密码);
-wzjm_解密();
-data=wzjm_输入.split("［／］");
+for(let i=0;data.length>i;i++){
+    wzjm_输入=data[i];
+    wzjm_解密();
+    结果+=wzjm_输入+"［／］";
+}
+data=结果.split("［／］");
 }
 </script>
