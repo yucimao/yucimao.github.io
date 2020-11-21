@@ -73,15 +73,16 @@ permalink: ceshi/sjtk
     }
     let t = GetQueryString("t"); //题库地址
     let wzjm_密码 = GetQueryString("m");
+    let wzjm_输入;
 
     function 加密(){
-        let wzjm_输入;
         let 临时 = document.getElementById("输入b").value;
         临时 = 临时.split("[");
         let 临时2 = 临时[0];
         for(let i=1;临时.length>i;i++){
             let 临时3 = 临时[i].split("]");
             wzjm_输入 = 临时3[0];
+            console.log(wzjm_输入);
             wzjm_加密();
             临时2+="["+wzjm_输入+"]"+临时3[1];
         }
@@ -89,7 +90,6 @@ permalink: ceshi/sjtk
     }
 
     function 解密(){
-        let wzjm_输入;
         let 临时 = document.getElementById("输入b").value;
         临时 = 临时.split("[");
         let 临时2 = 临时[0];
