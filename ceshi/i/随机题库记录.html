@@ -5,7 +5,7 @@ nav_text: 随机题库记录
 permalink: ceshi/sjtk
 ---
 <div id="结果"></div>
-<textarea type="text" id="输入b" style="width:80%;font-size: 1.4em;" placeholder="输入内容" autocomplete="off" ></textarea>
+<textarea type="text" id="输入b" style="width:80%;font-size: 1.4em;" placeholder="输入内容" autocomplete="off" ></textarea><br/>
 <button onclick="加密()">加密</button>
 <button onclick="解密()">解密</button>
 <script src="/js/mq-wzjm.js"></script>
@@ -32,6 +32,12 @@ permalink: ceshi/sjtk
         "593961 形象 路人／／",
         "593970 中国人名／／",
         "593972 中国人名：明星名字打乱／／",
+
+        // - 人物
+        "597120 服装：睡衣（男）／／",
+        "597127 服装：睡衣（女）／／",
+        "597129 服装：雅歌／／",
+        "597132 职业：城市／／",
 
         // - - 道具
         "596791 来自其他作品的道具／／",
@@ -82,7 +88,6 @@ permalink: ceshi/sjtk
         for(let i=1;临时.length>i;i++){
             let 临时3 = 临时[i].split("]");
             wzjm_输入 = 临时3[0];
-            console.log(wzjm_输入);
             wzjm_加密();
             临时2+="["+wzjm_输入+"]"+临时3[1];
         }
