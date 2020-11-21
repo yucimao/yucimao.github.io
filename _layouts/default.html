@@ -18,10 +18,13 @@
     <script>
         let target = document.querySelectorAll('a'); //给有target的链接加rel="noopener noreferrer"
         if (target[0]) {
-            console.log(target[0]);
         for (let i = 0; i < target.length; i++) {
-            if (document.getElementsByTagName("a")[i].hasAttribute("target")) {
-                target[i].setAttribute('rel', 'noopener noreferrer');
+            if (target[i]["target"].indexOf("_blank") != -1){
+                console.log("1");
+                if (target[i]["href"].indexOf("limaoqiu.com") != -1){
+                    console.log("2");
+                    target[i].setAttribute('rel', 'noopener noreferrer');
+                }
             }
         }
     }
