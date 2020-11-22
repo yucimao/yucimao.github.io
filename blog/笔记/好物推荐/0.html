@@ -1,0 +1,45 @@
+---
+layout: page
+title: 好物推荐
+nav_text: 好物推荐
+nav_url: <a href="/zatan">zatan</a>
+nav_color: ffffff
+permalink: tuijian
+---
+<style>
+    .tsx {  /*底部提示框*/
+        position: relative;
+        display: inline-block;
+    }
+
+    .tsx .tsxt {
+        border: 1px solid #c0c0c0;
+        visibility: hidden;
+        width: 400px;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        
+        /* 定位 */
+        position: absolute;
+        z-index: 1;
+        top: 80%;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    .tsx:hover .tsxt {
+        transform:translate(0,20px);
+        transition:all 0.5s;
+        visibility: visible;
+    }
+    </style>
+<!--
+    <fieldset>
+    <legend>好物推荐</legend>
+-->
+
+<a href="/tuijian/daluandou" class="anniu">大乱斗类作品</a>
+<div class="tsx"><a href="/tuijian/bgmjiemu" class="anniu">适合当BGM的节目</a><span class="tsxt">工作、吃饭或者无聊的时候，觉得房间里太安静了，就想找些电视剧、动画当作BGM。</span></div>
+<div class="tsx"><a href="/tuijian/tv" class="anniu">看会儿电视</a><span class="tsxt">电视和网络直播、电台等。</span></div>
