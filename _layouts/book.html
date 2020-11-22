@@ -26,9 +26,9 @@ layout: default
 </style>
 
 <div class="body">
-    <a href="/">猫球博客</a> {% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}
-    <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-    <div class="auth"><span class="auth">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class="auth">状态：{% if page.wen_sta %}{{ page.wen_sta }}{% else %} - {% endif %}</span><input id="输入" placeholder="搜索" autocomplete="off"/></div>
+    <a href="/">猫球博客</a> {% if page.nav_url %} / {{ page.nav_url }}{% endif %}
+    <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% endif %}</div>
+    <div class="auth">{% if page.wen_auth %}<span class="auth">作者：{{ page.wen_auth }}</span>{% endif %}{% if page.wen_sta %}<span class="auth">状态：{{ page.wen_sta }}</span>{% endif %}<input id="输入" placeholder="搜索" autocomplete="off"/></div>
     <hr>
     <div class="auth"><a href="#最新章节" name="返回顶部"><span class="auth">最新章节</span></a><span id="上次看到" class="auth"></span></div>
     <br/>
