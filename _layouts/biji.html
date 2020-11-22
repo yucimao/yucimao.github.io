@@ -29,6 +29,8 @@ layout: default
         outline: none;
     }
     #输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
+    #前言 a {color:#808080;}
+    #前言 a:hover{color:#404040;}
 
     @media screen and (min-width: 768px) { /*电脑*/
         .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
@@ -88,7 +90,7 @@ layout: default
             <input type="text" style="display:none" />
             <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
         <br /><br />
-        <div id="前言"><a onclick="tion(sg='')"><b>展示全部</b></a>　<a onclick="随机排序()"><b>随机排序</b></a>　<a onclick="显示未读()"><b>只显示未读</b></a></div>
+        <div id="前言"><a onclick="tion(sg='')">展示全部</a>　<a onclick="随机排序()">随机排序</a>　<a onclick="显示未读()">只显示未读</a></div>
         <hr>
         <div id="结果"></div>
 

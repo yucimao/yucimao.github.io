@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<link href="/5/new/highlight/vsc.css" rel="stylesheet"/>
+<script src="/5/new/highlight/highlight.js"></script>
+
+据说a标签用target="_blank"跳转时，新页面可以通过window.opener获取到源页面的部分控制权。<br/>
+用target="_blank"时就需要加上rel="noopener noreferrer"，用来防止钓鱼网站。<br/>
+有时候会忘了加，或者觉得麻烦懒得加，就想用js为页面里所有的a标签自动添加。<br/>
+代码如下：<br/>
+<pre><code>
+let target = document.querySelectorAll('a');
+if (target[0]) {
+    for (let i = 0; i &lt; target.length; i++) {
+        if (target[i]["target"].indexOf("_blank") != -1) { //有_blank才会加
+            if (target[i]["href"].indexOf("limaoqiu.com") != -1) { } //如果地址包含limaoqiu.com说明是我自己的网址，则不加
+            else {
+                target[i].setAttribute('rel', 'noopener noreferrer');
+            }
+        }
+    }
+}
+</code></pre>
+
+<script>
+    hljs.initHighlightingOnLoad();
+    var allpre = document.getElementsByTagName("pre");
+    for(i = 0; i < allpre.length; i++) {
+       var onepre = document.getElementsByTagName("pre")[i];
+       var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+       onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
+    }
+</script>
+
+</html>

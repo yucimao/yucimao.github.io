@@ -16,18 +16,16 @@
     {{ content }}
 
     <script>
-        let target = document.querySelectorAll('a'); //给有target的链接加rel="noopener noreferrer"
+        let target = document.querySelectorAll('a');
         if (target[0]) {
         for (let i = 0; i < target.length; i++) {
             if (target[i]["target"].indexOf("_blank") != -1){
-                console.log("1");
-                if (target[i]["href"].indexOf("limaoqiu.com") != -1){
-                    console.log("2");
+                if (target[i]["href"].indexOf("limaoqiu.com") != -1){}
+                else{
                     target[i].setAttribute('rel', 'noopener noreferrer');
                 }
             }
         }
     }
     </script>
-
 </html>
