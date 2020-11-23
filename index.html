@@ -5,7 +5,6 @@ nav_img: index.jpg
 nav_text: 猫球博客
 nav_url: <a href="/notice">公告</a>
 ---
-<script src="/js/jquery.min.js"></script>
 <script src="/5/备忘日历/备忘日历.js"></script>
 <style>
 @media screen and (min-width: 450px){ /*电脑*/
@@ -39,7 +38,7 @@ div.xttza{
 </style> 
 <small>
 <div style="line-height:20px">
-<div class="xttza" style="width:16em;">
+<div class="xttza" style="width:16em;float:left;">
     <div id="btn" onMouseOver="document.getElementById('xttzb').style.display='block'" onMouseOut="document.getElementById('xttzb').style.display='none'"> 
         <script>document.write(日期);</script>
     </div>
@@ -72,13 +71,13 @@ alt="猫球tv" /></a>
 
 <br/>
 
-<a href="/xiaojuchang">
-<img class="tubiao sy50" id="xiaojuchang" src="/img/index/xiaojuchang.jpg" 
-onMouseOver="this.src='/img/index/xiaojuchang2.jpg'" 
-onMouseOut="this.src='/img/index/xiaojuchang3.jpg'" 
-ontouchstart="this.src='/img/index/xiaojuchang2.jpg'" 
-ontouchend="this.src='/img/index/xiaojuchang3.jpg'" 
-alt="小剧场" /></a>
+<a href="/world">
+<img class="tubiao sy50" id="world" src="/img/index/world.jpg" 
+onMouseOver="this.src='/img/index/world2.jpg'" 
+onMouseOut="this.src='/img/index/world3.jpg'" 
+ontouchstart="this.src='/img/index/world2.jpg'" 
+ontouchend="this.src='/img/index/world3.jpg'" 
+alt="猫球的世界" /></a>
 
 <a href="/yimeng">
 <img class="tubiao sy50" id="yimeng" src="/img/index/yimeng.jpg" 
@@ -96,15 +95,15 @@ onMouseOver="this.src='/img/index/playgame3.jpg'"
 onMouseOut="this.src='/img/index/playgame3.jpg'" 
 ontouchstart="this.src='/img/index/playgame3.jpg'" 
 ontouchend="this.src='/img/index/playgame3.jpg'" 
-alt="游戏实况" /></a>
+alt="玩游戏" /></a>
 
-<a href="/wuyonggonglue">
-<img class="tubiao sy50" id="wuyonggonglue" src="/img/index/wuyonggonglue.jpg" 
-onMouseOver="this.src='/img/index/wuyonggonglue3.jpg'" 
-onMouseOut="this.src='/img/index/wuyonggonglue3.jpg'" 
-ontouchstart="this.src='/img/index/wuyonggonglue3.jpg'" 
-ontouchend="this.src='/img/index/wuyonggonglue3.jpg'" 
-alt="无用攻略" /></a>
+<a href="/riji">
+<img class="tubiao sy50" id="riji" src="/img/index/riji.jpg" 
+onMouseOver="this.src='/img/index/riji3.jpg'" 
+onMouseOut="this.src='/img/index/riji3.jpg'" 
+ontouchstart="this.src='/img/index/riji3.jpg'" 
+ontouchend="this.src='/img/index/riji3.jpg'" 
+alt="猫球日记" /></a>
 
 <br/>
 
@@ -184,19 +183,19 @@ ontouchstart="this.src='/img/index/github2.jpg'"
 ontouchend="this.src='/img/index/github3.jpg'" 
 alt="GitHub" /></a>
 
-<a href="/qq" target="_blank">
-<img class="tubiao sy125" id="QQ" src="/img/index/QQ.jpg" 
-onMouseOver="this.src='/img/index/QQ2.jpg'" 
-onMouseOut="this.src='/img/index/QQ3.jpg'" 
-ontouchstart="this.src='/img/index/QQ2.jpg'" 
-ontouchend="this.src='/img/index/QQ3.jpg'" 
-alt="QQ：123719932" /></a>
+<a href="/contactus" target="_blank">
+<img class="tubiao sy25" id="contactus" src="/img/index/contactus.jpg" 
+onMouseOver="this.src='/img/index/contactus2.jpg'" 
+onMouseOut="this.src='/img/index/contactus3.jpg'" 
+ontouchstart="this.src='/img/index/contactus2.jpg'" 
+ontouchend="this.src='/img/index/contactus3.jpg'" 
+alt="联系我" /></a>
 
 <p id="dy0"></p>
 
 <script>
-let dy0=new Array("maoqiuheerche","maoqiutv","xiaojuchang","yimeng","playgame","wuyonggonglue",
-"xiangce","zatan","pvo","xiaogongju","bilibili","xinlangweibo","zhihu","wyyyy","github","QQ")
+let dy0=new Array("maoqiuheerche","maoqiutv","world","yimeng","playgame","riji",
+"xiangce","zatan","pvo","xiaogongju","bilibili","xinlangweibo","zhihu","wyyyy","github","contactus")
 let dy1="";
 
 window.onload=function(){   //页面加载完把模糊图换成清晰图、预加载变化图
