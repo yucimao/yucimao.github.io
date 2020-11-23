@@ -27,5 +27,13 @@
             }
         }
     }
+    if(localStorage.getItem("pv_all")){
+        let pv_all=localStorage.getItem("pv_all")*1+1;
+        console.log("这是您第"+pv_all+"次访问我的博客。")
+        localStorage.setItem("pv_all", pv_all)
+    }
+    else{
+        localStorage.setItem("pv_all", "1")
+    }
     </script>
 </html>
