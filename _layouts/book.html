@@ -47,7 +47,6 @@ layout: default
 </div>
 
 <script>
-
 {% if page.book_item %}
 if(localStorage.getItem("{{ page.book_item }}")){
     let sckd=localStorage.getItem("{{ page.book_item }}").split("／");
@@ -55,7 +54,6 @@ if(localStorage.getItem("{{ page.book_item }}")){
     document.getElementById("上次看到").innerHTML = sckd;
 }
 {% endif %}
-
 
 $("#输入").keyup(function () {
     let 输入=$("#输入").val()
@@ -74,13 +72,9 @@ $("#输入").keyup(function () {
             }
             if(过程=="1"||输入==""){
                 结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span";
-                if(localStorage.getItem(临时[0])){
-                    结果+=" class=\"yidu\">";
-                }
-                else{
-                    结果+=">";
-                }
-                结果+=临时[1]+"</span></a>";
+                if(localStorage.getItem(临时[0])){结果+=" class=\"yidu\"";}
+                if(临时[2]=="long"){结果+=" style=\"width:96%\""}
+                结果+=临时[1]+"></span></a>";
             }
         }
     }
@@ -89,9 +83,9 @@ $("#输入").keyup(function () {
 
 let anchor = document.querySelectorAll('a');
         if (anchor[0]) {
-            let anchor_dy = "<hr><table>";
+            let anchor_dy = "<table>";
             for (let i = 0; i < anchor.length; i++) {
-                if (anchor[i]["name"]) {
+                if (anchor[i]["name"] && anchor[i]["name"]!=="最新章节" && anchor[i]["name"]!=="返回顶部") {
                     anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</td></tr>";
                 }
             }
