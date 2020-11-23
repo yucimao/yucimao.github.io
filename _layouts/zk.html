@@ -5,12 +5,17 @@ layout: default
     @media screen and (min-width: 768px) { /*电脑*/
         .qbt {text-align: center;margin-top: 1.2em;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 20px;width: 65%;margin: auto;}
+        #right_anchor{position: fixed;bottom:0%;width:18%;height: 40%;overflow:auto;margin: 0 auto 0 70%;}
+        #right_anchor table{width:100%;}
     } /*电脑*/
 
     @media screen and (max-width: 767px) { /*手机*/
         .qbt {text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+        #right_anchor{position:relative;}
+        #right_anchor table{width:60%;}
     } /*手机*/
+    #right_anchor a{display:block;}
 </style>
 
 </head>
@@ -20,6 +25,7 @@ layout: default
     <div id="上级" class="body"></div>
 
     <div id="wen_body">
+        <div id="right_anchor"></div>
         <script>if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div><a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
             document.getElementById("上级").innerHTML=返回;
             document.getElementById("wen_body").className = 'body';}
@@ -45,5 +51,21 @@ layout: default
         {{ content }}
 
     </div>
+
+    <script>
+        if (top.location == self.location) {
+            let anchor = document.querySelectorAll('a');
+            if (anchor[0]) {
+                let anchor_dy = "<table>";
+                for (let i = 0; i < anchor.length; i++) {
+                    if (anchor[i]["name"]) {
+                        anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</td></tr>";
+                    }
+                }
+                anchor_dy += "</table>";
+                document.getElementById("right_anchor").innerHTML = anchor_dy;
+            }
+        }
+    </script>
 
 </body>
