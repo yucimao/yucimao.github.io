@@ -10,12 +10,17 @@ layout: default
         .qbt {text-align: center;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 20px;width: 65%;margin: auto;}
         #contents span{width:30%;text-align:center;}
+        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
+        #right_anchor table{width:100%;}
+        #right_anchor a{display:block;}
     }/*电脑*/
 
     @media screen and (max-width: 767px) {/*手机*/
         .qbt {text-align: center;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 20px;width: 96%;margin: auto;}
-        #contents span{width:100%;}
+        #contents span{width:96%;}
+        #right_anchor span{background-color:#fff; display:inline-block; border-top:2px solid #ddd;padding: 10px;width:96%;}
+        #right_anchor span:hover{background: #eee;}
     }/*手机*/
 
     div.auth {text-align: center;}
@@ -32,6 +37,7 @@ layout: default
     <hr>
     <div class="auth"><a href="#最新章节" name="返回顶部"><span class="auth">最新章节</span></a><span id="上次看到" class="auth"></span></div>
     <br/>
+    <div id="right_anchor"></div>
     <div id="contents"></div>
 
     {{ content }}
@@ -59,23 +65,37 @@ $("#输入").keyup(function () {
         let 临时 = data[i].split("／");
         let 过程 = "0";
 
-        if(临时[0]=="hr"){
-            结果+="<hr><h3>"+临时[1]+"</h3>";
+        if(临时[0]=="hr"&&输入==""){
+            结果+="<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
         }
         else{
             for (let i2 = 0; 输入2.length > i2; i2++) {
                 if (临时[1].indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程 = "1"; }
             }
             if(过程=="1"||输入==""){
+                结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span";
                 if(localStorage.getItem(临时[0])){
-                    结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span class=\"yidu\">"+临时[1]+"</span>";
+                    结果+=" class=\"yidu\">";
                 }
                 else{
-                    结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span>"+临时[1]+"</span>";
+                    结果+=">";
                 }
+                结果+=临时[1]+"</span></a>";
             }
         }
     }
     document.getElementById("contents").innerHTML = 结果;
 }).keyup();
+
+let anchor = document.querySelectorAll('a');
+        if (anchor[0]) {
+            let anchor_dy = "<hr><table>";
+            for (let i = 0; i < anchor.length; i++) {
+                if (anchor[i]["name"]) {
+                    anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</td></tr>";
+                }
+            }
+            anchor_dy += "</table>";
+            document.getElementById("right_anchor").innerHTML = anchor_dy;
+        }
 </script>
