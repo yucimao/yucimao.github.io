@@ -26,13 +26,32 @@ let data = new Array(
 "页面效果测试／578401／／"
 )
 </script>
+<script src="/js/mq-wzjm.js"></script>
 <div id="结果x" style="display:none"></div>
 <script>
-    $("#输入").keyup(function () {
-    document.getElementById("结果x").style.display = "none";
-    let 输入x = $("#输入").val();
-    let dyx = "<iframe src=\"/i/x/" + 输入x + "\" frameborder=\"0\" width=\"100%\" height=\"1080px\"></iframe>";
-            document.getElementById("结果x").innerHTML = dyx;
-    });
-    </script>
+$("#输入").keyup(function () {
+document.getElementById("结果x").style.display = "none";
+let 输入x = "/i/x/"+$("#输入").val()+".json";
+
+let GetJson = $.ajax({
+    url: 输入x,//json文件位置
+    type: "GET",
+    dataType: "json",
+    async: false,
+    success: function (data) {
+    }
+});
+if (GetJson.responseText[0] == "[" || GetJson.responseText[0] == "{") {
+    GetJson = $.parseJSON(GetJson["responseText"])
+}
+else {
+    GetJson = GetJson.responseText;
+}
+
+let wzjm_输入=GetJson;
+let wzjm_密码="ix";
+wzjm_解密();
+document.getElementById("结果x").innerHTML = wzjm_输入;
+});
+</script>
 </body>
