@@ -1,17 +1,14 @@
 ---
 layout: default
 ---
-<script>window.parent.document.getElementById("结果x").style.display = "block";</script>
 </head>
-
 <body>
 <div id="ixdy"></div>
-    {{ content }}
-
 <script src="/js/mq-wzjm.js"></script>
 <script>
+window.parent.document.getElementById("结果x").style.display = "block";
 if(top.location!=self.location){
-let wzjm_输入=data;
+let wzjm_输入="{{ content }}";
 let wzjm_密码="ix";
 wzjm_解密();
 document.getElementById("ixdy").innerHTML = wzjm_输入;
