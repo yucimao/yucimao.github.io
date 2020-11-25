@@ -5,7 +5,6 @@ nav_img: index.jpg
 nav_text: 猫球博客
 nav_url: <a href="/contactus">联系我们</a>
 ---
-<script src="/5/备忘日历/备忘日历.js"></script>
 <style>
 @media screen and (min-width: 450px){ /*电脑*/
 .sy50{width:49%;}
@@ -44,11 +43,9 @@ div.xttza{
 <div style="line-height:20px">
 <div class="xttza" style="width:16em;float:left;">
     <div id="btn" onMouseOver="document.getElementById('xttzb').style.display='block'" onMouseOut="document.getElementById('xttzb').style.display='none'"> 
-        <script>document.write(日期);</script>
     </div>
     <div id="xttzb" onMouseOver="document.getElementById('xttzb').style.display='block'" onMouseOut="document.getElementById('xttzb').style.display='none'"> 
     <table id="informTable">
-       <script>document.write(节日);</script>
     </table>
     </div>
 </div>
@@ -195,11 +192,16 @@ ontouchstart="this.src='/img/index/liuyan2.jpg'"
 ontouchend="this.src='/img/index/liuyan3.jpg'" 
 alt="留言板" /></a>
 
+<script src="/5/备忘日历/备忘日历.js"></script>
+
 <p id="dy0"></p>
 
 <script>
+document.getElementById("btn").innerHTML=日期;
+document.getElementById("informTable").innerHTML=节日;
+
 let dy0=new Array("maoqiuheerche","maoqiutv","world","yimeng","playgame","riji",
-"xiangce","zatan","pvo","xiaogongju","bilibili","xinlangweibo","zhihu","wyyyy","github","liuyanban")
+"xiangce","zatan","pvo","xiaogongju","bilibili","xinlangweibo","zhihu","wyyyy","github","liuyan")
 let dy1="";
 
 window.onload=function(){   //页面加载完把模糊图换成清晰图、预加载变化图
