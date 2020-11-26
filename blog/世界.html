@@ -39,7 +39,7 @@ a:hover{color:#ddd;}
 let 地图目录=new Array("新手村草原","夜路归途");
 document.getElementById("siteWelcome").innerHTML = "";
 
-let 获取数据_地址,ix_输入,当前地图,临时,临时2,场景选项="无",场景剧本,择;
+let 获取数据_地址,ix_输入,当前地图,临时,临时2,场景选项="无",场景剧本,择,选项开关=1,场景开关=1;
 let 地图_剧本="　",景色_剧本="　",场景_剧本="　";
 let 地图_打印="",景色_打印="",场景_打印="";
 let 地图_i=0,景色_i=0,场景_i=0;
@@ -122,13 +122,15 @@ function 打印机(){
             }
             document.getElementById("场景").innerHTML = 场景_打印;
         }
-        else if(场景选项=="无"){
-                document.getElementById("选项").style.display = "block";
+        else if(场景选项=="无"&&选项开关==1){
+            document.getElementById("选项").style.display = "block";
                 document.getElementById("选项").innerHTML = "<a onclick=\"到处逛逛()\">到处逛逛</a>";
+                选项开关=0;
             }
-            else{
+            else if(场景开关==1){
                 document.getElementById("选项").style.display = "block";
                 document.getElementById("选项").innerHTML = 场景选项;
+                场景开关=0;
             }
             }
 
@@ -175,7 +177,10 @@ let 开始打印 = setInterval(打印机,打印速度);
         let 景色顺序 = 0;
 
 function 到处逛逛(){
-document.getElementById("选项").style.display = "none";
+场景_剧本="　";
+场景_打印="";
+场景_i=0;
+document.getElementById("场景").style.display = "none";
 if(景色列表[景色顺序]){}
 else{景色顺序=0;}
 场景剧本 = 景色列表[景色顺序];
@@ -193,6 +198,7 @@ else{场景选项="无";}
 景色_打印="";
 景色_i=0;
 景色顺序+=1;
+选项开关=1;场景开关=1;
 }
 
 function 选(){
@@ -202,6 +208,7 @@ function 选(){
     场景_打印="";
     场景_i=0;
     场景选项="无";
+    选项开关=1;场景开关=1;
 }
 //［选项:结局］
 </script>
