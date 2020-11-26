@@ -106,10 +106,22 @@ function 打印机(){
         }
 }
 
-临时 = new Date().getDate()+new Date().getHours();
-临时2 = 地图目录.length;
-临时 = 临时%临时2;
-当前地图 = 地图目录[临时];
+var LocString = String(window.document.location.href);
+        function GetQueryString(name) {
+            var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+            if (tmp = rs) { return decodeURI(tmp[2]); }
+            return "";
+        }
+        if(GetQueryString("i")){
+            当前地图=GetQueryString("i");
+        }
+        else{
+            临时 = new Date().getDate()+new Date().getHours();
+            临时2 = 地图目录.length;
+            临时 = 临时%临时2;
+            当前地图 = 地图目录[临时];
+        }
+
 获取数据_地址=当前地图;
 获取数据();
 地图_剧本 = 当前地图.split("[")[1].split("]")[0];
