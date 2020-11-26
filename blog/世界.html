@@ -3,6 +3,7 @@ layout: page2
 title: 猫球的世界
 permalink: world
 ---
+<script>/*关闭加载动画*/var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');</script>
 <style>
 *{background-color: #111;color:#888}
 *::-webkit-scrollbar {width: 10px;height: 1px;}
@@ -195,12 +196,12 @@ else{场景选项="无";}
 }
 
 function 选(){
+    document.getElementById("场景").style.display = "block";
     择="［"+择+":";
     场景_剧本=场景剧本.split(择)[1].split("］")[0];
     场景_打印="";
     场景_i=0;
     场景选项="无";
-    document.getElementById("场景").style.display = "block";
 }
 //［选项:结局］
 </script>
