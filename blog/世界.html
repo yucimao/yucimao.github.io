@@ -26,17 +26,19 @@ a:hover{color:#ddd;}
 
 <div id="body">
     <div id="地图">　</div>
+    <br/>
     <div id="景色">　</div>
-    <br/><br/><br/>
+    <div id="场景" style="display: none;">　</div>
+    <br/>
     <div id="选项" stlye="display:none;"><a onclick="到处逛逛()">到处逛逛</a></div>
 
     </div>
 
 <script>
-let 地图目录=new Array("草原","夜路归途");
+let 地图目录=new Array("新手村草原","夜路归途");
 document.getElementById("siteWelcome").innerHTML = "";
 
-let 获取数据_地址,ix_输入,当前地图,临时,临时2;
+let 获取数据_地址,ix_输入,当前地图,临时,临时2,场景选项="无",场景剧本,择;
 let 地图_剧本="　",景色_剧本="　";
 let 地图_打印="",景色_打印="";
 let 地图_i=0,景色_i=0;
@@ -77,13 +79,11 @@ function 打印机(){
     if(地图_剧本.length > 地图_i) {
         document.getElementById("选项").style.display = "none";
             if (地图_剧本[地图_i] == "　"){地图_i+=1}
-            else if (地图_剧本[地图_i] == "［") {
-                地图_i+=1;
-                while (地图_剧本[地图_i] != "］") {
+            else if (地图_剧本[地图_i] == "<") {
+                while (地图_剧本[地图_i] != ">") {
                     地图_打印 += 地图_剧本[地图_i];
                     地图_i += 1;
                 }
-                地图_i+=1;
             }
             else{
             地图_打印 += 地图_剧本[地图_i];
@@ -94,13 +94,11 @@ function 打印机(){
         else if(景色_剧本.length > 景色_i) {
         document.getElementById("选项").style.display = "none";
             if (景色_剧本[景色_i] == "　"){景色_i+=1}
-            else if (景色_剧本[景色_i] == "［") {
-                景色_i+=1;
-                while (景色_剧本[景色_i] != "］") {
+            else if (景色_剧本[景色_i] == "<") {
+                while (景色_剧本[景色_i] != ">") {
                     景色_打印 += 景色_剧本[景色_i];
                     景色_i += 1;
                 }
-                景色_i+=1;
             }
             else{
                 景色_打印 += 景色_剧本[景色_i];
@@ -108,8 +106,30 @@ function 打印机(){
             }
             document.getElementById("景色").innerHTML = 景色_打印;
         }
-        else{document.getElementById("选项").style.display = "block";}
-}
+        else if(场景_剧本.length > 场景_i) {
+        document.getElementById("选项").style.display = "none";
+            if (场景_剧本[场景_i] == "　"){场景_i+=1}
+            else if (场景_剧本[场景_i] == "<") {
+                while (场景_剧本[场景_i] != ">") {
+                    场景_打印 += 场景_剧本[场景_i];
+                    场景_i += 1;
+                }
+            }
+            else{
+                场景_打印 += 场景_剧本[场景_i];
+                场景_i+=1;
+            }
+            document.getElementById("场景").innerHTML = 场景_打印;
+        }
+        else if(场景选项=="无"){
+                document.getElementById("选项").style.display = "block";
+                document.getElementById("选项").innerHTML = "<a onclick=\"到处逛逛()\">到处逛逛</a>";
+            }
+            else{
+                document.getElementById("选项").style.display = "block";
+                document.getElementById("选项").innerHTML = 场景选项;
+            }
+            }
 
 var LocString = String(window.document.location.href);
         function GetQueryString(name) {
@@ -154,14 +174,32 @@ let 开始打印 = setInterval(打印机,打印速度);
         let 景色顺序 = 0;
 
 function 到处逛逛(){
-
 if(景色列表[景色顺序]){}
 else{景色顺序=0;}
-景色_剧本=景色列表[景色顺序];
+场景剧本 = 景色列表[景色顺序];
+if(场景剧本.indexOf("［") != -1){
+    场景选项="";
+    临时=场景剧本.split("［");
+    for(let i=1;临时.length>i;i++){
+        临时2=临时[i].split(":")[0];
+        场景选项+="<a onclick=\"选(择='"+临时2+"')\">"+临时2+"</a><br/>";
+    }
+}
+else{场景选项="无";}
+
+景色_剧本=场景剧本.split("［")[0];
 景色_打印="";
 景色_i=0;
 景色顺序+=1;
 }
 
+function 选(){
+    择="［"+择+":";
+    场景_剧本=场景剧本.split(择)[1].split("］")[0];
+    场景_打印="";
+    场景_i=0;
+    场景选项="无";
+}
+//［选项:结局］
 </script>
 
