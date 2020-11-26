@@ -127,7 +127,7 @@ function 打印机(){
                 document.getElementById("选项").innerHTML = "<a onclick=\"到处逛逛()\">到处逛逛</a>";
                 选项开关=0;
             }
-            else if(场景开关==1){
+            else if(场景选项!="无"&&场景开关==1){
                 document.getElementById("选项").style.display = "block";
                 document.getElementById("选项").innerHTML = 场景选项;
                 场景开关=0;
