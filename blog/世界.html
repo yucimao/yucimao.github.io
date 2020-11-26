@@ -39,6 +39,9 @@ a:hover{color:#ddd;}
     </div>
 
 <script>
+document.getElementById("siteWelcome").innerHTML = "";
+document.getElementById("back-top").innerHTML = "";
+
 let 获取数据_地址,ix_输入,当前地图,临时,临时2;
 let 地图_剧本="　",景色_剧本="　";
 let 地图_打印="",景色_打印="";
@@ -129,7 +132,7 @@ function 打印机(){
 }
 
 临时 = new Date().getDate()+new Date().getHours();
-临时2 = 地图_目录.length;
+临时2 = 地图目录.length;
 临时 = 临时%临时2;
 当前地图 = 地图目录[临时];
 获取数据_地址=当前地图;
