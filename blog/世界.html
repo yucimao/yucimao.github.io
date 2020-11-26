@@ -174,6 +174,7 @@ let 开始打印 = setInterval(打印机,打印速度);
         let 景色顺序 = 0;
 
 function 到处逛逛(){
+document.getElementById("选项").style.display = "none";
 if(景色列表[景色顺序]){}
 else{景色顺序=0;}
 场景剧本 = 景色列表[景色顺序];
@@ -199,6 +200,7 @@ function 选(){
     场景_打印="";
     场景_i=0;
     场景选项="无";
+    document.getElementById("场景").style.display = "block";
 }
 //［选项:结局］
 </script>
