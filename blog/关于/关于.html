@@ -29,7 +29,7 @@ permalink: maoqiu
 人生目标是完成一部小说。<br/>
 
 <hr>
-<a href="/chengjiu" class="anniu">我的成就</a>
+<a href="/chengjiu" class="anniu">获得成就</a> <a href="/ilike" class="anniu">我喜欢的</a>
 
 <hr>
 <a name="关于博客"></a><h2>关于博客</h2>
@@ -43,8 +43,28 @@ permalink: maoqiu
 <b>2020年5月8日</b> 因网友的强烈推荐，尝试用GitHub搭建博客。<br/>
 
 
-
 <script>
+$("html,body").on("click",function(e){anp(e);})
+
+let anp_data=new Array("pvo","二扯","汽水","烤冷面","猪又","胡糊","电影","动漫","音乐"); //组成猫球的成分
+let anp_color=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+let anp_i=0;
+function anp(e){
+	let 随机数 = Math.floor(Math.random()*anp_data.length);
+	let n=anp_data[随机数];
+	let $i=$("<b>").text(n);
+	let x=e.pageX,y=e.pageY;
+	$i.css({top:y-20,left:x,position:"absolute",color:anp_color[anp_i]});
+	anp_i+=1;
+	if(anp_color.length==anp_i){anp_i=0;}
+	$("body").append($i);
+	$i.animate({top:y-180,opacity:0,"font-size":"1.4em"},1500,function(){
+		$i.remove();
+	});
+	e.stopPropagation();
+}
+
     if (top.location == self.location) {
         let anchor = document.querySelectorAll('a');
         if (anchor[0]) {

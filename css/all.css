@@ -2,7 +2,7 @@ body {font-family: Helvetica,Arial,"Microsoft YaHei",sans-serif;line-height: 1.7
 p {margin: 30px 0;}
 h1,h2,h3,h4,h5,h6 {line-height: 1.1;font-weight: 800;}h4 {font-size: 18px;}
 hr {height:1px;border: none;border-top:1px solid #ddd;margin:15px 0;}
-a {text-decoration: none;color: #006699;}a:hover,a:focus {color: #0085a1;}a img:hover,a img:focus {cursor: pointer;}
+a {text-decoration: none;color: #006699;cursor:pointer;}a:hover,a:focus {color: #0085a1;}a img:hover,a img:focus {cursor: pointer;}
 em {font-style:normal;position: relative;}em:before {content: ".";position: absolute;top: 0.4em;left: 0.45em;font-weight: bold;}
 blockquote {color:#808080;border-left: .4em solid #c0c0c0;padding: 0.5em 1em 0.5em 1em;}
 .zhushi {color:#6A9955;}.zhushi:before{content: "//";}
