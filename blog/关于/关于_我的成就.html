@@ -6,10 +6,11 @@ nav_url: <a href="/maoqiu">关于</a>
 permalink: chengjiu
 ---
 <style>
-.cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 160px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
+@media screen and (min-width: 768px) {div.body {width: 70%;}}
+.cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
 .cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
 .cj img {width: 130px;}
-.tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 155px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 160px;left: 0%;margin-left: 0px;}
+.tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 157px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 170px;left: -2px;margin-left: 0px;}
 .cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
 #back-top{display:none;}
 footer{display:none;}
@@ -19,49 +20,89 @@ footer{display:none;}
 
 <script>
     let data = new Array(
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字",
-        "ceshi／标题文字／内容文字／展开文字"
+        "ceshi／标题文字1／内容文字／展开文字",
+        "ceshi／标题文字2／内容文字／展开文字",
+        "ceshi／标题文字3／内容文字／展开文字",
+        "ceshi／标题文字4／内容文字／展开文字",
+        "ceshi／标题文字5／内容文字／展开文字",
+        "ceshi／标题文字6／内容文字／展开文字",
+        "ceshi／标题文字7／内容文字／展开文字",
+        "ceshi／标题文字8／内容文字／展开文字",
+        "ceshi／标题文字9／内容文字／展开文字",
+        "ceshi／标题文字10／内容文字／展开文字",
+        "ceshi／标题文字11／内容文字／展开文字",
+        "ceshi／标题文字12／内容文字／展开文字",
+        "ceshi／标题文字13／内容文字／展开文字",
+        "ceshi／标题文字14／内容文字／展开文字",
+        "ceshi／标题文字15／内容文字／展开文字",
+        "ceshi／标题文字16／内容文字／展开文字",
+        "ceshi／标题文字17／内容文字／展开文字",
+        "ceshi／标题文字18／内容文字／展开文字",
+        "ceshi／标题文字19／内容文字／展开文字",
+        "ceshi／标题文字20／内容文字／展开文字",
+        "ceshi／标题文字21／内容文字／展开文字",
+        "ceshi／标题文字22／内容文字／展开文字",
+        "ceshi／标题文字23／内容文字／展开文字",
+        "ceshi／标题文字24／内容文字／展开文字",
+        "ceshi／标题文字25／内容文字／展开文字",
+        "ceshi／标题文字26／内容文字／展开文字",
+        "ceshi／标题文字27／内容文字／展开文字",
+        "ceshi／标题文字28／内容文字／展开文字",
+        "ceshi／标题文字29／内容文字／展开文字",
+        "ceshi／标题文字30／内容文字／展开文字",
+        "ceshi／标题文字1／内容文字／展开文字",
+        "ceshi／标题文字2／内容文字／展开文字",
+        "ceshi／标题文字3／内容文字／展开文字",
+        "ceshi／标题文字4／内容文字／展开文字",
+        "ceshi／标题文字5／内容文字／展开文字",
+        "ceshi／标题文字6／内容文字／展开文字",
+        "ceshi／标题文字7／内容文字／展开文字",
+        "ceshi／标题文字8／内容文字／展开文字",
+        "ceshi／标题文字9／内容文字／展开文字",
+        "ceshi／标题文字10／内容文字／展开文字",
+        "ceshi／标题文字11／内容文字／展开文字",
+        "ceshi／标题文字12／内容文字／展开文字",
+        "ceshi／标题文字13／内容文字／展开文字",
+        "ceshi／标题文字14／内容文字／展开文字",
+        "ceshi／标题文字15／内容文字／展开文字",
+        "ceshi／标题文字16／内容文字／展开文字",
+        "ceshi／标题文字17／内容文字／展开文字",
+        "ceshi／标题文字18／内容文字／展开文字",
+        "ceshi／标题文字19／内容文字／展开文字",
+        "ceshi／标题文字20／内容文字／展开文字",
+        "ceshi／标题文字21／内容文字／展开文字",
+        "ceshi／标题文字22／内容文字／展开文字",
+        "ceshi／标题文字23／内容文字／展开文字",
+        "ceshi／标题文字24／内容文字／展开文字",
+        "ceshi／标题文字25／内容文字／展开文字",
+        "ceshi／标题文字26／内容文字／展开文字",
+        "ceshi／标题文字27／内容文字／展开文字",
+        "ceshi／标题文字28／内容文字／展开文字",
+        "ceshi／标题文字29／内容文字／展开文字",
+        "ceshi／标题文字30／内容文字／展开文字"
     );
 
-function 加载(){
     let dy="";
-    for(let i=0;data.length>i;i++){
-        let 临时=data[i].split("／");
+    let loading="<a onclick=\"加载()\"><div class=\"cj\"><img src=\"/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
+    let 计时=24;
+
+    function 加载(){
+    while (计时>0&&data){
+        let 临时=data[0].split("／");
         dy+="<div class=\"cj\"><img src=\"/img/i/chengjiu/"+临时[0]+".jpg\"/><b>"+临时[1]+"</b><br/>"+临时[2];
         if(临时[3]){
             dy+="<span class=\"tsxt\">"+临时[3]+"</span>";
         }
         dy+="</div>";
-    }
-    document.getElementById("dy").innerHTML = dy;
+        data.splice(0,1);
+        计时-=1;
+        }
+        if(data){
+            document.getElementById("dy").innerHTML = dy+loading;
+        }
+        else{
+            document.getElementById("dy").innerHTML = dy;
+        }
 }
 加载();
 </script>
