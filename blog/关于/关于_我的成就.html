@@ -13,7 +13,7 @@ permalink: chengjiu
 .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 157px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 170px;left: -2px;margin-left: 0px;}
 .cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
 #back-top{display:none;}
-footer{display:none;}
+footer{float: left;width:100%;}
 </style>
 
 <div id="dy"></div>
@@ -84,10 +84,10 @@ footer{display:none;}
 
     let dy="";
     let loading="<a onclick=\"加载()\"><div class=\"cj\"><img src=\"/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
-    let 计时=24;
 
     function 加载(){
-    while (计时>0&&data){
+        let 计时=24;
+    while (计时>0&&data!=""){
         let 临时=data[0].split("／");
         dy+="<div class=\"cj\"><img src=\"/img/i/chengjiu/"+临时[0]+".jpg\"/><b>"+临时[1]+"</b><br/>"+临时[2];
         if(临时[3]){
@@ -97,7 +97,7 @@ footer{display:none;}
         data.splice(0,1);
         计时-=1;
         }
-        if(data){
+        if(data!=""){
             document.getElementById("dy").innerHTML = dy+loading;
         }
         else{
