@@ -7,8 +7,7 @@ permalink: shuo
 ---
 <link rel="stylesheet" href="https://yucimao.github.io/css/avatar_chat.css">
 
-
-<div class="avatar_chat">
+<div id="dy" class="avatar_chat">
     <div><span class="s">文字</span></div> 时间
     <div><span class="d m">文字</span></div> 聊天内容 其中class="" 写a靠左 写d靠右 配色方法见下文
     class=""里的内容：a靠左 d靠右 m猫球配色 e二扯配色
@@ -16,7 +15,55 @@ permalink: shuo
 
 <script>
     let data=new Array( //"代码／文字" s时间 a左 d右 m猫球配色 e二扯配色 n1默认灰 n2默认蓝
-        "／"
+        "d m／测试0",
+        "d m／测试1",
+        "d m／测试2",
+        "d m／测试3",
+        "d m／测试4",
+        "d m／测试5",
+        "d m／测试6",
+        "d m／测试7",
+        "d m／测试8",
+        "d m／测试9",
+        "d m／测试a0",
+        "d m／测试a1",
+        "d m／测试a2",
+        "d m／测试a3",
+        "d m／测试a4",
+        "d m／测试a5",
+        "d m／测试a6",
+        "d m／测试a7",
+        "d m／测试a8",
+        "d m／测试a9",
+        "d m／测试b0",
+        "d m／测试b1",
+        "d m／测试b2",
+        "d m／测试b3",
+        "d m／测试b4",
+        "d m／测试b5",
+        "d m／测试b6",
+        "d m／测试b7",
+        "d m／测试8b",
+        "d m／测试b9"
     )
     
+    let dy="";
+    let loading="<div><span class=\"d n1\"><a onclick=\"加载()\">点击此处加载更多</a></span></div> "
+
+    function 加载(){
+        let 计时=10;
+        while (计时>0&&data!=""){
+            let 临时=data[0].split("／");
+            dy+="<div><span class=\""+临时[0]+"\">"+临时[1]+"</span></div>";
+            data.splice(0,1);
+            计时-=1;
+        }
+        if(data!=""){
+            document.getElementById("dy").innerHTML = dy+loading;
+        }
+        else{
+            document.getElementById("dy").innerHTML = dy;
+        }
+    }
+    加载();
 </script>
