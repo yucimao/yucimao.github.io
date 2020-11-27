@@ -15,8 +15,6 @@ permalink: ilike
 #back-top {display: none;}
 footer {float: left;width: 100%;}
 </style>
-<div class="biaotib" id="anniu_b">我喜欢的</div>
-<a class="anniu" id="anniu_a" onclick="切换()">以前喜欢</a>
 
 <div id="dy"></div>
 
@@ -26,11 +24,7 @@ footer {float: left;width: 100%;}
         "0／喜欢1／内容文字／展开文字"
     );
 
-    let 不喜欢 = new Array(
-        "0／不喜欢0／内容文字／展开文字",
-        "0／不喜欢1／内容文字／展开文字"
-    );
-
+    let 不喜欢 = new Array();
     let 当前 = "喜欢";
     let data;
     let dy;
@@ -63,39 +57,4 @@ footer {float: left;width: 100%;}
         else { 不喜欢 = data; 不喜欢_dy = dy; }
     }
     加载();
-
-    function 切换() {
-        if (当前 == "喜欢") {
-            当前 = "不喜欢";
-            document.getElementById("anniu_b").innerHTML = "以前喜欢";
-            document.getElementById("anniu_a").innerHTML = "我喜欢的";
-            document.getElementById("anniu_a").style.backgroundColor = "#9CDCFE";
-            if (次数 == 0) {
-                加载();
-                次数 = 1;
-            }
-            else {
-                if (不喜欢 == "") {
-                    document.getElementById("dy").innerHTML = 不喜欢_dy;
-                }
-                else {
-                    document.getElementById("dy").innerHTML = 不喜欢_dy + loading;
-                }
-
-            }
-        }
-        else {
-            当前 = "喜欢";
-            document.getElementById("anniu_b").innerHTML = "我喜欢的";
-            document.getElementById("anniu_a").innerHTML = "以前喜欢";
-            document.getElementById("anniu_a").style.backgroundColor = "#ffffff";
-            if (喜欢 == "") {
-                document.getElementById("dy").innerHTML = 喜欢_dy;
-            }
-            else {
-                document.getElementById("dy").innerHTML = 喜欢_dy + loading;
-            }
-
-        }
-    }
 </script>
