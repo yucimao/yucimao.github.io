@@ -1,0 +1,35 @@
+---
+layout: page2
+title: 我喜欢的
+nav_text: 我喜欢的
+nav_url: <a href="/maoqiu">关于</a>
+permalink: ilike
+---
+<style>
+.cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 160px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
+.cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
+.cj img {width: 130px;}
+.tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 155px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 160px;left: 0%;margin-left: 0px;}
+.cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
+</style>
+
+<div id="dy"></div>
+
+<script>
+    let data = new Array(
+        "ceshi／标题文字／内容文字／展开文字"
+    );
+
+function 加载(){
+    let dy="";
+    for(let i=0;data.length>i;i++){
+        let 临时=data[i].split("／");
+        dy+="<div class=\"cj\"><img src=\"/img/i/chengjiu/"+临时[0]+".jpg\"/><b>"+临时[1]+"</b><br/>"+临时[2];
+        if(临时[3]){
+            dy+="<span class=\"tsxt\">"+临时[3]+"</span>";
+        }
+        dy+="</div>";
+    }
+    document.getElementById("dy").innerHTML = dy;
+}
+</script>
