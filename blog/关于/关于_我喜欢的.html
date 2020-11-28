@@ -6,7 +6,10 @@ nav_url: <a href="/maoqiu">关于</a>
 permalink: ilike
 ---
 <style>
-@media screen and (min-width: 768px) {div.body {width: 70%;}}
+@media screen and (min-width: 768px) {div.body {width: 70%;}
+#right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor table{width:100%;}}
+@media screen and (max-width: 767px) {#right_anchor{position:relative;}#right_anchor table{width:60%;}}
+#right_anchor a{display:block;}
 .cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
 .cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
 .cj img {width: 130px;}
@@ -14,6 +17,7 @@ permalink: ilike
 .cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
 #back-top {display: none;}
 footer {float: left;width: 100%;}
+hr{width:100%;}
 </style>
 
 <div id="dy"></div>
@@ -36,27 +40,26 @@ footer {float: left;width: 100%;}
         "653366／骰子／／",
         "653368／鼠标球／／"
     );
-
-    let 不喜欢 = new Array();
-    let 当前 = "喜欢";
     let data;
     let dy;
-    let 喜欢_dy = "";
-    let 不喜欢_dy = "";
     let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
     let 次数 = 0;
 
     function 加载() {
-        if (当前 == "喜欢") { data = 喜欢; dy = 喜欢_dy; }
-        else { data = 不喜欢; dy = 不喜欢_dy; }
         let 计时 = 24;
         while (计时 > 0 && data != "") {
             let 临时 = data[0].split("／");
-            dy += "<div class=\"cj\"><img src=\"/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];
+            if(临时[0]=="hr"){
+                dy += "<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
+                right += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
+            }
+            else{
+                dy += "<div class=\"cj\"><img src=\"/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];
             if (临时[3]) {
                 dy += "<span class=\"tsxt\">" + 临时[3] + "</span>";
             }
             dy += "</div>";
+            }
             data.splice(0, 1);
             计时 -= 1;
         }
@@ -66,8 +69,7 @@ footer {float: left;width: 100%;}
         else {
             document.getElementById("dy").innerHTML = dy;
         }
-        if (当前 == "喜欢") { 喜欢 = data; 喜欢_dy = dy; }
-        else { 不喜欢 = data; 不喜欢_dy = dy; }
+        document.getElementById("right_anchor").innerHTML = "<table>"+right+"</table>";
     }
     加载();
 </script>
