@@ -4,12 +4,19 @@ layout: default
 <style>
     html,body {margin: 0;padding: 0;}
     #nav {position: absolute;width: 100%;}
-    #nav a {color: #404040;font-weight: 800;height: 50px;padding: 15px 15px;line-height: 20px;text-decoration: none;}
-    #nav a:hover {color: #0085A1;}
-    #nav :first-child {float: left;font-size: 18px;}
-    #nav :not(:first-child) {float: right;font-size: 12px;}
+    #nav>a,.nav_drop,.nav_drop_btn {color: #404040;font-weight: 800;height: 50px;padding: 15px 15px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:first-child {float: left;font-size: 18px;}
+    #nav>a:not(:first-child),.nav_drop {float: right;font-size: 12px;}
     #输入框 {text-align:center;vertical-align:middle;}
     .juzhong{text-align: center;}
+
+    .nav_drop {position: relative;display: inline-block;}
+    .nav_drop_down {display: none;position: absolute;background-color: #ffffff70;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ffffff90;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
 
     @media screen and (min-width: 768px) { /*电脑*/
         .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
@@ -70,7 +77,7 @@ layout: default
 
     <div id="nav">
         <a href="/">{{ site.title }}</a>
-        {{ page.nav_url }}<a href="/">返回主页</a></div>
+        {{ page.nav_url }}<div class="nav_drop"><a class="nav_drop_btn">更多 ▼</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div><a href="/">返回主页</a></div>
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
         <form id="输入框" autocomplete="off">
