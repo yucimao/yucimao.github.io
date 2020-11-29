@@ -72,7 +72,7 @@ layout: default
 
     <div id="nav">
         <a href="/">{{ site.title }}</a>
-        {{ page.nav_url }}<div class="nav_drop"><a class="nav_drop_btn">更多 ▼</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div><a href="/">返回主页</a></div>
+        <a href="/">返回主页</a><div class="nav_drop"><a class="nav_drop_btn">更多 ▼</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div>{{ page.nav_url }}</div>
     <span>{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
     <div class="body">
 

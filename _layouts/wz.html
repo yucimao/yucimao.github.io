@@ -77,7 +77,7 @@ layout: default
 
     <div id="nav">
         <a href="/">{{ site.title }}</a>
-        {{ page.nav_url }}<div class="nav_drop"><a class="nav_drop_btn">更多 ▼</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div><a href="/">返回主页</a></div>
+        <a href="/">返回主页</a><div class="nav_drop"><a class="nav_drop_btn">更多 ▼</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div>{{ page.nav_url }}</div>
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
         <form id="输入框" autocomplete="off">
