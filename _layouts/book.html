@@ -23,8 +23,6 @@ layout: default
         #right_anchor span:hover{background: #eee;}
     }/*手机*/
 
-    {% include ceshi.html %}
-
     div.auth {text-align: center;}
     span.auth {margin: 0px 20px 0px 20px;}
     footer {position: relative;top: 300px;z-index: -1001;}
@@ -32,8 +30,9 @@ layout: default
     .yidu:after {content: "（已读）";font-size:.5em;color:#808080;font-weight:normal;}
 </style>
 
+{% include nav.html %}
+
 <div class="body">
-    <a href="/">猫球博客</a> {% if page.nav_url %} / {{ page.nav_url }}{% endif %}
     <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% endif %}</div>
     <div class="auth">{% if page.wen_auth %}<span class="auth">作者：{{ page.wen_auth }}</span>{% endif %}{% if page.wen_sta %}<span class="auth">状态：{{ page.wen_sta }}</span>{% endif %}<input id="输入" placeholder="搜索" autocomplete="off"/></div>
     <hr>

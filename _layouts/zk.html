@@ -24,6 +24,8 @@ layout: default
 
 <body>
 
+    {% include nav.html %}
+
     <div id="上级" class="body"></div>
 
     <div id="wen_body">
@@ -36,7 +38,7 @@ layout: default
     <div id="下级" class="body"></div>
 
     <script>
-        if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div><a href=\"/\">猫球博客</a>{% if page.nav_url %} / {{ page.nav_url }}{% else %}{% endif %}{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
+        if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
         document.getElementById("上级").innerHTML=返回;
         document.getElementById("wen_body").className = 'body';
 
@@ -44,19 +46,20 @@ layout: default
         document.getElementById("下级").innerHTML=下级;
         }
         else{
-                //展开的子页面
-                var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
-                var bodyJ = window.location.href.split('/i/zk/')[1];
-                var bodyK = "／／" + bodyJ;
-                var bodyL = "／" + bodyJ + "／";
+            document.getElementById("nav").style.display = "none";
+            //展开的子页面
+            var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
+            var bodyJ = window.location.href.split('/i/zk/')[1];
+            var bodyK = "／／" + bodyJ;
+            var bodyL = "／" + bodyJ + "／";
 
-                window.parent.document.getElementById(bodyK).height = bodyH;
-                window.parent.document.getElementById(bodyL).innerHTML = "";
+            window.parent.document.getElementById(bodyK).height = bodyH;
+            window.parent.document.getElementById(bodyL).innerHTML = "";
 
-                window.onload = function () {
-                bodyH = $(document).height();
-                window.parent.document.getElementById(bodyK).height = bodyH;
-                }
+            window.onload = function () {
+            bodyH = $(document).height();
+            window.parent.document.getElementById(bodyK).height = bodyH;
+            }
         }
         let p_link = "{{ page.permalink }}".split("/");
         localStorage.setItem(p_link[2], "1");
