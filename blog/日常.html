@@ -6,7 +6,6 @@ nav_url: <a href="/maoqiujiazu">猫球家族</a>
 nav_color: ffffff
 permalink: richang
 ---
-<script src="/js/jquery.min.js"></script>
 <style>
 .fontbs{cursor:pointer;color:#006699;}
 .menuDiv h4{list-style: none;line-height: 2.4;color: #006699;cursor: pointer;}
@@ -176,4 +175,17 @@ var mSwitch = new MenuSwitch("menuDiv");
 mSwitch.setDefault(0);
 mSwitch.setPrevious(false);
 mSwitch.init();
+
+
+let dy0=new Array("maoqiujiazu")
+let dy1="";
+
+window.onload=function(){   //页面加载完把模糊图换成清晰图、预加载变化图
+    for (let i = 0; i < dy0.length; i++) {
+  document.getElementById(dy0[i]).src = "/img/index/"+dy0[i]+"3.jpg"; 
+  dy1 += '<img width="1px" src="/img/index/' + dy0[i] + '2.jpg"/>';
+}
+dy1='<div style="display:none;">'+dy1+'</div>';
+document.getElementById("dy0").innerHTML=dy1;
+};
 </script>

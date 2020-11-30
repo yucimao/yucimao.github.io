@@ -4,4 +4,15 @@ nav_img: blog.jpg
 description: 这里是猫球和二扯的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。
 keywords: 猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界
 favicon: favicon.ico
-nav_drop: <a href="/wangzhi" target="_blank">网址收藏</a><a href="/notice" target="_blank">公告和常见问题</a><a href="/liuyan" target="_blank">留言板</a><a href="/maoqiu" target="_blank">关于</a>
+nav_drop: 
+<a href="/wangzhi" target="_blank">网址收藏</a>
+<a href="/notice" target="_blank">常见问题</a>
+<a href="/liuyan" target="_blank">留言板</a>
+<a href="/maoqiu" target="_blank">关于</a>
+<div class="nav_drop2"><a class="nav_drop_btn2">更多 &lt;</a>
+<div class="nav_drop_down2">
+<a href="#">选项选项选项选项选项选项选项选项选项 1</a>
+<a href="#">选项 2</a>
+<a href="#">选项 3</a>
+</div>
+</div>
