@@ -7,7 +7,7 @@ permalink: juhuiyouxi/zxhdmx
 ---
 男玩家 <input id="男生" style="width:70%" placeholder="用空格分隔"/><br/>
 女玩家 <input id="女生" style="width:70%" placeholder="用空格分隔"/><br/>
-<br/>
+<input id="ixn" style="width:70%;display: none;" placeholder="ixn"/><br/>
 <button onclick="按钮(i='458894')">网友分享的库</button>
 <br/>
 <button onclick="按钮(i='458981')">普通版</button>
@@ -23,8 +23,12 @@ permalink: juhuiyouxi/zxhdmx
     function 按钮(){
         let han=document.getElementById("男生").value;
         let mei=document.getElementById("女生").value;
+        let ixn="";
+        if(document.getElementById("ixn").value){
+            ixn="&ixn="+document.getElementById("ixn").value;
+        }
         
-        let dy= "点击要执行的玩家名：<iframe src=\"/i/zk/" + i + "?h=" + han + "&m=" + mei + "\" frameborder=\"0\" width=\"100%\" height=\"1000px\"></iframe>";
+        let dy= "点击要执行的玩家名：<iframe src=\"/i/zk/" + i + "?h=" + han + "&m=" + mei + ixn + "\" frameborder=\"0\" width=\"100%\" height=\"1000px\"></iframe>";
         document.getElementById("yd").innerHTML = dy;
     }
 </script>
@@ -43,6 +47,7 @@ permalink: juhuiyouxi/zxhdmx
 
 <script>
     function 调试(){
+        document.getElementById("ixn").style.display = "block";
         let dyts=""+
         "<button onclick=\"按钮(i='459045')\">无节操版<\/button>"+
         "<button onclick=\"按钮(i='459256')\">丧心病狂版<\/button>"
