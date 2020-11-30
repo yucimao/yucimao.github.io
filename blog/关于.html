@@ -28,7 +28,7 @@ permalink: maoqiu
 一个还是新人就已经过气的up主。<br/>
 一个没拍过正片，只游场的小透明coser。<br/>
 一个画画不好，却迷上写代码的美术生。<br/>
-人生目标是完成一部小说。<br/>
+<span onmouseover="javascript:this.innerHTML='虽然毫无天赋，至少自己开心就好。'" onmouseout="javascript:this.innerHTML='人生目标是完成一部小说。'">人生目标是完成一部小说。</span><br/>
 
 <br/><br/>
 <a href="/chengjiu" target="_blank" class="anniu">获得成就</a> <a href="/ilike" target="_blank" class="anniu">我喜欢的</a><br/>
@@ -36,7 +36,7 @@ permalink: maoqiu
 <br/><br/>
 <hr>
 <a name="关于博客"></a><h2>关于博客</h2>
-<small>2006年9月20日</small> 注册网易博客，分享自己的生活和爱好，在这里结交了很多博友。<br/>
+<small>2006年9月20日</small> 注册网易博客，分享自己的生活和爱好，在这里结交了很多博友。<span class="zhushi" id="blogday_dy"></span><br/>
 期间短暂尝试过百度空间、点点轻博客，后来这两家都没了。<br/>
 <small>2015年9月5日</small> 网易开始主推lofter轻博客，原本的网易博客像是被放弃了，各种BUG和问题都得不到回应。<br/>
 试着启用lofter，同时也没有放弃网易博客，毕竟陪伴了我十年。<br/>
@@ -47,8 +47,13 @@ permalink: maoqiu
 
 
 <script>
-$("html,body").on("click",function(e){anp(e);})
+let blogday = new Date().getTime() - new Date('2006/09/20').getTime();
+blogday = Math.floor(blogday / 1000 / 60 / 60 / 24);
+let blogday_year = Math.floor(blogday / 365);
+let blogday_dy = "距离今天已有" + blogday + "天（" + blogday_year + "年）";
+document.getElementById("blogday_dy").innerHTML = blogday_dy;
 
+$("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字
 let anp_data=new Array("pvo","二扯","汽水","烤冷面","猪又","胡糊","电影","动漫","音乐"); //组成猫球的成分
 let anp_color=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
 "#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
@@ -68,7 +73,7 @@ function anp(e){
 	e.stopPropagation();
 }
 
-    if (top.location == self.location) {
+    if (top.location == self.location) { //加小目录
         let anchor = document.querySelectorAll('a');
         if (anchor[0]) {
             let anchor_dy = "<table>";
