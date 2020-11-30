@@ -2,7 +2,7 @@
 layout: zk
 title: 抽签组队
 nav_text: 抽签组队
-nav_url: <a href=\"/juhuiyouxi\">聚会游戏</a>
+nav_url: <a href="/juhuiyouxi">聚会游戏</a>
 permalink: i/zk/441805
 ---
 <input type="text" id="输入" placeholder="输入玩家名字 空格分隔" />
@@ -82,10 +82,10 @@ permalink: i/zk/441805
                 算整除=算整除.split("／");
                 for (let i=0;i<算整除.length;i++){
                     if (算整除[i]==""){
-                        结果+="<button onclick=\"清空()\">清空</button><br/>"
+                        结果+="<button onclick="清空()">清空</button><br/>"
                     }
                     else{
-                        结果+="<button onclick=\"分队(cqzd='"+算整除[i]+"')\">分成"+算整除[i]+"个队伍</button><br/>"
+                        结果+="<button onclick="分队(cqzd='"+算整除[i]+"')">分成"+算整除[i]+"个队伍</button><br/>"
                     }
                 }
                 document.getElementById("cqzd_1").innerHTML = 结果;
