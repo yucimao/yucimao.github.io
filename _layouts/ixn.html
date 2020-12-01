@@ -15,11 +15,11 @@ layout: default
     if(GetQueryString("ixn")){
     wzjm_密码 = GetQueryString("ixn");
     }
-    else{wzjm_密码 = prompt(text);
+    else{wzjm_密码 = prompt();
     }
     wzjm_输入="{{ content }}";
     wzjm_解密();
-	document.getElementById("ixn").innerHTML = wzjm_输入;
+    document.write(wzjm_输入);
 
 </script>
 </div>
