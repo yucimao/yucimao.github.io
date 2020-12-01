@@ -1,10 +1,10 @@
 <style>
     #nav {position: absolute;top:0%;width: 100%;}
-    #nav>a,.nav_drop {color: #{% if page.nav_color %}{{ page.nav_color }}{% else %}{{ site.nav_color }}{% endif %}
-;font-weight: 800;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a,.nav_drop {color: #{% if page.nav_color %}{{ page.nav_color }}{% else %}{{ site.nav_color }}{% endif %};font-weight: 800;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
     #nav>a:hover {color: #0085A1;}
     #nav>a:not(.nav_a) {float: left;font-size: 18px;}
     .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
 
     .nav_drop_btn {color: #{% if page.nav_color %}{{ page.nav_color }}{% else %}{{ site.nav_color }}{% endif %};font-weight: 800;}
     .nav_drop {position: relative;display: inline-block;z-index:100;}
@@ -25,4 +25,4 @@
 
 <div id="nav">
     <a href="/">{{ site.title }}</a>{% if page.nav_url %}<a>/</a>{{ page.nav_url }}{% endif %}
-    <a href="/" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 &lt;</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div></div>
+    <a href="/" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down">{{ site.nav_drop }}</div></div></div>
