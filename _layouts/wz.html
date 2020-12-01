@@ -9,19 +9,12 @@ layout: default
     @media screen and (min-width: 768px) { /*电脑*/
         .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 50px;width: 65%;margin: auto;}
-        #back-top {position: fixed;left: 85%;bottom: 10%;}
-        #back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}
-        #back-top a:hover {transform: translate(0px, 20px);-ms-transform: translate(0px, 20px);-webkit-transform: translate(0px, 20px);}
-        #back-top a:active {transform: translate(0px, -400px);-ms-transform: translate(0px, -400px);-webkit-transform: translate(0px, -400px);}
     } /*电脑*/
 
     @media screen and (max-width: 768px) { /*手机*/
         .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 50px;width: 96%;margin: auto;}
     } /*手机*/
-
-    footer {position: relative;top: 300px;}
-    footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 
     /*加载动画*/
     .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
@@ -151,8 +144,7 @@ layout: default
         }
     </script>
 
-    <div id="back-top"><a href="#top"></a></div>
-    <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
+    {% include footer.html %}
 
     </div>
 

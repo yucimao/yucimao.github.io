@@ -16,10 +16,6 @@ layout: default
         #nav+span {color: #fff;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
         #nav+span {position: absolute;left: 35%;top: 15%;font-size: 60px;}
         div.body {position: relative;top: 20px;width: 80%;margin: auto;}
-        #back-top {position: fixed;left: 85%;bottom: 10%;}
-        #back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}
-        #back-top a:hover {transform: translate(0px, 20px);-ms-transform: translate(0px, 20px);-webkit-transform: translate(0px, 20px);}
-        #back-top a:active {transform: translate(0px, -400px);-ms-transform: translate(0px, -400px);-webkit-transform: translate(0px, -400px);}
     }
 
     @media (min-width: 950px) { /*大于950*/
@@ -27,8 +23,7 @@ layout: default
         div.body {position: relative;top: 20px;width: 65%;margin: auto;}
     }
 
-    footer {position: relative;top: 300px;z-index: -1001;}
-    footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+
 
     /*加载动画*/
     .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
@@ -65,10 +60,9 @@ layout: default
 
     <div class="body">
 
-        {{ content }}
+    {{ content }}
 
-        <div id="back-top"><a href="#top"></a></div>
-        <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
+    {% include footer.html %}
 
     </div>
 

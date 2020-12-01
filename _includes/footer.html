@@ -1,0 +1,14 @@
+<style>
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+
+@media (min-width: 730px) { /*大于730*/
+    #back-top {position: fixed;left: 85%;bottom: 10%;}
+    #back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}
+    #back-top a:hover {transform: translate(0px, 20px);-ms-transform: translate(0px, 20px);-webkit-transform: translate(0px, 20px);}
+    #back-top a:active {transform: translate(0px, -400px);-ms-transform: translate(0px, -400px);-webkit-transform: translate(0px, -400px);}
+}
+</style>
+
+<div id="back-top"><a href="#top"></a></div>
+<footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
