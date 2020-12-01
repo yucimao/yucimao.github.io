@@ -61,16 +61,20 @@ blogday_new = Math.floor(blogday_new / 1000 / 60 / 60 / 24);
 
 const svg = document.querySelector('.pie-chart');
 const pieChart = new chartXkcd.Pie(svg, {
-    title: '几次博客的运行时间',
+    title: '几次博客的运行时间(天)',
     data: {
-        labels: ['网易博客', 'lofter', 'WordPress', 'GitHub'],
+        labels: ['网易博客:3987天', 'lofter:1116天', 'WordPress:591天', 'GitHub:'+blogday_new+'天'],
         datasets: [{
             data: [3987, 1116, 591, blogday_new],
         }],},
     options: {innerRadius: 0.5,legendPosition: chartXkcd.config.positionType.upRight,},});
 
 $("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字
-let anp_data=new Array("pvo","二扯","汽水","烤冷面","猪又","胡糊","电影","动漫","音乐"); //组成猫球的成分
+let anp_data=new Array("pvo","二扯","猪又","胡糊","怨影娃娃", //组成猫球的成分
+"电影","动漫","音乐",
+"汽水","烤冷面","火锅","烧烤", //食物
+"骰子","小黄鸭",":O" //小物件
+);
 let anp_color=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
 "#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
 let anp_i=0;
