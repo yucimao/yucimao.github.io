@@ -17,6 +17,11 @@ permalink: maoqiu
         #right_anchor table{width:60%;}
     } /*手机*/
     #right_anchor a{display:block;}
+
+#zwjs {position: relative;width: 140px;height: 40px;font-size:1.4em;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;background-image: linear-gradient(to right, #729dfb, #5c5fff);transition: .5s;}
+#zwjs::after {content: '';position: absolute;top: 50px;left: 0;width: 150px;height: 60px;background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));transform: rotate(-45deg) translate(0, -360px);}
+#zwjs:hover::after {transition: .5s;transform: rotate(0deg) translate(0, 0px);}
+#zwjs:active {transition: 1s;background-image: linear-gradient(to right, #5275be, #7a7bdd);}
 </style>
 
 <div id="right_anchor"></div>
@@ -25,11 +30,45 @@ permalink: maoqiu
 <br/>
 
 <a name="关于猫球"></a><h2>关于猫球</h2>
-你好，我是李猫球。<br/>
-一个还是新人就已经过气的up主。<br/>
-一个没拍过正片，只游场的小透明coser。<br/>
-一个画画不好，却迷上写代码的美术生。<br/>
-<span onmouseover="javascript:this.innerHTML='虽然毫无天赋，至少自己开心就好。'" onmouseout="javascript:this.innerHTML='人生目标是完成一部小说。'">人生目标是完成一部小说。</span><br/>
+
+<div id="zwjs" onclick="zwjs_切换()">自我介绍</div><small>(点击切换)</small><br/><br/>
+<div id="zwjs_dy"></div>
+
+<script>
+let zwjs_当前="自我介绍";
+let zwjs_dy;
+function zwjs_切换(){
+    document.getElementById("zwjs").innerHTML = zwjs_当前;
+    if(zwjs_当前=="自我介绍"){
+        zwjs_dy="你好，我是李猫球。<br/>"+
+        "<span class=\"redX\">今年</span><ruby><rb>十七岁</rb><rt>永远</rt></ruby>，身高<span class=\"heimu\">很矮</span>，体重<span class=\"heimu\">未知</span>。<span class=\"zhushi\">男人的年龄也是个秘密</span><br/>"+
+        "一个还是新人就已经过气的up主。<br/>"+
+        "一个没拍过正片，只游场和当后勤的小透明coser。<br/>"+
+        "一个画画不好，却总想着学代码的美术生。<br/>"+
+        "人生目标是完成<ruby><rb>一部小说</rb><rt>自娱自乐</rt></ruby>。<br/>";
+        zwjs_当前="网上冲浪版";
+    }
+    else if(zwjs_当前=="网上冲浪版"){
+        zwjs_dy="你也在网上冲浪啊，你是<span style=\"color:blue\">GG</span>还是<span style=\"color:red\">MM</span>？<br/>"+
+        "欢迎光临<span style=\"background-color: yellow;\">我的博客</span>，有空常来坐坐<img src=\"/img/i/emoticon/BBS/loveliness.gif\"><br/>"+
+        "我叫李猫球，今年**岁，<ruby><rb>不抽烟</rb><rt>戒了</rt></ruby>，<ruby><rb>不喝酒</rb><rt>过敏</rt></ruby>，爱好广泛，其中坚持最久的是写小说和玩游戏。<br/>"+
+        "希望能和年轻人多交朋友，不要out。<br/>"+
+        "最后，祝福朋友们健康快乐！<img src=\"/img/i/emoticon/BBS/lol.gif\">";
+        zwjs_当前="二次元版";
+    }
+    else if(zwjs_当前=="二次元版"){
+        zwjs_dy="幸识<small>吖~这里</small><big>猫球</big><small>(｢･ω･)｢ 请多指教~(鞠躬</small><br/>"+
+        "<small>来自</small><ruby><rb>冰雪之都</rb><rt>哈尔滨</rt></ruby> <small>目前坐标</small><ruby><rb>北国春城</rb><rt>长春</rt></ruby><big>🍂</big><br/>"+
+        "<small>自设：</small>黑瞳 白发<small>（准确点说是深灰色瞳孔，浅灰色头发）</small> 猫耳 呆毛 右眼下有一条直线 <small><a href=\"/i/zk/569990\" target=\"_blank\">人设图戳这里←</a></small><br/>"+
+        "<small>入的坑有</small><ruby><rb>ＪＯＪＯ</rb><rt>ko no dio da</rt></ruby>、<ruby><rb>ＷＯＷ</rb><rt>为了部落</rt></ruby><small>（已afk）</small>、<span class=\"heimu\">一时想不起来了</span><br/>"+
+        "<small>想扩些能一起聊</small>脑洞<small>和</small>设定<small>的朋友 就这样吧ヽ(•̀ω•́ )ゝ</small>";
+        zwjs_当前="自我介绍";
+    }
+    
+    document.getElementById("zwjs_dy").innerHTML = zwjs_dy;
+}
+zwjs_切换();
+</script>
 
 <br/><br/>
 <a href="/chengjiu" target="_blank" class="anniu">获得成就</a> <a href="/ilike" target="_blank" class="anniu">我喜欢的</a><br/>
