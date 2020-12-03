@@ -18,7 +18,7 @@ permalink: maoqiu
     } /*手机*/
     #right_anchor a{display:block;}
 
-#zwjs {display:inline-block;position: relative;width: 140px;height: 40px;font-size:1.4em;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;background-image: linear-gradient(to right, #729dfb, #5c5fff);transition: .5s;}
+#zwjs {user-select:none;overflow:hidden;display:inline-block;position: relative;width: 140px;height: 40px;font-size:1.4em;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;background-image: linear-gradient(to right, #729dfb, #5c5fff);transition: .5s;}
 #zwjs::after {content: '';position: absolute;top: 50px;left: 0;width: 150px;height: 60px;background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));transform: rotate(-45deg) translate(0, -360px);}
 #zwjs:hover::after {transition: .5s;transform: rotate(0deg) translate(0, 0px);}
 #zwjs:active {transition: 1s;background-image: linear-gradient(to right, #5275be, #7a7bdd);}
@@ -63,16 +63,16 @@ function zwjs_切换(){
     }
     else if(zwjs_当前=="简历版"){
         zwjs_dy="<span class=\"zhushi\">可以把鼠标移动到文字上面</span><br/>"+
-        "<span onmouseover=\"javascript:this.innerHTML='仅限网上'\" onmouseout=\"javascript:this.innerHTML='本人热情随和'\">本人热情随和</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='仅限于在网上'\" onmouseout=\"javascript:this.innerHTML='本人热情随和'\">本人热情随和</span>、"+
         "<span onmouseover=\"javascript:this.innerHTML='朋友面前'\" onmouseout=\"javascript:this.innerHTML='活波开朗'\">活波开朗</span>、"+
-        "<span onmouseover=\"javascript:this.innerHTML='打pve副本的时候'\" onmouseout=\"javascript:this.innerHTML='具有进取精神和团队精神'\">具有进取精神和团队精神</span>、"+
-        "<span onmouseover=\"javascript:this.innerHTML='动手这方面没怕过谁'\" onmouseout=\"javascript:this.innerHTML='有较强的动手潜力'\">有较强的动手潜力</span>、"+
-        "<span onmouseover=\"javascript:this.innerHTML='善于和网友对骂'\" onmouseout=\"javascript:this.innerHTML='良好协调沟通潜力'\">良好协调沟通潜力</span>。<br/>"+
-        "<span onmouseover=\"javascript:this.innerHTML='巩固了甲方都是**的信念'\" onmouseout=\"javascript:this.innerHTML='两年的设计师经历锻炼了我细心的准则'\">两年的设计师经历锻炼了我细心的准则</span>，"+
-        "<span onmouseover=\"javascript:this.innerHTML='饶了甲方一命'\" onmouseout=\"javascript:this.innerHTML='以及冷静解决困难的潜力'\">以及冷静解决困难的潜力</span>。"+
-        "<span onmouseover=\"javascript:this.innerHTML='拒绝出门'\" onmouseout=\"javascript:this.innerHTML='但是参加实践活动有限'\">但是参加实践活动有限</span>，"+
-        "<span onmouseover=\"javascript:this.innerHTML='社交恐惧症'\" onmouseout=\"javascript:this.innerHTML='社会经验相对缺乏'\">社会经验相对缺乏</span>，"+
-        "<span onmouseover=\"javascript:this.innerHTML='努力成为夜店小王子'\" onmouseout=\"javascript:this.innerHTML='我相信透过立足于社会能不断提升发展自己'\">我相信透过立足于社会能不断提升发展自己</span>。";
+        "<span onmouseover=\"javascript:this.innerHTML='组队打ｐｖｅ副本的时候'\" onmouseout=\"javascript:this.innerHTML='具有进取精神和团队精神'\">具有进取精神和团队精神</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='拆过家里的电饭煲'\" onmouseout=\"javascript:this.innerHTML='有较强的动手潜力'\">有较强的动手潜力</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='善于和喷子们互怼'\" onmouseout=\"javascript:this.innerHTML='良好协调沟通潜力'\">良好协调沟通潜力</span>。<br/>"+
+        "<span onmouseover=\"javascript:this.innerHTML='玩解谜小游戏找线索的能力还是可以的'\" onmouseout=\"javascript:this.innerHTML='两年的设计师经历锻炼了我细心的准则'\">两年的设计师经历锻炼了我细心的准则</span>，"+
+        "<span onmouseover=\"javascript:this.innerHTML='玩推理类小游戏也还可以'\" onmouseout=\"javascript:this.innerHTML='以及冷静解决困难的潜力'\">以及冷静解决困难的潜力</span>。"+
+        "<span onmouseover=\"javascript:this.innerHTML='总体来讲就是拒绝出门'\" onmouseout=\"javascript:this.innerHTML='但是参加实践活动有限'\">但是参加实践活动有限</span>，"+
+        "<span onmouseover=\"javascript:this.innerHTML='社交恐惧症就是我'\" onmouseout=\"javascript:this.innerHTML='社会经验相对缺乏'\">社会经验相对缺乏</span>，"+
+        "<span onmouseover=\"javascript:this.innerHTML='一定会当上ＣＥＯ迎娶白富美走上人生巅峰'\" onmouseout=\"javascript:this.innerHTML='我相信透过立足于社会能不断提升发展自己'\">我相信透过立足于社会能不断提升发展自己</span>。";
         zwjs_当前="自我介绍";
     }
     
@@ -102,7 +102,8 @@ zwjs_切换();
 <script src="/5/new/chart.xkcd.js"></script>
 <div style="width:50%;"><svg class="pie-chart"></svg></div>
 
-老样子：<a href="/img/i/qita/20200612.jpg" target="_blank">2020年6月12日</a><br/>
+<a name="　老样子"></a><h3>老样子</h3><br/>
+<a href="/img/i/qita/20200612.jpg" target="_blank">2020年6月12日</a>：好像没啥变化<br/>
 
 <script>
 let blogday = new Date().getTime() - new Date('2006/09/20').getTime();
