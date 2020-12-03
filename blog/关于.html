@@ -18,7 +18,7 @@ permalink: maoqiu
     } /*手机*/
     #right_anchor a{display:block;}
 
-#zwjs {position: relative;width: 140px;height: 40px;font-size:1.4em;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;background-image: linear-gradient(to right, #729dfb, #5c5fff);transition: .5s;}
+#zwjs {display:inline-block;position: relative;width: 140px;height: 40px;font-size:1.4em;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;background-image: linear-gradient(to right, #729dfb, #5c5fff);transition: .5s;}
 #zwjs::after {content: '';position: absolute;top: 50px;left: 0;width: 150px;height: 60px;background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));transform: rotate(-45deg) translate(0, -360px);}
 #zwjs:hover::after {transition: .5s;transform: rotate(0deg) translate(0, 0px);}
 #zwjs:active {transition: 1s;background-image: linear-gradient(to right, #5275be, #7a7bdd);}
@@ -26,12 +26,9 @@ permalink: maoqiu
 
 <div id="right_anchor"></div>
 
-<a href="/notice" target="_blank" class="anniu">公告和常见问题</a><br/>
-<br/>
-
 <a name="关于猫球"></a><h2>关于猫球</h2>
 
-<div id="zwjs" onclick="zwjs_切换()">自我介绍</div><small>(点击切换)</small><br/><br/>
+<div id="zwjs" onclick="zwjs_切换()">自我介绍</div> <small>(点击切换)</small><br/><br/>
 <div id="zwjs_dy"></div>
 
 <script>
@@ -85,7 +82,10 @@ zwjs_切换();
 </script>
 
 <br/><br/>
-<a href="/chengjiu" target="_blank" class="anniu">获得成就</a> <a href="/ilike" target="_blank" class="anniu">我喜欢的</a><br/>
+<a href="/chengjiu" target="_blank" class="anniu">获得成就</a> 
+<a href="/ilike" target="_blank" class="anniu">我喜欢的</a> 
+<a href="/links" target="_blank" class="anniu">友情链接</a> 
+<br/>
 
 <br/><br/>
 <hr>
@@ -102,7 +102,7 @@ zwjs_切换();
 <script src="/5/new/chart.xkcd.js"></script>
 <div style="width:50%;"><svg class="pie-chart"></svg></div>
 
-<a href="/links" target="_blank" class="anniu">友情链接</a><br/>
+老样子：<a href="/img/i/qita/20200612.jpg" target="_blank">2020年6月12日</a><br/>
 
 <script>
 let blogday = new Date().getTime() - new Date('2006/09/20').getTime();
