@@ -30,7 +30,7 @@ sup{color:#444;}
     <div id="景色">　</div>
     <div id="场景" style="display: none;">　</div>
     <br/>
-    <div id="选项" stlye="display:none;"><a onclick="到处逛逛()">到处逛逛</a></div>
+    <div id="选项" stlye="display:none;"><a onclick="到处逛逛()"></a></div>
 
     </div>
 
@@ -42,6 +42,7 @@ let 地图_剧本="　",景色_剧本="　",场景_剧本="　";
 let 地图_打印="",景色_打印="",场景_打印="";
 let 地图_i=0,景色_i=0,场景_i=0;
 let 打印速度=175;
+let 行动="到处逛逛";
 let ix="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let ix_b="ixABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghjklmnopqrstuvwyz0123456789";
 
@@ -122,7 +123,7 @@ function 打印机(){
         }
         else if(场景选项=="无"&&选项开关==1){
             document.getElementById("选项").style.display = "block";
-                document.getElementById("选项").innerHTML = "<a onclick=\"到处逛逛()\">到处逛逛</a>";
+                document.getElementById("选项").innerHTML = "<a onclick=\"到处逛逛()\">"+行动+"</a>";
                 选项开关=0;
             }
             else if(场景选项!="无"&&场景开关==1){
@@ -153,11 +154,12 @@ var LocString = String(window.document.location.href);
 地图_剧本 = 当前地图.split("[")[1].split("]")[0];
 地图_打印="";
 地图_i=0;
+行动 = 当前地图.split("[")[2].split("]")[0];
 let 开始打印 = setInterval(打印机,打印速度);
 
 临时 = 当前地图.split("[");
     临时2 = "";
-    for(let i=2;临时.length>i;i++){
+    for(let i=3;临时.length>i;i++){
         临时2+="／"+临时[i].split("]")[0];
     }
     替换 = new RegExp('^／', "g");
