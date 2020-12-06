@@ -5,10 +5,10 @@ layout: default
 
 <body>
 
-    {% include nav.html %}
+    {% if page.nav_yes %}{% include nav.html %}{% endif %}
 
     {{ content }}
 
-    {% include footer.html %}
+    {% if page.nav_yes %}{% include footer.html %}{% endif %}
 
 </body>

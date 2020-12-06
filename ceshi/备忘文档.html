@@ -122,6 +122,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
     <tr><td><a onclick="复(制='layout: wen')">layout: wen</a></td><td>文章、小说 可作为biji的子页面</td><td><a href="#layout_wen">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: wz')">layout: wz</a></td><td>网址收藏</td><td><a href="#layout_wz">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: ix')">layout: ix</a></td><td>不存在的页面</td><td><a href="#layout_ix">参考</a></td></tr>
+    <tr><td><a onclick="复(制='layout: o')">layout: o</a></td><td>空白页</td><td><a href="#layout_o">参考</a></td></tr>
 </table>
 <br/>
 参数：<br/>
@@ -136,7 +137,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
     <tr><td><a onclick="复(制='nav_color: ？')">nav_color: </a></td><td>000000</td><td>导航栏链接文字颜色<br/>留空：404040（深灰色）</td></tr>
     <tr><td><a onclick="复(制='nav_img: ？')">nav_img: </a></td><td>maoqiu.jpg</td><td>头图 /img/nav/？<br/>默认：blog.jpg</td></tr>
     <tr><td><a onclick="复(制='zk_ly: ？')">zk_ly: </a></td><td>这里是自用页</td><td>zk打开网页显示的留言，如果有"需要加\"</td></tr>
-    <tr><td><a onclick="复(制='zk_height: ？')">zk_height: </a></td><td>300</td><td>zk在biji中预增加的额外高度</td></tr>
+    <tr><td><a onclick="复(制='zk_height: ？')">zk_height: </a></td><td>300</td><td>zk在biji中预增加的额外高度（最好不要用）</td></tr>
 </table>
 <br/>
 <a name="layout_page"></a><b>#主页</b><br/>
@@ -153,7 +154,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
         标题文字<br/>
-        导航栏链接 可留空 多个链接反向排序<br/>
+        导航栏链接 可留空<br/>
         导航栏链接文字颜色　留空：404040（深灰色）<br/>
         头图 /img/nav/？　默认：blog.jpg<br/>
         本页地址（最前无需/）
@@ -172,7 +173,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
         标题文字<br/>
-        导航栏链接 可留空 多个链接反向排序<br/>
+        导航栏链接 可留空<br/>
         本页地址（最前无需/）
         </td></tr>
 </table>
@@ -201,7 +202,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
         标题文字<br/>
-        导航栏链接 可留空 多个链接反向排序<br/>
+        导航栏链接 可留空<br/>
         本页地址（最前无需/）
         <hr>
         <br/>
@@ -233,7 +234,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
         标题文字<br/>
-        导航栏链接 可留空 多个链接反向排序<br/>
+        导航栏链接 可留空<br/>
         本页地址<br/>
         zk打开网页显示的留言，如果有需要加"\"<br/>
         zk在biji中预增加的额外高度
@@ -253,7 +254,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
         标题文字<br/>
-        导航栏链接 可留空 多个链接反向排序<br/>
+        导航栏链接 可留空<br/>
         本页地址<br/>
         </td></tr>
 </table>
@@ -340,6 +341,25 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td>
         <td>
         （没有其他内容）
+        </td></tr>
+</table>
+<br/>
+<a name="layout_o"></a><b>#空白页</b><br/>
+<table>
+    <tr style="line-height:1.2em;"><td style="min-width:16em;">
+        layout: o<br/>
+        title:&nbsp;<br/>
+        nav_yes: 1<br/>
+        nav_url: &lt;a href="/"&gt;&lt;/a&gt;<br/>
+        nav_color: ffffff<br/>
+        permalink:&nbsp;
+        </td><td>
+        <br/>
+        本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
+        导航栏是否存在 不存在不用加（导航栏可能盖住正文）<br/>
+        导航栏链接 可留空<br/>
+        导航栏链接文字颜色　留空：404040（深灰色）<br/>
+        本页地址（最前无需/）
         </td></tr>
 </table>
 
