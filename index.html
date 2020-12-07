@@ -190,8 +190,6 @@ ontouchstart="this.src='/img/index/liuyan2.jpg'"
 ontouchend="this.src='/img/index/liuyan3.jpg'" 
 alt="留言板" /></a>
 
-<script src="/5/备忘日历/备忘日历.js"></script>
-
 <p id="dy0"></p>
 
 <script>
@@ -210,6 +208,7 @@ window.onload=function(){   //页面加载完把模糊图换成清晰图、预�
   dy1 += '<img width="1px" src="/img/index/' + dy0[i] + '2.jpg"/>';
 }
 dy1='<div style="display:none;">'+dy1+'</div>';
-document.getElementById("dy0").innerHTML=dy1;
+let dy2='<script src=\"/5/备忘日历/备忘日历.js\"><\/script>';
+document.getElementById("dy0").innerHTML=dy2+dy1;
 };
 </script>
