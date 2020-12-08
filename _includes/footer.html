@@ -12,3 +12,24 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 
 <div id="back-top"><a href="#top"></a></div>
 <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" alt="关于我" title="关于我"/></a></footer>
+
+<script>
+$(document).ready(function() {
+$("#back-top").hide();
+$(function() {
+    $(window).scroll(function() {
+        if (scroll_i > 100) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+    $('#back-top a').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 200);
+        return false;
+    });
+});
+});
+</script>

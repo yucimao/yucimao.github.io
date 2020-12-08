@@ -30,7 +30,6 @@
 
 <script>
 $(document).ready(function() {
-$("#back-top").hide();
 let scroll_n=0;
 $(function() {
     $(window).scroll(function() {
@@ -40,21 +39,8 @@ $(function() {
         } else{
             $('#nav').fadeIn();
         }
-        if (scroll_i > 100) {
-            $('#back-top').fadeIn();
-        } else {
-            $('#back-top').fadeOut();
-        }
         scroll_n=scroll_i;
     });
-
-    $('#back-top a').click(function() {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 200);
-        return false;
-    });
 });
-
 });
 </script>

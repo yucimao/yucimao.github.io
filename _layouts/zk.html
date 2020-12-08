@@ -65,17 +65,33 @@ layout: default
         let p_link = "{{ page.permalink }}".split("/");
         localStorage.setItem(p_link[2], "1");
 
+        let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开</a></td></tr>";
+        let anchor_an2 = 0;
+
         if (top.location == self.location) {
             let anchor = document.querySelectorAll('a');
             if (anchor[0]) {
-                let anchor_dy = "<table>";
+                let anchor_dy = "";
                 for (let i = 0; i < anchor.length; i++) {
                     if (anchor[i]["name"]) {
                         anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
                     }
                 }
-                anchor_dy += "</table>";
-                document.getElementById("right_anchor").innerHTML = anchor_dy;
+                if(anchor_dy!=""){
+                    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
+                }
+            }
+        }
+
+        function anchor_zk(){
+            if(anchor_an2==0){
+                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回</a></td></tr>";
+                document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+                anchor_an2=1;
+            }else{
+                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开</a></td></tr>";
+                document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
+                anchor_an2=0;
             }
         }
     </script>
