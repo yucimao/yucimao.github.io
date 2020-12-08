@@ -168,17 +168,37 @@ function anp(e){
 	e.stopPropagation();
 }
 
-    if (top.location == self.location) { //加小目录
-        let anchor = document.querySelectorAll('a');
-        if (anchor[0]) {
-            let anchor_dy = "<table>";
-            for (let i = 0; i < anchor.length; i++) {
-                if (anchor[i]["name"]) {
-                    anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
-                }
+    let anchor = document.querySelectorAll('a');
+    if (anchor[0]) {
+        let anchor_dy = "<table>";
+        for (let i = 0; i < anchor.length; i++) {
+            if (anchor[i]["name"]) {
+                anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
             }
-            anchor_dy += "</table>";
-            document.getElementById("right_anchor").innerHTML = anchor_dy;
         }
+        anchor_dy += "</table>";
+        document.getElementById("right_anchor").innerHTML = anchor_dy;
     }
+
+
+
+    $(document).ready(function() {
+    $("#right_anchor").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor').fadeIn();
+            } else {
+                $('#right_anchor').fadeOut();
+            }
+        });
+        $('#right_anchor').click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 200);
+            return false;
+        });
+    });
+    });
+
 </script>
