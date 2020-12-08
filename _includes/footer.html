@@ -18,7 +18,7 @@ $(document).ready(function() {
 $("#back-top").hide();
 $(function() {
     $(window).scroll(function() {
-        if (scroll_i > 100) {
+        if ($(this).scrollTop() > 100) {
             $('#back-top').fadeIn();
         } else {
             $('#back-top').fadeOut();
