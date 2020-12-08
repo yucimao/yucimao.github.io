@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 关于
-nav_text: 关于
+title: 关于我
+nav_text: 关于我
 nav_url: <a href="/riji">猫球日记</a>
 nav_color: ffffff
 permalink: maoqiu
@@ -110,7 +110,7 @@ zwjs_切换();
 <br/><br/>
 <hr>
 <a name="　老样子"></a><h3>老样子</h3>
-<a href="/img/i/qita/20200612.jpg" target="_blank">2020年6月12日</a>：好像没啥变化<br/>
+<a href="/img/i/qita/lyz/20200612.jpg" target="_blank">2020年6月12日</a>：好像没啥变化<br/>
 
 <script>
 let blogday = new Date().getTime() - new Date('2006/09/20').getTime();
@@ -119,12 +119,12 @@ let blogday_year = Math.floor(blogday / 365);
 let blogday_dy = "距离今天已有" + blogday + "天（" + blogday_year + "年）";
 document.getElementById("blogday_dy").innerHTML = blogday_dy;
 
-let blogday_new = new Date().getTime() - new Date('2020/05/08/').getTime(); //圆饼图表
+let blogday_new = new Date().getTime() - new Date('2020/05/08/').getTime(); //运行时间
 blogday_new = Math.floor(blogday_new / 1000 / 60 / 60 / 24);
 
 const svg = document.querySelector('.pie-chart');
 const pieChart = new chartXkcd.Pie(svg, {
-    title: '几次博客的运行时间(天)',
+    title: '博客运行时间(天)',
     data: {
         labels: ['NetEase:3987', 'lofter:1116', 'WordPress:591', 'GitHub:'+blogday_new],
         datasets: [{
@@ -132,9 +132,9 @@ const pieChart = new chartXkcd.Pie(svg, {
         }],},
     options: {innerRadius: 0.5,legendPosition: chartXkcd.config.positionType.upRight,},});
 
-    const svg2 = document.querySelector('.bar-chart'); //条形图
+    const svg2 = document.querySelector('.bar-chart'); //粉丝数
     const barChart = new chartXkcd.Bar(svg2, {
-        title: '社交账号粉丝数',
+        title: '粉丝数记录',
         data: {
             labels: ['bilibili','zhihu','weibo'],
             datasets: [{
@@ -168,7 +168,7 @@ function anp(e){
 	e.stopPropagation();
 }
 
-    let anchor = document.querySelectorAll('a');
+    let anchor = document.querySelectorAll('a'); //小菜单
     if (anchor[0]) {
         let anchor_dy = "<table>";
         for (let i = 0; i < anchor.length; i++) {
@@ -179,8 +179,6 @@ function anp(e){
         anchor_dy += "</table>";
         document.getElementById("right_anchor").innerHTML = anchor_dy;
     }
-
-
 
     $(document).ready(function() {
     $("#right_anchor").hide();
