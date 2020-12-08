@@ -25,8 +25,6 @@ layout: default
 
 <body>
 
-    {% include nav_a.html %}
-
     <div id="上级"></div>
 
     <div id="wen_body">
@@ -37,6 +35,8 @@ layout: default
     </div>
 
     <div id="下级"></div>
+
+    {% include nav.html %}
 
     <script>
         if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
