@@ -28,8 +28,6 @@ layout: default
     .yidu:after {content: "（已读）";font-size:.5em;color:#808080;font-weight:normal;}
 </style>
 
-{% include nav.html %}
-
 <div class="body">
     <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% endif %}</div>
     <div class="auth">{% if page.wen_auth %}<span class="auth">作者：{{ page.wen_auth }}</span>{% endif %}{% if page.wen_sta %}<span class="auth">状态：{{ page.wen_sta }}</span>{% endif %}<input id="输入" placeholder="搜索" autocomplete="off"/></div>
@@ -91,3 +89,5 @@ let anchor = document.querySelectorAll('a');
             document.getElementById("right_anchor").innerHTML = anchor_dy;
         }
 </script>
+
+{% include nav.html %}

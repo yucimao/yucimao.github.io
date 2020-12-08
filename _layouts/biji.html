@@ -69,8 +69,6 @@ layout: default
         </div>
     </div>
 
-    {% include nav.html %}
-
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
         <form id="输入框" autocomplete="off">
@@ -220,5 +218,7 @@ layout: default
             document.getElementById("结果").innerHTML = 未读结果;
         }
     </script>
+
+{% include nav.html %}
 
 </body>

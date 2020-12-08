@@ -43,8 +43,6 @@ layout: default
         </div>
     </div>
 
-    {% include nav.html %}
-
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
 
@@ -55,5 +53,7 @@ layout: default
     </div>
 
     <!--关闭加载动画--><script>var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');</script>
+
+{% include nav.html %}
 
 </body>

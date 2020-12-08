@@ -3,23 +3,23 @@ layout: default
 ---
 <style>
     html,body {margin: 0;padding: 0;}
-    #nav {background-image: url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');background-repeat: no-repeat;background-size: 100%;}
-    #nav:after {content: "";display: block;padding-bottom: 40%;}
+    #head_img {background-image: url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');background-repeat: no-repeat;background-size: 100%;}
+    #head_img:after {content: "";display: block;padding-bottom: 40%;}
 
     @media (max-width: 730px) { /*小于730px*/
-        #nav+span {color: #fff;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
-        #nav+span {position: absolute;left: 35%;top: 8%;font-size: 30px;}
+        .qbt {color: #fff;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
+        .qbt {position: absolute;left: 35%;top: 8%;font-size: 30px;}
         div.body {position: relative;top: 20px;width: 96%;margin: auto;}
     }
 
     @media (min-width: 730px) { /*大于730*/
-        #nav+span {color: #fff;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
-        #nav+span {position: absolute;left: 35%;top: 15%;font-size: 60px;}
+        .qbt {color: #fff;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
+        .qbt {position: absolute;left: 35%;top: 15%;font-size: 60px;}
         div.body {position: relative;top: 20px;width: 80%;margin: auto;}
     }
 
     @media (min-width: 950px) { /*大于950*/
-        #nav+span {position: absolute;left: 35%;top: 25%;font-size: 70px;}
+        .qbt {position: absolute;left: 35%;top: 25%;font-size: 70px;}
         div.body {position: relative;top: 20px;width: 65%;margin: auto;}
     }
 
@@ -52,9 +52,9 @@ layout: default
         </div>
     </div>
 
-    {% include nav.html %}
-    <span>{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
-    <style>#nav{position:relative;}</style>
+    <div id="head_img"></div>
+
+    <span class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
 
     <div class="body">
 
@@ -65,5 +65,7 @@ layout: default
     </div>
 
     <!--关闭加载动画--><script>var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');</script>
+
+{% include nav.html %}
 
 </body>
