@@ -69,9 +69,9 @@ layout: default
         let anchor_an2 = 0;
 
         if (top.location == self.location) {
+            let anchor_dy = "";
             let anchor = document.querySelectorAll('a');
             if (anchor[0]) {
-                let anchor_dy = "";
                 for (let i = 0; i < anchor.length; i++) {
                     if (anchor[i]["name"]) {
                         anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
@@ -81,9 +81,7 @@ layout: default
                     document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
                 }
             }
-        }
-
-        function anchor_zk(){
+            function anchor_zk(){
             if(anchor_an2==0){
                 anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回</a></td></tr>";
                 document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
@@ -93,6 +91,7 @@ layout: default
                 document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
                 anchor_an2=0;
             }
+        }
         }
     </script>
 
