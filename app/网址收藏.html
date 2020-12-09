@@ -26,7 +26,7 @@ permalink: wangzhi
     <script>
         function 菜单() {
             let 菜单 = document.getElementById("菜单").value;
-            if (菜单 != "无") {
+            if (菜单 != "无" && 菜单 != "") {
                 let 搜索 = 菜单 + document.getElementById("输入").value;
                 window.location.href = 搜索;
                 document.getElementById("菜单").innerHTML = "";
