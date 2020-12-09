@@ -34,20 +34,23 @@ layout: default
 
     </div>
 
-    <div id="下级"></div>
+    <!-- <div id="下级"></div> -->
 
-    {% include nav.html %}
+    <div id="nav_zk" style="display: none;">
+        {% include footer.html %}
+        {% include nav.html %}
+    </div>
 
     <script>
         if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
         document.getElementById("上级").innerHTML=返回;
         document.getElementById("wen_body").className = 'body';
 
-        var 下级="<footer><a href=\"/maoqiu\"><img class=\"tubiao\" src=\"/img/footer.png\" /></a></footer>";
-        document.getElementById("下级").innerHTML=下级;
+        // var 下级="<footer><a href=\"/maoqiu\"><img class=\"tubiao\" src=\"/img/footer.png\" /></a></footer>";
+        // document.getElementById("下级").innerHTML=下级;
+        document.getElementById("nav_zk").style.display = "block";
         }
         else{
-            document.getElementById("nav").style.display = "none";
             //展开的子页面
             var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
             var bodyJ = window.location.href.split('/i/zk/')[1];
