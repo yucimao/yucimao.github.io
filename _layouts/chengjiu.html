@@ -95,6 +95,11 @@ layout: default
                 if(临时[2]){data_jl[当前]+="<p>"+临时[2]+"</p>";}
                 right[当前] += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
             } else {
+
+                if(临时[4]!=""&&临时[4]!="undefined"){
+                    data_jl[当前] += "<a href=\""+临时[4]+"\" target=\"_blank\">";
+                }
+
                 if(isNaN(临时[0])){
                 data_jl[当前] += "<div class=\"cj\"><img src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];
             } else {
@@ -103,6 +108,10 @@ layout: default
                 data_jl[当前] += "<span class=\"tsxt\">" + 临时[3] + "</span>";
             }
             data_jl[当前] += "</div>";
+
+            if(临时[4]!=""&&临时[4]!="undefined"){
+                    data_jl[当前] += "</a>";
+                }
             }
             cj_data[当前].splice(0, 1);
             计时 -= 1;
