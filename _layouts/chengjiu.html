@@ -96,7 +96,7 @@ layout: default
                 right[当前] += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
             } else {
 
-                if(临时[4]!=""&&临时[4]!="undefined"){
+                if(临时[4]!=""&&临时.length>4){
                     data_jl[当前] += "<a href=\""+临时[4]+"\" target=\"_blank\">";
                 }
 
@@ -109,7 +109,7 @@ layout: default
             }
             data_jl[当前] += "</div>";
 
-            if(临时[4]!=""&&临时[4]!="undefined"){
+            if(临时[4]!=""&&临时.length>4){
                     data_jl[当前] += "</a>";
                 }
             }
