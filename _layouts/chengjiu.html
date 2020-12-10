@@ -45,6 +45,7 @@ layout: default
         #back-top {display: none;}
         footer {float: left;width: 100%;}
         hr{width:100%;}
+        .hs{color:#404040;}
         </style>
         <div class="biaotib" id="anniu_b"></div>
         <div id="anniu_a"></div>
@@ -95,20 +96,17 @@ layout: default
                 if(临时[2]){data_jl[当前]+="<p>"+临时[2]+"</p>";}
                 right[当前] += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
             } else {
-
                 if(临时[4]!=""&&临时.length>4){
                     data_jl[当前] += "<a href=\""+临时[4]+"\" target=\"_blank\">";
                 }
-
                 if(isNaN(临时[0])){
-                data_jl[当前] += "<div class=\"cj\"><img src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];
+                data_jl[当前] += "<div class=\"cj\"><img src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
             } else {
-                data_jl[当前] += "<div class=\"cj\"><img src=\"/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];}
+                data_jl[当前] += "<div class=\"cj\"><img src=\"/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
             if (临时[3]) {
                 data_jl[当前] += "<span class=\"tsxt\">" + 临时[3] + "</span>";
             }
             data_jl[当前] += "</div>";
-
             if(临时[4]!=""&&临时.length>4){
                     data_jl[当前] += "</a>";
                 }
