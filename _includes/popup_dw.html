@@ -1,0 +1,84 @@
+<!-- onclick="dw(dwb='弹窗内容')" -->
+<style>
+    .dw_zz {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    .dw_tk {
+        position: relative;
+        background: #fff;
+        top: 20px;
+        width: 50%;
+        height: 40%;
+        border-radius: 5px;
+        margin: 5% auto;
+        padding: 50px;
+        font-size: 1.2em;
+        line-height: 33px;
+        font-weight: bold;
+    }
+
+    #dw_hd {
+        height: 100%;
+        overflow: auto;
+    }
+
+    #dw_hd_r {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        background: red;
+        color: #fff;
+        right: 15px;
+        top: 15px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    #dw_hd_r:hover {
+        background-color: #ff5858;
+    }
+
+    #dw_x {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    [onclick^="dw(dwb="]{
+        cursor: pointer;
+        border-bottom: 1.8px dotted #08f;
+    }
+</style>
+
+<div class="dw_zz" id='dw_zz'>
+    <div id="dw_x" onclick="dw_x()"></div>
+    <div class="dw_tk">
+        <div id="dw_hd">
+            <span id="dwc"></span>
+            <div id="dw_hd_r" onclick="dw_x()">X</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>

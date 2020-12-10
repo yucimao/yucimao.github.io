@@ -7,14 +7,14 @@ permalink: zawuqingdan
 ---
 <script src='/5/new/svg3dtagcloud_onclick.js'></script>
 
+{% include popup_dw.html %}
+
 <style>
 #zwjs {user-select:none;overflow:hidden;display:inline-block;position: relative;width: 140px;height: 40px;font-size:1.4em;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;background-image: linear-gradient(to right, #729dfb, #5c5fff);transition: .5s;}
 #zwjs::after {content: '';position: absolute;top: 50px;left: 0;width: 150px;height: 60px;background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));transform: rotate(-45deg) translate(0, -360px);}
 #zwjs:hover::after {transition: .5s;transform: rotate(0deg) translate(0, 0px);}
 #zwjs:active {transition: 1s;background-image: linear-gradient(to right, #5275be, #7a7bdd);}
-
-#tag-cloud .undefined{cursor:default;}
-#tag-cloud .sz{cursor:pointer;}
+[onclick^="undefined"]{cursor:default;}
 </style>
 
 <div id="zwjs" onclick="zwjs_切换()"></div> <small>(点击切换)</small>
@@ -35,17 +35,17 @@ permalink: zawuqingdan
 
     let entries=[];
     let tagcloud=[];
-    let tag_data={//名字／猫球或二扯／onclick／class
+    let tag_data={//名字／猫球或二扯／dw(dwb='弹窗内容')
         "零食":[
-        "海苔／猫球／alert('测试')／sz",
-        "海苔／二扯／",
-        "玉米软糖／猫球／",
+        "海苔／猫球／dw(dwb='弹窗内容')",
+        "海苔／二扯",
+        "玉米软糖／猫球",
         ],
 
         "代餐":[
-        "食物",
-        "食物",
-        "食物",
+        "速冻水饺",
+        "速冻馄饨",
+        "速冻手抓饼",
         ]
     };
 
@@ -69,7 +69,6 @@ function zwjs_切换(){
     window.location.href='?i='+key_c;
 }
 
-
     let p = Array.from(tagcloud), i, a = [];
         while (p.length > 0) {
             i = parseInt(Math.random() * p.length);
@@ -85,7 +84,7 @@ function zwjs_切换(){
             let 加粗="normal";
             if(临时[1]=="猫球"){颜色="#528CD8";加粗="800";}
             if(临时[1]=="二扯"){颜色="#F77567";加粗="800";}
-            entries.push({label: 临时[0],class:临时[3],onclick:临时[2],fontColor:颜色,fontWeight:加粗});
+            entries.push({label: 临时[0],onclick:临时[2],fontColor:颜色,fontWeight:加粗});
         }
     }
 
@@ -110,4 +109,3 @@ function zwjs_切换(){
 };
 $( '#tag-cloud' ).svg3DTagCloud( settings );
 </script>
-<br/><br/><br/><br/><br/>
