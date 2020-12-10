@@ -5,12 +5,12 @@ layout: default
     html,body {margin: 0;padding: 0;}
 
     @media screen and (min-width: 768px) { /*电脑*/
-        .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        .biaotib {text-align: center;position: relative;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 50px;width: 65%;margin: auto;}
     } /*电脑*/
 
     @media screen and (max-width: 768px) { /*手机*/
-        .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        .biaotib {text-align: center;position: relative;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 50px;width: 96%;margin: auto;}
     } /*手机*/
 
@@ -30,8 +30,6 @@ layout: default
 </head>
 
 <body>
-
-    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
 
     <style>
@@ -50,6 +48,7 @@ layout: default
         </style>
         <div class="biaotib" id="anniu_b"></div>
         <div id="anniu_a"></div>
+        <br/>
         
         <div id="right_anchor"></div>
         
@@ -97,7 +96,7 @@ layout: default
                 right[当前] += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
             } else {
                 if(isNaN(临时[0])){
-                data_jl[当前] += "<div class=\"cj\"><img src=\"" + 临时[0] + "\"/>";
+                data_jl[当前] += "<div class=\"cj\"><img src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];
             } else {
                 data_jl[当前] += "<div class=\"cj\"><img src=\"/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/>" + 临时[2];}
             if (临时[3]) {
