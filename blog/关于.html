@@ -24,7 +24,7 @@ permalink: maoqiu
 #zwjs:hover::after {transition: .5s;transform: rotate(0deg) translate(0, 0px);}
 #zwjs:active {transition: 1s;background-image: linear-gradient(to right, #5275be, #7a7bdd);}
 </style>
-<script src="/5/new/chart.xkcd.js"></script>
+<script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
 
 <div id="right_anchor"></div>
 
@@ -74,7 +74,8 @@ function zwjs_切换(){
         "<span onmouseover=\"javascript:this.innerHTML='玩推理类小游戏也还可以'\" onmouseout=\"javascript:this.innerHTML='以及冷静解决困难的潜力'\">以及冷静解决困难的潜力</span>。"+
         "<span onmouseover=\"javascript:this.innerHTML='总体来讲就是拒绝出门'\" onmouseout=\"javascript:this.innerHTML='但是参加实践活动有限'\">但是参加实践活动有限</span>，"+
         "<span onmouseover=\"javascript:this.innerHTML='社交恐惧症就是我'\" onmouseout=\"javascript:this.innerHTML='社会经验相对缺乏'\">社会经验相对缺乏</span>，"+
-        "<span onmouseover=\"javascript:this.innerHTML='一定会当上ＣＥＯ迎娶白富美走上人生巅峰'\" onmouseout=\"javascript:this.innerHTML='我相信透过立足于社会能不断提升发展自己'\">我相信透过立足于社会能不断提升发展自己</span>。";
+        "<span onmouseover=\"javascript:this.innerHTML='一定会当上ＣＥＯ迎娶白富美走上人生巅峰'\" onmouseout=\"javascript:this.innerHTML='我相信透过立足于社会能不断提升发展自己'\">我相信透过立足于社会能不断提升发展自己</span>。<br/>"+
+        "<a href=\"/i/zk/398645\" target=\"_blank\">更多内容</a>";
         zwjs_当前="自我介绍";
     }
     document.getElementById("zwjs_dy").innerHTML = zwjs_dy;
@@ -110,7 +111,7 @@ zwjs_切换();
 <br/><br/>
 <hr>
 <a name="　老样子"></a><h3>老样子</h3>
-<a href="/img/i/qita/lyz/20200612.jpg" target="_blank">2020年6月12日</a>：好像没啥变化<br/>
+<a href="{{ site.mq_d }}/img/i/qita/lyz/20200612.jpg" target="_blank">2020年6月12日</a>：好像没啥变化<br/>
 
 <script>
 let blogday = new Date().getTime() - new Date('2006/09/20').getTime();

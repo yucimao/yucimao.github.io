@@ -49,7 +49,7 @@ let ix="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let ix_b="ixABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghjklmnopqrstuvwyz0123456789";
 
 function 获取数据(){
-    获取数据_地址="/i/x/mq_world/"+获取数据_地址+".json";
+    获取数据_地址="{{ site.mq_d }}/i/x/mq_world/"+获取数据_地址+".json";
     let GetJson = $.ajax({
         url: 获取数据_地址,//json文件位置
         type: "GET",

@@ -14,7 +14,7 @@ permalink: mqfyq
 
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="shortcut icon" href="/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="{{ site.mq_d }}/css/all.css">
     <base rel="noopener noreferrer" />
 
 
@@ -269,8 +269,8 @@ function moveToMouseLoc(e) {
 <div id="toolTipLayer" style="position:absolute; visibility: hidden"></div>
 <script>initToolTips()</script>
 
-<script src="/js/jquery.min.js"></script>
-<script src="/app/mqfyq/mqfyq.js"></script>
+<script src="{{ site.mq_d }}/js/jquery.min.js"></script>
+<script src="{{ site.mq_d }}/app/mqfyq/mqfyq.js"></script>
 
 <script>
 $(function () {
@@ -448,7 +448,7 @@ var autoTextarea = function (elem, extra, maxHeight) {
 
 <h2>手机版</h2>
 仅Android，需要网络。（使用Fusion App制作）<br />
-<a href="/app/mqfyq/mqfyq.apk" target="_blank">点击下载</a><br />
+<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.apk" target="_blank">点击下载</a><br />
 
 <br /><br />
 
@@ -457,7 +457,7 @@ var autoTextarea = function (elem, extra, maxHeight) {
 <br />
 fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.android.fooview" target="_blank">酷安网</a><br />
 自动任务：
-<a href="/app/mqfyq/mqfyq.fvt" target="_blank">点击下载</a><br />
+<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.fvt" target="_blank">点击下载</a><br />
 <br />
 <b>更新</b><br />
 打开fv悬浮球主窗口-自定义任务，运行翻译器，在输入窗口点击取消，按照提示更新。<br /><br />

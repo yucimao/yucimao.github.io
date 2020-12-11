@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="{{ site.mq_d }}/5/pvo/炉石传说/css/style.css">
 </head>
 <body>
 <div class="card">
-	<img src="img/hearthstone-ragnaros.png" class="card-image" draggable="false">
+	<img src="{{ site.mq_d }}/5/pvo/炉石传说/img/hearthstone-ragnaros.png" class="card-image" draggable="false">
 </div>
 
 <script type="text/javascript">
@@ -88,7 +88,7 @@
 		whooshvoltarget = 0;
 		whoosh = new Audio();
 		whoosh.addEventListener( 'canplaythrough', audioload );
-		whoosh.src = 'media/hs-whoosh.ogg';
+		whoosh.src = '{{ site.mq_d }}/5/pvo/炉石传说/media/hs-whoosh.ogg';
 		whoosh.volume = 0;
 		whoosh.loop = true;
 		
@@ -96,7 +96,7 @@
 		majestyvoltarget = 0;
 		majesty = new Audio();
 		majesty.addEventListener( 'canplaythrough', audioload );
-		majesty.src = 'media/hs-majesty.ogg';
+		majesty.src = '{{ site.mq_d }}/5/pvo/炉石传说/media/hs-majesty.ogg';
 		majesty.volume = 0;
 		majesty.loop = true;
 	}
