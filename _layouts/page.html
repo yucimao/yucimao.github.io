@@ -3,7 +3,7 @@ layout: default
 ---
 <style>
     html,body {margin: 0;padding: 0;}
-    #head_img {background-image: url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');background-repeat: no-repeat;background-size: 100%;}
+    #head_img {background-image: url('{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');background-repeat: no-repeat;background-size: 100%;}
     #head_img:after {content: "";display: block;padding-bottom: 40%;}
 
     @media (max-width: 730px) { /*小于730px*/

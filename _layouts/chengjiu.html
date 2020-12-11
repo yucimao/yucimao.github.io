@@ -74,7 +74,7 @@ layout: default
     document.getElementById("anniu_b").innerHTML = 当前;
     
 
-    let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
+    let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
     let data_jl={};
     let right={};
 
@@ -102,7 +102,7 @@ layout: default
                 if(isNaN(临时[0])){
                 data_jl[当前] += "<div class=\"cj\"><img src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
             } else {
-                data_jl[当前] += "<div class=\"cj\"><img src=\"/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
+                data_jl[当前] += "<div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
             if (临时[3]) {
                 data_jl[当前] += "<span class=\"tsxt\">" + 临时[3] + "</span>";
             }
