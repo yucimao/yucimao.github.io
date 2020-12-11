@@ -1,5 +1,5 @@
 if(xiangce3_wz.indexOf("://") != -1){}
-else{xiangce3_wz="/xiangce/3/o/"+xiangce3_wz+".json";}
+else{xiangce3_wz="{{ site.mq_d }}/xiangce/3/o/"+xiangce3_wz+".json";}
 
 let GetJson = $.ajax({
     url: xiangce3_wz,
