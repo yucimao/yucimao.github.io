@@ -86,11 +86,11 @@ layout: default
             }
             function anchor_zk(){
             if(anchor_an2==0){
-                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回</a></td></tr>";
+                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔺</a></td></tr>";
                 document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
                 anchor_an2=1;
             }else{
-                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开</a></td></tr>";
+                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
                 document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
                 anchor_an2=0;
             }
