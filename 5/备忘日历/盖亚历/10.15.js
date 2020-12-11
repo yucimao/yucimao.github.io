@@ -1,3 +1,0 @@
-节日+="<b>国际盲人节</b>&nbsp;<small>阳历10月15日</small><br/>"
-节日+="<b>世界农村妇女日</b>&nbsp;<small>阳历10月15日</small><br/>"
-节日+="<b>全国洗手日</b>&nbsp;<small>阳历10月15日</small><br/>"

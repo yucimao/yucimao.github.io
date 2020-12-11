@@ -1,4 +1,0 @@
-节日+="<b>消费者权益日</b>&nbsp;<small>阳历3月15日</small><br/>"
-节日+="<b>日本樱花节</b>&nbsp;<small>阳历3月15日</small><br/>"
-节日+="<b>安道尔宪法日</b>&nbsp;<small>阳历3月15日</small><br/>"
-节日+="<b>匈牙利革命和自由斗争纪念日</b>&nbsp;<small>阳历3月15日</small><br/>"

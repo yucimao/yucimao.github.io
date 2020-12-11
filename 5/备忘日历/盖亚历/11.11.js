@@ -1,4 +1,0 @@
-节日+="<b>光棍节</b>&nbsp;<small>阳历11月11日</small><br/>"
-节日+="<b>空军建军节</b>&nbsp;<small>阳历11月11日</small><br/>"
-节日+="<b>一战停战纪念日</b>&nbsp;<small>阳历11月11日</small><br/>"
-节日+="<b>索隆生日</b>&nbsp;<small>阳历11月11日</small><br/>出自《海贼王》<br>"

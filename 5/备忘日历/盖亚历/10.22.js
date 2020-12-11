@@ -1,3 +1,0 @@
-节日+="<b>胡糊生日</b>&nbsp;<small>阳历10月22日</small><br/>"
-节日+="<b>世界传统医药日</b>&nbsp;<small>阳历10月22日</small><br/>"
-节日+="<b>国际口吃日</b>&nbsp;<small>阳历10月22日</small><br/>"

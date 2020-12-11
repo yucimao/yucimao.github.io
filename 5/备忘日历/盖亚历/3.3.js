@@ -1,4 +1,0 @@
-节日+="<b>全国爱耳日</b>&nbsp;<small>阳历3月3日</small><br/>"
-节日+="<b>世界野生动植物日</b>&nbsp;<small>阳历3月3日</small><br/>"
-节日+="<b>保加利亚国庆节</b>&nbsp;<small>阳历3月3日</small><br/>"
-节日+="<b>雷欧力生日</b>&nbsp;<small>阳历3月3日</small><br/>出自《全职猎人》<br>"

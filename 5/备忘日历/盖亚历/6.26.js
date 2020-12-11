@@ -1,6 +1,0 @@
-节日+="<b>国际禁毒日</b>&nbsp;<small>阳历6月26日</small><br/>"
-节日+="<b>国际宪章日</b>&nbsp;<small>阳历6月26日</small><br/>"
-节日+="<b>支援酷刑受害者国际日</b>&nbsp;<small>阳历6月26日</small><br/>"
-节日+="<b>中国医师节</b>&nbsp;<small>阳历6月26日</small><br/>"
-节日+="<b>马达加斯加国庆节</b>&nbsp;<small>阳历6月26日</small><br/>"
-节日+="<b>桂小太郎生日</b>&nbsp;<small>阳历6月26日</small><br/>出自《银魂》<br>"

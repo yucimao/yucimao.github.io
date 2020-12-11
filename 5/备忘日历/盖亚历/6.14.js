@@ -1,5 +1,0 @@
-节日+="<b>亲亲情人节</b>&nbsp;<small>阳历6月14日</small><br/>亲吻爱人。<br/>"
-节日+="<b>月常情人节</b>&nbsp;<small>阳历每月14日</small><br/>总能有个理由过情人节。<br/>"
-节日+="<b>国际博客日</b>&nbsp;<small>阳历6月14日</small><br/>亲吻爱人。<br/>"
-节日+="<b>世界献血者日</b>&nbsp;<small>阳历6月14日</small><br/>亲吻爱人。<br/>"
-节日+="<b>美国国旗日</b>&nbsp;<small>阳历6月14日</small><br/>"

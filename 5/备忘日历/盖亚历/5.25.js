@@ -1,8 +1,0 @@
-节日+="<b>非洲解放日</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>阿根廷革命纪念日</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>世界预防中风日</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>国际踢踏舞节</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>大学生心理健康日</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>布里斯班僵尸节</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>国际失踪儿童日</b>&nbsp;<small>阳历5月25日</small><br/>"
-节日+="<b>约旦独立日</b>&nbsp;<small>阳历5月25日</small><br/>"

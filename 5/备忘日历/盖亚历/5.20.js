@@ -1,4 +1,0 @@
-节日+="<b>网络情人节</b>&nbsp;<small>阳历5月20日</small><br/>520谐音“我爱你”。<br/>"
-节日+="<b>世界计量日</b>&nbsp;<small>阳历5月20日</small><br/>"
-节日+="<b>世界陌生人节</b>&nbsp;<small>阳历5月20日</small><br/>"
-节日+="<b>全国学生营养日</b>&nbsp;<small>阳历5月20日</small><br/>"

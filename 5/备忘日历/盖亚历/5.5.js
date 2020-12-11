@@ -1,3 +1,0 @@
-节日+="<b>路飞生日</b>&nbsp;<small>阳历5月5日</small><br/>出自《海贼王》<br>"
-节日+="<b>土方十四郎生日</b>&nbsp;<small>阳历5月5日</small><br/>出自《银魂》<br>"
-节日+="<b>杰生日</b>&nbsp;<small>阳历5月5日</small><br/>出自《全职猎人》<br>"

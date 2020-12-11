@@ -1,4 +1,0 @@
-节日+="<b>加拿大国旗日</b>&nbsp;<small>阳历2月15日</small><br/>"
-节日+="<b>古罗马牧神节</b>&nbsp;<small>阳历2月15日</small><br/>"
-节日+="<b>塞尔维亚国庆日</b>&nbsp;<small>阳历2月15日</small><br/>"
-节日+="<b>西安市生态日</b>&nbsp;<small>阳历2月15日</small><br/>"

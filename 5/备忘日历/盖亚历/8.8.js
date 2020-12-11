@@ -1,3 +1,0 @@
-节日+="<b>爸爸节</b>&nbsp;<small>阳历8月8日</small><br/>"
-节日+="<b>全民健身日</b>&nbsp;<small>阳历8月8日</small><br/>"
-节日+="<b>巴基生日</b>&nbsp;<small>阳历8月8日</small><br/>出自《海贼王》<br>"

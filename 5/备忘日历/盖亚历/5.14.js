@@ -1,5 +1,0 @@
-节日+="<b>玫瑰情人节</b>&nbsp;<small>阳历5月14日</small><br/>送玫瑰花。<br/>"
-节日+="<b>月常情人节</b>&nbsp;<small>阳历每月14日</small><br/>总能有个理由过情人节。<br/>"
-节日+="<b>菲律宾水牛节</b>&nbsp;<small>阳历5月14日</small><br/>庆祝丰收。<br/>"
-节日+="<b>巴拉圭国庆</b>&nbsp;<small>阳历5月14日</small><br/>"
-节日+="<b>以色列国庆</b>&nbsp;<small>阳历5月14日</small><br/>"

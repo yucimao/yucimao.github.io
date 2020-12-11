@@ -1,5 +1,0 @@
-节日+="<b>国际奥林匹克日</b>&nbsp;<small>阳历6月23日</small><br/>"
-节日+="<b>世界手球日</b>&nbsp;<small>阳历6月23日</small><br/>"
-节日+="<b>卢森堡国庆日</b>&nbsp;<small>阳历6月23日</small><br/>"
-节日+="<b>波兰父亲节</b>&nbsp;<small>阳历6月23日</small><br/>"
-节日+="<b>爱沙尼亚胜利日</b>&nbsp;<small>阳历6月23日</small><br/>"
