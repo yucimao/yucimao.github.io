@@ -108,9 +108,27 @@ zwjs_切换();
 <script>
     let entries=[];
     let tagcloud=[
-        "海苔／dw(dwb='弹窗内容')",
-        "海苔",
-        "玉米软糖",
+        //"／dw(dwb='')",
+        //"／dw(dwb='<img scr=\"{{ site.mq_d }}/img/i/chengjiu/\"/>')",
+        "pvo／location.href='/pvoink'",
+        "听歌／location.href='/tv#音乐频道'",
+        "游戏／location.href='/wanyouxi/mygame'",
+        "二扯／dw(dwb='398647')",
+        "猪又／dw(dwb='398538')",
+        "胡糊／dw(dwb='398544')",
+        "狗球／dw(dwb='398556')",
+        "刺猬猬／dw(dwb='398548')",
+        "傻子／dw(dwb='398553')",
+        "秃子／dw(dwb='398551')",
+        "姜饼人／dw(dwb='398559')",
+        "吵鸭／dw(dwb='398562')",
+        "哎鸭／dw(dwb='398566')",
+        "小居／dw(dwb='398568')",
+        "彩色烟囱／dw(dwb='哈尔滨一处不起眼的角落<br/><img scr=\"{{ site.mq_d }}/img/i/chengjiu/653333.jpg\"/>')",
+        "中央大街／dw(dwb='哈尔滨中央大街<br/><img scr=\"{{ site.mq_d }}/img/i/chengjiu/657414.jpg\"/>')",
+        "星海广场／dw(dwb='大连星海广场<br/><img scr=\"{{ site.mq_d }}/img/i/chengjiu/657416.jpg\"/>')",
+        // "／dw(dwb='<img scr=\"{{ site.mq_d }}/img/i/chengjiu/\"/>')",
+        // "／dw(dwb='<img scr=\"{{ site.mq_d }}/img/i/chengjiu/\"/>')",
     ];
 
     let p = Array.from(tagcloud), i, a = [];
@@ -124,7 +142,8 @@ zwjs_切换();
     for(let i=0;tagcloud.length>i;i++){
         if(i<30){
             let 临时=tagcloud[i].split("／");
-            let 颜色=["#333"];
+            let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
             let 颜色_i=i%颜色.length;
             entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
         }
