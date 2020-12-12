@@ -66,6 +66,7 @@
     <div id="dw_x" onclick="dw_x()"></div>
     <div class="dw_tk">
         <div id="dw_hd">
+            <span id="dwd"></span>
             <span id="dwc"></span>
             <div id="dw_hd_r" onclick="dw_x()">X</div>
         </div>
@@ -76,11 +77,18 @@
     document.getElementById('dw_zz').style.display = "none";
     document.getElementById('dw_x').style.display = "none";
     let dwb = "";
+    let dwd = "0";
     function dw() {
         document.getElementById('dw_x').style.display = "";
         document.getElementById('dw_zz').style.display = "";
         if(isNaN(dwb)){} else {
             dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
         }
         document.getElementById("dwc").innerHTML = dwb;
     }
