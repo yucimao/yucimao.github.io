@@ -23,6 +23,8 @@ permalink: maoqiu
 #zwjs::after {content: '';position: absolute;top: 50px;left: 0;width: 150px;height: 60px;background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));transform: rotate(-45deg) translate(0, -360px);}
 #zwjs:hover::after {transition: .5s;transform: rotate(0deg) translate(0, 0px);}
 #zwjs:active {transition: 1s;background-image: linear-gradient(to right, #5275be, #7a7bdd);}
+
+[onclick^="undefined"]{cursor:default;}
 </style>
 <script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
 
@@ -91,8 +93,70 @@ zwjs_切换();
 <br/><br/>
 
 <a href="/chengjiu" class="anniu">获得成就</a> 
-<a href="/ilike" class="anniu">我喜欢的</a> 
 <a href="/links" class="anniu">友情链接</a> 
+
+
+
+
+<script src='{{ site.mq_d }}/5/new/svg3dtagcloud_onclick.js'></script>
+
+{% include popup_dw.html %}
+
+
+<div id="tag-cloud"></div>
+
+<script>
+    let entries=[];
+    let tagcloud=[
+        "海苔／dw(dwb='弹窗内容')",
+        "海苔",
+        "玉米软糖",
+    ];
+
+    let p = Array.from(tagcloud), i, a = [];
+        while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+        tagcloud = a;
+
+    for(let i=0;tagcloud.length>i;i++){
+        if(i<30){
+            let 临时=tagcloud[i].split("／");
+            let 颜色=["#333"];
+            let 颜色_i=i%颜色.length;
+            entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
+        }
+    }
+
+    let settings = {
+    entries: entries,
+    width: 640,
+    height: 480,
+    radius: '80%',
+    radiusMin: 100,
+    bgDraw: false,
+    opacityOver: 1.00,
+    opacityOut: 0.05,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 0.5,
+    fontSize: '20',
+    fontColor: '#009688',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    fontToUpperCase: false
+};
+$( '#tag-cloud' ).svg3DTagCloud( settings );
+</script>
+
+
+
+
+
+
 
 <br/><br/>
 <hr>
