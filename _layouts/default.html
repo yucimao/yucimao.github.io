@@ -9,7 +9,7 @@
     <meta name="keywords" content="{% if page.keywords %}{{ site.keywords }},{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="shortcut icon" href="/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ site.mq_d }}/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ site.mq_d }}/css/all.css">
     <script src="{{ site.mq_d }}/js/jquery.min.js"></script>
 
