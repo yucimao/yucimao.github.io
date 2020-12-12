@@ -190,24 +190,41 @@ ontouchstart="this.src='{{ site.mq_d }}/img/index/liuyan2.jpg'"
 ontouchend="this.src='{{ site.mq_d }}/img/index/liuyan3.jpg'" 
 alt="留言板" /></a>
 
-<script src="{{ site.mq_d }}/5/rili/i.js"></script>
+<script src="{{ site.mq_d }}/5/rili/ib.js"></script>
 
 <p id="dy0"></p>
 
 <script>
 /*关闭加载动画*/var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');
 
-document.getElementById("btn").innerHTML=rili_日期;
-document.getElementById("xttzb").innerHTML=rili_节日;
-
 let dy0=new Array("maoqiuheerche","maoqiutv","world","yimeng","playgame","riji",
 "xiangce","zatan","pvo","xiaogongju","bilibili","xinlangweibo","zhihu","wyyyy","github","liuyan")
 let dy1="";
 
-window.onload=function(){   //页面加载完把模糊图换成清晰图、预加载变化图
-    for (let i = 0; i < dy0.length; i++) {
-  document.getElementById(dy0[i]).src = "{{ site.mq_d }}/img/index/"+dy0[i]+"3.jpg"; 
-  dy1 += '<img width="1px" src="{{ site.mq_d }}/img/index/' + dy0[i] + '2.jpg"/>';
+window.onload=function(){ //备忘日历
+var rili_节日="";
+let 农历节日="";
+if(闰!=1){农历节日 = "／nl/"+cMonth+"."+cDay;}
+let 获取数据_地址="gyl/"+盖亚月+"."+盖亚日+"／gyl_xq/"+盖亚月+"."+第x个+"."+星期+"／gyl_xqds/"+盖亚月+"."+倒数第x个+"."+星期+农历节日+"／xel/"+希尔月+"."+希尔日;
+获取数据_地址=获取数据_地址.split("／");
+
+for(let i=0;获取数据_地址.length>i;i++){
+    let GetJson = $.ajax({
+        url: "/5/rili/"+获取数据_地址[i]+".json",
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+        }
+    });
+    rili_节日+=GetJson.responseText;
+}
+document.getElementById("btn").innerHTML=rili_日期;
+document.getElementById("xttzb").innerHTML=rili_节日;
+
+for (let i = 0; i < dy0.length; i++) { //页面加载完把模糊图换成清晰图、预加载变化图
+document.getElementById(dy0[i]).src = "{{ site.mq_d }}/img/index/"+dy0[i]+"3.jpg"; 
+dy1 += '<img width="1px" src="{{ site.mq_d }}/img/index/' + dy0[i] + '2.jpg"/>';
 }
 dy1='<div style="display:none;">'+dy1+'</div>';
 document.getElementById("dy0").innerHTML=dy1;

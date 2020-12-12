@@ -45,7 +45,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
     else { c = 1; }
     document.getElementById("抽取次数").value = c;
 
-    let JsonUrl = "{{ site.mq_d }}/i/sjtk/" + t + ".json";
+    let JsonUrl = "/i/sjtk/" + t + ".json";
     let GetJson = $.ajax({
         url: JsonUrl,
         type: "GET",
@@ -137,7 +137,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
                         新抽取 = sjtk[临时5];
                     }
                     else {
-                        JsonUrl = "{{ site.mq_d }}/i/sjtk" + 临时5 + ".json";
+                        JsonUrl = "/i/sjtk" + 临时5 + ".json";
                         GetJson = $.ajax({
                             url: JsonUrl,
                             type: "GET",
