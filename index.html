@@ -1,6 +1,7 @@
 ---
 layout: o
 ---
+<div id="i" style="width:100%;height:100%;"></div>
 <script>
 let a=new Array(
 "star_box"
@@ -13,6 +14,8 @@ let c=new Date().getMonth()+1+"."+new Date().getDate();
 if(b[c]){a=b[c];}
 b=new Date().getDate()+new Date().getHours();
 b=b%a.length;
-if(a[b].indexOf("http") != -1){window.location.href=a[b];}
-else{window.location.href="{{ site.mq_d }}/i/"+a[b];}
+b="<iframe src=\"" + a[b] + "\" frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>";
+document.getElementById("i").innerHTML=b;
+// if(a[b].indexOf("http") != -1){window.location.href=a[b];}
+// else{window.location.href="{{ site.mq_d }}/i/"+a[b];}
 </script>
