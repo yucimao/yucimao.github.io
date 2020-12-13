@@ -14,16 +14,14 @@ let a=new Array(
 );
 let b={
 "12.24":["spinning_christmas_tree"],
-"12.25":["spinning_christmas_tree"]
+"12.25":["spinning_christmas_tree"],
+"12.13":["wwgc_mjls"],
 };
 let c=new Date().getMonth()+1+"."+new Date().getDate();
 if(b[c]){a=b[c];}
 b=new Date().getTime();
 b=Math.floor(b/1000/60/60);
-if(localStorage.getItem("door")==b){
-window.location.href="{{ site.mq_i }}";
-}else{localStorage.setItem("door",b);
 b=b%a.length;
 b="<iframe src=\"/i/"+a[b]+"\" frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>";
-document.getElementById("i").innerHTML=b;}
+document.getElementById("i").innerHTML=b;
 </script>
