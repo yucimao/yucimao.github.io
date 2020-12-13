@@ -1,0 +1,404 @@
+---
+layout: o
+permalink: i/fly_erche
+---
+<style>
+	body {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background: silver;
+}
+
+#reminder_b{
+  margin:40% 10%;font-size:1.2em;color:#444;font-weight:bold;
+}
+#reminder{
+color:#fff;background-color:#3FA9F5;text-align:center;
+}
+
+.window {
+  position: relative;
+  padding: 20px;
+  border: 4px solid #808080;
+  border-radius: 48px;
+  background-color: #D9D9D9;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.2), 0 0 0 40px whitesmoke, 0 0 0 44px #808080, 0 20px 40px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.window:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: black;
+  opacity: 0.2;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.top {
+  position: absolute;
+  left: 0;
+  top: -90%;
+  width: 100%;
+  height: 100%;
+  border-radius: 48px;
+  background: whitesmoke;
+  box-shadow: 0 0 0 4px #808080, 0 0 30px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.6s all ease-in-out;
+  transition: 0.6s all ease-in-out;
+  cursor: pointer;
+  z-index: 10;
+}
+.top.closed {
+  top: -5%;
+}
+.top:before {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 8px;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 4px;
+  background-color: #808080;
+}
+.top:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 8px;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 4px;
+  background-image: -webkit-radial-gradient(#5df254, #15a10c);
+  background-image: radial-gradient(#5df254, #15a10c);
+  -webkit-animation-name: light;
+          animation-name: light;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.glass {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border-radius: 72px;
+  box-shadow: 0 0 0 4px #808080;
+  overflow: hidden;
+}
+.glass:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 90% 10%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 20%);
+  background-image: radial-gradient(circle farthest-corner at 90% 10%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 20%);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.2);
+  border-radius: 72px;
+}
+
+.sky {
+  position: relative;
+  background: #3FA9F5;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.nyan-cat {
+  position: absolute;
+  top: 35%;
+  width: 90px;
+  height: 60px;
+  background-image: url("/5/door/飞翔二扯.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-animation-name: leftToRighta;
+          animation-name: leftToRighta;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: -10;
+}
+
+.cloud {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  border-radius: 40px;
+  -webkit-animation-name: leftToRight;
+          animation-name: leftToRight;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.cloud2{
+  -webkit-animation-name: leftToRight2;
+          animation-name: leftToRight2;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.cloudb{
+  -webkit-animation-name: leftToRightb;
+          animation-name: leftToRightb;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.cloud:before, .cloud:after {
+  content: " ";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}
+.cloud:before {
+  top: -20px;
+  left: 20px;
+}
+.cloud:after {
+  top: -10px;
+  left: 50px;
+}
+.cloud:nth-child(1) {
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+.cloud:nth-child(2) {
+  top: 20%;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+.cloud:nth-child(3) {
+  top: 40%;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.cloud:nth-child(4) {
+  top: 60%;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+.cloud:nth-child(5) {
+  top: 20%;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.cloud:nth-child(6) {
+  top: 20%;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+@-webkit-keyframes leftToRighta {
+  0% {left:-170%;top:35%;}
+  25% {left:5%;}
+  50% {left:25%;top:30%;}
+  52% {left:27%;}
+  85% {left:20%;top:35%;}
+  90% {left:15%;}
+  95% {left:150%;}
+  100% {left:150%;}
+}
+
+@keyframes leftToRighta {
+  0% {left:-170%;top:35%;}
+  25% {left:5%;}
+  50% {left:25%;top:30%;}
+  52% {left:27%;}
+  85% {left:20%;top:35%;}
+  90% {left:15%;}
+  95% {left:150%;}
+  100% {left:150%;}
+}
+
+@-webkit-keyframes leftToRight {
+  0% {
+    left: 150%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    left: 150%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+
+@-webkit-keyframes leftToRight2 {
+  0% {
+    top:80%;
+    left: -200%;
+  }
+  100% {
+    left: 150%;
+    top:-80%
+  }
+}
+
+@keyframes leftToRight2 {
+  0% {
+    top:80%;
+    left: 200%;
+  }
+  100% {
+    left: -150%;
+    top:-80%
+  }
+}
+
+@-webkit-keyframes leftToRightb {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes leftToRightb {
+
+  0% {left:-10%;top:-100%;}
+  25% {left:20%;top:40%}
+  50% {left:30%;top:40%;}
+  52% {left:27%;top:42%;}
+  85% {left:23%;top:38%;}
+  90% {left:20%;top:35%;}
+  95% {left:70%;top:100%;}
+  100% {left:80%;top:100%;}
+
+}
+
+@-webkit-keyframes light {
+  0% {
+    box-shadow: 0 0 0px #5DF254;
+  }
+  50% {
+    box-shadow: 0 0 20px #5DF254;
+  }
+  80% {
+    box-shadow: 0 0 40px rgba(93, 242, 84, 0);
+  }
+}
+@keyframes light {
+  0% {
+    box-shadow: 0 0 0px #5DF254;
+  }
+  50% {
+    box-shadow: 0 0 20px #5DF254;
+  }
+  80% {
+    box-shadow: 0 0 40px rgba(93, 242, 84, 0);
+  }
+}
+
+</style>
+
+<div class="window">
+	<div class="top"><div id="reminder_b"></div></div>
+	<div class="glass"><div id="reminder"><br/>请拉下遮光板 <small>(点击)</small></div>
+		<div class="sky">
+			<div id="c1" class="cloud"></div>
+			<div id="c2" class="cloud"></div>
+			<div id="c3" class="cloud"></div>
+			<div id="c4" class="cloud"></div>
+			<div id="c5" class="cloud"></div>
+			<div id="c6" class="cloud"></div>
+			<div id="c7" class="nyan-cat"></div>
+		</div>
+	</div>
+</div>
+
+<script>
+  let i=8;
+  let kaiguan=0;
+  let xunhuan;
+$('.top').on('click', function(){
+  $(this).toggleClass('closed');
+  if(kaiguan==0){kaiguan=1;
+    rem();xunhuan=setInterval("rem()", "1000");}
+    else{kaiguan=0;clearInterval(xunhuan);}
+});
+function rem(){
+  i-=1;
+  if(i==7){
+    document.getElementById("reminder").innerHTML = "<br/>不要收回遮光板";
+    document.getElementById('c1').className = 'cloud cloud2';
+    document.getElementById('c2').className = 'cloud cloud2';
+    document.getElementById('c3').className = 'cloud cloud2';
+    document.getElementById('c4').className = 'cloud cloud2';
+    document.getElementById('c5').className = 'cloud cloud2';
+    document.getElementById('c6').className = 'cloud cloud2';
+    document.getElementById('c7').className = 'nyan-cat cloudb';
+  }
+
+	if(i>=0){
+		document.getElementById("reminder_b").innerHTML = "收起小桌板<br/>飞机即将降落<br/><br/>"+i;
+	}else if(i==-1){
+		document.getElementById("reminder_b").innerHTML = "收起小桌板<br/>飞机即将降落<br/><br/>0<br/><br/>欢迎来到猫球博客";
+	}else if(i<-1){
+		window.parent.location.href='{{ site.mq_i }}';clearInterval(xunhuan);
+	}
+}
+</script>
