@@ -276,7 +276,10 @@ function anp(e){
         document.getElementById("right_anchor").innerHTML = anchor_dy;
     }
 
-    $(document).ready(function() {
+
+    var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
     $("#right_anchor").hide();
     $(function() {
         $(window).scroll(function() {
@@ -294,5 +297,5 @@ function anp(e){
         });
     });
     });
-
+}
 </script>
