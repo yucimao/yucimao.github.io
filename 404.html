@@ -19,30 +19,3 @@ nav_url: <a href="/wangzhi">网址收藏</a>
 	3.<a href="/">回到首页</a>找找看。<br/>
 	4.<span class="redX">奖励</span>殴打猫球。<sup style="color:#ff2424;">猫球:不推荐!!!</sup>
 </small>
-
-<script>
-var url = window.location.href;
-
-if (url.indexOf("github.io/") != -1) {
-url = url.split("github.io/");
-url = url[1];}
-
-if (url.indexOf(".com/") != -1) {
-url = url.split(".com/");
-url = url[1];}
-
-url = "[" + url + "]";
-var urls = new Array(
-	"[%E7%8C%AB%E7%90%83%E7%BF%BB%E8%AF%91%E5%99%A8]/mqfyq",	//猫球翻译器
-	"[maoqiufanyiqi]/mqfyq",
-	"[maoyiqi]/mqfyq",
-	"[myq]/mqfyq",
-	"[wangzhishoucang]/wangzhi"	//网址
-	);
-
-for (var i = 0 ; i < urls.length ; i++) {
-if (urls[i].indexOf(url) != -1) {
-	var tz = urls[i].split("]");
-	window.location.href=tz[1];
-	}}
-</script>
