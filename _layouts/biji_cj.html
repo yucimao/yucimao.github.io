@@ -97,7 +97,7 @@ layout: default
     });
     function 加载(){
         let 次数=32;
-        for(let i=0;次数-i==0||datb.length==0;i++){
+        for(let i=0;次数-i!=0||datb.length!=0;i++){
             let 临时=datb[i].split("／");
             if(临时[0]=="hr"){
                 dy += "<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
