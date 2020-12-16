@@ -76,11 +76,9 @@ layout: default
 
     <script>
         let 回车 = "javascript:void(0);";
-        let datb=new Array();
-        datb=datb.concat(data)
+        let datb = data;
         $("#输入").keyup(function () {
             datb=new Array();
-            datb=datb.concat(data)
             if (回车.split("／").length > 1) {
                 回车 = 回车.split("／")[1];
             }
@@ -119,14 +117,12 @@ layout: default
         })
 
         function 随机排序() {
-            console.log(datb)
-            if(datb.length==0){
-                console.log(datb.length)
-                datb=new Array();
-                datb=datb.concat(data)
-            }
             let 随机结果 = "";
             let 随机临时;
+            if(datb.length==0){
+                datb=new Array();
+                datb=datb.concat(data);
+            }
 
             let p = Array.from(datb), i, a = [];
             while (p.length > 0) {
