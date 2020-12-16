@@ -82,15 +82,21 @@ layout: default
         }else{
             datb=new Array();
             输入=输入.split(" ");
-            for(let i=0;输入.length>i;i++){
-                if(输入[i]!=""){
-                    for(let i2=0;data.length>i2;i2++){
-                        let 临时=data[i2].split("／");
-                        临时=临时[1]+"."+临时[6];
-                        if(临时[0]!="hr"&&临时.indexOf(输入[i]) != -1){
-                            datb[datb.length]=data[i2];
-                        }
-                    }
+
+            for(let i2=0;data.length>i2;i2++){
+                let 临时=data[i2].split("／");
+                if(临时[6]=="undefined"){
+                    临时=临时[1];
+                }else{
+                    临时=临时[1]+临时[6];
+                }
+                let 临时2=0;
+                for(let i=0;输入.length>i;i++){
+                    if(data[i2].split("／")[0]!="hr"&&临时.indexOf(输入[i]) != -1){
+                    }else{临时2=1;}
+                }
+                if(临时2==0){
+                    datb[datb.length]=data[i2];
                 }
             }
         }
