@@ -133,7 +133,7 @@ layout: default
 
             let 随机 = a;
 
-            for (let i2 = 0; 5 > i2 && 随机[i2].length!=0; i2++) {
+            for (let i2 = 0; 5 > i2 && 随机.length != i2; i2++) {
                 随机临时 = 随机[i2].split("／");
                 随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
             }
