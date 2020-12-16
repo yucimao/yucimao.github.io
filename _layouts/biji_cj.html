@@ -31,7 +31,7 @@ layout: default
     }
     #输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
 
-    #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor table{width:100%;}}
+    #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor table{width:100%;}
     @media screen and (max-width: 767px) {#right_anchor{position:relative;}#right_anchor table{width:60%;}}
     #right_anchor a{display:block;}
     .cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
@@ -70,13 +70,15 @@ layout: default
         let right="";
         let dy="";
         let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
-        let datb=data;
+        let datb=new Array();
+        datb=datb.concat(data)
     $("#输入").keyup(function () {
         dy="";
         right="";
         let 输入 = $("#输入").val();
         if(输入==""){
-            datb=data;
+            datb=new Array();
+            datb=datb.concat(data)
         }else{
             datb=new Array();
             输入=输入.split(" ");
