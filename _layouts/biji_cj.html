@@ -83,12 +83,11 @@ layout: default
             for(let i=0;输入.length>i;i++){
                 if(输入[i]!=""){
                     for(let i2=0;data.length>i2;i2++){
-                        let 临时=data[i].split("／");
+                        let 临时=data[i2].split("／");
                         临时=临时[1]+"."+临时[6];
                         if(临时[0]!="hr"&&临时.indexOf(输入[i]) != -1){
                             datb[datb.length]=data[i2];
                         }
-                        //"图片／标题／简单介绍／额外介绍／u或o／地址或zk编号"
                     }
                 }
             }
