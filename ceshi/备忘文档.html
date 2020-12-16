@@ -124,6 +124,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
     <tr><td><a onclick="复(制='layout: ix')">layout: ix</a></td><td>不存在的页面</td><td><a href="#layout_ix">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: o')">layout: o</a></td><td>空白页</td><td><a href="#layout_o">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: chengjiu')">layout: chengjiu</a></td><td>成就</td><td><a href="#layout_chengjiu">参考</a></td></tr>
+    <tr><td><a onclick="复(制='layout: biji_cj')">layout: biji_cj</a></td><td>带图片的笔记</td><td><a href="#layout_biji_cj">参考</a></td></tr>
 </table>
 <br/>
 参数：<br/>
@@ -382,6 +383,36 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         </td><td>
         <br/>
         本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
+        导航栏链接 可留空<br/>
+        本页地址（最前无需/）
+        <hr>
+        hr 横线<br/>
+        图片：用数字编号则是/img/i/chengjiu/？.jpg 或者直接使用完整链接<br/>
+        额外介绍：鼠标移动上去时的小弹窗<br/>
+        u／地址：超链接<br/>
+        o／zk编号：点击弹窗显示zk内容
+        </td></tr>
+</table>
+<br/>
+<a name="layout_biji_cj"></a><b>#带图片的笔记</b><br/>
+<table>
+    <tr style="line-height:1.2em;"><td style="min-width:16em;">
+        layout: biji_cj<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
+        nav_url: &lt;a href="/"&gt;&lt;/a&gt;<br/>
+        permalink:&nbsp;
+        <hr>
+        &lt;script&gt;<br/>
+        let data = new Array(<br/>
+            "hr／标题／说明（可留空）",<br/>
+            "图片／标题／简单介绍／额外介绍／u或o／地址或zk编号／关键词"<br/>
+        );
+        &lt;/script&gt;<br/>
+        </td><td>
+        <br/>
+        本页title　"？ - 猫球博客"　留空：“猫球博客”<br/>
+        标题文字<br/>
         导航栏链接 可留空<br/>
         本页地址（最前无需/）
         <hr>
