@@ -109,6 +109,7 @@ layout: default
                 if(临时[2]){dy+="<p>"+临时[2]+"</p>";}
                 right += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
             }else{
+                dy+="<div class=\"cj\">";
                 if(临时[4]=="u"){
                     dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
                 }
@@ -116,16 +117,12 @@ layout: default
                     dy += "<a onclick=\""+临时[5]+"\">";
                 }
                 if(isNaN(临时[0])){
-                dy += "<div class=\"cj\"><img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
+                dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
             } else {
-                dy += "<div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
-            if (临时[3]) {
-                dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";
-            }
-            dy += "</div>";
-            if(临时[4]=="u"||临时[4]=="o"){
-                    dy += "</a>";
-                }
+                dy += "<img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
+                if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
+                if (临时[3]) {dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
+                dy += "</div>";
             }
             datb.splice(0, 1);
         }

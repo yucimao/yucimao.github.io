@@ -96,6 +96,7 @@ layout: default
                 if(临时[2]){data_jl[当前]+="<p>"+临时[2]+"</p>";}
                 right[当前] += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
             } else {
+                data_jl[当前]+="<div class=\"cj\">";
                 if(临时[4]=="u"){
                     data_jl[当前] += "<a href=\""+临时[5]+"\" target=\"_blank\">";
                 }
@@ -103,16 +104,13 @@ layout: default
                     data_jl[当前] += "<a onclick=\""+临时[5]+"\">";
                 }
                 if(isNaN(临时[0])){
-                data_jl[当前] += "<div class=\"cj\"><img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
+                data_jl[当前] += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
             } else {
-                data_jl[当前] += "<div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
-            if (临时[3]) {
-                data_jl[当前] += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";
-            }
+                data_jl[当前] += "<img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
+                if(临时[4]=="u"||临时[4]=="o"){data_jl[当前] += "</a>";}
+                if (临时[3]) {data_jl[当前] += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
             data_jl[当前] += "</div>";
-            if(临时[4]=="u"||临时[4]=="o"){
-                    data_jl[当前] += "</a>";
-                }
+
             }
             cj_data[当前].splice(0, 1);
             计时 -= 1;
