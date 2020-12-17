@@ -1,0 +1,79 @@
+---
+layout: page
+title: 我的网络账号
+nav_text: 我的网络账号
+nav_url: <a href="/maoqiu">关于我</a>
+nav_color: ffffff
+permalink: myid
+---
+<style>
+    tr td:not(:last-child){min-width: 7em;}
+    td{text-align: center;}
+
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
+        #right_anchor table{width:100%;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor{position:relative;}
+        #right_anchor table{width:60%;}
+    } /*手机*/
+    #right_anchor a{display:block;}
+</style>
+
+{% include popup_dw.html %}
+
+<a name="正在用的"></a><h3>正在用的</h3>
+
+<div id="dy_a"></div>
+
+<br/>
+<a name="暂时不用的"></a><h3>暂时不用的</h3>
+
+<div id="dy_b"></div>
+
+<script>
+let data_a=new Array(//"网站／用户名／ID／复制／更多"
+    "阴阳师(网易-携手同心)／安倍益材／#76708／#76708／",
+);
+let data_b=new Array(
+    "魔兽世界(10区-能源舰)／初代／／／809763",
+    "精灵宝可梦GO／／0102 2996 9888／010229969888／",
+    "阴阳师：妖怪屋(春之樱)／安倍益材／#K94BI／#K94BI／",
+    "决战平安京(网易-平安京)／李猫球／1187039623／1187039623／",
+    "一梦江湖(扬州慢-言笑晏然)／李猫球／1267542236／1267542236／",
+    "江南百景图／李猫球／m6tn38lmdd9／m6tn38lmdd9／",
+    "边境之旅／老国王／(小镇ID)91710／91710／",
+    "龙珠激战传说／／btvwwmhk／btvwwmhk／",
+);
+
+let dy_a,dy_b;
+for(let o=0;2>o;o++){
+    let dy="<table><tr><th>网站 / 游戏</th><th>用户名 / 角色名</th><th>ID</th><th></th><th></th></tr>";
+    let dy_o;
+    if(o==0){dy_o=data_a;}else{dy_o=data_b;}
+    for(let i=0;dy_o.length>i;i++){
+    let 临时=dy_o[i].split("／");
+    dy+="<tr><td>"+临时[0]+"</td><td>"+临时[1]+"</td><td>"+临时[2]+"</td><td>";
+        if(临时[3]!=""){
+            dy+="<a onclick=\"复(制='"+临时[3]+"')\">复制</a>";
+        }
+        dy+="</td><td>";
+        if(临时[4]!=""){
+            dy+="<a onclick=\"dw(dwb='"+临时[4]+"')\">更多</a>";
+        }
+        dy+="</td></tr>";
+}
+dy+="</table>";
+if(o==0){dy_a=dy;}else{dy_b=dy;}
+}
+document.getElementById("dy_a").innerHTML = dy_a;
+document.getElementById("dy_b").innerHTML = dy_b;
+</script>
+
+
+
+<input id="复制" style="position:absolute;top:-1000px"/>
+<script>let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
