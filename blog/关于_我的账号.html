@@ -1,14 +1,16 @@
 ---
 layout: page
-title: 我的网络账号
-nav_text: 我的网络账号
+title: 我的账号
+nav_text: 我的账号
 nav_url: <a href="/maoqiu">关于我</a>
 nav_color: ffffff
 permalink: myid
 ---
+<link rel="stylesheet" href="/css/all.css">
 <style>
-    tr td:not(:last-child){min-width: 7em;}
-    td{text-align: center;}
+    td:not(:last-child){text-indent:1em;}
+    td:nth-child(2){text-align: center;}
+    td:not(:last-child):after{content:"　";}
 
     @media screen and (min-width: 768px) { /*电脑*/
         #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
@@ -34,34 +36,38 @@ permalink: myid
 <div id="dy_b"></div>
 
 <script>
-let data_a=new Array(//"网站／用户名／ID／复制／更多"
-    "阴阳师(网易-携手同心)／安倍益材／#76708／#76708／",
+let data_a=new Array(//"网站／区服／用户名／ID／复制／打开／更多"
+    "知乎／／李猫球／／／https://www.zhihu.com/people/limaoqiu／2013年6月22日注册，是知乎的第989299位用户。",
+    "哔哩哔哩／／猫球社长／515330／／https://space.bilibili.com/515330／",
+    "阴阳师／网易-携手同心／安倍益材／#76708／#76708／／",
 );
 let data_b=new Array(
-    "魔兽世界(10区-能源舰)／初代／／／809763",
-    "精灵宝可梦GO／／0102 2996 9888／010229969888／",
-    "阴阳师：妖怪屋(春之樱)／安倍益材／#K94BI／#K94BI／",
-    "决战平安京(网易-平安京)／李猫球／1187039623／1187039623／",
-    "一梦江湖(扬州慢-言笑晏然)／李猫球／1267542236／1267542236／",
-    "江南百景图／李猫球／m6tn38lmdd9／m6tn38lmdd9／",
-    "边境之旅／老国王／(小镇ID)91710／91710／",
-    "龙珠激战传说／／btvwwmhk／btvwwmhk／",
+    "魔兽世界／10区-能源舰／初代／／／／",
+    "精灵宝可梦GO／／／0102 2996 9888／010229969888／／",
+    "阴阳师：妖怪屋／春之樱／安倍益材／#K94BI／#K94BI／／",
+    "决战平安京／网易-平安京／李猫球／1187039623／1187039623／／",
+    "一梦江湖／扬州慢-言笑晏然／李猫球／1267542236／1267542236／／",
+    "江南百景图／／李猫球／m6tn38lmdd9／m6tn38lmdd9／／",
+    "边境之旅／／老国王／小镇ID 91710／91710／／",
+    "龙珠激战传说／／／btvwwmhk／btvwwmhk／／",
 );
 
 let dy_a,dy_b;
 for(let o=0;2>o;o++){
-    let dy="<table><tr><th>网站 / 游戏</th><th>用户名 / 角色名</th><th>ID</th><th></th><th></th></tr>";
+    let dy="<table><tr><th class=\"th\">网站 / 游戏</th><th class=\"th\">用户 / 角色</th><th class=\"th\">ID</th><th></th></tr>";
     let dy_o;
     if(o==0){dy_o=data_a;}else{dy_o=data_b;}
     for(let i=0;dy_o.length>i;i++){
     let 临时=dy_o[i].split("／");
-    dy+="<tr><td>"+临时[0]+"</td><td>"+临时[1]+"</td><td>"+临时[2]+"</td><td>";
-        if(临时[3]!=""){
-            dy+="<a onclick=\"复(制='"+临时[3]+"')\">复制</a>";
-        }
-        dy+="</td><td>";
+    dy+="<tr><td><b>"+临时[0]+"</b> <small>"+临时[1]+"</small></td><td>"+临时[2]+"</td><td>"+临时[3]+"</td><td>";
         if(临时[4]!=""){
-            dy+="<a onclick=\"dw(dwb='"+临时[4]+"')\">更多</a>";
+            dy+=" <a onclick=\"复(制='"+临时[4]+"')\">复制</a>";
+        }
+        if(临时[5]!=""){
+            dy+=" <a href=\""+临时[5]+"\" target=\"_blank\">打开</a>";
+        }
+        if(临时[6]!=""){
+            dy+=" <a onclick=\"dw(dwb='"+临时[6]+"')\">更多</a>";
         }
         dy+="</td></tr>";
 }
