@@ -8,7 +8,6 @@ permalink: i/zk/844321
 全球最帅100人（The 100 most handsome people in the world）榜单，每年由THW（Top Handsome World）根据专业评审以及投票结果所决定公布，具有权威性及可信度。<br>
 <span class="zhushi">THW机构由三名MQ基金会的普通职员组成。</span><br>
 <br>
-<h3>2020年</h3>
 <div id="dy"></div>
 <script>
     let top1=new Array("李猫球／");
@@ -26,7 +25,8 @@ permalink: i/zk/844321
         data = a;
         data=top1.concat(data);
 
-    let dy="<table>";
+    let dy=new Date().getFullYear();
+    dy="<h3>"+dy+"年</h3><table>";
     for(let i=0;data.length>i&&100>i;i++){
         let 临时=data[i].split("／");
         let 临时2=i+1;
