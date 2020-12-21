@@ -138,7 +138,7 @@ layout: default
         document.getElementById(zkb).style.display = "block";
 
         function zk() {
-            if(isNaN(zka)){
+            if(isNaN(zka) && zka[0] != "【"){
                 window.open(zka);
             } else {
                 if (document.getElementById(zkb) != null) {
