@@ -48,24 +48,21 @@ function zwjs_切换(){
         "一个画画不好，却总想着学代码的美术生。<br/>"+
         "人生目标是完成<ruby><rb>一部小说</rb><rt>自娱自乐</rt></ruby>。<br/>";
         zwjs_当前="网上冲浪版";
-    }
-    else if(zwjs_当前=="网上冲浪版"){
+    }else if(zwjs_当前=="网上冲浪版"){
         zwjs_dy="你也在网上冲浪啊，你是<span style=\"color:blue\">GG</span>还是<span style=\"color:red\">MM</span>？<br/>"+
         "欢迎光临<span style=\"background-color: yellow;\">我的博客</span>，有空常来坐坐<img src=\"/img/i/emoticon/BBS/loveliness.gif\"><br/>"+
         "我叫李猫球，今年**岁，<ruby><rb>不抽烟</rb><rt>戒了</rt></ruby>，<ruby><rb>不喝酒</rb><rt>过敏</rt></ruby>，爱好广泛，其中坚持最久的是写小说和玩游戏。<br/>"+
         "希望能和年轻人多交朋友，不要out。<br/>"+
         "最后，祝福朋友们健康快乐！<img src=\"/img/i/emoticon/BBS/lol.gif\">";
         zwjs_当前="二次元版";
-    }
-    else if(zwjs_当前=="二次元版"){
+    }else if(zwjs_当前=="二次元版"){
         zwjs_dy="幸识<small>吖~这里</small><big>猫球</big><small>(｢･ω･)｢ 请多指教~(鞠躬</small><br/>"+
         "<small>来自</small><ruby><rb>冰雪之都</rb><rt>哈尔滨</rt></ruby> <small>目前坐标</small><ruby><rb>北国春城</rb><rt>长春</rt></ruby><big>🍂</big><br/>"+
         "<small>自设：</small>黑瞳 白发<small>（准确点说是深灰色瞳孔，浅灰色头发）</small> 猫耳 呆毛 右眼下有一条直线 <small><a href=\"/i/zk/569990\" target=\"_blank\">人设图戳这里←</a></small><br/>"+
         "<small>入的坑有</small><ruby><rb>ＪＯＪＯ</rb><rt>ko no dio da</rt></ruby>、<ruby><rb>ＷＯＷ</rb><rt>为了部落</rt></ruby><small>（已afk）</small>、以及其他（一时想不起来了）。<br/>"+
         "<small>想扩些能一起聊</small>脑洞<small>和</small>设定<small>的朋友 就这样吧ヽ(•̀ω•́ )ゝ</small>";
         zwjs_当前="简历版";
-    }
-    else if(zwjs_当前=="简历版"){
+    }else if(zwjs_当前=="简历版"){
         zwjs_dy="<span class=\"zhushi\">可以把鼠标移动到文字上面</span><br/>"+
         "<span onmouseover=\"javascript:this.innerHTML='仅限于在网上'\" onmouseout=\"javascript:this.innerHTML='本人热情随和'\">本人热情随和</span>、"+
         "<span onmouseover=\"javascript:this.innerHTML='朋友面前'\" onmouseout=\"javascript:this.innerHTML='活波开朗'\">活波开朗</span>、"+
@@ -78,8 +75,12 @@ function zwjs_切换(){
         "<span onmouseover=\"javascript:this.innerHTML='社交恐惧症就是我'\" onmouseout=\"javascript:this.innerHTML='社会经验相对缺乏'\">社会经验相对缺乏</span>，"+
         "<span onmouseover=\"javascript:this.innerHTML='一定会当上ＣＥＯ迎娶白富美走上人生巅峰'\" onmouseout=\"javascript:this.innerHTML='我相信透过立足于社会能不断提升发展自己'\">我相信透过立足于社会能不断提升发展自己</span>。<br/>"+
         "<a href=\"/i/zk/398645\" target=\"_blank\">更多内容</a>";
+        zwjs_当前="装逼版";
+    }else if(zwjs_当前=="装逼版"){
+        zwjs_dy="<a href=\"/who/maoqiu\" target=\"_blank\">点击查看</a>";
         zwjs_当前="自我介绍";
     }
+
     document.getElementById("zwjs_dy").innerHTML = zwjs_dy;
 }
 zwjs_切换();
@@ -98,7 +99,7 @@ zwjs_切换();
 
 <br/><hr><br/>
 
-<a name="　我喜欢的"></a><h3>我喜欢的 <small><small>点击查看↓</small></small></h3>
+<a name="　猫球的关键词"></a><h3>猫球的关键词 <small><small>点击查看详情↓</small></small></h3>
 
 <script src='{{ site.mq_d }}/5/new/svg3dtagcloud_onclick.js'></script>
 
@@ -115,6 +116,8 @@ zwjs_切换();
         "pvo／window.open('/pvoink')",
         "听歌／window.open('/tv#音乐频道')",
         "游戏／window.open('/wanyouxi')",
+        "小植物保护协会／dw(dwb='328392',dwd='小植物保护协会')",
+        "帽权协会／dw(dwb='328904',dwd='帽权协会')",
 
         //猫球家族
         "猫球家族／window.open('/maoqiujiazu')",
