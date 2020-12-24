@@ -51,88 +51,90 @@ layout: default
     <div class="body">
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <form id="输入框" autocomplete="off">
-        <input type="text" style="display:none" />
-        <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
+    <input type="text" style="display:none" />
+    <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
 
-        <div id="right_anchor"></div>
+    <div id="right_anchor"></div>
 
-        {{ content }}
+    {{ content }}
+
+    <script>
+    let right="";
+    let dy="";
+    let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
+    let datb=new Array();
+    datb=datb.concat(data)
+$("#输入").keyup(function () {
+    dy="";
+    right="";
+    let 输入 = $("#输入").val();
+    if(输入==""){
+        datb=new Array();
+        datb=datb.concat(data)
+    }else{
+        datb=new Array();
+        输入=输入.split(" ");
+
+        for(let i2=0;data.length>i2;i2++){
+            let 临时=data[i2].split("／");
+            if(临时[6]=="undefined"){
+                临时=临时[1];
+            }else{
+                临时=临时[1]+临时[6];
+            }
+            let 临时2=0;
+            for(let i=0;输入.length>i;i++){
+                if(data[i2].split("／")[0]!="hr"&&临时.indexOf(输入[i]) != -1){
+                }else{临时2=1;}
+            }
+            if(临时2==0){
+                datb[datb.length]=data[i2];
+            }
+        }
+    }
+    加载();
+});
+function 加载(){
+    let 次数=32;
+    for(let i=0;次数-i!=0&&datb.length!=0;i++){
+        let 临时=datb[0].split("／");
+        if(临时[0]=="hr"){
+            dy += "<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
+            if(临时[2]){dy+="<p>"+临时[2]+"</p>";}
+            right += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
+        }else{
+            dy+="<div class=\"cj\">";
+            if(临时[4]=="u"){
+                dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
+            }
+            if(临时[4]=="o"){
+                dy += "<a onclick=\""+临时[5]+"\">";
+            }
+            if(isNaN(临时[0])){
+            dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
+        } else {
+            dy += "<img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
+            if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
+            if (临时[3]) {dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
+            dy += "</div>";
+        }
+        datb.splice(0, 1);
+    }
+
+    if (datb != "") {
+        document.getElementById("dy").innerHTML = dy + loading;
+    } else {
+        document.getElementById("dy").innerHTML = dy;
+    }
+    document.getElementById("right_anchor").innerHTML = "<table>"+right+"</table>";
+};
+加载();
+</script>
 
         {% include footer.html %}
 
     </div>
 
-    {% include nav.html %}
+{% include nav.html %}
 
-    <script>
-        let right="";
-        let dy="";
-        let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
-        let datb=new Array();
-        datb=datb.concat(data)
-    $("#输入").keyup(function () {
-        dy="";
-        right="";
-        let 输入 = $("#输入").val();
-        if(输入==""){
-            datb=new Array();
-            datb=datb.concat(data)
-        }else{
-            datb=new Array();
-            输入=输入.split(" ");
-
-            for(let i2=0;data.length>i2;i2++){
-                let 临时=data[i2].split("／");
-                if(临时[6]=="undefined"){
-                    临时=临时[1];
-                }else{
-                    临时=临时[1]+临时[6];
-                }
-                let 临时2=0;
-                for(let i=0;输入.length>i;i++){
-                    if(data[i2].split("／")[0]!="hr"&&临时.indexOf(输入[i]) != -1){
-                    }else{临时2=1;}
-                }
-                if(临时2==0){
-                    datb[datb.length]=data[i2];
-                }
-            }
-        }
-        加载();
-    });
-    function 加载(){
-        let 次数=32;
-        for(let i=0;次数-i!=0&&datb.length!=0;i++){
-            let 临时=datb[0].split("／");
-            if(临时[0]=="hr"){
-                dy += "<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
-                if(临时[2]){dy+="<p>"+临时[2]+"</p>";}
-                right += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
-            }else{
-                dy+="<div class=\"cj\">";
-                if(临时[4]=="u"){
-                    dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
-                }
-                if(临时[4]=="o"){
-                    dy += "<a onclick=\""+临时[5]+"\">";
-                }
-                if(isNaN(临时[0])){
-                dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
-            } else {
-                dy += "<img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
-                if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
-                if (临时[3]) {dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
-                dy += "</div>";
-            }
-            datb.splice(0, 1);
-        }
-
-        if (datb != "") {
-            document.getElementById("dy").innerHTML = dy + loading;
-        } else {
-            document.getElementById("dy").innerHTML = dy;
-        }
-        document.getElementById("right_anchor").innerHTML = "<table>"+right+"</table>";
-    };
-    加载();
-    </script>
+</body>
