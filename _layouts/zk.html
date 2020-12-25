@@ -19,6 +19,7 @@ layout: default
     #right_anchor a{display:block;}
     footer {position: relative;top: 300px;z-index: -1001;}
     footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+    .juzhong{text-align:center;}
 </style>
 
 </head>
@@ -42,7 +43,7 @@ layout: default
     </div>
 
     <script>
-        if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<br/>{{ page.zk_ly }}{% else %}{% endif %}";
+        if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<span class=\"juzhong\">{{ page.zk_ly }}</span>{% endif %}";
         document.getElementById("上级").innerHTML=返回;
         document.getElementById("wen_body").className = 'body';
 
