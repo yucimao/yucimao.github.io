@@ -1,7 +1,9 @@
 ---
 layout: o
-permalink: i/Christmas_count_down
+permalink: i/christmas_count_down
 ---
+<audio id="audio" src="圣诞倒计时.mp3" style="opacity:0" preload="auto" controls loop hidden="true"> </audio>
+
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
 @keyframes santa__mov {
@@ -1048,15 +1050,23 @@ body ul, body li {
   </div>
   <div class="container">
     <div class="counterWrapper">
-      <p>距离圣诞节还有</p>
+      <p>距离圣诞节还有</p><button type="button" onclick="播放()" style="font-size:1em;">播放背景音乐</button>
       <div class="countdown"></div>
+      
       <a onclick="window.parent.location.href='{{ site.mq_i }}'" style="color:#fff;font-size:32px;">进入 猫球博客</a>
     </div>
   </div>
 </section>
 
 <script>
+  function 播放(){
+    var m1 = document.getElementById("audio");
+m1.play();
+  }
+
+
   $(function(){
+    
   $.fn.extend({
     countdown: function(props){
       props = jQuery.extend({ //Default props
@@ -1108,7 +1118,7 @@ body ul, body li {
       this.replaceWith(svg);
     }
   })
-let sdj="Dec, 27, "+new Date().getFullYear();
+let sdj="Dec, 25, "+new Date().getFullYear();
   $('.countdown').countdown({
     until: new Date(sdj)
   })
