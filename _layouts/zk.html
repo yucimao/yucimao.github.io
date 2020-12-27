@@ -53,7 +53,7 @@ layout: default
         }
         else{
             //展开的子页面
-            var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
+            var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}5{% endif %};
             var bodyJ = window.location.href.split('/i/zk/')[1];
             var bodyK = "／／" + bodyJ;
             var bodyL = "／" + bodyJ + "／";
