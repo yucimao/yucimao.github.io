@@ -1,5 +1,5 @@
 document.write("<center><span>（点击黑色部分查看内容）<br\/><\/span>");
-document.write("<span id=\"标签A\" class=\"heimu2\" style=\"font-size:5em;border:5px solid #74b8e5;\">无<\/span><br\/><br\/>");
+document.write("<span id=\"标签A\" class=\"heimu\" style=\"font-size:5em;border:5px solid #74b8e5;\">无<\/span><br\/><br\/>");
 document.write("<button type=\"button\" onclick=\"标签B()\" style=\"font-size:1.2em;\">换一个词<\/button>");
 document.write("<\/center><br\/>");
 document.write("<center><span>倒计时：<\/span><span id=\"标签C\" style=\"font-size:2em\">0<\/span><br\/>");
