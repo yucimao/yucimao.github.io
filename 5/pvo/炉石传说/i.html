@@ -2,6 +2,7 @@
 layout: o
 title: pvo
 ---
+<div style="position:absolute;bottom:10px;color:#ffffff;">本页推荐使用360浏览器查看完整效果<small>（谷歌浏览器禁止了页面自动播放音频……）</small></div>
 <style>
 html,
 body {
@@ -66,7 +67,7 @@ body:after {
 </style>
 
 <div class="card">
-	<img src="hearthstone-ragnaros.png" class="card-image" draggable="false">
+	<img src="{{ site.mq_d }}/5/pvo/炉石传说/hearthstone-ragnaros.png" class="card-image" draggable="false">
 </div>
 
 <script type="text/javascript">
@@ -145,7 +146,7 @@ body:after {
 		whooshvoltarget = 0;
 		whoosh = new Audio();
 		whoosh.addEventListener( 'canplaythrough', audioload );
-		whoosh.src = 'hs-whoosh.ogg';
+		whoosh.src = '{{ site.mq_d }}/5/pvo/炉石传说/hs-whoosh.ogg';
 		whoosh.volume = 0;
 		whoosh.loop = true;
 		
@@ -153,7 +154,7 @@ body:after {
 		majestyvoltarget = 0;
 		majesty = new Audio();
 		majesty.addEventListener( 'canplaythrough', audioload );
-		majesty.src = 'hs-majesty.ogg';
+		majesty.src = '{{ site.mq_d }}/5/pvo/炉石传说/hs-majesty.ogg';
 		majesty.volume = 0;
 		majesty.loop = true;
 	}
