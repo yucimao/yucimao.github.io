@@ -39,7 +39,8 @@ layout: default
         margin:10px;
         padding:5px 10px;
         border-width:2px;border-color:#000;border-style:solid;border-radius:10px;
-        opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
+        opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;
+        background-color: #fff;}
     .cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
     .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 157px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 22px;left: -2px;margin-left: 0px;}
     .cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
@@ -56,6 +57,8 @@ layout: default
     <form id="输入框" autocomplete="off">
     <input type="text" style="display:none" />
     <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
+
+    {% include nav.html %}
 
     {{ content }}
 
@@ -129,6 +132,6 @@ layout: default
     随机显示();
     </script>
 
-{% include nav.html %}
+
 
 </body>
