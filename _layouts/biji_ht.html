@@ -61,7 +61,7 @@ layout: default
 
     {% include popup_dw.html %}
 
-    <script>
+    <script>// 0文字／1关键词／2颜色／3额外文字／4u或o／5展开 a绿色 b红色 c灰色 d蓝色
     let dy;
     let datb;
 
@@ -81,7 +81,9 @@ layout: default
         dy="";
         for(let i=0;次数-i!=0&&datb.length!=0;i++){
             let 临时=datb[0].split("／");
-            dy+="<div class=\"cj "+临时[2]+"\">";
+            dy+="<div class=\"cj "+临时[2];
+            if(临时[3]){dy+=" tsxu";}
+            dy+="\">";
                 if(临时[4]=="u"){
                     dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
                 }
