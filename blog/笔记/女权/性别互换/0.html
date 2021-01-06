@@ -1,17 +1,10 @@
 ---
-layout: page2
+layout: cn_db
 title: 性别互换
 nav_text: 性别互换
 nav_url: <a href="/zatan">笔记</a>
 permalink: nvquan/xingbiehuhuan
 ---
-<style>
-    *{cursor:default;}
-    p.b{margin-top:-12px;border: 1px solid #c0c0c0;padding:8px;border-radius: 12px;}
-</style>
-
-<div id="dy"></div>
-
 <script>
 let data=new Array(
 "微博网友：<br>我妈的锁屏照：我爸的自拍。<br>我爸的锁屏照：范冰冰的自拍。<br>我妈强烈抗议，说我爸要是不换成她拿着饭勺的摆拍照就要把手机换成苏有朋的锁屏，我爸说：“苏有朋有我帅吗？”<br>我妈求生欲很强，选择不反驳：“没有。”接着又不甘心地问了一句：“范冰冰和我比怎么样？”<br>我爸（大吼）：“我不许你的狗嘴里吐出范冰冰三个字！<b>闭嘴！恶心！</b>”<br><br>评论：好可爱，妈妈属于贤妻良母。<br>评论：妈妈秒怂好可爱。<br>评论：好有爱，被塞了一嘴狗粮。<br><br><small>（点赞5.8万，转发1万，热评都是称赞）</small>／"+
@@ -98,29 +91,5 @@ let datb=[
 
 "<br/>",
 ];
-
-let p = Array.from(data), i, a = [];
-        while (p.length > 0) {
-            i = parseInt(Math.random() * p.length);
-            a.push(p[i]);
-            p.splice(i, 1);
-        }
-
-        data = a;
-
-let dy="";
-
-data=datb.concat(data);
-
-for (let i=0;data.length>i;i++){
-    if(data[i].indexOf("／") != -1){
-        let 临时=data[i].split("／");
-        dy += "<p class=\"b\" onmouseover=\"javascript:this.innerHTML='" + 临时[1] + "'\" onmouseout=\"javascript:this.innerHTML='" + 临时[0] + "'\">" + 临时[0] + "</p>";
-    }else{
-        dy+="<p class=\"b\">"+data[i]+"</p>";
-    }
-}
-
-document.getElementById("dy").innerHTML = dy;
 
 </script>
