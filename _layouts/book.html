@@ -32,13 +32,13 @@ layout: default
     <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% endif %}</div>
     <div class="auth">{% if page.wen_auth %}<span class="auth">作者：{{ page.wen_auth }}</span>{% endif %}{% if page.wen_sta %}<span class="auth">状态：{{ page.wen_sta }}</span>{% endif %}<input id="输入" placeholder="搜索" autocomplete="off"/></div>
     <hr>
-    <div class="auth"><a href="#到达底部" name="返回顶部"><span class="auth">到达底部</span></a><span id="上次看到" class="auth"></span></div>
+    <div class="auth"><a href="#前往底部" name="返回顶部"><span class="auth">前往底部</span></a><span id="上次看到" class="auth"></span></div>
     <br/>
     <div id="right_anchor"></div>
 
     {{ content }}
 
-    <a href="#返回顶部" name="到达底部"><div class="auth" style="border-top:2px solid #ddd"><br/><span class="auth">返回顶部</span></div></a>
+    <a href="#返回顶部" name="前往底部"><div class="auth" style="border-top:2px solid #ddd"><br/><span class="auth">返回顶部</span></div></a>
     {% include footer.html %}
 </div>
 
@@ -81,7 +81,7 @@ let anchor = document.querySelectorAll('a');
         if (anchor[0]) {
             let anchor_dy = "<table>";
             for (let i = 0; i < anchor.length; i++) {
-                if (anchor[i]["name"] && anchor[i]["name"]!=="到达底部" && anchor[i]["name"]!=="返回顶部") {
+                if (anchor[i]["name"] && anchor[i]["name"]!=="前往底部" && anchor[i]["name"]!=="返回顶部") {
                     anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
                 }
             }
