@@ -1,0 +1,44 @@
+---
+layout: page
+title: 私人网页
+nav_text: 私人网页
+nav_color: ffffff
+permalink: private
+---
+<style>
+    .tsx {  /*底部提示框*/
+        position: relative;
+        display: inline-block;
+    }
+
+    .tsx .tsxt {
+        border: 1px solid #c0c0c0;
+        visibility: hidden;
+        width: 400px;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        
+        /* 定位 */
+        position: absolute;
+        z-index: 1;
+        top: 80%;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    .tsx:hover .tsxt {
+        transform:translate(0,20px);
+        transition:all 0.5s;
+        visibility: visible;
+    }
+    </style>
+
+    <a href="/zawuqingdan" class="anniu">杂物清单</a>
+    <a href="/jiyisuipian" class="anniu">记忆碎片</a>
+    <a href="/biji/ktv" class="anniu">KTV歌单</a>
+    <a href="/make" class="anniu">稍后再看</a>
+    <a href="/make/gjc" class="anniu">稍后再看-关键词</a>
+    <a href="/biji/blacklist" class="anniu">黑名单记录</a>
+
