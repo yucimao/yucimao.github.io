@@ -1,0 +1,103 @@
+---
+layout: o
+title: 记忆碎片
+nav_text: 吉艺碎片
+nav_url: <a href="/private">私人网页</a>
+permalink: ceshi/jiyisuipian
+---
+<script src='{{ site.mq_d }}/5/new/svg3dtagcloud_onclick.js'></script>
+
+{% include popup_dw.html %}
+
+<a name="　猫球的关键词"></a><h3>猫球的关键词 <small><small>点击查看详情↓</small></small></h3>
+
+<script src='{{ site.mq_d }}/5/new/svg3dtagcloud_onclick.js'></script>
+
+{% include popup_dw.html %}
+
+<div id="tag-cloud"></div>
+
+<script>
+    let entries=[];
+    let tagcloud=[
+        //"／dw(dwb='',dwd='狗球')",
+        //"／window.open('')",
+        //"／dw(dwb='<img src=\"{{ site.mq_d }}/img/i/chengjiu/\"/>',dwd='狗球')",
+        "pvo／window.open('/pvoink')",
+        "听歌／window.open('/tv#音乐频道')",
+        "游戏／window.open('/wanyouxi')",
+        "小植物保护协会／dw(dwb='328392',dwd='小植物保护协会')",
+        "帽权协会／dw(dwb='328904',dwd='帽权协会')",
+
+        //猫球家族
+        "猫球家族／window.open('/maoqiujiazu')",
+        "二扯／dw(dwb='398647',dwd='二扯')",
+        "猪又／dw(dwb='398538',dwd='猪又')",
+        "胡糊／dw(dwb='398544',dwd='胡糊')",
+        "狗球／dw(dwb='398556',dwd='狗球')",
+        "刺猬猬／dw(dwb='398548',dwd='刺猬猬')",
+        "傻子／dw(dwb='398553',dwd='傻子')",
+        "秃子／dw(dwb='398551',dwd='秃子')",
+        "姜饼人／dw(dwb='398559',dwd='姜饼人')",
+        "吵鸭／dw(dwb='398562',dwd='吵鸭')",
+        "哎鸭／dw(dwb='398566',dwd='哎鸭')",
+        "小居／dw(dwb='398568',dwd='小居')",
+
+        //场景
+        "彩色烟囱／dw(dwb='哈尔滨一处不起眼的角落<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/653333.jpg\"/>')",
+        "中央大街／dw(dwb='哈尔滨中央大街<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/657414.jpg\"/>')",
+        "星海广场／dw(dwb='大连星海广场<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/657416.jpg\"/>')",
+
+        //服装
+        "帽子／dw(dwb='不戴帽子不出门星人<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/653354.jpg\"/>',dwd='帽子')",
+        "巫师帽／dw(dwb='一套中二的衣服<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/653365.jpg\"/>',dwd='巫师帽')",
+        "风衣+猫／dw(dwb='一套喜欢的套装<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/657415.jpg\"/>',dwd='风衣+猫')",
+
+        //小物件
+        "小黄鸭／dw(dwb='<img src=\"{{ site.mq_d }}/img/i/chengjiu/653353.jpg\"/>',dwd='小黄鸭')",
+        "怨影娃娃／dw(dwb='出自精灵宝可梦<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/653355.jpg\"/>',dwd='怨影娃娃')",
+        "骰子／dw(dwb='不小心买了好多<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/653366.jpg\"/>',dwd='骰子')",
+        "鼠标球／dw(dwb='现在也算“老物件”了吧？<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/653368.jpg\"/>',dwd='鼠标球')",
+        ":O :D／dw(dwb='最喜欢的两个颜文字<br/><img src=\"{{ site.mq_d }}/img/i/chengjiu/671139.jpg\"/>',dwd=':O :D')",
+
+    ];
+
+    let p = Array.from(tagcloud), i, a = [];
+        while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+        tagcloud = a;
+
+    for(let i=0;tagcloud.length>i;i++){
+        if(i<30){
+            let 临时=tagcloud[i].split("／");
+            let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+            let 颜色_i=i%颜色.length;
+            entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
+        }
+    }
+
+    let settings = {
+    entries: entries,
+    width: 640,
+    height: 480,
+    radius: '80%',
+    radiusMin: 100,
+    bgDraw: false,
+    opacityOver: 1.00,
+    opacityOut: 0.15,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 0.4,
+    fontSize: '20',
+    fontColor: '#009688',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    fontToUpperCase: false
+};
+$( '#tag-cloud' ).svg3DTagCloud( settings );
+</script>
