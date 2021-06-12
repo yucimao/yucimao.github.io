@@ -1,0 +1,27 @@
+---
+layout: zk
+title: MQF热投榜
+nav_text: MQF热投榜
+nav_url: <a href="/mqf">MQ基金会</a>
+permalink: i/zk/2296895
+---
+如今各大榜单的买热搜、买水军、刷数据层出不穷，甚至有人为了用瓶盖内的二维码来投票，将成箱的牛奶倒进下水道，造成浪费。<br>
+在这样的环境下，MQF热投榜横空出世，省去中间环节，没有中间商赚差价，一切以打给MQF基金会的实际金额为准，还原明星粉丝最真实的经济实力。<br>
+<br>
+
+<div id="dy"></div>
+<script>
+let data=new Array(
+"李猫球／1",
+);
+
+    let dy="<table><tr><th>排名</th><th>名字</th><th>热度</th></tr>";
+    for(let i=0;data.length>i;i++){
+        let 临时=i+1;
+        let 临时2=data[i].split("／")
+        dy+="<tr><td>"+临时+"</td><td>"+临时2[0]+"</td><td>"+临时2[1]+"</td></tr>";
+}
+dy+="</table>"
+
+document.getElementById("dy").innerHTML = dy;
+</script>
