@@ -1,0 +1,52 @@
+<style>
+    #alert {
+    text-align: center;
+    background-color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    display: none;
+    padding:2px;
+    border:1px solid rgb(82, 82, 82);
+    }
+    </style>
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    <div id="alert"></div>
+        
+        <span id="测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊_bl1测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊_bl1测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊_bl1myq_bl1myq_bl1myq_bl1" onMouseOver="myq_cf('测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊_bl1测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊_bl1测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊测试啊_bl1myq_bl1myq_bl1myq_bl1')">1</span>111111111111111111111111111<br>
+        <span id="myq_bl2" onMouseOver="myq_cf('myq_bl2')">2</span>2222222222222222222222222222
+        
+        <script>
+    
+        let alert = document.getElementById("alert");
+        function myq_cf(myq_bl){
+            let click = document.getElementById(myq_bl);
+    
+            let JsonUrl = "https://limaoqiu.com/i/sjtk/588747.json";
+        let GetJson = $.ajax({
+            url: JsonUrl,
+            type: "GET",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+            }
+        });
+    
+        let 临时 = GetJson.responseText;
+        alert(临时);
+    
+    
+    
+            document.getElementById("alert").innerHTML = myq_bl;
+            click.onmousemove = function (e) {
+            alert.style.left = e.clientX + 20 + "px"
+            alert.style.top = e.clientY + 10 + "px"
+            alert.style.display = "block";
+        }
+        
+        click.onmouseout = function (e) {
+            alert.style.display = "none";
+        }
+        }
+        </script>
