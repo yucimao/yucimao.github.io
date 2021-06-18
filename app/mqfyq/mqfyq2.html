@@ -254,10 +254,10 @@ $(function () {
                 
 
                 替换 = new RegExp('／', "g");
-                输入 = 输入.replace(替换, '');
+                结果 = 结果.replace(替换, '');
 
                 替换 = new RegExp('　', "g");
-                输入 = 输入.replace(替换, '<br />');
+                结果 = 结果.replace(替换, '<br />');
 
                 document.getElementById("标签").innerHTML = 结果;
         });
@@ -271,7 +271,7 @@ function myq_cf(myq_bm){
         let click = document.getElementById("myq_id"+临时[0]);
         let 显示="";
 
-        for(let i=0;临时.length>i;i++){
+        for(let i=1;临时.length>i;i++){
             if(显示==""){
                 显示=临时[i];
             }else{
