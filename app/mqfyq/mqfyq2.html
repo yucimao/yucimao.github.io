@@ -183,8 +183,6 @@ z-index: 100;
 
 [id^="myq_id"]{color:#006688;}
 </style>
-
-<div id="toolTipLayer" style="position:absolute; visibility: hidden"></div>
 <div id="alert"></div>
 <script>
     let JsonUrl = "/app/mqfyq/mqfyq.json";
@@ -290,9 +288,6 @@ function myq_cf(myq_bm){
     显示+=GetJson.responseText;
         }
 
-
-
-        document.getElementById("alert").innerHTML = "加载中";
         document.getElementById("alert").innerHTML = 显示;
         click.onmousemove = function (e) {
         alert.style.left = e.clientX + 20 + "px"
@@ -385,10 +380,12 @@ function myq_cf(myq_bm){
 
 
 <div style="text-align: center">
+    <p id="标签" class="jieguo"></p>
+
         <form id="输入框" autocomplete="off">
                 <textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
 
-        <p id="标签" class="jieguo"></p>
+
 
         <script>
                 var text = document.getElementById("输入");
