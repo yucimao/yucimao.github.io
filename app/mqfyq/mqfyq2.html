@@ -173,13 +173,15 @@ permalink: mqfyq2
 #alert {
 text-align: center;
 background-color: #ffffff;
-font-size: 20px;
+font-size: 10px;
 position: absolute;
 display: none;
 padding:2px;
 border:1px solid rgb(82, 82, 82);
 z-index: 100;
 }
+
+[id^="myq_id"]{color:#006688;}
 </style>
 
 <div id="toolTipLayer" style="position:absolute; visibility: hidden"></div>
@@ -273,9 +275,9 @@ function myq_cf(myq_bm){
 
         for(let i=1;临时.length>i;i++){
             if(显示==""){
-                显示=临时[i];
+                显示="【"+临时[i]+"】：";
             }else{
-                显示+="<br><br>"+临时[i];
+                显示+="<br>【"+临时[i]+"】：";
             }
         let JsonUrl = "/i/myq/"+临时[i]+".json";
     let GetJson = $.ajax({
@@ -287,7 +289,7 @@ function myq_cf(myq_bm){
         }
     });
 
-    显示+="<br>"+ GetJson.responseText;
+    显示+=GetJson.responseText;
         }
 
 
