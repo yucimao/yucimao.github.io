@@ -5,262 +5,115 @@ nav_url: <a href="/xiaogongju">小工具</a>
 permalink: mqfyq2
 ---
 <html lang="zh">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="keywords" content="{% if page.keywords %}{{ site.keywords }},{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="keywords" content="{% if page.keywords %}{{ site.keywords }},{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
-
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="shortcut icon" href="/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/all.css">
-    <script src="/js/jquery.min.js"></script>
-
-    <!-- <link rel="stylesheet" href="{{ site.mq_d }}/css/all.css">
-    <script src="{{ site.mq_d }}/js/jquery.min.js"></script> -->
-    <base rel="noopener noreferrer" />
+<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<link rel="shortcut icon" href="/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
+<link rel="stylesheet" href="{{ site.mq_d }}/css/all.css">
+<script src="{{ site.mq_d }}/js/jquery.min.js"></script>
+<base rel="noopener noreferrer" />
 
 <style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    #nav {
-        position: absolute;
-        width: 100%;
-    }
-
-    #nav a {
-        color: #404040;
-        font-weight: 800;
-        height: 50px;
-        padding: 15px 15px;
-        line-height: 20px;
-        text-decoration: none;
-    }
-
-    #nav a:hover {
-        color: #0085A1;
-    }
-
-    #nav :first-child {
-        float: left;
-        font-size: 18px;
-    }
-
-    #nav :not(:first-child) {
-        float: right;
-        font-size: 12px;
-    }
-
-    @media screen and (min-width: 768px) {
-
-        /*电脑*/
-        .biaotib {
-            text-align: center;
-            position: relative;
-            top: 40px;
-            font-size: 3.5em;
-            color: #0bb1f5;
-            font-weight: bold;
-            cursor: default;
-        }
-
-        div.body {
-            position: relative;
-            top: 50px;
-            width: 65%;
-            margin: auto;
-        }
-
-        #back-top {
-            position: fixed;
-            left: 85%;
-            bottom: 10%;
-        }
-
-        #back-top a {
-            width: 70px;
-            height: 70px;
-            display: block;
-            background: url(/img/back-top.png) no-repeat center center;
-            border-radius: 20px;
-            -webkit-transition: 2s;
-            -moz-transition: 2s;
-            transition: 2s;
-        }
-
-        #back-top a:hover {
-            transform: translate(0px, 20px);
-            -ms-transform: translate(0px, 20px);
-            -webkit-transform: translate(0px, 20px);
-        }
-
-        #back-top a:active {
-            transform: translate(0px, -400px);
-            -ms-transform: translate(0px, -400px);
-            -webkit-transform: translate(0px, -400px);
-        }
-    }
-
-    /*电脑*/
-
-    @media screen and (max-width: 768px) {
-
-        /*手机*/
-        .biaotib {
-            text-align: center;
-            position: relative;
-            top: 50px;
-            font-size: 2.3em;
-            color: #0bb1f5;
-            font-weight: bold;
-            cursor: default;
-        }
-
-        div.body {
-            position: relative;
-            top: 50px;
-            width: 96%;
-            margin: auto;
-        }
-    }
-
-    /*手机*/
-
-    footer {
-        position: relative;
-        top: 300px;
-    }
-
-    footer img {
-        position: relative;
-        bottom: 50px;
-        display: block;
-        margin: 0 auto;
-    }
-.jieguo {
-        font-size: 1.2em;
+html,body {margin: 0;padding: 0;}
+#nav {position: absolute;width: 100%;}
+#nav a {color: #404040;font-weight: 800;height: 50px;padding: 15px 15px;line-height: 20px;text-decoration: none;}
+#nav a:hover {color: #0085A1;}
+#nav :first-child {float: left;font-size: 18px;}
+#nav :not(:first-child) {float: right;font-size: 12px;}
+@media screen and (min-width: 768px) {
+/*电脑*/
+.biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+#back-top {position: fixed;left: 85%;bottom: 10%;}
+#back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}
+#back-top a:hover {transform: translate(0px, 20px);-ms-transform: translate(0px, 20px);-webkit-transform: translate(0px, 20px);}
+#back-top a:active {transform: translate(0px, -400px);-ms-transform: translate(0px, -400px);-webkit-transform: translate(0px, -400px);}
 }
-
-#输入框 textArea {
-        ime-mode: inactive;
-        ime-mode: disabled;
-        border: none;
-        font-size: 1.4em;
-        padding: .5em .7em;
-        max-width: 30em;
-        width: 70%;
-        background: #F8F8F8;
-        box-shadow:
-                0 0 0 1px #DDD inset,
-                0 1px 2px rgba(0, 0, 0, .2);
-        transition: box-shadow .3s ease;
-        border-radius: 4px;
-        text-align: center;
-        -webkit-appearance: none;
+/*电脑*/
+@media screen and (max-width: 768px) {
+/*手机*/
+.biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+div.body {position: relative;top: 50px;width: 96%;margin: auto;}
 }
-
-#输入框 textArea:focus {
-        box-shadow:
-                0 0 0 2px #58a4dd inset,
-                0 3px 3px rgba(0, 0, 0, .2) inset;
-}
-
-#alert {
-text-align: center;
-background-color: #ffffff;
-font-size: 12px;
-position: absolute;
-display: none;
-padding:2px;
-border:1px solid rgb(82, 82, 82);
-z-index: 100;
-}
-
+/*手机*/
+footer {position: relative;top: 300px;}
+footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+.jieguo {font-size: 1.2em;}
+#输入框 textArea {ime-mode: inactive;ime-mode: disabled;border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 70%;background: #F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}
+#输入框 textArea:focus {box-shadow:0 0 0 2px #58a4dd inset,0 3px 3px rgba(0, 0, 0, .2) inset;}
+#alert {text-align: center;background-color: #ffffff;font-size: 12px;position: absolute;display: none;padding:2px;border:1px solid rgb(82, 82, 82);z-index: 100;}
 [id^="myq_id"]{color:#006688;}
+.myq_tc{border-style: solid;}
 </style>
+<body onload="document.getElementById('输入').focus()">
 <div id="alert"></div>
 <script>
-    let JsonUrl = "/app/mqfyq/mqfyq.json";
-    let GetJson = $.ajax({
-        url: JsonUrl,
-        type: "GET",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-        }
-    });
-
-    let 数据=GetJson.responseText;
-
-    let 字典;
+let JsonUrl = "/app/mqfyq/mqfyq.json";let GetJson = $.ajax({url: JsonUrl,type: "GET",dataType: "json",async: false,success: function (data) {}});
+let 数据=GetJson.responseText;let 字典;
 $(function () {
-        $("#输入").keyup(function () {
+    $("#输入").keyup(function () {
+        let 输入 = document.getElementById("输入").value;
+        let 替换;
+        字典=new Array();
 
-                let 输入 = document.getElementById("输入").value;
-                let 替换;
-                字典=new Array();
+        替换 = new RegExp('　', "g");
+        输入 = 输入.replace(替换, ' ');
 
-                替换 = new RegExp('　', "g");
-                输入 = 输入.replace(替换, ' ');
+        替换 = new RegExp('\n', "g");
+        输入 = 输入.replace(替换, '　');
+        替换 = new RegExp('', "g");
+        输入 = 输入.replace(替换, '／');
+        输入 = 输入.toLowerCase();
 
-                替换 = new RegExp('\n', "g");
-                输入 = 输入.replace(替换, '　');
-                替换 = new RegExp('', "g");
-                输入 = 输入.replace(替换, '／');
-                输入 = 输入.toLowerCase();
+        let 数据a = 数据.split("［");
+        for (let i = 1; i < 数据a.length; i++){
+            let 数据b=数据a[i].split("］");
+            let 数据c=数据b[0];
+            替换 = new RegExp('', "g");
+            数据c = 数据c.replace(替换, '／');
 
-                let 数据a = 数据.split("［");
-                for (let i = 1; i < 数据a.length; i++){
-                    let 数据b=数据a[i].split("］");
-                    let 数据c=数据b[0];
-                    替换 = new RegExp('', "g");
-                    数据c = 数据c.replace(替换, '／');
-
-                    if (输入.indexOf(数据c) != -1){
-                        if(数据b[1]==""){
-                            数据b="［"+数据b[0]+"］";
-                        }else{
-                            数据b="［"+数据b[0]+","+数据b[1]+"］";
-                        }
-
-                        替换 = new RegExp(数据c, "g");
-                        输入 = 输入.replace(替换, 数据b);
-                    }
-                }
-
-                let 结果;
-                if (输入.indexOf("［") != -1){
-                    let 临时数=0;
-                let 临时数2;
-                数据a=输入.split("［");
-                结果=数据a[0];
-                for(let i=1;i<数据a.length;i++){
-                    临时数2=i;
-                    let 临时数据=数据a[i].split("］");
-                    let 临时数据2=临时数据[0].split(",");
-                    结果+="<span id=\"myq_id"+临时数+"\" onMouseOver=\"myq_cf('"+临时数+","+临时数据[0]+"')\">"+临时数据2[0]+"</span>"+临时数据[1];
-                    临时数+=1;
-                }
+            if (输入.indexOf(数据c) != -1){
+                if(数据b[1]==""){
+                    数据b="［"+数据b[0]+"］";
                 }else{
-                    结果=输入;
+                    数据b="［"+数据b[0]+","+数据b[1]+"］";
                 }
-                
 
-                替换 = new RegExp('／', "g");
-                结果 = 结果.replace(替换, '');
+                替换 = new RegExp(数据c, "g");
+                输入 = 输入.replace(替换, 数据b);
+            }
+        }
 
-                替换 = new RegExp('　', "g");
-                结果 = 结果.replace(替换, '<br />');
+        let 结果;
+        if (输入.indexOf("［") != -1){
+            let 临时数=0;
+        let 临时数2;
+        数据a=输入.split("［");
+        结果=数据a[0];
+        for(let i=1;i<数据a.length;i++){
+            临时数2=i;
+            let 临时数据=数据a[i].split("］");
+            let 临时数据2=临时数据[0].split(",");
+            结果+="<span id=\"myq_id"+临时数+"\" onMouseOver=\"myq_cf('"+临时数+","+临时数据[0]+"')\">"+临时数据2[0]+"</span>"+临时数据[1];
+            临时数+=1;
+        }
+        }else{
+            结果=输入;
+        }
 
-                document.getElementById("标签").innerHTML = 结果;
-        });
+        替换 = new RegExp('／', "g");
+        结果 = 结果.replace(替换, '');
+
+        替换 = new RegExp('　', "g");
+        结果 = 结果.replace(替换, '<br />');
+
+        document.getElementById("标签").innerHTML = 结果;
+    });
 });
-
 
 let alert = document.getElementById("alert");
 let myq_bm="无";
@@ -270,11 +123,12 @@ function myq_cf(myq_bm){
         let 显示="";
 
         for(let i=1;临时.length>i;i++){
-            if(显示==""){
-                显示=临时[i]+"：";
-            }else{
-                显示+="<br>"+临时[i]+"：";
-            }
+            // if(显示==""){
+            //     显示=临时[i]+"：";
+            // }else{
+            //     显示+="<br>"+临时[i]+"：";
+            // }
+            显示+="<div class=\"myq_tc\">"+临时[i]+"：";
         let JsonUrl = "/i/myq/"+临时[i]+".json";
     let GetJson = $.ajax({
         url: JsonUrl,
@@ -285,7 +139,7 @@ function myq_cf(myq_bm){
         }
     });
 
-    显示+=GetJson.responseText;
+    显示+=GetJson.responseText+"</div>";
         }
 
         document.getElementById("alert").innerHTML = 显示;
@@ -299,10 +153,7 @@ function myq_cf(myq_bm){
         alert.style.display = "none";
     }
     }
-
-
 </script>
-
 <script>
     var autoTextarea = function (elem, extra, maxHeight) {
             extra = extra || 0;
@@ -376,21 +227,17 @@ function myq_cf(myq_bm){
 <!-- 能不能好好说话 -->
 <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
-<br />
-
 
 <div style="text-align: center">
-    <p id="标签" class="jieguo"></p>
+<p id="标签" class="jieguo"></p>
 
-        <form id="输入框" autocomplete="off">
-                <textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
+<form id="输入框" autocomplete="off">
+<textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
 
-
-
-        <script>
-                var text = document.getElementById("输入");
-                autoTextarea(text);
-        </script>
+<script>
+var text = document.getElementById("输入");
+autoTextarea(text);
+</script>
 </div>
 <br /><br />
 
@@ -438,3 +285,5 @@ fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.andro
 <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
 
 </div>
+</body>
+</html>
