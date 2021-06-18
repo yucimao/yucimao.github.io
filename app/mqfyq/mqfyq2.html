@@ -173,7 +173,7 @@ permalink: mqfyq2
 #alert {
 text-align: center;
 background-color: #ffffff;
-font-size: 10px;
+font-size: 12px;
 position: absolute;
 display: none;
 padding:2px;
@@ -245,11 +245,9 @@ $(function () {
                     临时数2=i;
                     let 临时数据=数据a[i].split("］");
                     let 临时数据2=临时数据[0].split(",");
-                    结果+="<span id=\"myq_id"+临时数+"\" onMouseOver=\"myq_cf('"+临时数+","+临时数据[0]+"')\">"+临时数据2[0]+"</span>";
+                    结果+="<span id=\"myq_id"+临时数+"\" onMouseOver=\"myq_cf('"+临时数+","+临时数据[0]+"')\">"+临时数据2[0]+"</span>"+临时数据[1];
                     临时数+=1;
                 }
-                临时数2=数据a[临时数2].split("］")[1];
-                结果+=临时数2;
                 }else{
                     结果=输入;
                 }
@@ -275,9 +273,9 @@ function myq_cf(myq_bm){
 
         for(let i=1;临时.length>i;i++){
             if(显示==""){
-                显示="【"+临时[i]+"】：";
+                显示=临时[i]+"：";
             }else{
-                显示+="<br>【"+临时[i]+"】：";
+                显示+="<br>"+临时[i]+"：";
             }
         let JsonUrl = "/i/myq/"+临时[i]+".json";
     let GetJson = $.ajax({
