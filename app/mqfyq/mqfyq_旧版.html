@@ -1,0 +1,482 @@
+---
+title: 猫球翻译器
+nav_text: 猫球翻译器
+nav_url: <a href="/xiaogongju">小工具</a>
+permalink: mqfyq/old
+---
+<html lang="zh">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ site.keywords }},{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="shortcut icon" href="/{% if page.favicon %}{{ page.favicon }}{% else %}{{ site.favicon }}{% endif %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ site.mq_d }}/css/all.css">
+    <base rel="noopener noreferrer" />
+
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav {
+        position: absolute;
+        width: 100%;
+    }
+
+    #nav a {
+        color: #404040;
+        font-weight: 800;
+        height: 50px;
+        padding: 15px 15px;
+        line-height: 20px;
+        text-decoration: none;
+    }
+
+    #nav a:hover {
+        color: #0085A1;
+    }
+
+    #nav :first-child {
+        float: left;
+        font-size: 18px;
+    }
+
+    #nav :not(:first-child) {
+        float: right;
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 768px) {
+
+        /*电脑*/
+        .biaotib {
+            text-align: center;
+            position: relative;
+            top: 40px;
+            font-size: 3.5em;
+            color: #0bb1f5;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        div.body {
+            position: relative;
+            top: 50px;
+            width: 65%;
+            margin: auto;
+        }
+
+        #back-top {
+            position: fixed;
+            left: 85%;
+            bottom: 10%;
+        }
+
+        #back-top a {
+            width: 70px;
+            height: 70px;
+            display: block;
+            background: url(/img/back-top.png) no-repeat center center;
+            border-radius: 20px;
+            -webkit-transition: 2s;
+            -moz-transition: 2s;
+            transition: 2s;
+        }
+
+        #back-top a:hover {
+            transform: translate(0px, 20px);
+            -ms-transform: translate(0px, 20px);
+            -webkit-transform: translate(0px, 20px);
+        }
+
+        #back-top a:active {
+            transform: translate(0px, -400px);
+            -ms-transform: translate(0px, -400px);
+            -webkit-transform: translate(0px, -400px);
+        }
+    }
+
+    /*电脑*/
+
+    @media screen and (max-width: 768px) {
+
+        /*手机*/
+        .biaotib {
+            text-align: center;
+            position: relative;
+            top: 50px;
+            font-size: 2.3em;
+            color: #0bb1f5;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        div.body {
+            position: relative;
+            top: 50px;
+            width: 96%;
+            margin: auto;
+        }
+    }
+
+    /*手机*/
+
+    footer {
+        position: relative;
+        top: 300px;
+    }
+
+    footer img {
+        position: relative;
+        bottom: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<style>
+.jieguo {
+        font-size: 1.2em;
+}
+
+#输入框 textArea {
+        ime-mode: inactive;
+        ime-mode: disabled;
+        border: none;
+        font-size: 1.4em;
+        padding: .5em .7em;
+        max-width: 30em;
+        width: 70%;
+        background: #F8F8F8;
+        box-shadow:
+                0 0 0 1px #DDD inset,
+                0 1px 2px rgba(0, 0, 0, .2);
+        transition: box-shadow .3s ease;
+        border-radius: 4px;
+        text-align: center;
+        -webkit-appearance: none;
+}
+
+#输入框 textArea:focus {
+        box-shadow:
+                0 0 0 2px #58a4dd inset,
+                0 3px 3px rgba(0, 0, 0, .2) inset;
+}
+</style>
+
+<body onload="document.getElementById('输入').focus()">
+<script>
+var rT = true;
+var bT = true;
+var tw = "100%";
+var endaction = false;
+var ns4 = document.layers;
+var ns6 = document.getElementById && !document.all;
+var ie4 = document.all;
+offsetX = 0;
+offsetY = 20;
+var toolTipSTYLE = "";
+function initToolTips() {
+        if (ns4 || ns6 || ie4) {
+                if (ns4) toolTipSTYLE = document.toolTipLayer;
+                else if (ns6) toolTipSTYLE = document.getElementById("toolTipLayer").style;
+                else if (ie4) toolTipSTYLE = document.all.toolTipLayer.style;
+                if (ns4) document.captureEvents(Event.MOUSEMOVE);
+                else {
+                        toolTipSTYLE.visibility = "visible";
+                        toolTipSTYLE.display = "none";
+                }
+                document.onmousemove = moveToMouseLoc;
+        }
+}
+function toolTip(msg, fg, bg) {
+        if (toolTip.arguments.length < 1) {
+                if (ns4) {
+                        toolTipSTYLE.visibility = "hidden";
+                }
+                else {
+                        if (!endaction) { toolTipSTYLE.display = "none"; }
+                        if (rT) document.all("msg1").filters[1].Apply();
+                        if (bT) document.all("msg1").filters[2].Apply();
+                        document.all("msg1").filters[0].opacity = 0;
+                        if (rT) document.all("msg1").filters[1].Play();
+                        if (bT) document.all("msg1").filters[2].Play();
+                        if (rT) {
+                                if (document.all("msg1").filters[1].status == 1 || document.all("msg1").filters[1].status == 0) {
+                                        toolTipSTYLE.display = "none";
+                                }
+                        }
+                        if (bT) {
+                                if (document.all("msg1").filters[2].status == 1 || document.all("msg1").filters[2].status == 0) {
+                                        toolTipSTYLE.display = "none";
+                                }
+                        }
+                        if (!rT && !bT) toolTipSTYLE.display = "none";
+                }
+        }
+        else {
+                if (!fg) fg = "#404040";
+                if (!bg) bg = "#ffffff";
+                var content =
+                        '<table id="msg1" name="msg1" border="0" cellspacing="0" cellpadding="1" bgcolor="' + fg + '" class="trans_msg"><td>' +
+                        '<table border="0" cellspacing="0" cellpadding="3" bgcolor="' + bg +
+                        '"><td width=' + tw + '><font class="jieguo" face="Arial" color="' + fg +
+                        '" size="-2">' + msg +
+                        '</font></td></table></td></table>';
+                if (ns4) {
+                        toolTipSTYLE.document.write(content);
+                        toolTipSTYLE.document.close();
+                        toolTipSTYLE.visibility = "visible";
+                }
+                if (ns6) {
+                        document.getElementById("toolTipLayer").innerHTML = content;
+                        toolTipSTYLE.display = 'block'
+                }
+                if (ie4) {
+                        document.all("toolTipLayer").innerHTML = content;
+                        toolTipSTYLE.display = 'block'
+                        var cssopaction = document.all("msg1").filters[0].opacity
+                        document.all("msg1").filters[0].opacity = 0;
+                        if (rT) document.all("msg1").filters[1].Apply();
+                        if (bT) document.all("msg1").filters[2].Apply();
+                        document.all("msg1").filters[0].opacity = cssopaction;
+                        if (rT) document.all("msg1").filters[1].Play();
+                        if (bT) document.all("msg1").filters[2].Play();
+                }
+        }
+}
+function moveToMouseLoc(e) {
+        if (ns4 || ns6) {
+                x = e.pageX;
+                y = e.pageY;
+        }
+        else {
+                x = event.x + document.body.scrollLeft;
+                y = event.y + document.body.scrollTop;
+        }
+        toolTipSTYLE.left = x + offsetX;
+        toolTipSTYLE.top = y + offsetY;
+        return true;
+}
+</script>
+<div id="toolTipLayer" style="position:absolute; visibility: hidden"></div>
+<script>initToolTips()</script>
+
+<script src="{{ site.mq_d }}/js/jquery.min.js"></script>
+<script src="{{ site.mq_d }}/app/mqfyq/mqfyq.js"></script>
+
+<script>
+$(function () {
+        $("#输入").keyup(function () {
+
+                var 输入 = document.getElementById("输入").value;
+                var 替换;
+
+                替换 = new RegExp('　', "g");
+                输入 = 输入.replace(替换, ' ');
+
+                替换 = new RegExp('\n', "g");
+                输入 = 输入.replace(替换, '　');
+                替换 = new RegExp('', "g");
+                输入 = 输入.replace(替换, '／');
+                输入 = 输入.toLowerCase();
+
+                var 数据a = 数据.split("]");
+                var 数据b;
+                var 数据c;
+                var 数据d;
+
+                for (i = 0; i < 数据a.length; i++) {
+                        数据b = 数据a[i].split("[");
+                        if (数据b[2] == "0") {
+                                替换 = new RegExp('', "g");
+                                数据c = "(" + 数据b[1].replace(替换, '［］') + ")";
+                                数据c = 数据b[0] + 数据c;
+                                数据d = 数据b[0].replace(替换, '／');
+                                替换 = new RegExp('^／', "g");
+                                数据d = 数据d.replace(替换, '');
+                                替换 = new RegExp(数据d, "g");
+                                输入 = 输入.replace(替换, 数据c);
+                        }
+                        else {
+                                数据c = "［0］" + 数据b[1] + "［1］" + 数据b[0] + "［2］";
+                                替换 = new RegExp('', 'g');
+                                数据d = 数据b[0].replace(替换, '／');
+                                替换 = new RegExp('^／', 'g');
+                                数据d = 数据d.replace(替换, '');
+                                替换 = new RegExp(数据d, "g");
+                                输入 = 输入.replace(替换, 数据c);
+                        }
+                }
+
+                替换 = new RegExp('［］', "g");
+                输入 = 输入.replace(替换, '／');
+
+                for (i = 0; i < 数据a.length; i++) {
+                        数据b = 数据a[i].split("[");
+                        if (数据b[2] == "1") {
+                                数据c = "［0］" + 数据b[1] + "［1］" + 数据b[0] + "［2］";
+                                替换 = new RegExp('', 'g');
+                                数据d = 数据b[0].replace(替换, '／');
+                                替换 = new RegExp('^／', 'g');
+                                数据d = 数据d.replace(替换, '');
+                                替换 = new RegExp(数据d, "g");
+                                输入 = 输入.replace(替换, 数据c);
+                        }
+                }
+
+                替换 = new RegExp('／', "g");
+                输入 = 输入.replace(替换, '');
+
+                替换 = new RegExp('　', "g");
+                输入 = 输入.replace(替换, '<br />');
+                替换 = new RegExp('［0］', "g");
+                输入 = 输入.replace(替换, '<font face="Arial"><a href="#" onMouseOver="toolTip(\'');
+                替换 = new RegExp('［1］', "g");
+                输入 = 输入.replace(替换, '\')" onMouseOut="toolTip()">');
+                替换 = new RegExp('［2］', "g");
+                输入 = 输入.replace(替换, '</a></font> ');
+
+                document.getElementById("标签").innerHTML = 输入;
+        });
+});
+</script>
+<script>
+var autoTextarea = function (elem, extra, maxHeight) {
+        extra = extra || 0;
+        var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window,
+                isOpera = !!window.opera && !!window.opera.toString().indexOf('Opera'),
+                addEvent = function (type, callback) {
+                        elem.addEventListener ?
+                                elem.addEventListener(type, callback, false) :
+                                elem.attachEvent('on' + type, callback);
+                },
+                getStyle = elem.currentStyle ? function (name) {
+                        var val = elem.currentStyle[name];
+
+                        if (name === 'height' && val.search(/px/i) !== 1) {
+                                var rect = elem.getBoundingClientRect();
+                                return rect.bottom - rect.top -
+                                        parseFloat(getStyle('paddingTop')) -
+                                        parseFloat(getStyle('paddingBottom')) + 'px';
+                        };
+
+                        return val;
+                } : function (name) {
+                        return getComputedStyle(elem, null)[name];
+                },
+                minHeight = parseFloat(getStyle('height'));
+
+        elem.style.resize = 'none';
+
+        var change = function () {
+                var scrollTop, height,
+                        padding = 0,
+                        style = elem.style;
+
+                if (elem._length === elem.value.length) return;
+                elem._length = elem.value.length;
+
+                if (!isFirefox && !isOpera) {
+                        padding = parseInt(getStyle('paddingTop')) + parseInt(getStyle('paddingBottom'));
+                };
+                scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+                elem.style.height = minHeight + 'px';
+                if (elem.scrollHeight > minHeight) {
+                        if (maxHeight && elem.scrollHeight > maxHeight) {
+                                height = maxHeight - padding;
+                                style.overflowY = 'auto';
+                        } else {
+                                height = elem.scrollHeight - padding;
+                                style.overflowY = 'hidden';
+                        };
+                        style.height = height + extra + 'px';
+                        scrollTop += parseInt(style.height) - elem.currHeight;
+                        document.body.scrollTop = scrollTop;
+                        document.documentElement.scrollTop = scrollTop;
+                        elem.currHeight = parseInt(style.height);
+                };
+        };
+        addEvent('propertychange', change);
+        addEvent('input', change);
+        addEvent('focus', change);
+        change();
+};
+</script>
+    <div id="nav">
+        <a href="/">{{ site.title }}</a>
+        {{ page.nav_url }}<a href="/">返回主页</a></div>
+    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="body">
+
+<!-- 能不能好好说话 -->
+<script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+<br />
+
+
+<div style="text-align: center">
+        <form id="输入框" autocomplete="off">
+                <textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
+
+        <p id="标签" class="jieguo"></p>
+
+        <script>
+                var text = document.getElementById("输入");
+                autoTextarea(text);
+        </script>
+</div>
+<br /><br />
+
+用于将饭圈缩写、二次元梗等翻译成简单易懂的语言。<br />
+翻译和解释来自网络收集和网友投稿，可能有误，或与将来解释不同。<br />
+欢迎补充和指正。<br />
+有些词会有多种解释，需要用户根据前后文自行判断。<br />
+如果有拼音缩写没有正确翻译，可以尝试划词，会触发<a href="https://mouto.org/" target="_blank">@卜卜口</a>的<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank">能不能好好说话</a>。<br />
+<br />
+欢迎补充指正，联系QQ：<a href="/qq" target="_blank">123719932</a><br />
+
+<br /><br />
+
+<h2>手机版</h2>
+仅Android，需要网络。（使用Fusion App制作）<br />
+<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.apk" target="_blank">点击下载</a><br />
+
+<br /><br />
+
+<h2>fv版</h2>
+仅Android，无需联网，基于fv悬浮球的自定义任务功能制作而成，需要手机中有fv悬浮球。<br />
+<br />
+fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.android.fooview" target="_blank">酷安网</a><br />
+自动任务：
+<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.fvt" target="_blank">点击下载</a><br />
+<br />
+<b>更新</b><br />
+打开fv悬浮球主窗口-自定义任务，运行翻译器，在输入窗口点击取消，按照提示更新。<br /><br />
+<b>使用</b><br />
+方法1：<br />
+打开fv悬浮球主窗口-自定义任务，运行翻译器，输入要翻译的内容，点击确定。<br />
+<br />
+方法2：<br />
+拉动fv悬浮球，框选想要翻译的内容，弹出文字框。<br />
+点击右下角的三个点图标，点击翻译器。<br />
+
+<br /><br />
+
+<h2>其他推荐</h2><br />
+<a href="https://jikipedia.com/" target="_blank"><b>小鸡词典</b></a>：网络流行语的解释、出处、典故。<br />
+<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank"><b>能不能好好说话？</b></a>：拼音缩写查询，没有匹配的词也会给出可能的解释。<br />
+<a href="https://zh.moegirl.org/" target="_blank"><b>萌娘百科</b></a>：各种流行、冷门的梗。<br />
+
+<div id="back-top"><a href="#top"></a></div>
+<footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" /></a></footer>
+
+</div>
+</body>
+</html>
