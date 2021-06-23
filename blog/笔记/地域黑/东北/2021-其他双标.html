@@ -1,0 +1,41 @@
+---
+layout: zk
+title: 其他双标
+nav_text: 其他双标
+nav_url: <a href="/diyuhei/dongbei">地域黑：东北</a>
+permalink: i/zk/2435807
+---
+（本页列举例子不分先后，网页自动随机排序，每次刷新页面顺序都会变化）<br>
+<div id="dy"></div>
+<script>
+let data=new Array(
+
+"东北游客到广西自驾游，在高速公路旁看到几棵香蕉树以为是野生的，摘了一串。<br>"+
+"网友：路边不可能有野生的水果树，就是故意偷的。<br><br>"+
+"Z省，路边的芒果树结的果实，经检测对人体有害（因农药和汽车尾气等原因），采访市民会不会摘来吃，市民：“我们每年都摘来吃啊，好吃，很甜的。”<br>"+
+"没有人提到偷摘的问题。",
+
+"2021年，国内新冠疫情趋于平稳，偶尔有境外输入病例导致地区疫情复发。<br>"+
+"发生在东北时，各种难听的谣言随处可见，有骂东北防疫不利的，还有要东北道歉的。<br>"+
+"Z省也发生了由境外输入导致的疫情复发，却被称为“Z省以一省之力为国挡病毒”。",
+
+
+);
+
+let p = Array.from(data), i, a = [];
+    while (p.length > 0) {
+        i = parseInt(Math.random() * p.length);
+        a.push(p[i]);
+        p.splice(i, 1);
+    }
+
+    data = a;
+
+    let dy="";
+    for(let i=0;data.length>i;i++){
+        let 临时=i+1;
+        dy+=data[i]+"<br><br>";
+}
+
+document.getElementById("dy").innerHTML = dy;
+</script>

@@ -19,5 +19,5 @@ const container = document.getElementById("container");const buttoun = document.
 function sail() {buttoun.innerText = '欢迎来到猫球博客';buttoun.style.setProperty("border-radius", "10px 10px 100px 100px");mast.style.setProperty("transform", " translate(170px, 48px) rotatez(-0deg)");setTimeout(hoist, 500);}
 function hoist() {sail1.style.setProperty("transform", "translatex(16px) scaley(1)");sail2.style.setProperty("transform", "translate(-104px, -145px) scaley(1)");setTimeout(sailaway, 1000);}
 function sailaway() {container.style.setProperty("transform", "translatex(calc(100vw - 150px)");}
-function 点击进入(){let num = 2;let s = window.setInterval(function(){num--;if(num<=0){location.href = "{{ site.mq_i }}";}}, 1000);}
+function 点击进入(){let num = 2;let s = window.setInterval(function(){num--;if(num<=0){window.parent.location.href = "{{ site.mq_i }}";}}, 1000);}
 </script>
