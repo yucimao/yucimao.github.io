@@ -10,86 +10,6 @@ permalink: i/zk/2260916
 .smal{color:#666666}
 </style>
 
-<h3>神奇密码</h3>
-使用方法：游戏里点击“活动”→“福利”→“神奇密码”→“神奇密码兑换”，输入兑换码并点击“确定”即可。<br>
-<small>（以下兑换码点击复制）</small>
-
-<div id="sqmm"></div>
-<br>
-
-<script>
-let data=new Array(
-    "2021.6.30／雷霆游戏情报站／全渠道",
-    "2021.6.30／变异种子大作战／全渠道",
-    "2021.6.30／小种子也有大梦想／全渠道",
-    "2021.6.30／来自大地的馈赠／全渠道",
-    "2021.6.30／卡斯现身／全渠道",
-    "2021.6.24／白木木小可爱／全渠道",
-    "2021.6.24／小摩尔降临／全渠道",
-
-    "2021.6.17／劳动最光荣／全渠道",
-    "2021.6.17／小摩尔最可爱／全渠道",
-    "2021.6.17／摩尔冲鸭／全渠道",
-    "2021.6.17／六六大顺／全渠道",
-    "2021.6.17／你要跳舞吗／全渠道",
-    "2021.6.17／你你你要跳舞吗／全渠道",
-    "2021.6.17／你你你你要跳舞吗／全渠道",
-    "2021.6.17／高考加油／全渠道",
-    "2021.6.17／摩尔庄园公众号／全渠道",
-    "2021.6.17／摩尔庄园微信公众号／全渠道",
-    "2021.6.24／端午安康／全渠道",
-    "2021.6.24／假期就该美美哒／全渠道",
-    "2021.6.24／我爱逛庄园／全渠道",
-    "2021.6.24／有空来我家逛逛／全渠道",
-    "2021.7.1／摩尔庄园手游微博／全渠道",
-    "2021.7.1／摩尔抖音达人／全渠道",
-    "2021.12.31／mole888／全渠道",
-    "2022.6.2／下载Ganke领福利／全渠道",
-    "2022.6.2／mole666／官服",
-    "2033.1.1／快乐可以很简单／全渠道",
-);
-
-let dy1="";
-let dy2="";
-let 年=new Date().getFullYear();
-let 月=new Date().getMonth()+1;
-let 日=new Date().getDate();
-
-for (let i = 0; data.length > i; i++) {
-    let 临时=data[i].split("／");
-    let 日期=临时[0].split(".");
-    let 过期=0;
-    if(年>日期[0]){过期=1};
-    if(年==日期[0] && 月>日期[1]){过期=1};
-    if(年==日期[0] && 月==日期[1] && 日>日期[2]){过期=1};
-    临时="<tr><td class=\"smal\"><small>" + 临时[2] + "</small></td><td onclick=\"复(制='" + 临时[1] + "')\">" + 临时[1] + "</td></tr>";
-    if(过期==0){
-        dy1+=临时;
-    }else{
-        dy2+=临时;
-    }
-}
-
-let dy="<table>"+dy1+"</table>";
-if (dy2 !=""){
-    dy+="<br><b>可能已经过期的：</b><br><table>"+dy2+"</table>";
-}
-
-document.getElementById("sqmm").innerHTML = dy;
-
-let 制;function 复(){
-const textarea = document.createElement('textarea');
-textarea.value = 制;
-document.body.appendChild(textarea);
-textarea.select();
-if (document.execCommand('copy')) {
-document.execCommand('copy');
-}
-document.body.removeChild(textarea);
-}
-</script>
-
-<h3>其他福利</h3>
 官方微博（偶尔会有转发抽奖）：<a href="https://weibo.com/u/7479046165" target="_blank">https://weibo.com/u/7479046165</a><br>
 Ganke抽奖（本期奖品：“蓝莓喵喵车”）：<a href="https://www.gankeapp.com/kekeDetail/28?shareId=32846" target="_blank">https://www.gankeapp.com/</a>（截止时间：2021.6.15 23:59）<br>
 <br>
@@ -163,6 +83,93 @@ Ganke抽奖（本期奖品：“蓝莓喵喵车”）：<a href="https://www.gan
 电视机可以看天气预报。<br>
 <br>
 
+
+
+<h3>神奇密码</h3>
+使用方法：游戏里点击“活动”→“福利”→“神奇密码”→“神奇密码兑换”，输入兑换码并点击“确定”即可。<br>
+（可能以后会不再更新，上面有官方分享的链接）
+<small>（以下兑换码点击复制）</small>
+
+<div id="sqmm"></div>
+<br>
+
+<script>
+let data=new Array(
+    "2021.7.7／艾米的小伙伴／全渠道",
+    "2021.7.7／梅森尤尤生日快乐！／全渠道",
+    "2021.7.31／摩尔庄园美食抖音复刻／全渠道",
+    "2021.7.7／一起来做太空鼠／全渠道",
+    "2021.6.30／上天入地小摩尔／全渠道",
+    "2021.12.31／雷霆游戏情报站／全渠道",
+    "2021.6.30／老爸谢谢你／全渠道",
+    "2021.6.30／变异种子大作战／全渠道",
+    "2021.6.30／小种子也有大梦想／全渠道",
+    "2021.6.30／来自大地的馈赠／全渠道",
+    "2021.6.30／卡斯现身／全渠道",
+    "2021.6.24／白木木小可爱／全渠道",
+    "2021.6.24／小摩尔降临／全渠道",
+
+    "2021.6.17／劳动最光荣／全渠道",
+    "2021.6.17／小摩尔最可爱／全渠道",
+    "2021.6.17／摩尔冲鸭／全渠道",
+    "2021.6.17／六六大顺／全渠道",
+    "2021.6.17／你要跳舞吗／全渠道",
+    "2021.6.17／你你你要跳舞吗／全渠道",
+    "2021.6.17／你你你你要跳舞吗／全渠道",
+    "2021.6.17／高考加油／全渠道",
+    "2021.6.17／摩尔庄园公众号／全渠道",
+    "2021.6.17／摩尔庄园微信公众号／全渠道",
+    "2021.6.24／端午安康／全渠道",
+    "2021.6.24／假期就该美美哒／全渠道",
+    "2021.6.24／我爱逛庄园／全渠道",
+    "2021.6.24／有空来我家逛逛／全渠道",
+    "2021.7.1／摩尔庄园手游微博／全渠道",
+    "2021.7.1／摩尔抖音达人／全渠道",
+    "2021.12.31／mole888／全渠道",
+    "2022.6.2／下载Ganke领福利／全渠道",
+    "2022.6.2／mole666／官服",
+    "2033.1.1／快乐可以很简单／全渠道",
+);
+
+let dy1="";
+let dy2="";
+let 年=new Date().getFullYear();
+let 月=new Date().getMonth()+1;
+let 日=new Date().getDate();
+
+for (let i = 0; data.length > i; i++) {
+    let 临时=data[i].split("／");
+    let 日期=临时[0].split(".");
+    let 过期=0;
+    if(年>日期[0]){过期=1};
+    if(年==日期[0] && 月>日期[1]){过期=1};
+    if(年==日期[0] && 月==日期[1] && 日>日期[2]){过期=1};
+    临时="<tr><td class=\"smal\"><small>" + 临时[2] + "</small></td><td onclick=\"复(制='" + 临时[1] + "')\">" + 临时[1] + "</td></tr>";
+    if(过期==0){
+        dy1+=临时;
+    }else{
+        dy2+=临时;
+    }
+}
+
+let dy="<table>"+dy1+"</table>";
+if (dy2 !=""){
+    dy+="<br><b>可能已经过期的：</b><br><table>"+dy2+"</table>";
+}
+
+document.getElementById("sqmm").innerHTML = dy;
+
+let 制;function 复(){
+const textarea = document.createElement('textarea');
+textarea.value = 制;
+document.body.appendChild(textarea);
+textarea.select();
+if (document.execCommand('copy')) {
+document.execCommand('copy');
+}
+document.body.removeChild(textarea);
+}
+</script>
 
 
 <!--
