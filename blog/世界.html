@@ -81,8 +81,8 @@ function 打印机(){
     if(地图_剧本.length > 地图_i) {
         document.getElementById("选项").style.display = "none";
             if (地图_剧本[地图_i] == "　"){地图_i+=1}
-            else if (地图_剧本[地图_i] == "<" || 地图_剧本[地图_i] == "{") {
-                while (地图_剧本[地图_i] != ">" && 地图_剧本[地图_i] != "}") {
+            else if (地图_剧本[地图_i] == "{") {
+                while (地图_剧本[地图_i] != "}") {
                     地图_打印 += 地图_剧本[地图_i];
                         地图_i += 1;
                 }
@@ -100,8 +100,8 @@ function 打印机(){
         else if(景色_剧本.length > 景色_i) {
         document.getElementById("选项").style.display = "none";
             if (景色_剧本[景色_i] == "　"){景色_i+=1}
-            else if (景色_剧本[景色_i] == "<" || 景色_剧本[景色_i] == "{") {
-                while (景色_剧本[景色_i] != ">" && 景色_剧本[景色_i] != "}") {
+            else if (景色_剧本[景色_i] == "{") {
+                while (景色_剧本[景色_i] != "}") {
                     景色_打印 += 景色_剧本[景色_i];
                     景色_i += 1;
                 }
@@ -119,8 +119,8 @@ function 打印机(){
         else if(场景_剧本.length > 场景_i) {
         document.getElementById("选项").style.display = "none";
             if (场景_剧本[场景_i] == "　"){场景_i+=1}
-            else if (场景_剧本[场景_i] == "<" || 场景_剧本[场景_i] == "{") {
-                while (场景_剧本[场景_i] != ">" && 场景_剧本[场景_i] != "}") {
+            else if (场景_剧本[场景_i] == "{") {
+                while (场景_剧本[场景_i] != "}") {
                     场景_打印 += 场景_剧本[场景_i];
                     场景_i += 1;
                 }
