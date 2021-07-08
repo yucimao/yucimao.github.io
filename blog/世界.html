@@ -61,6 +61,10 @@ function 获取数据(){
     ix_输入=GetJson.responseText;
     解密();
     当前地图=ix_输入;
+    替换 = new RegExp("\n", "g");
+    当前地图 = 当前地图.replace(替换, "");
+    替换 = new RegExp("}{", "g");
+    当前地图 = 当前地图.replace(替换, "");
 }
 
 function 解密(){
