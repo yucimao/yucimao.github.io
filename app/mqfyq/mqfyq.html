@@ -69,6 +69,8 @@ $(function () {
         替换 = new RegExp('', "g");
         输入 = 输入.replace(替换, '／');
         输入 = 输入.toLowerCase();
+        替换 = new RegExp('con', "g");
+        输入 = 输入.replace(替换, 'c0n');
 
         let 数据a = 数据.split("［");
         for (let i = 1; i < 数据a.length; i++){
@@ -216,8 +218,8 @@ function myq_cf(myq_bm){
     </script>
 
     <div id="nav">
-        <a href="/">{{ site.title }}</a>
-        {{ page.nav_url }}<a href="/">返回主页</a></div>
+        <a href="{{ site.mq_i }}">{{ site.title }}</a>
+        {{ page.nav_url }}<a href="{{ site.mq_i }}">返回主页</a></div>
     <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
     <div class="body">
 
