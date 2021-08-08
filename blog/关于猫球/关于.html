@@ -89,8 +89,10 @@ zwjs("普通版");
 
 <br/><br/>
 
-<div class="chart"><svg class="bar-chart"></svg></div>
-<small>（更新时间：2021.7.9）</small><br/>
+<div id="粉丝数"><iframe src="/i/zk/2839370" frameborder="0" width="100%" height="100%"></iframe></div>
+<a onclick="粉丝数('粉丝数')">粉丝数</a> 
+<a onclick="粉丝数('浏览量')">浏览量</a> 
+<a onclick="粉丝数('赞同数')">赞同数</a> 
 
 <br/><br/>
 
@@ -112,6 +114,14 @@ zwjs("普通版");
 <div id="tag-cloud"></div>
 
 <script>
+
+function 粉丝数(fss){
+    if(fss=="粉丝数"){fss="2839370";}
+    if(fss=="浏览量"){fss="2839382";}
+    if(fss=="赞同数"){fss="2839384";}
+    document.getElementById("粉丝数").innerHTML = "<iframe src='/i/zk/"+fss+" frameborder='0' width='100%' height='100%'></iframe>";
+}
+
     let entries=[];
     let tagcloud=[
         //"／dw(dwb='',dwd='狗球')",
@@ -237,20 +247,6 @@ const pieChart = new chartXkcd.Pie(svg, {
             data: [3987, 1116, 591, blogday_new],
         }],},
     options: {innerRadius: 0.5,legendPosition: chartXkcd.config.positionType.upRight,},});
-
-    const svg2 = document.querySelector('.bar-chart'); //粉丝数
-    const barChart = new chartXkcd.Bar(svg2, {
-        title: '粉丝数记录',
-        data: {
-            labels: ['bilibili','zhihu','weibo'],
-            datasets: [{
-                data: [4238,4999,54],
-            }],
-        },
-        options: {
-            yTickCount: 3,
-        },
-    });
 
 $("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字 组成猫球的成分
 let anp_data=new Array(
