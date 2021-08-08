@@ -1,5 +1,4 @@
 ---
-layout: zk
 permalink: i/zk/2839382
 ---
 <script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
@@ -8,13 +7,13 @@ permalink: i/zk/2839382
 <small>（更新时间：2021.7.9）</small><br/>
 
 <script>
-const svg2 = document.querySelector('.bar-chart'); //粉丝数
+const svg2 = document.querySelector('.bar-chart');
 const barChart = new chartXkcd.Bar(svg2, {
     title: '浏览量',
     data: {
         labels: ['bilibili','zhihu','weibo'],
         datasets: [{
-            data: [4238,4999,54],
+            data: [1191836+28697,11962256,0],
         }],
     },
     options: {

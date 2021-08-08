@@ -1,20 +1,19 @@
 ---
-layout: zk
 permalink: i/zk/2839384
 ---
-<script src="/5/new/chart.xkcd.js"></script>
+<script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
 
 <div class="chart"><svg class="bar-chart"></svg></div>
-<small>（更新时间：2021.7.9）</small><br/>
+<small>（更新时间：2021.8.8）</small><br/>
 
 <script>
-const svg2 = document.querySelector('.bar-chart'); //粉丝数
+const svg2 = document.querySelector('.bar-chart');
 const barChart = new chartXkcd.Bar(svg2, {
     title: '赞同数',
     data: {
         labels: ['bilibili','zhihu','weibo'],
         datasets: [{
-            data: [4238,4999,54],
+            data: [20298+563,96928,54],
         }],
     },
     options: {
