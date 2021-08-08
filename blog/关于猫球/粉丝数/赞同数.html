@@ -1,5 +1,24 @@
 ---
-layout: ix
+layout: zk
 permalink: i/zk/2839384
 ---
-HRLBa2LyYVx0HRGva3HhHRLCHRGyHRHELQSyPl5kbySyPlLnWVH0JmfqW2OtYmKkKhGkK0SkK0KkKjXzW3HoaFOkK0SkKCCkKCCkK0LjYVWkKhxhZEDzaySzPASyKlLnWVH0HRGyHRLDHRLBa3XmHRGvW2wfa3KkK0OkKhHgWVGsW2ffamOkKhGkK0SkK0KkKjXzblakK0SkK0KkKjXjYVWkK0SkKCCkK0LzZUDrZASzPQTDPgTAOyS4MATDLgS5OgTALATDLgS5LgTAKATDLgS5LyTALgTDMQS5LyTALATDPgTAOyS5ORGvKhCtLy45HSTEHSHBHRe5HRLBHRHEa21fZEvkK0SkK0LgagSyPgSzPQSvOQSvOQSzO3LhalkvbASzPQSvOULuZmL0HRGva3XmKgSyKASzPASyKEPuW3TsXU50JmD1XVH5S2TrXUL0Z3GnHy5gWVGsW2ffamOmIQSzOgSyKASyPgSyPgTDLyTAKgS4MQTDLATAMAS5PATDLgS5LQTAKASvOULuZmL0HRGvWlDyO2ffamOkKhikK0OkKhxtXVakKhxhYEDybDfqW2OtOlDyIFL2XzGkKjKkKhikL0GkKCCkKhikKhikKhikKhx0YVPrXQSzOQSyKAakPRekOhSkMSSkPRSkMRikMCKkPRWkMRSkOhimHRHBHRxxHRGvHRGvHRGvHRGvXED0WQSzOQSyKAS3OgSvOQSyKASyKASyKASyKASyKASyKASyKASyKEwfWlTraySzOQSyKAS1OgbgYUwoWlkrYQakKjKmclfoYFSmHRHBH3bkYUHuHyS1PASyOySvOQSyKASyKASyKASyKASyKASyKASyKASyKEPfbEDzXVPzHRLxHRGvHRTAHRbAHRxxHRGvHRGvHRGvHRGvHRGvHRGvHRGvHRGvHRGvHRGvHRGvHRGvXED0WQSzOQSyKAS1OhOyKzekKjK0MRj5HRHBLROkLSOkKjKkKCCkKhikKhikKhikKhikKhikKhikKhikKhikL0OkLSOkKjKkKCCkKhikKhikKhikKhikL0OkKjKkKCCkKhikKhikKhikKhxuaFPoZ25zHRLxHRGvHRbAHRxxHRGvHRGvHRGvHRGvHRGvHRGvHRGvHRGvcTPoW2sBZ3TtbASzOQSyKBKkKjKkKCCkKhikKhikKhikKhikL0OkKjKkKCCkL0OoHRLAHRxxHRLBHRHEa2LyYVx0HRLD
+<script src="/5/new/chart.xkcd.js"></script>
+
+<div class="chart"><svg class="bar-chart"></svg></div>
+<small>（更新时间：2021.7.9）</small><br/>
+
+<script>
+const svg2 = document.querySelector('.bar-chart'); //粉丝数
+const barChart = new chartXkcd.Bar(svg2, {
+    title: '赞同数',
+    data: {
+        labels: ['bilibili','zhihu','weibo'],
+        datasets: [{
+            data: [4238,4999,54],
+        }],
+    },
+    options: {
+        yTickCount: 3,
+    },
+});
+</script>
