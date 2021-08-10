@@ -1,0 +1,41 @@
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
+        #right_anchor table{width:100%;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor{position:relative;}
+        #right_anchor table{width:60%;}
+    } /*手机*/
+    #right_anchor a{display:block;}
+</style>
+<div id="right_anchor"></div>
+<script>
+let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
+    }
+}
+function anchor_zk(){
+if(anchor_an2==0){
+    anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔺</a></td></tr>";
+    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=1;
+}else{
+    anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
+    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
+    anchor_an2=0;
+}
+}
+</script>

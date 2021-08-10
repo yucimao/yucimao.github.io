@@ -12,7 +12,7 @@ permalink: donate
 <ul>
     <li>本站的域名费</li>
     <li>日常维护费用</li>
-    <li><del>给猫球买一瓶可乐</del></li>
+    <li>给猫球买一瓶可乐</li>
     <li><small>（<a href="/mqf" target="_blank">MQF基金会</a>是文学作品中虚构的组织，并不真实存在，可以支持创作，但请不要为MQF基金会的项目捐款）</small></li>
 </ul>
 
@@ -21,11 +21,50 @@ permalink: donate
     <tr><td>微信打赏</td><td>QQ打赏</td></tr>
     <tr><td><img src="/img/i/qita/ds/wx.jpg" width="300px" alt="微信打赏"></td><td><img src="/img/i/qita/ds/qq.jpg" width="300px" alt="QQ打赏"></td></tr>
 </table>
+<a href="https://space.bilibili.com/515330" target="_blank">B站充电</a><small>（不推荐）</small><br>
 <br/>
-<a name="名单"></a><b>名单</b><br/>
-<table>
-    <tr><th style="min-width:12em">捐助者</th><th style="min-width:4em">金额</th><th style="min-width:20em">留言</th></tr>
-    <tr><td>二扯</td><td>￥1</td><td>无</td></tr>
-    <tr><td>不知道叫啥怪我咯</td><td>￥2</td><td>_(:з」∠)_</td></tr>
-    <tr><td>风色遐想</td><td>￥65</td><td>加了个油</td></tr>
-</table>
+<!-- B站贝壳 实际到账需要x84% -->
+
+<a name="名单"></a>
+<div id="名单"></div>
+
+<script>
+    let 名单临时;
+    let 名单记录=[
+        "高冷老攻酱／3／无",
+        "人間藝術家／3／无",
+        "风色遐想／65／加了个油",
+        "不知道叫啥怪我咯／2／_(:з」∠)_",
+        "二扯／3／无",
+    ]
+
+    let 名单排行=[
+        "风色遐想／65／加了个油",
+        "高冷老攻酱／3／无",
+        "人間藝術家／3／无",
+        "二扯／3／无",
+        "不知道叫啥怪我咯／2／_(:з」∠)_",
+    ]
+    let 名单记录dy="<b>名单</b> <small>时间排序</small><br>切换成<a onclick=\"名单('排行')\">排行榜</a><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
+        for(let i=0;名单记录.length>i;i++){
+            名单临时=名单记录[i].split("／");
+            名单记录dy+="<tr><td>"+名单临时[0]+"</td><td>"+名单临时[1]+"<sub>元</sub></td><td>"+名单临时[2]+"</td></tr>";
+        }
+        名单记录dy+="</table>";
+    let 名单排行dy="<b>名单</b> <small>排行榜</small><br>切换成<a onclick=\"名单('记录')\">时间排序</a><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
+        for(let i=0;名单排行.length>i;i++){
+            名单临时=名单排行[i].split("／");
+            名单排行dy+="<tr><td>"+名单临时[0]+"</td><td>"+名单临时[1]+"<sub>元</sub></td><td>"+名单临时[2]+"</td></tr>";
+        }
+        名单排行dy+="</table>";
+
+
+
+    function 名单(当前名单){
+        if(当前名单=="记录"){document.getElementById("名单").innerHTML=名单记录dy;}
+        if(当前名单=="排行"){document.getElementById("名单").innerHTML=名单排行dy;}
+    }
+
+
+    名单("记录");
+</script>
