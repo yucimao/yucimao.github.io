@@ -9,7 +9,7 @@ permalink: wen/liqiu/qingbao
 <div id="结果"></div>
 <br/>
 <script>
-let data="";
+let data="／／／";
 let data2 = [
     //进度（看过这章就显示）／正常zk目录
     "0／／／／",
@@ -29,9 +29,9 @@ document.getElementById("当前进度dy").innerHTML = 当前进度dy;
 
 for(let i=0;data2.length>i;i++){
     let 当前进度临时=data2[i].split("／");
-    if(阅读进度>=当前进度临时[0]&&当前进度临时[1].length!=0&&当前进度临时[1]!="undefined"){data+=当前进度临时[1]+"／"+当前进度临时[2]+"／"+当前进度临时[3]+"［【】］";}
+    if(阅读进度>=当前进度临时[0]&&当前进度临时[1].length!=0&&当前进度临时[1]!="undefined"){data+="［【】］"+当前进度临时[1]+"／"+当前进度临时[2]+"／"+当前进度临时[3];}
 }
-data=data.split("［【】］")
+data=data.split("［【】］");
 
 function 清空进度(){
         localStorage.setItem(本页书名+"_进度",0);
