@@ -29,7 +29,7 @@ document.getElementById("当前进度dy").innerHTML = 当前进度dy;
 
 for(let i=0;data2.length>i;i++){
     let 当前进度临时=data2[i].split("／");
-    if(阅读进度>=当前进度临时[0]){data+=当前进度临时[1]+"／"+当前进度临时[2]+"／"+当前进度临时[3]+"［【】］";}
+    if(阅读进度>=当前进度临时[0]&&当前进度临时[1].length!=0&&当前进度临时[1]!="undefined"){data+=当前进度临时[1]+"／"+当前进度临时[2]+"／"+当前进度临时[3]+"［【】］";}
 }
 data=data.split("［【】］")
 
