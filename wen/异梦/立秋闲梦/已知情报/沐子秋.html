@@ -1,0 +1,20 @@
+---
+layout: zk
+title: 沐子秋
+nav_text: 沐子秋
+nav_url: <a href="/liqiu">立秋·闲梦</a>
+permalink: i/zk/2868147
+---
+<div id="当前进度dy"></div>
+<script>
+let 本页书名="立秋闲梦";
+let 阅读进度=0;
+if(localStorage.getItem(本页书名+"_进度")){
+阅读进度=localStorage.getItem(本页书名+"_进度");
+}else{localStorage.setItem(本页书名+"_进度",0);}
+
+
+document.getElementById("当前进度dy").innerHTML = 阅读进度;
+
+
+</script>
