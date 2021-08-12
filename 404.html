@@ -21,5 +21,11 @@ nav_url: <a href="/wangzhi">网址收藏</a>
 </small>
 
 <script>
-	alert(window.location.href);
+	let 当前url=window.location.href;
+	当前url=当前url.split("limaoqiu.com/")[1];
+	let 替换 = new RegExp('/', "g");
+    当前url = 当前url.replace(替换, '');
+	if(当前url>0){
+		window.location.href="/i/zk/"+当前url;
+	}
 </script>
