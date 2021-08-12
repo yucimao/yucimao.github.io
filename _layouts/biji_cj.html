@@ -61,7 +61,7 @@ layout: default
     <script>
     let right="";
     let dy="";
-    let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/img/i/chengjiu/loading.jpg\"/><b>加载更多</b><br/></div></a>";
+    let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/i/cj/loading.jpg\"/><b>加载更多</b><br/></div></a>";
     let datb=new Array();
     datb=datb.concat(data)
 $("#输入").keyup(function () {
@@ -113,7 +113,7 @@ function 加载(){
             if(isNaN(临时[0])){
             dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
         } else {
-            dy += "<img src=\"{{ site.mq_d }}/img/i/chengjiu/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
+            dy += "<img src=\"{{ site.mq_d }}/i/cj/" + 临时[0] + ".jpg\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
             if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
             if (临时[3]) {dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
             dy += "</div>";
