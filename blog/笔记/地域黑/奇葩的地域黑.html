@@ -1,0 +1,40 @@
+---
+layout: page2
+title: 奇葩的地域黑
+nav_text: 奇葩的地域黑
+nav_url: <a href="/zatan">杂谈</a>
+permalink: diyuhei/qipa
+---
+（每次刷新随机更换顺序）
+<div id="dy"></div>
+<script>
+let data=new Array(
+
+"“作为胸外科医生，对肺的直观理解只有南北，北方人的肺都是黑的，南方人都是粉的。”",
+
+"认为“南方人的长相优于北方人”，摆出了许多图片对比作为证据，其中代表北方人的是中学生参加运动会的抓拍，代表南方的是电视剧的截图。<br>"+
+"<span class=\"zhushi\">中学生：还未长开的普通学生、素面朝天完全没有化妆打扮、穿着统一的学校制服、在太阳底下又是顶光拍摄又被晒得眯着眼睛、学校老师的抓拍。</span><br>"+
+"<span class=\"zhushi\">电视剧演员：专业导演挑选过的专业演员、有专业化妆师负责化妆、专业服装师负责衣服、专业灯光师负责打光、专业摄影师负责拍摄。</span><br>"+
+"我提出质疑，对方表示“选学生的合照是为了表现平均长相”、“就是南方普通美女”。",
+
+);
+
+let p = Array.from(data), i, a = [];
+    while (p.length > 0) {
+        i = parseInt(Math.random() * p.length);
+        a.push(p[i]);
+        p.splice(i, 1);
+    }
+
+    data = a;
+
+    let dy="";
+    for(let i=0;data.length>i;i++){
+        let 临时=i+1;
+        dy+=data[i]+"<br><br>";
+}
+
+document.getElementById("dy").innerHTML = dy;
+</script>
+
+
