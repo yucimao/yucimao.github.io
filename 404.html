@@ -22,10 +22,19 @@ nav_url: <a href="/wangzhi">网址收藏</a>
 
 <script>
 	let 当前url=window.location.href;
-	当前url=当前url.split("limaoqiu.com/")[1];
+	let 临时404;
+
+	//链接在gitee
+	if (当前url.indexOf("gitee.io") != -1){
+		临时404=当前url.split("gitee.io/")[1];
+		window.location.href="https://limaoqiu.com/"+临时404;
+	}
+
+	//链接只有数字，尝试跳转到zk
+	临时404 = 当前url.split("limaoqiu.com/")[1];
 	let 替换 = new RegExp('/', "g");
-    当前url = 当前url.replace(替换, '');
-	if(当前url>0){
-		window.location.href="/i/zk/"+当前url;
+    临时404 = 临时404.replace(替换, '');
+	if(临时404>0){
+		window.location.href="/i/zk/"+临时404;
 	}
 </script>

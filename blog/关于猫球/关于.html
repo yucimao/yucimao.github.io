@@ -256,7 +256,7 @@ let anp_i=0;
 function anp(e){
 	let 随机数 = Math.floor(Math.random()*anp_data.length);
 	let n=anp_data[随机数];
-	let $i=$("<b>").text(n);
+	let $i=$("<b class='bukexuanzhong'>").text(n);
 	let x=e.pageX,y=e.pageY;
 	$i.css({top:y-20,left:x,position:"absolute",color:anp_color[anp_i]});
 	anp_i+=1;
