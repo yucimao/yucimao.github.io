@@ -6,7 +6,6 @@ nav_url: <a href="/maoqiu">关于我</a>
 nav_color: ffffff
 permalink: myid
 ---
-<link rel="stylesheet" href="/css/all.css">
 <style>
     td:not(:last-child){text-indent:1em;}
     td:nth-child(2){text-align: center;}
@@ -27,12 +26,12 @@ permalink: myid
 {% include popup_dw.html %}
 
 <a name="正在用的"></a><h3>正在用的</h3>
-
 <div id="dy_a"></div>
-
 <br/>
+<a name="正在玩的"></a><h3>正在玩的</h3>
+<div id="dy_c"></div>
+<br>
 <a name="暂时不用的"></a><h3>暂时不用的</h3>
-
 <div id="dy_b"></div>
 
 <script>
@@ -42,6 +41,9 @@ let data_a=new Array(//"网站／区服／用户名／ID／复制／打开／更
     "暴雪战网／／猫球／#5319／猫球#5319／／",
     "QQ／／猫方块／123719932／123719932／/qq／注册于2002年1月7日",
 );
+let data_c=new Array(
+    "布偶动物餐厅／／／／／／",
+)
 let data_b=new Array(
     "魔兽世界／10区-能源舰／初代／／／／",
     "最终幻想14／陆行鸟-拉诺西亚／李猫球／招待码 1624-5yf5-51sa-3792／1624-5yf5-51sa-3792／/i/zk/1743585／我的招待码：1624-5yf5-51sa-3792<br>登录页面：https://ff.sdo.com/entertain，点击“被招待者”，输入招待码。<br>成为被招待者到达指定等级、累计充值时长可以获得对拳动作、袖珍领袖宠物、白金币等奖励。",
@@ -55,11 +57,11 @@ let data_b=new Array(
     "龙珠激战传说／／／btvwwmhk／btvwwmhk／／",
 );
 
-let dy_a,dy_b;
-for(let o=0;2>o;o++){
+let dy_a,dy_b,dy_c;
+for(let o=0;3>o;o++){
     let dy="<table><tr><th class=\"th\">网站 / 游戏</th><th class=\"th\">用户 / 角色</th><th class=\"th\">ID</th><th></th></tr>";
     let dy_o;
-    if(o==0){dy_o=data_a;}else{dy_o=data_b;}
+    if(o==0){dy_o=data_a;}else if(o==1){dy_o=data_b;}else{dy_o=data_c;}
     for(let i=0;dy_o.length>i;i++){
     let 临时=dy_o[i].split("／");
     dy+="<tr><td><b>"+临时[0]+"</b> <small>"+临时[1]+"</small></td><td>"+临时[2]+"</td><td>"+临时[3]+"</td><td>";
@@ -75,10 +77,11 @@ for(let o=0;2>o;o++){
         dy+="</td></tr>";
 }
 dy+="</table>";
-if(o==0){dy_a=dy;}else{dy_b=dy;}
+if(o==0){dy_a=dy;}else if(o==1){dy_b=dy;}else{dy_c=dy;}
 }
 document.getElementById("dy_a").innerHTML = dy_a;
 document.getElementById("dy_b").innerHTML = dy_b;
+document.getElementById("dy_c").innerHTML = dy_c;
 </script>
 
 
