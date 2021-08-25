@@ -53,20 +53,20 @@ layout: default
     let 临时;
     for(let i=0;data.length>i;i++){
         临时=data[i].split("／");
-    dy+="<div id=\""+i+"\"><fieldset><legend>"+临时[0]+"</legend>"+临时[1]+"<br><a onclick=\"红色药丸("+i+")\"><img src=\"/i/0/0/red.png\" alt=\"红色药丸\" width=\"40px\"></a><a onclick=\"蓝色药丸("+i+")\"><img src=\"/i/0/0/blue.png\" alt=\"蓝色药丸\" width=\"40px\"></a></fieldset></div><br>";
+    dy+="<div id=\""+i+"\"><fieldset><legend>"+临时[0]+"</legend>"+临时[1]+"<br><a onclick=\"红色药丸("+i+")\"><img src=\"{{ site.mq_d }}/i/0/0/red.png\" alt=\"红色药丸\" width=\"40px\" onerror=\"this.src='/i/0/0/red.png';this.onerror=null;\"></a><a onclick=\"蓝色药丸("+i+")\"><img src=\"{{ site.mq_d }}/i/0/0/blue.png\" alt=\"蓝色药丸\" width=\"40px\" onerror=\"this.src='/i/0/0/blue.png';this.onerror=null;\"></a></fieldset></div><br>";
     }
 
     document.getElementById("dy").innerHTML = dy;
 
     function 红色药丸(i){
     临时=data[i].split("／");
-    dy="<fieldset><legend>"+临时[2]+"</legend>"+临时[3]+"<br><a onclick=\"红色药丸("+i+")\"><img src=\"/i/0/0/red.png\" alt=\"红色药丸\" width=\"40px\"></a><a onclick=\"蓝色药丸("+i+")\"><img src=\"/i/0/0/blue.png\" alt=\"蓝色药丸\" width=\"40px\"></a></fieldset>";
+    dy="<fieldset><legend>"+临时[2]+"</legend>"+临时[3]+"<br><a onclick=\"红色药丸("+i+")\"><img src=\"{{ site.mq_d }}/i/0/0/red.png\" alt=\"红色药丸\" width=\"40px\" onerror=\"this.src='/i/0/0/red.png';this.onerror=null;\"></a><a onclick=\"蓝色药丸("+i+")\"><img src=\"{{ site.mq_d }}/i/0/0/blue.png\" alt=\"蓝色药丸\" width=\"40px\" onerror=\"this.src='/i/0/0/blue.png';this.onerror=null;\"></a></fieldset>";
     document.getElementById(i).innerHTML = dy;
     }
 
     function 蓝色药丸(i){
         临时=data[i].split("／");
-    dy="<fieldset><legend>"+临时[0]+"</legend>"+临时[1]+"<br><a onclick=\"红色药丸("+i+")\"><img src=\"/i/0/0/red.png\" alt=\"红色药丸\" width=\"40px\"></a><a onclick=\"蓝色药丸("+i+")\"><img src=\"/i/0/0/blue.png\" alt=\"蓝色药丸\" width=\"40px\"></a></fieldset>";
+    dy="<fieldset><legend>"+临时[0]+"</legend>"+临时[1]+"<br><a onclick=\"红色药丸("+i+")\"><img src=\"{{ site.mq_d }}/i/0/0/red.png\" alt=\"红色药丸\" width=\"40px\" onerror=\"this.src='/i/0/0/red.png';this.onerror=null;\"></a><a onclick=\"蓝色药丸("+i+")\"><img src=\"{{ site.mq_d }}/i/0/0/blue.png\" alt=\"蓝色药丸\" width=\"40px\" onerror=\"this.src='/i/0/0/blue.png';this.onerror=null;\"></a></fieldset>";
     document.getElementById(i).innerHTML = dy;
     }
     </script>
