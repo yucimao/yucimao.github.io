@@ -6,26 +6,22 @@ title: 这里什么都没有
 nav_text: 这里什么都没有
 nav_url: <a href="/wangzhi">网址收藏</a>
 ---
-<b>为什么会来到这个页面？</b><br/>
-	八成是我把哪里的链接写错了……
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<small>
-	<b>可以尝试以下操作：</b><br/>
-	<ol>
-		<span id="猜测"></span>
-		<li>在<a href="/wangzhi">网址收藏</a>页面输入你想访问的内容，如“无聊按钮”，可能会显示出正确的地址。<sup style="color:#00bb3e;">推荐</sup></li>
-		<li>在<a href="/liuyan">猫球留言板</a>或QQ:<a href="/qq" target="_blank">123719932</a>向猫球反馈。</li>
-		<li><a href="{{ site.mq_i }}">回到首页</a>找找看。</li>
-		<li><span class="redX">奖励</span>殴打猫球。<sup style="color:#ff2424;">猫球:不推荐!!!</sup></li>
-	</ol>
-</small>
+<span id="猜测"></span>
+<b>为什么会来到这个页面？</b><br>
+八成是我把哪里的链接写错了……<br>
+<br><br><br>
+<small><b>可以尝试以下操作：</b><br>
+<ol>
+<li>在<a href="/wangzhi">网址收藏</a>页面输入你想访问的内容，如“无聊按钮”，可能会显示出正确的地址。<sup style="color:#00bb3e;">推荐</sup></li>
+<li>在<a href="/liuyan">猫球留言板</a>或QQ:<a href="/qq" target="_blank">123719932</a>向猫球反馈。</li>
+<li><a href="{{ site.mq_i }}">回到首页</a>找找看。</li>
+<li><span class="redX">奖励</span>殴打猫球。<sup style="color:#ff2424;">猫球:不推荐!!!</sup></li>
+</ol></small>
 
 <script>
 let s_data=[ //网页名／地址／关键词
-	"猫球翻译器／/mqfyq／maoqiufanyiqiceshi",
+	"猫球翻译器1／/mqfyq／猫球翻译器maoqiufanyiqiceshi",
+	"猫球翻译器2／/mqfyq／%E7%8C%AB%E7%90%83%E7%BF%BB%E8%AF%91%E5%99%A8",
 ];
 
 let 当前url=window.location.href;
@@ -57,13 +53,11 @@ if(跳转url=="0"){
 	for(let i=0;s_data.length>i;i++){
 		let 临时=s_data[i].split("／");
 		if (临时[2].indexOf(临时404) != -1){
-			猜测+="“"+"<a href=\""+临时[1]+"\">"+临时[0]+"</a>”";
+			猜测+="<br><a href=\""+临时[1]+"\">"+临时[0]+"</a>";
 		}
 	}
 	if(猜测.length>0){
-		let 替换 = new RegExp('”“', "g");
-		猜测 = 猜测.replace(替换, '”、“');
-		猜测="<li>您要找的是不是："+猜测+"？</li>";
+		猜测="<b>您要找的是不是：</b>"+猜测+"<br><br><br><br>";
 		document.getElementById("猜测").innerHTML = 猜测;
 	}
 }else{
