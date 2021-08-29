@@ -30,6 +30,12 @@ nav_url: <a href="/wangzhi">网址收藏</a>
 		window.location.href="https://limaoqiu.com/"+临时404;
 	}
 
+	//删除最后的“/”
+	临时404=当前url.length-1;
+	if (当前url[临时404]=="/"){
+		window.location.href=当前url.slice(0,临时404);
+	}
+
 	//链接只有数字，尝试跳转到zk
 	临时404 = 当前url.split("limaoqiu.com/")[1];
 	let 替换 = new RegExp('/', "g");

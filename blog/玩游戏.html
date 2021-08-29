@@ -12,40 +12,45 @@ permalink: wanyouxi
 @media screen and (max-width: 449px){ /*手机*/
 .sy50{width:99%}
 }
+body{background-image: url(/img/background/blackboard.jpg);}
 </style>
 
 <a href="/shikuang">
 <img class="tubiao sy50" id="shikuang" src="{{ site.mq_d }}/img/index/shikuang.jpg" 
-onMouseOver="this.src='{{ site.mq_d }}/img/index/shikuang3.jpg'" 
-onMouseOut="this.src='{{ site.mq_d }}/img/index/shikuang3.jpg'" 
-ontouchstart="this.src='{{ site.mq_d }}/img/index/shikuang3.jpg'" 
-ontouchend="this.src='{{ site.mq_d }}/img/index/shikuang3.jpg'" 
+onMouseOver="this.src='/img/index/shikuang3.jpg'" 
+onMouseOut="this.src='/img/index/shikuang3.jpg'" 
+ontouchstart="this.src='/img/index/shikuang3.jpg'" 
+ontouchend="this.src='/img/index/shikuang3.jpg'" 
+onerror="this.src='/img/index/shikuang.jpg';this.onerror=null;" 
 alt="游戏实况" /></a>
 
 <a href="/youxiji">
 <img class="tubiao sy50" id="youxiji" src="{{ site.mq_d }}/img/index/youxiji.jpg" 
-onMouseOver="this.src='{{ site.mq_d }}/img/index/youxiji3.jpg'" 
-onMouseOut="this.src='{{ site.mq_d }}/img/index/youxiji3.jpg'" 
-ontouchstart="this.src='{{ site.mq_d }}/img/index/youxiji3.jpg'" 
-ontouchend="this.src='{{ site.mq_d }}/img/index/youxiji3.jpg'" 
+onMouseOver="this.src='/img/index/youxiji3.jpg'" 
+onMouseOut="this.src='/img/index/youxiji3.jpg'" 
+ontouchstart="this.src='/img/index/youxiji3.jpg'" 
+ontouchend="this.src='/img/index/youxiji3.jpg'" 
+onerror="this.src='/img/index/youxiji.jpg';this.onerror=null;" 
 alt="猫球游戏机" /></a>
 
 <br/>
 
 <a href="/wuyonggonglue">
 <img class="tubiao sy50" id="wuyonggonglue" src="{{ site.mq_d }}/img/index/wuyonggonglue.jpg" 
-onMouseOver="this.src='{{ site.mq_d }}/img/index/wuyonggonglue3.jpg'" 
-onMouseOut="this.src='{{ site.mq_d }}/img/index/wuyonggonglue3.jpg'" 
-ontouchstart="this.src='{{ site.mq_d }}/img/index/wuyonggonglue3.jpg'" 
-ontouchend="this.src='{{ site.mq_d }}/img/index/wuyonggonglue3.jpg'" 
+onMouseOver="this.src='/img/index/wuyonggonglue3.jpg'" 
+onMouseOut="this.src='/img/index/wuyonggonglue3.jpg'" 
+ontouchstart="this.src='/img/index/wuyonggonglue3.jpg'" 
+ontouchend="this.src='/img/index/wuyonggonglue3.jpg'" 
+onerror="this.src='/img/index/wuyonggonglue.jpg';this.onerror=null;" 
 alt="无用攻略" /></a>
 
 <a href="/jiuxian">
 <img class="tubiao sy50" id="jiuxian" src="{{ site.mq_d }}/img/index/jiuxian.jpg" 
-onMouseOver="this.src='{{ site.mq_d }}/img/index/jiuxian3.jpg'" 
-onMouseOut="this.src='{{ site.mq_d }}/img/index/jiuxian3.jpg'" 
-ontouchstart="this.src='{{ site.mq_d }}/img/index/jiuxian3.jpg'" 
-ontouchend="this.src='{{ site.mq_d }}/img/index/jiuxian3.jpg'" 
+onMouseOver="this.src='/img/index/jiuxian3.jpg'" 
+onMouseOut="this.src='/img/index/jiuxian3.jpg'" 
+ontouchstart="this.src='/img/index/jiuxian3.jpg'" 
+ontouchend="this.src='/img/index/jiuxian3.jpg'" 
+onerror="this.src='/img/index/jiuxian.jpg';this.onerror=null;" 
 alt="酒仙笔记" /></a>
 
 <br/>
@@ -61,8 +66,8 @@ let dy1="";
 
 window.onload=function(){   //页面加载完把模糊图换成清晰图、预加载变化图
     for (let i = 0; i < dy0.length; i++) {
-  document.getElementById(dy0[i]).src = "{{ site.mq_d }}/img/index/"+dy0[i]+"3.jpg"; 
-  dy1 += '<img width="1px" src="{{ site.mq_d }}/img/index/' + dy0[i] + '2.jpg"/>';
+  document.getElementById(dy0[i]).src = "/img/index/"+dy0[i]+"3.jpg"; 
+  dy1 += '<img width="1px" src="/img/index/' + dy0[i] + '2.jpg"/>';
 }
 dy1='<div style="display:none;">'+dy1+'</div>';
 document.getElementById("dy0").innerHTML=dy1;
