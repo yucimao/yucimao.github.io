@@ -8,18 +8,18 @@ layout: default
 
     @media (max-width: 730px) { /*小于730px*/
         .qbt {color: #fff;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
-        .qbt {position: absolute;left: 35%;top: 8%;font-size: 30px;}
+        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 8%;font-size: 30px;}
         div.body {position: relative;top: 20px;width: 96%;margin: auto;}
     }
 
     @media (min-width: 730px) { /*大于730*/
         .qbt {color: #fff;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
-        .qbt {position: absolute;left: 35%;top: 15%;font-size: 60px;}
+        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
         div.body {position: relative;top: 20px;width: 80%;margin: auto;}
     }
 
     @media (min-width: 950px) { /*大于950*/
-        .qbt {position: absolute;left: 35%;top: 25%;font-size: 70px;}
+        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 25%;font-size: 70px;}
         div.body {position: relative;top: 20px;width: 65%;margin: auto;}
     }
 
