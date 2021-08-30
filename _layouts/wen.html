@@ -12,6 +12,7 @@ layout: default
         .qbt {text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;width: 96%;margin: auto;}
         .diannao {display:none;}
+        [onclick^="if($(this).css('width')=="]{width:100%;}
     } /*手机*/
 
     div.auth {text-align: center;}
@@ -30,8 +31,8 @@ layout: default
     if (top.location == self.location) {
         var 上级dy =
             "<div class=\"qbt bukexuanzhong\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>" +
-            "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div>"+
-            "<a class=\"diannao\" onclick=\"屏宽()\">切换内容宽度</a><hr>";
+            "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span><br>"+
+            "<a class=\"diannao\" onclick=\"屏宽()\">切换内容宽度</a></div><hr>";
         document.getElementById("上级").innerHTML = 上级dy;
         document.getElementById("wen_body").className = 'body';}
         else{
