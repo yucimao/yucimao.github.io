@@ -2,7 +2,7 @@
 layout: page
 permalink: 404.html
 nav_img: 404.jpg
-title: 这里什么都没有
+title: 尝试跳转中
 nav_text: 这里什么都没有
 nav_url: <a href="/wangzhi">网址收藏</a>
 ---
@@ -49,6 +49,7 @@ if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
 
 if(url问号=="sorry"){跳转url="0";}
 if(跳转url=="0"){
+	document.getElementsByTagName("title")[0].innerText = '这里什么都没有';
 	let 猜测="";
 	for(let i=0;s_data.length>i;i++){
 		let 临时=s_data[i].split("／");
