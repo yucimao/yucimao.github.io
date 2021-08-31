@@ -1,21 +1,20 @@
 <!-- <a name=""></a> 自动在右下角设置跳转列表 -->
 <style>
     @media screen and (min-width: 768px) { /*电脑*/
-        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
-        #right_anchor table{width:100%;}
+        #right_anchor2{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
+        #right_anchor2 table{width:100%;}
     } /*电脑*/
 
     @media screen and (max-width: 767px) { /*手机*/
-        #right_anchor{display:none;}
+        #right_anchor2{display:none;}
     } /*手机*/
-    #right_anchor a{display:block;}
-    #right_anchor2{position:relative;}
-    #right_anchor2 table{width:60%;}
+    #right_anchor2 a{display:block;}
+    #right_anchor{position:relative;}
+    #right_anchor table{width:60%;}
 </style>
-<div id="right_anchor"></div>
 <div id="right_anchor2"></div>
 <script>
-let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
+let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔻</a></td></tr>";
 let anchor_an2 = 0;
 let anchor_dy = "";
 let anchor = document.querySelectorAll('a');
@@ -26,22 +25,22 @@ if (anchor[0]) {
         }
     }
     if(anchor_dy!=""){
-        document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table><br>";
+        document.getElementById("right_anchor").innerHTML = "<table>"+anchor_dy+"</table><br>";
         if(anchor.length>5){
-            document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
         }else{
-            document.getElementById("right_anchor").innerHTML = "<table>"+anchor_dy+"</table><br>";
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table><br>";
         }
     }
 }
 function anchor_zk(){
 if(anchor_an2==1){
     anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔺</a></td></tr>";
-    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
     anchor_an2=0;
 }else{
     anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
-    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table><br>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
     anchor_an2=1;
 }
 }
@@ -49,13 +48,13 @@ if(anchor_an2==1){
 var windowWidth = $(window).width();
     if(windowWidth > 767){
         $(document).ready(function() {
-    $("#right_anchor").hide();
+    $("#right_anchor2").hide();
     $(function() {
         $(window).scroll(function() {
             if ($(this).scrollTop() > 100) {
-                $('#right_anchor').fadeIn();
+                $('#right_anchor2').fadeIn();
             } else {
-                $('#right_anchor').fadeOut();
+                $('#right_anchor2').fadeOut();
             }
         });
     });
