@@ -18,6 +18,7 @@
 let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔻</a></td></tr>";
 let anchor_an2 = 0;
 let anchor_dy = "";
+let anchor_name = 0;
 let anchor = document.querySelectorAll('a');
 if (anchor[0]) {
     for (let i = 0; i < anchor.length; i++) {
@@ -27,7 +28,7 @@ if (anchor[0]) {
     }
     if(anchor_dy!=""){
         if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<table>"+anchor_dy+"</table><br>";}
-        if(anchor.length>5){
+        if(anchor_name>5){
             document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
         }else{
             document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
