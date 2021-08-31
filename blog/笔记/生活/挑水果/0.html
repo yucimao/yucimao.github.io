@@ -1,0 +1,238 @@
+---
+layout: biji
+title: 挑水果
+nav_text: 挑水果
+nav_url: <a href="/zatan">笔记</a>
+permalink: biji/tiaoshuiguo
+---
+<div id="结果"></div>
+<script>
+let data = new Array(
+"通用技巧／【0】／／味道浓郁，同大小更重，纹路清晰，果脐大。<br/>"+
+"<br/>"+
+"<b>1月</b><br/>"+  //1月
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='甘蔗')\">甘蔗</a>、"+
+"<a onclick=\"tion(sg='番石榴')\">番石榴</a>"+
+"<br/><br/>"+
+"<b>2月</b><br/>"+  //2月
+"<a onclick=\"tion(sg='甘蔗')\">甘蔗</a>、"+
+"<a onclick=\"tion(sg='柠檬')\">柠檬</a>、"+
+"<a onclick=\"tion(sg='圣女果')\">圣女果</a>、"+
+"<a onclick=\"tion(sg='番石榴')\">番石榴</a>"+
+"<br/><br/>"+
+"<b>3月</b><br/>"+  //3月
+"<a onclick=\"tion(sg='柠檬')\">柠檬</a>、"+
+"<a onclick=\"tion(sg='枇杷')\">枇杷</a>、"+
+"<a onclick=\"tion(sg='圣女果')\">圣女果</a>、"+
+"<a onclick=\"tion(sg='番石榴')\">番石榴</a>"+
+"<br/><br/>"+
+"<b>4月</b><br/>"+  //4月
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='圣女果')\">圣女果</a>、"+
+"<a onclick=\"tion(sg='枇杷')\">枇杷</a>"+
+"<br/><br/>"+
+"<b>5月</b><br/>"+  //5月
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='樱桃')\">樱桃</a>、"+
+"<a onclick=\"tion(sg='草莓')\">草莓</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='荔枝')\">荔枝</a>、"+
+"<a onclick=\"tion(sg='桑葚')\">桑葚</a>、"+
+"<a onclick=\"tion(sg='山竹')\">山竹</a>、"+
+"<a onclick=\"tion(sg='枇杷')\">枇杷</a>"+
+"<br/><br/>"+
+"<b>6月</b><br/>"+  //6月
+"<a onclick=\"tion(sg='西瓜')\">西瓜</a>、"+
+"<a onclick=\"tion(sg='香瓜')\">香瓜</a>、"+
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='樱桃')\">樱桃</a>、"+
+"<a onclick=\"tion(sg='草莓')\">草莓</a>、"+
+"<a onclick=\"tion(sg='黑莓')\">黑莓</a>、"+
+"<a onclick=\"tion(sg='蓝莓')\">蓝莓</a>、"+
+"<a onclick=\"tion(sg='树莓')\">树莓</a>、"+
+"<a onclick=\"tion(sg='杨梅')\">杨梅</a>、"+
+"<a onclick=\"tion(sg='椰子')\">椰子</a>、"+
+"<a onclick=\"tion(sg='菠萝蜜')\">菠萝蜜</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='荔枝')\">荔枝</a>、"+
+"<a onclick=\"tion(sg='榴莲')\">榴莲</a>、"+
+"<a onclick=\"tion(sg='蛇皮果')\">蛇皮果</a>、"+
+"<a onclick=\"tion(sg='桃子')\">桃子</a>、"+
+"<a onclick=\"tion(sg='山竹')\">山竹</a>、"+
+"<a onclick=\"tion(sg='杏')\">杏</a>"+
+"<br/><br/>"+
+"<b>7月</b><br/>"+  //7月
+"<a onclick=\"tion(sg='西瓜')\">西瓜</a>、"+
+"<a onclick=\"tion(sg='香瓜')\">香瓜</a>、"+
+"<a onclick=\"tion(sg='哈密瓜')\">哈密瓜</a>、"+
+"<a onclick=\"tion(sg='苹果')\">苹果</a>、"+
+"<a onclick=\"tion(sg='芒果')\">芒果</a>、"+
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='黑莓')\">黑莓</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='荔枝')\">荔枝</a>、"+
+"<a onclick=\"tion(sg='桃子')\">桃子</a>、"+
+"<a onclick=\"tion(sg='蟠桃')\">蟠桃</a>、"+
+"<a onclick=\"tion(sg='油桃')\">油桃</a>、"+
+"<a onclick=\"tion(sg='杨梅')\">杨梅</a>、"+
+"<a onclick=\"tion(sg='杨桃')\">杨桃</a>、"+
+"<a onclick=\"tion(sg='菠萝蜜')\">菠萝蜜</a>、"+
+"<a onclick=\"tion(sg='树莓')\">树莓</a>、"+
+"<a onclick=\"tion(sg='椰子')\">椰子</a>、"+
+"<a onclick=\"tion(sg='榴莲')\">榴莲</a>、"+
+"<a onclick=\"tion(sg='龙眼')\">龙眼</a>、"+
+"<a onclick=\"tion(sg='蓝莓')\">蓝莓</a>、"+
+"<a onclick=\"tion(sg='李子')\">李子</a>、"+
+"<a onclick=\"tion(sg='山竹')\">山竹</a>、"+
+"<a onclick=\"tion(sg='杏')\">杏</a>"+
+"<br/><br/>"+
+"<b>8月</b><br/>"+  //8月
+"<a onclick=\"tion(sg='苹果')\">苹果</a>、"+
+"<a onclick=\"tion(sg='西瓜')\">西瓜</a>、"+
+"<a onclick=\"tion(sg='木瓜')\">木瓜</a>、"+
+"<a onclick=\"tion(sg='荔枝')\">荔枝</a>、"+
+"<a onclick=\"tion(sg='芒果')\">芒果</a>、"+
+"<a onclick=\"tion(sg='葡萄')\">葡萄</a>、"+
+"<a onclick=\"tion(sg='百香果')\">百香果</a>、"+
+"<a onclick=\"tion(sg='榴莲')\">榴莲</a>、"+
+"<a onclick=\"tion(sg='桃子')\">桃子</a>、"+
+"<a onclick=\"tion(sg='蟠桃')\">蟠桃</a>、"+
+"<a onclick=\"tion(sg='油桃')\">油桃</a>、"+
+"<a onclick=\"tion(sg='杨梅')\">杨梅</a>、"+
+"<a onclick=\"tion(sg='杨桃')\">杨桃</a>、"+
+"<a onclick=\"tion(sg='猕猴桃')\">猕猴桃</a>、"+
+"<a onclick=\"tion(sg='黄桃')\">黄桃</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='哈密瓜')\">哈密瓜</a>、"+
+"<a onclick=\"tion(sg='龙眼')\">龙眼</a>、"+
+"<a onclick=\"tion(sg='沙果')\">沙果</a>、"+
+"<a onclick=\"tion(sg='蓝莓')\">蓝莓</a>、"+
+"<a onclick=\"tion(sg='李子')\">李子</a>、"+
+"<a onclick=\"tion(sg='山竹')\">山竹</a>、"+
+"<a onclick=\"tion(sg='无花果')\">无花果</a>、"+
+"<a onclick=\"tion(sg='牛油果')\">牛油果</a>"+
+"<br/><br/>"+
+"<b>9月</b><br/>"+  //9月
+"<a onclick=\"tion(sg='菇娘')\">菇娘</a>、"+
+"<a onclick=\"tion(sg='苹果')\">苹果</a>、"+
+"<a onclick=\"tion(sg='黄桃')\">黄桃</a>、"+
+"<a onclick=\"tion(sg='百香果')\">百香果</a>、"+
+"<a onclick=\"tion(sg='海棠果')\">海棠果</a>、"+
+"<a onclick=\"tion(sg='木瓜')\">木瓜</a>、"+
+"<a onclick=\"tion(sg='芒果')\">芒果</a>、"+
+"<a onclick=\"tion(sg='葡萄')\">葡萄</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='哈密瓜')\">哈密瓜</a>、"+
+"<a onclick=\"tion(sg='蓝莓')\">蓝莓</a>、"+
+"<a onclick=\"tion(sg='李子')\">李子</a>、"+
+"<a onclick=\"tion(sg='蟠桃')\">蟠桃</a>、"+
+"<a onclick=\"tion(sg='红提')\">红提</a>、"+
+"<a onclick=\"tion(sg='龙眼')\">龙眼</a>、"+
+"<a onclick=\"tion(sg='蜜柑')\">蜜柑</a>、"+
+"<a onclick=\"tion(sg='猕猴桃')\">猕猴桃</a>、"+
+"<a onclick=\"tion(sg='蛇果')\">蛇果</a>、"+
+"<a onclick=\"tion(sg='沙果')\">沙果</a>、"+
+"<a onclick=\"tion(sg='柿子')\">柿子</a>、"+
+"<a onclick=\"tion(sg='山竹')\">山竹</a>、"+
+"<a onclick=\"tion(sg='石榴')\">石榴</a>、"+
+"<a onclick=\"tion(sg='无花果')\">无花果</a>、"+
+"<a onclick=\"tion(sg='西柚')\">西柚</a>、"+
+"<a onclick=\"tion(sg='香梨')\">香梨</a>、"+
+"<a onclick=\"tion(sg='梨')\">梨</a>、"+
+"<a onclick=\"tion(sg='西瓜')\">西瓜</a>、"+
+"<a onclick=\"tion(sg='杨桃')\">杨桃</a>、"+
+"<a onclick=\"tion(sg='枣')\">枣</a>、"+
+"<a onclick=\"tion(sg='人参果')\">人参果</a>、"+
+"<a onclick=\"tion(sg='菠萝蜜')\">菠萝蜜</a>、"+
+"<a onclick=\"tion(sg='牛油果')\">牛油果</a>"+
+"<br/><br/>"+
+"<b>10月</b><br/>"+  //10月
+"<a onclick=\"tion(sg='苹果')\">苹果</a>、"+
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='菇娘')\">菇娘</a>、"+
+"<a onclick=\"tion(sg='金橘')\">金橘</a>、"+
+"<a onclick=\"tion(sg='香蕉')\">香蕉</a>、"+
+"<a onclick=\"tion(sg='柚子')\">柚子</a>、"+
+"<a onclick=\"tion(sg='枣')\">枣</a>、"+
+"<a onclick=\"tion(sg='橘子')\">橘子</a>、"+
+"<a onclick=\"tion(sg='蜜柑')\">蜜柑</a>、"+
+"<a onclick=\"tion(sg='猕猴桃')\">猕猴桃</a>、"+
+"<a onclick=\"tion(sg='木瓜')\">木瓜</a>、"+
+"<a onclick=\"tion(sg='葡萄')\">葡萄</a>、"+
+"<a onclick=\"tion(sg='西柚')\">西柚</a>、"+
+"<a onclick=\"tion(sg='香梨')\">香梨</a>、"+
+"<a onclick=\"tion(sg='梨')\">梨</a>、"+
+"<a onclick=\"tion(sg='百香果')\">百香果</a>、"+
+"<a onclick=\"tion(sg='山楂')\">山楂</a>、"+
+"<a onclick=\"tion(sg='石榴')\">石榴</a>、"+
+"<a onclick=\"tion(sg='无花果')\">无花果</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='橄榄')\">橄榄</a>、"+
+"<a onclick=\"tion(sg='海棠果')\">海棠果</a>、"+
+"<a onclick=\"tion(sg='蛇果')\">蛇果</a>、"+
+"<a onclick=\"tion(sg='柿子')\">柿子</a>、"+
+"<a onclick=\"tion(sg='人参果')\">人参果</a>、"+
+"<a onclick=\"tion(sg='菠萝蜜')\">菠萝蜜</a>、"+
+"<a onclick=\"tion(sg='番石榴')\">番石榴</a>、"+
+"<a onclick=\"tion(sg='蔓越莓')\">蔓越莓</a>"+
+"<br/><br/>"+
+"<b>11月</b><br/>"+  //11月
+"<a onclick=\"tion(sg='苹果')\">苹果</a>、"+
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='橄榄')\">橄榄</a>、"+
+"<a onclick=\"tion(sg='甘蔗')\">甘蔗</a>、"+
+"<a onclick=\"tion(sg='菇娘')\">菇娘</a>、"+
+"<a onclick=\"tion(sg='金橘')\">金橘</a>、"+
+"<a onclick=\"tion(sg='罗汉果')\">罗汉果</a>、"+
+"<a onclick=\"tion(sg='橘子')\">橘子</a>、"+
+"<a onclick=\"tion(sg='脐橙')\">脐橙</a>、"+
+"<a onclick=\"tion(sg='蛇果')\">蛇果</a>、"+
+"<a onclick=\"tion(sg='山楂')\">山楂</a>、"+
+"<a onclick=\"tion(sg='香蕉')\">香蕉</a>、"+
+"<a onclick=\"tion(sg='海棠果')\">海棠果</a>、"+
+"<a onclick=\"tion(sg='火龙果')\">火龙果</a>、"+
+"<a onclick=\"tion(sg='柚子')\">柚子</a>、"+
+"<a onclick=\"tion(sg='枣')\">枣</a>、"+
+"<a onclick=\"tion(sg='人参果')\">人参果</a>、"+
+"<a onclick=\"tion(sg='菠萝蜜')\">菠萝蜜</a>、"+
+"<a onclick=\"tion(sg='番石榴')\">番石榴</a>、"+
+"<a onclick=\"tion(sg='蔓越莓')\">蔓越莓</a>"+
+"<br/><br/>"+
+"<b>12月</b><br/>"+  //12月
+"<a onclick=\"tion(sg='菠萝')\">菠萝</a>、"+
+"<a onclick=\"tion(sg='橄榄')\">橄榄</a>、"+
+"<a onclick=\"tion(sg='甘蔗')\">甘蔗</a>、"+
+"<a onclick=\"tion(sg='罗汉果')\">罗汉果</a>、"+
+"<a onclick=\"tion(sg='橘子')\">橘子</a>、"+
+"<a onclick=\"tion(sg='砂糖橘')\">砂糖橘</a>、"+
+"<a onclick=\"tion(sg='香蕉')\">香蕉</a>、"+
+"<a onclick=\"tion(sg='番石榴')\">番石榴</a>",
+
+"水果烂了还可以吃么／482539／／",
+"西瓜／407196／／",
+"蜜瓜、香瓜／407207／／",
+"桔子、橘子／407217／／",
+"橙子／407220／／",
+"柚子／407224／／",
+"椰子／407228／／",
+"葡萄／407231／／",
+"榴莲／407235／／",
+"山竹／407239／／",
+"火龙果／407242／／",
+"桃子／407246／／",
+"樱桃（车厘子）／407250／／",
+"荔枝／407254／／",
+"苹果／407257／／",
+"哈密瓜／407262／／",
+"木瓜／407266／／",
+"芒果／407277／／",
+"石榴／407280／／",
+"菠萝（凤梨）／407284／／",
+"柠檬／407288／／",
+"圣女果（小柿子）／407293／／",
+"草莓／407295／／",
+"猕猴桃／407300／／"
+)
+</script>
