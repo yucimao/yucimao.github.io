@@ -6,12 +6,14 @@
     } /*电脑*/
 
     @media screen and (max-width: 767px) { /*手机*/
-        #right_anchor{position:relative;}
-        #right_anchor table{width:60%;}
+        #right_anchor{display:none;}
     } /*手机*/
     #right_anchor a{display:block;}
+    #right_anchor2{position:relative;}
+    #right_anchor2 table{width:60%;}
 </style>
 <div id="right_anchor"></div>
+<div id="right_anchor2"></div>
 <script>
 let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
 let anchor_an2 = 0;
@@ -24,20 +26,39 @@ if (anchor[0]) {
         }
     }
     if(anchor_dy!=""){
-        document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
+        document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table><br>";
+        if(anchor.length>5){
+            document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
+        }else{
+            document.getElementById("right_anchor").innerHTML = "<table>"+anchor_dy+"</table><br>";
+        }
     }
 }
 function anchor_zk(){
-if(anchor_an2==0){
+if(anchor_an2==1){
     anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔺</a></td></tr>";
-    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
-    anchor_an2=1;
+    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
+    anchor_an2=0;
 }else{
     anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
-    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table>";
-    anchor_an2=0;
+    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
 }
 }
 
-anchor_zk();
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor').fadeIn();
+            } else {
+                $('#right_anchor').fadeOut();
+            }
+        });
+    });
+    });
+}
 </script>
