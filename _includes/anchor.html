@@ -9,7 +9,6 @@
         #right_anchor2{display:none;}
     } /*手机*/
     #right_anchor2 a{display:block;}
-    #right_anchor{position:relative;}
     #right_anchor table{width:60%;}
 </style>
 <div id="right_anchor2"></div>
@@ -25,18 +24,18 @@ if (anchor[0]) {
         }
     }
     if(anchor_dy!=""){
-        document.getElementById("right_anchor").innerHTML = "<table>"+anchor_dy+"</table><br>";
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<table>"+anchor_dy+"</table><br>";}
         if(anchor.length>5){
-            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
         }else{
-            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table><br>";
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
         }
     }
 }
 function anchor_zk(){
 if(anchor_an2==1){
     anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔺</a></td></tr>";
-    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
     anchor_an2=0;
 }else{
     anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
