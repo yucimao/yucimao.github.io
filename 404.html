@@ -49,7 +49,7 @@ if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
 
 if(url问号=="sorry"){跳转url="0";}
 if(跳转url=="0"){
-	document.getElementsByTagName("title")[0].innerText = '这里什么都没有';
+	document.getElementsByTagName("title")[0].innerText = '这里什么都没有 - {{ site.title }}';
 	let 猜测="";
 	for(let i=0;s_data.length>i;i++){
 		let 临时=s_data[i].split("／");

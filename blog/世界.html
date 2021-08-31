@@ -181,6 +181,8 @@ var LocString = String(window.document.location.href);
             当前地图 = 地图目录[临时];
         }
 
+document.getElementsByTagName("title")[0].innerText = 当前地图 + ' - {{ site.title }}';
+
 获取数据_地址=当前地图;
 获取数据();
 地图_剧本 = 当前地图.split("[")[1].split("]")[0];
