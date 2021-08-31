@@ -8,22 +8,15 @@ permalink: maoqiu
 ---
 <style>
     @media screen and (min-width: 768px) { /*电脑*/
-        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
-        #right_anchor table{width:100%;}
         .chart{width:50%;}
     } /*电脑*/
 
     @media screen and (max-width: 767px) { /*手机*/
-        #right_anchor{position:relative;}
-        #right_anchor table{width:60%;}
     } /*手机*/
 
-    #right_anchor a{display:block;}
     [onclick^="undefined"]{cursor:default;}
 </style>
 <script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
-
-<div id="right_anchor"></div>
 
 <a name="关于猫球"></a><h2>关于猫球</h2>
 <a class="anniu" onclick="zwjs('普通版')">普通版</a> 
@@ -264,33 +257,6 @@ function anp(e){
 	});
 	e.stopPropagation();
 }
-
-    let anchor = document.querySelectorAll('a'); //小菜单
-    if (anchor[0]) {
-        let anchor_dy = "<table>";
-        for (let i = 0; i < anchor.length; i++) {
-            if (anchor[i]["name"]) {
-                anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
-            }
-        }
-        anchor_dy += "</table>";
-        document.getElementById("right_anchor").innerHTML = anchor_dy;
-    }
-
-
-    var windowWidth = $(window).width();
-    if(windowWidth > 767){
-        $(document).ready(function() {
-    $("#right_anchor").hide();
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('#right_anchor').fadeIn();
-            } else {
-                $('#right_anchor').fadeOut();
-            }
-        });
-    });
-    });
-}
 </script>
+
+{% include anchor.html %}

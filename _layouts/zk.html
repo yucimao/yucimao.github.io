@@ -6,17 +6,12 @@ layout: default
         body{background-color: #F4F8FB;}
         .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
         div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
-        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
-        #right_anchor table{width:100%;}
     } /*电脑*/
 
     @media screen and (max-width: 767px) { /*手机*/
         .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
         div.body {position: relative;top: 20px;width: 96%;margin: auto;}
-        #right_anchor{position:relative;}
-        #right_anchor table{width:60%;}
     } /*手机*/
-    #right_anchor a{display:block;}
     footer {position: relative;top: 300px;z-index: -1001;}
     footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
     .juzhong{text-align:center;}
@@ -71,36 +66,6 @@ layout: default
         }
         let p_link = "{{ page.permalink }}".split("/");
         localStorage.setItem(p_link[2], "1");
-
-        let anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
-        let anchor_an2 = 0;
-
-        if (top.location == self.location) {
-            let anchor_dy = "";
-            let anchor = document.querySelectorAll('a');
-            if (anchor[0]) {
-                for (let i = 0; i < anchor.length; i++) {
-                    if (anchor[i]["name"]) {
-                        anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
-                    }
-                }
-                if(anchor_dy!=""){
-                    document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table><br>";
-                }
-            }
-            function anchor_zk(){
-            if(anchor_an2==0){
-                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">收回 🔺</a></td></tr>";
-                document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+anchor_dy+"</table><br>";
-                anchor_an2=1;
-            }else{
-                anchor_an = "<tr><td><a onclick=\"anchor_zk()\">展开 🔻</a></td></tr>";
-                document.getElementById("right_anchor").innerHTML = "<table>"+anchor_an+"</table><br>";
-                anchor_an2=0;
-            }
-        }
-        anchor_zk();
-        }
     </script>
-
+{% include anchor.html %}
 </body>
