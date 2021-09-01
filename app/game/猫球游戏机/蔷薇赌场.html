@@ -17,7 +17,7 @@ permalink: app/game/iirose
     .a6{font-size:0.8em;color:#555555;}
 </style>
 
-<div class="a1">　<span style="color:#D2D2D2;font-size: 1.5em;">✮</span>　蔷薇赌场（模拟）</div>
+<div class="a1 bukexuanzhong">　<span style="color:#D2D2D2;font-size: 1.5em;">✮</span>　蔷薇赌场（模拟）</div>
 <div class="a0">
     <br>
     <span class="a2 bukexuanzhong"><b>ⓘ　您有50%的概率会赢</b></span>
@@ -42,10 +42,12 @@ permalink: app/game/iirose
     }
 
     function 下注(){
-        let 输入 = document.getElementById("输入").value*1;
-        if(输入>0 && 输入<=余额 && 余额!=0){
+        let 输入 = document.getElementById("输入").value;
+        let 临时 = 输入.split(".");
+        if(输入>0 && 输入<=余额 && 余额!=0 && 临时.length==1){
+            输入=输入*1;
             let 随机数=Math.floor(Math.random() * 99) + 1;
-            if(随机数>45){
+            if(随机数>49){
                 余额=余额*1-输入;
                 document.getElementById("余额").innerHTML = 余额+" 钞 <span style='color:#E80000;'>-"+输入+"</span>";
             }else{
@@ -53,7 +55,7 @@ permalink: app/game/iirose
                 document.getElementById("余额").innerHTML = 余额+" 钞 <span style='color:#199100;'>+"+输入+"</span>";
             }
 
-        }else if(isNaN(输入)||输入<1){alert("请输入正确的数字");}else if(输入>余额){alert("余额不足");}
+        }else if(isNaN(输入)||输入<1){alert("请输入正确的数字");}else if(输入>余额){alert("余额不足");}else if(临时.length!=1){alert("不可以有小数点");}
     }
 
 </script>

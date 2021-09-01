@@ -23,6 +23,7 @@ let anchor = document.querySelectorAll('a');
 if (anchor[0]) {
     for (let i = 0; i < anchor.length; i++) {
         if (anchor[i]["name"]) {
+            anchor_name+=1;
             anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
         }
     }
