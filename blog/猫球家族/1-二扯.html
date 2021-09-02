@@ -7,6 +7,30 @@ permalink: i/zk/398647
 zk_height: 300
 ---
 <!--更新时记得更新另一个页面-->
+<style>
+#duomaoqiu {
+    position: fixed;
+    bottom: 40px;
+    left: -5px;
+    width: 57px;
+    height: 70px;
+    background-image: url(/i/0/2021/0902-erche.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background .3s;
+}
+
+#duomaoqiu:hover {
+    background-position: -60px 50%;
+}
+</style>
+<div id="duomaoqiu" onMouseOut="duoduomaoqiu()"></div>
+<script>
+var randomNum = function (minNum, maxNum) {switch (arguments.length) {case 1: return parseInt(Math.random() * minNum + 1, 10);break;case 2: return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);break;default: return 0;break;}}
+var duoduomaoqiu = function () { var duomaoqiu = $('#duomaoqiu'); duomaoqiu.css('bottom', randomNum(5, 80) + 'vh'); }
+</script>
+
 中文名：二扯<br>
 外文名：TwoChe<br>
 <a href="https://limaoqiu.lofter.com/tag/%E4%BA%8C%E6%89%AF" class="anniu">二扯相册</a><br>

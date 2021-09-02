@@ -7,34 +7,58 @@ permalink: i/zk/398645
 ---
 <!--更新时记得更新另一个页面-->
 <style>
-    .tsx {  /*底部提示框*/
-        position: relative;
-        display: inline-block;
-    }
+#duomaoqiu {
+    position: fixed;
+    bottom: 40px;
+    left: -5px;
+    width: 57px;
+    height: 70px;
+    background-image: url(/i/0/2021/0902-maoqiu.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background .3s;
+}
 
-    .tsx .tsxt {
-        border: 1px solid #c0c0c0;
-        visibility: hidden;
-        width: 400px;
-        background-color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        
-        /* 定位 */
-        position: absolute;
-        z-index: 1;
-        top: 80%;
-        left: 50%;
-        margin-left: -200px;
-    }
+#duomaoqiu:hover {
+    background-position: -60px 50%;
+}
+</style>
+<div id="duomaoqiu" onMouseOut="duoduomaoqiu()"></div>
+<script>
+var randomNum = function (minNum, maxNum) {switch (arguments.length) {case 1: return parseInt(Math.random() * minNum + 1, 10);break;case 2: return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);break;default: return 0;break;}}
+var duoduomaoqiu = function () { var duomaoqiu = $('#duomaoqiu'); duomaoqiu.css('bottom', randomNum(5, 80) + 'vh'); }
+</script>
 
-    .tsx:hover .tsxt {
-        transform:translate(0,20px);
-        transition:all 0.5s;
-        visibility: visible;
-    }
-    </style>
+<style>
+.tsx {  /*底部提示框*/
+    position: relative;
+    display: inline-block;
+}
+
+.tsx .tsxt {
+    border: 1px solid #c0c0c0;
+    visibility: hidden;
+    width: 400px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: 50%;
+    margin-left: -200px;
+}
+
+.tsx:hover .tsxt {
+    transform:translate(0,20px);
+    transition:all 0.5s;
+    visibility: visible;
+}
+</style>
 
 中文名：李猫球<br/>
 外文名：<span onmouseover="javascript:this.innerHTML='（瞎写的）'" onmouseout="javascript:this.innerHTML='CatBall、猫ボール（NyaQ）'">CatBall、猫ボール（NyaQ）</span><br/>
