@@ -18,6 +18,50 @@ permalink: maoqiu
 </style>
 <script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
 
+<style>
+#duomaoqiu { /* 躲猫球↓ */
+    position: fixed;
+    bottom: 40px;
+    left: -5px;
+    width: 57px;
+    height: 70px;
+    background-image: url(/i/0/2021/0902-maoqiu.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background .3s;
+}
+#duomaoqiu:hover {
+    background-position: -60px 50%;
+}
+#duomaoqiu2 {
+    position: fixed;
+    top: 60px;
+    left: -5px;
+    width: 57px;
+    height: 70px;
+    background-image: url(/i/0/2021/0902-erche.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background .3s;
+}
+
+#duomaoqiu2:hover {
+    background-position: -60px 50%;
+}
+</style>
+
+<div id="duomaoqiu" onMouseOut="duoduomaoqiu()"></div>
+<div id="duomaoqiu2" onMouseOut="duoduomaoqiu2()"></div>
+<script>
+var randomNum = function (minNum, maxNum) {switch (arguments.length) {case 1: return parseInt(Math.random() * minNum + 1, 10);break;case 2: return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);break;default: return 0;break;}}
+var duoduomaoqiu = function () { var duomaoqiu = $('#duomaoqiu'); duomaoqiu.css('bottom', randomNum(5, 80) + 'vh'); }
+var randomNum2 = function (minNum, maxNum) {switch (arguments.length) {case 1: return parseInt(Math.random() * minNum + 1, 10);break;case 2: return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);break;default: return 0;break;}}
+var duoduomaoqiu2 = function () { var duomaoqiu2 = $('#duomaoqiu2'); duomaoqiu2.css('top', randomNum2(5, 80) + 'vh'); }
+// ↑躲猫球
+</script>
+
 <a name="关于猫球"></a><h2>关于猫球</h2>
 <a class="anniu" onclick="zwjs('普通版')">普通版</a> 
 <a class="anniu" onclick="zwjs('网上冲浪版')">网上冲浪版</a> 
