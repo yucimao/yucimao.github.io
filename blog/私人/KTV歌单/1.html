@@ -1,0 +1,73 @@
+---
+layout: page2
+title: KTV歌单
+nav_text: ASD
+nav_url: <a href="/private">私人网页</a>
+permalink: biji/ktv/b
+---
+{% include popup_dw.html %}
+<div id="结果"></div>
+<script>
+    let data=[
+    // "等级／显示名／复制／打开／更多",
+    //S
+    "S／《思念是一种病》张震岳／／／",
+    //A
+    "A／《啊朋友 再见》／／／歌手：冬子、刘东明、小河、钟立风、好妹妹、蒋明",
+    "A／《烦恼歌》张学友／／／",
+    "A／《男孩别哭》海龟先生／／／",
+    //B
+    "B／《DEAR JOHN》比莉／／／",
+    "B／《五虎》慢慢说／／／",
+    //C
+    "C／《Super MT》／／／",
+    //D
+    "D／《我叫MT》／／／",
+    //E
+    "E／《我的天坑》／／／",
+    "E／《一个人》铃凯 吴青峰／／／",
+    //其他
+    "其他／《Super Star》麦田守望者／／／",
+    "其他／《爱的初体验》张震岳／／／",
+    "其他／《成长的路口》咖啡因乐队／／／",
+    "其他／《城市》张悬／城市／／",
+    "其他／《春风十里》孟大宝／／／",
+    "其他／《当那枫叶红》费玉清／／／",
+    "其他／《干物女（WeiWei）》／干物女／448629／",
+    "其他／《给自己的歌》李宗盛／／／",
+    "其他／《公路》纵贯线／／／",
+    "其他／《河蟹你全家》／／448610／",
+    "其他／《假行僧》／／／",
+    "其他／《尽在一笑中》／／／",
+    "其他／《礼物》／／／",
+    "其他／《恋曲1990》纵贯线／／／",
+    "其他／《闷》王菲／／／",
+    "其他／《千本幼女》／／448624／",
+    "其他／《秋天》龙宽／／／",
+    "其他／《神的随波逐流》／／／",
+    "其他／《素颜》许嵩／／／",
+    "其他／《天黑黑》张学友／／／",
+    "其他／《新长征路上的摇滚》／／／",
+    "其他／《演歌》陈珊妮／／／",
+    "其他／《野狼disco》宝石Gem／／448600／",
+    "其他／《又是下雨天》／／／",
+    ];
+    let dy="<table><tr><th></th><th></th><th></th></tr>";
+    for(let i=0;data.length>i;i++){
+        let 临时=data[i].split("／");
+        dy+="<tr><td>"+临时[0]+"</td><td>"+临时[1]+"</td><td>";
+            if(临时[2]!=""){dy+=" <a onclick=\"复(制='"+临时[2]+"')\">复制</a>";}else{
+                dy+=" <a onclick=\"复(制='"+临时[1].split("《")[1].split("》")[0]+"')\">复制</a>";
+            }
+            if(临时[3]!=""){
+                if(临时[3]>0){dy+=" <a href=\"/i/zk/"+临时[3]+"\" target=\"_blank\">打开</a>";
+                }else{dy+=" <a href=\""+临时[3]+"\" target=\"_blank\">打开</a>";}}
+            if(临时[4]!=""){dy+=" <a onclick=\"dw(dwb='"+临时[4]+"')\">更多</a>";}
+            dy+="</td></tr>"
+    }
+    dy+="</table>";
+document.getElementById("结果").innerHTML = dy;
+
+</script>
+<input id="复制" style="position:absolute;top:-1000px"/>
+<script>let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
