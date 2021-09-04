@@ -39,7 +39,7 @@ var particles = [];
 var js=document.scripts;
 //获取相对当前js目录的雪花图片路径
 var path=js[js.length-1].src.substring(0,js[js.length-1].src.lastIndexOf("/"));
-var imageSrc=path.substring(0,path.lastIndexOf("/")+1)+"/5/new/snow/ParticleSmoke.png";
+var imageSrc="/5/new/snow/ParticleSmoke.png";
 
 var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
 particleImage.src = imageSrc; 
