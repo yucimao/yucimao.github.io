@@ -2,38 +2,17 @@
 layout: o
 permalink: i/halloween
 ---
+<body onclick="跳转()">
 <style>
-    *{margin: 0;padding: 0;}
-    body{background-color: #000000;text-align:center;}
+    *{margin: 0;padding: 0;cursor:pointer;}
+    body{text-align:center;background:url('/5/door/万圣节.jpg') no-repeat center top;background-color: #000000;background-size: 100vh;}
     a{text-decoration:none;color:#bbbbbb;cursor:pointer;}a:hover,a:focus{color:#ffffff;}a img:hover,a img:focus{cursor:pointer;}
-    #img{background-image:url('/5/door/万圣节.jpg');}
-    @media screen and (min-width: 768px) {#img{width:70%;}}
-    @media screen and (max-width: 767px) {#img{width:97%;}}
-    #code{
-		width:40%;
-		min-width:450px;
-		height:450px;
-		background-color:rgba(0, 0, 0, 0.3);
-		position:fixed;
-		left:30%;
-		top:20%;
-		border-radius: 10px;
-		font-size:16px;
-		line-height:22px;
-	}
-	#author{
-		position: fixed;
-		bottom: 10px;
-		left: 48%;
-	}
-	#author a{
-		text-decoration: none;}
+    @media screen and (min-width: 768px) {body{width:70%;}}
+    @media screen and (max-width: 767px) {body{width:97%;}}
 </style>
-<div id="img"></div>
-
    <script src="/5/new/snow/ThreeCanvas.js"></script>
-   <script src="/5/new/snow//Snow.js"></script>
-   <script src="/5/new/snow//snowFall.js"></script>
+   <script src="/5/new/snow/Snow.js"></script>
+   <script src="/5/new/snow/snowFall.js"></script>
    <script>
        $.snowFall({
            //创建粒子数量，密度
@@ -53,7 +32,12 @@ permalink: i/halloween
            wind_weight:0
            });
 
-        let num = 7;let s = window.setInterval(function(){num--;if(num<=0){window.parent.location.href = "{{ site.mq_i }}";}}, 1000);
+           function 跳转(){
+            window.parent.location.href = "{{ site.mq_i }}";
+           }
+
+        // let num = 7;let s = window.setInterval(function(){num--;if(num<=0){window.parent.location.href = "{{ site.mq_i }}";}}, 1000);
    </script>
    <canvas>
    </canvas>
+   </body>
