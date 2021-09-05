@@ -20,7 +20,7 @@ let data = [
 
 let 本页书名="立秋闲梦";
 let wzjm_输入 = "HNQAMfQsLyP4MfQAIfQsINP4LfQAJsQeMfP5INQAHyP4HsP5HsQAMfQsLyP4MfQAHyP4HsP5HODkMPTkLjHkJiTkMOTkLgPkJiDkMObkLPTkJOPy";
-wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
+let wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
 wzjm_解密();
 data=wzjm_输入.split("【／】");
 
@@ -28,6 +28,5 @@ data=wzjm_输入.split("【／】");
 function 解锁码确定(){
     let 解锁码输入 = document.getElementById("解锁码").value;
     localStorage.setItem(本页书名+"_解锁码",解锁码输入);
-    alert(localStorage.getItem("测试"));
 }
 </script>
