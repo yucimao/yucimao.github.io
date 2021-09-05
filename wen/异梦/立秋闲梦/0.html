@@ -8,10 +8,26 @@ wen_auth: 李猫球
 wen_sta: 连载中
 book_item: 立秋闲梦
 ---
+<script src="/js/mq-wzjm.js"></script>
+<input placeholder="解锁码" id="解锁码" style="width:70px" />
+<button onclick="解锁码确定()">确定</button> 
 <a href="/i/zk/2697070" target="_blank">.</a>
 <div id="contents"></div>
 <script>
-let data = new Array(
+let data = [
 "2678560／秦初缕",
-)
+];
+
+let 本页书名="立秋闲梦";
+let wzjm_输入 = "HNQAMfQsLyP4MfQAIfQsINP4LfQAJsQeMfP5INQAHyP4HsP5HsQAMfQsLyP4MfQAHyP4HsP5HODkMPTkLjHkJiTkMOTkLgPkJiDkMObkLPTkJOPy";
+wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
+wzjm_解密();
+data=wzjm_输入.split("【／】");
+
+
+function 解锁码确定(){
+    let 解锁码输入 = document.getElementById("解锁码").value;
+    localStorage.setItem(本页书名+"_解锁码",解锁码输入);
+    alert(localStorage.getItem("测试"));
+}
 </script>
