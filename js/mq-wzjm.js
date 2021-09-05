@@ -31,6 +31,7 @@ function wzjm_加密(){
 }
 function wzjm_解密(){
     let wzjm_b="";
+    if(wzjm_密码){}else{wzjm_密码="A";}
     for(let i=0;wzjm_密码.length>i;i++){
         if(wzjm_b.indexOf(wzjm_密码[i]) != -1){}
         else{
