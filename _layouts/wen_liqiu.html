@@ -28,7 +28,7 @@ layout: default
     <script>
     if (top.location == self.location) {
         var 上级dy =
-            "<div class=\"qbt bukexuanzhong\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>" +
+            "<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>" +
             "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span></div><hr>";
         document.getElementById("上级").innerHTML = 上级dy;
         document.getElementById("wen_body").className = 'body';}
