@@ -20,9 +20,9 @@ let data = [
 
 let 本页书名="立秋闲梦";
 let wzjm_输入 = "HNQAMfQsLyP4MfQAIfQsINP4LfQAJsQeMfP5INQAHyP4HsP5HsQAMfQsLyP4MfQAHyP4HsP5HODkMPTkLjHkJiTkMOTkLgPkJiDkMObkLPTkJOPy";
-
+let wzjm_密码 = "";
 if(localStorage.getItem(本页书名+"_解锁码")){
-let wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
+wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
 wzjm_解密();
 data=wzjm_输入.split("【／】");
 }
