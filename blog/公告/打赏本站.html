@@ -18,7 +18,6 @@ permalink: donate
 
 <br />
 <table>
-    <tr><td></td><td></td></tr>
     <tr><td>微信打赏<br><img src="{{ site.mq_d }}/img/i/qita/ds/wx.jpg" onerror="this.src='/img/i/qita/ds/wx.jpg';this.onerror=null;" width="300px" alt="微信打赏"></td>
         <td>QQ打赏<br><img src="{{ site.mq_d }}/img/i/qita/ds/qq.jpg" onerror="this.src='/img/i/qita/ds/qq.jpg';this.onerror=null;" width="300px" alt="QQ打赏"></td></tr>
     <tr><td><a href="https://space.bilibili.com/515330" target="_blank">B站充电</a><sup>（不推荐）</sup></td>
@@ -47,13 +46,13 @@ permalink: donate
         "二扯／3／无",
         "不知道叫啥怪我咯／2／_(:з」∠)_",
     ]
-    let 名单记录dy="<b>名单</b> <small>时间排序</small><br>切换成<a onclick=\"名单('排行')\">排行榜</a><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
+    let 名单记录dy="<b>名单</b> <small>时间排序</small><br>切换成<a class=\"bukexuanzhong\" onclick=\"名单('排行')\">排行榜</a><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
         for(let i=0;名单记录.length>i;i++){
             名单临时=名单记录[i].split("／");
             名单记录dy+="<tr><td>"+名单临时[0]+"</td><td>"+名单临时[1]+"<sub>元</sub></td><td>"+名单临时[2]+"</td></tr>";
         }
         名单记录dy+="</table>";
-    let 名单排行dy="<b>名单</b> <small>排行榜</small><br>切换成<a onclick=\"名单('记录')\">时间排序</a><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
+    let 名单排行dy="<b>名单</b> <small>排行榜</small><br>切换成<a class=\"bukexuanzhong\" onclick=\"名单('记录')\">时间排序</a><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
         for(let i=0;名单排行.length>i;i++){
             名单临时=名单排行[i].split("／");
             名单排行dy+="<tr><td>"+名单临时[0]+"</td><td>"+名单临时[1]+"<sub>元</sub></td><td>"+名单临时[2]+"</td></tr>";
