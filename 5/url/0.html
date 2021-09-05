@@ -1,0 +1,13 @@
+---
+permalink: 5/url/模板
+title: 跳转中
+---
+<script>window.location.href="【直接跳转】";</script>
+
+<script>
+if (/phone|pad|pod|iPhone|iPod|ios|iPad|Android|Fennec|BlackBerry|Mobile|IEMobile|MQQBrowser|JUC|Fennec|WosBrowser|BrowserNG|WebOS|Symbian|Windows Phone/i.test(navigator.userAgent)) {
+    window.location.href = '【手机链接】';
+} else {
+    window.location.href = '【电脑链接】';
+}
+</script>

@@ -4,40 +4,58 @@ permalink: i/halloween
 ---
 <body onclick="跳转()">
 <style>
-    *{margin: 0;padding: 0;cursor:pointer;overflow:hidden;}
-    body{text-align:center;background:url('/5/door/万圣节.jpg') no-repeat center top;background-color: #000000;background-size: 100vh;}
-    a{text-decoration:none;color:#bbbbbb;cursor:pointer;}a:hover,a:focus{color:#ffffff;}a img:hover,a img:focus{cursor:pointer;}
-    @media screen and (min-width: 768px) {body{background-size: 80%;}}
-    @media screen and (max-width: 767px) {body{background-size: 80%;}}
+  * {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  body {
+    text-align: center;
+    background: url('/5/door/万圣节.jpg') no-repeat center top;
+    background-color: #000000;
+    background-size: 100vh;
+  }
+
+  @media screen and (min-width: 700px) {
+    body {
+      background-size: 80%;
+    }
+  }
+
+  @media screen and (max-width: 699px) {
+    body {
+      background-size: 180%;
+    }
+  }
 </style>
-   <script src="/5/new/snow/ThreeCanvas.js"></script>
-   <script src="/5/new/snow/Snow.js"></script>
-   <script src="/5/new/snow/snowFall.js"></script>
-   <script>
-       $.snowFall({
-           //创建粒子数量，密度
-           particleNo: 500,
-           //粒子下拉速度
-           particleSpeed:30,
-           //粒子在垂直（Y轴）方向运动范围
-           particleY_Range:1300,
-           //粒子在垂直（X轴）方向运动范围
-           particleX_Range:1000,
-           //是否绑定鼠标事件
-           bindMouse: false,
-           //相机离Z轴原点距离
-           zIndex:600,
-         //摄像机视野角度
-           angle:55,
-           wind_weight:0
-           });
+<script src="/5/new/snow/ThreeCanvas.js"></script>
+<script src="/5/new/snow/Snow.js"></script>
+<script src="/5/new/snow/snowFall.js"></script>
+<script>
+  $.snowFall({
+    //创建粒子数量，密度
+    particleNo: 300,
+    //粒子下拉速度
+    particleSpeed: 40,
+    //粒子在垂直（Y轴）方向运动范围
+    particleY_Range: 1300,
+    //粒子在垂直（X轴）方向运动范围
+    particleX_Range: 1000,
+    //是否绑定鼠标事件
+    bindMouse: false,
+    //相机离Z轴原点距离
+    zIndex: 600,
+    //摄像机视野角度
+    angle: 55,
+    wind_weight: 0
+  });
 
-           function 跳转(){
-            window.parent.location.href = "{{ site.mq_i }}";
-           }
+  function 跳转() {
+    window.parent.location.href = "{{ site.mq_i }}";
+  }
 
-        // let num = 7;let s = window.setInterval(function(){num--;if(num<=0){window.parent.location.href = "{{ site.mq_i }}";}}, 1000);
-   </script>
-   <canvas>
-   </canvas>
-   </body>
+</script>
+<canvas></canvas>
+</body>
