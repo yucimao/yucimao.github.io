@@ -20,7 +20,7 @@ let wzjm_输入="EPP0EPEiEPiwEPP1EPi1EPEi";
 let wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
 wzjm_解密();
 let 正文="本页无内容。";
-正文=wzjm_输入;
+if (wzjm_输入.indexOf("。") != -1){正文=wzjm_输入;}
 
 let 替换表=[//记录文字／  前缀／显示文字／后缀  ／弹窗标题／zk码或留空为0
 
