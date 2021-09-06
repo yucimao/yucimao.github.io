@@ -43,6 +43,7 @@ layout: default
     footer {float: left;width: 100%;}
     hr{width:100%;}
     .hs{color:#404040;}
+    b.dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 </style>
 
 </head>
@@ -111,7 +112,7 @@ function 加载(){
                 dy += "<a onclick=\""+临时[5]+"\">";
             }
             if(isNaN(临时[0])){
-            dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
+            dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\"/><b class=\"dk\">" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
         } else {
             dy += "<img src=\"{{ site.mq_d }}/i/cj/" + 临时[0] + ".jpg\" onerror=\"this.src='/i/cj/" + 临时[0] + ".jpg';this.onerror=null;\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
             if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
