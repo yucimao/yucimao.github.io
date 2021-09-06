@@ -103,6 +103,7 @@ layout: default
             let 结果2 = "";
             for (let i = 0; data.length > i; i++) {
                 let 临时 = data[i].split("／");
+                if(isNaN(临时[0])){临时[0]=临时[0]+"<sup> ◥</sup>";}
                 let 过程 = "0";
                 let 过程2 = "0";
                 for (let i2 = 0; 输入2.length > i2; i2++) {
@@ -198,6 +199,7 @@ layout: default
 
             for (let i2 = 0; 随机.length > i2; i2++) {
                 随机临时 = 随机[i2].split("／");
+                if(isNaN(随机临时[0])){随机临时[0]=随机临时[0]+"<sup> ◥</sup>";}
                 if(localStorage.getItem(随机临时[1])){
                     随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\" class=\"yidu\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
                 }
@@ -213,6 +215,7 @@ layout: default
             let 未读临时;
             for (let i=0;datb.length>i;i++){
                 未读临时 = datb[i].split("／");
+                if(isNaN(未读临时[0])){未读临时[0]=未读临时[0]+"<sup> ◥</sup>";}
                 if(localStorage.getItem(未读临时[1])){}
                 else{
                     未读结果 += "<h4 onclick=\"zk(zka='" + 未读临时[1] + "')\">" + 未读临时[0] + "</h4><ul id=\"／" + 未读临时[1] + "\" style=\"display:none;\">" + 未读临时[3] + "</ul>";
