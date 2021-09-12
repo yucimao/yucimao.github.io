@@ -7,8 +7,16 @@ permalink: game/guonanmoniqi
 {% include popup_dw.html %}
 
 <style>
+body{
+    background-color:#BFBFBF;
+}
+
+p{
+    background-color:#DEDEDE;padding:.5em;
+}
+
 .dui {
-    background: #ffffff;
+    background: #DEDEDE;
     animation: duib 0.7s linear 1;
     /*Safari 和 Chrome:*/
     -webkit-animation: duib 0.7s linear 1;
@@ -21,7 +29,7 @@ permalink: game/guonanmoniqi
     }
 
     to {
-        background-color: #ffffff;
+        background-color: #DEDEDE;
     }
 }
 
@@ -32,12 +40,12 @@ permalink: game/guonanmoniqi
     }
 
     to {
-        background-color: #ffffff;
+        background-color: #DEDEDE;
     }
 }
 
 .cuo {
-    background: #ffffff;
+    background: #DEDEDE;
     animation: cuob 1s linear 1;
     /*Safari 和 Chrome:*/
     -webkit-animation: cuob 0.7s linear 1;
@@ -50,7 +58,7 @@ permalink: game/guonanmoniqi
     }
 
     to {
-        background-color: #ffffff;
+        background-color: #DEDEDE;
     }
 }
 
@@ -61,11 +69,11 @@ permalink: game/guonanmoniqi
     }
 
     to {
-        background-color: #ffffff;
+        background-color: #DEDEDE;
     }
 }
 
-#浮框{position: fixed;top:0;background-color:#ffffff;padding:1em;}
+#浮框{position: fixed;top:3em;background-color:#DEDEDE;padding:1em;border-style: solid;}
 a[onclick^="dw(dwb="]{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em;}
 a[onclick^="dw(dwb="]:before{content:"[";color:#404040;}
 a[onclick^="dw(dwb="]:after{content:"]";color:#404040;}
@@ -75,7 +83,7 @@ a[onclick^="dw(dwb="]:after{content:"]";color:#404040;}
 <br><br><br><br><br><br>
 <div id="dy"></div>
 
-<div id="浮框" class="bukexuanzhong"><br>
+<div id="浮框" class="bukexuanzhong">
 <div id="数值"></div><br>
 <div id="继续"><button onclick="开始()">开始</button></div>
 </div>
@@ -340,7 +348,7 @@ function 开始(){
 
 function 继续(){
     window.location.href="#位置";
-    window.scrollBy(0, -100);
+    window.scrollBy(0, -50);
     if(当前时期=="幼年"){ //幼年
         if(当前进度<5){
             当前剧情=arr[当前进度].split("／");
