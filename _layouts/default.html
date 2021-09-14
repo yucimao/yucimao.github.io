@@ -27,6 +27,14 @@
             }
         }
     }
+        target = document.querySelectorAll('img');
+        if (target[0]) {
+        for (let i = 0; i < target.length; i++) {
+            if (target[i]["onerror"]){}else{
+                    target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+                }
+            }
+        }
     window.onload=function(){
     var _hmt = _hmt || [];
     (function() {
