@@ -1,0 +1,70 @@
+---
+layout: page2
+title: 女权运动：米兔
+nav_text: 女权运动：米兔
+nav_url: <a href="/private">私人网页</a>
+permalink: nvquan/mitu/i
+---
+<a href="/i/zk/3288406" target="_blank">米兔是什么？</a><br>
+<a href="/nvquan/mitu" target="_blank">排序版本</a><br>
+
+<script src='{{ site.mq_d }}/5/new/svg3dtagcloud_onclick.js'></script>
+{% include popup_dw.html %}
+<div id="tag-cloud"></div>
+<script>
+let entries=[];
+let tagcloud=[
+    //"／dw(dwb='',dwd='【】')",
+    //"／window.open('')",
+    //"／dw(dwb='<img src=\"{{ site.mq_d }}/img/i/chengjiu/\"/>',dwd='【】')",
+
+    "朱军案／dw(dwb='3288484',dwd='朱军案')",
+    "横穿马路说民警强奸／dw(dwb='3288502',dwd='横穿马路说民警强奸')",
+    "春秋两不沾／dw(dwb='3288517',dwd='春秋两不沾')",
+    "鲍毓明／dw(dwb='3288527',dwd='鲍毓明')",
+    "罗冠军／dw(dwb='3288538',dwd='罗冠军')",
+    "清华学姐／dw(dwb='3288544',dwd='清华学姐')",
+    "钟某／dw(dwb='3288558',dwd='钟某')",
+    "偷拍裙底／dw(dwb='3288564',dwd='偷拍裙底')",
+
+];
+
+let p = Array.from(tagcloud), i, a = [];
+    while (p.length > 0) {
+        i = parseInt(Math.random() * p.length);
+        a.push(p[i]);
+        p.splice(i, 1);
+    }
+    tagcloud = a;
+
+for(let i=0;tagcloud.length>i;i++){
+    if(i<30){
+        let 临时=tagcloud[i].split("／");
+        let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+        let 颜色_i=i%颜色.length;
+        entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
+    }
+}
+
+let settings = {
+entries: entries,
+width: 640,
+height: 480,
+radius: '80%',
+radiusMin: 100,
+bgDraw: false,
+opacityOver: 1.00,
+opacityOut: 0.15,
+opacitySpeed: 6,
+fov: 800,
+speed: 0.4,
+fontSize: '20',
+fontColor: '#009688',
+fontWeight: 'normal',
+fontStyle: 'normal',
+fontStretch: 'normal',
+fontToUpperCase: false
+};
+$( '#tag-cloud' ).svg3DTagCloud( settings );
+</script>
