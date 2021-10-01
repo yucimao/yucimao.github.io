@@ -92,9 +92,8 @@ function 展开(){
     document.getElementById("juzhong").innerHTML = juzhongdy;
 }
 
-function 解密(){
+function 解锁(){
 let 结果="";
-wzjm_密码 = document.getElementById("密码").value;
 for(let i=0;data.length>i;i++){
     wzjm_输入=data[i];
     wzjm_解密();
@@ -104,5 +103,15 @@ data=结果.split("［／］");
 
 let juzhongdy="<button type=\"button\" onclick=\"随机排序()\">随机显示</button>";
 document.getElementById("juzhong").innerHTML = juzhongdy;
+}
+if(localStorage.getItem("稍后再看")){
+wzjm_密码 = localStorage.getItem("稍后再看");
+解锁();
+}
+
+function 解密(){
+let 解锁码输入 = document.getElementById("密码").value;
+localStorage.setItem("稍后再看");
+location.reload();
 }
 </script>
