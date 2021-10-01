@@ -9,7 +9,7 @@ permalink: wen/liqiu/qingbao/b
 {% include popup_dw.html %}
 <span id="当前进度dy"></span> <small>（<a onclick="清空进度()">清空阅读进度</a>）</small><br>
 
-<style>span {list-style: none;line-height: 2.4;font-size: 1.2em;color: #006699;cursor: pointer;}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
+<style>#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="搜索" onkeyup="确定()" /></form><div id="结果"></div>
 
@@ -36,8 +36,8 @@ if(阅读进度<本页章节){localStorage.setItem(本页书名+"_进度",本页
 document.getElementById("当前进度dy").innerHTML = 当前进度dy;
 
 for(let i=0;data.length>i;i++){
-    let 临时2=data[i].split("／");
-    if(阅读进度>=临时2[0]){tagcloud+="＼"+临时2[1]+"／window.open('"+临时2[2]+"')";}
+    let 临时2=data[i].split("／"); //dw(dwb='',dwd='【】')
+    if(阅读进度>=临时2[0]){tagcloud+="＼"+临时2[1]+"／dw(dwb='"+临时2[2]+"',dwd='"+临时2[1]+"')";}
 }
 tagcloud=tagcloud.split("＼＼")[1].split("＼");
 
@@ -102,13 +102,10 @@ function 确定() {
             else { 过程 = "1"; }
         }
         if (过程 == "0") {
-            结果 += "<p><span onclick=\"zk(zka='" + 临时3[2] + "')\">" + 临时3[1] + "</span></p>";
+            结果 += "<p><a onclick=\"zk(zka='" + 临时3[2] + "')\">" + 临时3[1] + "</a></p>";
         }
     }
-
-    let 打印 = 结果 + "<br/><hr>" + 结果2;
-    document.getElementById("结果").innerHTML = 打印;
+    document.getElementById("结果").innerHTML = 结果;
 }
-
 
 </script>
