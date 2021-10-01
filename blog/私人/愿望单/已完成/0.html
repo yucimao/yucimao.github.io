@@ -1,12 +1,13 @@
 ---
 layout: page2
 title: 愿望单 - 已完成
-nav_text: 愿望单 <small>已完成</small>
+nav_text: <small>已完成的</small>愿望
 nav_url: <a href="/yuanwang">未完成</a>
 permalink: yuanwang/a
 ---
 <style>
 .tsx {/*底部提示框*/position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}
+td{padding-right: 8px;padding-left: 8px;}
 </style>
 
 {% include popup_dw.html %}
@@ -18,12 +19,13 @@ let data=[
     // 年份
     // 年-月-日(开始)／年-月-日(结束)／标题／小介绍／更多
     //  - 更多：zk码 / 文字 / ［按钮］内容＼［按钮2］内容2
+    
 "2021",
 "2021-9-7／2021-9-30／可乐桶／威士忌+可乐／",
 
 ];
 
-let dy="<a href=\"#"+data[0]+"\">"+data[0]+"年</a><br>";
+let dy="跳转到<a href=\"#"+data[0]+"\">"+data[0]+"年</a><br><hr><br>";
 let 临时;
 let 临时2;
 let 临时3;
@@ -31,7 +33,7 @@ let 临时3;
 for(let i=0;data.length>i;i++){
     if(data[i]>0){
         if(dy!=""){dy+="</table>"}
-        dy+="<a name=\""+data[i]+"\"></a><h3>"+data[i]+"</h3><table><tr><th>耗时</th><th>愿望</th><th>说明</th><th></th>";
+        dy+="<a name=\""+data[i]+"\"></a><h3>"+data[i]+"</h3><table><tr><th>耗时</th><th>愿望</th><th>说明</th>";
     }else{
         临时=data[i].split("／");
         临时2=临时[0].split("-");
@@ -40,8 +42,9 @@ for(let i=0;data.length>i;i++){
         临时3=new Date(临时3[0],临时3[1],临时3[2]);
         临时2=(临时3.getTime()-临时2.getTime())/(1000*60*60*24);
         dy+="<tr><td><div class=\"tsx\">"+临时2+"天<span class=\"tsxt\">"+临时[0]+"<br>"+临时[1]+"</span></div></td>";
-        dy+="<td><b>"+临时[2]+"</b></td><td>"+临时[3]+"</td><td>";
+        dy+="<td><b>"+临时[2]+"</b></td><td>"+临时[3]+"</td>";
         if(临时[4].length>0){
+            dy+="<td>";
             临时2=临时[4].split("＼");
             for(i2=0;临时2.length>i2;i2++){
                 if(临时2[i2][0]=="［"){
@@ -51,8 +54,9 @@ for(let i=0;data.length>i;i++){
                     dy+="<a onclick=\"dw(dwb='"+临时2[i2]+"')\">更多</a> ";
                 }
             }
+            dy+="</td>";
         }
-        dy+="</td></tr>";
+        dy+="</tr>";
     }
 }
 dy+="</table>";
