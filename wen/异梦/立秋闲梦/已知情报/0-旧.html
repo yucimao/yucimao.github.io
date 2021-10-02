@@ -1,0 +1,41 @@
+---
+layout: biji
+title: 立秋·闲梦 - 已知情报
+nav_text: 立秋·闲梦 - 已知情报
+nav_url: <a href="/yimeng">异梦系列</a><a>/</a><a href="/wen/liqiu">立秋·闲梦</a>
+permalink: wen/liqiu/qingbao/jiu
+---
+<span id="当前进度dy"></span> <small>（<a onclick="清空进度()">清空阅读进度</a>）</small>
+<div id="结果"></div>
+<br/>
+<script>
+let data="／／／";
+let data2 = [
+    //进度（看过这章就显示）／正常zk目录
+    "0／／／／",
+    "0／沐子秋／2868147／／",
+]
+
+let 本页书名="立秋闲梦";
+let 本页章节=0;
+let 当前进度dy;
+if(localStorage.getItem(本页书名+"_进度")){
+let 阅读进度=localStorage.getItem(本页书名+"_进度");
+if(阅读进度<本页章节){localStorage.setItem(本页书名+"_进度",本页章节);}
+}else{localStorage.setItem(本页书名+"_进度",本页章节);}
+阅读进度=localStorage.getItem(本页书名+"_进度");
+当前进度dy="当前阅读进度："+阅读进度;
+document.getElementById("当前进度dy").innerHTML = 当前进度dy;
+
+for(let i=0;data2.length>i;i++){
+    let 当前进度临时=data2[i].split("／");
+    if(阅读进度>=当前进度临时[0]&&当前进度临时[1].length!=0&&当前进度临时[1]!="undefined"){data+="［【】］"+当前进度临时[1]+"／"+当前进度临时[2]+"／"+当前进度临时[3];}
+}
+data=data.split("［【】］");
+
+function 清空进度(){
+        localStorage.setItem(本页书名+"_进度",0);
+        当前进度dy="当前阅读进度：0";
+        document.getElementById("当前进度dy").innerHTML = 当前进度dy;
+}
+</script>

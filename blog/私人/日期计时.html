@@ -1,0 +1,79 @@
+---
+layout: page2
+title: 日期计时
+nav_text: 日期计时
+permalink: riqijishi
+---
+<style>
+    .by_rl{
+        color:#000000;font-weight:bold;
+    }
+</style>
+
+<div id="dy"></div>
+
+<script>
+    
+let data=[
+    "1995-3-16／猫球生日／",
+    "2021-8-17／泥球生日／",
+    "2021-9-1／土块生日／",
+    "1997-9-16／二扯生日／",
+    "2019-10-17／猪又生日／",
+    "2019-10-22／胡糊生日／",
+];
+
+let data2=[];
+
+let 今日="a";
+let 临时,临时2,临时3,临时4,临时5,临时6;
+let dy="";
+
+let 今_年=new Date().getFullYear();
+let 今_月=new Date().getMonth()+1;
+let 今_日=new Date().getDate();
+let 今天=new Date(今_年,今_月,今_日);
+
+for(let i=0;data.length>i;i++){
+    临时=data[i].split("／");
+    临时2=临时[0].split("-");
+    if(今日=="a"){
+        if(今_月==临时2[1] && 今_日<=临时2[2] || 今_月<临时2[1]){
+            今日=i;
+            data2[0]=data[i]+"／"+今_年;
+        }
+    }else{
+        data2[data2.length]=data[i]+"／"+今_年;
+    }
+}
+
+for(let i2=0;data.length>i2;i2++){
+    if(i2<今日){
+        临时=data[i2].split("／")[0].split("-");
+        临时2=今_年+1;
+        data2[data2.length]=data[i2]+"／"+临时2;
+    }
+}
+
+for(let i3=0;data2.length>i3;i3++){
+    临时=data2[i3].split("／");
+    临时2=临时[0].split("-");
+    临时3=new Date(临时2[0],临时2[1],临时2[2]);
+    临时4=(临时3.getTime()-今天.getTime())/(1000*60*60*24);
+
+    临时5=new Date(临时[3],临时2[1],临时2[2]);
+    临时5=(临时5.getTime()-今天.getTime())/(1000*60*60*24);
+
+    dy+="<p>";
+        if(临时5==0){dy+="就是今天";}else{dy+="<small>还有</small>"+临时5+"<small>天</small>";}
+
+    dy+=" <span class=\"by_rl\">"+临时[1]+"</span> <small>"+临时[0]+"</small>";
+    
+        if(临时4<0){临时6=临时4*-1;dy+="<small>（已过"+临时6+"天）</small>";}
+        else if(临时4>0){dy+="<small>（还有"+临时4+"天）</small>";}
+
+    dy+="<br><small>"+临时[2]+"</small></p>";
+}
+
+document.getElementById("dy").innerHTML = dy;
+</script>
