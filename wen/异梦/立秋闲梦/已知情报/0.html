@@ -36,7 +36,7 @@ if(阅读进度<本页章节){localStorage.setItem(本页书名+"_进度",本页
 document.getElementById("当前进度dy").innerHTML = 当前进度dy;
 
 for(let i=0;data.length>i;i++){
-    let 临时2=data[i].split("／"); //dw(dwb='',dwd='【】')
+    let 临时2=data[i].split("／");
     if(阅读进度>=临时2[0]){tagcloud+="＼"+临时2[1]+"／dw(dwb='"+临时2[2]+"',dwd='"+临时2[1]+"')";}
 }
 tagcloud=tagcloud.split("＼＼")[1].split("＼");
@@ -44,8 +44,6 @@ tagcloud=tagcloud.split("＼＼")[1].split("＼");
 function 清空进度(){
         localStorage.setItem(本页书名+"_进度",0);
         location.reload();
-        // 当前进度dy="当前阅读进度：0";
-        // document.getElementById("当前进度dy").innerHTML = 当前进度dy;
 }
 
 let p = Array.from(tagcloud), i, a = [];

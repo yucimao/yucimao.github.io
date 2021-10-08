@@ -1,7 +1,7 @@
 ---
 layout: page2
-title: 日期计时
-nav_text: 日期计时
+title: 日期计时 - 私人
+nav_text: 日期计时 <small>私人</small>
 permalink: riqijishi
 ---
 <style>
@@ -15,12 +15,19 @@ permalink: riqijishi
 <script>
     
 let data=[
+    "0-1-1／新年／",
+    "0-2-14／情人节／",
     "1995-3-16／猫球生日／",
+    "2021-5-15／猫草国成立日／",
+    "0-7-30／猫球二扯水果日／",
     "2021-8-17／泥球生日／",
     "2021-9-1／土块生日／",
     "1997-9-16／二扯生日／",
     "2019-10-17／猪又生日／",
     "2019-10-22／胡糊生日／",
+    "0-10-25／pvo纪念日／",
+    "0-10-31／万圣节前夜／",
+    "0-12-25／圣诞节／",
 ];
 
 let data2=[];
@@ -65,12 +72,15 @@ for(let i3=0;data2.length>i3;i3++){
     临时5=(临时5.getTime()-今天.getTime())/(1000*60*60*24);
 
     dy+="<p>";
-        if(临时5==0){dy+="就是今天";}else{dy+="<small>还有</small>"+临时5+"<small>天</small>";}
+    if(临时5==0){dy+="就是今天";}else{dy+="<small>还有</small>"+临时5+"<small>天</small>";}
 
-    dy+=" <span class=\"by_rl\">"+临时[1]+"</span> <small>"+临时[0]+"</small>";
+    dy+=" <span class=\"by_rl\">"+临时[1]+"</span>";
     
+    if(临时2[0]!="0"){
+        dy+=" <small>"+临时[0]+"</small>";
         if(临时4<0){临时6=临时4*-1;dy+="<small>（已过"+临时6+"天）</small>";}
         else if(临时4>0){dy+="<small>（还有"+临时4+"天）</small>";}
+    }
 
     dy+="<br><small>"+临时[2]+"</small></p>";
 }
