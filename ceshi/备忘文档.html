@@ -126,6 +126,7 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
     <tr><td><a onclick="复(制='layout: chengjiu')">layout: chengjiu</a></td><td>成就</td><td><a href="#layout_chengjiu">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: biji_cj')">layout: biji_cj</a></td><td>带图片的笔记</td><td><a href="#layout_biji_cj">参考</a></td></tr>
     <tr><td><a onclick="复(制='layout: red_blue')">layout: red_blue</a></td><td>红色药丸、蓝色药丸</td><td><a href="#layout_red_blue">参考</a></td></tr>
+    <tr><td><a onclick="复(制='layout: wzq_ss')">layout: wzq_ss</a></td><td>带搜索的文字球</td><td><a href="#wzq_ss">参考</a></td></tr>
 </table>
 <br/>
 参数：<br/>
@@ -461,6 +462,40 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br/>
         <hr>
         <br><br><br>
         每块内容先显示标题1和内容1，<br>按下红色药丸切换到2，<br>按下蓝色切换回1。<br>
+        </td></tr>
+</table>
+<br>
+<a name="wzq_ss"></a><b>#带搜索的文字球</b><br/>
+<table>
+    <tr style="line-height:1.2em;"><td style="min-width:16em;">
+        layout: wzq_ss<br/>
+        title:&nbsp;<br/>
+        nav_text:&nbsp;<br/>
+        nav_url: &lt;a href="/"&gt;&lt;/a&gt;<br/>
+        permalink:&nbsp;<br><br>
+        <hr>
+        &lt;form id="输入框" autocomplete="off"><br>
+        &lt;input type="text" id="输入" placeholder="搜索" onkeyup="确定()" />&lt;/form><br>
+        &lt;div id="结果">&lt;/div><br>
+        &lt;div id="tag-cloud">&lt;/div><br>
+        &lt;script><br>
+        let data=[<br>
+        "标题／zk码／搜索关键词",<br>
+        ];<br>
+        &lt;/script>
+        </td><td>
+        <br/>
+        本页title　"？ - 猫球博客"<br/>
+        标题文字<br/>
+        导航栏链接 可留空<br/>
+        本页地址（最前无需/）
+        <hr>
+        搜索框<br>
+        <br>
+        搜索结果<br>
+        文字球<br>
+        <br>
+        内容
         </td></tr>
 </table>
 

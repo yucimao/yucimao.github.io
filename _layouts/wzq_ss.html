@@ -1,0 +1,112 @@
+---
+layout: default
+---
+<style>
+    html,body {margin: 0;padding: 0;}
+
+    @media screen and (min-width: 768px) { /*电脑*/
+        .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+    } /*电脑*/
+
+    @media screen and (max-width: 768px) { /*手机*/
+        .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+        div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+    } /*手机*/
+</style>
+
+</head>
+
+<body>
+
+    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="body">
+
+    <script src='/5/new/svg3dtagcloud_onclick.js'></script>
+    {% include popup_dw.html %}
+
+    <style>#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ content }}
+
+    <script>
+        let entries=[];
+        let tagcloud="＼";
+        
+        for(let i=0;data.length>i;i++){
+            let 临时2=data[i].split("／");
+            tagcloud+="＼"+临时2[0]+"／dw(dwb='"+临时2[1]+"',dwd='"+临时2[0]+"')";
+        }
+        tagcloud=tagcloud.split("＼＼")[1].split("＼");
+        
+        let p = Array.from(tagcloud), i, a = [];
+            while (p.length > 0) {
+                i = parseInt(Math.random() * p.length);
+                a.push(p[i]);
+                p.splice(i, 1);
+            }
+            tagcloud = a;
+        
+        for(let i=0;tagcloud.length>i;i++){
+            if(i<30){
+                let 临时=tagcloud[i].split("／");
+                let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+        "#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+                let 颜色_i=i%颜色.length;
+                entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
+            }
+        }
+        
+        let settings = {
+        entries: entries,
+        width: 640,
+        height: 480,
+        radius: '80%',
+        radiusMin: 100,
+        bgDraw: false,
+        opacityOver: 1.00,
+        opacityOut: 0.15,
+        opacitySpeed: 6,
+        fov: 800,
+        speed: 0.4,
+        fontSize: '20',
+        fontColor: '#009688',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        fontToUpperCase: false
+        };
+        $( '#tag-cloud' ).svg3DTagCloud( settings );
+        
+        
+        function 确定() {
+            let 输入 = document.getElementById("输入").value.toLowerCase().split(" ");
+            //$("#输入").val().toUpperCase().split(" ");
+            let 结果 = "";
+            for (let i3 = 0; data.length > i3; i3++) {
+                let 临时3=data[i3].split("／");
+                let 过程 = "0";
+                let 临时4;
+                for (let i4 = 0; 输入.length > i4; i4++) {
+                    临时4 = 临时3[0]+"／"+临时3[2];
+                    if (临时4.indexOf(输入[i4]) != -1 && 输入[i4] != "") {}
+                    else { 过程 = "1"; }
+                }
+                if (过程 == "0") {
+                    结果 += "<p><a onclick=\"dw(dwb='"+临时3[1]+"',dwd='"+临时3[0]+"')\">" + 临时3[0] + "</a></p>";
+                }
+            }
+            document.getElementById("结果").innerHTML = 结果;
+        }
+        </script>
+
+    {% include footer.html %}
+
+    </div>
+
+    <!--关闭加载动画--><script>var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');</script>
+
+{% include nav.html %}
+
+</body>

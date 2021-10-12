@@ -1,17 +1,11 @@
 ---
-layout: page2
+layout: wzq_ss
 title: 月泪汁
 nav_text: 月泪汁
 nav_url: <a href="/jiuxian">酒仙笔记</a>
 permalink: lei
 ---
-<script src='/5/new/svg3dtagcloud_onclick.js'></script>
-{% include popup_dw.html %}
-
-<style>#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="搜索" onkeyup="确定()" /></form><div id="结果"></div>
-
 <div id="tag-cloud"></div>
 <script>
 let data=[
@@ -58,76 +52,3 @@ let data=[
 <h2>其他</h2>
 天然形成：如石块在魔力充沛的池水中，经过长期的月光照耀，成为天生的石种，灵石就是一种石种。通常蕴含的能量更加庞大，但不一定适合制作成泪。不过也有天然形成的无比美味的泪，非常罕见。<br>
 <br>
-
-<script>
-let entries=[];
-let tagcloud="＼";
-
-for(let i=0;data.length>i;i++){
-    let 临时2=data[i].split("／");
-    tagcloud+="＼"+临时2[0]+"／dw(dwb='"+临时2[1]+"',dwd='"+临时2[0]+"')";
-}
-tagcloud=tagcloud.split("＼＼")[1].split("＼");
-
-let p = Array.from(tagcloud), i, a = [];
-    while (p.length > 0) {
-        i = parseInt(Math.random() * p.length);
-        a.push(p[i]);
-        p.splice(i, 1);
-    }
-    tagcloud = a;
-
-for(let i=0;tagcloud.length>i;i++){
-    if(i<30){
-        let 临时=tagcloud[i].split("／");
-        let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
-"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
-        let 颜色_i=i%颜色.length;
-        entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
-    }
-}
-
-let settings = {
-entries: entries,
-width: 640,
-height: 480,
-radius: '80%',
-radiusMin: 100,
-bgDraw: false,
-opacityOver: 1.00,
-opacityOut: 0.15,
-opacitySpeed: 6,
-fov: 800,
-speed: 0.4,
-fontSize: '20',
-fontColor: '#009688',
-fontWeight: 'normal',
-fontStyle: 'normal',
-fontStretch: 'normal',
-fontToUpperCase: false
-};
-$( '#tag-cloud' ).svg3DTagCloud( settings );
-
-
-function 确定() {
-    let 输入 = document.getElementById("输入").value.toLowerCase().split(" ");
-    //$("#输入").val().toUpperCase().split(" ");
-    let 结果 = "";
-    for (let i3 = 0; data.length > i3; i3++) {
-        let 临时3=data[i3].split("／");
-        let 过程 = "0";
-        let 临时4;
-        for (let i4 = 0; 输入.length > i4; i4++) {
-            临时4 = 临时3[0]+"／"+临时3[2];
-            if (临时4.indexOf(输入[i4]) != -1 && 输入[i4] != "") {}
-            else { 过程 = "1"; }
-        }
-        if (过程 == "0") {
-            结果 += "<p><a onclick=\"dw(dwb='"+临时3[2]+"',dwd='"+临时3[1]+"')\">" + 临时3[0] + "</a></p>";
-        }
-    }
-    document.getElementById("结果").innerHTML = 结果;
-}
-
-</script>
-
