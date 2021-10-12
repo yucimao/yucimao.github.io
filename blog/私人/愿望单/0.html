@@ -5,6 +5,7 @@ nav_text: 愿望单
 nav_url: <a href="/private">私人网页</a>
 permalink: yuanwang
 ---
+<a href="/yuanwang/a" class="anniu">已完成</a><br>
 <form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="搜索" onkeyup="确定()" /></form><div id="结果"></div>
 <div id="tag-cloud"></div>
 <script>
@@ -19,57 +20,3 @@ let data=[
 </script>
 
 
-
-
-<a href="/yuanwang/a" class="anniu">已完成</a><br>
-<script src='/5/new/svg3dtagcloud_onclick.js'></script>
-{% include popup_dw.html %}
-<div id="tag-cloud"></div>
-<script>
-let entries=[];
-let tagcloud=[
-    //"／dw(dwb='',dwd='【】')",
-    //"／window.open('')",
-    //"／dw(dwb='<img src=\"{{ site.mq_d }}/img/i/chengjiu/\"/>',dwd='【】')",
-
-];
-
-let p = Array.from(tagcloud), i, a = [];
-    while (p.length > 0) {
-        i = parseInt(Math.random() * p.length);
-        a.push(p[i]);
-        p.splice(i, 1);
-    }
-    tagcloud = a;
-
-for(let i=0;tagcloud.length>i;i++){
-    if(i<30){
-        let 临时=tagcloud[i].split("／");
-        let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
-"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
-        let 颜色_i=i%颜色.length;
-        entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
-    }
-}
-
-let settings = {
-entries: entries,
-width: 640,
-height: 480,
-radius: '80%',
-radiusMin: 100,
-bgDraw: false,
-opacityOver: 1.00,
-opacityOut: 0.15,
-opacitySpeed: 6,
-fov: 800,
-speed: 0.4,
-fontSize: '20',
-fontColor: '#009688',
-fontWeight: 'normal',
-fontStyle: 'normal',
-fontStretch: 'normal',
-fontToUpperCase: false
-};
-$( '#tag-cloud' ).svg3DTagCloud( settings );
-</script>
