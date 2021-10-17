@@ -21,6 +21,6 @@ line-height: 22px;}
 .avatar_chat .n2 a{color: #ffffff;}
 .avatar_chat .n2 a:hover{color: #b3e1e1;}
 
-.avatar_chat .s{width:100%;display:inline-block;text-align:center;color:#808080;font-size:.9em;}
+.avatar_chat .s{width:100%;display:inline-block;text-align:center;color:#808080;font-size:.9em;margin-top:30px;}
 .avatar_chat img{padding:10px 10px}
 .avatar_chat a{text-decoration:underline;}

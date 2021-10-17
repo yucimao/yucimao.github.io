@@ -55,7 +55,7 @@ wzjm_密码 = localStorage.getItem("稍后再看");
 
 function 解密(){
 let 解锁码输入 = document.getElementById("密码").value;
-localStorage.setItem("稍后再看");
+localStorage.setItem("稍后再看",解锁码输入);
 location.reload();
 }
 </script>
