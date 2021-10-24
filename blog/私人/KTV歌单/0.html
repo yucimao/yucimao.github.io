@@ -1,54 +1,122 @@
 ---
-layout: biji
+layout: page2
 title: KTV歌单
-nav_text: KTV歌单
+nav_text:
 nav_url: <a href="/private">私人网页</a>
 permalink: biji/ktv
 ---
+{% include popup_dw.html %}
+<style>p.ktv {margin: 25px 0;}p.ktv span {font-weight: bold;}p.ktv small {font-weight: normal;}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
+<form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="账号" onkeyup="确定()" /></form>
 <div id="结果"></div>
 <script>
-let data = new Array(
-"／／／",
+let data = [
+// "等级／《歌名》歌手／显示文字：zk码或展开内容",
+// 分割线： "hr／内容",
+
 //S
-"《思念是一种病》张震岳 <small>S</small>／／／",
+"hr／S",
+"《思念是一种病》张震岳",
+
 //A
-"《啊朋友 再见》 <small>A</small>／【啊朋友 再见】／／歌手：冬子 / 刘东明 / 小河 / 钟立风 / 好妹妹 / 蒋明",
-"《烦恼歌》张学友 <small>A</small>／／／",
-"《男孩别哭》海龟先生 <small>A</small>／／／",
+"hr／A",
+"《啊朋友 再见》／冬子 刘东明 小河 钟立风 好妹妹 蒋明",
+"《烦恼歌》张学友",
+"《男孩别哭》海龟先生",
+"《五虎》慢慢说／live版",
+"《DEAR JOHN》比莉",
+
 //B
-"《DEAR JOHN》比莉 <small>B</small>／／／",
-"《五虎》慢慢说 <small>B</small>／／／",
+"hr／B",
+"《闷》王菲",
+"《秋天》龙宽",
+"《Super Star》麦田守望者",
+"《当那枫叶红》费玉清",
+"《干物女(WeiWei)》／／歌词：448629",
+"《恋曲1990》纵贯线",
+
 //C
-"《Super MT》 <small>C</small>／／／",
+"hr／C",
+"《Super MT》",
+"《给自己的歌》李宗盛",
+"《演歌》陈珊妮",
+"《爱的初体验》张震岳",
+"《城市》张悬",
+"《女人花》",
+
 //D
-"《我叫MT》 <small>D</small>／／／",
+"hr／D",
+"《谁说我的眼泪你无所谓》东来东往",
+"《我叫MT》／超累",
+
 //E
-"《我的天坑》 <small>E</small>／／／",
-"《一个人》铃凯 吴青峰 <small>E</small>／／／",
-//其他
-"《Super Star》麦田守望者／／／",
-"《爱的初体验》张震岳／／／",
-"《成长的路口》咖啡因乐队／／／",
-"《城市》张悬／／／",
-"《春风十里》孟大宝／／／",
-"《当那枫叶红》费玉清／／／",
-"《干物女（WeiWei）》／448629／／",
-"《给自己的歌》李宗盛／／／",
-"《公路》纵贯线／／／",
-"《河蟹你全家》／448610／／",
-"《假行僧》／／／",
-"《尽在一笑中》／／／",
-"《礼物》／／／",
-"《恋曲1990》纵贯线／／／",
-"《闷》王菲／／／",
-"《千本幼女》／448624／／",
-"《秋天》龙宽／／／",
-"《神的随波逐流》／／／",
-"《素颜》许嵩／／／",
-"《天黑黑》张学友／／／",
-"《新长征路上的摇滚》／／／",
-"《演歌》陈珊妮／／／",
-"《野狼disco》宝石Gem／448600／／",
-"《又是下雨天》／／／"
-)
+"hr／E",
+"《我的天坑》",
+
+//对唱
+"hr／对唱",
+"《一个人》铃凯 吴青峰",
+
+//待测试
+"hr／待测试",
+"《夫妻小唱》苏阳",
+"《成长的路口》咖啡因乐队",
+"《愿望交换商店》夏日入侵企画",
+"《你要跳舞吗》新裤子",
+"《没有理想的人不伤心》新裤子",
+"《人渣俱乐部》",
+
+//未分类
+"hr／未分类",
+"《公路》纵贯线",
+"《ルカルカ★ナイトフィーバー》／河蟹你全家／歌词：448610",
+"《假行僧》",
+"《尽在一笑中》",
+"《礼物》",
+"《千本桜》／千本幼女／歌词：448624",
+"《神的随波逐流》",
+"《素颜》许嵩",
+"《天黑黑》张学友",
+"《新长征路上的摇滚》",
+"《野狼disco》宝石Gem／／歌词：448600",
+"《又是下雨天》",
+];
+
+function 确定() {
+    let 输入 = document.getElementById("输入").value.toLowerCase().split(" ");
+    let dy = "";
+
+    for (let i = 0; data.length > i; i++) {
+        let 临时 = data[i].split("／");
+        let 临时4 = 临时[0] + "／" + 临时[1];
+        临时4 = 临时4.toLowerCase();
+        let 过程 = "0";
+
+        if (临时[0] == "hr" && document.getElementById("输入").value == "") {
+            dy += "<p><hr>" + 临时[1] + "</p>";
+            过程 = "1";
+        } else {
+            for (let i3 = 0; 输入.length > i3; i3++) {
+                if (临时4.indexOf(输入[i3]) != -1) { } else { 过程 = "1"; }
+            }
+        }
+
+        if (过程 == "0" && 临时[0] != "hr") {
+            let 临时2 = 临时[0].split("《")[1];
+            dy += "<p class=\"ktv\"><span onclick=\"复(制='" + 临时2.replace(/》/g, ' ') + "')\">《" + 临时2.split("》")[0] + "》<small>" + 临时2.split("》")[1] + "</small></span><br><small>";
+            for (let i2 = 2; 临时.length > i2; i2++) {
+                let 临时3 = 临时[i2].split("：");
+                dy += " <a onclick=\"dw(dwb='" + 临时3[1] + "')\">" + 临时3[0] + "</a>";
+            }
+            if(临时[1]){dy += " " + 临时[1];}
+            dy += "</small></p>";
+        }
+    }
+    document.getElementById("结果").innerHTML = dy;
+}
+
+确定();
+
 </script>
+<input id="复制" style="position:absolute;top:-1000px" />
+<script>let 制; function 复() { document.getElementById('复制').value = 制; let 复制 = document.querySelector('#复制'); 复制.select(); document.execCommand("Copy"); }</script>
