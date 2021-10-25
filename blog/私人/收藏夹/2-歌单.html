@@ -9,15 +9,12 @@ permalink: shoucangjia/gedan
 <style>
 small{color:#a0a0a0;}.跳过{background-color:#ff8080;}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
 <form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="账号" onkeyup="确定()" /></form>
-<div id="right_anchor" class="shouji"></div>
-<a href="/biji/ktv" target="_blank">KTV歌单</a> 
-<a href="/tv#%E9%9F%B3%E4%B9%90%E9%A2%91%E9%81%93" target="_blank">网易云音乐</a> 
-<br><br>
+<div id="right_anchor" class="shouji"></div><br>
 <div id="dy"></div>
 <script>
 let golink="https://music.163.com/#/search/m/?s=";
 let data=[
-// 歌名／歌手／小字／按钮：zk码或展开的内容
+// 歌名／歌手／小字／按钮：zk码 或 展开的内容 或 复制：复制的内容
 // 跳过：编号跳过。可能是在网易云音乐消失的歌。
 // 云盘：正常编号，有标识。在网易云音乐没有或者消失的歌，上传到云盘。
 // 注释：一条没有编号的额外文字。
@@ -380,10 +377,69 @@ let data=[
 "／神的随波逐流／泠鸢yousa／",
 "云盘／秋天／龙宽／",
 
-//旧歌单
+/* KTV */
+"大标题／KTV歌单／",
+// KTV / S
+"注释／<b>S</b>／",
+"／思念是一种病／张震岳／",
+// KTV / A
+"注释／<b>A</b>／",
+"／啊朋友 再见／冬子 刘东明 小河 钟立风 好妹妹 蒋明／",
+"／烦恼歌／张学友／",
+"／男孩别哭／海龟先生／",
+"／五虎／慢慢说／live",
+"／DEAR JOHN／比莉／",
+// KTV / B
+"注释／<b>B</b>／",
+"／闷／王菲／",
+"／秋天／龙宽／",
+"／Super Star／麦田守望者／",
+"／当那枫叶红／费玉清／",
+"／干物女(WeiWei)／哦漏／／歌词：448629",
+"／恋曲1990／纵贯线／",
+// KTV / C
+"注释／<b>C</b>／",
+"／Super MT／／",
+"／给自己的歌／李宗盛／",
+"／演歌／陈珊妮／",
+"／爱的初体验／张震岳／",
+"／城市／张悬／",
+"／女人花／梅艳芳／",
+// KTV / D
+"注释／<b>D</b>／",
+"／谁说我的眼泪你无所谓／东来东往／",
+"／我叫MT／／超累",
+// KTV / E
+"注释／<b>E</b>／",
+"／我的天坑／南征北战／",
+// KTV / 对唱
+"注释／<b>对唱</b>／",
+"／一个人／铃凯 吴青峰／",
+// KTV / 待测试
+"注释／<b>待测试</b>／",
+"／夫妻小唱／苏阳／",
+"／成长的路口／咖啡因乐队／",
+"／愿望交换商店／夏日入侵企画／",
+"／你要跳舞吗／新裤子／",
+"／没有理想的人不伤心／新裤子／",
+"／人渣俱乐部／／",
+// KTV / 未分类
+"注释／<b>未分类</b>／",
+"／公路／纵贯线／",
+"／ルカルカ★ナイトフィーバー／／河蟹你全家／歌词：448610",
+"／假行僧／／",
+"／尽在一笑中／／",
+"／礼物／／",
+"／千本桜／／千本幼女／歌词：448624",
+"／神的随波逐流／／",
+"／素颜／许嵩／",
+"／天黑黑／张学友／",
+"／新长征路上的摇滚／／",
+"／野狼disco／宝石Gem／／歌词：448600",
+"／又是下雨天／／",
+
+/* 旧歌单 */
 "大标题／旧歌单／最近不听的歌",
-
-
 
 ];
 
@@ -423,9 +479,14 @@ for(let i=0;data.length>i;i++){
             dy+="<td onclick=\"复(制='"+临时[1]+"')\" title=\""+临时[1]+"\">"+临时_歌名+"</td>";
             dy+="<td onclick=\"复(制='"+临时[2]+"')\" title=\""+临时[2]+"\">"+临时_歌手+"</td>";
             dy+="<td><a href=\""+golink+临时[1]+" "+临时[2]+"\" target=\"_blank\">搜索</a>";
+
             for(let i2=4;临时.length>i2;i2++){
                 let 临时2=临时[i2].split("：");
-                dy+=" <a onclick=\"dw(dwb='" + 临时2[1] + "')\">" + 临时2[0] + "</a>";
+                if(临时2[0]=="复制"){
+                    dy+=" <a onclick=\"复(制='" + 临时2[1] + "')\">复制</a>";
+                }else{
+                    dy+=" <a onclick=\"dw(dwb='" + 临时2[1] + "')\">" + 临时2[0] + "</a>";
+                }
             }
             dy+="</tr>";
         }
