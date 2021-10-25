@@ -8,8 +8,9 @@ permalink: shoucangjia/gedan
 {% include popup_dw.html %}
 <style>
 small{color:#a0a0a0;}.跳过{background-color:#ff8080;}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
-<form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="账号" onkeyup="确定()" /></form><br>
+<form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="账号" onkeyup="确定()" /></form>
 <a href="/biji/ktv" target="_blank">KTV歌单</a><br>
+<div id="right_anchor" class="shouji"></div><br>
 <div id="dy"></div>
 <script>
 let golink="https://music.163.com/#/search/m/?s=";
@@ -418,7 +419,7 @@ for(let i=0;data.length>i;i++){
         if(临时[0]==""||临时[0]=="跳过"||临时[0]=="云盘"){
             dy+="<td onclick=\"复(制='"+临时[1]+"')\" title=\""+临时[1]+"\">"+临时_歌名+"</td>";
             dy+="<td onclick=\"复(制='"+临时[2]+"')\" title=\""+临时[2]+"\">"+临时_歌手+"</td>";
-            dy+="<td><a href=\""+golink+临时[1]+" "+临时[2]+"\" target=\"_blank\">搜</a>";
+            dy+="<td><a href=\""+golink+临时[1]+" "+临时[2]+"\" target=\"_blank\">搜索</a>";
             for(let i2=3;临时.length>i2;i2++){
                 let 临时2=临时[i2].split("：");
                 dy+=" <a onclick=\"dw(dwb='" + 临时2[1] + "')\">" + 临时2[0] + "</a>";
@@ -431,7 +432,7 @@ for(let i=0;data.length>i;i++){
 
         if(临时[0]=="大标题"||临时[0]=="小标题"){
             dy+="</table><br>";
-            dy+="<h3>"+临时[1]+"</h3>"+临时[2];
+            dy+="<a name=\""+临时[1]+"\"></a>"+"<h3>"+临时[1]+"</h3>"+临时[2];
             dy+=dy_head;
         }
     }
@@ -445,3 +446,4 @@ document.getElementById("dy").innerHTML = dy;
 </script>
 <input id="复制" style="position:absolute;top:-1000px" />
 <script>let 制; function 复() { document.getElementById('复制').value = 制; let 复制 = document.querySelector('#复制'); 复制.select(); document.execCommand("Copy"); }</script>
+{% include anchor.html %}
