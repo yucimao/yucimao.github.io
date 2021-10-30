@@ -95,6 +95,7 @@ layout: default
                 for (let i2 = 0; 输入.length > i2; i2++) {
                     let 临时2 = data[i].split("／");
                     临时2 = 临时2[0] + 临时2[2];
+                    临时2 = 临时2.toLowerCase();
                     if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
                     else { 过程 = "1"; }
                 }
