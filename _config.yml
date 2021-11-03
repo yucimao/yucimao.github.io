@@ -5,7 +5,7 @@ nav_qbt_left: 35%
 description: 这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。
 keywords: 猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界
 favicon: favicon.ico
-nav_drop: <a href="/wangzhi">网址收藏</a><a href="/liuyan" target="_blank">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于</a><a href="/chengjiu">获得成就</a><a href="/links">友情链接</a><a href="/myid">我的账号</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/xiaogongju">小工具</a><a href="/zatan">杂谈</a><a href="/riji">猫球日记</a><a href="/tv">猫球tv</a><a href="/wanyouxi">猫球玩游戏</a><a href="/richang">猫球和二扯的日常</a><a href="/pvoink">pvo占领世界</a></div></div>
+nav_drop: <a href="/wangzhi">网址收藏</a><a href="/liuyan" target="_blank">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于</a><a href="/chengjiu">获得成就</a><a href="/links">友情链接</a><a href="/myid">我的账号</a><a href="/donate">打赏</a><a href="/private">私人网页</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/xiaogongju">小工具</a><a href="/zatan">杂谈</a><a href="/riji">猫球日记</a><a href="/tv">猫球tv</a><a href="/wanyouxi">猫球玩游戏</a><a href="/richang">猫球和二扯的日常</a><a href="/pvoink">pvo占领世界</a></div></div>
 mq: https://limaoqiu.com
 mq_d: https://pvo.gitee.io
 mq_i: /i
