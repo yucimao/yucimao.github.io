@@ -4,7 +4,9 @@
 <title>备忘文档 - 猫球博客</title>
 <link rel="stylesheet" href="https://pvo.gitee.io/css/all.css">
 <link rel="stylesheet" href="https://pvo.gitee.io/css/vsc.css">
-<script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://pvo.gitee.io/5/new/notyf/notyf.min.css">
+<script src="https://pvo.gitee.io/5/new/notyf/notyf.min.js" type="text/javascript"></script>
+<script src="https://pvo.gitee.io/js/jquery.min.js"></script>
 <style>td{min-width:2em;}a{cursor:pointer;}div.body {position: relative;width: 60%;top:1em;margin: auto;}.tsx {position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 600px;background-color: #fff;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}#back-top {position: fixed;left: 85%;bottom: 10%;}#back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}</style>
 
 <div class="index">
@@ -22,12 +24,9 @@
     <br/>
     
     <a href="#常用html">常用html</a><br/>
-    <a href="#常用样式">常用样式</a><br/>
+    <a href="#常用样式">常用样式（css）</a><br/>
     <a href="#配色">配色</a><br/>
     <a href="#常用js">常用js</a><br/>
-    <br/>
-    
-    <a href="#域名查重">域名查重</a><br/>
     <br/>
 
     <a href="#其他">其他</a><br/>
@@ -35,67 +34,6 @@
 
 <div class="body">
 <div id="back-top"><a href="#top"></a></div>
-
-<script>let 域名查重data = new Array(
-"404／错误页面",
-"beiwang／备忘记录",
-
-"biji／猫球笔记（改为杂谈）",
-"biji/maiyagao／买牙膏",
-"biji/tiaoshuiguo／挑水果",
-"biji/dagezenmeban／打嗝怎么办",
-"biji/zufang／租房笔记",
-"biji/chufang／猫球厨房",
-"biji/tousu／投诉方式",
-"biji/xinwenbiaoqian／新闻与特定标签",
-"biji/shuanhuoguo／涮火锅时间",
-"biji/ktv／KTV歌单",
-
-"diyuhei/zhongguo／对中国的地域黑",
-"diyuhei/zggd／中国各地的地域黑",
-"diyuhei/dongbei／对东北的地域黑",
-"diyuhei/nanxing／对男性的地域黑",
-"diyuhei/cn-db／中国和东北",
-"diyuhei/db-db／东北和东北",
-
-"erche／二扯是谁",
-
-"game/szjylx／数字记忆练习",
-
-"haiguitang／聚会游戏：海龟汤",
-"jiuxian／酒仙笔记",
-"juhuiyouxi／聚会游戏",
-"make／稍后再看（收藏的网址）",
-"maoqiu／猫球是谁",
-"maoqiujiazu／猫球家族",
-"mq／调试工具（不存在的页面）",
-"mqf／MQ基金会",
-"mqfyq／猫球翻译器",
-"myq／猫球翻译器",
-"nvquan／女权与数据",
-"nvquan/xingbiehuhuan／性别互换",
-"pvoink／pvo占领世界",
-"qq／QQ",
-"richang／猫球和二扯的日常",
-"sjtk／随机题库",
-"tv／猫球TV",
-
-"tuijian／好物推荐目录",
-"tuijian/daluandou／大乱斗类推荐",
-"tuijian/bgmjiemu／适合当BGM的节目",
-
-"wanyouxi／猫球二扯玩游戏",
-"wuliaoanniu／无聊按钮",
-"wuyonggonglue／无用攻略",
-"wz／网址收藏",
-"xel／希尔历转换器",
-"xiangce／猫球相册",
-"xiangce/fdj／相册放大镜",
-"xiaojuchang／猫球小剧场",
-"xiaogongju／猫球小工具",
-"yimeng／异梦系列",
-"zatan／猫球杂谈"
-);</script>
 
 <h1>备忘文档</h1>
 
@@ -601,28 +539,41 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
         <td>弹窗，超链接onclick="dw(dwb='【zk码，其他会直接显示文字】',dwd='【标题】')"<br/>
             {% include popup_dw.html %}</td></tr>
     <tr><td><a onclick="复(制='{% include anchor.html %}')">复制</a></td>
-        <td> &lt;a name="">&lt;/a> 自动在右下角设置跳转列表<br/>
+        <td>&lt;a name="">&lt;/a> 自动在右下角设置跳转列表<br/>
             放在正文下面 {% include anchor.html %}<br>
             在正文前加&lt;div id="right_anchor">&lt;/div> 在正文上显示列表<br>
             在其中加 class="shouji" 只在手机版显示</td></tr>
+    <tr><td><a onclick="复(制='&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/5/new/notyf/notyf.min.css&quot;>&lt;script src=&quot;/5/new/notyf/notyf.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>')">复制</a></td>
+        <td>右下角小弹窗：<a onclick="右下角小弹窗()">点击测试</a><br>
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/5/new/notyf/notyf.min.css&quot;><br>
+        &lt;script src=&quot;/5/new/notyf/notyf.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script><br>
+        &lt;a onclick=&quot;测试()&quot;>测试&lt;/a><br>
+        &lt;script><br>
+        let notyf = new Notyf({delay:3000});<br>
+        function 测试(){<br>
+            notyf.alert(&quot;失败&quot;);<br>
+            notyf.confirm(&quot;成功&quot;);<br>
+        }<br>
+    &lt;/script>
+        </td></tr>
 </table>
 
 <br/><hr><br/>
 
 <a name="常用样式"></a><h2>#常用样式 <small>/css/all.css</small></h2>
 <table>
-    <tr><td><a onclick="复(制='&lt;a class=&quot;heise&quot;&gt;&lt;/a&gt;')">复制</a></td>
-        <td>让超链接用普通文字颜色<br/>
-        &lt;a class=&quot;heise&quot;&gt;&lt;/a&gt;<br/>
-        <a class="heise" href="https://limaoqiu.com" target="_blank">这是一段超链接</a></td></tr>
     <tr><td><a onclick="复(制='&lt;blockquote&gt;&lt;/blockquote&gt;')">复制</a></td>
         <td>引用的内容<br/>
         &lt;blockquote&gt;&lt;/blockquote&gt;<br/>
         <blockquote>小明：今天天气不错</blockquote></td></tr>
     <tr><td><a onclick="复(制='&lt;span class=&quot;zhushi&quot;&gt;&lt;/span&gt;')">复制</a></td>
-        <td>模仿代码注释风格，会自动在前面加//<br/>
+        <td>模仿单行代码注释风格<br/>
         &lt;span class=&quot;zhushi&quot;&gt;&lt;/span&gt;<br/>
-        <span class="zhushi">这是一段注释</span></td></tr>
+        <span class="zhushi">这是一行注释</span></td></tr>
+    <tr><td><a onclick="复(制='&lt;div class=&quot;zhushi&quot;&gt;&lt;/div&gt;')">复制</a></td>
+        <td>模仿一段代码注释风格<br/>
+        &lt;div class=&quot;zhushi&quot;&gt;&lt;/div&gt;<br/>
+        <div class="zhushi">这是一段注释</div></td></tr>
     <tr><td><a onclick="复(制='&lt;a class=&quot;anniu&quot;&gt;&lt;/a&gt;')">复制</a></td>
         <td>将链接改为按钮样式<br/>
         &lt;a class=&quot;anniu&quot;&gt;&lt;/a&gt;<br/>
@@ -639,6 +590,27 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
         <td>文字和拼音<br/>
         &lt;ruby>&lt;rb&gt;文字&lt;/rb&gt;&lt;rt&gt;pin yin&lt;/rt&gt;&lt;/ruby&gt;<br/>
         你好，我是<ruby><rb>李猫球</rb><rt>lǐ māo qiú</rt></ruby></td></tr>
+    <tr><td><a onclick="复(制='&lt;img src=&quot;&quot; class=&quot;crisp-edges&quot;>')">复制</a></td>
+        <td>像素图放大而不模糊<br/>
+        &lt;img src=&quot;&quot; class=&quot;crisp-edges&quot;><br/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFAQMAAACtnVQoAAAABlBMVEX///8AAABVwtN+AAAAFUlEQVQI12NwZGBY1AAipzAweDAAABUPAoHy8F9iAAAAAElFTkSuQmCC" class="crisp-edges" width=100px></td></tr>
+    <tr><td><a onclick="复(制='&lt;mark>&lt;/mark>')">复制</a></td>
+        <td>突出显示文本<br/>
+        &lt;mark>&lt;/mark><br/>
+        标注出<mark>重点位置</mark></td></tr>
+    <tr><td><a onclick="复(制='&lt;em>&lt;/em>')">复制</a></td>
+        <td>强调文本<br/>
+        &lt;em>&lt;/em><br/>
+        这里有一个<em>重点</em></td></tr>
+    <tr><td><a onclick="复(制='&lt;a href=&quot;&quot; target=&quot;_blank&quot; class=&quot;dk&quot;>&lt;/a>')">复制</a></td>
+        <td>新窗口链接<br/>
+        &lt;a href=&quot;&quot; target=&quot;_blank&quot; class=&quot;dk&quot;>&lt;/a><br/>
+        <a href="/" target="_blank" class="dk">打开链接</a></td></tr>
+    <tr><td><a onclick="复(制='class=&quot;bukexuanzhong&quot;')">复制</a></td>
+        <td>不可选中<br/>
+        class=&quot;bukexuanzhong&quot;<br/>
+        这里→<span class="bukexuanzhong">的文字</span>←不可选中</td></tr>
+
 </table>
 
 <a href="i/鼠标样式.html" class="anniu">鼠标</a>
@@ -685,14 +657,6 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
 
 <br/><hr><br/>
 
-<a name="域名查重"></a><h2>#域名查重</h2>
-<input id="域名查重" style="width:60%"  placeholder="域名查重"/>
-<p id="域名查重结果"></p>
-<script>
-$("#域名查重").keyup(function () {let 域名查重输入 = $("#域名查重").val();let 域名查重结果="没有重复，可以放心使用。";for(let i=0;域名查重data.length>i;i++){if(域名查重data[i].split("／")[0]==域名查重输入){域名查重结果="有重复的记录：<br/><b>"+域名查重data[i].split("／")[1]+"</b>";}}域名查重结果+="<br/><iframe src=\"https://yucimao.github.io/" + 域名查重输入 + "\" frameborder=\"1\" width=\"100%\" height=\"200px\"></iframe>";document.getElementById("域名查重结果").innerHTML = 域名查重结果;})</script>
-
-<br/><hr><br/>
-
 <a name="其他"></a><h2>#其他</h2>
 <a href="i/像素中国地图.html" target="_blank">像素中国地图</a><br/>
 <a href="i/b站直播个人简介.html" target="_blank">B站直播个人简介</a><br/>
@@ -703,6 +667,10 @@ $("#域名查重").keyup(function () {let 域名查重输入 = $("#域名查重"
 </div>
 
 <input id="复制" style="position:absolute;top:-1000px"/>
-<script>let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
-
+<script>
+let notyf = new Notyf({delay:3000});
+function 右下角小弹窗(){notyf.alert("失败");notyf.confirm("成功");}
+let 制;function 复(){
+notyf.confirm("已复制");
+document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
 </html>
