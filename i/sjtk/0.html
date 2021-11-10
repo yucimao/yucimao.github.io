@@ -25,7 +25,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
 <div id="标题" class="biaotic">测试</div>
 <button onclick="抽取()">抽取</button>
 <input id="抽取次数" style="width:6em" placeholder="抽取次数" autocomplete="off" />
-<input type="checkbox" name="允许重复抽取" id="允许重复抽取" /><label for="允许重复抽取">允许重复抽取</label>
+<input type="checkbox" name="允许重复" id="允许重复" /><label for="允许重复">允许重复</label>
 <br /><br />
 <div id="打印"></div>
 
@@ -91,14 +91,14 @@ nav_url: <a href="/xiaogongju">小工具</a>
     }
 
     function 抽取() {
-        let 允许重复抽取 = 0;
+        let 允许重复 = 0;
         let 次数 = document.getElementById("抽取次数").value;
         let checks = document.getElementsByTagName("input"), cnt = 0, count = 0;
         for (let i = 0; i < checks.length; i++) {
             if (checks[i].type == "checkbox") {
                 count += 1;
                 if (checks[i].checked != false) {
-                    允许重复抽取 = 1;
+                    允许重复 = 1;
                 }
             }
         }
@@ -114,7 +114,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
             else {
                 let 随机数 = Math.floor(Math.random() * 临时抽取.length);
                 结果 += "<tr><td>" + 临时抽取[随机数] + "</td></tr>";
-                if (允许重复抽取 != 1) {
+                if (允许重复 != 1) {
                     临时抽取.splice(随机数, 1);
                 }
             }
