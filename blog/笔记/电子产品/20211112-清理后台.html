@@ -1,0 +1,28 @@
+---
+layout: zk
+title: 清理后台
+nav_text: 清理后台
+nav_url: <a href="/biji/dianzichanpin">电子产品笔记</a>
+permalink: i/zk/3669626
+---
+<h3>批处理</h3>
+新建文本文件，输入“taskkill /f /t /im 进程名”，保存，将后缀名改为“.bat”，运行。<br>
+如关闭爱奇艺后台：<br>
+<blockquote>
+taskkill /f /t /im QyKernel.exe<br>
+taskkill /f /t /im QyFragment.exe<br>
+taskkill /f /t /im QiyiService.exe<br>
+</blockquote>
+<br>
+
+<table>
+    <tr><td>进程</td><td></td><td>说明</td></tr>
+    <tr><td>QyKernel.exe</td><td><a onclick="复(制='QyKernel.exe')">复制</a></td><td>爱奇艺</td></tr>
+    <tr><td>QyFragment.exe</td><td><a onclick="复(制='QyFragment.exe')">复制</a></td><td>爱奇艺</td></tr>
+    <tr><td>QiyiService.exe</td><td><a onclick="复(制='QiyiService.exe')">复制</a></td><td>爱奇艺</td></tr>
+    <!-- <tr><td></td><td><a onclick="复(制='')">复制</a></td><td></td></tr> -->
+</table>
+
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea>
+<script>let 制;function 复(){document.getElementById('复制').value = "taskkill /f /t /im "+制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>

@@ -106,7 +106,10 @@ layout: default
                 let 临时 = data[i].split("／");
                 let 过程 = "0";
                 let 过程2 = "0";
-                for (let i2 = 0; 输入2.length > i2; i2++) {
+                if(临时[1]=="hr"){
+                    结果 += "<hr><h3>"+临时[0]+"</h3>";
+                }else{
+                    for (let i2 = 0; 输入2.length > i2; i2++) {
                     let 临时2 = data[i].split("／");
                     临时2 = 临时2[0] + 临时2[2];
                     if (临时2.indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程2 = "1";}
@@ -121,6 +124,7 @@ layout: default
                         结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
                     }
                 }
+                }
                 if (过程 != "0" && 过程2 == "1") {
                     if(localStorage.getItem(临时[1])){
                         结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
@@ -131,7 +135,7 @@ layout: default
                 }
             }
 
-            let 打印 = 结果 + "<br/><hr>" + 结果2;
+            let 打印 = 结果 + "<br/><hr><h3>部分符合</h3>" + 结果2;
             document.getElementById("结果").innerHTML = 打印;
         }).keyup();
 

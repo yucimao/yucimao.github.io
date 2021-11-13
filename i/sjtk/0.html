@@ -25,7 +25,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
 <div id="标题" class="biaotic">测试</div>
 <button onclick="抽取()">抽取</button>
 <input id="抽取次数" style="width:6em" placeholder="抽取次数" autocomplete="off" />
-<div id="是否允许重复"></div>
+<span id="是否允许重复"></span>
 <br /><br />
 <div id="打印"></div>
 
@@ -44,7 +44,7 @@ nav_url: <a href="/xiaogongju">小工具</a>
     }
     let c = GetQueryString("c"); //每次抽取次数 默认1
     let f = GetQueryString("f"); //允许重复 默认不允许
-    if(f){
+    if(f=="1"){
         f="checked";
     }else{
         f="";
