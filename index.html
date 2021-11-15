@@ -8,6 +8,11 @@ body{margin:0;}
 <a href="{{ site.mq_i }}" style="position:absolute;color:#fff;text-shadow: 1px 1px 5px #000;">直接进入</a>
 <div id="i"></div>
 <script>
+let 当前url=window.location.href;
+if(当前url.indexOf("xn--7qvz7xssa") != -1){
+    window.location.href="{{ site.mq }}/i";
+}
+
 let a=new Array(
 "star_box",
 "fly_erche",
