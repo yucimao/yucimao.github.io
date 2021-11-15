@@ -11,5 +11,7 @@ mq_d: https://pvo.gitee.io
 mq_i: /i
 jquery: https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
 
+permalink: {% if page.permalink2 %}{{ page.permalink2 }}{% else %}{{ page.permalink }}{% endif %}
+
 plugins:
   - jekyll-redirect-from
