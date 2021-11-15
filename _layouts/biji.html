@@ -135,7 +135,8 @@ layout: default
                 }
             }
 
-            let 打印 = 结果 + "<br/><hr><h3>部分符合</h3>" + 结果2;
+            let 打印 = 结果;
+            if(结果2!=""){打印+="<br/><hr><h3>部分符合</h3>" + 结果2;}
             document.getElementById("结果").innerHTML = 打印;
         }).keyup();
 

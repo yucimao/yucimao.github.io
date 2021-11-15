@@ -8,9 +8,61 @@ zk_ly: <a href=\"/i/zk/551374\" target=\"_blank\">海龟汤怎么玩？</a> / <a
 ---
 本页转载了其他人发布和整理的故事（部分有改动），在此表示感谢。<br>
 <br>
-<b>创作者</b><br>
-<a href="https://www.zhihu.com/people/wei-xin-83-29" target="_blank">朝凪</a>：毒汤<br>
-斯隆和马克贝尔的谜之物语：鲍勃的拳击赛、移动50km、迎面的车、四万美元的书、乔治接电话、烧钱的强盗、吃蘑菇、打电话查天气、美国总统、从银行拿200元<br>
+
+<div id="dy"></div>
+
+<script>
+let data=[
+["朝凪／https://www.zhihu.com/people/wei-xin-83-29",
+"毒汤／551455",
+],
+
+["斯隆和马克贝尔的谜之物语／",
+"鲍勃的拳击赛／551491",
+"移动50km／551492",
+"迎面的车／551493",
+"四万美元的书／551494",
+"乔治接电话／551495",
+"烧钱的强盗／551520",
+"吃蘑菇／551521",
+"打电话查天气／551522",
+"美国总统／551523",
+"从银行拿200元／551524",
+],
+"小夜同学OUO／https://www.zhihu.com/people/xiao-xian-nu-de-ni-cheng-jiu-ge-zi",
+"私生／3689553",
+"礼物／3689559",
+"猫／3689588",
+"日记／3689602",
+"兄弟／3689615",
+"指甲／3689542",
+[
+
+],
+
+
+];
+
+let dy="<b>创作者</b>";
+
+for(let i=0;data.length>i;i++){
+    let 临时=data[i][0].split("／");
+    if(临时[1]==""){
+        dy+="<br>"+临时[0]+"：";
+    }else{
+        dy+="<br><a href=\""+临时[1]+"\" target=\"_blank\" class=\"dk\">"+临时[0]+"</a>：";
+    }
+    for(let i2=1;data[i].length>i2;i2++){
+        临时=data[i][i2].split("／");
+        dy+="、<a href=\"/i/zk/"+临时[1]+"\" target=\"_blank\">"+临时[0]+"</a>";
+    }
+}
+
+dy=dy.replace(/：、/g, "：");
+document.getElementById("dy").innerHTML = dy;
+
+</script>
+
 <br>
 <b>分享者</b><br>
 <a href="https://www.cnblogs.com/zhxmdefj/p/10800404.html" target="_blank">zhxmdefj</a><br>
