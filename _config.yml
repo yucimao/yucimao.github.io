@@ -10,3 +10,6 @@ mq: https://limaoqiu.com
 mq_d: https://pvo.gitee.io
 mq_i: /i
 jquery: https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
+
+plugins:
+  - jekyll-redirect-from
