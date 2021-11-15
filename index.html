@@ -10,9 +10,8 @@ body{margin:0;}
 <script>
 let 当前url=window.location.href;
 if(当前url.indexOf("xn--7qvz7xssa") != -1){
-    window.location.href="{{ site.mq }}/i";
-}
-
+window.location.href="{{ site.mq }}/i";
+}else{
 let a=new Array(
 "star_box",
 "fly_erche",
@@ -39,4 +38,5 @@ b=Math.floor(b/1000/60/60);
 b=b%a.length;
 b="<iframe src=\"/i/"+a[b]+"\" frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>";
 document.getElementById("i").innerHTML=b;
+}
 </script>
