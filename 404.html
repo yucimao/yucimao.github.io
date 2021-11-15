@@ -42,7 +42,7 @@ if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
 }else if(当前url[当前url.length-1]=="/"){ //删除最后的“/”
 	跳转url=当前url.slice(0,当前url.length-1);
 }else{ //链接只有数字，尝试跳转到zk
-	临时404 = 当前url.split("limaoqiu.com/")[1];
+	临时404 = 当前url.split(".com/")[1];
 	let 替换 = new RegExp('/', "g");
 	临时404 = 临时404.replace(替换, '');
 	if(临时404>0){跳转url="/i/zk/"+临时404;}
