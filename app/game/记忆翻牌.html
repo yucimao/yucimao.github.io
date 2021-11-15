@@ -2,7 +2,7 @@
 layout: page2
 title: 记忆翻牌
 nav_color: ffffff
-permalink: app/game/jiyifanpai/game
+permalink: game/jiyifanpai
 ---
 <div class="biaotib" style="color:#ffffff">记忆翻牌</div>
 <style type="text/css">
@@ -115,7 +115,7 @@ permalink: app/game/jiyifanpai/game
 			 for(var i=0;i<ary.length;i++){
 			 if(random==i){
 			 DomAry.push(ary[i]);
-			 $(".card_border").append("<div class='card'><div class='card_IndexNum'>"+ary[i]+"</div><img src='images/modle"+ary[i]+".jpg' class='card_img'><img src='images/back1.jpg' class='card_backImg'></div>")
+			 $(".card_border").append("<div class='card'><div class='card_IndexNum'>"+ary[i]+"</div><img src='/i/0/2020/jyfp/modle"+ary[i]+".jpg' class='card_img'><img src='/i/0/2020/jyfp/back1.jpg' class='card_backImg'></div>")
 			 ary.splice(i,1);
 			 num--
 			}
