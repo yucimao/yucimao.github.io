@@ -8,19 +8,3 @@ redirect_from:
  - 测试/211116/2228b
 mq_ceshi: 1
 ---
-{{ page.redirect_from }}<br>
-{{ page.permalink }}<br>
-
-测试4
-
-{% for item in page.redirect_from %}
-      <a href="/测试">{{ item }}</a>
-  {% endfor %}
-
-
-{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
-{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
-
-footer_me 不存在时 footer_mqec
-footer_me 为0时 没有
-footer_me 为1时 footer
