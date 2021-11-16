@@ -968,6 +968,18 @@ body ul, body li {
     display: block;
   }
 }
+
+.jrmqbk{
+position: relative;
+width: 10px;
+height: 10px;
+animation: jrmqbk_a 1s infinite;
+}
+@keyframes jrmqbk_a{
+0% {left:0px}
+70%{left: 10px;}
+100%{left: 0px;}
+}
 </style>
 
 <section class="countdownSection">
@@ -1054,7 +1066,7 @@ body ul, body li {
       <p>距离圣诞节还有</p><button type="button" onclick="播放()" style="font-size:1em;">播放背景音乐</button>
       <div class="countdown"></div>
       
-      <a onclick="window.parent.location.href='{{ site.mq_i }}'" style="color:#fff;font-size:32px;">进入 猫球博客</a>
+      <a onclick="window.parent.location.href='{{ site.mq_i }}'" style="color:#fff;font-size:32px;">进入 猫球博客<span class="jrmqbk">&lt;</span></a>
     </div>
   </div>
 </section>

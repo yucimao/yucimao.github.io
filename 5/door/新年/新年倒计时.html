@@ -82,6 +82,18 @@ permalink: i/new_year_countdown
       font-size: 2rem;
     }
   }
+
+  .jrmqbk{
+  position: relative;
+  width: 10px;
+  height: 10px;
+  animation: jrmqbk_a 1s infinite;
+  }
+  @keyframes jrmqbk_a{
+  0% {left:0px}
+  70%{left: 10px;}
+  100%{left: 0px;}
+}
   </style>
   
   <div class="middle">
@@ -106,7 +118,7 @@ permalink: i/new_year_countdown
       秒 </span>
     </div>
     <br><br>
-    <a onclick="window.parent.location.href='{{ site.mq_i }}'" class="label" style="font-size: 1em;">进入 猫球博客</a>
+    <a onclick="window.parent.location.href='{{ site.mq_i }}'" class="label" style="font-size: 1em;">进入 猫球博客<span class="jrmqbk">&lt;</span></a>
   </div>
 
   

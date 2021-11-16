@@ -457,6 +457,18 @@ animation: 1s snow-x linear infinite 0.8s;
 99.99999% { transform: translateY(500px); }
 100%      { transform: translateY(0px); }
 }
+
+.jrmqbk{
+position: relative;
+width: 10px;
+height: 10px;
+animation: jrmqbk_a 1s infinite;
+}
+@keyframes jrmqbk_a{
+0% {left:0px}
+70%{left: 10px;}
+100%{left: 0px;}
+}
 </style>
 
 
@@ -510,5 +522,5 @@ animation: 1s snow-x linear infinite 0.8s;
 <div style="position:absolute;top:50%;left:20%;color:#fff;">
 <span style="font-size:2.2em;">
 圣诞快乐！</span><br/>
-<a onclick="window.parent.location.href='{{ site.mq_i }}'" style="color:#fff;">进入 猫球博客</a>
+<a onclick="window.parent.location.href='{{ site.mq_i }}'" style="color:#fff;">进入 猫球博客<span class="jrmqbk">&lt;</span></a>
 </div>
