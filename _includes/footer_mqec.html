@@ -46,7 +46,7 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 // });
 
 
-let 分享_fo_m="（点击复制链接）<table><tr><td><a onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a></td><tr>{% for item in page.redirect_from %}<tr><td><a onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a></td><tr>{% endfor %}</tabel>";
+let 分享_fo_m="（点击复制链接）<br><a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>{% for item in page.redirect_from %}<br><a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a>{% endfor %}";
 
 let footer分享_a;
 function footer分享_b(){
