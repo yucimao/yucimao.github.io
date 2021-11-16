@@ -6,12 +6,17 @@ permalink: 测试/211116/2229
 redirect_from:
  - 测试/211116/2228
  - 测试/211116/2228b
+mq_ceshi: 1
 ---
 {{ page.redirect_from }}<br>
 {{ page.permalink }}<br>
 
-测试3
+测试4
 
 {% for item in page.redirect_from %}
       <a href="/测试">{{ item }}</a>
   {% endfor %}
+
+{% page.mq_ceshi == '1' %}
+测试=1
+{% endif %}
