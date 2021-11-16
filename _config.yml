@@ -13,3 +13,5 @@ jquery: https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
 
 plugins:
   - jekyll-redirect-from
+
+mq_url: https://李猫球.com
