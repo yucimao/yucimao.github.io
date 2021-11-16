@@ -39,7 +39,8 @@ layout: default
     {{ content }}
 
     <a href="#返回顶部" name="前往底部"><div class="auth" style="border-top:2px solid #ddd"><br/><span class="auth">返回顶部</span></div></a>
-    {% include footer.html %}
+    {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+    {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 </div>
 
 <script>

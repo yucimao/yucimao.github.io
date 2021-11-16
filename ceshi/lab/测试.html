@@ -17,6 +17,10 @@ mq_ceshi: 1
       <a href="/测试">{{ item }}</a>
   {% endfor %}
 
-{% if page.mq_ceshi == 1 %}
-测试=1
-{% endif %}
+
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
+
+footer_me 不存在时 footer_mqec
+footer_me 为0时 没有
+footer_me 为1时 footer

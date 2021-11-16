@@ -146,7 +146,8 @@ layout: default
     }
 </script>
 
-    {% include footer.html %}
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
     </div>
 

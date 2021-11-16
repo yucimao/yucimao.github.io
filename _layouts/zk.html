@@ -33,7 +33,8 @@ layout: default
     <!-- <div id="下级"></div> -->
 
     <div id="nav_zk" style="display: none;">
-        {% include footer.html %}
+        {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+        {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
         {% include nav.html %}
     </div>
 
