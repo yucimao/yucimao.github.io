@@ -39,8 +39,9 @@ if(当前url.indexOf("?") != -1){
 //链接在gitee
 if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
 	跳转url="{{ site.mq }}"+"/"+当前url.split("gitee.io/")[1];
-}else if(当前url[当前url.length-1]=="/"){ //删除最后的“/”
+}else if(当前url[当前url.length-1]=="/"){ //删除最后的“/”、删除零宽空格
 	跳转url=当前url.slice(0,当前url.length-1);
+	跳转url=跳转url.replace(/%E2%80%8E/g, "");
 }else{ //链接只有数字，尝试跳转到zk
 	临时404 = 当前url.split(".com/")[1];
 	let 替换 = new RegExp('/', "g");
