@@ -60,9 +60,9 @@ let 分享_fo_m=window.location.href;
 分享_fo_m=decodeURI(分享_fo_m);
 
 if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
-    分享_fo_m="<h4 style='display:inline;'>分享本页</h4>（点击复制链接）<br>　　<a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>{% for item in page.redirect_from %}<br>　　<a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a>{% endfor %}";
+    分享_fo_m="<h4 style='display:inline;'>分享本页</h4>（点击复制链接）<br>　 <a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>{% for item in page.redirect_from %}<br>　 <a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a>{% endfor %}";
 }else{
-    分享_fo_m="<h4 style='display:inline;'>分享本页</h4>（点击复制链接）<br>　　<a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+    分享_fo_m="<h4 style='display:inline;'>分享本页</h4>（点击复制链接）<br>　 <a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
 }
 
 let footer分享_a;
