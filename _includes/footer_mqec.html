@@ -12,7 +12,7 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 }
 @media screen and (max-width: 729px){
     .sidebar_fz6m{display:none;}
-    .footer_me_m{position: relative;bottom:0;left:0;}
+    .footer_me_m{position: absolute;bottom:0;left:0;}
     .footer_me_e{position: absolute;bottom:0;right:0;}
 }
 </style>
@@ -24,12 +24,13 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
         <img src="/img/footer_me_e1.png" alt="回到顶部" onmouseover="this.src='{{ site.mq_d }}/img/footer_me_e2.png'" onmouseout="this.src='/img/footer_me_e1.png'"> 
         </a>
     </div>
-<footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" alt="关于我" title="关于我"/></a></footer>
 
 <div id="sidebar_fz6m">
     <a  onclick="dw(dwb=分享_fo_m)"><img class="footer_me_m" src="/img/footer_me_m2.png" alt="分享"></a>
     <a href="#top"><img class="footer_me_e" src="/img/footer_me_e2.png" alt="回到顶部"></a>
 </div>
+
+<footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" alt="关于我" title="关于我"/></a></footer>
 
 <script>
 // $(document).ready(function() {
