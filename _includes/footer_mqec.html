@@ -4,27 +4,32 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 
 @media (min-width: 730px) {
 .sidebar_fz6m{position:fixed;bottom:0;z-index:1000;line-height:0;cursor:pointer;}
-
-}
-@media screen and (max-width: 729px){
-.sidebar_fz6m{position: relative;bottom:0;z-index:1000;line-height:0;cursor:pointer;}
-}
 #footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
 #footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
 #footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
 #footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+}
+@media screen and (max-width: 729px){
+    .sidebar_fz6m{display:none;}
+    .footer_me_m{position: absolute;bottom:0;left:0;}
+    .footer_me_e{position: absolute;bottom:0;right:0;}
+}
 </style>
-
     <div class="sidebar_fz6m" id="footer_me_m"> 
         <img src="/img/footer_me_m1.png" alt="分享" onclick="dw(dwb=分享_fo_m)" onmouseover="this.src='{{ site.mq_d }}/img/footer_me_m2.png'" onmouseout="this.src='/img/footer_me_m1.png'"> 
     </div>
-    
     <div class="sidebar_fz6m" id="footer_me_e"> 
         <a href="#top">
         <img src="/img/footer_me_e1.png" alt="回到顶部" onmouseover="this.src='{{ site.mq_d }}/img/footer_me_e2.png'" onmouseout="this.src='/img/footer_me_e1.png'"> 
         </a>
     </div>
 <footer><a href="/maoqiu"><img class="tubiao" src="/img/footer.png" alt="关于我" title="关于我"/></a></footer>
+
+<div id="sidebar_fz6m">
+    <img class="footer_me_m" src="/img/footer_me_m2.png" alt="分享" onclick="dw(dwb=分享_fo_m)">
+    <a href="#top"><img class="footer_me_e" src="/img/footer_me_e2.png" alt="回到顶部"></a>
+</div>
 
 <script>
 // $(document).ready(function() {
