@@ -8,6 +8,8 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 #footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
 #footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
 #sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
 }
 @media screen and (max-width: 729px){
 footer {display:none;}
@@ -57,12 +59,13 @@ footer {display:none;}
 
 let 分享_fo_m=window.location.href;
 分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
 分享_fo_m=decodeURI(分享_fo_m);
 
 if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
-    分享_fo_m="<h4 style='display:inline;'>分享本页</h4>（点击复制链接）<br>　 <a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>{% for item in page.redirect_from %}<br>　 <a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a>{% endfor %}";
+    分享_fo_m="<h4 class=\"dn_inline\">分享本页</h4>（点击复制链接）<br>　 <a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>{% for item in page.redirect_from %}<br>　 <a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a>{% endfor %}";
 }else{
-    分享_fo_m="<h4 style='display:inline;'>分享本页</h4>（点击复制链接）<br>　 <a class=\"anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+    分享_fo_m="<h4 class=\"dn_inline\">分享本页</h4>（点击复制链接）<br>　 <a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
 }
 
 let footer分享_a;
