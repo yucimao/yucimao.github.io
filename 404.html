@@ -47,6 +47,9 @@ if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
 	let 替换 = new RegExp('/', "g");
 	临时404 = 临时404.replace(替换, '');
 	if(临时404>0){跳转url="/i/zk/"+临时404;}
+	else{ //转为小写
+		跳转url=当前url.toLowerCase();
+	}
 }
 
 if(url问号=="sorry"){跳转url="0";}
