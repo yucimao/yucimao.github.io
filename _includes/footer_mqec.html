@@ -20,43 +20,28 @@ footer {display:none;}
 }
 </style>
     <div class="sidebar_fz6m" id="footer_me_m"> 
-        <img src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}1.png" alt="分享" onclick="dw(dwb=分享_fo_m)" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}1.png'"> 
+        <img width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}1.png" alt="分享" onclick="dw(dwb=分享_fo_m)" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}1.png'"> 
     </div>
     <div class="sidebar_fz6m" id="footer_me_e"> 
         <a href="#top">
-        <img src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png" alt="回到顶部" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png'"> 
+        <img width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png" alt="回到顶部" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png'"> 
         </a>
     </div>
-<footer><a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" alt="关于我" title="关于我" width="118px"/></a></footer>
+<footer><a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a></footer>
 
 <div id="sidebar_fz6m">
     <br><br>
-    <a onclick="dw(dwb=分享_fo_m)"><img class="footer_me_m" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png" alt="分享"></a>
-    <a href="#top"><img class="footer_me_e" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png" alt="回到顶部"></a>
+    <a onclick="dw(dwb=分享_fo_m)"><img class="footer_me_m" width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png" alt="分享"></a>
+    <a href="#top"><img class="footer_me_e" width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png" alt="回到顶部"></a>
 </div>
 
 <script>
-// $(document).ready(function() {
-// $("#footer_me_m").hide();
-// $("#footer_me_e").hide();
-// $(function() {
-//     $(window).scroll(function() {
-//         if ($(this).scrollTop() > 100) {
-//             $('#footer_me_m').fadeIn();
-//             $('#footer_me_e').fadeIn();
-//         } else {
-//             $('#footer_me_m').fadeOut();
-//             $('#footer_me_e').fadeOut();
-//         }
-//     });
     $('#footer_me_e a').click(function() {
         $('body,html').animate({
             scrollTop: 0
         }, 200);
         return false;
     });
-// });
-// });
 
 let 分享_fo_m=window.location.href;
 分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
