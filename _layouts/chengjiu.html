@@ -119,9 +119,9 @@ layout: default
         }
 
         if (cj_data[当前] != "") {
-            document.getElementById("dy").innerHTML = data_jl[当前] + loading;
+            document.getElementById("dy").innerHTML = data_jl[当前] + loading + "<br><br><br>";
         } else {
-            document.getElementById("dy").innerHTML = data_jl[当前];
+            document.getElementById("dy").innerHTML = data_jl[当前] + "<br><br><br>";
         }
         document.getElementById("right_anchor").innerHTML = "<table>"+right[当前]+"</table>";
     }
