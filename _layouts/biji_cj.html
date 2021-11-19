@@ -68,10 +68,10 @@ layout: default
 $("#输入").keyup(function () {
     dy="";
     right="";
-    let 输入 = $("#输入").val();
+    let 输入 = $("#输入").val().toLowerCase();
     if(输入==""){
         datb=new Array();
-        datb=datb.concat(data)
+        datb=datb.concat(data);
     }else{
         datb=new Array();
         输入=输入.split(" ");
@@ -83,6 +83,7 @@ $("#输入").keyup(function () {
             }else{
                 临时=临时[1]+临时[6];
             }
+            临时=临时.toLowerCase();
             let 临时2=0;
             for(let i=0;输入.length>i;i++){
                 if(data[i2].split("／")[0]!="hr"&&临时.indexOf(输入[i]) != -1){
@@ -137,7 +138,7 @@ function 加载(){
 {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
 {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
-    </div>
+</div>
 
 {% include nav.html %}
 
