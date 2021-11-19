@@ -5,16 +5,20 @@ permalink: i/zk/2839382
 <script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
 <a href="/i/zk/2839370">粉丝数</a>　浏览量　<a href="/i/zk/2839384">赞同数</a>　<br>
 <div class="chart"><svg class="bar-chart"></svg></div>
-<small>（更新时间：2021.7.9）</small><br/>
+<small>（更新时间：2021.11.19）</small><br/>
 
 <script>
 const svg2 = document.querySelector('.bar-chart');
 const barChart = new chartXkcd.Bar(svg2, {
-    title: '浏览量',
+    title: '浏览量(万)',
     data: {
         labels: ['bilibili','zhihu','weibo'],
         datasets: [{
-            data: [1191836+28697,11962256,0],
+            data: [
+                122+2, //哔哩哔哩
+                1251, //知乎
+                0, //微博
+            ],
         }],
     },
     options: {

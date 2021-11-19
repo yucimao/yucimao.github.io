@@ -24,65 +24,68 @@ footer_img: mf
     #right_anchor a{display:block;}
 </style>
 
-<a name="正在用的"></a><h3>正在用的</h3>
-<div id="dy_a"></div>
-<br/>
-<a name="正在玩的"></a><h3>正在玩的</h3>
-<div id="dy_c"></div>
-<br>
-<a name="暂时不用的"></a><h3>暂时不用的</h3>
-<div id="dy_b"></div>
+<div id="dy"></div>
 
 <br>
 <span class="zhushi">本页想法来源：<a href="https://xn--5iv.site/game.html" target="_blank" class="dk">昴.site</a></span>
 
 <script>
-let data_a=new Array(//"网站／区服／用户名／ID／复制／打开／更多",
-    "知乎／／李猫球／／／https://www.zhihu.com/people/limaoqiu／2013年6月22日注册，是知乎的第989299位用户。",
-    "哔哩哔哩／／猫球社长／515330／／https://space.bilibili.com/515330／2012年9月30日注册。",
-    "暴雪战网／／猫球／#5319／猫球#5319／／",
-    "QQ／／猫方块／123719932／123719932／/qq／注册于2002年1月7日",
-);
-let data_c=new Array(
-    "最终幻想14／陆行鸟-拉诺西亚／李猫球／<small>招待码</small> 1624-5yf5-51sa-3792／1624-5yf5-51sa-3792／/i/zk/1743585／我的招待码：1624-5yf5-51sa-3792<br>登录页面：https://ff.sdo.com/entertain，点击“被招待者”，输入招待码。<br>成为被招待者到达指定等级、累计充值时长可以获得对拳动作、袖珍领袖宠物、白金币等奖励。",
-    "<a href=\"https://pony.town\" target=\"_blank\" class=\"dk\">小马镇</a>／Safe Chinese／猫球／／／／",
-);
-let data_b=new Array(
-    "精灵宝可梦GO／／／0102 2996 9888／010229969888／／",
-    "魔兽世界／10区-能源舰／初代／／／／",
-    "布偶动物餐厅／／李猫球／ID见“更多”／／／猫球汉堡店：96J-8F5-JRA<br>野餐帐篷：96J-8F5-JRC",
-    "阴阳师／网易-携手同心／安倍益材／#76708／#76708／／",
-    "阴阳师：妖怪屋／春之樱／安倍益材／#K94BI／#K94BI／／",
-    "决战平安京／网易-平安京／李猫球／1187039623／1187039623／／",
-    "一梦江湖／扬州慢-言笑晏然／李猫球／1267542236／1267542236／／",
-    "江南百景图／／李猫球／m6tn38lmdd9／m6tn38lmdd9／／",
-    "边境之旅／／老国王／小镇ID 91710／91710／／",
-    "龙珠激战传说／／／btvwwmhk／btvwwmhk／／",
-);
+// ["hr","标题"],
+// ["网站","区服","用户名","ID", 其他 ], 其中"ID"可以点击复制 "1／2"显示1复制到2 
+// 其他："效果／按钮文字／内容" 效果（复制，展开，打开）
+// 或者："文字／要显示的文字"
 
-let dy_a,dy_b,dy_c;
-for(let o=0;3>o;o++){
-    let dy="<table><tr><th class=\"th\">网站 / 游戏</th><th class=\"th\">用户 / 角色</th><th class=\"th\">ID</th><th></th></tr>";
-    let dy_o;
-    if(o==0){dy_o=data_a;}else if(o==1){dy_o=data_b;}else{dy_o=data_c;}
-    for(let i=0;dy_o.length>i;i++){
-    let 临时=dy_o[i].split("／");
-    dy+="<tr><td><b>"+临时[0]+"</b> <small>"+临时[1]+"</small></td><td>"+临时[2]+"</td><td>"+临时[3]+"</td><td>";
-        if(临时[4]!=""){
-            dy+=" <a onclick=\"复(制='"+临时[4]+"')\">复制</a>";
-        }
-        if(临时[5]!=""){
-            dy+=" <a href=\""+临时[5]+"\" target=\"_blank\">打开</a>";
-        }
-        if(临时[6]!=""){
-            dy+=" <a onclick=\"dw(dwb='"+临时[6]+"')\">更多</a>";
+let data=[
+
+["hr","正在用的"],
+["知乎","","李猫球","","打开／我的主页／https://www.zhihu.com/people/limaoqiu","展开／更多资料／2013年6月22日注册，是知乎的第989299位用户。"],
+["哔哩哔哩","","猫球社长","515330","打开／我的主页／https://space.bilibili.com/515330","展开／更多资料／2012年9月30日注册。"],
+["暴雪战网","","猫球","猫球#5319"],
+["QQ","","猫方块","123719932","展开／更多资料／注册于2002年1月7日"],
+
+["hr","正在玩的"],
+["最终幻想14","陆行鸟-拉诺西亚","李猫球","<small>招待码</small> 1624-5yf5-51sa-3792／1624-5yf5-51sa-3792","打开／招待码怎么用？／/i/zk/3732699","打开／游戏笔记／/i/zk/1743585","打开／我的角色／/maoqiu/player/ff14"],
+["<a href=\"https://pony.town\" target=\"_blank\" class=\"dk\">小马镇</a>","Safe Chinese","猫球","","打开／我的角色／/maoqiu/player/pony_town"],
+
+["hr","暂时不玩的"],
+["精灵宝可梦GO","","","0102 2996 9888／010229969888"],
+["魔兽世界","10区-能源舰","初代",""],
+["布偶动物餐厅","","李猫球","","展开／店铺ID／猫球汉堡店：96J-8F5-JRA<br>野餐帐篷：96J-8F5-JRC"],
+["阴阳师","网易-携手同心","安倍益材","#76708"],
+["阴阳师：妖怪屋","春之樱","安倍益材","#K94BI"],
+["决战平安京","网易-平安京","李猫球","1187039623"],
+["一梦江湖","扬州慢-言笑晏然","李猫球","1267542236"],
+["<del>江南百景图</del>","","李猫球","m6tn38lmdd9"],
+["边境之旅","网易","老国王","<small>小镇ID</small> 91710／91710"],
+["龙珠激战传说","","","btvwwmhk"],
+
+];
+
+let dy0="<table><tr><th class=\"th\">网站 / 游戏</th><th class=\"th\">用户 / 角色</th><th class=\"th\">ID <small>点击复制</small></th><th></th></tr>";
+let dy="";
+let 临时;
+
+for(let i=0;data.length>i;i++){
+    if(data[i][0]=="hr"){if(dy!=""){dy+="</table><br>";}dy+="<a name=\""+data[i][1]+"\"></a><h3>"+data[i][1]+"</h3>"+dy0;}
+    else{
+        dy+="<tr><td><b>"+data[i][0]+"</b> <small>"+data[i][1]+"</small></td><td>"+data[i][2]+"</td>";
+        if (data[i][3].indexOf("／") != -1){
+            临时=data[i][3].split("／");
+            dy+="<td onclick=\"复(制='"+临时[1]+"')\">"+临时[0]+"</td><td>";
+            }else{dy+="<td onclick=\"复(制='"+data[i][3]+"')\">"+data[i][3]+"</td><td>";}
+        for(let i2=4;data[i].length>i2;i2++){
+            if(i2!=4){dy+=" ";}
+            临时=data[i][i2].split("／");
+            if(临时[0]=="文字"){dy+=临时[1];}
+            if(临时[0]=="复制"){dy+="<a onclick=\"复(制='"+临时[2]+"')\">"+临时[1]+"</a>";}
+            if(临时[0]=="展开"){dy+="<a onclick=\"dw(dwb='"+临时[2]+"')\">"+临时[1]+"</a>";}
+            if(临时[0]=="打开"){dy+="<a href=\""+临时[2]+"\" target=\"_blank\">"+临时[1]+"</a>";}
         }
         dy+="</td></tr>";
+    }
 }
+
 dy+="</table>";
-if(o==0){dy_a=dy;}else if(o==1){dy_b=dy;}else{dy_c=dy;}
-}
-document.getElementById("dy_a").innerHTML = dy_a;
-document.getElementById("dy_b").innerHTML = dy_b;
-document.getElementById("dy_c").innerHTML = dy_c;
+
+document.getElementById("dy").innerHTML = dy;
 </script>
