@@ -6,6 +6,7 @@ nav_url: <a href="/haiguitang">海龟汤</a>
 permalink: i/zk/551604
 zk_ly: <a href=\"/i/zk/551374\" target=\"_blank\">海龟汤怎么玩？</a> / <a href=\"/haiguitang\" target=\"_blank\">更多海龟汤</a>
 ---
+<style>h3{display:inline;}</style>
 本页转载了其他人发布和整理的故事（部分有改动），在此表示感谢。<br>
 <br>
 
@@ -13,11 +14,11 @@ zk_ly: <a href=\"/i/zk/551374\" target=\"_blank\">海龟汤怎么玩？</a> / <a
 
 <script>
 let data=[
-["朝凪／https://www.zhihu.com/people/wei-xin-83-29",
+["朝凪／https://www.zhihu.com/people/wei-xin-83-29／",
 "毒汤／551455",
 ],
 
-["斯隆和马克贝尔的谜之物语／",
+["斯隆和马克贝尔的谜之物语／／NDS平台的单机解谜游戏",
 "鲍勃的拳击赛／551491",
 "移动50km／551492",
 "迎面的车／551493",
@@ -31,7 +32,7 @@ let data=[
 ],
 
 [
-"小夜同学OUO／https://www.zhihu.com/people/xiao-xian-nu-de-ni-cheng-jiu-ge-zi",
+"小夜同学OUO／https://www.zhihu.com/people/xiao-xian-nu-de-ni-cheng-jiu-ge-zi／",
 "私生／3689553",
 "礼物／3689559",
 "猫／3689588",
@@ -41,34 +42,39 @@ let data=[
 ],
 
 [
-"山法官／https://www.zhihu.com/people/jing-xia-38-50",
+"山法官／https://www.zhihu.com/people/jing-xia-38-50／",
 "妈妈的手／3738545",
 "找到你了／3739180",
 "爱／3739181",
+"满脸是血／3739810",
 ],
 
 [
-"木鱼／",
+"木鱼／／",
 "别回头／3738518",
 ],
 
 [
-"是不是 <small>抖音博主</small>／https://www.douyin.com/user/MS4wLjABAAAA0086Qo17xLhdDHwxaaLEQV2Oq0bg679txLVCU9y62Jw4mVAyRlrG_iG6AXARAxJR",
+"是不是／https://www.douyin.com/user/MS4wLjABAAAA0086Qo17xLhdDHwxaaLEQV2Oq0bg679txLVCU9y62Jw4mVAyRlrG_iG6AXARAxJR／B站：是不是pro<br><br>自我介绍：海龟汤？我们玩的不一样！！悬疑！推理！脑洞！刺激！我们更沉浸！剧本杀！密室逃脱！",
 "双胞胎／3739130",
 ]
 
 
 ];
 
-let dy="<b>创作者</b>";
+let dy="<h3>创作者</h3><small>（包括改编作者）</small>";
 
 for(let i=0;data.length>i;i++){
     let 临时=data[i][0].split("／");
     if(临时[1]==""){
-        dy+="<br>"+临时[0]+"：";
+        dy+="<br><b>"+临时[0]+"</b>";
     }else{
-        dy+="<br><a href=\""+临时[1]+"\" target=\"_blank\" class=\"dk\">"+临时[0]+"</a>：";
+        dy+="<br><a href=\""+临时[1]+"\" target=\"_blank\" class=\"dk\"><b>"+临时[0]+"</b></a>";
     }
+    if(临时[2]!=""){
+        dy+="<small>(<a onclick=\"dw(dwb='"+临时[2]+"')\">备注</a>)</small>";
+    }
+        dy+="：";
     for(let i2=1;data[i].length>i2;i2++){
         临时=data[i][i2].split("／");
         dy+="、<a href=\"/i/zk/"+临时[1]+"\" target=\"_blank\">"+临时[0]+"</a>";
@@ -81,7 +87,7 @@ document.getElementById("dy").innerHTML = dy;
 </script>
 
 <br>
-<b>分享者</b><br>
+<h3>分享者</h3><br>
 <a href="https://www.cnblogs.com/zhxmdefj/p/10800404.html" target="_blank">zhxmdefj</a><br>
 <a href="https://www.zhihu.com/people/jackiexiao" target="_blank">Jackie</a><br>
 <a href="https://www.zhihu.com/people/mika-mak" target="_blank">Rabbi</a><br>
