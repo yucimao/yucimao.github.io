@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="https://pvo.gitee.io/5/new/notyf/notyf.min.css">
 <script src="https://pvo.gitee.io/5/new/notyf/notyf.min.js" type="text/javascript"></script>
 <script src="https://pvo.gitee.io/js/jquery.min.js"></script>
-<style>td{min-width:2em;}a{cursor:pointer;}div.body {position: relative;width: 60%;top:1em;margin: auto;}.tsx {position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 600px;background-color: #fff;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}#back-top {position: fixed;left: 85%;bottom: 10%;}#back-top a {width: 70px;height: 70px;display: block;background: url(/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}</style>
+<style>td{min-width:2em;}a{cursor:pointer;}div.body {position: relative;width: 60%;top:1em;margin: auto;}.tsx {position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 600px;background-color: #fff;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}#back-top {position: fixed;left: 85%;bottom: 10%;}#back-top a {width: 70px;height: 70px;display: block;background: url(https://limaoqiu.com/img/back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}</style>
 
 <div class="index">
     <br/><br/>
@@ -532,23 +532,33 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
 
 <a name="常用html"></a><h2>#常用html</h2>
 <table>
+
     <tr><td><a onclick="复(制='&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;')">复制</a></td>
         <td>用于固定手机版比例，放在没有layout: page的网页<br/>
         &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</td></tr>
+
     <tr><td><a onclick="复(制='&lt;script src=&quot;/js/jquery.min.js&quot;&gt;&lt;/script&gt;')">复制</a></td>
         <td>外部Jquery.min.js<br/>
         &lt;script src=&quot;/js/jquery.min.js&quot;&gt;&lt;/script&gt;</td></tr>
+
     <tr><td><a onclick="复(制='&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/all.css&quot;&gt;')">复制</a></td>
         <td>统一样式（通常不用手动加）<br/>
         &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/all.css&quot;&gt;</td></tr>
+
     <tr><td><a onclick="复(制='{% include popup_dw.html %}')">复制</a></td>
         <td>弹窗，超链接onclick="dw(dwb='【zk码，其他会直接显示文字】',dwd='【标题】')"<br/>
             {% include popup_dw.html %}</td></tr>
+
+    <tr><td><a onclick="复(制='onclick=&quot;复(制=\&apos;\&apos;)')">复制</a></td>
+        <td>复制，onclick="复(制='【内容】')"<br>
+        ［换行］ = \n</td></tr>
+
     <tr><td><a onclick="复(制='{% include anchor.html %}')">复制</a></td>
         <td>&lt;a name="">&lt;/a> 自动在右下角设置跳转列表<br/>
             放在正文下面 {% include anchor.html %}<br>
             在正文前加&lt;div id="right_anchor">&lt;/div> 在正文上显示列表<br>
             在其中加 class="shouji" 只在手机版显示</td></tr>
+
     <tr><td><a onclick="复(制='&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/5/new/notyf/notyf.min.css&quot;>&lt;script src=&quot;/5/new/notyf/notyf.min.js&quot; type=&quot;text/javascript&quot;>&lt;/script>')">复制</a></td>
         <td>右下角小弹窗：<a onclick="右下角小弹窗()">点击测试</a><br>
         &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/5/new/notyf/notyf.min.css&quot;><br>
@@ -562,6 +572,13 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
         }<br>
     &lt;/script>
         </td></tr>
+
+    <tr><td><a onclick="复(制='&lt;script type=&quot;text/javascript&quot; src=&quot;/5/new/qrcode.min.js&quot;>&lt;/script>［换行］&lt;div id=&quot;【id】&quot; style=&quot;width:200px; height:200px;&quot;>&lt;/div>［换行］&lt;script>new QRCode(document.getElementById(&quot;【id】&quot;), &quot;【内容】&quot;);&lt;/script>')">复制</a></td>
+    <td>生成二维码<br>
+        &lt;script type="text/javascript" src="/5/new/qrcode.min.js">&lt;/script><br>
+        &lt;div id="【id】" style="width:200px; height:200px;">&lt;/div><br>
+        &lt;script>new QRCode(document.getElementById("【id】"), "【内容】");&lt;/script></td></tr>
+
 </table>
 
 <br/><hr><br/>
@@ -672,11 +689,12 @@ y=？&s=？ 也可以改为 ys= 则使用预设样式<br/>
 
 </div>
 
-<input id="复制" style="position:absolute;top:-1000px"/>
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea>
 <script>
 let notyf = new Notyf({delay:3000});
 function 右下角小弹窗(){notyf.alert("失败");notyf.confirm("成功");}
 let 制;function 复(){
 notyf.confirm("已复制");
+制=制.replace(/［换行］/g, "\n");
 document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
 </html>
