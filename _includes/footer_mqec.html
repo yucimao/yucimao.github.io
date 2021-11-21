@@ -14,6 +14,7 @@ footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 @media screen and (max-width: 729px){
 footer {display:none;}
 #sidebar_fz6m {position: relative;top: 300px;z-index: -1001;float: left;width: 100%;}
+#sidebar_fz6m.tubiao{position: absolute;bottom:120px;display: block;margin: 0 auto;}
 .sidebar_fz6m{display:none;}
 .footer_me_m{position: absolute;bottom:0;left:0;}
 .footer_me_e{position: absolute;bottom:0;right:0;}
@@ -31,6 +32,9 @@ footer {display:none;}
 
 <div id="sidebar_fz6m">
     <br><br>
+
+    <a href="{% if page.footer_fo %}{{ page.footer_fo[3] }}{% else %}/maoqiu{% endif %}"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{% if page.footer_fo %}{{ page.footer_fo[1] }}{% else %}1.png{% endif %}" onerror="this.src='/img/i/footer/{% if page.footer_fo %}{{ page.footer_fo[1] }}{% else %}1.png{% endif %}';this.onerror=null;" alt="{% if page.footer_fo %}{{ page.footer_fo[0] }}{% else %}关于我{% endif %}" title="{% if page.footer_fo %}{{ page.footer_fo[0] }}{% else %}关于我{% endif %}" width="{% if page.footer_fo %}{{ page.footer_fo[2] }}{% else %}118px{% endif %}"/></a>
+
     <a onclick="dw(dwb=分享_fo_m)"><img class="footer_me_m" width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png" alt="分享"></a>
     <a href="#top"><img class="footer_me_e" width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png" alt="回到顶部"></a>
 </div>
