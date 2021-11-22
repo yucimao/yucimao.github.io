@@ -53,10 +53,11 @@ function 确定() {
 }
 
 let 取="";
+let 聊天;
 function 获(){
     取=取.split("／");
-    取="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
-    document.getElementById("对话").innerHTML = 取;
+    聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
+    document.getElementById("对话").innerHTML = 聊天;
 
     let 地址="/i/x/dh/"+取[0]+".json";
     let GetJson = $.ajax({
@@ -69,9 +70,9 @@ function 获(){
     });
     地址=GetJson.responseText;
     
-    取+="<div><span align=\"right\" class=\"a m\">"+地址+"</span></div>";
+    聊天+="<div><span align=\"right\" class=\"a m\">"+地址+"</span></div>";
 
-    document.getElementById("对话").innerHTML = 取;
+    document.getElementById("对话").innerHTML = 聊天;
 
 }
 
