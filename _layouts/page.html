@@ -54,11 +54,11 @@ layout: default
 
     <div id="head_img" style="background-image: url('{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');"></div>
 
-    <img src="{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}" onerror="this.src='/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}';this.onerror=null;改头图();">
+    <img class="yincang" src="{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}" onerror="改头图();this.src='/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}';this.onerror=null;">
 
 <script>
     function 改头图(){
-        let liCls = $("#hello");liCls.style.backgroundImage= "url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}')";
+        head_img.style.backgroundImage= "url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}')";
     }
 </script>
 

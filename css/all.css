@@ -18,6 +18,7 @@ img.crisp-edges{image-rendering: optimizeSpeed;image-rendering: -moz-crisp-edges
 table{border-spacing:0;border-collapse:collapse;border:1px solid #ccc;}tr{background:#fff;vertical-align:top;}tr:hover{background:#F6F8FA;}td{border:1px solid #ccc;}th{background:#F6F8FA;font-weight:normal;text-align:center;border:1px solid #ccc;}
 .bukexuanzhong,button,.anniu,#right_anchor,#right_anchor2,.nav_drop,#nav,.qbt,.biaotib{user-select: none;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;}
 [target="_blank"].dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
+.yincang{display:none;}
 
 @media screen and (min-width: 768px){
 blockquote{color:#808080;border-left:.4em solid #c0c0c0;padding:0.5em 0.8em;margin:1em;}
