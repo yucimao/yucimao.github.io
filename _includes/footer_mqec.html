@@ -1,7 +1,7 @@
 <style>
 @media (min-width: 730px) {
-.footer {position: relative;top: 300px;z-index: -1001;}
-.footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+footer {position: relative;top: 300px;z-index: -1001;float: left;width: 100%;}
+footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
 .sidebar_fz6m{position:fixed;bottom:0;z-index:1000;line-height:0;cursor:pointer;}
 #footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
 #footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
@@ -12,7 +12,7 @@
 .footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
 }
 @media screen and (max-width: 729px){
-.footer {display:none;}
+footer {display:none;}
 #sidebar_fz6m {position: relative;top: 300px;z-index: -1001;float: left;width: 100%;}
 .sidebar_fz6m{display:none;}
 .footer_me_m{position: absolute;bottom:0;left:0;}
@@ -27,7 +27,7 @@
         <img width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png" alt="回到顶部" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png'"> 
         </a>
     </div>
-<div class="footer bukexuanzhong">
+<footer class="bukexuanzhong">
 
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
     {% elsif page.footer_mb == "打赏" %}<a onclick="dw(dwb='3750221')"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
@@ -35,7 +35,7 @@
     {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
     {% endif %}
 
-</div>
+</footer>
 
 <div id="sidebar_fz6m" class="bukexuanzhong">
     <br><br>
