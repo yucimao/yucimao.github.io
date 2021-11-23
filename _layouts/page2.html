@@ -48,6 +48,8 @@ layout: default
 
     {{ content }}
 
+    {% if page.pinglun %}{% include vcomments.html %}{% endif %}
+
     {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
     {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
