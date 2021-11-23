@@ -27,7 +27,7 @@ footer {display:none;}
         <img width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png" alt="回到顶部" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png'"> 
         </a>
     </div>
-<footer>
+<footer class="bukexuanzhong">
 
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
     {% elsif page.footer_mb == "打赏" %}<a onclick="dw(dwb='3750221')"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
@@ -37,7 +37,7 @@ footer {display:none;}
 
 </footer>
 
-<div id="sidebar_fz6m">
+<div id="sidebar_fz6m" class="bukexuanzhong">
     <br><br>
     <div style="position: absolute;bottom:140px;left:30%;">
 
