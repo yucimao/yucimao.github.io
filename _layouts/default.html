@@ -20,8 +20,6 @@
 
     {% if page.anchor %}<div id="right_anchor"{% endif %}{% if page.anchor =="手机" %} class="shouji"{% endif %}{% if page.anchor %}></div>{% endif %}
 
-    {% include vcomments.html %}
-
     {{ content }}
 
     {% if page.anchor %}{% include anchor.html %}{% endif %}
