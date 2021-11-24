@@ -31,8 +31,12 @@ let b={
 "12.30":["new_year_countdown"],
 "12.31":["new_year_countdown"],
 
+//年.月.日 ←特定某天，可用于农历
+
 };
 let c=new Date().getMonth()+1+"."+new Date().getDate();
+if(b[c]){a=b[c];}
+c=new Date().getFullYear()+"."+c;
 if(b[c]){a=b[c];}
 b=new Date().getTime();
 b=Math.floor(b/1000/60/60);

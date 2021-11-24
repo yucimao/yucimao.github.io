@@ -56,11 +56,21 @@ $('#footer_me_e').click(function() {
 {% if page.footer_xjr %}let footer_b="{{ page.footer_img }}";{% else %}
 let footer_a={% if page.footer_xjr %}["{{ page.footer_img }}"];{% else %}["me"];{% endif %}
 let footer_b={
-"11.24":["jr/etj"],
+"6.1":["jr/etj"],
+
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
 
 };
 
 let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
 if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
 footer_b=new Date().getTime();
 footer_b=Math.floor(footer_b/1000/60/60);

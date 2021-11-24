@@ -1100,6 +1100,8 @@ m1.play();
         <div class="countdownProp" date-count="${minutes == 1 ? 'minute' : ''}">${minutes < 10 ? '0' + minutes : minutes}</div>
         <div class="countdownProp" date-count="${seconds == 1 ? 'second' : ''}">${seconds < 10 ? '0' + seconds : seconds}</div>
         `);
+
+        alert(minutes);
       }
       render(state);
       let update = setInterval(function(){
