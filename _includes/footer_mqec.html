@@ -19,14 +19,8 @@ footer {display:none;}
 .footer_me_e{position: absolute;bottom:0;right:0;}
 }
 </style>
-    <div class="sidebar_fz6m" id="footer_me_m"> 
-        <img width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}1.png" alt="分享" onclick="dw(dwb=分享_fo_m)" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}1.png'"> 
-    </div>
-    <div class="sidebar_fz6m" id="footer_me_e"> 
-        <a href="#top">
-        <img width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png" alt="回到顶部" onmouseover="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png'" onmouseout="this.src='/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}3.png'"> 
-        </a>
-    </div>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
 <footer class="bukexuanzhong">
 
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
@@ -48,14 +42,11 @@ footer {display:none;}
     {% endif %}
     
 </div>
-<div id="footer_dy">
-    <a onclick="dw(dwb=分享_fo_m)"><img class="footer_me_m" width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}2.png" alt="分享"></a>
-    <a href="#top"><img class="footer_me_e" width="150px" src="/img/i/footer/{% if page.footer_img %}{{ page.footer_img }}{% else %}me{% endif %}4.png" alt="回到顶部"></a>
-</div>
+<div id="footer_dy"></div>
 </div>
 
 <script>
-$('#footer_me_e a').click(function() {
+$('#footer_me_e').click(function() {
     $('body,html').animate({
         scrollTop: 0
     }, 200);
@@ -79,7 +70,7 @@ footer_b=footer_a[footer_b];
 footer_b="/img/i/footer/"+footer_b;
 
 document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
-document.getElementById("footer_me_e").innerHTML = "<a href=\"#top\"><img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\"></a>";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
 document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
 
 let 分享_fo_m=window.location.href;
