@@ -62,7 +62,7 @@ $('#footer_me_e a').click(function() {
     return false;
 });
 
-{% if page.footer_img %}let footer_b="{{ page.footer_img }}"{% else %}
+{% if page.footer_img %}let footer_b="{{ page.footer_img }}";{% else %}
 let footer_a=["me"];
 let footer_b={
 "11.24":["jr/etj"],
@@ -74,6 +74,7 @@ if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
 footer_b=new Date().getTime();
 footer_b=Math.floor(footer_b/1000/60/60);
 footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
 {% endif %}
 footer_b="/img/i/footer/"+footer_b;
 
