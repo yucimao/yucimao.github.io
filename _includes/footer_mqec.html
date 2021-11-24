@@ -62,8 +62,8 @@ $('#footer_me_e a').click(function() {
     return false;
 });
 
-{% if page.footer_img %}let footer_b="{{ page.footer_img }}";{% else %}
-let footer_a=["me"];
+{% if page.footer_xjr %}let footer_b="{{ page.footer_img }}";{% else %}
+let footer_a={% if page.footer_xjr %}["{{ page.footer_img }}"];{% else %}["me"];{% endif %}
 let footer_b={
 "11.24":["jr/etj"],
 
