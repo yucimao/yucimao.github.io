@@ -98,7 +98,7 @@ layout: default
 
     <div id="下级"></div>
     <div id="nav_zk" style="display: none;">
-        {% if page.pinglun %}{% include vcomments.html %}{% endif %}
+        {% if page.pinglun %}{% include Valine.html %}{% endif %}
         {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
         {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
         {% include nav.html %}
