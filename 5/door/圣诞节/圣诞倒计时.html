@@ -1072,6 +1072,7 @@ animation: jrmqbk_a 1s infinite;
 </section>
 
 <script>
+  let 倒计时="0";
   function 播放(){
     var m1 = document.getElementById("audio");
 m1.play();
@@ -1100,8 +1101,11 @@ m1.play();
         <div class="countdownProp" date-count="${minutes == 1 ? 'minute' : ''}">${minutes < 10 ? '0' + minutes : minutes}</div>
         <div class="countdownProp" date-count="${seconds == 1 ? 'second' : ''}">${seconds < 10 ? '0' + seconds : seconds}</div>
         `);
-
-        alert(minutes);
+        let 临时=days+hours+minutes+seconds;
+        if(临时==0&&倒计时=="1"){
+          window.parent.location.href='/i/spinning_christmas_tree';
+        }
+        if(临时!=0){倒计时="1";}
       }
       render(state);
       let update = setInterval(function(){

@@ -9,8 +9,24 @@
         background-repeat:no-repeat,no-repeat;
         background-position:bottom left,bottom right;}
 </style>
-<div id="vcomments"></div>
+<div id="v_pl_s"></div>
+<div id="vcomments" style="width:80%;"></div>
 <script>
+    let v_pl_a=["a"];
+    let v_pl_b={
+        "11.25":["wsj"],
+    };
+    let v_pl_c=new Date().getMonth()+1+"."+new Date().getDate();
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_c=new Date().getFullYear()+"."+v_pl_c;
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_b=new Date().getTime();
+    v_pl_b=Math.floor(v_pl_b/1000/60/60);
+    v_pl_b=v_pl_b%v_pl_a.length;
+    v_pl_b=v_pl_a[v_pl_b];
+    v_pl_b="/img/background/pinglun/"+v_pl_b;
+    document.getElementById("v_pl_s").innerHTML = "<style>textarea#veditor{background-image: url('"+v_pl_b+"1.png'),url('"+v_pl_b+"2.png');}</style>";
+
     new Valine({
         el: '#vcomments',
         appId: 'mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz',
