@@ -53,8 +53,8 @@ $('#footer_me_e').click(function() {
     return false;
 });
 
-{% if page.footer_xjr %}let footer_b="{{ page.footer_img }}";{% else %}
-let footer_a={% if page.footer_xjr %}["{{ page.footer_img }}"];{% else %}["me"];{% endif %}
+let footer_a={% if page.footer_img %}["{{ page.footer_img }}"];{% else %}["me"];{% endif %}
+{% if page.footer_xjr %}let footer_b;{% else %}
 let footer_b={
 "3.16":["me/mqsr"],
 "6.1":["jr/etj"],
@@ -81,11 +81,11 @@ let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
 if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
 footer_c=new Date().getFullYear()+"."+footer_c;
 if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+{% endif %}
 footer_b=new Date().getTime();
 footer_b=Math.floor(footer_b/1000/60/60);
 footer_b=footer_b%footer_a.length;
 footer_b=footer_a[footer_b];
-{% endif %}
 footer_b="/img/i/footer/"+footer_b;
 
 document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
