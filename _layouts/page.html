@@ -54,7 +54,7 @@ layout: default
 
     <div id="head_img" style="background-image: url('{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');"></div>
 
-    <img class="yincang" src="{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}" onerror="改头图();this.src='/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}';this.onerror=null;">
+    <img class="yincang" style="width:1px;" src="{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}" onerror="改头图();this.src='/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}';this.onerror=null;">
 
 <script>
     function 改头图(){
