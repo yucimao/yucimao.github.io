@@ -58,7 +58,7 @@ function 获(){
     地址=地址.split("[");
     for(let i=1;地址.length>i;i++){
         if(地址[i][0]=="／"){
-            let =地址[i].split("／");
+            let 临时2=地址[i].split("／");
             聊天+="<div><span class=\"d n2\" onclick=\"获(取='"+临时2[1]+"／"+临时2[2]+"')\">"+临时2[2]+"</span></div>"; 
         }else{
             聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
