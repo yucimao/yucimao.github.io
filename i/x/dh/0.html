@@ -1,7 +1,7 @@
 ---
 layout: page2
 title: 小猫球
-nav_url: <a href="/contactus">联系我们</a>
+nav_url: <a href="/notice">公告</a>
 permalink: xiaomaoqiu
 redirect_from:
  - 小猫球
@@ -14,6 +14,7 @@ redirect_from:
 <script>
 let data=[
     "1／测试2",
+    "3810106／为什么叫“李猫球”？",
 ];
 
 let 可选;
@@ -56,7 +57,12 @@ function 获(){
     地址=GetJson.responseText;
     地址=地址.split("[");
     for(let i=1;地址.length>i;i++){
-        聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>";
+        if(地址[i][0]=="／"){
+            let =地址[i].split("／");
+            聊天+="<div><span class=\"d n2\" onclick=\"获(取='"+临时2[1]+"／"+临时2[2]+"')\">"+临时2[2]+"</span></div>"; 
+        }else{
+            聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
+        }
     }
     
     document.getElementById("对话").innerHTML = 聊天;
