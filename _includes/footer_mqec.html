@@ -98,7 +98,11 @@ let 分享_fo_m=window.location.href;
 分享_fo_m=decodeURI(分享_fo_m);
 
 if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
-    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>{% for item in page.redirect_from %}<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ item }}')\">{{ site.mq_url }}/{{ item }}</a>{% endfor %}";
+    let 分享_fo_n=[{% for item in page.redirect_from %}"{{ item }}",{% endfor %}];
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>";
+    for(let i=0;{% if page.footer_fx %}{{ page.footer_fx }}{% else %}分享_fo_n.length{% endif %}>i;i++){
+        分享_fo_m+="<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/"+分享_fo_n[i]+"')\">{{ site.mq_url }}/"+分享_fo_n[i]+"</a>";
+    }
 }else{
     分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
 }
