@@ -11,12 +11,11 @@ redirect_from:
  - biji/index
 footer_img: mf
 footer_fx: 3
+anchor: shouji
 ---
 <style>
 .tsx {/*底部提示框*/position: relative;display: inline-block;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}
 </style>
-
-<div id="right_anchor" class="shouji"></div>
 
 <a name="生活"></a><h3>生活</h3>
 
@@ -46,35 +45,16 @@ footer_fx: 3
 
 <br/>
 
-<a name="社会问题"></a><h3>社会问题</h3>
-
-<fieldset><legend>地域黑</legend>
-    <div class="tsx"><a href="/diyuhei/zhongguo" class="anniu">中国</a><span class="tsxt">关于中国的地域黑</span></div>
-    <a href="/diyuhei/zggd" class="anniu">中国各地</a>
-    <a href="/diyuhei/qipa" class="anniu">奇葩的地域黑</a>
-    <br/>
-    <div class="tsx"><a href="/diyuhei/dongbei" class="anniu">东北</a><span class="tsxt">关于东北的地域黑</span></div>
-    <div class="tsx"><a href="/diyuhei/cn-db" class="anniu">中国和东北</a><span class="tsxt">发现一个有趣的现象，外地人对东北的偏见，有时候非常像外国人对中国的偏见，收集了一些例子。</span></div>
-    <div class="tsx"><a href="/diyuhei/db-db" class="anniu">东北和东北</a><span class="tsxt">发现一个有趣的现象，某些人对东北的负面评价有些是自相矛盾的，仿佛这世界上存在两个东北。</span></div>
-</fieldset>
-
-<br/>
-
-<fieldset>
-    <legend>女权</legend>
-    <a href="/nvquan/shuju" class="anniu">女权与数据</a>
-    <a href="/diyuhei/nanxing" class="anniu">对男性的地域黑</a>
-    <a href="/nvquan/xingbiehuhuan" class="anniu">性别互换</a>
-    <a href="/nvquan/nvquan" class="anniu">女权的双标</a>
-    <a href="/nanzun" class="anniu">男尊主义</a>
-    <a href="/nvquan/zhongzuzhuyi" class="anniu">性别种族主义</a>
-    <a href="/nvquan/zhenxiang" class="anniu">女权与真相</a>
-    <a href="/nvquanzhisheng" class="anniu">女权之声</a>
-    </fieldset>
-
-<br/>
 
 <a name="其他"></a><h3>其他</h3>
+
+<fieldset>
+    <legend>社会问题</legend>
+    <a href="/diyuhei" class="anniu">地域黑</a>
+    <a href="/diyuhei/nanxing" class="anniu">女权</a>
+    <a href="/baoguang" class="anniu">曝光</a>
+    <a href="/oldnews" class="anniu">旧闻</a>
+</fieldset>
 
 <fieldset>
     <legend>其他</legend>
@@ -82,9 +62,7 @@ footer_fx: 3
     <a href="/biji/scp" class="anniu">简单的SCP</a>
     <a href="/mqf" class="anniu">MQ基金会</a>
     <a href="/biji/game" class="anniu">游戏笔记</a>
-    <a href="/oldnews" class="anniu">旧闻</a>
     <a href="/biji/xinaogequ" class="anniu">反洗脑歌曲</a>
-    <a href="/baoguang" class="anniu">曝光</a>
     </fieldset>
 
 <br/>
@@ -112,5 +90,3 @@ footer_fx: 3
     <legend>日记</legend>
     猫球的世界：2013年1月4日，记录玩MC的日子 <a href="https://www.zhihu.com/question/24649860/answer/1226122589" target="_blank" class="dk">文章</a><br/>
     </fieldset>
-
-{% include anchor.html %}
