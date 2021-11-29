@@ -6,7 +6,7 @@ layout: default
         body{background-color: #F4F8FB;}
         .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
         div.body {position: relative;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
-        #nav_zk{position: relative;margin: auto;width:70%;}
+        #nav_zk2{position: relative;margin: auto;width:70%;}
     } /*电脑*/
 
     @media screen and (max-width: 767px) { /*手机*/
@@ -26,30 +26,13 @@ layout: default
 
 <body>
 
-    <div id="上级"></div>
-    <div id="wen_body">
+    <div id="上级">
+        <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+        <div class="auth"><span class="auth">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class="auth">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span><br>
+        <a class="diannao bukexuanzhong" onclick="屏宽()">切换宽度</a></div><hr>
+    </div>
+    <div id="wen_body" class="body">
     <script>
-    if (top.location == self.location) {
-        var 上级dy =
-            "<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>" +
-            "<div class=\"auth\"><span class=\"auth\">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class=\"auth\">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span><br>"+
-            "<a class=\"diannao bukexuanzhong\" onclick=\"屏宽()\">切换宽度</a></div><hr>";
-        document.getElementById("上级").innerHTML = 上级dy;
-        document.getElementById("wen_body").className = 'body';}
-        else{
-        document.getElementById("nav").style.display = "none";
-        var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}0{% endif %};
-        {% if page.zk_height_a %}bodyH={{ page.zk_height_a }};{% endif %}
-        var bodyJ = window.location.href.split('/i/zk/')[1];
-        var bodyK = "／／" + bodyJ;
-        var bodyL = "／" + bodyJ + "／";
-        window.parent.document.getElementById(bodyK).height = bodyH;
-        window.parent.document.getElementById(bodyL).innerHTML = "";
-
-        window.onload = function () {
-        bodyH = $(document).height();
-        window.parent.document.getElementById(bodyK).height = bodyH;}
-        }
         {% if page.book_item %}localStorage.setItem("{{ page.book_item }}", "{{ page.nav_text }}／/{{ page.permalink }}");{% else %}{% endif %}
         let p_link = "{{ page.permalink }}".split("/");
         localStorage.setItem(p_link[2], "1");
@@ -60,18 +43,15 @@ layout: default
 
     </div>
 
-    <div id="下级"></div>
-    <div id="nav_zk" style="display: none;">
+    <div id="下级">
+        <hr><div class="auth"><span class="auth">{% if page.wen_index %}<a href="{{ page.wen_index }}">目录</a>{% else %}目录{% endif %}</span><span class="auth">{% if page.wen_pre %}<a href="{{ page.wen_pre }}">上一页</a>{% else %}上一页{% endif %}</span><span class="suth">{% if page.wen_next %}<a href="{{ page.wen_next }}">下一页</a>{% else %}下一页{% endif %}</span></div></div>
+    </div>
+    <div id="nav_zk2">
         {% if page.pinglun %}{% include Valine.html %}{% endif %}
         {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
         {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
-        {% include nav.html %}
     </div>
-    <script>if(top.location==self.location){
-        var 下级dy="<hr><div class=\"auth\"><span class=\"auth\">{% if page.wen_index %}<a href=\"{{ page.wen_index }}\">目录</a>{% else %}目录{% endif %}</span><span class=\"auth\">{% if page.wen_pre %}<a href=\"{{ page.wen_pre }}\">上一页</a>{% else %}上一页{% endif %}</span><span class=\"suth\">{% if page.wen_next %}<a href=\"{{ page.wen_next }}\">下一页</a>{% else %}下一页{% endif %}</span></div></div>";
-        document.getElementById("下级").innerHTML=下级dy;
-        document.getElementById("nav_zk").style.display = "block";
-    }
+    <script>
         let a="0";
         function 屏宽(){
             if(a=="0"){
