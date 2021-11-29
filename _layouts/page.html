@@ -3,23 +3,16 @@ layout: default
 ---
 <style>
     html,body {margin: 0;padding: 0;}
-    #head_img {background-repeat: no-repeat;background-size: 100%;}
-    #head_img:after {content: "";display: block;padding-bottom: 40%;}
 
     @media (max-width: 730px) { /*小于730px*/
-        .qbt {color: #fff;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
-        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 8%;font-size: 30px;}
         div.body {position: relative;top: 20px;width: 96%;margin: auto;}
     }
 
     @media (min-width: 730px) { /*大于730*/
-        .qbt {color: #fff;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
-        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
         div.body {position: relative;top: 20px;width: 80%;margin: auto;}
     }
 
     @media (min-width: 950px) { /*大于950*/
-        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 25%;font-size: 70px;}
         div.body {position: relative;top: 20px;width: 65%;margin: auto;}
     }
 
@@ -52,15 +45,7 @@ layout: default
         </div>
     </div>
 
-    <div id="head_img" style="background-image: url('{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');"></div>
-
-    <img class="yincang" style="width:1px;" src="{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}" onerror="改头图();this.src='/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}';this.onerror=null;">
-
-<script>
-    function 改头图(){
-        head_img.style.backgroundImage= "url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}')";
-    }
-</script>
+    {% include toutu.html %}
 
     <span class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
 
