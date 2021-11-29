@@ -1,187 +1,58 @@
 ---
-layout: page
+layout: biji_cj
 title: 猫球和二扯的日常
 nav_text: 猫球<small>和</small>二扯<br>　　<small>的</small>日常
-nav_color: ffffff
 permalink: richang
 redirect_from:
  - 日常
-footer_img: mf
 pinglun: 1
-anchor: 手机
+toutu: 1
+footer_img: mf
 ---
-<!--nav_img: mqec_180929.jpg-->
 <style>
-.fontbs{cursor:pointer;color:#006699;}
-.menuDiv h4{list-style: none;line-height: 2.4;color: #006699;cursor: pointer;}
-@media screen and (min-width: 450px){ /*电脑*/
-.sy50{width:49%;}
-}
-@media screen and (max-width: 449px){ /*手机*/
-.sy50{width:99%}
-}
-</style>
+    @media screen and (min-width: 450px){ /*电脑*/
+    .sy50{width:49%;}
+    }
+    @media screen and (max-width: 449px){ /*手机*/
+    .sy50{width:99%}
+    }
+    </style>
 
-<div class="menuDiv"><h4></h4><ul></ul></div>
-<br/>
+    <br><br>
+    <a href="/maoqiujiazu">
+        <img class="tubiao sy50" id="maoqiujiazu" src="/img/index/maoqiujiazu.jpg" 
+        onMouseOver="this.src='/img/index/maoqiujiazu3.jpg'" 
+        onMouseOut="this.src='/img/index/maoqiujiazu3.jpg'" 
+        ontouchstart="this.src='/img/index/maoqiujiazu3.jpg'" 
+        ontouchend="this.src='/img/index/maoqiujiazu3.jpg'" 
+        alt="猫球家族" /></a>
 
-<a href="/maoqiujiazu">
-<img class="tubiao sy50" id="maoqiujiazu" src="/img/index/maoqiujiazu.jpg" 
-onMouseOver="this.src='/img/index/maoqiujiazu3.jpg'" 
-onMouseOut="this.src='/img/index/maoqiujiazu3.jpg'" 
-ontouchstart="this.src='/img/index/maoqiujiazu3.jpg'" 
-ontouchend="this.src='/img/index/maoqiujiazu3.jpg'" 
-alt="猫球家族" /></a>
-
-<br/>
-<hr>
-<br/>
-
-<a name="旅行"></a><h2>旅行</h2>
-
-<div class="menuDiv"><h4>2019年 大连</h4><ul>
-<a href="https://www.bilibili.com/video/av61288991" target="_blank" class="dk">第1天：到达大连、星海广场</a><br/>
-<a href="https://www.bilibili.com/video/av65359103" target="_blank" class="dk">第2天：大连森林动物园</a><br/>
-<a href="https://www.bilibili.com/video/BV1LJ411K7Hy" target="_blank" class="dk">第3天：圣亚海洋公园</a><br/>
-<a href="https://www.bilibili.com/video/BV11K411V7TM" target="_blank" class="dk">第4天：黑石礁</a><br/>
-<a href="https://www.bilibili.com/video/BV1Kt4y1D7JA" target="_blank" class="dk">第5天：东港</a><br/>
-</ul></div>
-
-<b>2018年</b><br/>
-<a href="https://www.bilibili.com/video/BV1zW411277T" target="_blank" class="dk">长春动物园</a><br/>
-
-<br/>
-<hr>
-<br/>
-
-<a name="漫画"></a><h2>漫画</h2>
-
-<h4><a href="/manhua/richang" target="_blank" class="dk">《猫球和二扯的日常》</a></h4>
-
-<div class="menuDiv"><h4>《二扯寝室的日常》</h4><ul>
-<a href="https://h.bilibili.com/24738138" target="_blank" class="dk">01 大哥的逃生之路</a><br/>
-<a href="https://h.bilibili.com/26360974" target="_blank" class="dk">02 喝酒之后</a><br/>
-</ul></div>
-
-<br/>
-<hr>
-<br/>
-
-<a name="游戏"></a><h2>游戏</h2>
-
-<a href="/game/jiyifanpai/game" target="_blank" class="dk">记忆翻牌</a><br/>
-<a href="/game/caiquan" target="_blank" class="dk">猫球二扯版猜拳</a><br>
-
-<br/>
-<hr>
-<br/>
-
-<a name="周边"></a><h2>周边</h2>
-
-猫球二扯气囊支架19-7 <a href="https://t.bilibili.com/276017808447347674" target="_blank" class="dk">图片</a><br/>
-猫球手办20-5 <a href="https://www.bilibili.com/video/BV1JK411s73S" target="_blank" class="dk">视频</a><br/>
-<a href="/5/pvo/炉石传说/i.html" target="_blank" class="dk">仿炉石传说卡牌</a><br>
-
-
-<p id="dy0"></p>
-
+<div id="dy"></div>
 <script>
-    function MenuSwitch(className) {    //展开
-    this._elements = [];
-    this._default = -1;
-    this._className = className;
-    this._previous = false;
-}
-MenuSwitch.prototype.setDefault = function (id) {
-    this._default = Number(id);
-}
-MenuSwitch.prototype.setPrevious = function (flag) {
-    this._previous = Boolean(flag);
-}
-MenuSwitch.prototype.collectElementbyClass = function () {
-    this._elements = [];
-    var allelements = document.getElementsByTagName("div");
-    for (var i = 0; i < allelements.length; i++) {
-        var mItem = allelements[i];
-        if (typeof mItem.className == "string" && mItem.className == this._className) {
-            var h3s = mItem.getElementsByTagName("h4");
-            var uls = mItem.getElementsByTagName("ul");
-            if (h3s.length == 1 && uls.length == 1) {
-                h3s[0].style.cursor = "hand";
-                if (this._default == this._elements.length) {
-                    uls[0].style.display = "block";
-                } else {
-                    uls[0].style.display = "none";
-                }
-                this._elements[this._elements.length] = mItem;
-            }
-        }
-    }
-}
-MenuSwitch.prototype.open = function (mElement) {
-    var uls = mElement.getElementsByTagName("ul");
-    uls[0].style.display = "block";
-}
-MenuSwitch.prototype.close = function (mElement) {
-    var uls = mElement.getElementsByTagName("ul");
-    uls[0].style.display = "none";
-}
-MenuSwitch.prototype.isOpen = function (mElement) {
-    var uls = mElement.getElementsByTagName("ul");
-    return uls[0].style.display == "block";
-}
-MenuSwitch.prototype.toggledisplay = function (header) {
-    var mItem;
-    if (window.addEventListener) {
-        mItem = header.parentNode;
-    } else {
-        mItem = header.parentElement;
-    }
-    if (this.isOpen(mItem)) {
-        this.close(mItem);
-    } else {
-        this.open(mItem);
-    }
-    if (!this._previous) {
-        for (var i = 0; i < this._elements.length; i++) {
-            if (this._elements[i] != mItem) {
-                var uls = this._elements[i].getElementsByTagName("ul");
-                uls[0].style.display = "none";
-            }
-        }
-    }
-}
-MenuSwitch.prototype.init = function () {
-    var instance = this;
-    this.collectElementbyClass();
-    if (this._elements.length == 0) {
-        return;
-    }
-    for (var i = 0; i < this._elements.length; i++) {
-        var h3s = this._elements[i].getElementsByTagName("h4");
-        if (window.addEventListener) {
-            h3s[0].addEventListener("click", function () { instance.toggledisplay(this); }, false);
-        } else {
-            h3s[0].onclick = function () { instance.toggledisplay(this); }
-        }
-    }
-}
+    let data = [//"图片／名字／说明／展开说明／o／弹出窗口／关键词", / u 链接 打开链接
 
-var mSwitch = new MenuSwitch("menuDiv");
-mSwitch.setDefault(0);
-mSwitch.setPrevious(false);
-mSwitch.init();
+    // "775875／猫球家族／／／u／/maoqiujiazu／",
 
+    "hr／小漫画／",
+    "3817700／猫球和二扯的日常／／／u／/manhua/richang／",
+    "3817729／二扯寝室的日常／／／o／dw(dwb='3817476')／",
 
-let dy0=new Array("maoqiujiazu")
-let dy1="";
+    "hr／小游戏／",
+    "/i/0/2020/jyfp/back1.jpg／记忆翻牌／／／u／/game/jiyifanpai／",
+    "3817763／猜拳／／／u／/game/caiquan／",
 
-window.onload=function(){   //页面加载完把模糊图换成清晰图、预加载变化图
-    for (let i = 0; i < dy0.length; i++) {
-  document.getElementById(dy0[i]).src = "/img/index/"+dy0[i]+"3.jpg"; 
-  dy1 += '<img width="1px" src="/img/index/' + dy0[i] + '2.jpg"/>';
-}
-dy1='<div style="display:none;">'+dy1+'</div>';
-document.getElementById("dy0").innerHTML=dy1;
-};
+    "hr／周边／",
+    "3817781／气囊支架／19-7版本／／u／https://t.bilibili.com/276017808447347674／",
+    "3817807／猫球手办x／20-5版本／／u／https://www.bilibili.com/video/BV1JK411s73S／",
+    "3817816／仿炉石传说卡牌／／／u／/5/pvo/炉石传说/i.html／",
+
+    "hr／出去玩／",
+    "3817870／<small>2019年</small> 大连 第1天／到达大连、星海广场／／u／https://www.bilibili.com/video/av61288991／",
+    "3817871／<small>2019年</small> 大连 第2天／大连森林动物园／／u／https://www.bilibili.com/video/av65359103／",
+    "3817872／<small>2019年</small> 大连 第3天／圣亚海洋公园／／u／https://www.bilibili.com/video/BV1LJ411K7Hy／",
+    "3817873／<small>2019年</small> 大连 第4天／黑石礁／／u／https://www.bilibili.com/video/BV11K411V7TM／",
+    "3817874／<small>2019年</small> 大连 第5天／东港／／u／https://www.bilibili.com/video/BV1Kt4y1D7JA／",
+    "3817875／<small>2018年</small> 长春／长春动物园／／u／https://www.bilibili.com/video/BV1zW411277T／",
+
+];
 </script>
