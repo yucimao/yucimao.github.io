@@ -8,7 +8,7 @@ pinglun: 1
 ---
 <small>本页部分内容参考自@了德律风、@掰弯剪辑式</small><br>
 
-<style>table{border-spacing:0;border-collapse:collapse;border:1px solid #ccc;}tr{background:#fff;vertical-align:top;}tr:hover{background:#F6F8FA;}td{border:1px solid #ccc;}th{background:#F6F8FA;font-weight:normal;text-align:center;border:1px solid #ccc;}
+<style>
     .ra{background-color: #500303;color:#ffffff;}
     .rb{background-color: #7D0000;color:#ffffff;}
     .ba{background-color: #022256;color:#ffffff;}
@@ -16,6 +16,10 @@ pinglun: 1
     .ga{background-color: #042708;color:#ffffff;}
     .gb{background-color: #003F08;color:#ffffff;}
     .ya{background-color: #3C2500;color:#ffffff;}
+
+    td[onclick^="dw("]{
+        color:#006699;text-decoration: underline;
+    }
 </style>
 
 <a name="新手"></a><h2>新手</h2>
@@ -27,149 +31,149 @@ pinglun: 1
 <h3 style="color:#7D0000">战斗</h3>
 <table>
     <tr>
-        <td>速攻</td><td></td><td>　</td>
-        <td>强击</td><td></td><td>　</td>
-        <td>防御</td><td></td><td>　</td>
-        <td>箭术</td><td></td><td>　</td>
-        <td>战斗狂热</td><td></td><td>　</td>
+        <td>速攻</td><td></td>
+        <td>强击</td><td></td>
+        <td>防御</td><td></td>
+        <td>箭术</td><td></td>
+        <td>战斗狂热</td><td></td>
     </tr>
     <tr>
-        <td class="ra">肌肉记忆</td><td>加满</td><td></td>
-        <td>力量强化</td><td></td><td></td>
-        <td>箭矢偏转</td><td></td><td></td>
-        <td>闪电反射</td><td></td><td></td>
-        <td class="rb">战意坚定</td><td>酌情</td><td><a onclick="dw(dwb='降低因受到攻击减少的肾上腺素，操作不太好可以加满。')">(详)</a></td>
+        <td class="ra">肌肉记忆</td><td>加满</td>
+        <td>力量强化</td><td></td>
+        <td>箭矢偏转</td><td></td>
+        <td>闪电反射</td><td></td>
+        <td class="rb">战意坚定</td><td onclick="dw(dwb='降低因受到攻击减少的肾上腺素，操作不太好可以加满。')">酌情</td>
     </tr>
     <tr>
-        <td class="ra">精准重击</td><td>加满</td><td></td>
-        <td>粉身碎骨</td><td></td><td></td>
-        <td class="rb">闪转腾挪</td><td>酌情</td><td><a onclick="dw(dwb='减少躲避时受到的伤害，操作不太好可以加满。')">(详)</a></td>
-        <td>心狠手辣</td><td></td><td></td>
-        <td class="rb">死中求活</td><td>酌情</td><td><a onclick="dw(dwb='配合战意坚定是保命神技，一次原地复活的机会。')">(详)</a></td>
+        <td class="ra">精准重击</td><td>加满</td>
+        <td>粉身碎骨</td><td></td>
+        <td class="rb">闪转腾挪</td><td onclick="dw(dwb='减少躲避时受到的伤害，操作不太好可以加满。')">酌情</td>
+        <td>心狠手辣</td><td></td>
+        <td class="rb">死中求活</td><td onclick="dw(dwb='配合战意坚定是保命神技，一次原地复活的机会。')">酌情</td>
     </tr>
     <tr>
-        <td class="ra">回旋剑舞</td><td>加满</td><td></td>
-        <td class="ra">怒气爆发</td><td>加满</td><td><a onclick="dw(dwb='用于对付拿盾牌和防御反击的敌人。')">(详)</a></td>
-        <td class="rb">反击</td><td>酌情</td><td><a onclick="dw(dwb='增加防御反击的伤害，适合单对单的战斗。')">(详)</a></td>
+        <td class="ra">回旋剑舞</td><td>加满</td>
+        <td class="ra">怒气爆发</td><td onclick="dw(dwb='用于对付拿盾牌和防御反击的敌人。')">加满</td>
+        <td class="rb">反击</td><td onclick="dw(dwb='增加防御反击的伤害，适合单对单的战斗。')">酌情</td>
         <td>要害专精</td><td></td><td></td>
-        <td class="rb">战斗专注</td><td>酌情</td><td><a onclick="dw(dwb='加快肾上腺素的获取速度，打BOSS比较有用。')">(详)</a></td>
+        <td class="rb">战斗专注</td><td onclick="dw(dwb='加快肾上腺素的获取速度，打BOSS比较有用。')">酌情</td>
     </tr>
     <tr>
-        <td>血流如注</td><td></td><td></td>
-        <td class="rb">破甲</td><td>酌情</td><td><a onclick="dw(dwb='只降低敌人对劈砍的抗性，对轻击和法印无效，对重击很有用，可以学一下。')">(详)</a></td>
-        <td class="rb">致命精准</td><td><a onclick="dw(dwb='')"></a></td><td></td>
-        <td>瘫痪射击</td><td></td><td></td>
-        <td>愤怒洪流</td><td></td><td></td>
+        <td>血流如注</td><td></td>
+        <td class="rb">破甲</td><td onclick="dw(dwb='只降低敌人对劈砍的抗性，对轻击和法印无效，对重击很有用，可以学一下。')">酌情</td>
+        <td class="rb">致命精准</td><td></td>
+        <td>瘫痪射击</td><td></td>
+        <td>愤怒洪流</td><td></td>
     </tr>
 </table>
 <br>
 <h3 style="color:#0038AC">法印</h3>
 <table>
     <tr>
-        <td>阿尔德</td><td></td><td>　</td>
-        <td>伊格尼</td><td></td><td>　</td>
-        <td>亚登</td><td></td><td>　</td>
-        <td>昆恩</td><td></td><td>　</td>
-        <td>亚克席</td><td></td><td>　</td>
+        <td>阿尔德</td><td></td>
+        <td>伊格尼</td><td></td>
+        <td>亚登</td><td></td>
+        <td>昆恩</td><td></td>
+        <td>亚克席</td><td></td>
     </tr>
     <tr>
-        <td>远距阿尔德</td><td></td><td></td>
-        <td>盔甲融化</td><td>一般</td><td><a onclick="dw(dwd='盔甲融化',dwb='降低敌人护甲，只对人类敌人有效。')">(详)</a></td>
-        <td class="bb">持久咒文</td><td>酌情</td><td><a onclick="dw(dwd='持久咒文',dwb='打妖灵类敌人很有用。')">(详)</a></td>
-        <td>爆裂之盾</td><td></td><td></td>
-        <td class="ba">迷惑术</td><td>加满</td><td><a onclick="dw(dwd='迷惑术',dwb='剧情中可以用于规避很多花钱或麻烦的情况。')">(详)</a></td>
+        <td>远距阿尔德</td><td></td>
+        <td>盔甲融化</td><td onclick="dw(dwd='盔甲融化',dwb='降低敌人护甲，只对人类敌人有效。')">一般</td>
+        <td class="bb">持久咒文</td><td onclick="dw(dwd='持久咒文',dwb='打妖灵类敌人很有用。')">酌情</td>
+        <td>爆裂之盾</td><td></td>
+        <td class="ba">迷惑术</td><td onclick="dw(dwd='迷惑术',dwb='剧情中可以用于规避很多花钱或麻烦的情况。')">加满</td>
     </tr>
     <tr>
-        <td>阿尔德扫击</td><td></td><td></td>
-        <td>火焰之流</td><td></td><td></td>
-        <td class="bb">魔法陷阱</td><td>酌情</td><td><a onclick="dw(dwd='魔法陷阱',dwb='相当于一个炮台，攻击频率不错，对多数敌人都有效，还能打出硬直。')">(详)</a></td>
-        <td>主动护盾</td><td></td><td></td>
-        <td>牵线木偶</td><td>一般</td><td><a onclick="dw(dwd='牵线木偶',dwb='让敌人自己人打自己人，只能控制一个，休闲玩玩还行。')">(详)</a></td>
+        <td>阿尔德扫击</td><td></td>
+        <td>火焰之流</td><td></td>
+        <td class="bb">魔法陷阱</td><td onclick="dw(dwd='魔法陷阱',dwb='相当于一个炮台，攻击频率不错，对多数敌人都有效，还能打出硬直。')">酌情</td>
+        <td>主动护盾</td><td></td>
+        <td>牵线木偶</td><td onclick="dw(dwd='牵线木偶',dwb='让敌人自己人打自己人，只能控制一个，休闲玩玩还行。')">一般</td>
     </tr>
     <tr>
-        <td>阿尔德强化</td><td></td><td></td>
-        <td class="bb">伊格尼强化</td><td>酌情</td><td><a onclick="dw(dwd='伊格尼强化',dwb='增加燃烧伤害。')">(详)</a></td>
-        <td class="bb">亚登强化</td><td>酌情</td><td><a onclick="dw(dwd='亚登强化',dwb='主要是减速和显形，强化越高效果越明显，尤其对妖灵类。有剩余的技能点可以学一下。')">(详)</a></td>
-        <td>昆恩强化</td><td></td><td></td>
-        <td>亚克席强化</td><td></td><td></td>
+        <td>阿尔德强化</td><td></td>
+        <td class="bb">伊格尼强化</td><td onclick="dw(dwd='伊格尼强化',dwb='增加燃烧伤害。')">酌情</td>
+        <td class="bb">亚登强化</td><td onclick="dw(dwd='亚登强化',dwb='主要是减速和显形，强化越高效果越明显，尤其对妖灵类。有剩余的技能点可以学一下。')">酌情</td>
+        <td>昆恩强化</td><td></td>
+        <td>亚克席强化</td><td></td>
     </tr>
     <tr>
-        <td>冲击波</td><td></td><td></td>
-        <td class="bb">纵火狂</td><td>酌情</td><td><a onclick="dw(dwd='纵火狂',dwb='减少敌人的燃烧抗性。')">(详)</a></td>
-        <td>超能咒文</td><td></td><td></td>
-        <td>昆恩反射</td><td></td><td></td>
-        <td>群体掌控</td><td></td><td></td>
+        <td>冲击波</td><td></td>
+        <td class="bb">纵火狂</td><td onclick="dw(dwd='纵火狂',dwb='减少敌人的燃烧抗性。')">酌情</td>
+        <td>超能咒文</td><td></td>
+        <td>昆恩反射</td><td></td>
+        <td>群体掌控</td><td></td>
     </tr>
 </table>
 <br>
 <h3 style="color:#004408">炼金术</h3>
 <table>
     <tr>
-        <td>熬药</td><td></td><td>　</td>
-        <td>涂油调配</td><td></td><td>　</td>
-        <td>炸弹制造</td><td></td><td>　</td>
-        <td>突变</td><td></td><td>　</td>
-        <td>青草试炼</td><td></td><td>　</td>
+        <td>熬药</td><td></td>
+        <td>涂油调配</td><td></td>
+        <td>炸弹制造</td><td></td>
+        <td>突变</td><td></td>
+        <td>青草试炼</td><td></td>
     </tr>
     <tr>
-        <td class="ga">耐毒增强</td><td>加满</td><td><a onclick="dw(dwd='耐毒增强',dwb='增加对毒性的忍耐能力。')">(详)</a></td>
-        <td>剧毒剑刃</td><td></td><td></td>
-        <td>稳定瞄准</td><td></td><td></td>
-        <td class="ga">耐受提高</td><td>加满</td><td></td>
-        <td>狂暴</td><td>一般</td><td></td>
+        <td class="ga">耐毒增强</td><td onclick="dw(dwd='耐毒增强',dwb='增加对毒性的忍耐能力。')">加满</td>
+        <td>剧毒剑刃</td><td></td>
+        <td>稳定瞄准</td><td></td>
+        <td class="ga">耐受提高</td><td>加满</td>
+        <td>狂暴</td><td>一般</td>
     </tr>
     <tr>
-        <td>爽脑魔药</td><td></td><td></td>
-        <td class="ga">相性保护</td><td>加满</td><td></td>
-        <td>火花四射</td><td></td><td></td>
-        <td class="gb">组织变异</td><td>酌情</td><td><a onclick="dw(dwd='组织变异',dwb='保命用还是不错的。')">(详)</a></td>
-        <td>忍痛</td><td></td><td></td>
+        <td>爽脑魔药</td><td></td>
+        <td class="ga">相性保护</td><td>加满</td>
+        <td>火花四射</td><td></td>
+        <td class="gb">组织变异</td><td onclick="dw(dwd='组织变异',dwb='保命用还是不错的。')">酌情</td>
+        <td>忍痛</td><td></td>
     </tr>
     <tr>
-        <td>延迟恢复</td><td></td><td></td>
-        <td>剑油加固</td><td></td><td></td>
-        <td>高效炸弹</td><td></td><td></td>
+        <td>延迟恢复</td><td></td>
+        <td>剑油加固</td><td></td>
+        <td>高效炸弹</td><td></td>
         <td class="ga">协同增效</td><td>加满</td><td><a onclick="dw(dwd='协同增效',dwb='加大突变物的攻击力。')">(详)</a></td>
-        <td>快速代谢</td><td></td><td></td>
+        <td>快速代谢</td><td></td>
     </tr>
     <tr>
-        <td>毒副作用</td><td></td><td></td>
-        <td>猎人直觉</td><td>其它</td><td><a onclick="dw(dwd='猎人直觉',dwb='据说有BUG，技能没效果，如果有修复这个BUG的MOD会很有用。')">(详)</a></td>
-        <td>连环爆炸</td><td></td><td></td>
-        <td>适应作用</td><td></td><td></td>
-        <td>连杀快感</td><td></td><td></td>
+        <td>毒副作用</td><td></td>
+        <td>猎人直觉</td><td onclick="dw(dwd='猎人直觉',dwb='据说有BUG，技能没效果，如果有修复这个BUG的MOD会很有用。')">其它</td>
+        <td>连环爆炸</td><td></td>
+        <td>适应作用</td><td></td>
+        <td>连杀快感</td><td></td>
     </tr>
 </table>
 <br>
 <h3 style="color:#3C2500">能力</h3>
 <table>
     <tr>
-        <td>日月星辰</td><td></td><td></td>
-        <td>求生直觉</td><td></td><td></td>
-        <td class="ya">猫学派技巧</td><td>推荐</td><td><a onclick="dw(dwd='猫学派技巧',dwb='用轻甲要学。')">(详)</a></td>
-        <td class="ya">狮鹫学派技巧</td><td>推荐</td><td><a onclick="dw(dwd='狮鹫学派技巧',dwb='用中甲要学。')">(详)</a></td>
-        <td class="ya">熊学派技巧</td><td>酌情</td><td><a onclick="dw(dwd='熊学派技巧',dwb='用重甲要学，防御高，但是减少活力恢复速度。')">(详)</a></td>
+        <td>日月星辰</td><td></td>
+        <td>求生直觉</td><td></td>
+        <td class="ya">猫学派技巧</td><td onclick="dw(dwd='猫学派技巧',dwb='用轻甲要学。')">推荐</td>
+        <td class="ya">狮鹫学派技巧</td><td onclick="dw(dwd='狮鹫学派技巧',dwb='用中甲要学。')">推荐</td>
+        <td class="ya">熊学派技巧</td><td onclick="dw(dwd='熊学派技巧',dwb='用重甲要学，防御高，但是减少活力恢复速度。')">酌情</td>
     </tr>
     <tr>
-        <td>鹰之眼</td><td></td><td></td>
-        <td>愤怒控制</td><td></td><td></td>
-        <td>肾上腺素爆发</td><td></td><td></td>
-        <td>专注</td><td></td><td></td>
-        <td>代谢控制</td><td></td><td></td>
+        <td>鹰之眼</td><td></td>
+        <td>愤怒控制</td><td></td>
+        <td>肾上腺素爆发</td><td></td>
+        <td>专注</td><td></td>
+        <td>代谢控制</td><td></td>
     </tr>
     <tr>
-        <td>新陈代谢加速</td><td></td><td></td>
-        <td>花式射击</td><td></td><td></td>
-        <td>强化火花四射</td><td></td><td></td>
-        <td>战斗狂暴</td><td></td><td></td>
-        <td>虎背熊腰</td><td></td><td></td>
+        <td>新陈代谢加速</td><td></td>
+        <td>花式射击</td><td></td>
+        <td>强化火花四射</td><td></td>
+        <td>战斗狂暴</td><td></td>
+        <td>虎背熊腰</td><td></td>
     </tr>
     <tr>
-        <td>权力熏心</td><td></td><td></td>
-        <td class="ya">美食</td><td>推荐</td><td><a onclick="dw(dwd='美食',dwb='让食物的加血效果延长到20分钟，前期用来省钱、救命，后期可以洗点不学。')">(详)</a></td>
-        <td>战争火线</td><td></td><td></td>
-        <td>重炮武器</td><td></td><td></td>
-        <td>以攻为守</td><td></td><td></td>
+        <td>权力熏心</td><td></td>
+        <td class="ya">美食</td><td onclick="dw(dwd='美食',dwb='让食物的加血效果延长到20分钟，前期用来省钱、救命，后期可以洗点不学。')">推荐</td>
+        <td>战争火线</td><td></td>
+        <td>重炮武器</td><td></td>
+        <td>以攻为守</td><td></td>
     </tr>
 </table>
 <br>
