@@ -15,6 +15,21 @@ layout: default
         div.body {position: relative;top: 50px;width: 96%;margin: auto;}
         #right_anchor{position:relative;}#right_anchor table{width:60%;}
     } /*手机*/
+
+    @media (max-width: 730px) { /*小于730px*/
+        .qbt {color: #fff;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
+        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 8%;font-size: 30px;}
+    }
+
+    @media (min-width: 730px) { /*大于730*/
+        .qbt {color: #fff;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
+        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
+    }
+
+    @media (min-width: 950px) { /*大于950*/
+        .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 25%;font-size: 70px;}
+    }
+
     #right_anchor a{display:block;}
     #right_anchor td{border:1px solid #ccc;}
 
@@ -50,8 +65,23 @@ layout: default
 </head>
 
 <body onload="document.getElementById('输入').focus()">
+    {% if page.toutu %}
+<style>    #head_img {background-repeat: no-repeat;background-size: 100%;}
+    #head_img:after {content: "";display: block;padding-bottom: 40%;}</style>
+    <div id="head_img" style="background-image: url('{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}');"></div>
+
+    <img class="yincang" style="width:1px;" src="{{ site.mq_d }}/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}" onerror="改头图();this.src='/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}';this.onerror=null;">
+
+<script>
+    function 改头图(){
+        head_img.style.backgroundImage= "url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}')";
+    }
+</script>
+<span class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
+{% endif %}
     <div class="body">
-    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+        {% if page.toutu %}{ %else %}
+    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% endif %}
     <form id="输入框" autocomplete="off">
     <input type="text" style="display:none" />
     <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
