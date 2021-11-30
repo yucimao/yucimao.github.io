@@ -173,14 +173,15 @@ layout: default
 	#bokebeijing{
 	position: fixed;bottom:0%;width: 100%;height:100%;z-index:-2000;
 	background-image: url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}boke.jpg{% endif %}');
+	background-size:100% auto;
     background-position: center top;
-    background-size: cover;
+    /* background-size: cover; */
     background-attachment: fixed;
     -webkit-filter: blur(15px);
     -moz-filter: blur(15px);
     -ms-filter: blur(15px);
     -o-filter: blur(15px);
-    filter: blur(15px);}
+    filter: blur(15px);
 	}
     </style>
 
@@ -208,7 +209,9 @@ layout: default
         let dy="<section id=\"grid\" class=\"grid clearfix\">";
         let grid_sj=1;
         for(let i=0;data.length>i;i++){
-            dy+="<a href=\""+data[i][2]+"\" data-path-hover=\"M 0,0 0,38 90,58 180.5,38 180,0 z\" onmouseover=\"grid_s(grid_j='"+grid_sj+"')\" onmouseout=\"grid_ss(grid_j='"+grid_sj+"')\"><figure><img src=\""+data[i][4]+"\"/><svg viewBox=\"0 0 180 320\" preserveAspectRatio=\"none\"><path d=\"M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z \"/></svg><figcaption><h2>"+data[i][0]+"</h2><p>"+data[i][1]+"</p><span class=\"grid_shijian\" id=\"sj"+grid_sj+"\">"+data[i][3]+"</span><button class=\"cursor_pointer\">"+data[i][5]+"</button></figcaption></figure></a>";
+			let grid_tupian=data[i][4];
+			if(grid_tupian>0){grid_tupian="/i/cj/"+grid_tupian;}
+            dy+="<a href=\""+data[i][2]+"\" data-path-hover=\"M 0,0 0,38 90,58 180.5,38 180,0 z\" onmouseover=\"grid_s(grid_j='"+grid_sj+"')\" onmouseout=\"grid_ss(grid_j='"+grid_sj+"')\"><figure><img src=\""+grid_tupian+"\"/><svg viewBox=\"0 0 180 320\" preserveAspectRatio=\"none\"><path d=\"M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z \"/></svg><figcaption><h2>"+data[i][0]+"</h2><p>"+data[i][1]+"</p><span class=\"grid_shijian\" id=\"sj"+grid_sj+"\">"+data[i][3]+"</span><button class=\"cursor_pointer\">"+data[i][5]+"</button></figcaption></figure></a>";
             grid_sj+=1;
         }
         dy+="</section>";
