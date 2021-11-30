@@ -140,7 +140,22 @@ position: absolute;
 top: 35%;
 width: 90px;
 height: 60px;
-background-image: url("/5/door/i/3704228.png");
+}
+</style>
+
+<div id="nyan-cat-dy"></div>
+<script>
+    let dy_nyan_cat="";
+    if(Math.floor(Math.random()*2)==0){
+        dy_nyan_cat="/5/door/i/3704228.png";
+    }else{
+        dy_nyan_cat="/5/door/i/3704229.png";
+    }
+    document.getElementById("nyan-cat-dy").innerHTML = "<style>.nyan-cat {background-image: url(\""+dy_nyan_cat+"\");}</style>";
+</script>
+
+<style>
+.nyan-cat {
 background-size: contain;
 background-repeat: no-repeat;
 -webkit-animation-name: leftToRighta;
