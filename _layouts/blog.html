@@ -169,6 +169,11 @@ layout: default
     }
 
     .grid_yincang{display:none;}
+
+	#bokebeijing{
+	position: fixed;bottom:0%;width: 100%;height:100%;
+	background-color:{% if page.nav_bc %}{{ page.nav_bc }}{% else %}#5C5588{% endif %}90;z-index:-2000;
+	}
     </style>
 
 </head>
@@ -182,6 +187,8 @@ layout: default
     <div class="container" id="dy">
     </div>
     </div>
+
+	<div id="bokebeijing"></div>
 
     <script>
         let data=[
@@ -235,6 +242,20 @@ layout: default
         init();
 
     })();
+
+$('#bokebeijing').fadeOut();
+$(document).ready(function() {
+$(function() {
+	$(window).scroll(function() {
+		let scroll_i2=$(this).scrollTop();
+		if (scroll_i2<460){
+		 $('#bokebeijing').fadeOut();
+		} else{
+			$('#bokebeijing').fadeIn();
+		}
+	});
+});
+});
 </script>
 
     {% if page.pinglun %}{% include Valine.html %}{% endif %}
