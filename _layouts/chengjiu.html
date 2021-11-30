@@ -33,9 +33,6 @@ layout: default
     <div class="body">
 
     <style>
-        @media screen and (min-width: 768px) {div.body {width: 70%;}
-        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor table{width:100%;}}
-        @media screen and (max-width: 767px) {#right_anchor{position:relative;}#right_anchor table{width:60%;}}
         #right_anchor a{display:block;}
         .cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
         .cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
@@ -47,6 +44,14 @@ layout: default
         hr{width:100%;}
         .hs{color:#404040;}
         span.dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
+        @media screen and (min-width: 768px) {
+            div.body {width: 70%;}
+        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor table{width:100%;}
+        }
+        @media screen and (max-width: 767px) {
+            #right_anchor{position:relative;}#right_anchor table{width:60%;}
+            .cj {margin: 6px;padding: 6px;}
+        }
         </style>
         <div class="biaotib" id="anniu_b"></div>
         <div id="anniu_a"></div>
