@@ -211,7 +211,7 @@ layout: default
 		let datb_b=0;
 		let datb_c=0;
 		for(let i=0;data.length>i;i++){
-			if(datb_c>12){datb_c=0;datb_b+=1;}
+			if(datb_c>12){datb_c=0;datb_b+=1;datb[datb_b]=[];}
 			datb[datb_b][datb_c]=data[datb_a];
 			datb_c+=1;
 		}
