@@ -9,7 +9,7 @@ layout: default
 		background-repeat:no-repeat ;background-size:100% auto;
 		background-attachment: fixed;
 	}
-    footer {float: left;width: 100%;}
+    footer,#fanye {float: left;width: 100%;}
     .grid {
 		margin: 50% auto 50px;
 		width: 90%;
@@ -198,6 +198,7 @@ layout: default
     </div>
 
 	<div id="bokebeijing"></div>
+	<div id="fanye"></div>
 
     <script>
         let data=[
@@ -211,13 +212,15 @@ layout: default
 		let datb_b=0;
 		let datb_c=0;
 		for(let i=0;data.length>i;i++){
-			if(datb_c>12){datb_c=0;datb_b+=1;datb[datb_b]=[];}
+			if(datb_c>11){datb_c=0;datb_b+=1;datb[datb_b]=[];}
 			datb[datb_b][datb_c]=data[datb_a];
+			datb_a+=1;
 			datb_c+=1;
 		}
 
 		let 当前页=0;
 		let 翻="";
+		let 临时;
 		function 翻页(){
 			if(翻>0){当前页=翻-1;}else if(翻=="上一页"){当前页-=1}else if(翻=="下一页"){当前页+=1;}
 			data=datb[当前页];
@@ -231,9 +234,17 @@ layout: default
 				dy+="<a "+grid_lianjie+" data-path-hover=\"M 0,0 0,38 90,58 180.5,38 180,0 z\" onmouseover=\"grid_s(grid_j='"+grid_sj+"')\" onmouseout=\"grid_ss(grid_j='"+grid_sj+"')\"><figure><img src=\""+grid_tupian+"\"/><svg viewBox=\"0 0 180 320\" preserveAspectRatio=\"none\"><path d=\"M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z \"/></svg><figcaption><h2>"+data[i][0]+"</h2><p>"+data[i][1]+"</p><span class=\"grid_shijian\" id=\"sj"+grid_sj+"\">"+data[i][3]+"</span><button class=\"cursor_pointer\">"+data[i][5]+"</button></figcaption></figure></a>";
 				grid_sj+=1;
 			}
-			dy+="</section><div>上一页 1 2 3 4 5 6 7 8 10 下一页</div>";
-
+			dy+="</section>";
 			document.getElementById("dy").innerHTML = dy;
+
+			dy="";
+			if(当前页=0){dy+="上一页";}else{dy+="<a onclick=\"翻页(翻=\"上一页\")\">上一页</a>";}
+			for(let i=0;datb_b>i;i++){
+				临时=i+1;
+				if(当前页==i){dy+=" "+临时;}else{dy+="<a onclick=\"翻页(翻="+临时+")\">"+临时+"</a>";}
+			}
+			if(datb_b>当前页){dy+=" <a onclick=\"翻页(翻=\"下一页\")\">下一页</a>";}else{dy+=" 下一页";}
+			document.getElementById("fanye").innerHTML = dy;
 		}
 		翻页();
 
