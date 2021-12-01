@@ -10,7 +10,8 @@ layout: default
 		background-attachment: fixed;
 	}
     footer {float: left;width: 100%;}
-    #fanye {float: left;width: 100%;text-align: center;margin-top: 50px;color:#fff;text-shadow:#3b3b3b 0 2px 2px;}
+    #fanye {float: left;width: 100%;text-align: center;margin-top: 50px;color:#9b9b9b;text-shadow:#3b3b3b 0 2px 2px;}
+	#fanye a{color:#fff;}
     .grid {
 		margin: 50% auto 50px;
 		width: 90%;
@@ -192,7 +193,7 @@ layout: default
     
     <span class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
 
-    <div class="isaac-1">
+    <div class="isaac-1" name="d">
     <script src="/5/new/snap.svg-min.js"></script>
     <div class="container" id="dy">
     </div>
@@ -224,6 +225,7 @@ layout: default
 		let 翻="";
 		let 临时;
 		function 翻页(){
+			if(翻!=""){window.location.href="#d";}
 			if(翻>0){当前页=翻;}else if(翻=="上一页"){当前页-=1;}else if(翻=="下一页"){当前页+=1;}
 			翻=当前页-1;
 			data=datb[翻];
