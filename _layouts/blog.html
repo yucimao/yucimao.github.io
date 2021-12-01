@@ -209,6 +209,11 @@ layout: default
 
         ];
 
+		let data_img=[
+			"100","101","102","103","104","105","106",
+		];
+		let datb_img=0;
+
 		let datb=[[]];
 		let datb_a=0;
 		let datb_b=0;
@@ -237,6 +242,7 @@ layout: default
 			let grid_sj=1;
 			for(let i=0;data.length>i;i++){
 				let grid_tupian=data[i][4];
+				if(grid_tupian==""){if(data_img.length==datb_img){grid_tupian=data_img[0];datb_img=1;}else{grid_tupian=data_img[datb_img];datb_img+=1;}}
 				if(grid_tupian>0){grid_tupian="/i/cj/"+grid_tupian;}
 				let grid_lianjie=data[i][2];
 				if(grid_lianjie>0){grid_lianjie="onclick=\"dw(dwb='"+grid_lianjie+"',dwd='"+data[i][0]+"')\"";}else{grid_lianjie="href=\""+grid_lianjie+"\"";}
