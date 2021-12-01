@@ -218,13 +218,15 @@ layout: default
 			datb_a+=1;
 			datb_c+=1;
 		}
+		datb_b+=1;
 
 		let 当前页=0;
 		let 翻="";
 		let 临时;
 		function 翻页(){
-			if(翻>0){当前页=翻-1;}else if(翻=="上一页"){当前页-=1}else if(翻=="下一页"){当前页+=1;}
-			data=datb[当前页];
+			if(翻>0){当前页=翻;}else if(翻=="上一页"){当前页-=1;}else if(翻=="下一页"){当前页+=1;}
+			翻=当前页-1;
+			data=datb[翻];
 			let dy="<section id=\"grid\" class=\"grid clearfix\">";
 			let grid_sj=1;
 			for(let i=0;data.length>i;i++){
@@ -239,12 +241,12 @@ layout: default
 			document.getElementById("dy").innerHTML = dy;
 
 			dy="";
-			if(当前页=0){dy+="上一页";}else{dy+="<a onclick=\"翻页(翻='上一页')\">上一页</a>";}
+			if(当前页==1){dy+="上一页";}else{dy+="<a onclick=\"翻页(翻='上一页')\">上一页</a>";}
 			for(let i=0;datb_b>i;i++){
 				临时=i+1;
-				if(当前页==i){dy+=" "+临时;}else{dy+="<a onclick=\"翻页(翻="+临时+")\">"+临时+"</a>";}
+				if(当前页==临时){dy+=" "+当前页;}else{dy+=" <a onclick=\"翻页(翻="+临时+")\">"+临时+"</a>";}
 			}
-			if(datb_b>当前页){dy+=" <a onclick=\"翻页(翻='下一页')\">下一页</a>";}else{dy+=" 下一页";}
+			if(datb_b==临时){dy+=" <a onclick=\"翻页(翻='下一页')\">下一页</a>";}else{dy+=" 下一页";}
 			document.getElementById("fanye").innerHTML = dy;
 		}
 		翻页();
