@@ -243,10 +243,11 @@ layout: default
 			for(let i=0;data.length>i;i++){
 				let grid_tupian=data[i][4];
 				if(grid_tupian==""){if(data_img.length==datb_img){grid_tupian=data_img[0];datb_img=1;}else{grid_tupian=data_img[datb_img];datb_img+=1;}}
-				if(grid_tupian>0){grid_tupian="/i/cj/"+grid_tupian;}
+				if(grid_tupian>0){grid_tupian="src=\"{{ site.mq_d }}/i/cj/"+grid_tupian+".jpg\" onerror=\"this.src='/i/cj/"+grid_tupian+".jpg';this.onerror=null;\"";
+				}else{grid_tupian="src=\""+grid_tupian+"\"";}
 				let grid_lianjie=data[i][2];
 				if(grid_lianjie>0){grid_lianjie="onclick=\"dw(dwb='"+grid_lianjie+"',dwd='"+data[i][0]+"')\"";}else{grid_lianjie="href=\""+grid_lianjie+"\"";}
-				dy+="<a "+grid_lianjie+" data-path-hover=\"M 0,0 0,38 90,58 180.5,38 180,0 z\" onmouseover=\"grid_s(grid_j='"+grid_sj+"')\" onmouseout=\"grid_ss(grid_j='"+grid_sj+"')\"><figure><img src=\""+grid_tupian+"\"/><svg viewBox=\"0 0 180 320\" preserveAspectRatio=\"none\"><path d=\"M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z \"/></svg><figcaption><h2>"+data[i][0]+"</h2><p>"+data[i][1]+"</p><span class=\"grid_shijian\" id=\"sj"+grid_sj+"\">"+data[i][3]+"</span><button class=\"cursor_pointer\">"+data[i][5]+"</button></figcaption></figure></a>";
+				dy+="<a "+grid_lianjie+" data-path-hover=\"M 0,0 0,38 90,58 180.5,38 180,0 z\" onmouseover=\"grid_s(grid_j='"+grid_sj+"')\" onmouseout=\"grid_ss(grid_j='"+grid_sj+"')\"><figure><img "+grid_tupian+"/><svg viewBox=\"0 0 180 320\" preserveAspectRatio=\"none\"><path d=\"M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z \"/></svg><figcaption><h2>"+data[i][0]+"</h2><p>"+data[i][1]+"</p><span class=\"grid_shijian\" id=\"sj"+grid_sj+"\">"+data[i][3]+"</span><button class=\"cursor_pointer\">"+data[i][5]+"</button></figcaption></figure></a>";
 				grid_sj+=1;
 			}
 			dy+="</section>";
