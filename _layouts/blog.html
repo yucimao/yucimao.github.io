@@ -10,7 +10,7 @@ layout: default
 		background-attachment: fixed;
 	}
     footer {float: left;width: 100%;}
-    #fanye {float: left;width: 100%;text-align: center;margin-top: 50px;}
+    #fanye {float: left;width: 100%;text-align: center;margin-top: 50px;color:#fff;text-shadow:#3b3b3b 0 2px 2px;}
     .grid {
 		margin: 50% auto 50px;
 		width: 90%;
@@ -241,12 +241,12 @@ layout: default
 			document.getElementById("dy").innerHTML = dy;
 
 			dy="";
-			if(当前页==1){dy+="上一页";}else{dy+="<a onclick=\"翻页(翻='上一页')\">上一页</a>";}
+			if(当前页!=1){dy+="<a onclick=\"翻页(翻='上一页')\">上一页</a>";}
 			for(let i=0;datb_b>i;i++){
 				临时=i+1;
-				if(当前页==临时){dy+=" "+当前页;}else{dy+=" <a onclick=\"翻页(翻="+临时+")\">"+临时+"</a>";}
+				if(当前页==临时){dy+="　"+当前页;}else{dy+="　<a onclick=\"翻页(翻="+临时+")\">"+临时+"</a>";}
 			}
-			if(datb_b==临时){dy+=" <a onclick=\"翻页(翻='下一页')\">下一页</a>";}else{dy+=" 下一页";}
+			if(datb_b!=当前页){dy+="　<a onclick=\"翻页(翻='下一页')\">下一页</a>";}
 			document.getElementById("fanye").innerHTML = dy;
 		}
 		翻页();
