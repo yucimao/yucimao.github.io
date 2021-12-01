@@ -189,22 +189,17 @@ filter: blur(15px);
 </head>
 <body>
 <span class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
-<div id="dy_top"></div>
 <div class="isaac-1">
 <script src="/5/new/snap.svg-min.js"></script>
 <div class="container" id="dy">
 </div>
 </div>
-<div id="dy_bottom"></div>
 <div id="bokebeijing"></div>
 <div id="fanye" class="bukexuanzhong"></div>
 <script>
-
+let data=[
 {{ content }}
-
-document.getElementById("dy_top").innerHTML = dy_top;
-document.getElementById("dy_bottom").innerHTML = dy_bottom;
-
+];
 let data_img=[
 	"102","103","104","105","106","107","108","109","110","111","112","113",
 ];
