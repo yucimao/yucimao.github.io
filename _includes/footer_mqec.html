@@ -106,7 +106,7 @@ if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
 }else{
     分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
 }
-// 分享_fo_m+="<br><br><span id=\"{{ page.permalink }}\" class=\"leancloud_visitors\" data-flag-title=\"{{ page.title }}\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">0</i></span>";
+分享_fo_m+="<br><br><span id=\"/{{ page.permalink }}\" class=\"leancloud_visitors\" data-flag-title=\"{{ page.title }}\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">0</i></span>";
 
 
 let footer分享_a;
