@@ -13,10 +13,11 @@ redirect_from:
     td[onclick^="复(制="]{cursor:pointer;}
 </style>
 
+<p>记录我在各种游戏里的形象：<a href="/maoqiu/player">异世界的猫球</a></p>
+
 <div id="dy"></div>
 
-<br>
-<span class="zhushi">本页想法来源：<a href="https://xn--5iv.site/game.html" target="_blank" class="dk">昴.site</a></span>
+<p><span class="zhushi">本页想法来源：<a href="https://xn--5iv.site/game" target="_blank" class="dk">昴.site</a></span></p>
 
 <script>
 // ["hr","标题"],
@@ -44,6 +45,8 @@ let data=[
 ["阴阳师：妖怪屋","春之樱","安倍益材","#K94BI"],
 ["决战平安京","网易-平安京","李猫球","1187039623"],
 ["一梦江湖","扬州慢-言笑晏然","李猫球","1267542236"],
+
+["hr","完全不玩的"],
 ["<del>江南百景图</del>","","李猫球","m6tn38lmdd9"],
 ["边境之旅","网易","老国王","<small>小镇ID</small> 91710／91710"],
 ["龙珠激战传说","","","btvwwmhk"],
@@ -61,7 +64,7 @@ for(let i=0;data.length>i;i++){
         if (data[i][3].indexOf("／") != -1){
             临时=data[i][3].split("／");
             dy+="<td onclick=\"复(制='"+临时[1]+"')\">"+临时[0]+"</td><td>";
-            }else{dy+="<td onclick=\"复(制='"+data[i][3]+"')\">"+data[i][3]+"</td><td>";}
+            }else if(data[i][3]!=""){dy+="<td onclick=\"复(制='"+data[i][3]+"')\">"+data[i][3]+"</td><td>";}else{dy+="<td></td><td>";}
         for(let i2=4;data[i].length>i2;i2++){
             if(i2!=4){dy+=" ";}
             临时=data[i][i2].split("／");
