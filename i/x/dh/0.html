@@ -45,6 +45,8 @@ function 确定() {
 
 let 取="";
 let 聊天;
+let 地址;
+let 临时3;
 function 获(){
     document.getElementById("输入").value="";
     document.getElementById("选择").innerHTML="";
@@ -52,7 +54,7 @@ function 获(){
     聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
     document.getElementById("对话").innerHTML = 聊天;
 
-    let 地址="/i/x/dh/"+取[0]+".json";
+    地址="/i/x/dh/"+取[0]+".json";
     let GetJson = $.ajax({
         url: 地址,//json文件位置
         type: "GET",
@@ -64,25 +66,25 @@ function 获(){
     wzjm_输入=GetJson.responseText;
     wzjm_解密();
     地址=wzjm_输入.split("[");
-
-    let i=1;
+    临时3=1;
     setInterval("打印()","2000");
 
-    function 打印(){
-    if(地址[i][0]=="／"){
-    let 临时2=地址[i].split("]")[0].split("／");
-    聊天+="<div><span class=\"d n2\" class=\"cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"</span></div>"; 
-}else{
-    聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
-}
-    document.getElementById("对话").innerHTML = 聊天;
-    i+=1;
-    if(地址.length>i){
-        let 结束 = window.setInterval("打印()","2000");
-        window.clearInterval(结束);
-    }
 
 }
+
+function 打印(){
+    if(地址[临时3][0]=="／"){
+        let 临时2=地址[临时3].split("]")[0].split("／");
+        聊天+="<div><span class=\"d n2\" class=\"cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"</span></div>"; 
+    }else{
+        聊天+="<div><span class=\"a m\">"+地址[临时3].split("]")[0]+"</span></div>"; 
+    }
+    document.getElementById("对话").innerHTML = 聊天;
+    临时3+=1;
+    if(地址.length>临时3){
+        let 停止 = window.setInterval("打印()","2000");
+        window.clearInterval(停止);
+    }
 }
 
 
