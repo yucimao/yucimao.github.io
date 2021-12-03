@@ -1,13 +1,13 @@
 :root {
---a-clj:#006699;
---a-wz:#404040;
+--a-color:#006699;
+--body-color:#404040;
 }
 
-body{font-family:Helvetica,Arial,"Microsoft YaHei",sans-serif;line-height:1.8;font-size:16px;color:var(--a-wz);overflow-x:hidden;}
+body{font-family:Helvetica,Arial,"Microsoft YaHei",sans-serif;line-height:1.8;font-size:16px;color:var(--body-color);overflow-x:hidden;}
 p{margin:30px 0;}
 h1,h2,h3,h4,h5,h6{line-height:1.1;font-weight:800;cursor:default;}h4{font-size:18px;}
 hr{height:1px;border:none;border-top:1px solid #ddd;margin:15px 0;}
-a{text-decoration:none;color:var(--a-clj);cursor:pointer;}a:hover,a:focus{color:#0085a1;}a img:hover,a img:focus{cursor:pointer;}
+a{text-decoration:none;color:var(--a-color);cursor:pointer;}a:hover,a:focus{color:#0085a1;}a img:hover,a img:focus{cursor:pointer;}
 em{font-style:normal;position:relative;}em:before{content:".";position:absolute;top:0.4em;left:0.45em;font-weight:bold;}
 b,strong{font-weight:bold;}
 mark{color:#000;background:#ff0;}
