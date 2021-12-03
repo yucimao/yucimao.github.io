@@ -71,8 +71,11 @@ function 获(){
         }else{
             聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
         }
+        setTimeout("打印()","2000");
     }
-    
+}
+
+function 打印(){
     document.getElementById("对话").innerHTML = 聊天;
 }
 </script>
