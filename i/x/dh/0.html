@@ -69,14 +69,10 @@ function 获(){
             let 临时2=地址[i].split("]")[0].split("／");
             聊天+="<div><span class=\"d n2\" class=\"cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"</span></div>"; 
         }else{
-            sleep(2000);
+            for(let t = Date.now();Date.now() - t <= 2000;)
             聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
         }
         document.getElementById("对话").innerHTML = 聊天;
     }
-}
-
-function sleep(d){
-  for(var t = Date.now();Date.now() - t <= d;);
 }
 </script>
