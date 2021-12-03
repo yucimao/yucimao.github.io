@@ -22,7 +22,6 @@ layout: default
     [onclick^="if($(this).css('width')=="]{cursor:zoom-in;}
 
     /*作者*/
-    #作者{position: relative;width: 70%;padding:20px;margin: auto;}
     .container{margin: 0 auto; max-width: 1000px;}
     .row{width: 103%; float: left; margin: 110px -1.5%;}
     .single-member{box-shadow: 2px 4px 8px #ddd;width: 280px; float: left; margin: 30px 2.5%; background-color: #fff; text-align: center; position: relative;}
@@ -69,7 +68,7 @@ layout: default
         {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
         {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
     </div>
-    <div id="作者"></div>
+    
     <script>
         if(作者){
             let dy_作者="";
