@@ -6,8 +6,13 @@ permalink: ceshi/shuo
 pinglun: 1
 anchor: 1
 ---
-<link rel="stylesheet" href="/css/all.css">
 <link rel="stylesheet" href="/css/avatar_chat.css">
+<style>
+    .avatar_chat{
+        border: 2px solid #a1a1a1;
+	    border-radius: 15px;
+    }
+</style>
 
 <div id="dy"></div>
 
@@ -56,7 +61,7 @@ anchor: 1
         let 临时=data[i].split("／");
         if(临时[0]=="hr"){
             if(临时[1]!=""){dy+="<a name=\""+临时[1]+"\"></a>";}
-            dy+="</div><div class=\"avatar_chat\">";
+            dy+="</div><br><div class=\"avatar_chat\">";
         }else{
             dy+="<div><span class=\""+临时[0]+"\">"+临时[1]+"</span></div>";
         }
