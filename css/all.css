@@ -7,6 +7,11 @@ body{font-family:Helvetica,Arial,"Microsoft YaHei",sans-serif;line-height:1.8;fo
 p{margin:30px 0;}
 h1,h2,h3,h4,h5,h6{line-height:1.1;font-weight:800;cursor:default;}h4{font-size:18px;}
 hr{height:1px;border:none;border-top:1px solid #ddd;margin:15px 0;}
+hr.hr1 {border: 0;height: 1px;background: #333;background-image: linear-gradient(to right, #ff8381,#d4ff8b,#a1b2ff);}
+hr.hr2 {border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
+hr.hr3{color: #a2a9b6;border: 0;font-size: 12px;padding: 1em 0;position: relative;}hr.hr3::before {content: attr(data-content);position: absolute;padding: 0 1ch;line-height: 1px;border: solid #d0d0d5;border-width: 0 99vw;width: fit-content;/* for IE浏览器 */white-space: nowrap;left: 50%;transform: translateX(-50%);}
+hr.hr4 {border-top: 2px dashed #8c8b8b;}
+hr.hr5 {box-sizing: content-box;height: 0;overflow: visible}hr.hr5:before {display: inline-block;font-weight: 600;font-style: normal;font-variant: normal;text-rendering: auto;-webkit-font-smoothing: antialiased;}hr.hr5 {position: relative;margin: 2rem auto;border: 2px dashed #a4d8fa;width: calc(100% - 4px)}hr.hr5:hover:before {left: calc(95% - 20px)}hr.hr5:before {position: absolute;top: -10px;left: 5%;z-index: 1;color: #80c8f8;content: '✂';font-size: 20px;line-height: 1;-webkit-transition: all 1s ease-in-out;-moz-transition: all 1s ease-in-out;-o-transition: all 1s ease-in-out;-ms-transition: all 1s ease-in-out;ransition: all 1s ease-in-out}
 a{text-decoration:none;color:var(--a-color);cursor:pointer;}a:hover,a:focus{color:#0085a1;}a img:hover,a img:focus{cursor:pointer;}
 em{font-style:normal;position:relative;}em:before{content:".";position:absolute;top:0.4em;left:0.45em;font-weight:bold;}
 b,strong{font-weight:bold;}
