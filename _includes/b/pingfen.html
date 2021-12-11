@@ -1,4 +1,4 @@
-let datb=[data[0]];
+let datb=[data[0]]; //数字为dw 文字直接显示 超过15字dw
 
 for(let i=1;data.length>i;i++){
     let 临时=datb.length;
@@ -16,7 +16,9 @@ for(let i=1;data.length>i;i++){
 let dy="<table><tr><th>排名</th><th>作品名</th><th>评分</th><th></th></tr>";
     for(let i=0;datb.length>i;i++){
         let 临时2=i+1;
-        dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1]+"')\">"+datb[i][1]+"</td><td>"+datb[i][0]+"</td><td>";
+        dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1]+"')\">"+datb[i][1]+"</td>";
+        临时2=datb[i][0]/10;
+        dy+="<td>"+临时2+"</td><td>";
         临时2=datb[i][2];
         if(临时2>0||临时2.length>15){临时2="<a onclick=\"dw(dwb='"+临时2+"')\">更多</a>";}
         dy+=临时2+"</td></tr>";
