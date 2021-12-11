@@ -1,0 +1,26 @@
+let datb=[data[0]];
+
+for(let i=1;data.length>i;i++){
+    let 临时=datb.length;
+    let 记录=0;
+    while (datb.length==临时){
+        if(datb[记录][0]>data[i][0]){
+            if(记录+1==datb.length){datb[datb.length]=data[i];}
+        }else{
+            datb.splice(记录,0,data[i]);
+        }
+        记录+=1;
+    }
+}
+
+let dy="<table><tr><th>排名</th><th>作品名</th><th>评分</th><th></th></tr>";
+    for(let i=0;datb.length>i;i++){
+        let 临时2=i+1;
+        dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1]+"')\">"+datb[i][1]+"</td><td>"+datb[i][0]+"</td><td>";
+        临时2=datb[i][2];
+        if(临时2>0||临时2.length>15){临时2="<a onclick=\"dw(dwb='"+临时2+"')\">更多</a>";}
+        dy+=临时2+"</td></tr>";
+    }
+    dy+="</table>"
+
+document.getElementById("结果").innerHTML = dy;
