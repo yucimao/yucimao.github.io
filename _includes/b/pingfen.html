@@ -14,14 +14,21 @@ for(let i=1;data.length>i;i++){
 }
 
 let dy="<table><tr><th>排名</th><th>作品名</th><th>评分</th><th></th></tr>";
+    let 并列=[0,0];
     for(let i=0;datb.length>i;i++){
         let 临时2=i+1;
+        if(datb[i][0]==并列[1]){
+            临时2="-";
+        }else{
+            并列[0]=临时2;
+            并列[1]=datb[i][0];
+        }
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1]+"')\">"+datb[i][1]+"</td>";
         临时2=datb[i][0]/10;
         dy+="<td>"+临时2+"</td><td>";
-
             for(let i2=2;datb[i].length>i2;i2++){
-                临时2=datb[i][i2];
+                临时2=datb[i][i2]+"";
+                if(临时2.length==1){临时2+=".0";}
                 if (datb[i][i2].indexOf("：") != -1){
                     临时2=临时2.split("：");
                     dy+="<a onclick=\"dw(dwb='"+临时2[1]+"')\">"+临时2[0]+"</a> ";
@@ -30,9 +37,10 @@ let dy="<table><tr><th>排名</th><th>作品名</th><th>评分</th><th></th></tr
             }else{
                 dy+=临时2+" ";
             }
+        }
         dy+="</td></tr>";
-    }}
-    dy+="</table>";
+    }
+dy+="</table>";
 
 document.getElementById("结果").innerHTML = dy;
 
