@@ -25,6 +25,7 @@ let dy="<table><tr><th>排名</th><th>作品名</th><th>评分</th><th></th></tr
         }
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1]+"')\">"+datb[i][1]+"</td>";
         临时2=datb[i][0]/10;
+        if(临时2>10){临时2="10+";}if(临时2<0){临时2="0-";}
         dy+="<td>"+临时2+"</td><td>";
             for(let i2=2;datb[i].length>i2;i2++){
                 临时2=datb[i][i2]+"";
@@ -48,12 +49,12 @@ function 查重(){
     let 查重列表="／";
     for(let i=0;datb.length>i;i++){
         if (查重列表.indexOf("／"+datb[i]+"／") != -1){
-            console.log(datb[i]);
+            alert(datb[i]);
             }else{
                 查重列表+=datb[i]+"／";
             }
     }
-    console.log("结束");
+    alert("结束");
 }
 </script>
 
