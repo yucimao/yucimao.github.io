@@ -183,7 +183,7 @@ c-7.606-0.447-6.058-37.895-20.62-23.333c-10.167,10.166-15.972-0.747-25,12C119.54
 </svg>
 <div class="text" id="dy">
 <h1>生日快乐！</h1>
-<p><a onclick="window.parent.location.href='{{ site.mq_i }}'">进入 猫球博客<span class="jrmqbk">&lt;</span></a></p>
+<p><a style="color:#ffffff;" onclick="window.parent.location.href='{{ site.mq_i }}'">进入 猫球博客<span class="jrmqbk">&lt;</span></a></p>
 </div>
 <script>
 let a={
@@ -195,13 +195,12 @@ let a={
 let b=new Date().getMonth()+1;
 b+="."+new Date().getDate();
 let dy="";
-b="3.16";
 
 if(a[b]){
   dy+="<style>body{background-color:"+a[b][1]+";}</style><h1>"+a[b][0]+"生日快乐！</h1>";
 }
 
-dy+="<p><a onclick=\"window.parent.location.href='{{ site.mq_i }}'\">进入 猫球博客<span class=\"jrmqbk\">&lt;</span></a></p>";
+dy+="<p><a style=\"color:#ffffff;\" onclick=\"window.parent.location.href='{{ site.mq_i }}'\">进入 猫球博客<span class=\"jrmqbk\">&lt;</span></a></p>";
 document.getElementById("dy").innerHTML = dy;
 
 </script>
