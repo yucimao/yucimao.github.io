@@ -1,19 +1,33 @@
 <style>
-.qbt{color: #fff;cursor: default;font-weight: 800;}
-.qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
+.qbt{color: #fff;cursor: default;font-weight: 800;letter-spacing:3px;position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}50%{% endif %};}
 
 .qbt svg {
 overflow: visible;
 height: 2em;
 }
 .qbt text{
-text-anchor: middle; /*文本居中*/
-fill: currentColor;  /*文本颜色*/
+text-anchor: middle;
+fill: currentColor;
 }
 .qbt use{
-stroke: #000000;    /*描边颜色*/
-stroke-width: 12px;  /*控制描边宽度*/
-stroke-linejoin: round;  /*描边转角处理方式*/
+stroke: #000000;
+stroke-width: 11px;
+stroke-linejoin: round;
+}
+
+@media (max-width: 730px) { /*小于730px*/
+.qbt{top: 18%;font-size: 35px;}
+.qtb use{stroke-width: 8px;}
+}
+
+@media (min-width: 730px) { /*大于730*/
+.qbt{top: 30%;font-size: 60px;}
+.qbt use{stroke-width: 10px;}
+}
+
+@media (min-width: 950px) { /*大于950*/
+.qbt{top: 35%;font-size: 70px;}
+.qbt use{stroke-width: 11px;}
 }
 
 #head_img {background-repeat: no-repeat;background-size: 100%;}
