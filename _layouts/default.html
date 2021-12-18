@@ -17,6 +17,7 @@
     </style>
 
     {% include popup_dw.html %}
+    {% if page.tpfd %}{% include tpfd.html %}{% endif %}
 
     {% if page.anchor %}<div id="right_anchor"{% endif %}{% if page.anchor =="手机" %} class="shouji"{% endif %}{% if page.anchor %}></div>{% endif %}
 
