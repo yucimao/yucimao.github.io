@@ -1,0 +1,31 @@
+---
+layout: zk
+title: 和一加9斗智斗勇的日常
+nav_text: 和一加9斗智斗勇的日常
+nav_url: <a href="/riji">猫球日记</a>
+permalink: i/zk/3981496
+pinglun: 1
+---
+<style>
+.自行解决:before{content:"自行解决";color:#ffffff;background-color:#5757ff;}
+.最近没有:before{content:"最近没有";color:#ffffff;background-color:#ffa857;}
+.依然存在:before{content:"依然存在";color:#ffffff;background-color:#ff5757;}
+.官方修复:before{content:"官方修复";color:#ffffff;background-color:#6bff57;}
+i.成功:before{content:" ➤ ";color:#5757ff;}
+i.修复:before{content:" ➤ ";color:#6bff57;}
+i.失败:before{content:" ➤ ";color:#ff5757;}
+i{font-style:normal;}
+</style>
+
+<p><b>标签说明</b>：<br>
+根据问题是否被官方修复的情况，标注为<span class="官方修复"></span>或<span class="依然存在"></span>，如果问题最近没有遇到，不清楚是否被修复，则标注为<span class="最近没有"></span>。<br>
+自己想办法解决了问题，标注为<span class="自行解决"></span>。虽然已经有了应对方法，但依然影响使用，则标注为<span class="依然存在"></span>。</p>
+
+<p class="自行解决"> <b>不给Android/data权限</b><i class="成功"></i>adb shell</p>
+<p class="自行解决"> <b>不给剪贴板权限</b><i class="成功"></i>Riru - Clipboard Whitelist</p>
+<p class="自行解决"> <b>删除文件立刻创建偶尔会创建失败</b><i class="成功"></i>增加300毫秒间隔</p>
+<p class="自行解决"> <b>第三方应用无法改音量</b><i class="成功"></i>adb shell</p>
+<p class="最近没有"> <b>录像十几秒后偶尔会自己关闭</b><i class="失败"></i>无解，祈祷它不会发生</p>
+<p class="依然存在"> <b>每天9点奇怪响铃</b><i class="成功"></i>设置自动免打扰，9点开启，9点1分关闭<i class="失败"></i>居然不是每次都是9点整，上一个解决方法失败<i class="成功"></i>调低通知的音量到最低，不至于早上9点被吵醒或者吓一跳了，但是通知音量没法调到0</p>
+<p class="依然存在"> <b>拍照可能拍完没有图片</b><i class="失败"></i>无解，祈祷它不会发生</p>
+<p class="依然存在"> <b>锁屏忽然消失</b><i class="成功"></i>自动换壁纸的脚本加上换锁屏</p>
