@@ -21,8 +21,8 @@ nav_url: <a href="/wangzhi">网址收藏</a>
 
 <script>
 let s_data=[ //网页名／地址／关键词
-	"猫球翻译器／/mqfyq／maoyiqi maoqiufanyiqi %E7%8C%AB%E7%90%83%E7%BF%BB%E8%AF%91%E5%99%A8%E7%8C%AB%E8%AF%91%E5%99%A8%E9%A5%AD%E5%9C%88%E7%94%A8%E8%AF%AD%E9%A5%AD%E5%9C%88%E6%9A%97%E8%AF%AD",
-	"酒仙笔记／/jiuxian／%E9%85%92%E4%BB%99%E7%AC%94%E8%AE%B0 jiuxianbiji"
+	"猫球翻译器／/mqfyq／maoyiqi maoqiufanyiqi 猫球翻译器 猫译器",
+	"酒仙笔记／/jiuxian／jiuxianbiji 酒仙笔记",
 ];
 
 let 当前url=window.location.href;
@@ -43,10 +43,10 @@ if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
 	跳转url=当前url.slice(0,当前url.length-1);
 	跳转url=跳转url.replace(/%E2%80%8E/g, "");
 }else{ //链接只有数字，尝试跳转到zk
-	临时404 = 当前url.split(".com/")[1];
+	跳转url = 当前url.split(".com/")[1];
 	let 替换 = new RegExp('/', "g");
-	临时404 = 临时404.replace(替换, '');
-	if(临时404>0){跳转url="/i/zk/"+临时404;}
+	跳转url = 跳转url.replace(替换, '');
+	if(跳转url>0){跳转url="/i/zk/"+跳转url;}
 	else{ //转为小写
 		跳转url=当前url.toLowerCase();
 	}
@@ -56,6 +56,7 @@ if(url问号=="sorry"){跳转url="0";}
 if(跳转url=="0"){
 	document.getElementsByTagName("title")[0].innerText = '这里什么都没有 - {{ site.title }}';
 	let 猜测="";
+	临时404=decodeURI(当前url.split(".com/")[1]);
 	for(let i=0;s_data.length>i;i++){
 		let 临时=s_data[i].split("／");
 		if (临时[2].indexOf(临时404) != -1){
