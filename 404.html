@@ -28,6 +28,7 @@ let s_data=[ //网页名／地址／关键词
 let 当前url=window.location.href;
 let 跳转url="0";
 let 临时404;
+当前url=当前url.replace(/%E2%80%8E/g, ""); console.log("删除零宽空格"); //
 
 let sorry=["","s","so","sor","sorr","sorry"]
 let url问号="0";
@@ -36,20 +37,16 @@ if(当前url.indexOf("?") != -1){
 	当前url=当前url.split("?")[0];
 }
 
-//链接在gitee
-if (当前url.indexOf("gitee.io/") != -1){ //gitee转主站
+if (当前url.indexOf("gitee.io/") != -1){ console.log("gitee转主站"); //
 	跳转url="{{ site.mq }}"+"/"+当前url.split("gitee.io/")[1];
-}else if(当前url[当前url.length-1]=="/"){ //删除最后的“/”、删除零宽空格
+}else if(当前url[当前url.length-1]=="/"){ console.log("删除最后的“/”"); //
 	跳转url=当前url.slice(0,当前url.length-1);
-	跳转url=跳转url.replace(/%E2%80%8E/g, "");
-}else{ //链接只有数字，尝试跳转到zk
-	跳转url = 当前url.split(".com/")[1];
-	let 替换 = new RegExp('/', "g");
-	跳转url = 跳转url.replace(替换, '');
-	if(跳转url>0){跳转url="/i/zk/"+跳转url;}
-	else{ //转为小写
-		跳转url=当前url.toLowerCase();
-	}
+}else if(当前url.split(".com/")[1].replace(/\//g, "")>0){ console.log("链接只有数字，尝试跳转到zk"); //
+	跳转url="/i/zk/"+临时404;
+}else if(当前url.replace(/[A-Z]/g, "A").indexOf("A") != -1){ console.log("转为小写"); //
+	跳转url=当前url.toLowerCase();
+}else{
+	跳转url="0";
 }
 
 if(url问号=="sorry"){跳转url="0";}
