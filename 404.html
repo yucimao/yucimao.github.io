@@ -28,7 +28,7 @@ let s_data=[ //网页名／地址／关键词
 let 当前url=window.location.href;
 let 跳转url="0";
 let 临时404;
-当前url=当前url.replace(/%E2%80%8E/g, ""); console.log("删除零宽空格"); //
+当前url=当前url.replace(/%E2%80%8E/g, ""); console.log("删除零宽空格");
 
 let sorry=["","s","so","sor","sorr","sorry"]
 let url问号="0";
@@ -37,13 +37,13 @@ if(当前url.indexOf("?") != -1){
 	当前url=当前url.split("?")[0];
 }
 
-if(当前url.indexOf("gitee.io/") != -1){ console.log("gitee转主站"); //
+if(当前url.indexOf("gitee.io/") != -1 && url问号!=sorry[1]){console.log("gitee转主站"); //A
 	跳转url="{{ site.mq }}"+"/"+当前url.split("gitee.io/")[1];
-}else if(当前url[当前url.length-1]=="/"){ console.log("删除最后的“/”"); //
+}else if(当前url[当前url.length-1]=="/" && url问号!=sorry[2]){console.log("删除最后的“/”"); //B
 	跳转url=当前url.slice(0,当前url.length-1);
-}else if(当前url.split(".com/")[1].replace(/\//g, "")>0){ console.log("链接只有数字，尝试跳转到zk"); //
+}else if(当前url.split(".com/")[1].replace(/\//g, "")>0 && url问号!=sorry[3]){console.log("链接只有数字，尝试跳转到zk"); //C
 	跳转url="/i/zk/"+当前url.split(".com/")[1].replace(/\//g, "");
-}else if(当前url.replace(/[A-Z]/g, "A").indexOf("A") != -1){ console.log("转为小写"); //
+}else if(当前url.replace(/[A-Z]/g, "A").indexOf("A") != -1 && url问号!=sorry[4]){console.log("转为小写"); //D
 	跳转url=当前url.toLowerCase();
 }else{
 	跳转url="0";
@@ -51,7 +51,7 @@ if(当前url.indexOf("gitee.io/") != -1){ console.log("gitee转主站"); //
 
 if(url问号=="sorry"){跳转url="0";}
 if(跳转url=="0"){
-	document.getElementsByTagName("title")[0].innerText = '这里什么都没有 - {{ site.title }}';
+	document.getElementsByTagName("title")[0].innerText = "这里什么都没有 - {{ site.title }}";
 	let 猜测="";
 	临时404=decodeURI(当前url.split(".com/")[1]);
 	for(let i=0;s_data.length>i;i++){
