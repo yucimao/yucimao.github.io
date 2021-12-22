@@ -1,16 +1,19 @@
 for(let i=0;data.length>i;i++){
     let 临时=0;
     let 临时2=data[i][0].replace(/ /g, "").split("+");
+    let 临时3=临时2;
     for(let i2=0;临时2.length>i2;i2++){
         if (临时2[i2].indexOf("*") != -1){
-            临时+=临时2[i2].split("*")[0]*临时2[i2].split("*")[1];
+            let 临时4=临时2[i2].split("*");
+            临时4=临时4[0]*临时4[1];
+            临时+=临时4;
+            临时3[i2]=临时4;
         }else{
             临时+=临时2[i2]*1;
         }
     }
-    临时2=data[i][0].replace(/ /g, "").split("+");
     data[i][0]=临时;
-    data[i][2]=临时2;
+    data[i][2]=临时3;
 }
 
 let datb=[data[0]]; //数字为dw 文字直接显示 超过15字dw
