@@ -1,3 +1,5 @@
+dy="点击作品名可以复制，点击评分展开评分细则。"+dy; //数字为dw 文字直接显示 超过15字dw
+
 for(let i=0;data.length>i;i++){
     let 临时=0;
     let 临时2=data[i][0].replace(/ /g, "").split("+");
@@ -16,7 +18,7 @@ for(let i=0;data.length>i;i++){
     data[i][2]=临时3;
 }
 
-let datb=[data[0]]; //数字为dw 文字直接显示 超过15字dw
+let datb=[data[0]];
 
 for(let i=1;data.length>i;i++){
     let 临时=datb.length;
