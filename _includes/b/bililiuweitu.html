@@ -1,0 +1,135 @@
+<script>
+/*
+https://wiki.biligame.com/wiki/%E5%85%AD%E7%BB%B4%E5%9B%BE
+
+绘制雷达图
+
+* 为div设置data-type="canvas"来匹配
+* data-height	设置高度，默认200
+* data-width	设置宽度，默认225
+* data-maxvalue 设置数轴最大值
+* data-value	格式：[数值]_[标签]_[数值2]|...
+** [数值]	属性的数值，相对于数轴最大值
+** [标签]	属性的文字标签
+** [数值2]	属性的第二数值，默认为0
+
+	示例
+<div data-type="canvas" data-maxvalue="5" 
+	data-value="2_辅助|3_生存|4_单体|4_爆发|3_难度|5_范围"></div>
+<div data-type="canvas" data-maxvalue="5" 
+	data-value="1_辅助_0|3_生存_2|4_单体_3|4_爆发_4|3_难度_5|2_范围_5" 
+	data-height="300" data-width="337"></div>
+*/
+
+
+$('div[data-type="canvas"]').each(function(){
+	var $div = $(this);
+	var html = $div.text('')[0].outerHTML;
+	html = html.replace('<div',"<canvas ")
+		.replace('></div>',' />');
+	
+	var $hex = $(html);
+	$hex[0].height = $hex.data('height') || 200;
+	$hex[0].width = $hex.data('width') || 225;
+	
+	$div.replaceWith($hex);
+	
+    var ability_value = [];
+    var ability_name = [];
+    var ability_value2 = [];
+	var maxvalue = $div.data('maxvalue');
+    var canvasinfo = $div.data('value').split('|');
+	
+    $.each(canvasinfo, function(i, val){
+    	var data = val.split('_');
+    	ability_value.push(data[0] || 0);
+    	ability_name.push(data[1]);
+    	ability_value2.push(data[2] || 0);
+    });
+	
+    polygon($hex[0], canvasinfo.length, maxvalue, ability_value, ability_name, ability_value2);
+});
+
+// 绘制多边形图
+function polygon(obj, side, part, ability_value, ability_name, ability_value2) {
+    var ability = obj.getContext('2d');
+    ability.canvas.width = obj.width;
+    ability.canvas.height = obj.height;
+    var width = obj.width;
+    var height = obj.height;
+//    ability.rect(0,0,width,height);
+//    ability.fillStyle="rgba(34,34,34,1)";
+//    ability.fill();
+    var xCenter = width * 0.5;
+    var yCenter = height * 0.5;
+    var radius = width * 0.3;
+    var space = radius/part;
+    var theta = Math.PI*2/side;
+
+    //绘制渐变多边形底层
+	for (var j=part;j>=1;j--) {
+        ability.beginPath();
+        for (var i=0; i<=side; i++) {
+            ability.lineTo(Math.cos(i*theta)*space*j+xCenter,-Math.sin(i*theta)*space*j+yCenter);
+        }
+        var r=10, g=31,b=146,a=0.2;
+        ability.lineWidth = 1;
+        ability.strokeStyle="rgba(128,128,128,1)";
+        ability.stroke();
+        ability.fillStyle = "rgba("+ r +","+ g +","+ b +"," + a + ")";
+        ability.fill();
+        ability.closePath();
+        for (var i=0; i<=side; i++) {
+        	ability.beginPath();
+        	ability.moveTo(xCenter,yCenter);
+            ability.lineTo(Math.cos(i*theta)*space*j+xCenter,-Math.sin(i*theta)*space*j+yCenter);
+            ability.stroke();
+            ability.closePath();
+        }
+    }
+
+    //绘制能力多边形
+    ability.beginPath();
+    for (var i=0; i<=side; i++) {
+        var x = Math.cos(i*theta)*radius*(ability_value[i%side]/part)+xCenter;
+        var y = -Math.sin(i*theta)*radius*(ability_value[i%side]/part)+yCenter;
+        ability.lineTo(x,y);
+    }
+    ability.closePath();
+    ability.fillStyle="rgba(255,255,255,0.6)";
+    ability.fill();
+    
+    //绘制能力多边形的变化数据
+    ability.beginPath();
+    for (var i=0; i<=side; i++) {
+        var x = Math.cos(i*theta)*radius*(ability_value2[i%side]/part)+xCenter;
+        var y = -Math.sin(i*theta)*radius*(ability_value2[i%side]/part)+yCenter;
+        ability.lineTo(x,y);
+    }
+    ability.closePath();
+    ability.lineWidth = 2;
+    ability.strokeStyle="rgba(255,255,255,1)";
+    ability.stroke();
+
+    //绘制字体
+    for (var i=0; i<side; i++) {
+        ability.fillStyle="rgba(0,0,0,1)";
+        ability.font = "normal 15px Microsoft Yahei";
+        if (Math.cos(i*theta)*radius>0) {
+            if(i==0){
+	            ability.textAlign = 'left'
+            	var x = Math.cos(i*theta)*radius+xCenter+3;
+            }
+            else{
+            	ability.textAlign = 'center'
+            	var x = Math.cos(i*theta)*radius+xCenter+3;
+            }
+        } else {
+            ability.textAlign = 'left'
+            var x = Math.cos(i*theta)*radius*1.5+xCenter;
+        }
+        var y = -Math.sin(i*theta)*radius*1.3+yCenter;
+        ability.fillText(ability_name[i],x,y+6);
+    }
+}
+</script>

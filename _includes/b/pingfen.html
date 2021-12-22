@@ -27,7 +27,8 @@ for(let i=1;data.length>i;i++){
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1].split("／")[0]+"')\">"+datb[i][1]+"</td>";
         临时2=datb[i][0]/10;
         if(临时2>10){临时2="10+";}if(临时2<0){临时2="0-";}
-        dy+="<td>"+临时2+"</td><td>";
+        dy+="<td onclick=\"dw(dwb='<div id=［引号］canvas［引号］ data-type=［引号］canvas［引号］ height=［引号］200［引号］ width=［引号］225［引号］ data-maxvalue=［引号］7［引号］ 
+        data-value=［引号］1_耐久_5|2_炮击_6|3_雷击_7|4_航空_5|5_机动_6|6_防空_7［引号］ size=［引号］200［引号］></div>')\">"+临时2+"</td><td>";
             for(let i2=2;datb[i].length>i2;i2++){
                 临时2=datb[i][i2]+"";
                 if(临时2.length==1){临时2+=".0";}
