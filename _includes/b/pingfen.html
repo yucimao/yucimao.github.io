@@ -1,3 +1,14 @@
+for(let i=0;data.length>i;i++){
+    let 临时=0;
+    let 临时2=data[i][0].replace(/ /g, "").split("+");
+    for(let i2=0;临时2.length>i2;i2++){
+        临时+=临时2[i2]*1;
+    }
+    临时2=data[i][0].replace(/ /g, "").split("+");
+    data[i][0]=临时;
+    data[i][2]=临时2;
+}
+
 let datb=[data[0]]; //数字为dw 文字直接显示 超过15字dw
 
 for(let i=1;data.length>i;i++){
@@ -27,8 +38,17 @@ for(let i=1;data.length>i;i++){
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1].split("／")[0]+"')\">"+datb[i][1]+"</td>";
         临时2=datb[i][0]/10;
         if(临时2>10){临时2="10+";}if(临时2<0){临时2="0-";}
-        dy+="<td onclick=\"dw(dwb='<div id=［引号］canvas［引号］ data-type=［引号］canvas［引号］ height=［引号］200［引号］ width=［引号］225［引号］ data-maxvalue=［引号］7［引号］ data-value=［引号］1_耐久_5|2_炮击_6|3_雷击_7|4_航空_5|5_机动_6|6_防空_7［引号］ size=［引号］200［引号］></div>')\">"+临时2+"</td><td>";
-            for(let i2=2;datb[i].length>i2;i2++){
+        dy+="<td onclick=\"dw(dwd='"+datb[i][1].split("／")[0]+"',dwb='";
+        let 临时=datb[i][2];
+            for(let i2=0;临时.length>i2;i2++){
+                if(打分标准[i2]){
+                    dy+=打分标准[i2][0]+"："+临时[i2]+"/"+打分标准[i2][1]+"<br>";
+                }else{
+                    dy+="额外："+临时[i2]+"<br>";
+                }
+            }
+        dy+="')\">"+临时2+"</td><td>";
+            for(let i2=3;datb[i].length>i2;i2++){
                 临时2=datb[i][i2]+"";
                 if(临时2.length==1){临时2+=".0";}
                 if (datb[i][i2].indexOf("：") != -1){
@@ -58,3 +78,4 @@ document.getElementById("结果").innerHTML = dy;
     }
     console.log("结束");
 </script>
+<style>td[onclick^="复(制="],td[onclick^="dw(dwb="]{cursor:pointer;}</style>
