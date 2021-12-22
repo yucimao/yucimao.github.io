@@ -2,7 +2,11 @@ for(let i=0;data.length>i;i++){
     let 临时=0;
     let 临时2=data[i][0].replace(/ /g, "").split("+");
     for(let i2=0;临时2.length>i2;i2++){
-        临时+=临时2[i2]*1;
+        if (临时2[i2].indexOf("*") != -1){
+            临时+=临时2[i2].split("*")[0]*临时2[i2].split("*")[1];
+        }else{
+            临时+=临时2[i2]*1;
+        }
     }
     临时2=data[i][0].replace(/ /g, "").split("+");
     data[i][0]=临时;
@@ -78,4 +82,4 @@ document.getElementById("结果").innerHTML = dy;
     }
     console.log("结束");
 </script>
-<style>td[onclick^="复(制="],td[onclick^="dw(dwb="]{cursor:pointer;}</style>
+<style>td[onclick^="复(制="],td[onclick^="dw(dwd="]{cursor:pointer;}</style>
