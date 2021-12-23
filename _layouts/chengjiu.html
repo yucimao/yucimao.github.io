@@ -72,10 +72,10 @@ layout: default
         cj_data_b[cj_data_b.length]=key;
     }
     let 当前 = cj_data_b[0];
-    let cj_dy_a="<a class=\"anniu\" onclick=\"切换()\">";
-    let cj_dy_b="</a> <small>(点击切换)</small>";
+    let 下一个;
     if(cj_data_b.length>1){
-        document.getElementById("anniu_a").innerHTML = cj_dy_a+当前+cj_dy_b;
+        下一个=cj_data_b[1];
+        document.getElementById("anniu_a").innerHTML = "<a class=\"anniu\" onclick=\"切换()\">"+下一个+"</a>";
     }
     document.getElementById("anniu_b").innerHTML = 当前;
     
@@ -137,15 +137,21 @@ layout: default
             for(let i=0;cj_data_b.length>i;i++){
             if(切换_i==1){
                 切换_i=cj_data_b[i];
+                if(cj_data_b.length==i){
+                    下一个=cj_data_b[0];
+                }else{
+                    下一个=cj_data_b[i+1];
+                }
             }else if(切换_i==0&&cj_data_b[i]==当前){
                 切换_i=1;
                 if(i==cj_data_b.length-1){
                     切换_i=cj_data_b[0];
+                    下一个=cj_data_b[1];
                 }
             }
             }
         当前=切换_i;
-        document.getElementById("anniu_a").innerHTML = cj_dy_a+当前+cj_dy_b;
+        document.getElementById("anniu_a").innerHTML = "<a class=\"anniu\" onclick=\"切换()\">"+下一个+"</a>";
         document.getElementById("anniu_b").innerHTML = 当前;
         加载();
     }
