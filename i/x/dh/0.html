@@ -9,10 +9,10 @@ redirect_from:
 <link rel="stylesheet" href="/css/avatar_chat.css">
 <script src="/js/mq-wzjm.js"></script>
 <style>@media screen and (min-width: 768px){.body{position: relative;width: 100%;top:1em;margin: auto;}}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}#对话{border-radius: 20px;}#选择 ul{font-weight: bold;display: block;line-height: 40px;text-decoration: none;color: #58a4dd;cursor:pointer;Margin:5px;}#选择 ul:hover{color: #0085a1;background: #eef6fc;text-decoration: none;} [class="d n2"]{cursor:pointer;}</style>
-<div class="body"><div id="对话" class="avatar_chat">
+<div class="body" style="width:100%"><div id="对话" class="avatar_chat">
     <div><span class="a m">你好，我是李猫球。</span></div>
     <div><span class="a m">在这里可以和我简单的对话，不过我只能回答预设的问题，你可以试着在下方输入“你好”，在出现的选项中选择一个。</span></div>
-    <div><span class="a n1">（由于是关键词检索，请精简输入的内容，如「你喜欢什么电影？」可以精简为“电影”或者“喜欢 电影”）</span></div>
+    <div><span class="a n1"><small>（由于是关键词检索，请精简输入的内容，如「你喜欢什么电影？」可以精简为“电影”或者“喜欢 电影”）</small></span></div>
 </div><br>
 <meta name="viewport" content="width=device-width, initial-scale=1"><form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="说点啥？" onkeyup="确定()"/></form>
 <div id="选择"></div></div>
@@ -66,9 +66,10 @@ function 获(){
     wzjm_解密();
     地址=wzjm_输入.split("[");
     for(let i=1;地址.length>i;i++){
-        if(地址[i][0]=="／"){
+        if (地址[i].indexOf("／") != -1){
             let 临时2=地址[i].split("]")[0].split("／");
-            聊天+="<div><span class=\"d n2\" class=\"cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"</span></div>"; 
+            if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"</span></div>";}
+            if(临时2[0]=="颜色"){聊天+="<div><span class=\"d "+临时2[2]+"\">"+临时2[1]+"</span></div>";}
         }else{
             聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
         }
