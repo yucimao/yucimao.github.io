@@ -23,6 +23,7 @@ pinglun: 1
 } /*手机*/
 
 [onclick^="undefined"]{cursor:default;}
+[onclick^="window.open"]:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 </style>
 <script src="/5/new/chart.xkcd.js"></script>
 
@@ -180,7 +181,7 @@ function 粉丝数(fss){
     for(let i=0;tagcloud.length>i;i++){
         if(i<30){
             let 临时=tagcloud[i].split("／");
-            if (临时[1].indexOf("window.open") != -1){临时[0]=临时[0]+"<sup> ◥</sup>";}
+            // if (临时[1].indexOf("window.open") != -1){临时[0]=临时[0]+" ◥";}
             let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
 "#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
             let 颜色_i=i%颜色.length;
