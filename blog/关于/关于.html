@@ -130,6 +130,10 @@ function 粉丝数(fss){
         "小植物保护协会／dw(dwb='328392',dwd='小植物保护协会')",
         "帽权协会／dw(dwb='328904',dwd='帽权协会')",
 
+        //标签
+        "双鱼座／",
+        "五音不全／",
+
         //猫球家族
         "猫球家族／window.open('/maoqiujiazu')",
         "二扯／window.open('/who/erche')",
@@ -176,6 +180,7 @@ function 粉丝数(fss){
     for(let i=0;tagcloud.length>i;i++){
         if(i<30){
             let 临时=tagcloud[i].split("／");
+            if (临时[1].indexOf("window.open") != -1){临时[0]=临时[0]+"<sup> ◥</sup>";}
             let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
 "#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
             let 颜色_i=i%颜色.length;

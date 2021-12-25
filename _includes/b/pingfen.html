@@ -1,4 +1,4 @@
-dy="点击作品名可以复制，点击评分展开评分细则。"+dy; //数字为dw 文字直接显示 超过15字dw
+dy="点击作品名可以复制，点击评分展开评分细则。"+dy; //数字为dw 文字直接显示 超过20字dw
 
 for(let i=0;data.length>i;i++){
     let 临时=0;
@@ -63,7 +63,7 @@ for(let i=1;data.length>i;i++){
                 if (datb[i][i2].indexOf("：") != -1){
                     临时2=临时2.split("：");
                     dy+="<a onclick=\"dw(dwd='"+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a> ";
-            }else if(临时2>0||临时2.length>15){
+            }else if(临时2>0||临时2.length>20){
                 dy+="<a onclick=\"dw(dwd='更多',dwb='"+临时2+"')\">更多</a> ";
             }else{
                 dy+=临时2+" ";
