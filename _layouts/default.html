@@ -18,9 +18,11 @@
 
     {% include popup_dw.html %}
 
-    {% if page.anchor %}<div id="right_anchor"{% endif %}{% if page.anchor =="手机" %} class="shouji"{% endif %}{% if page.anchor %}></div>{% endif %}
+    {% if page.anchor !="电脑" %}<div id="right_anchor"{% endif %}{% if page.anchor =="手机" %} class="shouji"{% endif %}{% if page.anchor !="电脑" %}></div>{% endif %}
 
     {{ content }}
+
+    {% if page.anchor =="电脑" %}<div id="right_anchor"{% endif %}
 
     {% if page.anchor %}{% include anchor.html %}{% endif %}
 
