@@ -28,6 +28,7 @@ table{border-spacing:0;border-collapse:collapse;box-shadow: 0 0 8px #cfcfcf;}tr:
 [target="_blank"].dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 .yincang{display:none;}
 .cursor_pointer{cursor:pointer;}
+.blog_img{text-align:center;color:#888;font-size:0.9em;}
 
 .zhushi{color:#6A9955;}span.zhushi:before{content:"//";}div.zhushi:before{content:"<!-- ";}div.zhushi:after{content:" -->"}
 .anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
