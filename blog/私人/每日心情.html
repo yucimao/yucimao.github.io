@@ -6,9 +6,8 @@ permalink: meirixinqing
 footer_me: 0
 ---
 <style>[class^="xq"]{text-align:center;width:1em;height:1em;color:#ffffff;background-color:#f0f0f0;}.xq5{background-color:#528CD8;}.xq4{background-color:#8DB3E5;}.xq3{background-color:#B8CDE6;}.xq2{background-color:#FAD4D3;}.xq1{background-color:#F77567;}.xq0{background-color:#DF402A;}.xqx,th{background-color:#ffffff;}
-.tsx {position: relative;display: inline-block;text-decoration: dotted;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {color:var(--body-color);transform:translate(0,20px);transition:all 0.5s;visibility: visible;}
-[onclick^="dw(dwb="],[onclick^="window.location.href"]{text-decoration: underline;cursor:pointer;}</style>
-<table class="x_table"><tr><td class="xq5">很好</td><td class="xq4">不错</td><td class="xq3">还行</td><td class="xq2">一般</td><td class="xq1">不好</td><td class="xq0">很差</td></tr></table>
+.tsx {position: relative;display: inline-block;text-decoration: underline dotted;}.tsx .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt {color:var(--body-color);transform:translate(0,20px);transition:all 0.5s;visibility: visible;}
+[onclick^="dw(dwb="],[onclick^="window.location.href"],[onclick^="dw(dwb="] .tsx,[onclick^="window.location.href"] .tsx{text-decoration: underline;cursor:pointer;}</style>
 <div id="dy"></div>
 <script>
     let data=[ //"hr／年或月",     "0／", 空白      "日／打分／额外说明／zk",     "日／", 灰
@@ -16,12 +15,13 @@ footer_me: 0
         "22／4／玩了一天游戏","23／3／／http://ceshi","24／3／／/in","25／3／点击打开日记／4043952","26／4／和二扯、陈年、七九出去玩",
     ];
 
-    let dy="<table class=\"x_table\">";
+    let mr_0="<table class=\"x_table bukexuanzhong\">";
+    let mr_1="<tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>";
     let 周=0;
-    let 星期="<tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>";
+    let dy=mr_0+"<tr><td class=\"xq5\">很好</td><td class=\"xq4\">不错</td><td class=\"xq3\">还行</td><td class=\"xq2\">一般</td><td class=\"xq1\">不好</td><td class=\"xq0\">很差</td></tr></table>"+mr_0;
     for(let i=0;data.length>i;i++){
         let 临时=data[i].split("／");
-        if(临时[0]=="hr"){周=0;dy+="</table><h3>"+临时[1]+"</h3><table class=\"x_table\">"+星期;}
+        if(临时[0]=="hr"){周=0;dy+="</table><h3>"+临时[1]+"</h3>"+mr_0+mr_1;}
         else{
             if(周==0){dy+="<tr>";}
             if(临时[0]=="0"){dy+="<td class=\"xqx\"></td>";}else{
@@ -38,7 +38,7 @@ footer_me: 0
             if(周==7){dy+="</tr>";周=0;}
         }
     }
-    dy=dy.replace("<table class=\"x_table\">"+星期+"<\/table>","");
-    dy=dy.replace("<table class=\"x_table\"><\/table>","");
+    dy=dy.replace(mr_0+mr_1+"<\/table>","");
+    dy=dy.replace(mr_0+"<\/table>","");
     document.getElementById("dy").innerHTML = dy;
 </script>
