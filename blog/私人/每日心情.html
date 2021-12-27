@@ -25,9 +25,12 @@ footer_me: 0
             if(周==0){dy+="<tr>";}
             if(临时[0]=="0"){dy+="<td class=\"xqx\"></td>";}else{
                 dy+="<td class=\"xq"+临时[1]+"\"";
-                if(临时[3]){dy+=" onclick=\"dw(dwb='"+临时[3]+"')\"";}
+                if(临时[3]){
+                    if(临时[3].substring(0,4)=="http" || 临时[3].substring(0,1)=="/"){dy+=" onclick=\"window.location.href='"+临时[3]+"'\"";}
+                    else{dy+=" onclick=\"dw(dwb='"+临时[3]+"')\"";}
+                }
                 dy+=">";
-                if(临时[2]){dy+="<div class=\"tsx\">"+临时[0]+"<span class=\"tsxt\">"+临时[3]+"</span></div>";}else{dy+=临时[0];}
+                if(临时[2]){dy+="<div class=\"tsx\">"+临时[0]+"<span class=\"tsxt\">"+临时[2]+"</span></div>";}else{dy+=临时[0];}
             }
             dy+="</td>";
             周+=1;
