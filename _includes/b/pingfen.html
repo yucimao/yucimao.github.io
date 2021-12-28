@@ -53,7 +53,7 @@ for(let i=1;data.length>i;i++){
                 if(打分标准[i2]){
                     let 百分比=Math.round(临时[i2] / 打分标准[i2][1] * 10000) / 100.00;
                     dy+="<tr><td>"+打分标准[i2][0]+"</td><td>"+临时[i2]+" / "+打分标准[i2][1]+"</td><td";
-                    if(百分比==100){dy+=" class=［引号］ysa［引号］";}else if(百分比==0){dy+=" class=［引号］ysb［引号］";}
+                    if(百分比>=100){dy+=" class=［引号］ysa［引号］";}else if(百分比<0){dy+=" class=［引号］ysb［引号］";}
                     dy+=">("+百分比+ "%)</td></tr>";
                 }else{
                     dy+="<tr><td>额外</td><td>";
