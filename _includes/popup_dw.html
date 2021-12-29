@@ -33,6 +33,8 @@
     function dw() {
         document.getElementById('dw_x').style.display = "";
         document.getElementById('dw_zz').style.display = "";
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
         if(isNaN(dwb)){} else {
             dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
         }
@@ -46,8 +48,6 @@
         document.getElementById("dwc").innerHTML = dwb;
     }
     function dw_x() {
-        document.getElementById("dwc").innerHTML = "";
-        document.getElementById("dwd").innerHTML = "";
         document.getElementById('dw_zz').style.display = "none";
         document.getElementById('dw_x').style.display = "none";
     }
