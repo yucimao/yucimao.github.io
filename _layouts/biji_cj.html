@@ -3,8 +3,8 @@ layout: default
 ---
 <style>
     html,body {margin: 0;padding: 0;}
-    #right_anchor a{display:block;}
-    #right_anchor td{border:1px solid #ccc;}
+    #right_anchor2 a{display:block;}
+    #right_anchor2 td{border:1px solid #ccc;}
 
     #输入框 {text-align:center;vertical-align:middle;}
     #输入框 input {
@@ -37,13 +37,13 @@ layout: default
     @media screen and (min-width: 768px) { /*电脑*/
         .biaotib {text-align: center;position: relative;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 50px;width: 70%;margin: auto;}
-        #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor table{width:100%;}
+        #right_anchor2{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor2 table{width:100%;}
     } /*电脑*/
 
     @media screen and (max-width: 768px) { /*手机*/
         .biaotib {text-align: center;position: relative;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
         div.body {position: relative;top: 50px;width: 100%;margin: auto;}
-        #right_anchor{position:relative;}#right_anchor table{width:60%;}
+        #right_anchor2{position:relative;}#right_anchor2 table{width:60%;}
         .cj {margin: 6px;padding: 6px;}
     } /*手机*/
 </style>
@@ -61,7 +61,7 @@ layout: default
     <input type="text" style="display:none" />
     <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
 
-    <div id="right_anchor" style="z-index:102;"></div>
+    <div id="right_anchor2" style="z-index:102;"></div>
 
     {{ content }}
 
@@ -136,7 +136,7 @@ function 加载(){
     } else {
         document.getElementById("dy").innerHTML = dy;
     }
-    document.getElementById("right_anchor").innerHTML = "<table>"+right+"</table>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+right+"</table>";
 };
 加载();
 
@@ -144,19 +144,19 @@ function 加载(){
 var windowWidth = $(window).width();
     if(windowWidth > 767){
         $(document).ready(function() {
-    $("#right_anchor").hide();
+    $("#right_anchor2").hide();
     $(function() {
         $(window).scroll(function() {
             if ($(this).scrollTop() > 100) {
-                $('#right_anchor').fadeIn();
+                $('#right_anchor2').fadeIn();
             } else {
-                $('#right_anchor').fadeOut();
+                $('#right_anchor2').fadeOut();
             }
         });
     });
     });
 }else{
-    $('#right_anchor').fadeOut();
+    $('#right_anchor2').fadeOut();
 }
 {% endif %}
 
