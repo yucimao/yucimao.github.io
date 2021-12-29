@@ -15,10 +15,10 @@
     #right_anchor2 a{display:block;}
     #right_anchor table{width:60%;cursor:pointer;}
 </style>
-<div id="right_anchor2"></div>
+<div id="right_anchor2"></div><!--🔻🔺-->
 <script>
     if (top.location == self.location) {
-let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 🔻</a></td></tr>";
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
 let anchor_an2 = 0;
 let anchor_dy = "";
 let anchor_name = 0;
@@ -41,11 +41,11 @@ if (anchor[0]) {
 }
 function anchor_zk(){
 if(anchor_an2==1){
-    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 🔺</a></td></tr>";
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
     document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
     anchor_an2=0;
 }else{
-    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 🔻</a></td></tr>";
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
     document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
     anchor_an2=1;
 }
