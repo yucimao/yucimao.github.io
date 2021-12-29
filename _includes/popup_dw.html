@@ -14,7 +14,7 @@
 }
 </style>
 
-<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+<div class="dw_zz" id='dw_zz'><div name="dw_x" id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
     很抱歉，页面加载失败。<br><br>
     可能的原因：<br>
     1.浏览器不支持（如360、IE），可以换成其他浏览器（如谷歌）。<br>
@@ -43,7 +43,7 @@
             document.getElementById("dwd").innerHTML = "";
         }
         dwb=dwb.replace(/［引号］/g, "\"");
-        document.getElementById("dwc").innerHTML = "加载中..";
+        window.location.href="#dw_x";
         document.getElementById("dwc").innerHTML = dwb;
     }
     function dw_x() {
