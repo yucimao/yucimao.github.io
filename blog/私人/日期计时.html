@@ -23,6 +23,7 @@ let data=[
     "0-10-25／pvo纪念日／",
     "0-10-31／万圣节前夜／",
     "0-12-25／圣诞节／",
+    "0-12-31／跨年夜／",
 ];
 
 let data2=[];
@@ -34,6 +35,7 @@ let dy="";
 let 今_年=new Date().getFullYear();
 let 今_月=new Date().getMonth()+1;
 let 今_日=new Date().getDate();
+
 let 今天=new Date(今_年,今_月,今_日);
 
 for(let i=0;data.length>i;i++){
@@ -74,7 +76,6 @@ for(let i3=0;data2.length>i3;i3++){
     if(临时2[0]!="0"){
         dy+=" <small>"+临时[0]+"</small>";
         if(临时4<0){临时6=临时4*-1;dy+="<small>（距今"+临时6+"天）</small>";}
-        // else{dy+="<small>（还有"+临时4+"天）</small>";}
     }else{
         dy+=" <small>"+临时[0].split("-")[1]+"-"+临时[0].split("-")[2]+"</small>";
     }
