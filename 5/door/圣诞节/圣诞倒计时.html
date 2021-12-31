@@ -3,7 +3,6 @@ layout: o
 permalink: i/3794799
 ---
 {% include door.html %}
-<audio id="audio" src="/5/door/i/3704231.mp3" style="opacity:0" preload="auto" controls loop hidden="true"> </audio>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
@@ -1063,7 +1062,7 @@ animation: jrmqbk_a 1s infinite;
   </div>
   <div class="container">
     <div class="counterWrapper">
-      <p>距离圣诞节还有</p><button type="button" onclick="播放()" style="font-size:1em;">播放背景音乐</button>
+      <p>距离圣诞节还有</p><audio id="audio" src="/5/door/i/3704231.mp3" autoplay loop><button type="button" onclick="播放()" style="font-size:1em;">播放背景音乐</button></audio>
       <div class="countdown"></div>
       
       <a onclick="window.parent.location.href='{{ site.mq_i }}'" style="color:#fff;font-size:32px;">进入 猫球博客<span class="jrmqbk">&lt;</span></a>
