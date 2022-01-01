@@ -65,7 +65,10 @@ for(let i=1;data.length>i;i++){
             for(let i2=3;datb[i].length>i2;i2++){
                 临时2=datb[i][i2]+"";
                 if(临时2.length==1){临时2+=".0";}
-                if (datb[i][i2].indexOf("：") != -1){
+                if (datb[i][i2].indexOf("：链接：") != -1){
+                    临时2=临时2.split("：链接：");
+                    dy+="<a href=\""+临时2[1]+"\" target=\"_blank\" class=\"dk\">"+临时2[0]+"</a> ";
+                }else if (datb[i][i2].indexOf("：") != -1){
                     临时2=临时2.split("：");
                     dy+="<a onclick=\"dw(dwd='"+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a> ";
             }else if(临时2>0||临时2.length>20){
