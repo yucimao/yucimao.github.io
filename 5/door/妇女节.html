@@ -5,12 +5,24 @@ permalink: i/4101897
 {% include door.html %}
 
 <style>
+    .jrmqbk{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    animation: jrmqbk_a 1s infinite;
+    }
+    @keyframes jrmqbk_a{
+    0% {left:0px}
+    70%{left: 10px;}
+    100%{left: 0px;}
+    }
+    </style>
+<style>
 .child {
     position: absolute;
     font-size: 80px;
     font-weight: 900;
-    color: #ffffff;
-    line-height:50px;
+    line-height:60px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -19,7 +31,6 @@ permalink: i/4101897
     color: #fff6;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
-    overflow: hidden;
 }
 
 svg {
@@ -66,4 +77,4 @@ svg {
     </rect>
 </svg>
 
-<div class="child">妇女节快乐<br><a style="font-size: 30px;color:#ffffff;" onclick="window.parent.location.href='{{ site.mq_i }}'">进入 猫球博客<span class="jrmqbk">&lt;</span></a></div>
+<div class="child">妇女节快乐<br><a style="font-size: 30px;color:#fff6;" onclick="window.parent.location.href='{{ site.mq_i }}'">进入 猫球博客<span class="jrmqbk">&lt;</span></a></div>
