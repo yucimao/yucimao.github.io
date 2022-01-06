@@ -48,20 +48,20 @@ layout: default
         }
         else{
             //展开的子页面
-            var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}10{% endif %};
+            var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}20{% endif %};
             var bodyHa = {% if page.zk_height_a %}{{ page.zk_height_a }}{% else %}0{% endif %};
             var bodyJ = window.location.href.split('/i/zk/')[1];
             var bodyK = "／／" + bodyJ;
             var bodyL = "／" + bodyJ + "／";
 
             if(bodyH < bodyHa){bodyH=bodyHa;}
-            window.parent.document.getElementById(bodyK).height = bodyH+10;
+            window.parent.document.getElementById(bodyK).height = bodyH+20;
             window.parent.document.getElementById(bodyL).innerHTML = "";
 
             window.onload = function () {
             bodyH = $(document).height();
             if(bodyH < bodyHa){bodyH=bodyHa;}
-            window.parent.document.getElementById(bodyK).height = bodyH+10;
+            window.parent.document.getElementById(bodyK).height = bodyH+20;
             }
         }
         let p_link = "{{ page.permalink }}".split("/");
