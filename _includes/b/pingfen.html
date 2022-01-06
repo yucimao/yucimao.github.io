@@ -67,7 +67,7 @@ for(let i=1;data.length>i;i++){
             }
         dy+="</table>')\">"+临时2+"</td><td>";
             for(let i2=3;datb[i].length>i2;i2++){
-                dy+=" | ";
+                dy+="<small> | </small>";
                 临时2=datb[i][i2]+"";
                 if(临时2.length==1){临时2+=".0";}
                 if (datb[i][i2].indexOf("：链接：") != -1){
@@ -117,4 +117,4 @@ function dw2(){
     dw(dwb=分类排行榜[dwb2]);
 }
 </script>
-<style>td[onclick^="复(制="],td[onclick^="dw(dwd="]{cursor:pointer;}.ysa{color:#77C94B;}.ysb{color:#DF402A;}</style>
+<style>td small{color:#8c8b8b;}td[onclick^="复(制="],td[onclick^="dw(dwd="]{cursor:pointer;}.ysa{color:#77C94B;}.ysb{color:#DF402A;}</style>
