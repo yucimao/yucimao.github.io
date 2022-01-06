@@ -67,7 +67,7 @@ for(let i=1;data.length>i;i++){
             }
         dy+="</table>')\">"+临时2+"</td><td>";
             for(let i2=3;datb[i].length>i2;i2++){
-                dy+="<small> | </small>";
+                dy+="<small> / </small>";
                 临时2=datb[i][i2]+"";
                 if(临时2.length==1){临时2+=".0";}
                 if (datb[i][i2].indexOf("：链接：") != -1){
@@ -92,7 +92,7 @@ for(let i=1;data.length>i;i++){
     }
 dy+="</table>";
 
-dy=dy.replace(/／/g, "</td><td>").replace(/<td>\ \|\ /g, "<td>");;
+dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>");;
 
 document.getElementById("结果").innerHTML = dy;
 
