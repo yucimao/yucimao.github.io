@@ -55,13 +55,13 @@ layout: default
             var bodyL = "／" + bodyJ + "／";
 
             if(bodyH < bodyHa){bodyH=bodyHa;}
-            window.parent.document.getElementById(bodyK).height = bodyH;
+            window.parent.document.getElementById(bodyK).height = bodyH+5;
             window.parent.document.getElementById(bodyL).innerHTML = "";
 
             window.onload = function () {
             bodyH = $(document).height();
             if(bodyH < bodyHa){bodyH=bodyHa;}
-            window.parent.document.getElementById(bodyK).height = bodyH;
+            window.parent.document.getElementById(bodyK).height = bodyH+5;
             }
         }
         let p_link = "{{ page.permalink }}".split("/");
