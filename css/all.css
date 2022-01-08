@@ -1,6 +1,7 @@
 :root {
 --a-color:#006699;
 --body-color:#404040;
+--huise-color:#8c8b8b;
 }
 
 body{background-color:#ffffff;font-family:Helvetica,Arial,"Microsoft YaHei",sans-serif;line-height:1.8;font-size:16px;color:var(--body-color);overflow-x:hidden;}
