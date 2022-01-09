@@ -1,11 +1,22 @@
 ---
-layout: page2
+layout: o
 title: 猫球翻译器
 nav_text: 猫球翻译器
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: mqfyq/xin
+nva_yes: 1
 ---
 <style>
+@media screen and (min-width: 768px) {
+.biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+}
+/*电脑*/
+@media screen and (max-width: 768px) {
+/*手机*/
+.biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+}
 .jieguo {font-size: 1.2em;}
 #输入框 textArea {ime-mode: inactive;ime-mode: disabled;border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 70%;background: #F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}
 #输入框 textArea:focus {box-shadow:0 0 0 2px #58a4dd inset,0 3px 3px rgba(0, 0, 0, .2) inset;}
@@ -179,6 +190,8 @@ function myq_cf(myq_bm){
     };
     </script>
 
+<div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+<div class="body">
 <!-- 能不能好好说话 -->
 <!-- <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script> -->
@@ -234,3 +247,5 @@ fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.andro
 <a href="https://jikipedia.com/" target="_blank"><b>小鸡词典</b></a>：网络流行语的解释、出处、典故。<br>
 <a href="https://lab.magiconch.com/nbnhhsh/" target="_blank"><b>能不能好好说话？</b></a>：拼音缩写查询，没有匹配的词也会给出可能的解释。<br>
 <a href="https://zh.moegirl.org/" target="_blank"><b>萌娘百科</b></a>：各种流行、冷门的梗。<br>
+
+</div>
