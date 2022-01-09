@@ -14,7 +14,6 @@ permalink: mqfyq/xin
 legend{font-size: 12px;}
 fieldset{font-size: 14px;padding:0 4px 2px;border-width: 1px;border-style: solid;border-color: #dadada;}
 </style>
-<body onload="document.getElementById('输入').focus()">
 <div id="alert"></div>
 <script>
 let 数据="{% include b/mqfyq.html %}";let 字典;
@@ -75,7 +74,7 @@ $(function () {
         结果 = 结果.replace(替换, '');
 
         替换 = new RegExp('　', "g");
-        结果 = 结果.replace(替换, '<br />');
+        结果 = 结果.replace(替换, '<br>');
 
         document.getElementById("标签").innerHTML = 结果;
     });
@@ -195,43 +194,43 @@ var text = document.getElementById("输入");
 autoTextarea(text);
 </script>
 </div>
-<br /><br />
+<br><br>
 
-用于将饭圈缩写、二次元梗等翻译成简单易懂的语言。<br />
-翻译和解释来自网络收集和网友投稿，可能有误，或与将来解释不同。<br />
-有些词会有多种解释，需要用户根据前后文自行判断。<br />
-<!-- 如果有拼音缩写没有正确翻译，可以尝试划词，会触发<a href="https://mouto.org/" target="_blank">@卜卜口</a>的<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank">能不能好好说话</a>。<br /> -->
-<br />
-欢迎补充指正，联系QQ：<a href="/qq" target="_blank">123719932</a><br />
+用于将饭圈缩写、二次元梗等翻译成简单易懂的语言。<br>
+翻译和解释来自网络收集和网友投稿，可能有误，或与将来解释不同。<br>
+有些词会有多种解释，需要用户根据前后文自行判断。<br>
+<!-- 如果有拼音缩写没有正确翻译，可以尝试划词，会触发<a href="https://mouto.org/" target="_blank">@卜卜口</a>的<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank">能不能好好说话</a>。<br> -->
+<br>
+欢迎补充指正，联系QQ：<a href="/qq" target="_blank">123719932</a><br>
 
-<br /><br />
+<br><br>
 
 <!-- <h2>手机版</h2>
-仅Android，需要网络。（使用Fusion App制作）<br />
-<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.apk" target="_blank">点击下载</a><br />
+仅Android，需要网络。（使用Fusion App制作）<br>
+<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.apk" target="_blank">点击下载</a><br>
 
-<br /><br />
+<br><br>
 
 <h2>fv版</h2>
-仅Android，无需联网，基于fv悬浮球的自定义任务功能制作而成，需要手机中有fv悬浮球。<br />
-<br />
-fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.android.fooview" target="_blank">酷安网</a><br />
+仅Android，无需联网，基于fv悬浮球的自定义任务功能制作而成，需要手机中有fv悬浮球。<br>
+<br>
+fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.android.fooview" target="_blank">酷安网</a><br>
 自动任务：
-<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.fvt" target="_blank">点击下载</a><br />
-<br />
-<b>更新</b><br />
-打开fv悬浮球主窗口-自定义任务，运行翻译器，在输入窗口点击取消，按照提示更新。<br /><br />
-<b>使用</b><br />
-方法1：<br />
-打开fv悬浮球主窗口-自定义任务，运行翻译器，输入要翻译的内容，点击确定。<br />
-<br />
-方法2：<br />
-拉动fv悬浮球，框选想要翻译的内容，弹出文字框。<br />
-点击右下角的三个点图标，点击翻译器。<br />
+<a href="{{ site.mq_d }}/app/mqfyq/mqfyq.fvt" target="_blank">点击下载</a><br>
+<br>
+<b>更新</b><br>
+打开fv悬浮球主窗口-自定义任务，运行翻译器，在输入窗口点击取消，按照提示更新。<br><br>
+<b>使用</b><br>
+方法1：<br>
+打开fv悬浮球主窗口-自定义任务，运行翻译器，输入要翻译的内容，点击确定。<br>
+<br>
+方法2：<br>
+拉动fv悬浮球，框选想要翻译的内容，弹出文字框。<br>
+点击右下角的三个点图标，点击翻译器。<br>
 
-<br /><br /> -->
+<br><br> -->
 
-<h2>其他推荐</h2><br />
-<a href="https://jikipedia.com/" target="_blank"><b>小鸡词典</b></a>：网络流行语的解释、出处、典故。<br />
-<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank"><b>能不能好好说话？</b></a>：拼音缩写查询，没有匹配的词也会给出可能的解释。<br />
-<a href="https://zh.moegirl.org/" target="_blank"><b>萌娘百科</b></a>：各种流行、冷门的梗。<br />
+<h2>其他推荐</h2><br>
+<a href="https://jikipedia.com/" target="_blank"><b>小鸡词典</b></a>：网络流行语的解释、出处、典故。<br>
+<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank"><b>能不能好好说话？</b></a>：拼音缩写查询，没有匹配的词也会给出可能的解释。<br>
+<a href="https://zh.moegirl.org/" target="_blank"><b>萌娘百科</b></a>：各种流行、冷门的梗。<br>
