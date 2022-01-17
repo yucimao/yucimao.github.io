@@ -65,7 +65,10 @@ for(let i=1;data.length>i;i++){
                     dy+=临时[i2]+"</td><td></td></tr>";
                 }
             }
-        dy+="</table>')\">"+临时2+"</td><td>";
+            临时=临时2*10;
+            dy+="<tr><td";
+            if(临时>=90){dy+=" class=［引号］ysa［引号］";}else if(临时<30){dy+=" class=［引号］ysb［引号］";}
+            dy+=">总计</td><td>"+临时+" / 100</td></tr></table>')\">"+临时2+"</td><td>";
             for(let i2=3;datb[i].length>i2;i2++){
                 dy+="<small> / </small>";
                 临时2=datb[i][i2]+"";
