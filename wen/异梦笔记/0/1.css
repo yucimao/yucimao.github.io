@@ -5,5 +5,9 @@ body {position: relative;width: 60%;top: 1em;margin: auto;}
 h1,h2,h3,h4,h5,h6,nav{display:inline;line-height:1.5;}
 h1 small{font-weight: normal;}
 
+@media screen and (max-width: 767px){
+    body {width: 90%;}
+}
+
 #back-top {position: fixed;left: 85%;bottom: 10%;}
 #back-top a {width: 70px;height: 70px;display: block;background: url(back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}
