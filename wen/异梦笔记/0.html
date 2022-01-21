@@ -5,10 +5,9 @@
     let index=[];
 </script><link rel="stylesheet" href="0/1.css"><div id="dy"></div><script src="0/1.js"></script><style>p{line-height:1;}</style>
 
-<span class="zhushi">本页面为自用的笔记，不对外开放，没加密纯属因为懒……</span><br>
+<span class="zhushi">本页面为自用的笔记，不对外开放，没加密纯属因为懒<a onclick="键入()">.</a>..</span><br>
 <a href="找灵感.html">找灵感</a> · 
-<a href="参考／重温作品.html">参考-重温作品</a> · 
-<a href="参考／刻板印象.html">参考-刻板印象</a> · 
+<a href="参考.html">参考</a> · 
 <a href="起名.html">起名</a><br>
 <a href="词语、设定规范.html">词语、设定规范</a> · 
 <a href="符号和文字的用法.html">符号和文字的用法</a><br>
@@ -145,5 +144,9 @@ function 确定() {
     if(结果=="<hr>"){结果+="<p>无结果</p>";}
     if(输入==""){结果="";}
     document.getElementById("结果").innerHTML = 结果;
+}
+
+function 键入(){
+    localStorage.setItem("异梦笔记", document.getElementById("输入").value);
 }
 </script>

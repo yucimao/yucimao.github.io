@@ -58,3 +58,38 @@ function 随_机(){
 let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}
 let 客;function 博(){window.location.href="https://limaoqiu.com/"+客;}
 function 删除码(){复(制="&quot;"+sjtk[次数-1]+"&quot;");}
+
+let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+let 锁;function 解(){
+    let 锁id=锁.split("／")[0];
+    锁=锁.split("／")[1];
+    let wzjm_b="";
+    let wzjm_c=localStorage.getItem("异梦笔记");
+    for(let i=0;wzjm_c.length>i;i++){
+        if(wzjm_b.indexOf(wzjm_c[i]) != -1){}
+        else{
+            wzjm_b+=wzjm_c[i];
+        }
+    }
+    for(let i=0;wzjm.length>i;i++){
+        if(wzjm_b.indexOf(wzjm[i]) != -1){}
+        else{
+            wzjm_b+=wzjm[i];
+        }
+    }
+
+    wzjm_c = new RegExp('', "g");
+    锁 = 锁.replace(wzjm_c, '／');
+
+    for(let i=0;wzjm_b.length>i;i++){
+        let 临时="／"+wzjm_b[i];
+        let 临时b=wzjm[i];
+
+        wzjm_c = new RegExp(临时, "g");
+        锁 = 锁.replace(wzjm_c, 临时b);
+    }
+    wzjm_c = new RegExp("／", "g");
+    锁 = 锁.replace(wzjm_c, "");
+    锁 = window.decodeURIComponent(atob(锁));
+    document.getElementById(锁id).innerHTML = 锁;
+}

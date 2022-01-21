@@ -1,0 +1,51 @@
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>
+    let h1="兽化";
+    let nav=["参考"];
+    let index=[];
+</script><link rel="stylesheet" href="0/1.css"><div id="dy"></div><script src="0/1.js"></script>
+
+<h3>兽化程度</h3><br>
+头发：人、兽<br>
+耳朵：人、兽(<a href="参考／兽化／兽耳位置.html">兽耳位置</a>)<br>
+面部：人、覆毛、半兽(拟人的兽)、兽<br>
+身体：人、覆毛、半兽(拟人的兽)、兽<br>
+胸部：人、兽<br>
+手脚：人、覆毛、半兽(拟人的兽)、兽<br>
+其他：尾巴、虎牙、巨乳、肌肉<br>
+<br>
+
+<div id="兽化表"></div>
+<script>
+    let 兽化表=[//半、毛
+        "发／耳／面／体／胸／手／其他／",
+        "人／兽／人／人／人／人／尾巴／兽耳娘",
+        "人／兽／半／毛／人／毛／尾巴／",
+        "人／兽／兽／半／人／兽／尾巴／",
+        "兽／兽／兽／半／兽／兽／尾巴／兽人",
+    ];
+    let 兽化表dy="<table>";
+    for(let i=0;兽化表.length>i;i++){
+        let 兽化表临时=兽化表[i].split("／");
+        兽化表dy+="<tr><td>"+兽化表临时[7]+"</td>";
+            for(let i2=0;7>i2;i2++){
+                兽化表dy+="<td>";
+                    if(兽化表临时[i2]=="半"){兽化表dy+="半兽";}
+                    else if(兽化表临时[i2]=="毛"){兽化表dy+="覆毛";}
+                    else{兽化表dy+=兽化表临时[i2]}
+                    兽化表dy+="</td>";
+            }
+            兽化表dy+="</tr>";
+    }
+    兽化表dy+="</table>";
+    document.getElementById("兽化表").innerHTML = 兽化表dy;
+</script>
+<br>
+
+<h3>兽化方式</h3><br>
+液态生物吞噬：一种类史莱姆生物，接触后会包裹全身，出现兽态，身体可能不受控制。<br>
+衣服：兽皮、演出服，通常穿上会脱不下直到兽化完成。<br>
+插入：被兽爪刺伤或其他。<br>
+项圈<br>
+食物<br>
+<br>
