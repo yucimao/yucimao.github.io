@@ -55,7 +55,8 @@ if(当前url.indexOf("%E2%80%8E") != -1){ //删零宽空格
 
 if(url问号[0]=="sorry"){跳转url="0";}
 if(跳转url=="0"){
-	document.getElementsByTagName("title")[0].innerText = "这里什么都没有 - {{ site.title }}";
+	document.title = "这里什么都没有 - {{ site.title }}";
+	// document.getElementsByTagName("title")[0].innerText = "这里什么都没有 - {{ site.title }}";
 	let 猜测="";
 	临时404=decodeURI(当前url.split(".com/")[1]);
 	for(let i=0;s_data.length>i;i++){
