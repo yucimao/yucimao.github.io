@@ -5,7 +5,7 @@ nav_text: 读颜色
 permalink: game/duyanse
 redirect_from:
  - app/game/duyanse
-footer_fxx: "ceshi1","ceshi2"
+footer_fxx: ceshi1,ceshi2
 nav_url: <a href="/youxiji">游戏机</a>
 ---
 <style>
@@ -32,4 +32,42 @@ nav_url: <a href="/youxiji">游戏机</a>
         "#0B905B","#020001","#FB230E","#F5C322","#1160AE",
         "#0B905B","#020001","#FB230E","#F5C322","#1160AE",
     ];
+
+    let arr;
+    function 随机(){
+    let _arr = arr.slice();
+    for (let i = 0; i < _arr.length; i++) {
+        let j = getRandomInt(0, i)
+        let t = _arr[i]
+        _arr[i] = _arr[j]
+        _arr[j] = t
+    }
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    arr=_arr;
+    }
+
+    function 开始(){
+        let dy="<table>";
+        arr=颜色;
+        随机();
+        颜色=arr;
+        arr=color;
+        随机();
+        color=arr;
+        let i3=0;
+        let i4;
+        for(let i=0;3>i;i++){
+            dy+="<tr>";
+                i4=i3;
+                for(let i2=i4;5+i4>i2;i2++){
+                    dy+="<td style='color:"+color[i2]+"'>"+颜色[i2]+"</td>";
+                    i3+=1;
+                }
+            dy+="</tr>";
+        }
+        dy+="</table>";
+        document.getElementById("dy").innerHTML = dy;
+    }
 </script>
