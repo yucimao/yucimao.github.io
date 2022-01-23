@@ -11,7 +11,7 @@ for(let i=0;nav.length>i;i++){
     dy+=" / <a href='"+nav[i]+".html'>"+临时+"</a>";
 }}
 dy+="</nav><hr>";
-dy+="<div class='index'><br><a onclick='编辑()'>编辑</a><br>";
+dy+="<div class='index'><a onclick='编辑()'>编辑</a><br><br>";
 for(let i=0;index.length>i;i++){
     if(index[i]=="br"){dy+="<br>";}else{dy+="<a href='#"+index[i]+"'>"+index[i]+"</a><br>";}
 }
