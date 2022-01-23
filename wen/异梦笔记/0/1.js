@@ -11,7 +11,7 @@ for(let i=0;nav.length>i;i++){
     dy+=" / <a href='"+nav[i]+".html'>"+临时+"</a>";
 }}
 dy+="</nav><hr>";
-dy+="<div class='index'><br>";
+dy+="<div class='index'><br><a onclick='编辑()'>编辑</a><br>";
 for(let i=0;index.length>i;i++){
     if(index[i]=="br"){dy+="<br>";}else{dy+="<a href='#"+index[i]+"'>"+index[i]+"</a><br>";}
 }
@@ -92,4 +92,13 @@ let 锁;function 解(){
     锁 = 锁.replace(wzjm_c, "");
     锁 = window.decodeURIComponent(atob(锁));
     document.getElementById(锁id).innerHTML = 锁;
+}
+
+function 编辑(){
+    if (window.location.href.indexOf("file:///") != -1){
+        制=window.location.href.replace(/file:\/\/\//g, "").split(":/");
+        制=制[0]+": & Code /"+decodeURI(制[1])+" & exit";
+        复();
+        window.location.href="pvocmd://";
+    } else {alert("编辑功能仅在本地有效。");}
 }
