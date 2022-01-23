@@ -105,7 +105,7 @@ if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
         for(let i=0;footer_fx.length>i;i++){
             分享_fo_m+="<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/"+footer_fx[i]+"')\">{{ site.mq_url }}/"+footer_fx[i]+"</a>";
         }
-    }
+    }{% endif %}
 }else{
     分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
 }
