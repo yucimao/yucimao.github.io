@@ -2,103 +2,99 @@
 layout: default
 ---
 <style>
-    @media screen and (min-width: 768px) { /*电脑*/
-        body{background-color: #F4F8FB;}
-        .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
-        div.body {position: relative;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
-        #nav_zk2{position: relative;margin: auto;width:70%;}
-        #作者{position: relative;width: 70%;padding:20px;margin: auto;}
-    } /*电脑*/
+@media screen and (min-width: 768px) { /*电脑*/
+    body{background-color: #F4F8FB;}
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
+    #nav_zk2{position: relative;margin: auto;width:70%;}
+    #作者{position: relative;width: 70%;padding:20px;margin: auto;}
+} /*电脑*/
 
-    @media screen and (max-width: 767px) { /*手机*/
-        .qbt {text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;width: 96%;margin: auto;}
-        .diannao {display:none;}
-        [onclick^="if($(this).css('width')=="]{width:100%;}
-        #作者{position: relative;width: 96%;margin: auto;}
-    } /*手机*/
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;width: 96%;margin: auto;}
+    .diannao {display:none;}
+    [onclick^="if($(this).css('width')=="]{width:100%;}
+    #作者{position: relative;width: 96%;margin: auto;}
+} /*手机*/
 
-    div.auth {text-align: center;}
-    span.auth {margin: 0px 20px 0px 20px;}
+div.auth {text-align: center;}
+span.auth {margin: 0px 20px 0px 20px;}
 
-    [onclick^="if($(this).css('width')=="]{cursor:zoom-in;}
+[onclick^="if($(this).css('width')=="]{cursor:zoom-in;}
 
-    /*作者*/
-    .container{margin: 0 auto; max-width: 1000px;}
-    .row{width: 103%; margin: 110px -1.5%;}
-    .single-member{box-shadow: 2px 4px 8px #ddd;width: 280px; margin: 30px 2.5%; background-color: #fff; text-align: center; position: relative;}
-    .member-image img{max-width: 100%; vertical-align: middle;}
-    .effect-3 h3 {font-size: 24px; font-weight: normal; margin: 10px 0 0; text-transform: uppercase;}
-    .effect-3 h5 {font-size: 16px; font-weight: 300; margin: 0 0 15px; line-height: 22px;}
-    .effect-3 p {font-size: 14px; font-weight: 300; line-height: 22px; padding: 0 30px; margin-bottom: 10px;}
-    .effect-3{max-height: 302px; min-height: 302px; overflow: hidden;}
-    .effect-3 h3{padding-top: 7px; line-height: 33px;}
-    .effect-3 .member-image{transition: 0.4s; height: 212px; width: 100%; display: inline-block; float: none; vertical-align: middle;}
-    .effect-3 .member-info{transition: 0.4s;}
-    .effect-3 .member-image img{width: 100%; vertical-align: bottom;}
-    .effect-3 .social-touch{left: 0; bottom: 0; overflow: hidden; padding: 5px 0; width: 100%; transition: 0.4s;}
-    .effect-3 .social-touch a{color:#fff;}
-    .effect-3:hover .member-image{border-bottom: 0; border-radius: 0 0 50px 50px; height: 81px; display: inline-block; overflow: hidden; width: 109px; transition: 0.4s;}
+/*作者*/
+.container{margin: 0 auto; max-width: 1000px;}
+.row{width: 103%; margin: 110px -1.5%;}
+.single-member{box-shadow: 2px 4px 8px #ddd;width: 280px; margin: 30px 2.5%; background-color: #fff; text-align: center; position: relative;}
+.member-image img{max-width: 100%; vertical-align: middle;}
+.effect-3 h3 {font-size: 24px; font-weight: normal; margin: 10px 0 0; text-transform: uppercase;}
+.effect-3 h5 {font-size: 16px; font-weight: 300; margin: 0 0 15px; line-height: 22px;}
+.effect-3 p {font-size: 14px; font-weight: 300; line-height: 22px; padding: 0 30px; margin-bottom: 10px;}
+.effect-3{max-height: 302px; min-height: 302px; overflow: hidden;}
+.effect-3 h3{padding-top: 7px; line-height: 33px;}
+.effect-3 .member-image{transition: 0.4s; height: 212px; width: 100%; display: inline-block; float: none; vertical-align: middle;}
+.effect-3 .member-info{transition: 0.4s;}
+.effect-3 .member-image img{width: 100%; vertical-align: bottom;}
+.effect-3 .social-touch{left: 0; bottom: 0; overflow: hidden; padding: 5px 0; width: 100%; transition: 0.4s;}
+.effect-3 .social-touch a{color:#fff;}
+.effect-3:hover .member-image{border-bottom: 0; border-radius: 0 0 50px 50px; height: 81px; display: inline-block; overflow: hidden; width: 109px; transition: 0.4s;}
 </style>
 
-</head>
+</head><body>
 
-<body>
+<div id="上级">
+    <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+    <div class="auth"><span class="auth">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class="auth">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span><br>
+    <a class="diannao bukexuanzhong" onclick="屏宽()">切换宽度</a></div>
+</div>
+<div id="wen_body" class="body">
+<script>
+    {% if page.book_item %}localStorage.setItem("{{ page.book_item }}", "{{ page.nav_text }}／/{{ page.permalink }}");{% else %}{% endif %}
+    let p_link = "{{ page.permalink }}".split("/");
+    localStorage.setItem(p_link[2], "1");
+</script>
+<div id="屏幕宽度"></div>
 
-    <div id="上级">
-        <div class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-        <div class="auth"><span class="auth">作者：{% if page.wen_auth %}{{ page.wen_auth }}{% else %} - {% endif %}</span><span class="auth">时间：{% if page.wen_time %}{{ page.wen_time }}{% else %} - {% endif %}</span><br>
-        <a class="diannao bukexuanzhong" onclick="屏宽()">切换宽度</a></div>
-    </div>
-    <div id="wen_body" class="body">
-    <script>
-        {% if page.book_item %}localStorage.setItem("{{ page.book_item }}", "{{ page.nav_text }}／/{{ page.permalink }}");{% else %}{% endif %}
-        let p_link = "{{ page.permalink }}".split("/");
-        localStorage.setItem(p_link[2], "1");
-    </script>
-    <div id="屏幕宽度"></div>
+{{ content }}
 
-    {{ content }}
+</div>
 
-    </div>
+<div id="下级"><div class="auth"><span class="auth">{% if page.wen_index %}<a href="{{ page.wen_index }}">目录</a>{% else %}目录{% endif %}</span><span class="auth">{% if page.wen_pre %}<a href="{{ page.wen_pre }}">上一页</a>{% else %}上一页{% endif %}</span><span class="suth">{% if page.wen_next %}<a href="{{ page.wen_next }}">下一页</a>{% else %}下一页{% endif %}</span></div></div></div>
+<div id="作者"></div>
+<div id="nav_zk2">
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
+</div>
 
-    <div id="下级">
-        <div class="auth"><span class="auth">{% if page.wen_index %}<a href="{{ page.wen_index }}">目录</a>{% else %}目录{% endif %}</span><span class="auth">{% if page.wen_pre %}<a href="{{ page.wen_pre }}">上一页</a>{% else %}上一页{% endif %}</span><span class="suth">{% if page.wen_next %}<a href="{{ page.wen_next }}">下一页</a>{% else %}下一页{% endif %}</span></div></div>
-    </div>
-    <div id="作者"></div>
-    <div id="nav_zk2">
-        {% if page.pinglun %}{% include Valine.html %}{% endif %}
-        {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
-        {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
-    </div>
-    
-    <script>
-        if(作者){
-            let dy_作者="";
-            for(let i=0;作者.length>i;i++){
-                dy_作者+="<div class=\"single-member effect-3\"><div class=\"member-image\" style=\"border-bottom: 5px solid ";
-                if(作者[i][2]==""){dy_作者+="#e5642b";}else{dy_作者+=作者[i][2];}
-                dy_作者+=";\"><img src=\"{{ site.mq_d }}/img/i/avatar/zuozhe/"+作者[i][1]+".jpg\" onerror=\"this.src='/img/i/avatar/zuozhe/"+作者[i][1]+".jpg';this.onerror=null;\"></div><div class=\"member-info\"><h3>"+作者[i][0]+"</h3><h5>"+作者[i][3]+"</h5><p>"+作者[i][4]+"</p><div class=\"social-touch\" style=\"background-color:";
-                if(作者[i][2]==""){dy_作者+="#e5642b";}else{dy_作者+=作者[i][2];}
-                dy_作者+=";\">"+作者[i][5]+"</div></div></div>";
-            }
-            document.getElementById("作者").innerHTML = dy_作者;
-        }
+<script>
+if(作者){
+    let dy_作者="";
+    for(let i=0;作者.length>i;i++){
+        dy_作者+="<div class=\"single-member effect-3\"><div class=\"member-image\" style=\"border-bottom: 5px solid ";
+        if(作者[i][2]==""){dy_作者+="#e5642b";}else{dy_作者+=作者[i][2];}
+        dy_作者+=";\"><img src=\"{{ site.mq_d }}/img/i/avatar/zuozhe/"+作者[i][1]+".jpg\" onerror=\"this.src='/img/i/avatar/zuozhe/"+作者[i][1]+".jpg';this.onerror=null;\"></div><div class=\"member-info\"><h3>"+作者[i][0]+"</h3><h5>"+作者[i][3]+"</h5><p>"+作者[i][4]+"</p><div class=\"social-touch\" style=\"background-color:";
+        if(作者[i][2]==""){dy_作者+="#e5642b";}else{dy_作者+=作者[i][2];}
+        dy_作者+=";\">"+作者[i][5]+"</div></div></div>";
+    }
+    document.getElementById("作者").innerHTML = dy_作者;
+}
 
-        let a="0";
-        function 屏宽(){
-            if(a=="0"){
-            a="1";
-            let 屏宽dy="<style>@media screen and (min-width: 768px){div.body {width:96%}}</style>"
-            document.getElementById("屏幕宽度").innerHTML = 屏宽dy;
-            }
-            else{
-                a="0";
-                let 屏宽dy="<style>@media screen and (min-width: 768px){div.body {width:65%}}</style>"
-                document.getElementById("屏幕宽度").innerHTML = 屏宽dy;
-            }
-        }
-        </script>
+let a="0";
+function 屏宽(){
+    if(a=="0"){
+    a="1";
+    let 屏宽dy="<style>@media screen and (min-width: 768px){div.body {width:96%}}</style>"
+    document.getElementById("屏幕宽度").innerHTML = 屏宽dy;
+    }
+    else{
+        a="0";
+        let 屏宽dy="<style>@media screen and (min-width: 768px){div.body {width:65%}}</style>"
+        document.getElementById("屏幕宽度").innerHTML = 屏宽dy;
+    }
+}
+</script>
 
 {% include nav.html %}
 

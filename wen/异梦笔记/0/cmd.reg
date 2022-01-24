@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\pvocmd]
+@="pvocmd Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\pvocmd\Defaultlcon]
+@="C:\\Windows\\System32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\pvocmd\shell]
+
+[HKEY_CLASSES_ROOT\pvocmd\shell\open]
+
+[HKEY_CLASSES_ROOT\pvocmd\shell\open\command]
+@="C:\\Windows\\System32\\cmd.exe"

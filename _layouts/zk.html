@@ -2,70 +2,68 @@
 layout: default
 ---
 <style>
-    @media screen and (min-width: 768px) { /*电脑*/
-        body{background-color: #F4F8FB;}
-        .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
-        div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
-        #nav_zk2{position: relative;margin: auto;width:70%;}
-    } /*电脑*/
+@media screen and (min-width: 768px) { /*电脑*/
+    body{background-color: #F4F8FB;}
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
+    #nav_zk2{position: relative;margin: auto;width:70%;}
+} /*电脑*/
 
-    @media screen and (max-width: 767px) { /*手机*/
-        .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
-        div.body {position: relative;top: 20px;width: 96%;margin: auto;}
-    } /*手机*/
-    .juzhong{text-align:center;}
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+} /*手机*/
+.juzhong{text-align:center;}
 </style>
 
-</head>
+</head><body>
 
-<body>
+<div id="上级"></div>
 
-    <div id="上级"></div>
+<div id="wen_body">
+<div id="right_anchor"></div>
 
-    <div id="wen_body">
-        <div id="right_anchor"></div>
+{{ content }}
 
-        {{ content }}
+</div>
 
-    </div>
+<!-- <div id="下级"></div> -->
 
-    <!-- <div id="下级"></div> -->
+<div id="nav_zk" style="display: none;">
+<div id="nav_zk2">
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
+</div>
+{% include nav.html %}
+</div>
 
-    <div id="nav_zk" style="display: none;">
-        <div id="nav_zk2">
-        {% if page.pinglun %}{% include Valine.html %}{% endif %}
-        {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
-        {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
-    </div>
-        {% include nav.html %}
-    </div>
+<script>
+if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<div class=\"juzhong\">{{ page.zk_ly }}</div>{% endif %}";
+document.getElementById("上级").innerHTML=返回;
+document.getElementById("wen_body").className = 'body';
+document.getElementById("nav_zk").style.display = "block";
+}
+else{
+    //展开的子页面
+    var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}20{% endif %};
+    var bodyHa = {% if page.zk_height_a %}{{ page.zk_height_a }}{% else %}0{% endif %};
+    var bodyJ = window.location.href.split('/i/zk/')[1];
+    var bodyK = "／／" + bodyJ;
+    var bodyL = "／" + bodyJ + "／";
 
-    <script>
-        if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<div class=\"juzhong\">{{ page.zk_ly }}</div>{% endif %}";
-        document.getElementById("上级").innerHTML=返回;
-        document.getElementById("wen_body").className = 'body';
-        document.getElementById("nav_zk").style.display = "block";
-        }
-        else{
-            //展开的子页面
-            var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}20{% endif %};
-            var bodyHa = {% if page.zk_height_a %}{{ page.zk_height_a }}{% else %}0{% endif %};
-            var bodyJ = window.location.href.split('/i/zk/')[1];
-            var bodyK = "／／" + bodyJ;
-            var bodyL = "／" + bodyJ + "／";
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    window.parent.document.getElementById(bodyL).innerHTML = "";
 
-            if(bodyH < bodyHa){bodyH=bodyHa;}
-            window.parent.document.getElementById(bodyK).height = bodyH+20;
-            window.parent.document.getElementById(bodyL).innerHTML = "";
-
-            window.onload = function () {
-            bodyH = $(document).height();
-            if(bodyH < bodyHa){bodyH=bodyHa;}
-            window.parent.document.getElementById(bodyK).height = bodyH+20;
-            }
-        }
-        let p_link = "{{ page.permalink }}".split("/");
-        localStorage.setItem(p_link[2], "1");
-    </script>
+    window.onload = function () {
+    bodyH = $(document).height();
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    }
+}
+let p_link = "{{ page.permalink }}".split("/");
+localStorage.setItem(p_link[2], "1");
+</script>
 {% include anchor.html %}
 </body>

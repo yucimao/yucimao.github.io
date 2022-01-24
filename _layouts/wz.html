@@ -2,157 +2,127 @@
 layout: default
 ---
 <style>
-    html,body {margin: 0;padding: 0;}
-    #输入框 {text-align:center;vertical-align:middle;}
-    .juzhong{text-align: center;}
+html,body {margin: 0;padding: 0;}
+#输入框 {text-align:center;vertical-align:middle;}
+.juzhong{text-align: center;}
 
-    @media screen and (min-width: 768px) { /*电脑*/
-        .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 65%;margin: auto;}
-    } /*电脑*/
+@media screen and (min-width: 768px) { /*电脑*/
+    .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+} /*电脑*/
 
-    @media screen and (max-width: 768px) { /*手机*/
-        .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 96%;margin: auto;}
-    } /*手机*/
+@media screen and (max-width: 768px) { /*手机*/
+    .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+} /*手机*/
 
-    /*加载动画*/
-    .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
-    .jiazaidonghua>div {background-color: #ffffff;height: 100%;width: 6px;display: inline-block;-webkit-animation: stretchdelay 1.2s infinite ease-in-out;animation: stretchdelay 1.2s infinite ease-in-out;}
-    .jiazaidonghua .jzdhrect2 {-webkit-animation-delay: -1.1s;animation-delay: -1.1s;}
-    .jiazaidonghua .jzdhrect3 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
-    .jiazaidonghua .jzdhrect4 {-webkit-animation-delay: -0.9s;animation-delay: -0.9s;}
-    .jiazaidonghua .jzdhrect5 {-webkit-animation-delay: -0.8s;animation-delay: -0.8s;}
-    @-webkit-keyframes stretchdelay {0%,40%,100% {-webkit-transform: scaleY(0.4);}20% {-webkit-transform: scaleY(1.0);}}
-    @keyframes stretchdelay {0%,40%,100% {transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}20% {transform: scaleY(1.0);-webkit-transform: scaleY(1.0);}}
-    .site-welcome {display: none;justify-content: center;align-items: center;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(116, 184, 229);z-index: 101;}
-    .site-welcome.active {display: flex;}
-    /*加载动画结束*/
-
-    ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
-    ul>a:hover {color: #0085a1;background: #eef6fc;text-decoration: none;}
-    ul>a>span {color: #5c5c5c}
-    input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 80%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
-    input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
-    select {font-size: 1.2em;color: #666666;padding: .3em .5em;max-width: 7em;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);border-width: medium;border-color: #00a2ff;border-radius: 17px;outline: none;}
-    select:hover {color: #0085a1;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
-    button {font-size: 1.2em;color: #666666;padding: .1em;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #6b6b6b;border-radius: 17px;outline: none;}
-    button:hover {color: #2c2c2c;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
+ul>a {font-weight: bold;display: block;line-height: 50px;font-size: 1.1em;text-decoration: none;color: #58a4dd;}
+ul>a:hover {color: #0085a1;background: #eef6fc;text-decoration: none;}
+ul>a>span {color: #5c5c5c}
+input {line-height: 36px;font-size: 1.4em;text-align: center;padding: .5em .7em;max-width: 30em;width: 80%;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #00a2ff;border-radius: 20px;outline: none;}
+input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
+select {font-size: 1.2em;color: #666666;padding: .3em .5em;max-width: 7em;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);border-width: medium;border-color: #00a2ff;border-radius: 17px;outline: none;}
+select:hover {color: #0085a1;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
+button {font-size: 1.2em;color: #666666;padding: .1em;background: #F8F8F8;border-style: solid;border-width: medium;border-color: #6b6b6b;border-radius: 17px;outline: none;}
+button:hover {color: #2c2c2c;box-shadow: 0 1px 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);}
 </style>
 
 </head>
 
 <body onload="document.getElementById('输入').focus()">
 
-    <!--加载动画-->
-    <div class="site-welcome active" id="siteWelcome">
-        <div class="jiazaidonghua">
-            <div class="jzdhrect1"></div>
-            <div class="jzdhrect2"></div>
-            <div class="jzdhrect3"></div>
-            <div class="jzdhrect4"></div>
-            <div class="jzdhrect5"></div>
-            <span style="color:#ffffff">加载中...</span>
-        </div>
-    </div>
+<div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+<div class="body">
+<form id="输入框" autocomplete="off">
+<input type="text" style="display:none" />
+<input type="text" id="输入" placeholder="多个关键词用空格分隔" />
+</form>
 
-    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-    <div class="body">
-        <form id="输入框" autocomplete="off">
-            <input type="text" style="display:none" />
-            <input type="text" id="输入" placeholder="多个关键词用空格分隔" />
-        </form>
+<div style="line-height:0.5;"><br></div>
 
-        <div style="line-height:0.5;"><br /></div>
+{{ content }}
 
-        {{ content }}
+</div>
 
-    </div>
+<script>
+let 回车 = "javascript:void(0);";
+let datb = data;
+$("#输入").keyup(function () {
+    datb=new Array();
+    if (回车.split("／").length > 1) {
+        回车 = 回车.split("／")[1];
+    }
+    if (window.event.keyCode == 13) location = 回车;
+    if (window.event.keyCode == 27) document.getElementById("输入").value = "";
 
-    <script> //关闭加载动画
-        var siteWelcome = document.getElementById('siteWelcome');
-        siteWelcome.classList.remove('active');
-    </script>
-
-    <script>
-        let 回车 = "javascript:void(0);";
-        let datb = data;
-        $("#输入").keyup(function () {
-            datb=new Array();
-            if (回车.split("／").length > 1) {
-                回车 = 回车.split("／")[1];
-            }
-            if (window.event.keyCode == 13) location = 回车;
-            if (window.event.keyCode == 27) document.getElementById("输入").value = "";
-
-            let 输入 = $("#输入").val().toLowerCase().split(" ");   //获取输入内容 换成小写 用空格分隔
-            let 结果 = "";
-            let 结果2 = "";
-            for (let i = 0; data.length > i; i++) {
-                let 临时 = data[i].split("／");
-                let 过程 = "0";
-                let 过程2 = "0";
-                for (let i2 = 0; 输入.length > i2; i2++) {
-                    let 临时2 = data[i].split("／");
-                    临时2 = 临时2[0] + 临时2[2];
-                    临时2 = 临时2.toLowerCase();
-                    if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
-                    else { 过程 = "1"; }
-                }
-                if (过程 == "0") {
-                    datb[datb.length] = data[i];
-                    结果 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
-                    回车 += "／" + 临时[1];
-                }
-                if (过程 != "0" && 过程2 == "1") {
-                    结果2 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
-                }
-            }
-
-            let 打印 = 结果 + "<br/><hr>" + 结果2;
-            let 替换 = new RegExp('【', "g");
-            打印 = 打印.replace(替换, '<span> - ');
-            替换 = new RegExp('】', "g");
-            打印 = 打印.replace(替换, '</span>');
-            document.getElementById("结果").innerHTML = 打印;
-        })
-
-        function 随机排序() {
-            let 随机结果 = "";
-            let 随机临时;
-            if(datb.length==0){
-                datb=new Array();
-                datb=datb.concat(data);
-            }
-
-            let p = Array.from(datb), i, a = [];
-            while (p.length > 0) {
-                i = parseInt(Math.random() * p.length);
-                a.push(p[i]);
-                p.splice(i, 1);
-            }
-
-            let 随机 = a;
-
-            for (let i2 = 0; 5 > i2 && 随机.length != i2; i2++) {
-                随机临时 = 随机[i2].split("／");
-                随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
-            }
-
-            let 替换 = new RegExp('【', "g");
-            随机结果 = 随机结果.replace(替换, '<span> - ');
-            替换 = new RegExp('】', "g");
-            随机结果 = 随机结果.replace(替换, '</span>');
-            document.getElementById("结果").innerHTML = 随机结果;
+    let 输入 = $("#输入").val().toLowerCase().split(" ");   //获取输入内容 换成小写 用空格分隔
+    let 结果 = "";
+    let 结果2 = "";
+    for (let i = 0; data.length > i; i++) {
+        let 临时 = data[i].split("／");
+        let 过程 = "0";
+        let 过程2 = "0";
+        for (let i2 = 0; 输入.length > i2; i2++) {
+            let 临时2 = data[i].split("／");
+            临时2 = 临时2[0] + 临时2[2];
+            临时2 = 临时2.toLowerCase();
+            if (临时2.indexOf(输入[i2]) != -1 && 输入[i2] != "") { 过程2 = "1"; }
+            else { 过程 = "1"; }
         }
-    </script>
+        if (过程 == "0") {
+            datb[datb.length] = data[i];
+            结果 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
+            回车 += "／" + 临时[1];
+        }
+        if (过程 != "0" && 过程2 == "1") {
+            结果2 += "<ul><a href='" + 临时[1] + "'>" + 临时[0] + "</a></ul>";
+        }
+    }
+
+    let 打印 = 结果 + "<br><hr>" + 结果2;
+    let 替换 = new RegExp('【', "g");
+    打印 = 打印.replace(替换, '<span> - ');
+    替换 = new RegExp('】', "g");
+    打印 = 打印.replace(替换, '</span>');
+    document.getElementById("结果").innerHTML = 打印;
+})
+
+function 随机排序() {
+    let 随机结果 = "";
+    let 随机临时;
+    if(datb.length==0){
+        datb=new Array();
+        datb=datb.concat(data);
+    }
+
+    let p = Array.from(datb), i, a = [];
+    while (p.length > 0) {
+        i = parseInt(Math.random() * p.length);
+        a.push(p[i]);
+        p.splice(i, 1);
+    }
+
+    let 随机 = a;
+
+    for (let i2 = 0; 5 > i2 && 随机.length != i2; i2++) {
+        随机临时 = 随机[i2].split("／");
+        随机结果 += "<ul><a href='" + 随机临时[1] + "'>" + 随机临时[0] + "</a></ul>";
+    }
+
+    let 替换 = new RegExp('【', "g");
+    随机结果 = 随机结果.replace(替换, '<span> - ');
+    替换 = new RegExp('】', "g");
+    随机结果 = 随机结果.replace(替换, '</span>');
+    document.getElementById("结果").innerHTML = 随机结果;
+}
+</script>
 
 {% if page.pinglun %}{% include Valine.html %}{% endif %}
 
 {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
 {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
-    </div>
+</div>
 
 {% include nav.html %}
 

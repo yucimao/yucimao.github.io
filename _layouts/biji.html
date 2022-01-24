@@ -2,235 +2,206 @@
 layout: default
 ---
 <style>
-    html,body {margin: 0;padding: 0;}
-    h4 {list-style: none;line-height: 2.4;color: #006699;cursor: pointer;margin:5px;}
-    h4:hover{background-color: #eee;}
-    h4[onclick^="zk(zka='/"]:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
-    a {cursor: pointer;}
-    small {color: #777777;font-weight: 400;}
+html,body {margin: 0;padding: 0;}
+h4 {list-style: none;line-height: 2.4;color: #006699;cursor: pointer;margin:5px;}
+h4:hover{background-color: #eee;}
+h4[onclick^="zk(zka='/"]:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
+a {cursor: pointer;}
+small {color: #777777;font-weight: 400;}
 
-    #输入框 {text-align:center;vertical-align:middle;}
-    #输入框 input {
-        line-height: 36px;
-        font-size: 1.4em;
-        text-align: center;
-        padding: .5em .7em;
-        max-width: 30em;
-        width: 80%;
-        background: #F8F8F8;
-        border-style: solid;
-        border-width: medium;
-        border-color: #00a2ff;
-        border-radius: 20px;
-        outline: none;
-    }
-    #输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
-    #前言 a {color:#808080;}
-    #前言 a:hover{color:#0085A1;}
+#输入框 {text-align:center;vertical-align:middle;}
+#输入框 input {
+    line-height: 36px;
+    font-size: 1.4em;
+    text-align: center;
+    padding: .5em .7em;
+    max-width: 30em;
+    width: 80%;
+    background: #F8F8F8;
+    border-style: solid;
+    border-width: medium;
+    border-color: #00a2ff;
+    border-radius: 20px;
+    outline: none;
+}
+#输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
+#前言 a {color:#808080;}
+#前言 a:hover{color:#0085A1;}
 
-    @media screen and (min-width: 768px) { /*电脑*/
-        .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 65%;margin: auto;}
-    } /*电脑*/
+@media screen and (min-width: 768px) { /*电脑*/
+    .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+} /*电脑*/
 
-    @media screen and (max-width: 768px) { /*手机*/
-        .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 96%;margin: auto;}
-        ul {margin: 0px;padding: 0px;}
-    } /*手机*/
+@media screen and (max-width: 768px) { /*手机*/
+    .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+    ul {margin: 0px;padding: 0px;}
+} /*手机*/
 
-    .yidu:after {position: relative;top:1.2em;content: "（已读）";font-size:.5em;color:#808080;font-weight:normal;}
-
-    /*加载动画*/
-    .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
-    .jiazaidonghua>div {background-color: #ffffff;height: 100%;width: 6px;display: inline-block;-webkit-animation: stretchdelay 1.2s infinite ease-in-out;animation: stretchdelay 1.2s infinite ease-in-out;}
-    .jiazaidonghua .jzdhrect2 {-webkit-animation-delay: -1.1s;animation-delay: -1.1s;}
-    .jiazaidonghua .jzdhrect3 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
-    .jiazaidonghua .jzdhrect4 {-webkit-animation-delay: -0.9s;animation-delay: -0.9s;}
-    .jiazaidonghua .jzdhrect5 {-webkit-animation-delay: -0.8s;animation-delay: -0.8s;}
-    @-webkit-keyframes stretchdelay {0%,40%,100% {-webkit-transform: scaleY(0.4);}20% {-webkit-transform: scaleY(1.0);}}
-    @keyframes stretchdelay {0%,40%,100% {transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}20% {transform: scaleY(1.0);-webkit-transform: scaleY(1.0);}}
-    .site-welcome {display: none;justify-content: center;align-items: center;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(116, 184, 229);z-index: 101;}
-    .site-welcome.active {display: flex;}
+.yidu:after {position: relative;top:1.2em;content: "（已读）";font-size:.5em;color:#808080;font-weight:normal;}
 </style>
 
 </head>
 
 <body onload="document.getElementById('输入').focus()">
 
-    <!--加载动画-->
-    <div class="site-welcome active" id="siteWelcome">
-        <div class="jiazaidonghua">
-            <div class="jzdhrect1"></div>
-            <div class="jzdhrect2"></div>
-            <div class="jzdhrect3"></div>
-            <div class="jzdhrect4"></div>
-            <div class="jzdhrect5"></div>
-            <span style="color:#ffffff">加载中...</span>
-        </div>
-    </div>
+<div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+<div class="body">
+<form id="输入框" autocomplete="off">
+    <input type="text" style="display:none" />
+    <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
+<br><br>
+<div id="前言" class="bukexuanzhong"><a onclick="tion(sg='')">展示全部</a>　<a onclick="随机排序()">随机排序</a>　<a onclick="显示未读()">只显示未读</a></div>
+<hr>
 
-    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-    <div class="body">
-        <form id="输入框" autocomplete="off">
-            <input type="text" style="display:none" />
-            <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
-        <br /><br />
-        <div id="前言" class="bukexuanzhong"><a onclick="tion(sg='')">展示全部</a>　<a onclick="随机排序()">随机排序</a>　<a onclick="显示未读()">只显示未读</a></div>
-        <hr>
+{{ content }}
 
-        {{ content }}
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
 
-        <script> //关闭加载动画
-            var siteWelcome = document.getElementById('siteWelcome');
-            siteWelcome.classList.remove('active');
-        </script>
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
-        {% if page.pinglun %}{% include Valine.html %}{% endif %}
+</div>
 
-        {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
-        {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
-
-    </div>
-
-    <script>
-        if(typeof dady!=='undefined'){document.getElementById("前言").innerHTML = dady;}
-        let zka;
-        let zkb;
-        let datb = data;
-        $("#输入").keyup(function () {
-            datb=new Array();
-            zkb = "／";
-            let 输入 = $("#输入").val();
-            let 输入2 = 输入.split(" ");
-            let 结果 = "";
-            let 结果2 = "";
-            for (let i = 0; data.length > i; i++) {
-                let 临时 = data[i].split("／");
-                let 过程 = "0";
-                let 过程2 = "0";
-                if(临时[1]=="hr"){
-                    结果 += "<hr><h3>"+临时[0]+"</h3>"+临时[2];
-                }else{
-                    for (let i2 = 0; 输入2.length > i2; i2++) {
-                    let 临时2 = data[i].split("／");
-                    临时2 = 临时2[0] + 临时2[2];
-                    if (临时2.indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程2 = "1";}
-                    else { 过程 = "1"; }
-                }
-                if (过程 == "0" || 输入.length == 0) {
-                    datb[datb.length] = data[i];
-                    if(localStorage.getItem(临时[1])){
-                        结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
-                    }
-                    else{
-                        结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
-                    }
-                }
-                }
-                if (过程 != "0" && 过程2 == "1") {
-                    if(localStorage.getItem(临时[1])){
-                        结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
-                    }
-                    else{
-                        结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
-                    }
-                }
+<script>
+if(typeof dady!=='undefined'){document.getElementById("前言").innerHTML = dady;}
+let zka;
+let zkb;
+let datb = data;
+$("#输入").keyup(function () {
+    datb=new Array();
+    zkb = "／";
+    let 输入 = $("#输入").val();
+    let 输入2 = 输入.split(" ");
+    let 结果 = "";
+    let 结果2 = "";
+    for (let i = 0; data.length > i; i++) {
+        let 临时 = data[i].split("／");
+        let 过程 = "0";
+        let 过程2 = "0";
+        if(临时[1]=="hr"){
+            结果 += "<hr><h3>"+临时[0]+"</h3>"+临时[2];
+        }else{
+            for (let i2 = 0; 输入2.length > i2; i2++) {
+            let 临时2 = data[i].split("／");
+            临时2 = 临时2[0] + 临时2[2];
+            if (临时2.indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程2 = "1";}
+            else { 过程 = "1"; }
+        }
+        if (过程 == "0" || 输入.length == 0) {
+            datb[datb.length] = data[i];
+            if(localStorage.getItem(临时[1])){
+                结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
             }
+            else{
+                结果 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+            }
+        }
+        }
+        if (过程 != "0" && 过程2 == "1") {
+            if(localStorage.getItem(临时[1])){
+                结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\" class=\"yidu\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+            }
+            else{
+                结果2 += "<h4 onclick=\"zk(zka='" + 临时[1] + "')\">" + 临时[0] + "</h4><ul id=\"／" + 临时[1] + "\" style=\"display:none;\">" + 临时[3] + "</ul>";
+            }
+        }
+    }
 
-            let 打印 = 结果;
-            if(结果2!=""){打印+="<br/><hr><h3>部分符合</h3>" + 结果2;}
-            document.getElementById("结果").innerHTML = 打印;
-        }).keyup();
+    let 打印 = 结果;
+    if(结果2!=""){打印+="<br><hr><h3>部分符合</h3>" + 结果2;}
+    document.getElementById("结果").innerHTML = 打印;
+}).keyup();
 
-        zkb = "／" + data[0].split("／")[1];
+zkb = "／" + data[0].split("／")[1];
+document.getElementById(zkb).style.display = "block";
+
+function zk() {
+    if(isNaN(zka) && zka[0] != "【"){
+        window.open(zka);
+    } else {
+        if (document.getElementById(zkb) != null) {
+        document.getElementById(zkb).style.display = "none";
+    }
+    let yd = "／" + zka;
+    window.location.href = "#" + yd;
+    if (yd == zkb) {
+        zkb = "／";
+        window.scrollBy(0, -20);
+    }
+    else {
+        zkb = "／" + zka;
         document.getElementById(zkb).style.display = "block";
+        window.scrollBy(0, -150);
+    }
+    if (zka[0] != "【" && zka[0].length > 0) {
+        let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
+        document.getElementById(yd).innerHTML = dy;
+    }
+    }   
+}
 
-        function zk() {
-            if(isNaN(zka) && zka[0] != "【"){
-                window.open(zka);
-            } else {
-                if (document.getElementById(zkb) != null) {
-                document.getElementById(zkb).style.display = "none";
-            }
-            let yd = "／" + zka;
-            window.location.href = "#" + yd;
-            if (yd == zkb) {
-                zkb = "／";
-                window.scrollBy(0, -20);
-            }
-            else {
-                zkb = "／" + zka;
-                document.getElementById(zkb).style.display = "block";
-                window.scrollBy(0, -150);
-            }
-            if (zka[0] != "【" && zka[0].length > 0) {
-                let dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + zka + "\"></iframe><p id=\"／" + zka + "／\">加载中..</p>";
-                document.getElementById(yd).innerHTML = dy;
-            }
-            }   
+let sg;
+function tion() {
+    if (sg[0] == "+") {
+        sg = sg.replace(/\+/g, ' ')
+        sg = document.getElementById("输入").value + sg;
+    }
+    document.getElementById("输入").value = sg;
+    $("input").keyup();
+}
+
+var LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) { return decodeURI(tmp[2]); }
+    return "";
+}
+var wza = GetQueryString("wz");
+if (wza) {
+    document.getElementById("输入").value = wza;
+    $("input").keyup();
+}
+
+function 随机排序() {
+    let 随机结果 = "";
+    let 随机临时;
+
+    let p = Array.from(datb), i, a = [];
+    while (p.length > 0) {
+        i = parseInt(Math.random() * p.length);
+        a.push(p[i]);
+        p.splice(i, 1);
+    }
+    let 随机 = a;
+
+    for (let i2 = 0; 随机.length > i2; i2++) {
+        随机临时 = 随机[i2].split("／");
+        if(localStorage.getItem(随机临时[1])){
+            随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\" class=\"yidu\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
         }
-
-        let sg;
-        function tion() {
-            if (sg[0] == "+") {
-                sg = sg.replace(/\+/g, ' ')
-                sg = document.getElementById("输入").value + sg;
-            }
-            document.getElementById("输入").value = sg;
-            $("input").keyup();
+        else{
+            随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
         }
+    }
+    document.getElementById("结果").innerHTML = 随机结果;
+}
 
-        var LocString = String(window.document.location.href);
-        function GetQueryString(name) {
-            var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
-            if (tmp = rs) { return decodeURI(tmp[2]); }
-            return "";
+function 显示未读() {
+    let 未读结果 = "";
+    let 未读临时;
+    for (let i=0;datb.length>i;i++){
+        未读临时 = datb[i].split("／");
+        if(localStorage.getItem(未读临时[1])){}
+        else{
+            未读结果 += "<h4 onclick=\"zk(zka='" + 未读临时[1] + "')\">" + 未读临时[0] + "</h4><ul id=\"／" + 未读临时[1] + "\" style=\"display:none;\">" + 未读临时[3] + "</ul>";
         }
-        var wza = GetQueryString("wz");
-        if (wza) {
-            document.getElementById("输入").value = wza;
-            $("input").keyup();
-        }
-
-        function 随机排序() {
-            let 随机结果 = "";
-            let 随机临时;
-
-            let p = Array.from(datb), i, a = [];
-            while (p.length > 0) {
-                i = parseInt(Math.random() * p.length);
-                a.push(p[i]);
-                p.splice(i, 1);
-            }
-            let 随机 = a;
-
-            for (let i2 = 0; 随机.length > i2; i2++) {
-                随机临时 = 随机[i2].split("／");
-                if(localStorage.getItem(随机临时[1])){
-                    随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\" class=\"yidu\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
-                }
-                else{
-                    随机结果 += "<h4 onclick=\"zk(zka='" + 随机临时[1] + "')\">" + 随机临时[0] + "</h4><ul id=\"／" + 随机临时[1] + "\" style=\"display:none;\">" + 随机临时[3] + "</ul>";
-                }
-            }
-            document.getElementById("结果").innerHTML = 随机结果;
-        }
-
-        function 显示未读() {
-            let 未读结果 = "";
-            let 未读临时;
-            for (let i=0;datb.length>i;i++){
-                未读临时 = datb[i].split("／");
-                if(localStorage.getItem(未读临时[1])){}
-                else{
-                    未读结果 += "<h4 onclick=\"zk(zka='" + 未读临时[1] + "')\">" + 未读临时[0] + "</h4><ul id=\"／" + 未读临时[1] + "\" style=\"display:none;\">" + 未读临时[3] + "</ul>";
-                }
-            }
-            document.getElementById("输入").value = "只显示未读";
-            document.getElementById("结果").innerHTML = 未读结果;
-        }
-    </script>
+    }
+    document.getElementById("输入").value = "只显示未读";
+    document.getElementById("结果").innerHTML = 未读结果;
+}
+</script>
 
 {% include nav.html %}
 

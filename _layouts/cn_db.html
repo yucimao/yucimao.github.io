@@ -2,94 +2,66 @@
 layout: default
 ---
 <style>
-    html,body {margin: 0;padding: 0;}
+html,body {margin: 0;padding: 0;}
 
-    @media screen and (min-width: 768px) { /*电脑*/
-        .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 65%;margin: auto;}
-    } /*电脑*/
+@media screen and (min-width: 768px) { /*电脑*/
+    .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+} /*电脑*/
 
-    @media screen and (max-width: 768px) { /*手机*/
-        .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 96%;margin: auto;}
-    } /*手机*/
-
-    /*加载动画*/
-    .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
-    .jiazaidonghua>div {background-color: #ffffff;height: 100%;width: 6px;display: inline-block;-webkit-animation: stretchdelay 1.2s infinite ease-in-out;animation: stretchdelay 1.2s infinite ease-in-out;}
-    .jiazaidonghua .jzdhrect2 {-webkit-animation-delay: -1.1s;animation-delay: -1.1s;}
-    .jiazaidonghua .jzdhrect3 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
-    .jiazaidonghua .jzdhrect4 {-webkit-animation-delay: -0.9s;animation-delay: -0.9s;}
-    .jiazaidonghua .jzdhrect5 {-webkit-animation-delay: -0.8s;animation-delay: -0.8s;}
-    @-webkit-keyframes stretchdelay {0%,40%,100% {-webkit-transform: scaleY(0.4);}20% {-webkit-transform: scaleY(1.0);}}
-    @keyframes stretchdelay {0%,40%,100% {transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}20% {transform: scaleY(1.0);-webkit-transform: scaleY(1.0);}}
-    .site-welcome {display: none;justify-content: center;align-items: center;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: #74b8e5;z-index: 101;}
-    .site-welcome.active {display: flex;}
+@media screen and (max-width: 768px) { /*手机*/
+    .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+} /*手机*/
 </style>
 
-</head>
+</head><body>
 
-<body>
+<div class="biaotib bukexuanzhong">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
+<div class="body">
 
-    <!--加载动画-->
-    <div class="site-welcome active bukexuanzhong" id="siteWelcome">
-        <div class="jiazaidonghua">
-            <div class="jzdhrect1"></div>
-            <div class="jzdhrect2"></div>
-            <div class="jzdhrect3"></div>
-            <div class="jzdhrect4"></div>
-            <div class="jzdhrect5"></div>
-            <span style="color:#ffffff">加载中...</span>
-        </div>
-    </div>
+<style>
+*{cursor:default;}
+p.b{margin-top:-12px;border: 1px solid #c0c0c0;padding:8px;border-radius: 12px;}
+</style>
 
-    <div class="biaotib bukexuanzhong">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>
-    <div class="body">
+<div id="dy"></div>
 
-    <style>
-        *{cursor:default;}
-        p.b{margin-top:-12px;border: 1px solid #c0c0c0;padding:8px;border-radius: 12px;}
-        </style>
-        
-        <div id="dy"></div>
+{{ content }}
 
-    {{ content }}
+<script>
+let p = Array.from(data), i, a = [];
+while (p.length > 0) {
+    i = parseInt(Math.random() * p.length);
+    a.push(p[i]);
+    p.splice(i, 1);
+}
 
-    <script>
-        let p = Array.from(data), i, a = [];
-                while (p.length > 0) {
-                    i = parseInt(Math.random() * p.length);
-                    a.push(p[i]);
-                    p.splice(i, 1);
-                }
-        
-                data = a;
-        
-        let dy="";
-        
-        data=datb.concat(data);
-        
-        for (let i=0;data.length>i;i++){
-            if(data[i].indexOf("／") != -1){
-                let 临时=data[i].split("／");
-                dy += "<p class=\"b\" onmouseover=\"javascript:this.innerHTML='" + 临时[1] + "'\" onmouseout=\"javascript:this.innerHTML='" + 临时[0] + "'\">" + 临时[0] + "</p>";
-            }else{
-                dy+="<p class=\"b\">"+data[i]+"</p>";
-            }
-        }
-        
-        document.getElementById("dy").innerHTML = dy;
-        
-        </script>
+data = a;
+
+let dy="";
+
+data=datb.concat(data);
+
+for (let i=0;data.length>i;i++){
+    if(data[i].indexOf("／") != -1){
+        let 临时=data[i].split("／");
+        dy += "<p class=\"b\" onmouseover=\"javascript:this.innerHTML='" + 临时[1] + "'\" onmouseout=\"javascript:this.innerHTML='" + 临时[0] + "'\">" + 临时[0] + "</p>";
+    }else{
+        dy+="<p class=\"b\">"+data[i]+"</p>";
+    }
+}
+
+document.getElementById("dy").innerHTML = dy;
+
+</script>
 
 {% if page.pinglun %}{% include Valine.html %}{% endif %}
 
 {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
 {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
-    </div>
-
-    <!--关闭加载动画--><script>var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');</script>
+</div>
 
 {% include nav.html %}
 

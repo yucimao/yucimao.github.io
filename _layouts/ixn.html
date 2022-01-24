@@ -6,20 +6,20 @@ layout: default
 <div id="ixn">
 <script src="/js/mq-wzjm.js"></script>
 <script>
-    let LocString = String(window.document.location.href);
-    function GetQueryString(name) {
-        let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
-        if (tmp = rs) { return decodeURI(tmp[2]); }
-        return "";
-    }
-    if(GetQueryString("ix")){
-    wzjm_密码 = GetQueryString("ix");
-    }
-    else{wzjm_密码 = prompt();
-    }
-    wzjm_输入="{{ content }}";
-    wzjm_解密();
-    document.write(wzjm_输入);
+let LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) { return decodeURI(tmp[2]); }
+    return "";
+}
+if(GetQueryString("ix")){
+wzjm_密码 = GetQueryString("ix");
+}
+else{wzjm_密码 = prompt();
+}
+wzjm_输入="{{ content }}";
+wzjm_解密();
+document.write(wzjm_输入);
 
 </script>
 </div>

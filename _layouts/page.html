@@ -2,63 +2,37 @@
 layout: default
 ---
 <style>
-    html,body {margin: 0;padding: 0;}
+html,body {margin: 0;padding: 0;}
 
-    @media (max-width: 730px) { /*小于730px*/
-        div.body {position: relative;top: 20px;width: 96%;margin: auto;}
-    }
+@media (max-width: 730px) { /*小于730px*/
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+}
 
-    @media (min-width: 730px) { /*大于730*/
-        div.body {position: relative;top: 20px;width: 80%;margin: auto;}
-    }
+@media (min-width: 730px) { /*大于730*/
+    div.body {position: relative;top: 20px;width: 80%;margin: auto;}
+}
 
-    @media (min-width: 950px) { /*大于950*/
-        div.body {position: relative;top: 20px;width: 65%;margin: auto;}
-    }
-
-    /*加载动画*/
-    .jiazaidonghua {margin: 100px auto;width: 50px;height: 60px;text-align: center;font-size: 10px;}
-    .jiazaidonghua>div {background-color: #ffffff;height: 100%;width: 6px;display: inline-block;-webkit-animation: stretchdelay 1.2s infinite ease-in-out;animation: stretchdelay 1.2s infinite ease-in-out;}
-    .jiazaidonghua .jzdhrect2 {-webkit-animation-delay: -1.1s;animation-delay: -1.1s;}
-    .jiazaidonghua .jzdhrect3 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
-    .jiazaidonghua .jzdhrect4 {-webkit-animation-delay: -0.9s;animation-delay: -0.9s;}
-    .jiazaidonghua .jzdhrect5 {-webkit-animation-delay: -0.8s;animation-delay: -0.8s;}
-    @-webkit-keyframes stretchdelay {0%,40%,100% {-webkit-transform: scaleY(0.4);}20% {-webkit-transform: scaleY(1.0);}}
-    @keyframes stretchdelay {0%,40%,100% {transform: scaleY(0.4);-webkit-transform: scaleY(0.4);}20% {transform: scaleY(1.0);-webkit-transform: scaleY(1.0);}}
-    .site-welcome {display: none;justify-content: center;align-items: center;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(116, 184, 229);z-index: 101;}
-    .site-welcome.active {display: flex;}
+@media (min-width: 950px) { /*大于950*/
+    div.body {position: relative;top: 20px;width: 65%;margin: auto;}
+}
 </style>
 
 </head>
 
 <body>
 
-    <!--加载动画-->
-    <div class="site-welcome active bukexuanzhong" id="siteWelcome">
-        <div class="jiazaidonghua">
-            <div class="jzdhrect1"></div>
-            <div class="jzdhrect2"></div>
-            <div class="jzdhrect3"></div>
-            <div class="jzdhrect4"></div>
-            <div class="jzdhrect5"></div>
-            <span style="color:#ffffff">加载中...</span>
-        </div>
-    </div>
+{% include toutu.html %}
 
-    {% include toutu.html %}
+<div class="body">
 
-    <div class="body">
+{{ content }}
 
-    {{ content }}
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
 
-    {% if page.pinglun %}{% include Valine.html %}{% endif %}
-    
-    {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
-    {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
-    </div>
-
-    <!--关闭加载动画--><script>var siteWelcome = document.getElementById('siteWelcome');siteWelcome.classList.remove('active');</script>
+</div>
 
 {% include nav.html %}
 

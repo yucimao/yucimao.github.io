@@ -2,161 +2,161 @@
 layout: default
 ---
 <style>
-    html,body {margin: 0;padding: 0;}
-    #right_anchor2 a{display:block;}
-    #right_anchor2 td{border:1px solid #ccc;}
+html,body {margin: 0;padding: 0;}
+#right_anchor2 a{display:block;}
+#right_anchor2 td{border:1px solid #ccc;}
 
-    #输入框 {text-align:center;vertical-align:middle;}
-    #输入框 input {
-        line-height: 36px;
-        font-size: 1.4em;
-        text-align: center;
-        padding: .5em .7em;
-        max-width: 30em;
-        width: 80%;
-        background: #F8F8F8;
-        border-style: solid;
-        border-width: medium;
-        border-color: #00a2ff;
-        border-radius: 20px;
-        outline: none;
-    }
-    #输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
+#输入框 {text-align:center;vertical-align:middle;}
+#输入框 input {
+    line-height: 36px;
+    font-size: 1.4em;
+    text-align: center;
+    padding: .5em .7em;
+    max-width: 30em;
+    width: 80%;
+    background: #F8F8F8;
+    border-style: solid;
+    border-width: medium;
+    border-color: #00a2ff;
+    border-radius: 20px;
+    outline: none;
+}
+#输入框 input:focus {box-shadow: 0 1px 0 1px #DDD inset, 0 2px 5px #00000033;border-color:#0095eb;}
 
-    .cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
-    .cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
-    .cj img {width: 130px;}
-    .tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 157px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 170px;left: -2px;margin-left: 0px;}
-    .cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
-    #back-top {display: none;}
-    footer {float: left;width: 100%;}
-    hr{width:100%;}
-    .hs{color:#404040;}
-    span.dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
+.cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
+.cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
+.cj img {width: 130px;}
+.tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 157px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 170px;left: -2px;margin-left: 0px;}
+.cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
+#back-top {display: none;}
+footer {float: left;width: 100%;}
+hr{width:100%;}
+.hs{color:#404040;}
+span.dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 
-    @media screen and (min-width: 768px) { /*电脑*/
-        .biaotib {text-align: center;position: relative;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 70%;margin: auto;}
-        #right_anchor2{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor2 table{width:100%;}
-    } /*电脑*/
+@media screen and (min-width: 768px) { /*电脑*/
+    .biaotib {text-align: center;position: relative;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 70%;margin: auto;}
+    #right_anchor2{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor2 table{width:100%;}
+} /*电脑*/
 
-    @media screen and (max-width: 768px) { /*手机*/
-        .biaotib {text-align: center;position: relative;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-        div.body {position: relative;top: 50px;width: 100%;margin: auto;}
-        #right_anchor2{position:relative;}#right_anchor2 table{width:60%;}
-        .cj {margin: 6px;padding: 6px;}
-    } /*手机*/
+@media screen and (max-width: 768px) { /*手机*/
+    .biaotib {text-align: center;position: relative;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 100%;margin: auto;}
+    #right_anchor2{position:relative;}#right_anchor2 table{width:60%;}
+    .cj {margin: 6px;padding: 6px;}
+} /*手机*/
 </style>
 
 </head>
 
 <body onload="document.getElementById('输入').focus()">
 
-    {% if page.toutu %}{% include toutu.html %}{% endif %}
+{% if page.toutu %}{% include toutu.html %}{% endif %}
 
-    <div class="body">
-    {% if page.toutu %}{% else %}
-    <div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% endif %}
-    <form id="输入框" autocomplete="off">
-    <input type="text" style="display:none" />
-    <input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
+<div class="body">
+{% if page.toutu %}{% else %}
+<div class="biaotib">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% endif %}
+<form id="输入框" autocomplete="off">
+<input type="text" style="display:none" />
+<input type="text" id="输入" placeholder="多个关键词用空格分隔" /></form>
 
-    <div id="right_anchor2" style="z-index:102;"></div>
+<div id="right_anchor2" style="z-index:102;"></div>
 
-    {{ content }}
+{{ content }}
 
-    <script>
-    let right="";
-    let dy="";
-    let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/i/cj/loading.jpg\" onerror=\"this.src='/i/cj/loading.jpg';this.onerror=null;\"/><b>加载更多</b><br/></div></a>";
-    let datb=new Array();
-    datb=datb.concat(data)
+<script>
+let right="";
+let dy="";
+let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/i/cj/loading.jpg\" onerror=\"this.src='/i/cj/loading.jpg';this.onerror=null;\"/><b>加载更多</b><br></div></a>";
+let datb=new Array();
+datb=datb.concat(data)
 $("#输入").keyup(function () {
-    dy="";
-    right="";
-    let 输入 = $("#输入").val().toLowerCase();
-    if(输入==""){
-        datb=new Array();
-        datb=datb.concat(data);
-    }else{
-        datb=new Array();
-        输入=输入.split(" ");
+dy="";
+right="";
+let 输入 = $("#输入").val().toLowerCase();
+if(输入==""){
+    datb=new Array();
+    datb=datb.concat(data);
+}else{
+    datb=new Array();
+    输入=输入.split(" ");
 
-        for(let i2=0;data.length>i2;i2++){
-            let 临时=data[i2].split("／");
-            if(临时[6]=="undefined"){
-                临时=临时[1];
-            }else{
-                临时=临时[1]+临时[6];
-            }
-            临时=临时.toLowerCase();
-            let 临时2=0;
-            for(let i=0;输入.length>i;i++){
-                if(data[i2].split("／")[0]!="hr"&&临时.indexOf(输入[i]) != -1){
-                }else{临时2=1;}
-            }
-            if(临时2==0){
-                datb[datb.length]=data[i2];
-            }
+    for(let i2=0;data.length>i2;i2++){
+        let 临时=data[i2].split("／");
+        if(临时[6]=="undefined"){
+            临时=临时[1];
+        }else{
+            临时=临时[1]+临时[6];
+        }
+        临时=临时.toLowerCase();
+        let 临时2=0;
+        for(let i=0;输入.length>i;i++){
+            if(data[i2].split("／")[0]!="hr"&&临时.indexOf(输入[i]) != -1){
+            }else{临时2=1;}
+        }
+        if(临时2==0){
+            datb[datb.length]=data[i2];
         }
     }
-    加载();
+}
+加载();
 });
 function 加载(){
-    let 次数=30;
-    for(let i=0;次数-i!=0&&datb.length!=0;i++){
-        let 临时=datb[0].split("／");
-        if(临时[0]=="hr"){
-            次数+=1;
-            dy += "<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
-            if(临时[2]){dy+="<p>"+临时[2]+"</p>";}
-            right += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
-        }else{
-            dy+="<div class=\"cj\">";
-            if(临时[4]=="u"){
-                dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
-                临时[1]=临时[1]+"<span class=\"dk\"></span>";
-            }
-            if(临时[4]=="o"){
-                dy += "<a onclick=\""+临时[5]+"\">";
-            }
-            if(isNaN(临时[0])){
-            dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\" onerror=\"this.src='/i/cj/1.jpg';this.onerror=null;\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";
-        } else {
-            dy += "<img src=\"{{ site.mq_d }}/i/cj/" + 临时[0] + ".jpg\" onerror=\"this.src='/i/cj/" + 临时[0] + ".jpg';this.onerror=null;\"/><b>" + 临时[1] + "</b><br/><span class=\"hs\">" + 临时[2] + "</span>";}
-            if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
-            if (临时[3]) {dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
-            dy += "</div>";
+let 次数=30;
+for(let i=0;次数-i!=0&&datb.length!=0;i++){
+    let 临时=datb[0].split("／");
+    if(临时[0]=="hr"){
+        次数+=1;
+        dy += "<hr><a name=\""+临时[1]+"\"></a><h3>"+临时[1]+"</h3>";
+        if(临时[2]){dy+="<p>"+临时[2]+"</p>";}
+        right += "<tr><td><a href=\"#" + 临时[1] + "\">" + 临时[1] + "</a></td></tr>";
+    }else{
+        dy+="<div class=\"cj\">";
+        if(临时[4]=="u"){
+            dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
+            临时[1]=临时[1]+"<span class=\"dk\"></span>";
         }
-        datb.splice(0, 1);
-    }
-
-    if (datb != "") {
-        document.getElementById("dy").innerHTML = dy + loading;
+        if(临时[4]=="o"){
+            dy += "<a onclick=\""+临时[5]+"\">";
+        }
+        if(isNaN(临时[0])){
+        dy += "<img referrerpolicy=\"no-referrer\" src=\"" + 临时[0] + "\" onerror=\"this.src='/i/cj/1.jpg';this.onerror=null;\"/><b>" + 临时[1] + "</b><br><span class=\"hs\">" + 临时[2] + "</span>";
     } else {
-        document.getElementById("dy").innerHTML = dy;
+        dy += "<img src=\"{{ site.mq_d }}/i/cj/" + 临时[0] + ".jpg\" onerror=\"this.src='/i/cj/" + 临时[0] + ".jpg';this.onerror=null;\"/><b>" + 临时[1] + "</b><br><span class=\"hs\">" + 临时[2] + "</span>";}
+        if(临时[4]=="u"||临时[4]=="o"){dy += "</a>";}
+        if (临时[3]) {dy += "<span class=\"tsxt hs\">" + 临时[3] + "</span>";}
+        dy += "</div>";
     }
-    document.getElementById("right_anchor2").innerHTML = "<table>"+right+"</table>";
+    datb.splice(0, 1);
+}
+
+if (datb != "") {
+    document.getElementById("dy").innerHTML = dy + loading;
+} else {
+    document.getElementById("dy").innerHTML = dy;
+}
+document.getElementById("right_anchor2").innerHTML = "<table>"+right+"</table>";
 };
 加载();
 
 {% if page.toutu %}
 var windowWidth = $(window).width();
-    if(windowWidth > 767){
-        $(document).ready(function() {
-    $("#right_anchor2").hide();
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('#right_anchor2').fadeIn();
-            } else {
-                $('#right_anchor2').fadeOut();
-            }
-        });
+if(windowWidth > 767){
+    $(document).ready(function() {
+$("#right_anchor2").hide();
+$(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#right_anchor2').fadeIn();
+        } else {
+            $('#right_anchor2').fadeOut();
+        }
     });
-    });
+});
+});
 }else{
-    $('#right_anchor2').fadeOut();
+$('#right_anchor2').fadeOut();
 }
 {% endif %}
 
