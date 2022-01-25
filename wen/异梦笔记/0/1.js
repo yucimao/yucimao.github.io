@@ -26,7 +26,7 @@ if(typeof(sjtk)!="undefined"){
     dy+="<button onclick='随_机()'>随机</button><div id='sjtk'></div>";
 }
 
-dy+="<textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
+dy+="<div id='dy2'></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
 document.getElementById("dy").innerHTML = dy;
 
 function 打乱(){
