@@ -100,7 +100,10 @@ function 编辑(){
         制=制[0]+": & Code /"+decodeURI(制[1].split("#")[0])+" & exit";
         复();
         window.location.href="pvocmd://";
-    } else {alert("编辑功能仅在本地有效。");}
+    } else {
+        // alert("编辑功能仅在本地有效。");
+        window.location.href="D:/MQ/博客/yucimao.github.io/wen/异梦笔记"+window.location.href.split(".com/wen/异梦笔记")[1];
+    }
 }
 
 window.onload = function () {
