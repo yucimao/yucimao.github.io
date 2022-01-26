@@ -1,8 +1,8 @@
 
 let dy="<meta name='viewport' content='width=device-width, initial-scale=1'>";
+let 临时;
 
 if(typeof(h1)!="undefined"){
-let 临时;
 dy+="<h1>"+h1+"</h1>"
 if(h1=="异梦笔记"){dy+="　<input type='text' id='输入' placeholder='搜索' onkeyup='确定()'/><div id='结果'></div>"}else{dy+=" <nav><a href='0.html'>总目录</a>";
 for(let i=0;nav.length>i;i++){
@@ -97,8 +97,30 @@ let 锁;function 解(){
 function 编辑(){
     if (window.location.href.indexOf("file:///") != -1){
         制=window.location.href.replace(/file:\/\/\//g, "").split(":/");
-        制=制[0]+": & Code /"+decodeURI(制[1])+" & exit";
+        制=制[0]+": & Code /"+decodeURI(制[1].split("#")[0])+" & exit";
         复();
         window.location.href="pvocmd://";
     } else {alert("编辑功能仅在本地有效。");}
+}
+
+window.onload = function () {
+    if(document.getElementById("a")){
+        临时=document.getElementById("a").innerHTML;
+        临时=临时.split("〈");
+        dy=临时[0];
+        for(let i=1;临时.length>i;i++){
+            let 临时2=临时[i].split("〉");
+            if (临时2[0].indexOf("|") != -1){
+                let 临时3=临时2[0].split("|");
+                if(临时3[0]=="解锁"){dy+="<span id='"+i+"' onclick=\"解(锁='"+i+"／"+临时3[1]+"')\" class='zhushi'></span>";}
+                else if(临时3[0]=="提示"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+临时3[2]+"</span></div>";}
+                else if(临时3[0]=="复制"){dy+="<a onclick=\"复(制='"+临时3[2]+"')\">"+临时3[1]+"</a>";}
+                else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}
+            }else{
+                dy+="<a href='"+临时2[0]+".html'>"+临时2[0]+"</a>";
+            }
+            dy+=临时2[1];
+        }
+        document.getElementById("a").innerHTML = dy + "<br><br><br><br><br><br><br><br><br><br>";
+    }
 }
