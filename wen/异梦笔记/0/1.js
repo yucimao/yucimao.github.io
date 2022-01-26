@@ -101,8 +101,9 @@ function 编辑(){
         复();
         window.location.href="pvocmd://";
     } else {
-        // alert("编辑功能仅在本地有效。");
-        window.location.href="D:/MQ/博客/yucimao.github.io/wen/"+window.location.href.split(".com/wen/")[1]+".html";
+        alert("编辑功能仅在本地有效。");
+        制="D:/MQ/博客/yucimao.github.io/wen/"+window.location.href.split(".com/wen/")[1]+".html";
+        复();
     }
 }
 
