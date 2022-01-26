@@ -102,7 +102,7 @@ function 编辑(){
         window.location.href="pvocmd://";
     } else {
         alert("编辑功能仅在本地有效。");
-        制="D:/MQ/博客/yucimao.github.io/wen/"+window.location.href.split(".com/wen/")[1]+".html";
+        制="D:/MQ/博客/yucimao.github.io/wen/"+decodeURI(decodeURI(window.location.href.split(".com/wen/")[1]));
         复();
     }
 }
