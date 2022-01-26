@@ -102,7 +102,7 @@ function 编辑(){
         window.location.href="pvocmd://";
     } else {
         // alert("编辑功能仅在本地有效。");
-        window.location.href="D:/MQ/博客/yucimao.github.io/wen/异梦笔记"+window.location.href.split(".com/wen/异梦笔记")[1];
+        window.location.href="D:/MQ/博客/yucimao.github.io/wen/异梦笔记"+decodeURI(window.location.href).split(".com/wen/异梦笔记")[1];
     }
 }
 
