@@ -59,6 +59,5 @@ h3 {font-size: 24px;}
 h4 {font-size: 20px;}
 h5 {font-size: 16px;}
 h6 {font-size: 13px;}
-h1 small{font-weight: normal;font-size:0.7em;}
 h2:before,h3:before{content:"# ";color:var(--huise-color);}
 h4:before{content:"“ ";color:var(--huise-color);}h4:after{content:" ”";color:var(--huise-color);}
