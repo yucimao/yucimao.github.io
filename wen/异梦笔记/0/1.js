@@ -23,7 +23,7 @@ document.title = 临时;
 }
 
 if(typeof(sjtk)!="undefined"){
-    dy+="<button onclick='随_机()'>随机</button><div id='sjtk'></div>";
+    dy+="<button onclick='随_机()'>随机</button> <a onclick='随_机_全部显示()'>全部显示</a><div id='sjtk'></div>";
 }
 
 dy+="<div id='dy2'></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
@@ -54,10 +54,17 @@ function 随_机(){
         次数+=1;
     }
 }
+function 随_机_全部显示(){
+    次数="";
+    for(let i=0;sjtk.length>i;i++){
+        次数+="<br><b><a onclick=\"复(制='"+sjtk[i]+"')\">"+sjtk[i]+"（删除码）</a></b>"+"<iframe src='1/"+sjtk[i]+".html' height=100% width=100%></iframe><br>";
+    }
+    document.getElementById("sjtk").innerHTML = 次数;
+}
 
 let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}
 let 客;function 博(){window.location.href="https://limaoqiu.com/"+客;}
-function 删除码(){复(制="&quot;"+sjtk[次数-1]+"&quot;");}
+function 删除码(){复(制="\""+sjtk[次数-1]+"\"");}
 
 let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let 锁;function 解(){

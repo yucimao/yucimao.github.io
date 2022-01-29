@@ -12,7 +12,7 @@ jquery: https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
 nav_color: 666
 nav_img: blog.jpg
 nav_qbt_left: 35%
-nav_drop: <a href="/wangzhi">网址收藏</a><a href="/liuyan" target="_blank">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div>
+nav_drop: <a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div>
 
 plugins:
   - jekyll-redirect-from
