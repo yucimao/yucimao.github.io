@@ -51,3 +51,14 @@ blockquote{color:#808080;border-left:.4em solid #c0c0c0;padding:0.5em 0.8em;marg
 blockquote{color:#808080;border-left:.4em solid #c0c0c0;padding:0 0.3em;margin:0.5em;}
 .jindiannao{display:none;}
 }
+
+/*测试*/
+h1 {font-size: 30px;}
+h2 {font-size: 28px;}
+h3 {font-size: 24px;}
+h4 {font-size: 20px;}
+h5 {font-size: 16px;}
+h6 {font-size: 13px;}
+h1 small{font-weight: normal;font-size:0.7em;}
+h2:before,h3:before{content:"# ";color:var(--huise-color);}
+h4:before{content:"“ ";color:var(--huise-color);}h4:after{content:" ”";color:var(--huise-color);}
