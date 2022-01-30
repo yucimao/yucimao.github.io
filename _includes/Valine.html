@@ -16,6 +16,9 @@
         background-image: url('/img/background/pinglun/a1.png'),url('/img/background/pinglun/a2.png');
         background-repeat:no-repeat,no-repeat;
         background-position:bottom left,bottom right;}
+    .vemoji{width:auto;height:auto;}
+    .vsys,.markdown{display:none;}
+    .vcard a{color:var(--a-color);}
 </style>
 <div id="v_pl_s"></div>
 <div id="vcomments" style="width:90%;"></div>
@@ -46,6 +49,7 @@
         Array: ['nick'],
         avatar: 'mp',
         visitor: true,
+        placeholder: "说点啥？",
 
         emojiCDN: '{{ site.mq }}/img/i/em/',
         emojiMaps: {
