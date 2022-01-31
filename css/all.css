@@ -7,7 +7,15 @@
 body{background-color:#ffffff;font-family:Helvetica,Arial,"Microsoft YaHei",sans-serif;line-height:1.8;font-size:16px;color:var(--body-color);overflow-x:hidden;}
 p{margin:30px 0;}
 i{font-style:normal;}
-h1,h2,h3,h4,h5,h6{line-height:1.1;font-weight:800;cursor:default;}h4{font-size:18px;}
+h1,h2,h3,h4,h5,h6{line-height:1.1;font-weight:800;cursor:default;}
+h1 {font-size: 30px;}
+h2 {font-size: 28px;}
+h3 {font-size: 24px;}
+h4 {font-size: 20px;}
+h5 {font-size: 16px;}
+h6 {font-size: 13px;}
+h2:before,h3:before{content:"# ";color:var(--huise-color);}
+h4:before{content:"“ ";color:var(--huise-color);}h4:after{content:" ”";color:var(--huise-color);}
 hr{height:1px;border:none;border-top:1px solid #ddd;margin:15px 0;}
 hr.hr1 {border: 0;height: 1px;background: #333;background-image: linear-gradient(to right, #ff8381,#d4ff8b,#a1b2ff);}
 hr.hr2 {border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
@@ -52,12 +60,3 @@ blockquote{color:#808080;border-left:.4em solid #c0c0c0;padding:0 0.3em;margin:0
 .jindiannao{display:none;}
 }
 
-/*测试*/
-h1 {font-size: 30px;}
-h2 {font-size: 28px;}
-h3 {font-size: 24px;}
-h4 {font-size: 20px;}
-h5 {font-size: 16px;}
-h6 {font-size: 13px;}
-h2:before,h3:before{content:"# ";color:var(--huise-color);}
-h4:before{content:"“ ";color:var(--huise-color);}h4:after{content:" ”";color:var(--huise-color);}
