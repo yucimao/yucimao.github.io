@@ -14,17 +14,6 @@ nav_url: <a href="/youxiji">游戏机</a>
 <br>
 <div id="dy"></div>
 <script>
-    let dn = "/5/rili/yl_nl/dn.json";
-    let GetJson = $.ajax({
-        url: dn,//json文件位置
-        type: "GET",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-        }
-    });
-    dn = GetJson.responseText;
-
     let 年 = new Date().getFullYear();
     let 今天 = 年 + "／" + new Date().getMonth() + "／" + new Date().getDate();
     let 记录 = "0";
@@ -39,7 +28,7 @@ nav_url: <a href="/youxiji">游戏机</a>
     } else {
         记录 = 记录.split("／");
 
-        if (记录[0] < 2021 || 年 > dn || 年 < 记录[0]) { //作弊
+        if (记录[0] < 2021 || 年 < 记录[0]) { //作弊
             localStorage.removeItem("猫球讲故事_五行山下");
             dy = "孙悟空试着耍小聪明逃脱五行山，却没能成功，这五百年还要重新算起。<br><br><button onclick=\"开始游戏()\">重新游戏</button>";
         } else {

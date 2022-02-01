@@ -1,6 +1,7 @@
 
 let dy="<meta name='viewport' content='width=device-width, initial-scale=1'>";
 let 临时;
+let 博客="https://limaoqiu.com/";
 
 if(typeof(h1)!="undefined"){
 dy+="<h1>"+h1+"</h1>"
@@ -22,49 +23,61 @@ dy+="</div><div id='back-top'><a href='#top'></a></div>";
 document.title = 临时;
 }
 
-if(typeof(sjtk)!="undefined"){
-    dy+="<button onclick='随_机()'>随机</button> <a onclick='随_机_全部显示()'>全部显示</a><div id='sjtk'></div>";
-}
-
+if(typeof(sjtk)!="undefined"){dy+="<button onclick='sjtk_随机()'>随机</button> <a onclick='sjtk_全部显示()'>全部显示</a><div id='sjtk'></div>";}
+if(typeof(qm)!="undefined"){dy+="<button onclick='打(乱=qm);qm_随机()'>随机</button><input type='text' id='qm_输入' placeholder='抽取次数'/><br><br><div id='qm'></div>";}
 dy+="<div id='dy2'></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
 document.getElementById("dy").innerHTML = dy;
 
-function 打乱(){
-    let _arr = sjtk.slice();
-    for (let i = 0; i < _arr.length; i++) {
-    let j = getRandomInt(0, i)
-    let t = _arr[i]
-    _arr[i] = _arr[j]
-    _arr[j] = t
-    }
-    function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-    }
-    sjtk=_arr;
-}
+
+
+let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}
+let 客;function 博(){window.location.href=博客+客;}
+let 乱;function 打(){let _乱 = 乱.slice();for (let i = 0; i < _乱.length; i++) {let j = getRandomInt(0, i);let t = _乱[i];_乱[i] = _乱[j];_乱[j] = t;}function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1) + min);}乱=_乱;}
+
+
 
 let 次数=0;
-function 随_机(){
-    if(次数==0){打乱();}
-    if(sjtk.length==次数){
+function sjtk_随机(){
+    if(次数==0){打(乱=sjtk);}
+    if(乱.length==次数){
         document.getElementById("sjtk").innerHTML = "题库已空";
         次数=0;
     }else{
-        document.getElementById("sjtk").innerHTML = "<a onclick='删除码()'>删除码</a><br><iframe src='1/"+sjtk[次数]+".html' height=100% width=100%></iframe>";
+        document.getElementById("sjtk").innerHTML = "<a onclick='删除码()'>删除码</a><br><iframe src='1/"+乱[次数]+".html' height=100% width=100%></iframe>";
         次数+=1;
     }
 }
-function 随_机_全部显示(){
+function sjtk_全部显示(){
     次数="";
     for(let i=0;sjtk.length>i;i++){
         次数+="<br><b><a onclick=\"复(制='"+sjtk[i]+"')\">"+sjtk[i]+"（删除码）</a></b>"+"<iframe src='1/"+sjtk[i]+".html' height=100% width=100%></iframe><br>";
     }
     document.getElementById("sjtk").innerHTML = 次数;
 }
-
-let 制;function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}
-let 客;function 博(){window.location.href="https://limaoqiu.com/"+客;}
 function 删除码(){复(制="\""+sjtk[次数-1]+"\"");}
+
+if(typeof(qm)!="undefined"){乱=qm;qm_随机();}
+function qm_随机(){
+    let qm_输入 = document.getElementById("qm_输入").value;
+    if(qm_输入>0){
+        dy="<div class='qm'>";
+        for(let i=0;qm_输入>i&&乱.length>i;i++){
+            if(乱[i][1]!=""||乱[i][2]!=""){
+                dy+="<p><span class='提'>"+乱[i][0]+"<span class='示'><small>说明：</small>"+乱[i][1]+"<br><br><small>使用情况：</small>"+乱[i][2]+"</span></span></p>";
+            }else{
+                dy+="<p>"+乱[i][0]+"</p>";
+            }
+        }
+        dy+="</div>";
+    }else{
+        dy="<table><tr><td><b>名字</b></td><td><b>说明</b></td><td><b>使用情况</b></td><tr>";
+        for(let i=0;乱.length>i;i++){
+            dy+="<tr><td>"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";
+        }
+        dy+="</table>";
+    }
+    document.getElementById("qm").innerHTML = dy;
+}
 
 let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let 锁;function 解(){
@@ -114,9 +127,14 @@ function 编辑(){
     }
 }
 
+
+
+
 window.onload = function () {
-    if(document.getElementById("a")){
-        临时=document.getElementById("a").innerHTML;
+    乱="a";
+    for(let i=0;2>i;i++){
+        if(document.getElementById(乱)){
+        临时=document.getElementById(乱).innerHTML;
         临时=临时.split("〈");
         dy=临时[0];
         for(let i=1;临时.length>i;i++){
@@ -126,12 +144,24 @@ window.onload = function () {
                 if(临时3[0]=="解锁"){dy+="<span id='"+i+"' onclick=\"解(锁='"+i+"／"+临时3[1]+"')\" class='zhushi'></span>";}
                 else if(临时3[0]=="提示"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+临时3[2]+"</span></div>";}
                 else if(临时3[0]=="复制"){dy+="<a onclick=\"复(制='"+临时3[2]+"')\">"+临时3[1]+"</a>";}
+                else if(临时3[0]=="图片"){dy+="<a href='2/"+临时3[1]+".jpg' target='_blank'><img src='2/"+临时3[1]+".jpg' width="+临时3[2]+"</img></a>";}
+                else if(临时3[0]=="随机题库"){
+                    客="sjtk?t="+临时3[2];
+                    if(临时3[3]){客+="&c="+临时3[3];}
+                    if(临时3[4]){客+="&f="+临时3[4];}
+                    if(临时3[5]){客+="&m="+临时3[5];}
+                    dy+="<a onclick=\"博(客='"+客+"')\">"+临时3[1]+"</a>";
+                }
                 else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}
             }else{
-                dy+="<a href='"+临时2[0]+".html'>"+临时2[0]+"</a>";
+                if(临时2[0]=="博客"){dy+=博客;}
+                else{dy+="<a href='"+临时2[0]+".html'>"+临时2[0]+"</a>";}
             }
             dy+=临时2[1];
         }
-        document.getElementById("a").innerHTML = dy + "<br><br><br><br><br><br><br><br><br><br>";
+        if(乱=="a"){dy+="<br><br><br><br><br>";}
+        document.getElementById(乱).innerHTML = dy;
+        }
+    乱="dy";
     }
 }
