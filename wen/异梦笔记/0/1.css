@@ -14,6 +14,19 @@ h2 small,h3 small,h4 small,h5 small,h6 small{color:var(--huise-color);}
 #a br.a:before{content:"";}
 span.a{color:#aaa;}
 
+.灰,.白,.绿,.蓝,.紫,.黄,.橙,.红,.黑,.靛,.青{color:#ffffff;padding:4px;border: 1px solid #000000;}
+.灰{background-color:#9896A4;}
+.白{background-color:#ffffff;color:#000000;}
+.绿{background-color:#77C94B;}
+.蓝{background-color:#4D80BF;}
+.紫{background-color:#7B5BA1;}
+.黄{background-color:#FAE220;}
+.橙{background-color:#E66C00;}
+.红{background-color:#DF402A;}
+.黑{background-color:#000000;}
+.靛{background-color:#153FA0;}
+.青{background-color:#46ACC8;}
+
 @media screen and (max-width: 767px){
     body{width: 90%;}
     .index{display:none;}
