@@ -12,11 +12,11 @@ for(let i=0;nav.length>i;i++){
     dy+=" / <a href='"+nav[i]+".html'>"+临时+"</a>";
 }}
 dy+="</nav><hr>";
-dy+="<div class='index'><a onclick='编辑()'>编辑</a><br><br>";
+dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a onclick='javascript:location.reload();'>刷新</a>　<a href='#top'>top</a><br></div><br>";
 for(let i=0;index.length>i;i++){
     if(index[i]=="br"){dy+="<br>";}else{dy+="<a href='#"+index[i]+"'>"+index[i]+"</a><br>";}
 }
-dy+="</div><div id='back-top'><a href='#top'></a></div>";
+dy+="<br></div>";
 
 临时=h1.replace(/<small>/g, "");
 临时=临时.replace(/<\/small>/g, "");
@@ -56,23 +56,26 @@ function sjtk_全部显示(){
 }
 function 删除码(){复(制="\""+sjtk[次数-1]+"\"");}
 
-if(typeof(qm)!="undefined"){乱=qm;qm_随机();}
+if(typeof(qm)!="undefined"){乱=qm;临时="qm不随机";qm_随机();}
 function qm_随机(){
     let qm_输入 = document.getElementById("qm_输入").value;
     if(qm_输入>0){
         dy="<div class='qm'>";
         for(let i=0;qm_输入>i&&乱.length>i;i++){
-            if(乱[i][1]!=""||乱[i][2]!=""){
-                dy+="<p><span class='提'>"+乱[i][0]+"<span class='示'><small>说明：</small>"+乱[i][1]+"<br><br><small>使用情况：</small>"+乱[i][2]+"</span></span></p>";
-            }else{
-                dy+="<p>"+乱[i][0]+"</p>";
+            if(乱[i][0]!="hr"){
+                if(乱[i][1]!=""||乱[i][2]!=""){//<a onclick="复(制='')"></a>
+                    dy+="<p onclick=\"复(制='"+乱[i][0]+"')\"><span class='提'>"+乱[i][0]+"<span class='示'><small>说明：</small>"+乱[i][1]+"<br><br><small>使用情况：</small>"+乱[i][2]+"</span></span></p>";
+                }else{
+                    dy+="<p onclick=\"复(制='"+乱[i][0]+"')\">"+乱[i][0]+"</p>";
+                }
             }
         }
         dy+="</div>";
     }else{
-        dy="<table><tr><td><b>名字</b></td><td><b>说明</b></td><td><b>使用情况</b></td><tr>";
+        dy="<table><tr><td style='min-width:3em'><b>条目</b></td><td style='min-width:10em'><b>说明</b></td><td style='min-width:10em'><b>使用情况</b></td></tr>";
         for(let i=0;乱.length>i;i++){
-            dy+="<tr><td>"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";
+            if(临时=="qm不随机"&&乱[i][0]=="hr"){dy+="<tr><td colspan='3'><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}
+            if(乱[i][0]!="hr"){dy+="<tr><td onclick=\"复(制='"+乱[i][0]+"')\">"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";}
         }
         dy+="</table>";
     }
@@ -144,12 +147,12 @@ window.onload = function () {
                 if(临时3[0]=="解锁"){dy+="<span id='"+i+"' onclick=\"解(锁='"+i+"／"+临时3[1]+"')\" class='zhushi'></span>";}
                 else if(临时3[0]=="提示"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+临时3[2]+"</span></div>";}
                 else if(临时3[0]=="复制"){dy+="<a onclick=\"复(制='"+临时3[2]+"')\">"+临时3[1]+"</a>";}
-                else if(临时3[0]=="图片"){dy+="<a href='2/"+临时3[1]+".jpg' target='_blank'><img src='2/"+临时3[1]+".jpg' width="+临时3[2]+"</img></a>";}
+                else if(临时3[0]=="图片"){dy+="<a href='2/"+临时3[1]+".jpg' target='_blank'><img src='2/"+临时3[1]+".jpg' width="+临时3[2]+" "+临时3[3]+"></a>";}
                 else if(临时3[0]=="随机题库"){
                     客="sjtk?t="+临时3[2];
                     if(临时3[3]){客+="&c="+临时3[3];}
                     if(临时3[4]){客+="&f="+临时3[4];}
-                    if(临时3[5]){客+="&m="+临时3[5];}
+                    if(临时3[5]){客+="&m="+临时3[5];}else{客+="&m="+localStorage.getItem("sjtk_异梦笔记");}
                     dy+="<a onclick=\"博(客='"+客+"')\">"+临时3[1]+"</a>";
                 }
                 else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}
@@ -159,7 +162,15 @@ window.onload = function () {
             }
             dy+=临时2[1];
         }
-        if(乱=="a"){dy+="<br><br><br><br><br>";}
+        if(乱=="a"){dy+="<br class='a'><br class='a'><br class='a'><br class='a'><br class='a'>";}
+        dy=dy.replace(/\n/g, "");
+        dy=dy.replace(/<br><br><br><br><br>/g, "<br><br class='a'><br class='a'><br class='a'><br class='a'>");
+        dy=dy.replace(/<br><br><br><br>/g, "<br><br class='a'><br class='a'><br class='a'>");
+        dy=dy.replace(/<br><br><br>/g, "<br><br class='a'><br class='a'>");
+        dy=dy.replace(/<br><br>/g, "<br><br class='a'>");
+        dy=dy.replace(/<\/div><br>/g, "</div><br class='a'>");
+        dy=dy.replace(/ \| /g, "<span class=\"a\"> | </span>");
+        dy=dy.replace(/ &gt; /g, "<span class=\"a\"> > </span>");
         document.getElementById(乱).innerHTML = dy;
         }
     乱="dy";

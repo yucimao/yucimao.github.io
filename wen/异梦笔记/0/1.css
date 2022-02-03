@@ -4,15 +4,18 @@ body{position: relative;width: 60%;top: 1em;margin: auto;}
 .index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}
 h1,h2,h3,h4,h5,h6,nav{display:inline;line-height:1.8;}
 h1 small{font-weight: normal;font-size:0.7em;}
+h2 small,h3 small,h4 small,h5 small,h6 small{color:var(--huise-color);}
 .提{position: relative;display: inline-block;text-decoration: underline dotted;}.提 .示 {border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.提:hover .示 {transform:translate(0,20px);transition:all 0.5s;visibility: visible;}
 .zhushi[onclick^="解(锁"]{cursor:pointer;}
-[onclick^="编辑()"]{cursor:pointer;color:#8c8b8b;}
+.index_top a{cursor:pointer;color:var(--huise-color);}
 .qm p{display:inline;padding:10px;white-space: nowrap;}
+
+#a br:before{content:" ↩";color:#bbb;}#a br{content: "&nbsp;" !important;}#a br::after {content: "\000A";white-space: pre;}
+#a br.a:before{content:"";}
+span.a{color:#aaa;}
 
 @media screen and (max-width: 767px){
     body{width: 90%;}
     .index{display:none;}
-}
 
-#back-top{position: fixed;left: 85%;bottom: 10%;}
-#back-top a{width: 70px;height: 70px;display: block;background: url(back-top.png) no-repeat center center;border-radius: 20px;-webkit-transition: 2s;-moz-transition: 2s;transition: 2s;}
+}
