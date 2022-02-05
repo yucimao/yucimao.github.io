@@ -7,11 +7,16 @@ if(typeof(h1)!="undefined"){
 dy+="<h1>"+h1+"</h1>"
 if(h1=="异梦笔记"){dy+="　<input type='text' id='输入' placeholder='搜索' onkeyup='确定()'/><div id='结果'></div>"}else{dy+=" <nav><a href='0.html'>总目录</a>";
 for(let i=0;nav.length>i;i++){
+    dy+=" / <a href='";
+    if (nav[i].indexOf("#") != -1){
+        临时=nav[i].split("#");
+        dy+=临时[0]+".html#"+临时[1];
+        }else{dy+=nav[i]+".html";}
     临时=nav[i].split("／");
-    临时=临时[临时.length-1];
-    dy+=" / <a href='"+nav[i]+".html'>"+临时+"</a>";
+    临时=临时[临时.length-1].replace(/#/g, "-");
+    dy+="'>"+临时+"</a>";
 }}
-dy+="</nav><hr>";
+dy+="</nav><hr class='hr0'>";
 dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a onclick='javascript:location.reload();'>刷新</a>　<a href='#top'>top</a><br></div><br>";
 for(let i=0;index.length>i;i++){
     if(index[i]=="br"){dy+="<br>";}else{dy+="<a href='#"+index[i]+"'>"+index[i]+"</a><br>";}
@@ -62,7 +67,7 @@ function qm_随机(){
     if(qm_输入>0){
         dy="<div class='qm'>";
         for(let i=0;qm_输入>i&&乱.length>i;i++){
-            if(乱[i][0]!="hr"){
+            if(乱[i][0]!="hr" && 乱[i][0]+乱[i][1]+乱[i][2]!=""){
                 if(乱[i][1]!=""||乱[i][2]!=""){//<a onclick="复(制='')"></a>
                     dy+="<p onclick=\"复(制='"+乱[i][0]+"')\"><span class='提'>"+乱[i][0]+"<span class='示'><small>说明：</small>"+乱[i][1]+"<br><br><small>使用情况：</small>"+乱[i][2]+"</span></span></p>";
                 }else{
@@ -75,11 +80,13 @@ function qm_随机(){
         dy="<table><tr><td style='min-width:3em'><b>条目</b></td><td style='min-width:10em'><b>说明</b></td><td style='min-width:10em'><b>使用情况</b></td></tr>";
         for(let i=0;乱.length>i;i++){
             if(临时=="qm不随机"&&乱[i][0]=="hr"){dy+="<tr><td colspan='3'><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}
-            if(乱[i][0]!="hr"){dy+="<tr><td onclick=\"复(制='"+乱[i][0]+"')\">"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";}
+            if(乱[i][0]!="hr" && 乱[i][0]+乱[i][1]+乱[i][2]!=""){dy+="<tr><td onclick=\"复(制='"+乱[i][0]+"')\">"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";}
         }
         dy+="</table>";
     }
     document.getElementById("qm").innerHTML = dy;
+    更新();
+    document.getElementById("qm_输入").value=qm_输入;
 }
 
 let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -131,9 +138,7 @@ function 编辑(){
 }
 
 
-
-
-window.onload = function () {
+function 更新(){
     乱="a";
     for(let i=0;2>i;i++){
         if(document.getElementById(乱)){
@@ -155,6 +160,7 @@ window.onload = function () {
                     if(临时3[5]){客+="&m="+临时3[5];}else{客+="&m="+localStorage.getItem("sjtk_异梦笔记");}
                     dy+="<a onclick=\"博(客='"+客+"')\">"+临时3[1]+"</a>";
                 }
+                else if(临时3[0]=="t"){if(typeof(ts)!="undefined"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+ts[临时3[1]]+"</span></div>";}else{dy+=临时3[1];}}
                 else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}
             }else{
                 if(临时2[0]=="博客"){dy+=博客;}
@@ -171,8 +177,15 @@ window.onload = function () {
         dy=dy.replace(/<\/div><br>/g, "</div><br class='a'>");
         dy=dy.replace(/ \| /g, "<span class=\"a\"> | </span>");
         dy=dy.replace(/ &gt; /g, "<span class=\"a\"> > </span>");
+        dy=dy.replace(/<hr>/g, "<hr class='hr1'>");
         document.getElementById(乱).innerHTML = dy;
         }
     乱="dy";
     }
+}
+
+
+window.onload = function () {
+    if(window.location.href.indexOf("#") != -1){window.location.href=window.location.href;}
+    更新();
 }
