@@ -1,11 +1,9 @@
 ---
 layout: book
-title: 夏夜空想
-nav_text: 夏夜空想
+title: 旧梦
+nav_text: 旧梦
 nav_url: <a href="/yimeng">异梦系列</a>
-permalink: wen/xiayekongxiang
-redirect_from:
- - maoxia
+permalink: wen/jiumeng2
 wen_auth: 李猫球
 wen_sta: 连载中
 book_item: 夏夜空想
@@ -16,17 +14,33 @@ book_item: 夏夜空想
 <div id="contents"></div>
 <script>
 let data = [
-"3647476／无题",
-"4278045／无题",
+"510326／皮沃与矿工小镇",
+"514706／皮沃与暗月马戏团",
+"514721／Stocking",
+"514729／1 byte",
+"514745／创世纪 亚伟",
+"514746／物品ID：54942885.12",
+"514748／主角游戏 出发了",
+"2263206／纸盒小镇 寻找友人的黑猫",
+"DefxFsfwEoNiJcNoIyM4JcNiEcNoEKM4IcNiFoNuJcM5EI==",
+"514750／列车上的自杀",
+"514751／超级101",
+"2263341／第一场梦",
 ];
 
 let 本页书名="夏夜空想";//目录
-let wzjm_输入 = "DzQ0EzI3EcNiJcNoIyM4JcNiEcNoEKM4IcNiFoNuJcM5ELhgJLDgFsSgFLSgJMQgIfDgFhQgJLDgFsSgFLh0DeV4DsI1AMNXAMAsALbXAMM2AMG1ALboAMM4AMiXALf1Da==";
+let wzjm_输入 = "";
 let wzjm_密码 = "";
 if(localStorage.getItem(本页书名+"_解锁码")){
 wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
-wzjm_解密();
-data=wzjm_输入.split("【／】");
+
+for(let i=0;data.length>i;i++){
+    if (data[i].indexOf("／") != -1){}else{
+        wzjm_输入=data[i];
+        wzjm_解密();
+        data[i]=wzjm_输入;
+    }
+}
 }
 
 function 解锁码确定(){
