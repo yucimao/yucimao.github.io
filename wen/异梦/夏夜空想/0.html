@@ -13,7 +13,8 @@ book_item: 夏夜空想
 <button onclick="解锁码确定()">确定</button> 
 <div id="contents"></div>
 <script>
-let data = [
+let data=[];
+let 目录 = [
 "510326／皮沃与矿工小镇",
 "514706／皮沃与暗月马戏团",
 "514721／Stocking",
@@ -33,14 +34,18 @@ let wzjm_输入 = "";
 let wzjm_密码 = "";
 if(localStorage.getItem(本页书名+"_解锁码")){
 wzjm_密码 = localStorage.getItem(本页书名+"_解锁码");
-
-for(let i=0;data.length>i;i++){
-    if (data[i].indexOf("／") != -1){}else{
-        wzjm_输入=data[i];
-        wzjm_解密();
-        data[i]=wzjm_输入;
-    }
 }
+
+for(let i=0;目录.length>i;i++){
+    if (目录[i].indexOf("／") != -1){
+        data[data.length]=目录[i];
+    }else{
+        wzjm_输入=目录[i];
+        wzjm_解密();
+        if (wzjm_输入.indexOf("／") != -1){
+            data[data.length]=wzjm_输入;
+        }
+    }
 }
 
 function 解锁码确定(){
