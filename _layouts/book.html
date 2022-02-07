@@ -6,22 +6,16 @@ layout: default
 #contents span:hover{background: #eee;}
 #输入{width:15%;}
 
-#right_anchor{z-index:2001;}
 @media screen and (min-width: 768px) {/*电脑*/
     .qbt {text-align: center;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
     div.body {position: relative;top: 80px;width: 65%;margin: auto;}
     #contents span{width:30%;text-align:center;}
-    #right_anchor{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}
-    #right_anchor table{width:100%;}
-    #right_anchor a{display:block;}
 }/*电脑*/
 
 @media screen and (max-width: 767px) {/*手机*/
     .qbt {text-align: center;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
     div.body {position: relative;top: 80px;width: 96%;margin: auto;}
     #contents span{width:96%;}
-    #right_anchor span{background-color:#fff; display:inline-block; border-top:2px solid #ddd;padding: 10px;width:96%;}
-    #right_anchor span:hover{background: #eee;}
 }/*手机*/
 
 div.auth {text-align: center;}
@@ -35,7 +29,6 @@ span.auth {margin: 0px 20px 0px 20px;}
 <hr>
 <div class="auth"><a href="#前往底部" name="返回顶部"><span class="auth">前往底部</span></a><span id="上次看到" class="auth"></span></div>
 <br>
-<div id="right_anchor"></div>
 
 {{ content }}
 
@@ -79,18 +72,6 @@ for (let i = 0; data.length > i; i++) {
 }
 document.getElementById("contents").innerHTML = 结果;
 }).keyup();
-
-let anchor = document.querySelectorAll('a');
-    if (anchor[0]) {
-        let anchor_dy = "<table>";
-        for (let i = 0; i < anchor.length; i++) {
-            if (anchor[i]["name"] && anchor[i]["name"]!=="前往底部" && anchor[i]["name"]!=="返回顶部") {
-                anchor_dy += "<tr><td><a href=\"#" + anchor[i]["name"] + "\">" + anchor[i]["name"] + "</a></td></tr>";
-            }
-        }
-        anchor_dy += "</table>";
-        document.getElementById("right_anchor").innerHTML = anchor_dy;
-    }
 </script>
 
 {% include nav.html %}
