@@ -36,6 +36,15 @@ span.auth {margin: 0px 20px 0px 20px;}
 </style>
 
 {{ content }}
+
+let 临时;
+let 替换;
+
+for(let i=0;替换表.length>i;i++){
+    临时=替换表[i].split("／");
+    替换 = new RegExp('［'+临时[0]+'］', "g");
+    正文 = 正文.replace(替换, '［'+替换表[i]+'］');
+}
     
 正文 = 正文.split("［");
 let dy = 正文[0];
