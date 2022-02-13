@@ -18,11 +18,11 @@ for(let i=0;nav.length>i;i++){
     dy+="'>"+临时+"</a>";
 }}
 dy+="</nav><hr class='hr0'>";
-dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a onclick='javascript:location.reload();'>刷新</a>　<a href='#top'>top</a><br></div><br>";
+dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a onclick='javascript:location.reload();'>刷新</a>　<a href='#top'>top</a><br></div><br><div id='index_dy'>";
 for(let i=0;index.length>i;i++){
     if(index[i]=="br"){dy+="<br>";}else{dy+="<a href='#"+index[i]+"'>"+index[i]+"</a><br>";}
 }
-dy+="<br></div>";
+dy+="</div><br></div>";
 
 临时=h1.replace(/<small>/g, "");
 临时=临时.replace(/<\/small>/g, "");
@@ -165,6 +165,7 @@ function 更新(){
         临时=document.getElementById(乱).innerHTML;
         临时=临时.split("〈");
         dy=临时[0];
+        let index_dy="";
         for(let i=1;临时.length>i;i++){
             let 临时2=临时[i].split("〉");
             if (临时2[0].indexOf("|") != -1){
@@ -184,13 +185,17 @@ function 更新(){
                     dy+="<a onclick=\"博(客='"+客+"')\">"+临时3[1]+"</a>";
                 }
                 else if(临时3[0]=="t"){if(typeof(ts)!="undefined"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+ts[临时3[1]]+"</span></div>";}else{dy+=临时3[1];}}
+                else if(临时3[0]=="跳转"){if(临时3[1]=="br"){index_dy+="<br>";}else if(临时3[2]){index_dy+="<a href='#"+临时3[1]+"'>"+临时3[2]+"</a><br>";}else{index_dy+="<a href='#"+临时3[1]+"'>"+临时3[1]+"</a><br>";}}
+                else if(临时3[0]=="h1"||临时3[0]=="h2"||临时3[0]=="h3"||临时3[0]=="h4"||临时3[0]=="h5"||临时3[0]=="h6"){dy+="<a name='"+临时3[1]+"'></a><"+临时3[0]+">"+临时3[1]+"</"+临时3[0]+">";index_dy+="<a href='#"+临时3[1]+"'>"+临时3[1]+"</a><br>";}
                 else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}
             }else{
                 if(临时2[0]=="博客"){dy+=博客;}
+                else if(临时2[0]==""){dy+="<br class='a'>";}
                 else{dy+="<a href='"+临时2[0]+".html'>"+临时2[0]+"</a>";}
             }
             dy+=临时2[1];
         }
+        if(index[0]=="自动"){document.getElementById("index_dy").innerHTML = index_dy;}
         if(乱=="a"){dy+="<br class='a'><br class='a'><br class='a'><br class='a'><br class='a'>";}
         dy=dy.replace(/\n/g, "");
         dy=dy.replace(/<br><br><br><br><br>/g, "<br><br class='a'><br class='a'><br class='a'><br class='a'>");
