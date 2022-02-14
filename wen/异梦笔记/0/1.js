@@ -2,7 +2,7 @@
 let dy="<meta name='viewport' content='width=device-width, initial-scale=1'>";
 let 博客="https://limaoqiu.com/";
 
-let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",次数=0,制,客,乱,锁,临时;
+let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",次数=0,制,客,乱,示,锁,临时,index_dy="";
 
 if(typeof(h1)!="undefined"){
 dy+="<h1>"+h1+"</h1>"
@@ -39,8 +39,8 @@ document.getElementById("dy").innerHTML = dy;
 
 function 复(){document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}
 function 博(){window.location.href=博客+客;}
-function 打(){let _乱 = 乱.slice();for (let i = 0; i < _乱.length; i++) {let j = getRandomInt(0, i);let t = _乱[i];_乱[i] = _乱[j];_乱[j] = t;}function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1) + min);}乱=_乱;}
-
+function 打(){let _乱=乱.slice();for(let i=0;i<_乱.length;i++){let j=getRandomInt(0,i);let t=_乱[i];_乱[i]=_乱[j];_乱[j]=t;}function getRandomInt(min, max){return Math.floor(Math.random()*(max-min+1)+min);}乱=_乱;}
+function 展(){示=示.split("／");document.getElementById("zs"+示[0]).innerHTML = "//"+示[1];document.getElementById("zs"+示[0]).style.color="#6A9955";}
 
 function 确定() {
     let 输入=document.getElementById("输入").value.toLowerCase().split(" ");
@@ -79,7 +79,10 @@ function sjtk_全部显示(){
 }
 function 删除码(){复(制="\""+sjtk[次数-1]+"\"");}
 
-if(typeof(qm)!="undefined"){for(let i=0;qm.length>i;i++){if(qm[i][0]=="js"){锁="／"+qm[i][1];解();qm[i]=[锁,"",""];}}乱=qm;临时="qm不随机";qm_随机();}
+if(typeof(qm)!="undefined"){for(let i=0;qm.length>i;i++){
+    if(qm[i][0]=="js"){锁="／"+qm[i][1];解();qm[i]=[锁,"",""];}
+    if(qm[i][0]=="hr"&&qm[i][1].indexOf("〈") == -1&&qm[i][2].indexOf("〈") == -1){index_dy+="<a href='#"+qm[i][1]+"-"+qm[i][2]+"'>"+qm[i][1]+" "+qm[i][2]+"</a><br>";}
+}乱=qm;临时="qm不随机";qm_随机();}
 function qm_随机(){
     let qm_输入 = document.getElementById("qm_输入").value;
     if(qm_输入>0){
@@ -100,7 +103,9 @@ function qm_随机(){
     }else{
         dy="<table><tr><td style='min-width:3em'><b>条目</b></td><td style='min-width:10em'><b>说明</b></td><td style='min-width:10em'><b>使用情况</b></td></tr>";
         for(let i=0;乱.length>i;i++){
-            if(临时=="qm不随机"&&乱[i][0]=="hr"){dy+="<tr><td colspan='3'><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}
+            if(临时=="qm不随机"&&乱[i][0]=="hr"){
+                if(乱[i][1].indexOf("〈") == -1 || 乱[i][2].indexOf("〈") == -1){dy+="<tr><td colspan='3'><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}else{
+                dy+="<tr><td colspan='3'><a name='"+乱[i][1]+"-"+乱[i][2]+"'></a><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}}
             if(乱[i][0]!="hr" && 乱[i][0]+乱[i][1]+乱[i][2]!=""){dy+="<tr><td onclick=\"复(制='"+乱[i][0]+"')\">"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";}
         }
         dy+="</table>";
@@ -165,7 +170,7 @@ function 更新(){
         临时=document.getElementById(乱).innerHTML;
         临时=临时.split("〈");
         dy=临时[0];
-        let index_dy="";
+        if(typeof(qm)!="undefined"){}else{index_dy="";}
         for(let i=1;临时.length>i;i++){
             let 临时2=临时[i].split("〉");
             if (临时2[0].indexOf("|") != -1){
@@ -176,6 +181,7 @@ function 更新(){
                 else if(临时3[0]=="复制"){dy+="<a onclick=\"复(制='"+临时3[2]+"')\">"+临时3[1]+"</a>";}
                 else if(临时3[0]=="图片"){dy+="<a onclick=\"复(制='"+临时3[1]+"')\" href='2/"+临时3[1]+".jpg' target='_blank'><img src='2/"+临时3[1]+".jpg' width="+临时3[2]+" "+临时3[3]+"></a>";}
                 else if(临时3[0]=="本地图片"){dy+="<small>参考图片：</small><br><a onclick=\"复(制='"+临时3[1]+"')\" href='../../../../异梦笔记/0/2/"+临时3[1]+".jpg' target='_blank'><img src='../../../../异梦笔记/0/2/"+临时3[1]+".jpg' onerror=\"this.src='2/0.jpg';this.onerror=null;\" width="+临时3[2]+" "+临时3[3]+"></a>";}
+                else if(临时3[0]=="展示"){dy+="<a onclick=\"展(示='"+i+"／"+临时3[2]+"')\" id='zs"+i+"'><sup>["+临时3[1]+"]</sup></a>";}
                 else if(临时3[0]=="随机"){dy+="<div class='提'>"+临时3[1].split(",")[Math.floor(Math.random()*临时3[1].split(",").length)]+"<span class='示'>"+临时3[1]+"</span></div>";}
                 else if(临时3[0]=="随机题库"){
                     客="sjtk?t="+临时3[2];
