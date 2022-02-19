@@ -1,6 +1,7 @@
 
 let dy="<meta name='viewport' content='width=device-width, initial-scale=1'>";
 let 博客="https://limaoqiu.com/";
+let 子页面=["0","",];if(top.location!=self.location){子页面=["1","../",]}
 
 let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",次数=0,制,客,乱,示,锁,临时,index_dy="";
 
@@ -27,6 +28,8 @@ dy+="</div><br></div>";
 临时=h1.replace(/<small>/g, "");
 临时=临时.replace(/<\/small>/g, "");
 document.title = 临时;
+}else if(子页面[0]=="0"){
+    dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a href='../0.html'>总目录</a></div></div>";
 }
 
 if(typeof(sjtk)!="undefined"){dy+="<button onclick='sjtk_随机()'>随机</button> <a onclick='sjtk_全部显示()'>全部显示</a>";
@@ -66,7 +69,7 @@ function sjtk_随机(){
         document.getElementById("sjtk").innerHTML = "题库已空";
         次数=0;
     }else{
-        document.getElementById("sjtk").innerHTML = "<a onclick='删除码()'>删除码</a><br><iframe src='1/"+乱[次数]+".html' height=100% width=100%></iframe>";
+        document.getElementById("sjtk").innerHTML = "<a onclick='删除码(制="+乱[次数]+")'>删除码</a><br><iframe src='1/"+乱[次数]+".html' height=100% width=100%></iframe>";
         次数+=1;
     }
 }
@@ -77,7 +80,7 @@ function sjtk_全部显示(){
     }
     document.getElementById("sjtk").innerHTML = 次数;
 }
-function 删除码(){复(制="\""+sjtk[次数-1]+"\"");}
+function 删除码(){复(制="\""+制+"\"");}
 
 if(typeof(qm)!="undefined"){for(let i=0;qm.length>i;i++){
     if(qm[i][0]=="js"){锁="／"+qm[i][1];解();qm[i]=[锁,"",""];}
@@ -101,7 +104,8 @@ function qm_随机(){
         }
         dy+="</div>";
     }else{
-        dy="<table><tr><td style='min-width:3em'><b>条目</b></td><td style='min-width:10em'><b>说明</b></td><td style='min-width:10em'><b>使用情况</b></td></tr>";
+        // dy="<table><tr><td style='min-width:3em'><b>条目</b></td><td style='min-width:10em'><b>说明</b></td><td style='min-width:10em'><b>使用情况</b></td></tr>";
+        dy="<table><tr><td><b>条目</b></td><td><b>说明</b></td><td><b>使用情况</b></td></tr>";
         for(let i=0;乱.length>i;i++){
             if(临时=="qm不随机"&&乱[i][0]=="hr"){
                 if(乱[i][1].indexOf("〈") == -1 || 乱[i][2].indexOf("〈") == -1){dy+="<tr><td colspan='3'><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}else{
@@ -176,11 +180,11 @@ function 更新(){
             if (临时2[0].indexOf("|") != -1){
                 let 临时3=临时2[0].split("|");
                 if(临时3[0]=="解锁"){dy+="<span id='"+i+"' onclick=\"解(锁='"+i+"／"+临时3[1]+"')\" class='zhushi'></span>";}
-                else if(临时3[0]=="自动解锁"){锁="／"+临时3[1];解();dy+=锁;}
+                else if(临时3[0]=="自动解锁"||临时3[0]=="js"){锁="／"+临时3[1];解();dy+=锁;}
                 else if(临时3[0]=="提示"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+临时3[2]+"</span></div>";}
                 else if(临时3[0]=="复制"){dy+="<a onclick=\"复(制='"+临时3[2]+"')\">"+临时3[1]+"</a>";}
-                else if(临时3[0]=="图片"){dy+="<a onclick=\"复(制='"+临时3[1]+"')\" href='2/"+临时3[1]+".jpg' target='_blank'><img src='2/"+临时3[1]+".jpg' width="+临时3[2]+" "+临时3[3]+"></a>";}
-                else if(临时3[0]=="本地图片"){dy+="<small>参考图片：</small><br><a onclick=\"复(制='"+临时3[1]+"')\" href='../../../../异梦笔记/0/2/"+临时3[1]+".jpg' target='_blank'><img src='../../../../异梦笔记/0/2/"+临时3[1]+".jpg' onerror=\"this.src='2/0.jpg';this.onerror=null;\" width="+临时3[2]+" "+临时3[3]+"></a>";}
+                else if(临时3[0]=="图片"){dy+="<a onclick=\"复(制='"+临时3[1]+"')\" href='"+子页面[1]+"2/"+临时3[1]+".jpg' target='_blank'><img src='"+子页面[1]+"2/"+临时3[1]+".jpg' width="+临时3[2]+" "+临时3[3]+"></a>";}
+                else if(临时3[0]=="本地图片"){dy+="<small>参考图片：</small><br><a onclick=\"复(制='"+临时3[1]+"')\" href='"+子页面[1]+"../../../../异梦笔记/0/2/"+临时3[1]+".jpg' target='_blank'><img src='"+子页面[1]+"../../../../异梦笔记/0/2/"+临时3[1]+".jpg' onerror=\"this.src='"+子页面[1]+"2/0.jpg';this.onerror=null;\" width="+临时3[2]+" "+临时3[3]+"></a>";}
                 else if(临时3[0]=="展示"){dy+="<a onclick=\"展(示='"+i+"／"+临时3[2]+"')\" id='zs"+i+"'><sup>["+临时3[1]+"]</sup></a>";}
                 else if(临时3[0]=="随机"){dy+="<div class='提'>"+临时3[1].split(",")[Math.floor(Math.random()*临时3[1].split(",").length)]+"<span class='示'>"+临时3[1]+"</span></div>";}
                 else if(临时3[0]=="随机题库"){
@@ -193,7 +197,9 @@ function 更新(){
                 else if(临时3[0]=="t"){if(typeof(ts)!="undefined"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+ts[临时3[1]]+"</span></div>";}else{dy+=临时3[1];}}
                 else if(临时3[0]=="跳转"){if(临时3[1]=="br"){index_dy+="<br>";}else if(临时3[2]){index_dy+="<a href='#"+临时3[1]+"'>"+临时3[2]+"</a><br>";}else{index_dy+="<a href='#"+临时3[1]+"'>"+临时3[1]+"</a><br>";}}
                 else if(临时3[0]=="h1"||临时3[0]=="h2"||临时3[0]=="h3"||临时3[0]=="h4"||临时3[0]=="h5"||临时3[0]=="h6"){dy+="<a name='"+临时3[1]+"'></a><"+临时3[0]+">"+临时3[1]+"</"+临时3[0]+">";index_dy+="<a href='#"+临时3[1]+"'>";if(临时3[0]=="h2"){index_dy+="<h3>"+临时3[1]+"</h3>";}else if(临时3[0]=="h3"){index_dy+="<b>"+临时3[1]+"</b>";}else if(临时3[0]=="h4"){index_dy+="　"+临时3[1];}else if(临时3[0]=="h5"){index_dy+="　<small>"+临时3[1]+"</small>";}else{index_dy+=临时3[1];}index_dy+="</a><br>";}
-                else {if (临时3[1].indexOf("#") != -1){dy+="<a href='"+临时3[1].split("#")[0]+".html#"+临时3[1].split("#")[1]+"'>"+临时3[0]+"</a>";}else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}}
+                else {
+                    if (临时3[1].indexOf("#") != -1){临时3[1]=临时3[1].split("#");dy+="<a href='";if(临时3[1][0]==""){dy+="#"+临时3[1][1];}else{dy+=临时3[1][0]+".html#"+临时3[1][1];}dy+="'>"+临时3[0]+"</a>";
+                    }else{dy+="<a href='"+临时3[1]+".html'>"+临时3[0]+"</a>";}}
             }else{
                 if(临时2[0]=="博客"){dy+=博客;}
                 else if(临时2[0]==""){dy+="<br class='a'>";}
@@ -201,7 +207,7 @@ function 更新(){
             }
             dy+=临时2[1];
         }
-        if(index[0]=="自动"){document.getElementById("index_dy").innerHTML = index_dy;}
+        if(typeof(index)!="undefined"){if(index[0]=="自动"){document.getElementById("index_dy").innerHTML = index_dy;}}
         if(乱=="a"){dy+="<br class='a'><br class='a'><br class='a'><br class='a'><br class='a'>";}
         dy=dy.replace(/\n/g, "");
         dy=dy.replace(/<br><br><br><br><br>/g, "<br><br class='a'><br class='a'><br class='a'><br class='a'>");
