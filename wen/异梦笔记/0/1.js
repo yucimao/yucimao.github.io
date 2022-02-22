@@ -7,7 +7,7 @@ let wzjm="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",次数
 
 if(typeof(h1)!="undefined"){
 dy+="<h1>"+h1+"</h1>"
-if(h1=="异梦笔记"){dy+="　<input type='text' id='输入' placeholder='搜索' onkeyup='确定()'/><div id='结果'></div>"}else{dy+=" <nav><a href='0.html'>总目录</a>";
+if(h1=="异梦笔记"){dy+="　<input type='text' id='输入' placeholder='搜索' onkeyup='确定()' autocomplete='off'/><div id='结果'></div>"}else{dy+=" <nav><a href='0.html'>总目录</a>";
 for(let i=0;nav.length>i;i++){
     dy+=" / <a href='";
     if (nav[i].indexOf("#") != -1){
@@ -30,7 +30,7 @@ dy+="</div><br></div>";
 document.title = 临时;
 }else if(子页面[0]=="0"){
     dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a href='../0.html'>总目录</a></div></div>";
-}
+}else{dy+="<style>body{width: 90%;}</style>";}
 
 if(typeof(sjtk)!="undefined"){dy+="<button onclick='sjtk_随机()'>随机</button> <a onclick='sjtk_全部显示()'>全部显示</a>";
 if(typeof(sjtk_s)!="undefined"){dy+=" <input type='text' id='输入' placeholder='搜索' onkeyup='确定()'/>";}
