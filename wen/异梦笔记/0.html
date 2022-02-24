@@ -218,7 +218,7 @@ function 确定() {
     if(输入>0){
         结果+="<p><a href='1/"+输入+".html'>/1/"+输入+".html</a>";
     }
-    if(结果=="<hr>"){结果+="<p><b>无结果</b><br>可能的页面：</p><p><a href='"+输入+".html'>"+输入+"</a></p>";}
+    if(结果=="<hr>"){结果+="<p><b>无结果</b><br>可能的页面：</p><p><a href='"+输入+".html'>"+输入+"</a></p>";}else{结果+="<p><a href='"+输入+".html'>-</a></p>"}
     if(输入==""){结果="";}
     document.getElementById("结果").innerHTML = 结果;
     if (event.keyCode == 13){

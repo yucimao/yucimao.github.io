@@ -194,7 +194,7 @@ function 更新(){
                     if(临时3[5]){客+="&m="+临时3[5];}else{客+="&m="+localStorage.getItem("sjtk_异梦笔记");}
                     dy+="<a onclick=\"博(客='"+客+"')\">"+临时3[1]+"</a>";
                 }
-                else if(临时3[0]=="t"){if(typeof(ts)!="undefined"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+ts[临时3[1]]+"</span></div>";}else{dy+=临时3[1];}}
+                else if(临时3[0]=="t"){if(typeof(ts)!="undefined"){if(ts[临时3[1]]!=""&&临时3[2]!="1"){dy+="<div class='提'>"+临时3[1]+"<span class='示'>"+ts[临时3[1]]+"</span></div>";}else if(临时3[2]=="1"){dy+=ts[临时3[1]];}else{dy+=临时3[1];}}else{dy+=临时3[1];}}
                 else if(临时3[0]=="跳转"){if(临时3[1]=="br"){index_dy+="<br>";}else if(临时3[2]){index_dy+="<a href='#"+临时3[1]+"'>"+临时3[2]+"</a><br>";}else{index_dy+="<a href='#"+临时3[1]+"'>"+临时3[1]+"</a><br>";}}
                 else if(临时3[0]=="h1"||临时3[0]=="h2"||临时3[0]=="h3"||临时3[0]=="h4"||临时3[0]=="h5"||临时3[0]=="h6"){dy+="<a name='"+临时3[1]+"'></a><"+临时3[0]+">"+临时3[1]+"</"+临时3[0]+">";index_dy+="<a href='#"+临时3[1]+"'>";if(临时3[0]=="h2"){index_dy+="<h3>"+临时3[1]+"</h3>";}else if(临时3[0]=="h3"){index_dy+="<b>"+临时3[1]+"</b>";}else if(临时3[0]=="h4"){index_dy+="　"+临时3[1];}else if(临时3[0]=="h5"){index_dy+="　<small>"+临时3[1]+"</small>";}else{index_dy+=临时3[1];}index_dy+="</a><br>";}
                 else {

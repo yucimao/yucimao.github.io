@@ -1,0 +1,164 @@
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>
+    let h1="创作小工具";
+    let nav=["找灵感／查理的编剧课"];
+    let index=[];
+    let ts={
+        "人物":"主角，作为视角、让观众有共情的角色",
+        "事件":"发生的事",
+        "主题":"价值观",
+
+        "身份":"在事件中扮演的角色，比如“替父报仇的侠客”的身份是“孝子”",
+        "欲望":"想要得到什么",
+        "动作":"为达成欲望的行动",
+        "问题":"实现欲望所面临的问题",
+        "障碍":"",
+        "结果":"",
+        "正价值":"",
+        "负价值":"",
+
+        "开场":"交代基础信息，引起兴趣",
+        "切入":"延续和强化信息，铺垫激励事件",
+        "激励":"核心问题出现",
+        "进展":"角色做无效尝试（一次动作）",
+        "转折":"因素改变",
+        "再转":"角色放手一搏",
+        "危机":"遇到最大考验",
+        "导入":"增强情绪烈度",
+        "高潮":"核心问题的解决",
+        "结局":"安放观众情绪",
+    };
+</script><link rel="stylesheet" href="0/1.css"><div id="dy"></div><script src="0/1.js"></script><div id="a">
+
+<h2>梗概</h2><br>
+<br>
+
+<table>
+    <tr><td rowspan="3" style="text-align:center;">〈t|人物〉</td>
+        <td style="min-width:3em;">〈t|身份〉</td><td><input type='text' id='梗概1' placeholder='身份' onkeyup='确定1()' autocomplete="off"/> 单一的身份不吸引观众，可以给人物加上一个含有负价值的定语。〈展示|例|讲警察的故事可能没人感兴趣，讲一个邪恶的警察的故事能让人产生兴趣。〉<br></td></tr>
+    <tr><td>〈t|欲望〉</td><td><input type='text' id='梗概2' placeholder='欲望' onkeyup='确定1()' autocomplete="off"/> 要符合观众期望的欲望，让观众体会到欲望，而不是空洞的强调主角想要什么。</td></tr>
+    <tr><td>〈t|动作〉</td><td><input type='text' id='梗概3' placeholder='动作' onkeyup='确定1()' autocomplete="off"/></td></tr>
+    <tr><td rowspan="3">〈t|事件〉</td>
+        <td>〈t|问题〉</td><td><input type='text' id='梗概4' placeholder='问题' onkeyup='确定1()' autocomplete="off"/> 悬念，引发想象，吸引观众看下去。悬念不可以断。</td></tr>
+    <tr><td>〈t|障碍〉</td><td><input type='text' id='梗概5' placeholder='障碍' onkeyup='确定1()' autocomplete="off"/> 大的阻力套小的阻力。主要的三个阻力：环境、对手、自身。〈展示|例|主角一开始受到环境的阻力，比如同事、家人，然后受到对手的阻力，比如对手的狡猾、强大，最后是自身的阻力，比如贪念和信念的选择。〉</td></tr>
+    <tr><td>结果</td><td><input type='text' id='梗概6' placeholder='结果' onkeyup='确定1()' autocomplete="off"/> 饶过欲望，实现动作。</td></tr>
+    <tr><td rowspan="3">〈t|主题〉</td>
+        <td>〈t|正价值〉</td><td><input type='text' id='梗概7' placeholder='正价值' onkeyup='确定1()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|负价值〉</td><td><input type='text' id='梗概8' placeholder='负价值' onkeyup='确定1()' autocomplete="off"/></td></tr>
+</table>
+<div id="dy1"></div><br>
+<script>
+        let 复制1="";
+    function 确定1(){
+        复制1=
+        "<b>身份</b>："+document.getElementById("梗概1").value+"<br>"+
+        "<b>欲望</b>："+document.getElementById("梗概2").value+"<br>"+
+        "<b>动作</b>："+document.getElementById("梗概3").value+"<br>"+
+        "<b>问题</b>："+document.getElementById("梗概4").value+"<br>"+
+        "<b>障碍</b>："+document.getElementById("梗概5").value+"<br>"+
+        "<b>结果</b>："+document.getElementById("梗概6").value+"<br>"+
+        "<b>正价值</b>："+document.getElementById("梗概7").value+"<br>"+
+        "<b>负价值</b>："+document.getElementById("梗概8").value;
+        let dy1="<a onclick=\"复(制=复制1)\">复制</a><br>"+复制1;
+        复制1=复制1.replace(/<b>/g, "").replace(/<\/b>/g, "").replace(/<br>/g, "\n");
+        document.getElementById("dy1").innerHTML = dy1;
+    }
+</script>
+
+例：<br>
+<table>
+    <tr style="text-align:center;"><td></td><td colspan='3'><b>人物</b></td><td colspan='3'><b>事件</b></td><td><b>主题</b></td></tr>
+    <tr style="text-align:center;"><td><b>作品</b></td><td><b>身份</b></td><td><b>欲望</b></td><td><b>动作</b></td><td><b>问题</b></td><td><b>障碍</b></td><td><b>结果</b></td><td></td></tr>
+    <tr><td>喜剧之王</td><td>演员</td><td>出人头地</td><td>去剧组蹭戏，想要成明星</td><td>能否出人头地？</td><td>不认可他的导演、生活中的苦难</td><td>虽然没成明星，但也出人头地了</td><td>平凡人也可以实现梦想</td></tr>
+    <tr><td>西游记</td><td>取经人</td><td>普度众生</td><td>去西方取经</td><td>能否普度众生？</td><td>八十一难</td><td>没有取得真经，但也普度众生</td><td>一路上的行善就是在普度众生</td></tr>
+    <!-- <tr><td>作品</td><td>身份</td><td>欲望</td><td>动作</td><td>核心问题</td><td>障碍</td><td>结果</td><td>主题</td></tr> -->
+</table>
+<br>
+
+<h4>起点、支点</h4><br>
+<br>
+
+<b>人设</b>：奇怪的、不称职的。<br>
+<b>激励事件</b>（干扰事件）：小人物出大事、大人物遇小事。<br>
+<b>过激行为</b>：一次动作是惯性思维，是观众也能想到的普通行动，失败后主角采取二次动作。〈展示|例|主角想追求女孩，一次动作是去表白，被拒绝，二次动作是把女孩绑架了。〉<br>
+<b>悬念</b>：疑问、秘密、假身份、时间锁。〈展示|例|生死时速，让观众想知道炸弹会不会爆炸。假身份的让子弹飞，让观众想知道他的身份会不会被拆穿。〉<br>
+<b>环境</b>〈展示|例|荒岛余生，让观众对荒岛的生活产生好奇。〉<br>
+<br>
+
+<h2>大纲</h2><br>
+<br>
+
+<table border="1">
+    <tr><td></td><td><b>〈t|开场〉</b></td><td><b>〈t|切入〉</b></td><td><b>〈t|激励〉</b></td></tr>
+    <tr><td>〈t|身份〉</td><td><input type='text' id='大纲01' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲02' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲03' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|欲望〉</td><td><input type='text' id='大纲04' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲05' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲06' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|动作〉</td><td><input type='text' id='大纲07' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲08' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲09' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|问题〉</td><td><input type='text' id='大纲10' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲11' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲12' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|障碍〉</td><td><input type='text' id='大纲13' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲14' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲15' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|结果〉</td><td><input type='text' id='大纲16' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲17' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲18' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|正价值〉</td><td><input type='text' id='大纲19' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲20' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲21' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|负价值〉</td><td><input type='text' id='大纲22' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲23' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲24' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+</table><br>
+<table border="1">
+    <tr><td></td><td><b>〈t|进展〉</b></td><td><b>〈t|转折〉</b></td><td><b>〈t|再转〉</b></td></tr>
+    <tr><td>〈t|身份〉</td><td><input type='text' id='大纲25' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲26' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲27' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|欲望〉</td><td><input type='text' id='大纲28' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲29' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲30' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|动作〉</td><td><input type='text' id='大纲31' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲32' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲33' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|问题〉</td><td><input type='text' id='大纲34' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲35' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲36' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|障碍〉</td><td><input type='text' id='大纲37' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲38' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲39' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|结果〉</td><td><input type='text' id='大纲40' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲41' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲42' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|正价值〉</td><td><input type='text' id='大纲43' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲44' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲45' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|负价值〉</td><td><input type='text' id='大纲46' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲47' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲48' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+</table><br>
+<table border="1">
+    <tr><td></td><td><b>〈t|危机〉</b></td><td><b>〈t|导入〉</b></td><td><b>〈t|高潮〉</b></td><td><b>〈t|结局〉</b></td></tr>
+    <tr><td>〈t|身份〉</td><td><input type='text' id='大纲49' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲50' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲51' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲52' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|欲望〉</td><td><input type='text' id='大纲53' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲54' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲55' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲56' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|动作〉</td><td><input type='text' id='大纲57' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲58' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲59' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲60' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|问题〉</td><td><input type='text' id='大纲61' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲62' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲63' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲64' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|障碍〉</td><td><input type='text' id='大纲65' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲66' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲67' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲68' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|结果〉</td><td><input type='text' id='大纲69' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲70' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲71' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲72' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|正价值〉</td><td><input type='text' id='大纲73' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲74' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲75' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲76' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+    <tr><td>〈t|负价值〉</td><td><input type='text' id='大纲77' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲78' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲79' placeholder='' onkeyup='确定2()' autocomplete="off"/></td><td><input type='text' id='大纲80' placeholder='' onkeyup='确定2()' autocomplete="off"/></td></tr>
+</table><br>
+<div id="dy3"></div><br>
+<script>
+        let 复制2="";
+    function 确定2(){
+        复制2=
+        "<table border=\"1\"><tr><td></td><td><b>开场</b></td><td><b>切入</b></td><td><b>激励</b></td></tr>"+
+        "<tr><td>身份</td><td>"+document.getElementById("大纲01").value+"</td><td>"+document.getElementById("大纲02").value+"</td><td>"+document.getElementById("大纲03").value+"</td></tr>"+
+        "<tr><td>欲望</td><td>"+document.getElementById("大纲04").value+"</td><td>"+document.getElementById("大纲05").value+"</td><td>"+document.getElementById("大纲06").value+"</td></tr>"+
+        "<tr><td>动作</td><td>"+document.getElementById("大纲07").value+"</td><td>"+document.getElementById("大纲08").value+"</td><td>"+document.getElementById("大纲09").value+"</td></tr>"+
+        "<tr><td>问题</td><td>"+document.getElementById("大纲10").value+"</td><td>"+document.getElementById("大纲11").value+"</td><td>"+document.getElementById("大纲12").value+"</td></tr>"+
+        "<tr><td>障碍</td><td>"+document.getElementById("大纲13").value+"</td><td>"+document.getElementById("大纲14").value+"</td><td>"+document.getElementById("大纲15").value+"</td></tr>"+
+        "<tr><td>结果</td><td>"+document.getElementById("大纲16").value+"</td><td>"+document.getElementById("大纲17").value+"</td><td>"+document.getElementById("大纲18").value+"</td></tr>"+
+        "<tr><td>正价值</td><td>"+document.getElementById("大纲19").value+"</td><td>"+document.getElementById("大纲20").value+"</td><td>"+document.getElementById("大纲21").value+"</td></tr>"+
+        "<tr><td>负价值</td><td>"+document.getElementById("大纲22").value+"</td><td>"+document.getElementById("大纲23").value+"</td><td>"+document.getElementById("大纲24").value+"</td></tr><table><br>"+
+
+        "<table border=\"1\"><tr><td></td><td><b>进展</b></td><td><b>转折</b></td><td><b>再转</b></td></tr>"+
+        "<tr><td>身份</td><td>"+document.getElementById("大纲25").value+"</td><td>"+document.getElementById("大纲26").value+"</td><td>"+document.getElementById("大纲27").value+"</td></tr>"+
+        "<tr><td>欲望</td><td>"+document.getElementById("大纲28").value+"</td><td>"+document.getElementById("大纲29").value+"</td><td>"+document.getElementById("大纲30").value+"</td></tr>"+
+        "<tr><td>动作</td><td>"+document.getElementById("大纲31").value+"</td><td>"+document.getElementById("大纲32").value+"</td><td>"+document.getElementById("大纲33").value+"</td></tr>"+
+        "<tr><td>问题</td><td>"+document.getElementById("大纲34").value+"</td><td>"+document.getElementById("大纲35").value+"</td><td>"+document.getElementById("大纲36").value+"</td></tr>"+
+        "<tr><td>障碍</td><td>"+document.getElementById("大纲37").value+"</td><td>"+document.getElementById("大纲38").value+"</td><td>"+document.getElementById("大纲39").value+"</td></tr>"+
+        "<tr><td>结果</td><td>"+document.getElementById("大纲40").value+"</td><td>"+document.getElementById("大纲41").value+"</td><td>"+document.getElementById("大纲42").value+"</td></tr>"+
+        "<tr><td>正价值</td><td>"+document.getElementById("大纲43").value+"</td><td>"+document.getElementById("大纲44").value+"</td><td>"+document.getElementById("大纲45").value+"</td></tr>"+
+        "<tr><td>负价值</td><td>"+document.getElementById("大纲46").value+"</td><td>"+document.getElementById("大纲47").value+"</td><td>"+document.getElementById("大纲48").value+"</td></tr><table><br>";
+
+        "<table border=\"1\"><tr><td></td><td><b>危机</b></td><td><b>导入</b></td><td><b>高潮</b></td><td><b>结局</b></td></tr>"+
+        "<tr><td>身份</td><td>"+document.getElementById("大纲49").value+"</td><td>"+document.getElementById("大纲50").value+"</td><td>"+document.getElementById("大纲51").value+"</td><td>"+document.getElementById("大纲52").value+"</td></tr>"+
+        "<tr><td>欲望</td><td>"+document.getElementById("大纲53").value+"</td><td>"+document.getElementById("大纲54").value+"</td><td>"+document.getElementById("大纲55").value+"</td><td>"+document.getElementById("大纲56").value+"</td></tr>"+
+        "<tr><td>动作</td><td>"+document.getElementById("大纲57").value+"</td><td>"+document.getElementById("大纲58").value+"</td><td>"+document.getElementById("大纲59").value+"</td><td>"+document.getElementById("大纲60").value+"</td></tr>"+
+        "<tr><td>问题</td><td>"+document.getElementById("大纲61").value+"</td><td>"+document.getElementById("大纲62").value+"</td><td>"+document.getElementById("大纲63").value+"</td><td>"+document.getElementById("大纲64").value+"</td></tr>"+
+        "<tr><td>障碍</td><td>"+document.getElementById("大纲65").value+"</td><td>"+document.getElementById("大纲66").value+"</td><td>"+document.getElementById("大纲67").value+"</td><td>"+document.getElementById("大纲68").value+"</td></tr>"+
+        "<tr><td>结果</td><td>"+document.getElementById("大纲69").value+"</td><td>"+document.getElementById("大纲70").value+"</td><td>"+document.getElementById("大纲71").value+"</td><td>"+document.getElementById("大纲72").value+"</td></tr>"+
+        "<tr><td>正价值</td><td>"+document.getElementById("大纲73").value+"</td><td>"+document.getElementById("大纲74").value+"</td><td>"+document.getElementById("大纲75").value+"</td><td>"+document.getElementById("大纲76").value+"</td></tr>"+
+        "<tr><td>负价值</td><td>"+document.getElementById("大纲77").value+"</td><td>"+document.getElementById("大纲78").value+"</td><td>"+document.getElementById("大纲79").value+"</td><td>"+document.getElementById("大纲80").value+"</td></tr><table>";
+        
+        let dy2="<a onclick=\"复(制=复制2)\">复制</a><br>"+复制2;
+        document.getElementById("dy3").innerHTML = dy2;
+    }
+</script>
+
+</div>
