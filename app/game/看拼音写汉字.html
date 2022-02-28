@@ -1,0 +1,181 @@
+---
+layout: page2
+title: 看拼音写汉字
+nav_text: 看拼音写汉字
+permalink: game/pinyin
+nav_url: <a href="/youxiji">游戏机</a>
+---
+<style>
+    .按钮{font-size:1.2em;}
+</style>
+
+<span id="显示" style="color:#000000;background-color:#ffffff;padding:10px;font-size:4em;border:5px solid #74b8e5;">　</span><br><br><div class="btn-list"><button type="button" id="按钮" onclick="确定()" class="按钮">开始</button> <input type="button" id="cleanBoard" value="清屏" class="按钮"> <input type="button" id="rescind" value="撤销" class="按钮"> <button type="button" id="隐藏" onclick="隐藏()" class="按钮">隐藏</button></div><div class="wrapper"><canvas style="border: 1px solid #000;" class="cavs" width="800px" height="300px"></canvas></div>
+
+<script>
+let 题库=[
+"测试／ce4 shi4／心理？题",
+"秀丽／xiu4 li4／这里山河？",
+"团结／tua2n jie2／我们？一心",
+"单薄／da1n bo2／衣服？",
+"友爱／yo3u a4i／团结？",
+"憔悴／qia2o cu4i／面色？",
+"希望／xi1 wa4ng／充满？",
+"憧憬／cho1ng ji3ng",
+"坚定／jia1n di4ng",
+"深邃／she1n su4i",
+"浑浊／hu2n zhuo2",
+"关切／gua1n qie4",
+"安详／a1n xia2ng",
+"销售／xia1o sho4u／卖东西的？员",
+"欣喜／xi1n xi3",
+"温柔／we1n ro2u",
+"赞许／za4n xu3",
+"魁梧／ku2i wu3／身材？",
+"浓重／no2ng zho4ng",
+"苗条／mia2o tiao",
+"丰满／fe1ng ma3n",
+"时髦／shi2 ma2o",
+"朴素／pu3 su4",
+"大方／da4 fang",
+"整洁／zhe3ng jie2",
+"凝视／ni2ng zho4ng",
+"臃肿／yo1ng zho3ng",
+"慈祥／ci2 xia2ng",
+"敏锐／mi3n ru4i",
+"呆滞／da1i zhi4",
+"坚强／jia1n qia2ng",
+"清净／qi1ng ji4ng",
+"狡诈／jia3o zha4",
+"优秀／yo1u xiu4",
+"明亮／mi1ng lia4ng",
+"魅力／me4i li4",
+"欣慰／xi1n we4i",
+"甜美／tia2n me3i",
+"帅气／shua4i qi",
+"踏实／ta1 shi",
+"钻研／zu1an ya2n",
+"认真／re4n zhe1n",
+"俗气／su2 qi4",
+"得体／de2 ti3",
+"感激／gan3 ji1",
+"喜悦／xi3 yue4",
+"眺望／tia4o wa4ng",
+"匀称／yu3n che4n",
+"笨重／be4n zho4ng",
+"粗犷／cu1 gua3ng",
+"丽质／li4 zhi4",
+"干瘪／ga1n bie3",
+"优美／yo1u me3i",
+"害羞／ha4i xiu1",
+"坦然／ta3n ra2n",
+"腼腆／mia3n tia3n",
+"专注／zhua1n zhu4",
+"英俊／yi1ng ju4n",
+"幸福／xi4ng fu2",
+"兴奋／xi1ng fe4n",
+"称赞／che1ng za4n",
+"舒服／shu1 fu",
+"温暖／we1n nua3n",
+"媚眼／me4i ya3n",
+"快乐／kua4i le4",
+"和谐／he2 xie2",
+"尊敬／zu1n ji4ng",
+"美满／me2i ma3n",
+"豁达／huo4 da2",
+"动人／do4ng re2n",
+"典雅／dia3n ya3",
+"端庄／dua1n zhua1ng",
+"耳垂／e3r chu2i",
+"整齐／zhe3ng qi2",
+"悦耳／yue4 e3r",
+"风铃／fe1ng li2ng",
+"陶醉／ta2o zu4i",
+"结实／jie1 shi",
+"强壮／qia2ng zhua4ng",
+"失望／shi1 wa4ng",
+"清脆／qi1ng cu4i",
+"动听／do4ng ti1ng",
+"勇敢／yo2ng ga3n",
+"友好／yo2u ha3o",
+"自信／zi4 xi4n",
+"刻苦／ke4 ku3",
+"巍峨／we1i e2",
+"勤奋／qi2n fe4n",
+"高耸／ga1o so3ng",
+"陡峭／do3u qia4o",
+"合作／he2 zuo4",
+"愉快／yu2 kua4i",
+"壮观／zhua4ng gua1n",
+"可爱／ke3 a4i",
+"干净／ga1n ji4ng",
+"漂亮／pia4o lia4ng",
+"妩媚／wu3 me4i",
+"简洁／jia3n jie2",
+"新春／xi1n chu1n",
+"美丽／me3i li4",
+"春色／chu1n se4",
+"迷人／mi2 re2n",
+"春天／chu1n tia1n",
+"讲究／jia3ng jiu",
+"笔挺／bi3 ti3ng",
+"积极／ji1 ji2",
+"甜蜜／tia2n mi4",
+"努力／nu3 li4",
+"爱心／a4i xi1n",
+"潇洒／xia1o sa3",
+"春联／chu1n lia2n",
+"春季／chu1n ji4",
+"勤恳／qi2n ke3n",
+"健壮／jia4n zhua4ng",
+"小巧／xia3o qia3o",
+"玲珑／li2ng lo2ng",
+"春节／chu1n jie2",
+
+
+
+];
+let 拼音=["a1／ā","a2／á","a3／ǎ","a4／à","o1／ō","o2／ó","o3／ǒ","o4／ò","e1／ē","e2／é","e3／ě","e4／è","i1／ī","i2／í","i3／ǐ","i4／ì","u1／ū","u2／ú","u3／ǔ","u4／ù",];
+let arr;function 随机(){let _arr=arr.slice();for (let i = 0; i < _arr.length; i++) {let j = getRandomInt(0, i);let t = _arr[i];_arr[i] = _arr[j];_arr[j] = t;}function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1) + min);}arr=_arr;}
+arr=题库;随机();题库=arr;
+let 流程=0;
+let 过程=-1;
+function 确定(){
+    if(流程==0){
+        过程+=1;
+        if(过程==题库.length){
+            document.getElementById("显示").innerHTML = "没有更多题了";
+        }else{
+            流程=题库[过程].split("／");
+            for(let i=0;拼音.length>i;i++){
+                流程[3]=拼音[i].split("／");
+                流程[1]=流程[1].replace(流程[3][0],流程[3][1]);
+                
+            }
+            if(流程[2]){
+                    流程[2]=流程[2].split("？");
+                    流程[1]="<small style='font-size:30px;'>"+流程[2][0]+"</small>"+流程[1]+"<small style='font-size:30px;'>"+流程[2][1]+"</small>";
+                }
+                document.getElementById("显示").innerHTML = 流程[1];
+                document.getElementById("按钮").innerHTML = "显示答案";
+        }
+    }else{
+        document.getElementById("显示").innerHTML = 流程[0];
+        document.getElementById("按钮").innerHTML = "下一道题";
+        流程=0;
+    }
+}
+let 隐=0;
+function 隐藏(){
+    if(隐==0){
+        隐=1;
+        document.getElementById("显示").style.background = "#000000";
+        document.getElementById("隐藏").innerHTML = "显示";
+    }else{
+        隐=0;
+        document.getElementById("显示").style.background = "#ffffff";
+        document.getElementById("隐藏").innerHTML = "隐藏";
+    }
+}
+
+var drawingLineObj = {cavs: $('.cavs'),context: $('.cavs').get(0).getContext('2d'),colorBoard: $('#colorBoard'),cleanBoard: $('#cleanBoard'),arrImg: [],eraser: $("#eraser"),rescind: $('#rescind'),lineRuler: $('#lineRuler'),bool: false,init: function () {this.context.lineCap = 'round';this.context.lineJoin = 'round';this.draw();this.btnFn();},draw: function () {var cavs = this.cavs,self = this;var c_x = cavs.offset().left,c_y = cavs.offset().top;cavs.mousedown(function (e) {e = e || window.event;self.bool = true;var m_x = e.pageX - c_x,m_y = e.pageY - c_y;self.context.beginPath();self.context.moveTo(m_x, m_y);var imgData = self.context.getImageData(0, 0, self.cavs[0].width, self.cavs[0].height);self.arrImg.push(imgData);});cavs.mousemove(function (e) {if (self.bool) {self.context.lineTo(e.pageX - c_x, e.pageY - c_y);self.context.stroke();}});cavs.mouseup(function () {self.context.closePath();self.bool = false;});cavs.mouseleave(function () {self.context.closePath();self.bool = false;})},btnFn: function () {var self = this;$('.btn-list').on('click', function (e) {e = e || window.event;switch (e.target.id) {case 'cleanBoard':self.context.clearRect(0, 0, self.cavs[0].width, self.cavs[0].height);break;case 'eraser':self.context.strokeStyle = '#fff';break;case 'rescind':if (self.arrImg.length > 0) {self.context.putImageData(self.arrImg.pop(), 0, 0);break;}}});this.colorBoard.change(function (e) {self.context.strokeStyle = $(this).val();});this.lineRuler.change(function (e) {self.context.lineWidth = $(this).val();})}};drawingLineObj.init();
+</script>
