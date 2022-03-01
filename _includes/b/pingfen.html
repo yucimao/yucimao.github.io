@@ -95,7 +95,9 @@ for(let i=1;data.length>i;i++){
     }
 dy+="</table>";
 
-dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>");;
+dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>");
+
+dy+="<style>i.a{color:#77C94B}i.a:after{content:'[云]'}</style>";
 
 document.getElementById("结果").innerHTML = dy;
 
