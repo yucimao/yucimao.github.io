@@ -21,7 +21,7 @@ dy+="</div><br></div>";
 临时=h1.replace(/<small>/g,"").replace(/<\/small>/g,"");
 document.title=临时;
 }else if(子页面[0]=="0"){dy+="<div class='index'><div class='index_top'><a onclick='编辑()'>编辑</a>　<a href='../0.html'>总目录</a></div></div>";
-}else{if(typeof(h1)!="undefined"){dy+="<h2>"+h1+"</h2><hr class='hr0'>";}dy+="<style>body{width: 90%;}</style>";}
+}else{if(typeof(h1)!="undefined"){dy+="<h2>"+h1+"</h2> <a onclick='编辑()'>编辑</a><hr class='hr0'>";}dy+="<style>body{width: 90%;}</style>";}
 
 if(typeof(sjtk)!="undefined"){dy+="<button onclick='sjtk_随机()'>随机</button> <a onclick='sjtk_全部显示()'>全部显示</a>";
 if(typeof(sjtk_s)!="undefined"){dy+=" <input type='text' id='输入' placeholder='搜索' onkeyup='确定()'/>";}
@@ -120,7 +120,8 @@ document.getElementById('dw_x').style.display="";
 document.getElementById('dw_zz').style.display="";
 document.getElementById('dw_zz').scrollTop=0;
 if(dwd=="0"||dwd=="undefined"||dwd==""){
-dwb="<iframe src=\""+dwb+".html\" frameborder=\"0\" width=\"100%\" height=\"85%\" id=\"／／"+dwb+"\"></iframe>";
+let dwb2="";if (dwb.indexOf("#") != -1){dwb2="#"+dwb.split("#")[1];dwb=dwb.split("#")[0];}
+dwb="<iframe src=\""+dwb+".html"+dwb2+"\" frameborder=\"0\" width=\"100%\" height=\"85%\" id=\"／／"+dwb+"\"></iframe>";
 document.getElementById("dwd").innerHTML="";
 }else{document.getElementById("dwd").innerHTML="<h2>"+dwd+"</h2><hr class='hr0'>";dwd="0";}
 dwb=dwb.replace(/［引号］/g,"\"");
