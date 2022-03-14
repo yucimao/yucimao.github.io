@@ -75,7 +75,7 @@ function qm_随机(){
         dy="<table><tr><td><b>条目</b></td><td><b>说明</b></td><td><b>使用情况</b></td></tr>";
         for(let i=0;乱.length>i;i++){
             if(临时=="qm不随机"&&乱[i][0]=="hr"){
-                if(乱[i][1].indexOf("〈")==-1||乱[i][2].indexOf("〈")==-1){dy+="<tr><td colspan='3'><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}else{
+                if(乱[i][1].indexOf("〈")==-1||乱[i][2].indexOf("〈")==-1){dy+="<tr><td colspan='3'><a name='"+乱[i][1]+"-"+乱[i][2]+"'></a><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}else{
                 dy+="<tr><td colspan='3'><a name='"+乱[i][1]+"-"+乱[i][2]+"'></a><h3>"+乱[i][1]+" <small>"+乱[i][2]+"</small></h3></td></tr>";}}
             if(乱[i][0]!="hr" && 乱[i][0]+乱[i][1]+乱[i][2]!=""){dy+="<tr><td onclick=\"复(制='"+乱[i][0]+"')\">"+乱[i][0]+"</td><td>"+乱[i][1]+"</td><td>"+乱[i][2]+"</td></tr>";}
         }dy+="</table>";}
