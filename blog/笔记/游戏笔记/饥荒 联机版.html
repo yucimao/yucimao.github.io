@@ -169,13 +169,17 @@ pinglun: 1
     dy+="在鼠标位置生成：c_spawn(\"代码\",数量)<br>";
     dy+="<table>";
         for(let i=0;材料.length>i;i++){
-            dy+="<tr><td>"+材料[i][0]+"</td>";
-            dy+="<td><input type='text' id='材料id"+i+"' placeholder='数量' autocomplete='off'/> <a onclick=\"材料复(材料制='材料id"+i+"／背包／"+材料[i][1]+"')\">背包</a> <a onclick=\"材料复(材料制='材料id"+i+"／鼠标')\">鼠标</a></td>";
-            dy+="<td>"+材料[i][1]+"</td></tr>";
+            if(材料[i][0]=="hr"){
+                dy+="<tr><td><h4>"+材料[i][1]+"</h4></td></tr>";
+            }else{
+                dy+="<tr><td>"+材料[i][0]+"</td>";
+                dy+="<td><input type='text' id='材料id"+i+"' placeholder='数量' autocomplete='off'/> <a onclick=\"材料复(材料制='材料id"+i+"／背包／"+材料[i][1]+"')\">背包</a> <a onclick=\"材料复(材料制='材料id"+i+"／鼠标')\">鼠标</a></td>";
+                dy+="<td>"+材料[i][1]+"</td></tr>";
+            }
         }
     dy+="</table>";
 
-    let 材料制2="";
+    let 材料制="";
     function 材料复(){
         let 临时=材料制.split("／");
         let 输入=document.getElementById(临时[0]).value;
@@ -295,12 +299,21 @@ pinglun: 1
     dy+="DebugSpawn(\"代码\")<br>";
     dy+="<table>";
         for(let i=0;生成.length>i;i++){
-            let 临时="DebugSpawn(\""+生成[i][1]+"\")";
-            dy+="<tr><td>"+生成[i][0]+"</td>";
-            dy+="<td><a onclick=\"复(制='"+临时+"')\">复制</a></td>";
-            dy+="<td>"+生成[i][1]+"</td></tr>";
+            if(生成[i][0]=="hr"){
+                dy+="<tr><td><h4>"+生成[i][1]+"</h4></td></tr>";
+            }
+            else{
+                dy+="<tr><td>"+生成[i][0]+"</td>";
+                dy+="<td><a onclick=\"生成复(生成制='"+生成[i][1]+"')\">复制</a></td>";
+                dy+="<td>"+生成[i][1]+"</td></tr>";
+            }
         }
     dy+="</table>";
+
+    let 生成制="";
+    function 生成复(){
+        复(制="DebugSpawn(\""+生成[i][1]+"\")");
+    }
 
     document.getElementById("dy").innerHTML = dy;
 
