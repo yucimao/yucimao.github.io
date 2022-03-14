@@ -43,7 +43,7 @@ pinglun: 1
             "GetWorld().minimap.MiniMap:ShowArea(0,0,0,10000)"],
         ["吴迪变成海狸",
             "GetPlayer().components.beaverness:SetPercent(1)"],
-        ["传送<br>把你传送到附近的“代码”的位置<br>如传送到附近的牛的位置，则输入：c_gonest(\"beefalo\")",
+        ["传送<br>把你传送到附近的“代码”的位置<br>如传送到牛的附近：c_gonest(\"beefalo\")",
             "c_gonext(\"代码\")"],
         ["删除鼠标位置的物体",
             "TheInput:GetWorldEntityUnderMouse():Remove()"],
@@ -56,16 +56,17 @@ pinglun: 1
         for(let i=0;控制台.length>i;i++){
             if (控制台[i][1].indexOf("／") != -1){
                 dy+="<tr><td>"+控制台[i][0]+"</td>";
-                dy+="<td onclick=\"控制台复(控制台制='控制台id"+i+"／"+控制台[i][1]+"')\">";
+                dy+="<td><a onclick=\"控制台复(控制台制='控制台id"+i+"／"+控制台[i][1]+"')\">复制</a></td><td>";
                 let 临时=控制台[i][1].split("／");
                 dy+=临时[0];
                 dy+="<input type='text' id='控制台id"+i+"' placeholder='值' autocomplete='off'/>";
                 dy+=临时[1];
                 dy+="</td></tr>";
             }else{
-                dy+="<tr><td>"+控制台[i][0]+"</td><td onclick=\"复(制='"+控制台[i][1]+"')\">"+控制台[i][1]+"</td></tr>";
+                dy+="<tr><td>"+控制台[i][0]+"</td><td><a onclick=\"复(制='"+控制台[i][1]+"')\">复制</a><td>"+控制台[i][1]+"</td></tr>";
             }
         }
+    dy+="</table>";
 
     let 控制台制="";
     function 控制台复(){
@@ -73,8 +74,6 @@ pinglun: 1
         let 输入=document.getElementById(临时[0]).value;
         复(制=临时[1]+输入+临时[2]);
     }
-
-    document.getElementById("dy").innerHTML = dy;
 
     let 材料=[
         ["hr","材料"],
@@ -164,6 +163,26 @@ pinglun: 1
         ["龙蛋","miregg"],
 
     ];
+
+    dy+="<h3>获得材料</h3>";
+    dy+="在背包里生成：c_give(\"代码\",数量)<br>";
+    dy+="在鼠标位置生成：c_spawn(\"代码\",数量)<br>";
+    dy+="<table>";
+        for(let i=0;材料.length>i;i++){
+            dy+="<tr><td>"+材料[i][0]+"</td>";
+            dy+="<td><input type='text' id='材料id"+i+"' placeholder='数量' autocomplete='off'/> <a onclick=\"材料复(材料制='材料id"+i+"／背包／"+材料[i][1]+"')\">背包</a> <a onclick=\"材料复(材料制='材料id"+i+"／鼠标')\">鼠标</a></td>";
+            dy+="<td>"+材料[i][1]+"</td></tr>";
+        }
+    dy+="</table>";
+
+    let 材料制2="";
+    function 材料复(){
+        let 临时=材料制.split("／");
+        let 输入=document.getElementById(临时[0]).value;
+        if(临时[1]=="背包"){临时="c_give(\""+临时[2]+"\","+输入+")";}
+        else{临时="c_spawn(\""+临时[2]+"\","+输入+")"}
+        复(制=临时);
+    }
 
     let 生成=[
         ["荧光草","flower_cave"],
@@ -271,6 +290,19 @@ pinglun: 1
         ["千年狐","wharang"],
 
     ];
+
+    dy+="<h3>生成物体</h3>";
+    dy+="DebugSpawn(\"代码\")<br>";
+    dy+="<table>";
+        for(let i=0;生成.length>i;i++){
+            let 临时="DebugSpawn(\""+生成[i][1]+"\")";
+            dy+="<tr><td>"+生成[i][0]+"</td>";
+            dy+="<td><a onclick=\"复(制='"+临时+"')\">复制</a></td>";
+            dy+="<td>"+生成[i][1]+"</td></tr>";
+        }
+    dy+="</table>";
+
+    document.getElementById("dy").innerHTML = dy;
 
 </script>
 
