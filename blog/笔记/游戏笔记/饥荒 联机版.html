@@ -5,10 +5,15 @@ nav_text: 饥荒 联机版
 nav_url: <a href="/biji/game">游戏笔记</a>
 permalink: i/zk/4722951
 pinglun: 1
+anchor: 1
 ---
 <style>input{width:4em;}</style>
 
-重生MOD <b>restart</b>：按U，输入#restart<br>
+<a href="steam://rungameid/322330" target="_blank">打开Steam版饥荒</a><br>
+<br>
+
+<a name="MOD"></a><h3>MOD</h3>
+<b>restart</b> 重生：按U，输入#restart<br>
 <br>
 
 <div id="dy"></div>
@@ -29,27 +34,27 @@ pinglun: 1
             "GetPlayer().components.sanity:SetMax(／)"],
         ["饥饿上限",
             "GetPlayer().components.hunger:SetMax(／)"],
-        ["设置速度<br>标准速度为1，值越大速度越快",
+        ["设置速度<br><small>标准速度为1，值越大速度越快</small>",
             "c_speed(／)"],
         ["停止饥饿",
             "GetPlayer().components.hunger:Pause(true)"],
         ["取消停止饥饿",
             "GetPlayer().components.hunger:Pause(false)"],
-        ["上帝模式<br>不掉生命精神饥饿",
+        ["上帝模式<br><small>不掉生命精神饥饿</small>",
             "c_godmode()"],
-        ["创造模式<br>可以制作全物品",
+        ["创造模式<br><small>可以制作全物品</small>",
             "GetPlayer().components.builder:GiveAllRecipes()"],
         ["地图全开",
             "GetWorld().minimap.MiniMap:ShowArea(0,0,0,10000)"],
         ["吴迪变成海狸",
             "GetPlayer().components.beaverness:SetPercent(1)"],
-        ["传送<br>把你传送到附近的“代码”的位置<br>如传送到牛的附近：c_gonest(\"beefalo\")",
+        ["传送<br><small>把你传送到附近的“代码”的位置<br>如传送到牛的附近：c_gonest(\"beefalo\")</small>",
             "c_gonext(\"代码\")"],
         ["删除鼠标位置的物体",
             "TheInput:GetWorldEntityUnderMouse():Remove()"],
     ];
 
-    dy+="<h3>控制台代码</h3>";
+    dy+="<a name='控制台代码'></a><h3>控制台代码</h3>";
     dy+="“~”打开，Ctrl+L关闭。<br>";
     dy+="使用小数点表示百分数，如0.8=80%<br>";
     dy+="<table>";
@@ -164,13 +169,13 @@ pinglun: 1
 
     ];
 
-    dy+="<h3>获得材料</h3>";
+    dy+="<a name='获得材料'></a><h3>获得材料</h3>";
     dy+="在背包里生成：c_give(\"代码\",数量)<br>";
     dy+="在鼠标位置生成：c_spawn(\"代码\",数量)<br>";
     dy+="<table>";
         for(let i=0;材料.length>i;i++){
             if(材料[i][0]=="hr"){
-                dy+="<tr><td colspan='3'><h4>"+材料[i][1]+"</h4></td></tr>";
+                dy+="<tr><td colspan='3'><a name='　"+材料[i][1]+"'></a>"+材料[i][1]+"</h4></td></tr>";
             }else{
                 dy+="<tr><td>"+材料[i][0]+"</td>";
                 dy+="<td><input type='text' id='材料id"+i+"' placeholder='数量' autocomplete='off'/> <a onclick=\"材料复(材料制='材料id"+i+"／背包／"+材料[i][1]+"')\">背包</a> <a onclick=\"材料复(材料制='材料id"+i+"／鼠标')\">鼠标</a></td>";
@@ -295,12 +300,12 @@ pinglun: 1
 
     ];
 
-    dy+="<h3>生成物体</h3>";
+    dy+="<a name='生成物体'></a><h3>生成物体</h3>";
     dy+="DebugSpawn(\"代码\")<br>";
     dy+="<table>";
         for(let i=0;生成.length>i;i++){
             if(生成[i][0]=="hr"){
-                dy+="<tr><td colspan='3'><h4>"+生成[i][1]+"</h4></td></tr>";
+                dy+="<tr><td colspan='3'><a name='　"+生成[i][1]+"'></a><h4>"+生成[i][1]+"</h4></td></tr>";
             }
             else{
                 dy+="<tr><td>"+生成[i][0]+"</td>";
