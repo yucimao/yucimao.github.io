@@ -56,14 +56,14 @@ pinglun: 1
         for(let i=0;控制台.length>i;i++){
             if (控制台[i][1].indexOf("／") != -1){
                 dy+="<tr><td>"+控制台[i][0]+"</td>";
-                dy+="<td 控制台复(控制台制='控制台id"+i+"／"+控制台[i][1]+"')>";
+                dy+="<td onclick=\"控制台复(控制台制='控制台id"+i+"／"+控制台[i][1]+"')\">";
                 let 临时=控制台[i][1].split("／");
                 dy+=临时[0];
                 dy+="<input type='text' id='控制台id"+i+"' placeholder='值' autocomplete='off'/>";
                 dy+=临时[1];
                 dy+="</td></tr>";
             }else{
-                dy+="<tr><td>"+控制台[i][0]+"</td><td 复(制='"+控制台[i][1]+"')>"+控制台[i][1]+"</td></tr>";
+                dy+="<tr><td>"+控制台[i][0]+"</td><td onclick=\"复(制='"+控制台[i][1]+"')\">"+控制台[i][1]+"</td></tr>";
             }
         }
 
@@ -271,6 +271,7 @@ pinglun: 1
         ["千年狐","wharang"],
 
     ];
+
 </script>
 
 
