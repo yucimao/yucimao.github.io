@@ -12,13 +12,34 @@ pinglun: 1
 <br>
 
 <a name="MOD"></a><h3>MOD</h3>
-<b>restart</b> 重生：按U，输入#restart<br>
+<b>[DST]WhaRang</b>：千年狐。<br>
+<b>Ice Backpack</b>：冰背包。<br>
+<b>More In Tumbleweed</b>：风滚草盲盒。<br>
+<b>Storeroom</b>：地窖。<br>
 <br>
 
 <div id="dy"></div>
 
 <script>
     let dy="";
+
+    let 常用=[
+        ["重生 restart<br><small>按U用密语发送文字</small>","#restart"],
+    ];
+
+    dy+="<a name='常用'></a><h3>常用</h3>";
+    dy+="<table>";
+    for(let i=0;常用.length>i;i++){
+        dy+="<tr><td>"+常用[i][0]+"</td>";
+        dy+="<td><a onclick=\"生成复(生成制='"+常用[i][1]+"')\">复制</a></td>";
+        dy+="<td>"+常用[i][1]+"</td></tr>";
+    }
+    dy+="</table>";
+    
+    let 常用制="";
+    function 常用复(){
+        复(制=生成制);
+    }
 
     let 控制台=[
         ["当前生命",
