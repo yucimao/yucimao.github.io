@@ -27,7 +27,8 @@ if(typeof(sjtk)!="undefined"){dy+="<button onclick='sjtk_随机()'>随机</butto
 if(typeof(sjtk_s)!="undefined"){dy+=" <input type='text' id='输入' placeholder='搜索' onkeyup='确定()'/>";}
 dy+="<div id='sjtk'></div>";}
 if(typeof(qm)!="undefined"){dy+="<button onclick='打(乱=qm);qm_随机()'>随机</button><input type='text' id='qm_输入' placeholder='抽取次数'/><br><br><div id='qm'></div>";}
-dy+="<div id='dy2'></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
+// dy+="<div id='dy2'></div>"; 忘了这是啥了
+dy+="<textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
 dy+="<div class='dw_zz' id='dw_zz' style='display:none;'><div id='dw_x' onclick='dw_x()' style='display:none;'></div><div class='dw_tk'><div id='dw_hd'><span id='dwd'></span><span id='dwc'></span><div id='dw_hd_r' onclick='dw_x()' class='bukexuanzhong'>×</div></div></div></div>";
 document.getElementById("dy").innerHTML=dy;
 
