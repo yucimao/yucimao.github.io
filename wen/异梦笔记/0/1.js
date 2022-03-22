@@ -46,7 +46,7 @@ for(let i=0;sjtk_s.length>i;i++){
 }document.getElementById("sjtk").innerHTML=结果;}
 
 function sjtk_随机(){
-    if(次数==0){打(乱=sjtk);}
+    if(次数==0){乱=sjtk;打();}
     if(乱.length==次数){document.getElementById("sjtk").innerHTML="题库已空";次数=0;
     }else{document.getElementById("sjtk").innerHTML="<a onclick='删除码(制="+乱[次数]+")'>删除码</a><br><iframe src='1/"+乱[次数]+".html' height=100% width=100%></iframe>";次数+=1;}
 }
@@ -54,6 +54,7 @@ function sjtk_全部显示(){
     次数="";
     for(let i=0;sjtk.length>i;i++){次数+="<br><b><a onclick=\"复(制='"+sjtk[i]+"')\">"+sjtk[i]+"（删除码）</a></b>"+"<iframe src='1/"+sjtk[i]+".html' height=100% width=100%></iframe><br>";}
     document.getElementById("sjtk").innerHTML=次数;
+    次数=0;
 }
 function 删除码(){复(制="\""+制+"\"");}
 

@@ -21,7 +21,7 @@ let zkb_h1="{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}";
 let zkb_nav="{% if page.zkb_nav %}{{ page.zkb_nav }}{% else %}{% endif %}".split("／");
 let zkb_nav_dy="<a href='/i'>猫球博客</a>";
 for(let i=0;zkb_nav.length>i;i++){
-    zkb_nav_dy+=" / <a href='"+zkb_nav[i].split(",")[0]+"'>"+zkb_nav[i].split(",")[1]+"</a>";
+    zkb_nav_dy+=" / <a href='/"+zkb_nav[i].split(",")[0]+"'>"+zkb_nav[i].split(",")[1]+"</a>";
 }
 zkb_nav_dy="<h1>"+zkb_h1+"</h1> "+zkb_nav_dy+"<hr>";
 document.getElementById("zkb_dy").innerHTML = zkb_nav_dy;
@@ -39,7 +39,7 @@ if (anchor[0]) {
         }
     }
 }
-document.getElementById("index").innerHTML = anchor_dy;
+document.getElementById("index").innerHTML = "<br><br>"+anchor_dy;
 </script>
 
 {% if page.pinglun %}{% include Valine.html %}{% endif %}
