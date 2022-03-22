@@ -5,17 +5,17 @@ layout: default
 
 <style>
 body{position: relative;width: 60%;top: 1em;margin: auto;}
-.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}
+#index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}
 h1,h2,h3,h4,h5,h6,nav{display:inline;}
 h1 small{font-weight: normal;font-size:0.7em;}
 h2 small,h3 small,h4 small,h5 small,h6 small{color:var(--huise-color);}
 @media screen and (max-width: 767px){
     body{width: 90%;}
-    .index{display:none;}
+    #index{display:none;}
 }
 </style>
 <div id="zkb_dy"></div>
-<div class="index"></div>
+<div id="index"></div>
 <script>
 let zkb_h1="{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}";
 let zkb_nav="{% if page.zkb_nav %}{{ page.zkb_nav }}{% else %}{% endif %}".split("／");
