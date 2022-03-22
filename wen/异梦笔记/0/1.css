@@ -5,6 +5,7 @@ body{position: relative;width: 60%;top: 1em;margin: auto;}
 h1,h2,h3,h4,h5,h6,nav{display:inline;}
 h1 small{font-weight: normal;font-size:0.7em;}
 h2 small,h3 small,h4 small,h5 small,h6 small{color:var(--huise-color);}
+#index_dy h3{font-size:1.2em;}
 .提{position: relative;display: inline-block;border-bottom:1.5px dashed #aaa;}.提 .示{border: 2px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.提:hover .示{transform:translate(0,20px);transition:all 0.5s;visibility: visible;}
 .zhushi[onclick^="解(锁"]{cursor:pointer;}
 .index_top a{cursor:pointer;color:var(--huise-color);}
