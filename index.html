@@ -1,23 +1,16 @@
 ---
 layout: o
 ---
-<style>
-body{margin:0;}
-#i{width:100%;height:100vh;margin:0;}
-</style>
-<div id="i"></div>
+<style>body{margin:0;}#i{width:100%;height:100vh;margin:0;}</style><div id="i"></div>
 <script>
-// let 当前url=window.location.href;
-// if(当前url.indexOf("xn--7qvz7xssa") != -1){
-// window.location.href="{{ site.mq }}/i";
-// }else{
-let a=new Array(
+let a=[
 "3794789",
 "3794779",
 "3794791",
 "3794819",
 "3810860",
-);
+"4869850",
+];
 let b={
 "3.8":["4101897"],
 "3.16":["3973802"],
@@ -48,5 +41,4 @@ b=Math.floor(b/1000/60/60);
 b=b%a.length;
 b="<iframe src=\"/i/"+a[b]+"\" frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>";
 document.getElementById("i").innerHTML="<a href=\"{{ site.mq_i }}\" style=\"position:absolute;color:#fff;text-shadow: 1px 1px 5px #000;\">直接进入</a>"+b;
-// }
 </script>
