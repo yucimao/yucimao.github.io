@@ -68,7 +68,7 @@ function 获(){
     for(let i=1;地址.length>i;i++){
         if (地址[i].indexOf("／") != -1){
             let 临时2=地址[i].split("]")[0].split("／");
-            if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small>(点击选择)</small></span></div>";}
+            if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small> (点击选择)</small></span></div>";}
             if(临时2[0]=="颜色"){聊天+="<div><span class=\"a "+临时2[1]+"\">"+临时2[2]+"</span></div>";}
         }else{
             聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
