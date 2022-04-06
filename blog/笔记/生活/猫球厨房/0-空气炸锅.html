@@ -1,0 +1,37 @@
+---
+layout: biji
+title: 猫球厨房 - 空气炸锅
+nav_text: <small>猫球厨房</small> 空气炸锅
+nav_url: <a href="/biji/chufang">猫球厨房</a>
+permalink: biji/chufang/kongqizhaguo
+---
+
+<div id="结果"></div>
+<script>
+let data = new Array(
+"／／／",
+);
+
+let 新=[
+"面筋／180／15／",
+"茄子／200／20／",
+"土豆火腿肠／180／30／",
+"五花肉／180／20／",
+"干锅虾／200／20／",
+"大鸡腿／180／30／",
+"红薯／200／40／",
+"羊排／180／18／",
+"金针菇／160／10／",
+"翅根／180／18／",
+"鸡蛋／180／15／",
+"年糕／180／15／",
+"土豆／180／20／",
+
+];
+for(let i=0;新.length>i;i++){
+    let 临时=新[i].split("／");
+    临时=临时[0]+" <small>"+临时[1]+"度 "+临时[2]+"分钟</small>／【"+i+"】／／"+临时[3];
+    data[data.length]=临时;
+}
+data[data.length]="／／／";
+</script>
