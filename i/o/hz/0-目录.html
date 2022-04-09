@@ -5,7 +5,7 @@ nav_url: <a href="/biji">笔记</a>
 permalink: huazuozhanshi
 ---
 <style>
-    iframe{box-shadow: 0px 0px 20px 8px rgb(88, 88, 88);overflow:hidden}
+    iframe{box-shadow: 0px 0px 20px 8px rgb(88, 88, 88);}
 </style>
 
 <div id="dy"></div>
@@ -56,7 +56,7 @@ permalink: huazuozhanshi
 
                 }
             }
-        dy+="<iframe src='"+地址+"0.html?t="+编号+"' frameborder='0' width='1000px' height='563px'></iframe>";
+        dy+="<iframe src='"+地址+"0.html?t="+编号+"' frameborder='0' scrolling:'no' width='1000px' height='563px'></iframe>";
         document.getElementById("dy").innerHTML = dy;
     }
 </script>
