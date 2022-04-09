@@ -1,0 +1,62 @@
+---
+layout: page2
+title: 画作展示
+nav_url: <a href="/biji">笔记</a>
+permalink: huazuozhanshi
+---
+<style>
+    iframe{box-shadow: 0px 0px 20px 8px rgb(88, 88, 88);}
+</style>
+
+<div id="dy"></div>
+<script>
+    let data={
+        "zk编号":["作品名","作者","说明","价格","目前归属","图案,颜色"],
+        "1":["黑色1","李猫球","","300,000","-","0,1","vdh1,0"],
+        "2":["黑色2","李猫球","","300,000","-","0,0","vdh1,1"],
+    };
+    let 地址="/i/o/hz/";
+    let 色={
+        "0":"#000000",
+        "1":"#ffffff",
+
+    };
+    let dy="";
+
+    let LocString = String(window.document.location.href);function GetQueryString(name) {let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;if (tmp = rs) {return decodeURI(tmp[2]);}return "";}
+    let id=data[GetQueryString("t")];
+    if(typeof(id)!="undefined"){
+        打印();
+    }else{
+        dy+="请输入正确的画作编号：<br><input type='text' id='输入' placeholder='输入' autocomplete='off'/><button onclick='查询()'>查询</button>";
+    }
+    document.getElementById("dy").innerHTML = dy;
+
+    function 查询(){
+        let 输入=document.getElementById("输入").value;
+        id=data[输入];
+        if(typeof(id)!="undefined"){
+            打印();
+        }else{
+            document.getElementById("dy").innerHTML = dy+"<br>您输入的“"+输入+"”不正确。";
+        }
+    }
+
+    function 打印(){
+        dy="<h2>"+id[0]+"</h2>作者："+id[1]+"　　参考价："+id[3]+"　　目前归属："+id[4]+"<br>"+id[2]+"<br><br>";
+        let 编号="";
+            for(let i=5;id.length>i;i++){
+                let 临时=id[i].split(",");
+                if(i!=5){编号+=",";}
+                编号+=临时[0];
+                if(临时[1]){
+                    编号+=".";
+                    if(临时[1][0]!="#"){编号+=色[临时[1]];
+                    }else{编号+=临时[1];}
+
+                }
+            }
+        dy+="<iframe src='画.html?t="+编号+"' frameborder='0' width='1000px' height='563px'></iframe>";
+        document.getElementById("dy").innerHTML = dy;
+    }
+</script>

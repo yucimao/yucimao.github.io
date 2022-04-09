@@ -1,0 +1,11 @@
+
+<style>body{padding:0px;margin: 0px;}.画作,.画笔{position:absolute;top:0px;left:0px;width:100%;height:100%;}.画笔{background-blend-mode: lighten;background-size: cover;-webkit-mask-mode: luminance;mask-mode: luminance;}.画布{position: relative;width:1000px;height:563px;}</style><div id="dy"></div><script>let dy="";let LocString = String(window.document.location.href);function GetQueryString(name) {let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;if (tmp = rs) {return decodeURI(tmp[2]);}return "";}let id=GetQueryString("t").split(",");let 地址="/i/o/hz/";dy+="<div class='画布'>";
+for(let i=0;id.length>i;i++){
+let 临时=id[i].split(".");
+if(临时[1]){
+if(临时[1][0]!="#"){临时[1]=色[临时[1]];}
+dy+="<div class='画笔' style='background-image: url("+地址+"0.png), linear-gradient("+临时[1]+", "+临时[1]+");-webkit-mask-image: url("+地址+临时[0]+".png);mask-image: url("+地址+临时[0]+".png);'></div>";
+}else{
+dy+="<div class='画作' style='background-image: url("+临时[0]+".png)'></div>";
+}
+}dy+="</div>";document.getElementById("dy").innerHTML = dy;</script>

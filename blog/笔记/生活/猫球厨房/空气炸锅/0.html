@@ -10,6 +10,7 @@ permalink: biji/chufang/kongqizhaguo
 <script>
 let data = new Array(
 "／／／",
+"烤香菇／4942677／／",
 );
 
 let 新=[
@@ -26,11 +27,12 @@ let 新=[
 "鸡蛋／180／15／",
 "年糕／180／15／",
 "土豆／180／20／",
+"烤香菇",
 
 ];
 for(let i=0;新.length>i;i++){
     let 临时=新[i].split("／");
-    临时=临时[0]+" <small>"+临时[1]+"度 "+临时[2]+"分钟</small>／【"+i+"】／／"+临时[3];
+    临时=临时[0]+" <small>"+临时[1]+"度 "+临时[2]+"分钟 "+临时[3]+"</small>／【"+i+"】／／"+临时[4];
     data[data.length]=临时;
 }
 data[data.length]="／／／";
