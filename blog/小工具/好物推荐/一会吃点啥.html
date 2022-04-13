@@ -1,0 +1,85 @@
+---
+layout: page2
+title: 一会吃点啥
+nav_text: 一会吃点啥
+nav_url: <a href="/zatan">笔记</a>
+permalink: biji/chidiansha
+pinglun: 1
+---
+点击【<a onclick="随机()">这里</a>】随机一个<span id="dyy"></span><br>
+<div id="dy"></div>
+<script>
+    let data=[
+        "麻辣香锅",
+        "麻辣拌",
+        "串串香",
+        "饺子",
+        "馄饨",
+        "寿司",
+        "卷饼",
+
+        "hr／米饭",
+        "饭菜",
+        "拌饭",
+        "饭包",
+        "黄焖鸡米饭",
+        "鸡公煲",
+        "菜包饭",
+
+        "hr／面条",
+        "拉面",
+        "牛肉面",
+        "麻辣烫",
+        "米线",
+        "方便面",
+
+        "hr／烧烤",
+        "烧烤",
+        "烤肉",
+        "烤鸭",
+
+        "hr／快餐",
+        "汉堡",
+        "披萨",
+        "炸鸡",
+
+        "hr／街边小吃",
+        "烤冷面",
+
+        "hr／甜品",
+        "蛋糕",
+        "面包",
+        "甜甜圈",
+    ];
+    let arr=[];
+
+    let dy="";
+    for(let i=0;data.length>i;i++){
+        let 临时=data[i].split("／");
+        if(临时[0]=="hr"){
+            dy+="<h4>"+临时[1]+"</h4>";
+            if(临时[2]){dy+=临时[2]+"<br>";}
+        }else{
+            arr[arr.length]=data[i];
+            dy+=临时[0]+"<br>";
+        }
+    }
+
+    document.getElementById("dy").innerHTML = dy;
+
+    function 随机(){
+        let _arr=arr.slice();
+        for(let i=0;i<_arr.length;i++){
+            let j=getRandomInt(0,i);
+            let t=_arr[i];
+            _arr[i]=_arr[j];
+            _arr[j]=t;
+        }
+        function getRandomInt(min,max) {
+        return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        arr=_arr;
+        document.getElementById("dyy").innerHTML = "：<b>"+arr[0]+"</b>";
+    }
+
+</script>
