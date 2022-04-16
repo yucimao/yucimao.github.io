@@ -16,7 +16,7 @@ h4 {font-size: 20px;}
 h5 {font-size: 16px;}
 h6 {font-size: 13px;}
 h2:before,h3:before{content:"# ";color:var(--huise-color);}
-h4:before{content:"“ ";color:var(--huise-color);}h4:after{content:" ”\00A0";color:var(--huise-color);}
+h4:before,h5:before{content:"“ ";color:var(--huise-color);}h4:after,h5:after{content:" ”\00A0";color:var(--huise-color);}
 .h0:before{content:"";}h0:after{content:"";}
 hr{height:1px;border:none;border-top:1px solid #ddd;margin:25px 0 15px;}
 hr.hr1 {border: 0;height: 1.3px;background: #333;background-image: linear-gradient(to right, #ff8381,#d4ff8b,#a1b2ff);}
