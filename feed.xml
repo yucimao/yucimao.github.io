@@ -13,7 +13,7 @@ layout: none
 			<item>
 			   <title>标题</title>
 			   <description>说明</description>
-			   <pubDate>{{ 2017-06-27 | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+			   <pubDate>2017-06-27</pubDate>
 			   <link>{{ site.mq }}/xxx</link>
 			   <guid isPermaLink="true">{{ site.mq }}/xxx</guid>
 			   </item>
