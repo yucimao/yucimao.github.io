@@ -1,0 +1,22 @@
+---
+layout: none
+---
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>{{ site.title }}</title>
+		<description>{{ site.description }}</description>
+		<link>{{ site.mq }}</link>
+		<atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
+
+			<item>
+			   <title>标题</title>
+			   <description>说明</description>
+			   <pubDate>{{ 2017-06-27 | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+			   <link>{{ site.mq }}/xxx</link>
+			   <guid isPermaLink="true">{{ site.mq }}/xxx</guid>
+			   </item>
+
+	</channel>
+</rss>
