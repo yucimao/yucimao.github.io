@@ -20,11 +20,13 @@ function 输入(){
     日期[1]=日期[1]*1;
     let 时=new Date().getHours();
     if(时<10){时="0"+时;}
+    let 分=new Date().getMinutes()+10;
+    if(分>59){分="59";}
     
     let dy="<item>／"+
         "<title>"+document.getElementById("标题").value+"</title>／"+
         "<description>"+document.getElementById("说明").value+"</description>／"+
-        "<pubDate>"+星期+", "+日期[2]+" "+月[日期[1]]+" "+日期[0]+" "+时+":00:00 +0000</pubDate>／"+
+        "<pubDate>"+星期+", "+日期[2]+" "+月[日期[1]]+" "+日期[0]+" "+时+":"+分+":00 +0480</pubDate>／"+
         "<link>{{ site.mq }}/i/zk/"+document.getElementById("zk码").value+"</link>／"+
         "<guid isPermaLink=\"true\">{{ site.mq }}/i/zk/"+document.getElementById("zk码").value+"</guid>／"+
         "</item>";
