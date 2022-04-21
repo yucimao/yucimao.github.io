@@ -32,7 +32,6 @@ html,body {margin: 0;padding: 0;}
 footer {float: left;width: 100%;}
 hr{width:100%;}
 .hs{color:#404040;}
-span.dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 
 @media screen and (min-width: 768px) { /*电脑*/
     .biaotib {text-align: center;position: relative;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
@@ -114,8 +113,7 @@ for(let i=0;次数-i!=0&&datb.length!=0;i++){
     }else{
         dy+="<div class=\"cj\">";
         if(临时[4]=="u"){
-            dy += "<a href=\""+临时[5]+"\" target=\"_blank\">";
-            临时[1]=临时[1]+"<span class=\"dk\"></span>";
+            dy += "<a href=\""+临时[5]+"\"";
         }
         if(临时[4]=="o"){
             dy += "<a onclick=\""+临时[5]+"\">";

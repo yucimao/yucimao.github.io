@@ -29,7 +29,6 @@ html,body {margin: 0;padding: 0;}
 footer {float: left;width: 100%;}
 hr{width:100%;}
 .hs{color:#404040;}
-span.dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
 @media screen and (min-width: 768px) {
     div.body {width: 70%;}
 #right_anchor2{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor2 table{width:100%;}
@@ -90,8 +89,7 @@ if(临时[0]=="hr"){
 } else {
     data_jl[当前]+="<div class=\"cj\">";
     if(临时[4]=="u"){
-        data_jl[当前] += "<a href=\""+临时[5]+"\" target=\"_blank\">";
-        临时[1]=临时[1]+"<span class=\"dk\"></span>";
+        data_jl[当前] += "<a href=\""+临时[5]+"\">";
     }
     if(临时[4]=="o"){
         data_jl[当前] += "<a onclick=\""+临时[5]+"\">";
