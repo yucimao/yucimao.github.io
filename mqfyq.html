@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>猫球翻译器 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+</head>
+
+<body>
+
+<style>
+    #nav {position: absolute;top:0%;width: 100%;z-index:1002;}
+    #nav>a,.nav_drop {color: #666;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color: #666;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/xiaogongju">小工具</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<style>
+@media screen and (min-width: 768px) {
+.biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+}
+@media screen and (max-width: 768px) {
+.biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+}
+.jieguo {font-size: 1.2em;}
+#输入框 textArea {ime-mode: inactive;ime-mode: disabled;border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 70%;background: #F8F8F8;box-shadow:0 0 0 1px #DDD inset,0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}
+#输入框 textArea:focus {box-shadow:0 0 0 2px #58a4dd inset,0 3px 3px rgba(0, 0, 0, .2) inset;}
+#alert {text-align: center;background-color: #ffffff;position: absolute;display: none;z-index: 100;}
+[id^="myq_id"]{color:#006688;}
+legend{font-size: 12px;}
+fieldset{font-size: 14px;padding:0 4px 2px;border-width: 1px;border-style: solid;border-color: #dadada;}
+</style>
+<div id="alert"></div>
+<script>
+let 数据="[红红火火恍恍惚惚][yooyoung][是一款我的问题][我去年买了个包][我去年买了个表][我去年买了块表][wqnmlgb][ulzzang][恶魔妈妈买面膜][不得house][一袋米要抗几楼][evanism][carry全场][fullset][freestyle][fanclub][hthzkjh][is real][one pick][wjjwdbl][youbutu][集资(饭圈)][白帝圣剑视频]空耳[saysay][yysyqs][无fuck说][duck不必][kikidu][rapper][gayhub][debuff][nmlgcb][蓝脸的窦尔敦][yuriko][hiahia][zzzttt][拯救了银河系][tony老师][114514][dasiki][买菜超级加倍][battle][inochi][lolita]洛丽塔[母胎solo][nsdtdl][nsdfcd][潮人恐惧症][亚洲洛丽塔][白piao]白嫖[nsdbd][御剑跟着我]白帝圣剑视频,空耳[华夏第一剑]白帝圣剑视频,空耳[阿伟乱葬岗][furry]兽迷[ziben][live图][南山必胜客][虫下爪巴子][offer][nigga][蓝绿修改器][氮碘铥锑钡][mqfyq][bushi][eve男孩][wryyy][要啥自行车][爱情动作片][圆润的离开][wanan][哦摩西罗伊][毫无违和感][真人pvp][1136元][错过一个亿][独角兽粉末][roll点][sukey][宝山老来俏][diao丝][非人类猩猩][07234][57386][qw1ko][肥宅快乐水][nonke][啥是gay][耳朵要怀孕][生孩子警告][99977][买菜必涨价][留图不留种][死神小学生][滚筒洗衣机][打在公屏上][carry][vocal][title][打call][俺没偷胖次][excel][非官宣不约][gakki][胡1day][饭人不饭圈][judge][is rio][加拿大电鳗][加拿大炮王][oxlxs][生男孩48][撕part][takki][天降紫薇星][天降紫微星][显微镜女孩][wtmxs][知识分子团][zzbzq][一粉顶十黑][weed]毒品[wdfk][地铁老头][txsp][nzbx][基操勿6][dddd][suki][嘴强王者][乙女游戏][兄die][果咩纳塞][桥都麻袋][1024][我的问题]是一款我的问题[entp]mbti[entj]mbti[intp]mbti[intj]mbti[estp]mbti[esfp]mbti[istp]mbti[isfp]mbti[enfp]mbti[enfj]mbti[infp]mbti[infj]mbti[esfj]mbti[estj]mbti[isfj]mbti[istj]mbti[mbti][加麻加辣][脸大如盆][bkpp]配对[海鲜市场][oops][刻烟吸肺][脚趾抓地][脚趾蜷缩][未来可妻][未来可期][v587][rps粉]配对[rpsf]rps粉,配对[098k][ojbk][qnmd][骂了隔壁][马勒戈壁][mlgb][bksy][丫丫ds]yyds[ylwl][gmzd][yigj][ysms][fans][吃我一剑]白帝圣剑视频,空耳[白帝圣剑]白帝圣剑视频,空耳[批哩批哩][恍恍惚惚][红红火火][yysy][9494][累觉不爱][平权仙子][hsbd][emmm][yyds][asap][lmao][外貌协会][nmlp][功夫病毒][中国病毒]功夫病毒[武汉病毒]功夫病毒[口合口合][lei了][水产市场][maga][雨女无瓜][hshs][ptsd][gay蜜][蚂蚁竞走][龙门粗口][你宋丹丹][你手短短][wwyx]配对[摩托姐姐][dgjj][帝国姐姐][ggdd][虾式路人][不可家族][deck][黄泉路人][srkl][弟弟行为][ddxw][y1s1][虾味路人]路人[梦幻联动][空桑少主][镇魂女鬼][战术后仰][9426][tcdj][又双叒叕][双生火焰][狗头侦探][滑稽保命][狗头保命][掐我一下][威威一肖]配对[怎么硕呢][你坚果腿][欧拉欧拉][梅菜扣肉][再问自杀][再问供养][钓鱼执法][pawr][相爱相杀][狗没拿伞][狗狗祟祟][稳如死狗][稳如老狗][女装大佬][xxoo][ooxx][色气满满][偷摸大鸡][同摸大鸡][分手厨房][我裂开了][心态爆炸][心态崩了][诚不欺我][诚不我欺][贤者模式][贤者时间][打得不错][wsdd][wswj][kimo]配对[三庭五眼][7456][千万直拍][真人pk][空降失败][空降成功][撒由那拉][3166][9013][被窝文学][饺子文学][嫂子文学][阳春白雪][下里巴人][biss][futa][trpg][jvav][掉san][大势所趋][dssq]大势所趋[srds][bbuh][网络升堂][shtf][斯巴拉希][斯巴拉西][nsfw][双厨狂喜]厨[圣地巡游][洗白手册][我吃柠檬][效果拔群][会心一击][tank][roll][n00b][newb][rofl][buff][bind][知山买山]山寨[知山穿山]山寨[atm奴][迪丽热妈][gank][小奶羔子][xngz][kswl]配对[磕死我了]配对[你马没了][soku][yoki][miyo][rich][kuma][luna][xixi][tata][kiki][coco][momo][tako][前排吃瓜][后排吃瓜][syfq][xsgr][qjnn][hong][画风突变][sjhz]水军黑子[水军黑子][大脚野人]227[八君一肖]配对[巴诺布猿][黑十字会][疑车无据][双手打字][财富密码][羊踹玉兔][祥瑞御免][三观不正][三观不合][boss][热搜体质][营养快线][托尼老师][文明观球]福利[少看亿集][摄晚八桌][神秘代码][生无可恋][钢铁直男][直男审美][快乐喷泉][快乐源泉][脱非入欧][非洲警告][非洲酋长][nhml]你号没了[你号没了][二人幸终][一斤鸭梨][homo][1919][哈希辣妈][哈希拉马][无限月读][月入一狗][月入一蛆][强奴劲驴][耳朵怀孕][三观尽毁][田园女权][cpdd][6655][6324][3484][soga][u1s1][口吐莲花][口吐芬芳][boki][siki][他大姨妈][空你几哇][勿cut][勿cue][下次一定][买一咬三][封好绅多][以地那回][举个栗子][妈妈爱你][四百大妈][isee][山争哥哥][qswl][part][bksn][五大流氓][男默女泪][人艰不拆][喜大普奔][十动然拒][1551][不明觉厉][白学现场][马猴烧酒][fff团][橘里橘气][电脑配件][深夜放毒][care][人肉带回][mall][多人运动][mtjj][3104][8懂就问][8012][8102][9012][9102][adsj][爱福西西][艾弗西西][安静如鸡][爱莉杏菜][anti]黑粉[按头粉籍][阿伟死了][awsl][不出墙头][八百倍速][白bra][babe][back][bbnl][bdjw][不吹不黑][辫儿哥哥][不服吊死][bhys][不黑不吹][big胆][blbq][博君一笑]博君一肖,配对[博君一肖]配对[bjyx]博君一肖,配对[本命魔咒][宝藏男孩][宝藏女孩][不要碧莲][cbyl][车祸现场][ching][chong][抽奖挂人][copy][con场][con碟][厕所消息][草原郡主][臭鱼烂虾][cylx]臭鱼烂虾[吃枣药丸][踩一捧一][cypy]踩一捧一[c1p1]踩一捧一[东百太君][东京小子][diss][djll][dlrb][doki][打小畜生][eghy][二字弟弟][fake][非粉即黑][five][flop][粉丝滤镜][粉随蒸煮][饭通事故][房子塌了][放洗脑包][fyfy][fzzw][ggcw][公开处刑][gnps][gsyy]配对[高山原也]配对[guna][gwps][gygy][高位出道][黑暗料理][黑泡甜心][糊穿地心][火羊弟弟][idol][ikun][ilun][imhy][jbjj][jgjj][jjyy][jjww][激情卷发][jsfs][精准点草][精准点艹][可a可奶][可攻可受][克里斯马][kris][卡司爆炸][可盐可甜][坤音四子][lgbt][line][low娘]亚洲洛丽塔[lllb][芦苇姐姐][lwjj][ljyx][了解一下][mark][母爱变质][maki][mdzz][迷惑行为][母胎美男][盲人冲浪][mxtx][mxtc][myss][nbcs][你号没了][nhjj][nino][孽力回馈][nlhk][nmsl][nsdd][浓糖姐姐][ntjj][你有事吗][nxsm][nznd][南征北战][o98k][p1c1]捧一踩一[pcpg][pick][pldd][plgg][pljj][plmm][py交易][捧一踩一][pycy]捧一踩一[圈地自萌][强推之耻][repo][人设崩塌][人设崩了][人肉搜索][日天弟弟][sblj][shop][slay][神木弟弟][solo][ssmy][ssfd][私生粉丝]私生饭[三石弟弟][上升爱豆][上升正主][上升蒸煮][sysy][三字弟弟][四字弟弟][山支大哥][同担拒否][tcjj][脱粉回踩][tfro]脱非入欧[toda][躺平任嘲][跳水冠军][太阳女神][vlog][弯道超车][wdcc][为爱发电][wcnm][wink][无极鲅鱼][wjby][wjjw][wlsw][物料偷跑][王母娘娘][握手女奴][wuli][王炸四子][xfxy][xggm][嘻哈萝莉][xjbk]配对[xkwl][xmsl][喜马拉雅][xmly]喜马拉雅[xswl][xtms][限定组合][先撩者贱][xxbb][xyxf][又当又立][用爱发电][原地爆炸][ygjg][yhxx][yhsq][乐华七子][yjjc][yjgj][雨你无瓜][野兽姐姐][ysjj][ytlz][有钱哥哥][忧郁菠萝][音源大雾][仰卧起坐][yyqx][yygq][宇宙警察][雨我无瓜][yygq][玉音放送][zfwb][zgbr][正面硬刚][在团恋爱][zqsg][真情实感][zwsg][中丸雄一][坐地排卵][zztf][煲猪肉]毒品[烧开水]毒品[打呼噜]毒品[大力丸]毒品[象牙棒]毒品[海白菜]毒品[天花板][剧情杀][红伞伞][到手刀][nzb][胡椒罐][五五开][bbc][cnn][cia][fbi][ngo][乙女腐][原女党][梦女党][女主党][乙女党][扩fo][扩列条][c0n][瓦达西][wdr][老狗逼][白切黑][粉切黑][pua][qwq][qaq][avi][gif][jpg][xdz]小吊子[小吊子][小d子][平权婊]平权仙子[太蒂了][尖叫鸡][平安夜][卖烂腐][磕药鸡]嗑药鸡,配对[美强惨][网易云][syf]事业粉[事业饭]事业粉[事业粉][dei][拆奶罩][zdl][ytz][ylj][屁股歪][歪屁股][wpg]歪屁股[wxs][ssr][rps]配对[o的k][odk][nmb][ccp]处cp[处cp][iqy][快乐水][零元购][0元购][假大空][伟光正]假大空[zbc][vup][mhy][wsc][老色批][lsp][clm][xdm][886][绝绝子][达不溜][tcl][zzr][歪果仁][红果果][蘑菇弹][蘑菇蛋][thx][omg][滑铁卢][alm][blm][mmp][开柜门][爷青回][网抑云][mcu][吸血雷][红脖子][pg1][pgo][fbb][沙子爹][仇恨值][ovm][二刺螈]二次元[二次猿]二次元[aph][phx][默秒全][hzt][web][hxd][杀人台][肉便器][rbq]肉便器[爱手艺][cao][zfb][在线蹲][蹲一个][woc][摁个棒][工读牲]脑残粉,水军[工读生]脑残粉,水军[买可乐][蓝胖子][zyt][融雪剂]路人[软妹币][城会玩][何弃疗][凸凸七]227[秃老师]227[ppt][tql][eve][南波万][非洲鼠][囤囤鼠][paj][学废了][银他妈][热知识][金三胖][邪教粉][撞死人][磕学家]配对[马鹿仙][qts][小废虾][der][倒血梅][布吉岛][浏览狗][九漏鱼][肖一假][肖一甲][吱星人][汪星人][喵星人][枣子哥][124][奇行种][残体字][钩太直][牡丹狗][痣多星][挂公司][稳如狗][小白文][吨吨吨][攻城狮][肝不动][033][二刺猿][风景线][gta][字母圈]sm[llz][zxt][kkd][ki羊]配对[dyn][xzy][jzh][ysx][lkr][sfc][欧金金][拉拉肥][踢皮球][阿婆主][水视频][非粉存][skr][蓝爸爸][红爸爸][交公粮][菜菜子][马赛克][种草莓][小甜饼][拗造型][凹造型][黑历史][换头怪][地域黑][地域嗨]地域黑[pwp][漂亮国][高卢鸡][约翰牛][白头鹰][黑命贵][福报厂][807][开封菜][axi][好人卡][les][金针菇][领便当][211][985][996][scp][fxs][san][coc][dau][adc][lmk][渣渣辉][jjc][emm][cut][doi][anw][cos][npc]语c[419][幼驯染][戴黑帽][原谅帽][纸性恋][次元墙]次元壁[次元壁][你忙吧][cyh][qdy][wyx][lxy][xmj][qyd][gyx][lry][yyq][gqz][lmy][lzt][daj][wxy][lzx][jw3][举报骑][老油条][得大分][得小分][dtw][单推王][n2队][s2队][购物车][画大饼][dnf][撸啊撸][rts][rac][mug][ftg][fps][avg][rpg][必杀技][exp][国家队][wts][wtb][str][sta][pvp][mob][mmo][lom][lol][int][dps][dot][hot][bop][boe][agi][afk][aoe][add][dnd][快乐屋][啪啪啪][骚想干][执死鸡][赵立农][丑笔畅][骚凹瑞][抢人头][收人头][嗑药鸡]配对[握手会][打朵朵][打夺夺][nmp][薅羊毛][刷锅水][101][tgr][dbr][xgr][dlr][wzr][小苹果][小猪熊][1加1][小笨蛋][格格恩][小音音][sky][小熊猫][yir][小仙女][小乌龟][晴格格][小哥哥][碎碎念][广东仔][1加2][白发卡][百合子][阔太太][那那西][呵呵姐][大妮子][小品队][社会队][消音姐][大BB][snh][小树林][薛定谔][pe事][ymh][get][gjm][熟玉米][草热度][gqt][wxb][披皮黑][pph]披皮黑[黑转路][粉转路][路转黑][njj][本垒打][vpn][xjm][18楼][十八楼][鹅肯佛][信封包][wtf][xdl][奥利给][wsn][bxg]配对[不锈钢]bxg,配对[太妃糖]配对[白雪鸽]bxg,配对[冰西瓜]bxg,配对[冰雪碧]bxg,配对[巴西龟]bxg,配对[百香果]bxg,配对[憨八龟]配对[傻ac][3次元][三次元][小裙子]亚洲洛丽塔[白骷髅][反串黑][dcx][双十一][种花家][复读机][三观正][繁殖恋][毁三观][人↑人][火星文][中二病][ban][反差萌][后生仔][ooc][qgz][针线活][福利姬]福利[杀必死]福利[萝莉控][黑科技][rua][绿茶婊][白莲花][艹数据][想桃子][想屁吃][活久见][气冷抖][扶弟魔][智商税][欧洲人][非洲人][广坎达][810][瑞斯拜][忍者跑][欧豆豆][欧多多][呐撸多][回忆杀][逆后宫][384][不喜勿][acg][拉cp][直男癌][二次元][女拳师][冷抖哭][874][801][777][648][十三姐][13姐][左上角][778][红豆泥][空帮哇][哦哈呦][xmm][lyy][fyy][myy][瑞思拜][lsh][zyq][zxw][yxj][zzn][秃头七]227[秃秃蛆]秃头七,227[突突蛆]秃头七,227[227][虾爬子][ykw][一块五][洋菩萨][abo][摸头杀][右上角][mby][pxj]批小将[批小将][批小酱]批小将[岂可修][男妈妈][栗子壳][小幸运][毛线球][猫小球][猫薄荷][圆周率][珍珠糖][火星人][小螃蟹][冰淇淋][杨家将][千纸鹤][薄荷糖][爱丽丝][可爱多][牛油果][lyx][拉普​][gck][注孤生][然并卵][醒工砖][破事水][爷关更][来信砍][万火留][语体教][语死早][经拿滚][精拿滚]经拿滚[一本道][kpi][pyq][嘤嘤嘤][恶之花][萌大奶][呆胶布][大丈夫][蹭得累][修罗场][白学家][老虎钳][233][555][理智粉][ugc][优土鳖][赛文婷][wy云][六公主][jjr][myq][mvp][kol][xzf][xxj]小学鸡[典明粥][卖鱼强][cpu][ghs][edc][川建国][奥观海][海景房][做数据][xjb][综艺感][218][244][271][283][486][51凡][51f][5gn][666][78桑][7个g][a爆了][ace][矮大紧][阿拉希][all][爱马仕][aqy][安相机]安静如鸡[bbl][bbh][不动c][bgm][玻璃心][blx]玻璃心[blh]白莲花[bml][bot][bmw][白嫖粉][bpf]白嫖粉[bts][bro][别酸了][btw][bug][闭眼吹][不运回][cdx][陈队长][凑表脸][处关系][cgx]处关系[彩虹屁][cln][cp狗]配对[cp粉]配对[cpf]配对[脆皮鸭][cpy][蹭热度][cqy]处q友[处q友][cql][穿山甲][cue][储蓄卡][cxk][cxd][吃狗粮][菜籽油][大包子][dbq][dby][地动仪][洞洞亮][打电话]打call[东北王][打飞的][大角虫][毒龙钻][毒龙转][带节奏][大幂幂][大魔王][大米团][单身狗][drl][地图炮][毒唯饭]毒唯粉[毒唯粉][dwf]毒唯粉[队友粉][dyf]队友粉[队友鸡][dyj]队友鸡[dyl][e家人][饭沉沉][fcc][发大水][反黑站][傅明寺][fxd][粉转黑][fzl][狗爱豆][挂窗帘][国民度][狗粉丝][国际章][国际脏][gkd][割韭菜][gtz][高赛文][gun][gzs][刚正面][糊13][hgn][hhh][互fo][hhy]后花园[后花园][胡萝卜][何老师][花栗鼠][黄教主][hin][hmh][黑面包][黑酸挑][htt][火少粉][黑喂狗][后援会][hyh]后援会[hyt]后援会[hyq][黑转粉][ins][寄刀片][jdl][贾富贵][鉴粉籍][加鸡腿][贾老板][捡垃圾][jio][jmm][jms][键盘侠][僵尸粉][jss][jty][ju狗][家族粉][酱油瓶][磕cp][烤地瓜][kdl]磕到了[磕到了]配对[卡通团][开闭团][kjy][卡通画][开口跪][老干部][老福特][利滚利][lhr][llp]配对[老腊肉][垃圾场][洛丽塔][lo娘][low][路人粉][路人饭][路人缘][lqz][lyt][路转粉]路人[lxs]练习生[练习生][辣眼睛][马必怀][梅格妮][麻辣鸡][米娜桑][毛毛球][妈妈木][mmq][马子俊][内存条][脑残粉][ncf]脑残粉[难波团][内斗省][nhk][鲵姐姐][牛郎团][柠檬精][农民团][尼糯米][南蛮子][nsf]逆苏粉[泥塑粉]逆苏粉[逆苏粉][ntr][暖说说][nss]暖说说[pdj][屏幕党][pvo][披皮粉][皮划艇][枇杷树][恰烂钱][亲妈粉][亲妈饭]亲妈粉[墙头粉][墙头饭]墙头粉[强心脏][润包子][rdj][rbt][rnb][rmb][肉体粉][肉体饭]肉体粉[rxl][神对应][山风团][水果姐][生猴子][深井冰][sjb][sjd][失了智][石乐志][思密达][声破天][塞纳河][smt][生男孩][sns][散热器][ssq][私生饭][ssf]私生饭[stf][生写真][四叶草][szd][世最美][世最可][晒罩杯][数字团][秃大妈][tag][添福宝][拖飞机][屠广场][跳击掌][tla][tmi][top][ttl][跳跳团][兔瓦斯][up主][wcy][我不吃][王德彪][外地逼][wdb]外地逼[五姑娘][玩具卡][wjk][wls][忘拿碗][我酸了][王婷婷][wwx][五选一][wyf][wys][wyb][丸子异][王子1][wzy][望周知][小包子][小彩虹][新东方][小仓鼠][小辫儿][小飞侠][xfx][小海浪][翔哥哥][xgg][洗广场][洗脚婢][小龙虾][xlx][小笼包][小泷包][洗脚水][xjj][夏鸡掰][小透明][洗脑包][小破站][xql][xtm][小汤圆][xty][小三团][小天使][小学鸡][幸运e][新闻团][xxs][xyy][小赵总][小鲜肉][行星饭][xzg][盐对应][杨臭脚][ycy][樱花妹][yhm][养火苗][续火苗][萤火虫][颖火虫][月经专][ylq][养鸡场][意难平][元谋人][原po][艺能界][一生推][御三家][杨天宝][云玩家][云追星][原著粉][原著饭][yxh][有长进][yzj][宇宙国][痒痒鼠][yys][真爱粉][真爱饭][撞大雾][走花路][自来水][纸片人][镇南王][正面刚][正苏粉][整肃粉][正苏饭][枕营业][紫微星][紫薇星][zzt][zyl][粽子泥][赵小刀][折乐币][泡泡]毒品[溜冰]毒品[龙珠]毒品[钻石]毒品[牙签]毒品[嘎嘎]毒品[猪肉]毒品[燃料]毒品[糖果]毒品[籽籽]毒品[麻姑]毒品[马儿]毒品[小马]毒品[裤子]毒品[打k]毒品[小海]毒品[白妹]毒品[海海]毒品[四号]毒品[本科]毒品[毒品][藏狐][真空][手刀][不刀][小刀][大刀][xd][吸d][d品][sk][t娘][胖达][硬刚][嘴炮][社死][女同][男同][打咩][阴间][社恐][亲友][fo][梦男][谢邀][泻药][同嫁][乙游][弯弯][锅男][拉轰][魂淡][果咩][搜噶][八嘎][尼桑][呆蛙][伞兵][wd][硬盘][yp]约炮[奶狗][狼狗][约泡][约啪][约炮][下键][送妈][三三][伪娘][龙根][bb][免费][姥子][台肯][夺笋][集美][os][吊子][母人][英雌][屌子][屌癌][媚男][地广][重恐][中恐][微恐][零恐][0恐][双线][单线][尬吓][鬼点][自刀][首验][首刀][银水][金水][倒灌]集资(饭圈)[dg]倒灌[白板][蝈男][捏脸][油腻][烧货][抚慰]腐唯,配对[楼人][楼丝]楼人[脚趾][q音][上头][嘴臭][脑残][土著][捞婆][捞妹][捞头][捞仔][捞佬][捞松][cj][qs][bm]闭麦[jc]警察[饭圈][警察][fj]粉籍[西贝][西内][pk][桀桀][杰宝][自鲨][钢炼][小将][阿b][花花][浪国][妹有][孩怕][绝了][麻了][动森][蚬子]平权仙子[男拳][打拳][拳师][兽迷][福瑞]兽迷[酸了][狼灭][狼火][狼人][zr][sd][刷水][节操][生娃][bs][jt][ct][a里][zf]职粉[lp][gc][巴适][赛高][舔包][老炮][og][出柜][龟龟]配对[果子]配对,毒品[坡县][神马][皿煮][红脖]红脖子[票仓][zg][gt][yt][xt][js][ns]泥塑[武统][wt][po][梭哈][姑凉][大林][御宅][码农][菊厂][种马][困告][gf][pm][水产][搬运][快落][阿中][踩组][秃姐]秃头七[lx][ls][西晒][麻麻][阔耐][炒鸡][开森][碎觉][洛老][灰常][罩门][鞋酒][双商][羞射][卧槽][摁棒][尬吹][水军][猫了][猫车][粽子][麻瓜][aa][后浪][吃藕][vb][挂黑][蓝颜][姐姐][啵啵][sp][啵丝][清流][野人]227[炸号][反野]打野[刷野]打野[二改][二传][打野][无料][野爹]打野[涩图][哈包][女干][阿婆][弓虽][呕像][tw][fw]腐唯,配对[腐唯]配对[地板][板凳][沙发][lj][扣字][混网]玩网[玩网][贩剑][制杖][潞人]路人[联动][弃坑][森女][脑补][卢瑟][娘化][肾炎][月活][日活][瑟琴][老表][软文][硬广][鑫胖][创死][卡粉][撸树][六学][磕泡][磕炮][三坑]亚洲洛丽塔[汉服][仙服][牙白][泪爷][欢脱][倒梅][霞姐][明灯][贝爷][废虾][d版][课金][避雷][雷区][属性][娃子][亚子][独秀][辣鸡][秀儿][威肖]配对[必糊][卤猫][撸猫][阿轲][荔枝][火盆][网交][软左]左位[单右]右位[单左]左位[蛇了][射射][团长][苗女][菜鸡][人棍][孩厨][qm][钩直][人品][rp][备注][bz][男e][zy][乱入][楼主][兰州]楼主[烧饼][士兵][fg][受机][mj][幸识][xs][加钟][车牌][碉堡][川普][口工][工口][色气][攻略][肾机][壁咚][大v][饭制][扩散][ks][渣浪][剩女][自闭][鲨了][扣扣][四爱][sm][绳艺][ws][sr][aq][颜狗][第九][第9][do][zw][面基][fc][ff][姐贵][兄贵][御姐][正太][帅锅][黑锅][甩锅][cg][丑国][诈尸][无修][剁手][毛了][恐同][葛炮][吴克][姿势][酒厂][友商][打码][步兵]马赛克[骑兵]马赛克[冲钅][摆阵][食量][主食][直拍][碍国][踩瓜][查重][无脑][智爷][奉孝][乐乎][同妻][脱单][蓝贴][红信][女频][男频][蓝星][黑界][赶脚][眼瘸][贴吧][槽吧]贴吧[槽站][私设][出设][绿布][hr][毛熊][鹰酱][黑飞][泥噶][獾院][鹰院][狮院][福厂][猪厂][m记][砖家][r国][m国][z国][c国][a国][秀吉][萌百][扶她][废狗][嫩娘][钓鱼][秒懂][娘炮][铁t][拉拉][魔改][老师][撕卡][车卡][跑团][肥四][胖次][产出][对家][kp][应援][劳斯][绘圈][割割][硬核][ap][ad][md][吕孩][蓝孩][鱼塘][奶妈][tg][zb][吃鲸][盗列][偷列][老世][屠版][上分][勿q][撸铁][错亿][炼铜][卖银][资瓷][圣巡][右位][右位][语擦]语c[混圈][插戏]语c[kg][kj]开剧,语c[开剧]语c[开戏]语c[戏群]语c[水聊]语c[带套]语c[王耀][阿鲁][求k][空一][弧我][弧长][双子][帮k][k列][扩愉][c圈][cn]c圈,语c[私戳][sq][崩皮][崩坏][名朋][炎上][砸挂][次团][次粉][次奥][配对][fq]翻墙[wj][机翻][老滚][cs][cf][你河][神七][总选][出村][村外][n2][s2][中传][吸粉][到付][龙阳][lm][会心][暴击][坦克][pc][仇恨]仇恨值[hp][gm][fm][fh][ac][山寨][骚话][蒙丹][骚瑞][人头][游走][ob][呆桃][瘟了][磕糖]配对[磕药]嗑药[嗑药][祖安][蒜了][列表][雯子][渊渊][小七][兮落][西瓜][雨伞][羽羽][星羽][增增][木里][加n][恩宝][猪蹄][姜姜][扇子][佩爷][圆圆][套娃][音宝][凯琳][沐沐][碳酸][丸子][纯纯][二水][笨笨][天草][九九][新闻][冉冉][抛抛][一零][大米][挥挥][灰灰][大头][考拉][紫菜][妮子][兔兔][鹿角][饺子][瑶瑶][神喵][鱼哥][鱼酱][背心][怪兽][嘟嘟][小林][婕婕][叉叉][丫丫][撸力][碎碎][会长][守年][小言][余点][娜娜][小黑][船长][兰兰][橘子][兔牙][小鞠][小玉][晓晓][uk][17][芸子][豆芽][N队][柚子][妮妹][贝妮][毛蛋][俊俊][余震][络络][五折][cc][草莓][湾湾][增锅][毛毛][芸姐][呆萌][教练][羽妹][冒冒][小艾][弯队][s队][大哥][芮哥][3妹][三妹][小钱][钱少][钱妹][孔鹅][大c][喊麦][另类]喊麦[pd][vj][fd][mc]喊麦[av][hu][前排][后排][nb][玄学][果仁][td][小4][gj][失格][虾米][y文][j江][果达][果蛆][gq][自嗨][跟风][路人][群嘲][黑子][空降][橙v][蓝v][全垒][本垒][三垒][二垒][一垒][番剧][补番][追剧][追番][补魔][补刀][翻墙][被墙][梯子]vpn[郭嘉][粮仓]配对[酱紫][围脖][肖乎][小虾][虾塘][网暴][逼乎][渣乎][药丸][肖总][糖罐][奶茶]毒品[黑桃][帝国][度受][度娘][==][三无][土豆][女孩][吸睛][番位][初c][吊丝][屌丝][小白][nt][首a][叭叭][蝈蝻][华夏][鸽了][鸽子][复读][男蛆][口区][鬼畜][社畜][现充][中二][演员][鸡喙][oc][首充][手冲][丰容][核善][番号][福利][妹控][龙妈][戏精][大奎][小葵][p图][阿宅][盗摄][圣母][扣头][尬舞][尬聊][宇直][直女][猪脚][脸黑][欧气][欧皇][非酋][流量][微存][便乘][林檎][池沼][迫真][跨省][黑粉][肥宅][死宅][空耳][婚驴][喷人][佛系][执事][同好][梦女][同人][腐向][手办][口嗨][宅男][基腐][宅龄][入宅][宅女][直男][摁头][翻牌][双击][b格][zl]渣浪[rh][ly][贴膜][ot]仇恨值[狗桃][凹三][凹3][肖偷][基操][纳尼][现背][口耐][右上][阔落][zd][青叔][少御][声鉴][生快][屑站][批站][屌爷][吊爷][老虚][绅士][入股][扣1][爪巴][举栗][神仙][互粉][开麦][尼玛][耶啵][青你][麋鹿][墨汁][瑶光][伯爵][小球][糖精][晏窝][焰火][甜酒][西柚][达琳][农糖][乐橙][喜神][娜米][星星][亮点][渔民][正版][冰棒][羽毛][蜜蜂][甜筒][可可][凉粉][土偶][丞妾][丞星][淘米][蒸饭][喜帖][可颂][雪花][雪粉][雪家][lz]楼主[慕了][数据][魔性][担当][舞担][ex][允悲][抄千][高玩][滤镜][轻改][漫改][p站][a站][泡面][乙女][致郁][猎奇][百合][欧派][腹黑][病娇][傲娇][抖m][抖s][诚哥][白学][水泵][台钳][骨科][会舞][i了][大粉][十七][龙哥][扣音][k狗][lq][带货][c家][i家][g家][yb][ch][高赞][空调][阿强][懂王][咖位][个站][地推][集资][有梗][水友][背台][二老][3a][11][21][2区][32][3q][51][56][57][66][71][78][81][84][ab][爱拨][爱豆][ak][安利][a妹][at][艾特][a团][安藤][安提][阿三][爸爸][坂爸][b宝][碧池][逼逼][哔哔][补档][冰城][八组][爆肝][饼哥][班花][吧花][be][bg][bf][编料][不囧][吧唧][bl][本命][博妈][白嫖][bp][闭麦][扒皮][八腿][本赏][搬箱][搬砖][不约][抱走][爆炸][比心][笔芯][不造][b站][哔站][棒子][翅膀][超a][出逼][茶蛋][创c][宠粉][村花][吃瓜][炒粉][草粉][村狗][草姐][出坑][锤基][产粮][cp]配对[蠢萌][村民][炒团][吃糖]配对[吃土][船团][出圈][穿山][催肾][cv][c位][冲鸭][冲呀][cy][初心][cx][db][打榜][毒饼][多担][吊打][大棒][大触][丁丁][dd][登顶][顶爆][d爆][帝都][点艹][点草][东百][大黑][朵儿][大锅][dj][顶流]流量[毒瘤][打尻]打call[电鳗][毒奶][地皮][断眉][dp]毒品[耽美][淡圈][大神][毒蛇][丁日][大腿][打投][大赏][大势][盗图][毒唯][dw][东丸][dx][dy]配对[ed][恶臭][鹅厂][二狗][厄介][ep][二字][鹅选][防爆][粉红]配对[肥恭][发卡][腹肌][方块][焚寂][粉籍][佛了][粉墨][饭撒][法鲨][放闪][发糖]配对[粉头][仿音][仿颜][番组][gd][给哥][尬黑][gg][搞基][狗粮][狗了][gl][杠精][港妹][gn][钙片][官配][gs][公式][官推][跪舔][挂人][gv][公主][官宣][h榜][画饼][回春][互怼][糊逼][糊掉][回逼][黑称][回踩][滑跪][he][回归][河粉][憨憨][黄瓜][胡椒][糊了][黑料][红毛][花瓶][黑泡][憨批][划水][函数][河蟹][和谐][回血][韩娱][宏爷][互直][猴子][jb][韭菜][建国][降担][结粉][净化][金瓜][极光][禁红][禁黑][搅基][救救][接机][聚聚][鸡姐][jk][jm][贾母][假腿][寄生][鸡骑][机器][精日][ju][囧子][教主][jz][鸡主][kb][开闭][控碟][酷盖][考古][款姐][坤坤][抠脚][氪金][扩列][康康][堀了][烤鸟][咔咩][控评][空瓶][卡推][卡司][嗑糖]配对[快吐][开踢][砍省][开衣][ky][老鳖][轮博][淋逼][拉踩][辣菜][lc][乱炖]配对[利达][里兜][雷点][溜粉][遛粉][lh][萝莉][拉郎]配对[溜肩][连投][李涛][梨桃][路透][老头][老薛][栗子][磊子][美帝][迷弟][魔都][萌二][麦麸][卖腐][媚粉][棉花][迷惑][ml][麻酱][茉莉][马克][马甲][门面][霉霉][忙内][迷妹][秒评][mp][民推][卖肾][萌新][绵羊][码字][秒赞][mz][nc][女帝][奶罐][内涵][nh][你国][尼哥][nl][男饭][农农][牛团][n团][泥塑][浓糖][女拳][内娱][女王][奶遥][o榜][欧巴][偶吧][o饭][偶练][op][破表][泡菜][pb][碰瓷][胖虎][跑二][炮姐][撇撇][披皮][票圈][p社][pr][爬墙][皮下][喷子][py][青虫][取关][圈粉][恰饭][切瓜][qj][圈名][圈钱][劝删][强推][劝退][谦谦][墙头][棋王][前线][绕道][融梗][入坑][人设][闰土][润润][rt][入圈][人参][rs][人肉][rz][睿智][人鱼][双标][sb][撕逼][撕x][斯比][刷榜][石锤][实锤][酸菜][sc][双担][双蛋][沙雕][树洞][苏粉][淑芬][散粉][书粉][实红][伞哥][三哥][上剧][视奸][sj]视奸[四字][私联][sl][锁了][水母][傻帽][山p][烧普][刷票][刷屏][生人][生肉][熟肉][私生]私生饭[ss]私生饭[砂糖][闪闪][三岁][首推][素人][上胸][晒胸][十元][生写][少主][沈总][三字][声优][团婊][tb][屠榜][探班][天朝][tc][提纯][团担][同担][团毒][泰迪][团粉][团饭][tf][挑货][脱饭][脱粉][舔狗][团魂][他界][抬轿][脱敏][泰妹][舔屏][桃浦][腿毛][团偏][同袍][躺枪][贴贴][贴骑][t团][太太][tt][退圈][兔区][吐区][团苏][甜心][太子][桃子][兔子][团综][tx][桃选][up][wb][我担][文爱][雾都][唯粉][唯饭][wf][外挂][挖坟][歪鸡][武林][wl][屋里][伪卡][物料][温拿][丸圆][wy][王炸][wz][王子][挽尊][小草][星船][洗白][雪藏][洗榜][先帝][血红][西给][新饭][xg][先皇][虾壳][xj][邪教][西皮]cp,配对[xp][熊猫][小四][喜提][宣群][星爷][西丸][香熊][xw][小猪][小准][小明][小亮][校花][小天][小樱][xz][颖宝][语c][有壁][妖都][养草][乐币][原耽][渔夫][鱼糕][油管][养火][yh][养蛊][杨乎][运回][颜粉][音粉][颜饭][音饭][野鸡][亚麻][玉米][羊毛][芋头][燕王][音源][营业][yy][叶子]毒品[玉爷][野猪][源源][周董][直笔][种草][纸花][职粉][脂粉][掌柜][站姐][纸片][走肾][zs][站台][中枪][走v][蒸煮]正主[正主][主役][子役][主子][真香][站子][在宅][zz][葱]毒品[刀][笋][刚][人][蝻][↓][艹]草[草]毒品[娘][j]mbti[t]mbti[n]mbti[s]mbti[e]mbti[蒂][=][奶]奶妈[坦]坦克[蛆][捏][圈][孝][嗨]毒品[佛]佛系[涛][f]mbti[子][生][撸][q][宅]御宅[桃][偶][滴][鹅][蹲][秒][学][云][菜][挂][狗][0]受[1]攻[帝][肾][肝][饭][粉][马][h][婧][w][谷][熊][兔][鹰][蛇][痛][p]mbti[吔][厨][攻][受][出][皮][k][次][墙][饼][山]山寨[骚][猋][嗑][嗑]磕[带][宝][桑][番][粮][宁][糊][i]mbti[鼎][酱][驴][喷][丨][控][补]";let 字典;
+$(function () {
+    $("#输入").keyup(function () {
+        let 输入 = document.getElementById("输入").value;
+        let 替换;
+        字典=new Array();
+
+        替换 = new RegExp('　', "g");
+        输入 = 输入.replace(替换, ' ');
+
+        替换 = new RegExp('\n', "g");
+        输入 = 输入.replace(替换, '　');
+        替换 = new RegExp('', "g");
+        输入 = 输入.replace(替换, '／');
+        输入 = 输入.toLowerCase();
+        替换 = new RegExp('con', "g");
+        输入 = 输入.replace(替换, 'c0n');
+
+        let 数据a = 数据.split("[");
+        for (let i = 1; i < 数据a.length; i++){
+            let 数据b=数据a[i].split("]");
+            let 数据c=数据b[0];
+            替换 = new RegExp('', "g");
+            数据c = 数据c.replace(替换, '／');
+
+            if (输入.indexOf(数据c) != -1){
+                if(数据b[1]==""){
+                    数据b="["+数据b[0]+"]";
+                }else{
+                    数据b="["+数据b[0]+","+数据b[1]+"]";
+                }
+
+                替换 = new RegExp(数据c, "g");
+                输入 = 输入.replace(替换, "／"+数据b+" ／");
+            }
+        }
+
+        let 结果;
+        if (输入.indexOf("[") != -1){
+            let 临时数=0;
+        let 临时数2;
+        数据a=输入.split("[");
+        结果=数据a[0];
+        for(let i=1;i<数据a.length;i++){
+            临时数2=i;
+            let 临时数据=数据a[i].split("]");
+            let 临时数据2=临时数据[0].split(",");
+            结果+="<span id=\"myq_id"+临时数+"\" onMouseOver=\"myq_cf('"+临时数+","+临时数据[0]+"')\">"+临时数据2[0]+"</span>"+临时数据[1];
+            临时数+=1;
+        }
+        }else{
+            结果=输入;
+        }
+
+        替换 = new RegExp('／', "g");
+        结果 = 结果.replace(替换, '');
+
+        替换 = new RegExp('　', "g");
+        结果 = 结果.replace(替换, '<br>');
+
+        document.getElementById("标签").innerHTML = 结果;
+    });
+});
+
+let alert = document.getElementById("alert");
+let myq_bm="无";
+function myq_cf(myq_bm){
+    let 临时=myq_bm.split(",");
+        let click = document.getElementById("myq_id"+临时[0]);
+        let 显示="";
+
+        for(let i=1;临时.length>i;i++){
+            显示+="<fieldset><legend>"+临时[i]+"</legend>";
+
+        let JsonUrl = "/app/mqfyq/myq/"+临时[i]+".json";
+    let GetJson = $.ajax({
+        url: JsonUrl,
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+        }
+    });
+
+    显示+=GetJson.responseText+"</fieldset>";
+        }
+
+        document.getElementById("alert").innerHTML = 显示;
+        click.onmousemove = function (e) {
+        alert.style.left = e.clientX + 20 + "px"
+        alert.style.top = e.clientY + 10 + "px"
+        alert.style.display = "block";
+    }
+    
+    click.onmouseout = function (e) {
+        alert.style.display = "none";
+    }
+    }
+</script>
+<script>
+    var autoTextarea = function (elem, extra, maxHeight) {
+            extra = extra || 0;
+            var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window,
+                    isOpera = !!window.opera && !!window.opera.toString().indexOf('Opera'),
+                    addEvent = function (type, callback) {
+                            elem.addEventListener ?
+                                    elem.addEventListener(type, callback, false) :
+                                    elem.attachEvent('on' + type, callback);
+                    },
+                    getStyle = elem.currentStyle ? function (name) {
+                            var val = elem.currentStyle[name];
+    
+                            if (name === 'height' && val.search(/px/i) !== 1) {
+                                    var rect = elem.getBoundingClientRect();
+                                    return rect.bottom - rect.top -
+                                            parseFloat(getStyle('paddingTop')) -
+                                            parseFloat(getStyle('paddingBottom')) + 'px';
+                            };
+    
+                            return val;
+                    } : function (name) {
+                            return getComputedStyle(elem, null)[name];
+                    },
+                    minHeight = parseFloat(getStyle('height'));
+    
+            elem.style.resize = 'none';
+    
+            var change = function () {
+                    var scrollTop, height,
+                            padding = 0,
+                            style = elem.style;
+    
+                    if (elem._length === elem.value.length) return;
+                    elem._length = elem.value.length;
+    
+                    if (!isFirefox && !isOpera) {
+                            padding = parseInt(getStyle('paddingTop')) + parseInt(getStyle('paddingBottom'));
+                    };
+                    scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    
+                    elem.style.height = minHeight + 'px';
+                    if (elem.scrollHeight > minHeight) {
+                            if (maxHeight && elem.scrollHeight > maxHeight) {
+                                    height = maxHeight - padding;
+                                    style.overflowY = 'auto';
+                            } else {
+                                    height = elem.scrollHeight - padding;
+                                    style.overflowY = 'hidden';
+                            };
+                            style.height = height + extra + 'px';
+                            scrollTop += parseInt(style.height) - elem.currHeight;
+                            document.body.scrollTop = scrollTop;
+                            document.documentElement.scrollTop = scrollTop;
+                            elem.currHeight = parseInt(style.height);
+                    };
+            };
+            addEvent('propertychange', change);
+            addEvent('input', change);
+            addEvent('focus', change);
+            change();
+    };
+    </script>
+
+<div class="biaotib">猫球翻译器</div>
+<div class="body">
+<!-- 能不能好好说话 -->
+<!-- <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script> -->
+
+<div style="text-align: center">
+<p id="标签" class="jieguo"></p>
+
+<form id="输入框" autocomplete="off">
+<textArea id='输入' placeholder="输入要翻译的内容"></textArea></form>
+
+<script>
+var text = document.getElementById("输入");
+autoTextarea(text);
+</script>
+</div>
+<br><br>
+
+用于将饭圈缩写、二次元梗等翻译成简单易懂的语言。<br>
+翻译和解释来自网络收集和网友投稿，可能有误，或与将来解释不同。<br>
+有些词会有多种解释，需要用户根据前后文自行判断。<br>
+<!-- 如果有拼音缩写没有正确翻译，可以尝试划词，会触发<a href="https://mouto.org/" target="_blank">@卜卜口</a>的<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank">能不能好好说话</a>。<br> -->
+<br>
+欢迎补充指正，联系QQ：<a href="/qq" target="_blank">123719932</a><br>
+
+<br><br>
+
+<!-- <h2>手机版</h2>
+仅Android，需要网络。（使用Fusion App制作）<br>
+<a href="/app/mqfyq/mqfyq.apk" target="_blank">点击下载</a><br>
+
+<br><br>
+
+<h2>fv版</h2>
+仅Android，无需联网，基于fv悬浮球的自定义任务功能制作而成，需要手机中有fv悬浮球。<br>
+<br>
+fv悬浮球（约10M）：<a href="https://www.coolapk.com/apk/com.fooview.android.fooview" target="_blank">酷安网</a><br>
+自动任务：
+<a href="/app/mqfyq/mqfyq.fvt" target="_blank">点击下载</a><br>
+<br>
+<b>更新</b><br>
+打开fv悬浮球主窗口-自定义任务，运行翻译器，在输入窗口点击取消，按照提示更新。<br><br>
+<b>使用</b><br>
+方法1：<br>
+打开fv悬浮球主窗口-自定义任务，运行翻译器，输入要翻译的内容，点击确定。<br>
+<br>
+方法2：<br>
+拉动fv悬浮球，框选想要翻译的内容，弹出文字框。<br>
+点击右下角的三个点图标，点击翻译器。<br>
+
+<br><br> -->
+
+<h2>其他推荐</h2><br>
+<a href="https://jikipedia.com/" target="_blank"><b>小鸡词典</b></a>：网络流行语的解释、出处、典故。<br>
+<a href="https://lab.magiconch.com/nbnhhsh/" target="_blank"><b>能不能好好说话？</b></a>：拼音缩写查询，没有匹配的词也会给出可能的解释。<br>
+<a href="https://zh.moegirl.org/" target="_blank"><b>萌娘百科</b></a>：各种流行、冷门的梗。<br>
+
+</div>
+
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/mqfyq"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/mqfyq')\">https://李猫球.com/mqfyq</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/mqfyq\" class=\"leancloud_visitors\" data-flag-title=\"猫球翻译器\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="mqfyq" class="leancloud_visitors" data-flag-title="猫球翻译器">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

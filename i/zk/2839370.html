@@ -1,0 +1,25 @@
+<style>a{text-decoration:none;color:#006699;cursor:pointer;}a:hover,a:focus{color:#0085a1;}</style>
+<script src="/5/new/chart.xkcd.js"></script>
+粉丝数　<a href="/i/zk/2839382">浏览量</a>　<a href="/i/zk/2839384">赞同数</a>　<br>
+<div class="chart"><svg class="bar-chart"></svg></div>
+<small>（更新时间：2022.03.22）</small><br/>
+
+<script>
+const svg2 = document.querySelector('.bar-chart');
+const barChart = new chartXkcd.Bar(svg2, {
+    title: '粉丝数',
+    data: {
+        labels: ['bilibili','zhihu','weibo',],
+        datasets: [{
+            data: [
+                4205, //哔哩哔哩 https://member.bilibili.com/platform/home
+                6139, //知乎 https://www.zhihu.com/creator
+                54, //微博
+        ],
+        }],
+    },
+    options: {
+        yTickCount: 3,
+    },
+});
+</script>

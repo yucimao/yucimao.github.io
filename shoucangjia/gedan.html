@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>歌单 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+<style>
+html,body {margin: 0;padding: 0;}
+
+@media screen and (min-width: 768px) { /*电脑*/
+    .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+} /*电脑*/
+
+@media screen and (max-width: 768px) { /*手机*/
+    .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+} /*手机*/
+</style>
+
+</head>
+
+<body>
+
+<div class="biaotib">歌单</div>
+<div class="body">
+
+<link rel="stylesheet" type="text/css" href="/5/new/notyf/notyf.min.css">
+<script src="/5/new/notyf/notyf.min.js" type="text/javascript"></script>
+<style>
+small{color:#a0a0a0;}.跳过{background-color:#ff8080;}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}td[onclick^="复制(复制内容="]{cursor:pointer;}</style>
+<a class="anniu" href="/dafen/gequ">我的排行榜：歌曲</a><br>
+<form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="歌名、歌手名" onkeyup="确定()" /></form>
+搜索：
+<input type="radio" name="radio" id="ss_wyy" onclick="搜索(ss='wyy')" checked><label for="ss_wyy">网易云</label> 
+<input type="radio" name="radio" id="ss_qq" onclick="搜索(ss='qq')"><label for="ss_qq">QQ</label> 
+<input type="radio" name="radio" id="ss_kugou" onclick="搜索(ss='kugou')"><label for="ss_kugou">酷狗</label> 
+<input type="radio" name="radio" id="ss_kuwo" onclick="搜索(ss='kuwo')"><label for="ss_kuwo">酷我</label><br>
+<small>点击歌名、歌手名可以复制</small><br>
+<div id="right_anchor" class="shouji"></div><br>
+<div id="dy"></div>
+<script>
+let data=[
+// 歌名／歌手／小字／按钮：zk码 或 展开的内容 或 复制：复制的内容
+// 跳过：编号跳过。可能是在网易云音乐消失的歌。
+// 云盘：正常编号，有标识。在网易云音乐没有或者消失的歌，上传到云盘。
+// 注释：一条没有编号的额外文字。
+// 大标题：另起一个表格，编号重新计算。 大标题／标题文字／小说明
+// 小标题：另起一个表格，编号延续。 大标题／标题文字／小说明
+
+"／Take Me Hand／Cécile Corbel／",
+"／想去海边／夏日入侵企画／",
+"／白日梦蓝／刺猬／",
+"／Youn For You／GALA／",
+"／直来直往／孙燕姿／",
+"／凄美地／郭顶／",
+"／骑上我心爱的小摩托／一条小团团OvO／",
+"／过时／新裤子／",
+"／心要野／后海大鲨鱼／",
+"／极恶都市／夏日入侵企画／",
+"／印象夏日／旅行团／",
+"／无地自容／黑豹乐队／",
+"／矛盾综合体／李上安／",
+"／火车驶向云外，梦安魂于九霄／刺猬／",
+"云盘／考试什么的都去死吧／徐良 庄雨洁／",
+"／允许部分艺术家先富起来／二手玫瑰／",
+"云盘／山河图／宝石Gem／live",
+"／生活因你而火热／新裤子／",
+"／逝去的歌／旅行团／",
+"／再见杰克／痛仰乐队／",
+"／50 Seconds From Now／田原／",
+"／Dirt on My Boots (Remix)／Jon Pardi／",
+"／无人的海边／霓虹花园／",
+"／那些失眠的夜与难以忘怀的事／老王乐队／",
+"／我的心像海水／Tizzy Bac／",
+"／你要跳舞吗／新裤子／",
+"／关系妄想／李智／",
+"／远近／李想Evelyn／",
+"／没有人能够比我们更接近对方／声音玩具／",
+"／Mine (Illenium Remix)／ILLENIUM / Phoebe Ryan／",
+"／LOSER／米津玄師／",
+"／未知艺术家／Quark／",
+"／当夜空落去，城市继续前行／帆布小镇／",
+"／漂洋过海来看你／周深／",
+"／夏末的歌／夏日入侵企画／",
+"／回不去的夏天／夏日入侵企画／",
+"／没有名字的夜晚／夏日入侵企画／",
+"／愿望交换商店／夏日入侵企画／",
+"／人质／张惠妹／",
+"／Ain't No Rest For The Wicked／Cage the Elephant／",
+"／海风／10SecondsGreen（十秒绿灯）／",
+"／别来无恙／10SecondsGreen（十秒绿灯）／",
+"／烟火／10SecondsGreen（十秒绿灯）／",
+"／来自城市的幻想／盘尼西林／",
+"／美丽如你／盘尼西林／",
+"／瞬息间是夜晚／盘尼西林／",
+"／与世界温暖相拥／盘尼西林／",
+"／梦在黎明破晓时／盘尼西林／",
+"／再谈记忆／盘尼西林／",
+"／永远都会在／旅行团／",
+"／NEW BOY／朴树／",
+"云盘／没有理想的人不伤心／新裤子／",
+"／The Tour Song/漫游之歌／Quark／",
+"／4:00A.M.／荷尔蒙少年／",
+"／我是一只鱼／Kim.T／",
+"／星星堆满天／杨乃文／",
+"／不要说爱我 (New Remix)／张震岳／",
+"／Lake and Ocean／The Coral Sea／",
+"／ホタルノヒカリ／いきものがかり／",
+"／Bye-Bye (New Remix)／张震岳／",
+"／百利甜／魏晗／",
+"／还是分开／张叶蕾／",
+"／处处吻（国语女声版）／澪恩Seiwen／",
+"／同学聚会／宝石Gem／",
+"／情歌／陈珊妮／",
+"云盘／みおのカプってカプって萌えちぎれ／相沢舞／",
+"云盘／東雲研究所の、今日も平和です／今野宏美／",
+"云盘／麻衣の涙の阿弥陀如来／富樫美铃／",
+"云盘／麻衣のカカカタ☆カタオモイ-梵／富樫美铃／",
+"云盘／笹原の桜舞う時定／川原慶久／",
+"云盘／阪本さんのねこじぇらしー／白石みのる／",
+"云盘／人渣俱乐部／钟声／",
+"／I Remember The…／颜培珊／",
+"／笹原のコジロウボルカ／前山田健一／",
+"／千万之王／宝石Gem／",
+"／You Are My Sunshine／反光镜／",
+"／埋藏宝藏的地方／谢天笑／",
+"／强迫失眠／许苇晴／",
+"／秋城／丢火车／",
+"／Power of the horde／Elite Tauren Chieftain／",
+"／The Traveler's Path（刘浪之歌）／Russell Brower、Neal Acree、Sam Cardon、Edo Guidotti、Jeremy Soule／",
+"／Car Park／Fenne Lily／",
+"／麻雀／李荣浩／",
+"／Wonderful U／AGA／Demo Version",
+"／ムーンライト伝説 -short ver.-／中川翔子／",
+"／咚吧啦／萨顶顶／",
+"／像我这样的人／毛不易／",
+"／Butter-Fly~tri.Version~／和田光司、田愛、宮崎歩、選ばれし子どもたち、デジモンシンカーズ／",
+"／涙 風にたくして／つじあやの／",
+"／命运／二手玫瑰／",
+"／轻飘飘／二手玫瑰／",
+"／Auditions／Sing Cast／",
+"／風にのって／つじあやの／",
+// "／Paradise／BTS／",
+// "／Burning Up (FIRE)／BTS／",
+"／嘿!姑娘／反光镜／",
+"／Rock 'n' Roll Suicide／Black Box Recorder／",
+"／Whatcha Reckon／Josh Turner／",
+"／Melancholy Astronautic Man／Allie Moss／",
+"／全世界陪我失眠／汪苏泷／",
+"／虚拟恋爱指南／汪苏泷／",
+"／银河／汪苏泷／",
+"／人间／王菲／",
+"／君だったら／HAPPY BIRTHDAY／",
+"／Thank you, my twilight／the pillows／",
+"／1989／the pillows／",
+"／逍遥叹／胡歌／",
+"／靠近／罗震环／",
+"／迷途羔羊／张震岳／",
+"／说书人／暗杠 寅子／",
+"／心做し（心理作用）／majiko／",
+"／First Kiss／Kid Rock／",
+"／吵架歌／汪苏泷 Hari／",
+"／人间惆怅客／皇后皮箱／",
+"／Oh Oh Mine／皇后皮箱／",
+"／呼叫秘密基地／许芸齐／网易云音乐显示的歌手是“史丹利”／歌词：3696005",
+"／GQ／Lola Coca／",
+"／Whiskey and Morphine／Alexander Jean／",
+"／Life Is Like A Boat／Rie fu／",
+"／一百万个可能／Christine Welch／",
+"／Throw Your Hands Up／Freeway／",
+"云盘／一样的月光／丁当／",
+"云盘／一样的月光／徐佳莹／",
+"／Stuck Like Glue／Lenka Nick Howard／",
+"云盘／思凡（完美结局版）／晓月老板／",
+"／活着／郝云／",
+"／清明雨上／许嵩／",
+"／偏偏爱上洋葱／大张伟／",
+"／我不介意你恨我／花儿乐队／",
+"／公路／纵贯线／",
+"／雨夜曼彻斯特／盘尼西林／",
+"／我还年轻 我还年轻／老王乐队／",
+"／Don't You Worry 'Bout A Thing／Tori Kelly／",
+"／My Way／Seth MacFarlane／",
+"／Set It All Free／Scarlett Johansson／",
+"／I'm Still Standing／Taron Egerton／",
+"／Shake It Off／Nick Kroll Reese Witherspoon／",
+"／Pennies from Heaven／Randy Travis／",
+"／Ride Like The Wind／Christopher Cross／",
+"／Butterfly／Crazy Town／",
+"／I Love My Shirt／Donovan／",
+"／きらきらキラー／きゃりーぱみゅぱみゅ／",
+"／Kiss from a Rose／Seal／",
+"／Misery／Marcela Mangabeira／",
+"云盘／过火／你我及他／",
+"／Good Mornin' Life (Remastered)／Dean Martin／",
+"云盘／知道不知道／刘若英／",
+"／今夜带你回去／Shuffle／",
+"／月光润色女孩／泠鸢yousa／",
+"／我就不爱唱情歌／大张伟／",
+"／Love Paradise／陈慧琳／",
+"／Pillow Talk／Joss Stone／",
+"／不为谁而作的歌／林俊杰／",
+"／天候／陈势安／",
+"／What I'm Searching For／Snowy White／",
+"／Extraordinary／Seabird／",
+"／Soulmate／BOTH WILLING／demo",
+"／Miss Riddle／Boz Scaggs／",
+"／爱的初体验／纵贯线／live",
+"云盘／魔术先生／周杰伦／",
+"／失恋阵线联盟／草蜢／",
+"／笨小孩／刘德华／live",
+"／简情歌／房东的猫／吉他版",
+"／无终／谢春花／",
+"／两边／乔任梁／",
+"／This Is It／Michael Jackson／",
+"云盘／免费教学录像带／周杰伦／内地版",
+"／阴天气球／乔任梁／",
+"云盘／雨的方向／女声版／",
+"／夜的诗人／江美琪／",
+"／Miss You Tonight／Biscuits／",
+"／好想你／李雪莱／",
+"／Landing Guy／刘昊霖 kidult.／",
+"／Hallelujah／Leonard Cohen／",
+"／Don't Wanna Know/We Don't Talk Anymore／Sam Tsui、Alex Blue／",
+"／This Place Hotel (a.k.a. Heartbreak Hotel)／The Jacksons／",
+"／You Are Not Alone／Michael Jackson／",
+"／讲真的／曾惜／",
+"／Confidence／Sarah Riani／",
+"／Determine／Alonzo／",
+"／晚安／丢火车／",
+"／记忆中遥远的春天／廖堃／",
+"／Color Blind（色盲）／Matt B／",
+"／想要你知道／许亚童／",
+"／她／朱婧汐Akini Jing／",
+"／易燃易爆炸／陈粒／",
+"／我有个秘密／张明敏／",
+"／If／丁可／",
+"／冬至／筠子／",
+"／立秋／筠子／",
+"／催眠／王菲／",
+"／寂寞啊寂寞／花儿乐队／",
+"／泡沫／花儿乐队／",
+"／闷／王菲／",
+"／皇后与梦想／李宇春／",
+"／TheStar／音阙诗听 李佳思／",
+"／魔兽老了／冷月舞者／",
+"／待续／江美琪／",
+"／追光者／岑宁儿／",
+"／光／陈粒／",
+"／公路 (张震岳独唱版)／张震岳／",
+"／城市／张悬／",
+"／Enjoy the sunshine／岛屿心情／",
+"／野猫／藤乐队／",
+"／晚安／马丁／",
+"／我最亲爱的／李代沫／",
+"／Let Me Hear／Fear, and Loathing in Las Vegas／",
+"／给自己的歌／纵贯线／live",
+"／生命是场马拉松／旅行团／",
+"／DEAR JOHN／比莉／",
+"／问／简弘亦／",
+"／兰亭序／周杰伦／",
+"／国王与乞丐／费玉清、刘琪／",
+"／恰似你的温柔／蔡琴／",
+"／我一直站在这里／刘明汉／",
+"／茜さす／Aimer／TV size",
+"／无法长大／赵雷／",
+"／我要你／任素汐／",
+"／Free Loop／Daniel Powter／",
+"／Miss You Tonight／茶小姐和熊先生／",
+"／借我／写春花／",
+"／阴天／莫文蔚／",
+"／停格／蔡健雅／",
+"／飞／谭维维／",
+"／礼物／老狼 汪峰 周晓鸥 丁武 栾树 高旗 李延亮 马上又 陈劲／",
+"／多远都要在一起／邓紫棋／",
+"／永远／鹏泊／",
+"／不愿回头／南征北战／",
+"／自拔／夏小虎／",
+"／相守／栗先达／",
+"／See You Again／Wiz Khalifa、Charlie Puth／",
+"／房间／刘瑞琦／",
+"／So:Lo／Kate Havnevik／",
+"／Turnin'／Young Rising Sons／",
+"／拥抱你／刘思涵／",
+"／空城／杨坤／",
+"／啷个哩个啷／鹏泊／",
+"／被驯服的象／蔡健雅／",
+"／演歌／陈珊妮／",
+"／boyfriend／万玲琳／",
+"／乌兰巴托的夜／安来宁／",
+"／岛屿云烟／张悬／",
+"／蜜蜂／万玲琳／demo",
+"／南方／达达乐队／",
+"／爱情／万玲琳／",
+"／四季天／曹方／",
+"／遇见我／曹方／",
+"／Fire Flies In The Storm／Jessi Colter、Tony Joe White／",
+"／Baby Now That I Found You／Alison Krauss／",
+"／不醉不会／徐佳莹／live",
+"／我的天坑／南征北战／",
+"／谭某某／谭维维／live",
+"／我想大声告诉你／李石／",
+"／蓝莲花／许巍／",
+"／如果有来生／不才／",
+"云盘／新长征路上的摇滚／崔健／",
+"／春风吹／方大同／",
+"／残爱／徐佳莹／",
+"／Bye Bye Baby／苏慧伦／",
+"／With You／窦靖童／",
+"／In The Jailhouse Now／The Soggy Bottom Boys、Tim Blake Nelson／",
+"／Keep On The Sunny Side／The Soggy Bottom Boys、Tim Blake Nelson／",
+"／I Am A Man Of Constant Sorrow (Radio Station Version)／The Soggy Bottom Boys、Tim Blake Nelson／",
+"／You Are My Sunshine／Norman Blake／",
+"／Big Rock Candy Mountain／Harry McClintock／",
+"／Bells Of Freedom／Bon Jovi／",
+"／忘不了开／暗夜林／",
+"／we just call it love／肆囍乐队／",
+"／他不爱我／莫文蔚／",
+"／每天爱你多一些(国)／张学友／",
+"／忘记你我做不到／张学友／",
+"／쏘쏘／白娥娟／",
+"／日光倾城／卡奇社、颗粒、鹤这豹脾气／",
+"／我的天空／南征北战／",
+"／给郁结的诗／小安／",
+"／別哭／慢慢说／",
+"／我们确定／慢慢说／",
+"／那个喝醉的夜晚挡不住我们的步伐／纣王老胡／",
+"／山丘／金玟岐／",
+"／Bitter Sweet／窦靖童／",
+"／一半／薛之谦／",
+"／天黑黑／孙燕姿／",
+"／平凡之路／朴树／",
+"／Mr. Lazy／史丹利／",
+"云盘／幹物女(WeiWei)／哦漏／",
+"／十万嬉皮／万能青年旅店／",
+"／如果有来生／谭维维／",
+"／绅士／薛之谦／",
+"／演员／薛之谦／",
+"／ハロ/ハワユ／ナノウ、鹿乃／",
+"／虹之间／金贵晟／",
+"／巴士十一号／草莓救星／",
+"／SAKURA／いきものがかり／",
+"／听见有人叫你宝贝／李宗盛／",
+"云盘／亡命之徒／纵贯线／",
+"云盘／温柔(还你自由版)／五月天／",
+"云盘／证明／flumpool／",
+"／Forgettable／Project 46、Olivia／",
+"云盘／玛卡瑞纳／海龟先生／",
+"／茶底世界／丢火车／",
+"／Valder Fields／Tamas Wells／",
+"／Everglow／Coldplay、Gwyneth Paltrow／",
+"／男孩别哭／海龟先生／",
+"／理想三旬／陈宏宇／",
+"／我们的时光／赵雷／",
+"／月灯りふんわり落ちてくる夜／やなぎなぎ／",
+"／走在冷风中／刘思涵／",
+"／蓝旗袍／范晓萱／",
+"／ヒカリ／樹海／",
+"／Brother／窦靖童／",
+"／日が落ちるまで／ハンバート ハンバート／",
+"／Happy birthday／小自然／",
+"／遇见你／小自然／",
+"／爱慕者／小自然／",
+"／最后的纪念照／小自然／",
+"／十一月／小自然／",
+"／对不起我爱你／小自然／",
+"／褪色／小自然／",
+"／Different world／小自然／",
+"／Colorful／小自然／",
+"云盘／啊朋友 再见／冬子、刘东明、小河、钟立风、好妹妹、蒋明／",
+"／杀死那个石家庄人／万能青年旅店／",
+"／夫妻小唱／苏阳／",
+"／枫叶红了／赵已然／",
+"／当时／赤褐色／",
+"／匆匆／胡德夫／",
+"／二十岁的某一天／花粥／",
+"／晚安晚安／魏如萱／",
+"／奇妙能力歌／陈粒／",
+"／远在北方孤独的鬼／花粥／",
+"／南部小城／曹方／",
+"／松林的低语／好妹妹／",
+"／你曾是少年／好妹妹／",
+"／一万次悲伤／逃跑计划／",
+"／追梦赤子心／GALA／",
+"／夜空中最亮的星／逃跑计划／",
+"／我在人民广场吃炸鸡／阿肆／",
+"／低调／张栋梁／",
+"／愛してる (TVサイズ)／高鈴／",
+"／Flyers／BRADIO／",
+"云盘／祝酒曲2变奏C／／",
+"／aHUOz／／",
+"／Fairytale／Milky Chance／",
+"／Cake／黄小桢／",
+"／Gentleman／戴爱玲、刘伟德／",
+"／Over And Over／Rachael Yamagata／",
+"／Through The Fire And Flames／Dragonforce／",
+"／Your Man／Josh Turner／",
+"／人质／韦礼安／live",
+"／密流／莫文蔚／",
+"／2000年／张亚东／",
+"／地下室／张亚东／",
+"／无为／张亚东／",
+"／虚拟实境／张亚东／",
+"／不明飞行／张亚东／",
+"／只爱陌生人／张亚东／",
+"／你怎么舍得我难过 (演唱版1)／张亚东／",
+"／世界尽头／朴树／",
+"／我爱你／王菲／",
+"／缓流／张亚东／",
+"／Imagine／Jack Johnson／",
+"／Holly Holy／Neil Diamond／",
+"／Ship In The Sand／Marble Sounds／",
+"／成长的路口／咖啡因乐队／",
+"／Super Star／麦田守望者／",
+"／恋曲1990／纵贯线／live",
+"云盘／休息／以莉.高露／",
+"云盘／五虎／慢慢说／live",
+"／神的随波逐流／泠鸢yousa／",
+"云盘／秋天／龙宽／",
+
+
+
+
+
+/* KTV */
+"大标题／KTV歌单／",
+// KTV / S
+"注释／<b>S</b>／",
+"／思念是一种病／张震岳／",
+"／啊朋友 再见／冬子 刘东明 小河 钟立风 好妹妹 蒋明／",
+"／愿望交换商店／夏日入侵企画／",
+// KTV / A
+"注释／<b>A</b>／",
+"／烦恼歌／张学友／",
+"／男孩别哭／海龟先生／",
+"／五虎／慢慢说／live",
+"／DEAR JOHN／比莉／",
+// KTV / B
+"注释／<b>B</b>／",
+"／闷／王菲／",
+"／秋天／龙宽／",
+"／Super Star／麦田守望者／",
+"／当那枫叶红／费玉清／",
+"／干物女(WeiWei)／哦漏／／歌词：448629",
+"／恋曲1990／纵贯线／",
+"／你要跳舞吗／新裤子／",
+"／没有理想的人不伤心／新裤子／",
+// KTV / C
+"注释／<b>C</b>／",
+"／Super MT／／",
+"／给自己的歌／李宗盛／",
+"／演歌／陈珊妮／",
+"／爱的初体验／张震岳／",
+"／城市／张悬／",
+"／女人花／梅艳芳／",
+// KTV / D
+"注释／<b>D</b>／",
+"／谁说我的眼泪你无所谓／东来东往／",
+"／我叫MT／／超累",
+// KTV / E
+"注释／<b>E</b>／",
+"／我的天坑／南征北战／",
+// KTV / 对唱
+"注释／<b>对唱</b>／",
+"／一个人／铃凯 吴青峰／",
+// KTV / 待测试
+"注释／<b>待测试</b>／",
+"／不愿回头／南征北战／",
+"／夫妻小唱／苏阳／",
+"／成长的路口／咖啡因乐队／",
+"／人渣俱乐部／／",
+// KTV / 未分类
+"注释／<b>未分类</b>／",
+"／公路／纵贯线／",
+"／ルカルカ★ナイトフィーバー／／河蟹你全家／歌词：448610",
+"／假行僧／／",
+"／尽在一笑中／／",
+"／礼物／／",
+"／千本桜／／千本幼女／歌词：448624",
+"／神的随波逐流／／",
+"／素颜／许嵩／",
+"／天黑黑／张学友／",
+"／新长征路上的摇滚／／",
+"／野狼disco／宝石Gem／／歌词：448600",
+"／又是下雨天／／",
+
+/* 旧歌单 */
+"大标题／旧歌单／最近不听的歌",
+
+/* 白夜之声 */
+"大标题／白夜之声／",
+"／脆弱一分钟／林宥嘉／",
+"／武林外传BGM2（delayed ver.）／林尼玛233／",
+"／Gymnopedie Nr. 1／Martin Ermen／",
+"云盘／meditation-冥想／潮汐app／",
+"／,／Sweet Ermengarde／",
+"／待续／江美琪／",
+"／Variations on the Kanon By Pachelbel／George Winston／",
+"／Write／南优铉／",
+"／涙／林ゆうき／",
+"／光／菅野祐悟／",
+"／矛盾に満ちた世界／菅野祐悟／",
+"／孤灯／平井真美子／",
+"／真空的眼泪／魏小涵／",
+"／卡布奇诺／魏小涵／",
+"／Kyoto／C418／",
+"／Beginning／C418／",
+"／Sweden／C418／",
+"／Chris／C418／",
+"／Clark／C418／",
+"／Wet Hands／C418／",
+"／Dry Hands／C418／",
+"／Mice on Venus／C418／",
+"／Minecraft／C418／",
+"／Haggstrom／C418／",
+"／Living Mice／C418／",
+"／Subwoofer Lullaby／C418／",
+
+/* 唤醒清晨 */
+"大标题／唤醒清晨／",
+"／1965／Zella Day／",
+"／Lucky (Re-Mastered Version)／Colbie Caillat、Jason Mraz／",
+"／Give It Up／Jedward／",
+"／I'm Yours／Jason Mraz／",
+"／You Got Me／Colbie Caillat／",
+"／Pack up Your Troubles in Your Old Kit Bag／Minnutes／",
+"／Good Morning, Beautiful／Luke McMaster／",
+"／活着／郝云／",
+"／牛仔很忙／周杰伦／",
+"／啷个哩个啷／鹏泊／",
+"／恋愛サーキュレーション／花澤香菜／",
+"／Good Mornin' Life (Remastered)／Dean Martin／",
+"／Ready To Roll／Blake Shelton／",
+"／Best Day of My Life／American Authors／",
+"／The Moss／Cosmo Sheldrake／",
+"／5 Years Time (Sun Sun Sun)／Noah and the Whale／",
+"／牧马人／冯佳界／",
+"／我一定会爱上你／谢春花／",
+"／Sign／DEAMN／",
+"／The Sound of Silence／Paul Simon／",
+"／生命是场马拉松／旅行团／",
+"／幸运大门／郭顶／",
+"／一万次悲伤／逃跑计划／",
+"／Viva La Vida／Coldplay／",
+"／Intro／The xx／",
+
+/* 天气不错 */
+"大标题／天气不错／",
+"／笹原のコジロウボルカ／前山田健一／",
+"／哎呦／毛不易／",
+"／Sunny Day／Joy Williams／",
+"／Stuck Like Glue／Lenka、Nick Howard／",
+"／Call Me Maybe／Carly Rae Jepsen／",
+"／She／Groove Coverage／",
+"／So Stop the World／Emma Stevens／",
+"／All About That Bass／Meghan Trainor／",
+"／Intervention!／Young and Divine／",
+"／Sleeping In／Nevertheless／",
+"／神的随波逐流／泠鸢yousa／",
+"／Super Star／麦田守望者／",
+"／我在人民广场吃炸鸡／阿肆／",
+"／Colorful／小自然／",
+"／好想你／李雪莱／",
+"云盘／免费教学录像带／周杰伦／",
+"云盘／魔术先生／周杰伦／",
+"／如果我搞比利你会爱我吗 (英文版)／A路人／",
+
+/* 午后休闲 */
+"大标题／午后休闲／",
+"／Gotta Have You／The Weepies／",
+"／Vendredi／Tamas Wells／",
+"／Sunny Day／Joy Williams／",
+"／Prettiest Friend (Demo)／Jason Mraz／",
+"／少了你的时间／李泫憙／",
+"／致橡树／程天意／",
+"／The Wind／Yusuf、Cat Stevens／",
+"／わすれない／大橋トリオ／",
+"／Wonderful Day／旅行团／",
+"／Mr. Wonderful／Morrie／",
+"／秋酿／房东的猫／",
+"／相守／栗先达／",
+"／所以来吧／房东的猫／",
+"／With You／窦靖童／",
+"／迷藏／刘昊霖／",
+"／理想三旬／陈鸿宇／",
+"／Les Champs-Elysées／Joe Dassin／",
+"／Five Hundred Miles／Justin Timberlake、Carey Mulligan、Stark Sands／",
+
+/* 享受旅途 */
+"大标题／享受旅途／",
+"／印象夏日／旅行团／",
+"／Lake and Ocean／The Coral Sea／",
+"／Lost Star／The Jesus and Mary Chain／",
+"／一个人的朝圣／徐大乐／",
+"／Landing Guy／刘昊霖、kidult.／",
+"／Stop This Train／John Mayer／",
+"／Blowin' In The Wind／Bob Dylan／",
+"／Hurt／Johnny Cash／",
+"／雨／文雀／",
+"／Ain't No Rest for the Wicked／Cage the Elephant／",
+"／Never Grow Old／The Cranberries／",
+"／旅行／许巍／",
+"／秋天／龙宽、张亚东／",
+"／Imagine／Jack Johnson／",
+
+/* 城市夜景 */
+"大标题／城市夜景／",
+
+/* 入睡助眠 */
+"大标题／入睡助眠／",
+
+/* 社死歌单 */
+"大标题／社死歌单／我可没说这些歌难听=。=",
+"／路灯下的小姑娘（国粤版）／bangbang／",
+"／要抱抱／王蓉／",
+"／要嗨森／火箭少女101／",
+"／Hop／Azis／",
+"／One World One Dream／黄晓明／",
+"／我在东北玩泥巴／狂风桑／",
+"／中国香肠／曹兰／",
+"／义务为豪大大鸡排所作个广告歌／顶楼的马戏团／",
+"／感觉自己萌萌哒／贾玲 刘维／",
+"／我怎么这么好看（青春芒果节主题曲）／大张伟／",
+"／杀猪刀／杨浩龙／",
+"／八块腹肌／喻恩泰／",
+"／Walking In the Sun (Defrix Remix)／Defrix／",
+"／吃货女友／李哈哈／",
+"／十年戎马心孤单／MC张凯／",
+"／坏姐姐／王蓉／",
+"／离人愁／李袁杰／",
+"／痴情玫瑰花／大贺兄弟／",
+"／你打不过我吧／跟风超人／",
+"／我有孤独和烈酒／魏小然／",
+"／女人心／深七／",
+"／吃土／汪苏泷／",
+"／你个小坏坏／跟风超人／",
+"／哥已经爱上你了／谢孟伟／",
+"／离人愁 (DJ咚鼓承利Remix)／承利 李袁杰 金南玲／",
+"／败家娘们儿／大庆小芳／",
+"／老公赚钱老婆花／大庆小芳／",
+"／美了美了／小沈阳 汤潮／",
+"／安排／前男友／",
+"／小了白了兔／叶洛洛／",
+"／哥不是娘炮／谢孟伟／",
+"／空姐之歌／关晓彤／",
+"／我不能悲伤地坐在你身旁／左小祖咒／",
+"／摩的叨位去／约瑟翰庞麦郎／",
+"／他们的力量／约瑟翰庞麦郎／",
+"／你姐／3unshine／",
+"／逐梦演艺圈／SNH48／",
+"／我的车轮／／",
+"／老婆最大／崔子格 老猫／",
+"／要嫁就嫁灰太狼／周艳泓／",
+
+/*消失的歌*/
+"大标题／消失的歌／在网易云的歌单里毫无提示直接消失的歌",
+"／みおのカプってカプって萌えちぎれ／相沢舞／",
+"／東雲研究所の、今日も平和です／今野宏美／",
+"／麻衣の涙の阿弥陀如来／富樫美铃／",
+"／麻衣のカカカタ☆カタオモイ-梵／富樫美铃／",
+"／笹原の桜舞う時定／川原慶久／",
+"／阪本さんのねこじぇらしー／白石みのる／",
+"／Take me hand／DAISHI DANCE、Cécile Corbel／",
+
+];
+
+let golink={
+    'wyy':'https://music.163.com/#/search/m/?s=',
+    'qq':'https://y.qq.com/n/ryqq/search?w=',
+    'kugou':'https://www.kugou.com/yy/html/search.html#searchType=song&searchKeyWord=',
+    'kuwo':'http://www.kuwo.cn/search/list?key=',
+}
+
+let ss="wyy";
+
+function 确定() {
+let 输入 = document.getElementById("输入").value.toLowerCase().split(" ");
+
+let 编号=1;
+let dy_head="<table><tr><th>编号</th><th>歌曲标题</th><th>歌手</th><th></th></tr>";
+let dy="";
+for(let i=0;data.length>i;i++){
+    let 临时=data[i].split("／");
+    let 临时_歌名;
+    let 临时_歌手;
+
+    if(临时[1].length>20){临时_歌名=临时[1].substr(0,20)+"..";}else{临时_歌名=临时[1];}
+    if(临时[2].length>15){临时_歌手=临时[2].substr(0,15)+"..";}else{临时_歌手=临时[2];}
+
+    let 搜索=临时[1]+" "+临时[2];
+    搜索=搜索.toLowerCase();
+    let 过程="0";
+
+    if(临时[0]=="注释"||临时[0]=="大标题"||临时[0]=="小标题"){
+        }
+    else{
+        for (let i3 = 0; 输入.length > i3; i3++) {
+            if (搜索.indexOf(输入[i3]) != -1) { } else { 过程 = "1"; }
+        }
+    }
+
+    if(过程=="0"){
+        if(临时[0]=="跳过"){dy+="<tr><td class=\"跳过\"></td>";}
+        if(临时[0]=="云盘"){dy+="<tr><td><ruby><rb>"+编号+"</rb><rt>云盘</rt></ruby></td>";编号+=1;}
+        if(临时[0]==""){dy+="<tr><td>"+编号+"</td>";编号+=1;}
+        if(临时[0]=="大标题"){编号=1;}
+
+        if(临时[0]==""||临时[0]=="跳过"||临时[0]=="云盘"){
+            if(临时[3]!=""){临时_歌名+=" <small>"+临时[3]+"</small>";}
+            dy+="<td onclick=\"复制(复制内容='"+临时[1]+"')\" title=\""+临时[1]+"\">"+临时_歌名+"</td>";
+            dy+="<td onclick=\"复制(复制内容='"+临时[2]+"')\" title=\""+临时[2]+"\">"+临时_歌手+"</td>";
+            dy+="<td><a href=\""+golink[ss]+临时[1]+" "+临时[2]+"\" target=\"_blank\">搜索</a>";
+
+            for(let i2=4;临时.length>i2;i2++){
+                let 临时2=临时[i2].split("：");
+                if(临时2[0]=="复制"){
+                    dy+=" <a onclick=\"复制(复制内容='" + 临时2[1] + "')\">复制</a>";
+                }else{
+                    dy+=" <a onclick=\"dw(dwb='" + 临时2[1] + "')\">" + 临时2[0] + "</a>";
+                }
+            }
+            dy+="</tr>";
+        }
+        if(临时[0]=="注释"){
+            dy+="<tr><td></td><td>"+临时[1]+"</td><td>"+临时[2]+"</td><td></td></tr>";
+        }
+
+        if(临时[0]=="大标题"||临时[0]=="小标题"){
+            dy+="</table><br>";
+            dy+="<a name=\""+临时[1]+"\"></a>"+"<h3>"+临时[1]+"</h3>"+临时[2];
+            dy+=dy_head;
+        }
+    }
+}
+dy=dy_head+dy+"</table>";
+dy=dy.replace(/<table><tr><th>编号<\/th><th>歌曲标题<\/th><th>歌手<\/th><th><\/th><\/tr><\/table>/g, "");
+document.getElementById("dy").innerHTML = dy;
+}
+
+确定();
+
+function 搜索(){
+    确定();
+}
+</script>
+<input id="复制" style="position:absolute;top:-1000px"/>
+<script>
+let notyf = new Notyf({delay:3000});
+let 复制内容;function 复制(){
+    复制内容=复制内容.replace(/<small>/g, "");
+    复制内容=复制内容.replace(/<\/small>/g, "");
+notyf.confirm("已复制 "+复制内容);
+document.getElementById('复制').value = 复制内容; let 复制的 = document.querySelector('#复制'); 复制的.select(); document.execCommand("Copy"); }</script>
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor2{position: fixed;bottom:0%;right:3%;width:14%;height: 40%;overflow:auto;
+            /* margin: 0 auto 0 67%; */
+        }
+        #right_anchor2 table{width:100%;}
+        #right_anchor2 td{border:1px solid #ccc;}
+        #right_anchor,.shouji{display:none;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor2{display:none;}
+    } /*手机*/
+    #right_anchor2 a{display:block;}
+    #right_anchor table{width:60%;cursor:pointer;}
+    #right_anchor,#right_anchor{z-index:2001;}
+</style>
+<div id="right_anchor2"></div><!--🔻🔺-->
+<script>
+    if (top.location == self.location) {
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor_name = 0;
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_name+=1;
+            anchor_dy += "<tr><td onclick=\"window.location.href='#" + anchor[i]["name"] + "'\"><a>" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<br><br><table>"+anchor_dy+"</table><br>";}
+        if(anchor_name>5){
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+        }else{
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
+        }
+    }
+}
+function anchor_zk(){
+if(anchor_an2==1){
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=0;
+}else{
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
+}
+}
+
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor2").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor2').fadeIn();
+            } else {
+                $('#right_anchor2').fadeOut();
+            }
+        });
+    });
+    });
+}else{
+    $('#right_anchor2').fadeOut();
+}
+    }
+</script>
+
+
+
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/shoucangjia/gedan"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/shoucangjia/gedan')\">https://李猫球.com/shoucangjia/gedan</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/shoucangjia/gedan\" class=\"leancloud_visitors\" data-flag-title=\"歌单\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+
+</div>
+
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/shoucangjia">收藏夹</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="shoucangjia/gedan" class="leancloud_visitors" data-flag-title="歌单">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

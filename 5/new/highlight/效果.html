@@ -1,0 +1,14 @@
+<link href="/5/new/highlight/vsc.css" rel="stylesheet"  type="text/css"/>
+<script type="text/javascript" src="/5/new/highlight/highlight.js"></script>
+
+<pre><code>代码</code></pre>
+
+<script>
+     hljs.initHighlightingOnLoad();
+     var allpre = document.getElementsByTagName("pre");
+     for(i = 0; i < allpre.length; i++) {
+        var onepre = document.getElementsByTagName("pre")[i];
+        var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+        onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
+     }
+</script>

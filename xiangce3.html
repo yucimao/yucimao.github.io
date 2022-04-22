@@ -1,0 +1,14 @@
+<script src="/js/jquery.min.js"></script>
+<img id="img" src="" />
+<script>
+    let LocString = String(window.document.location.href);
+    function GetQueryString(name) {
+        let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+        if (tmp = rs) { return decodeURI(tmp[2]); }
+        return "";
+    }
+    let xiangce3_m = GetQueryString("x");
+    let xiangce3_wz = GetQueryString("u");
+    let xiangce3 = 1;
+</script>
+<script src="/xiangce/3/i.js"></script>

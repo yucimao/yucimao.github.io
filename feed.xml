@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>猫球博客</title>
+        <description>这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。</description>
+        <link>https://limaoqiu.com</link>
+        <atom:link href="https://limaoqiu.com/feed.xml" rel="self" type="application/rss+xml" />
+
+        <item>
+            <title>月薪要赚多久</title>
+            <description>输入你的月薪，看看你距离富豪榜还差多远。</description>
+            <pubDate>Fri, 22 Apr 2022 19:15:00 +0800</pubDate>
+            <link>https://limaoqiu.com/app/yxyzdj</link>
+            <guid isPermaLink="true">https://limaoqiu.com/app/yxyzdj</guid>
+            </item>
+
+        <item>
+            <title>七年前的游戏</title>
+            <description>在TapTap上发现一个游戏所引发的深夜负能……</description>
+            <pubDate>Mon, 04 Apr 2022 09:00:00 +0000</pubDate>
+            <link>https://limaoqiu.com/i/zk/4906122</link>
+            <guid isPermaLink="true">https://limaoqiu.com/i/zk/4906122</guid>
+            </item>
+
+    </channel>
+</rss>

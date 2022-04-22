@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>pvo - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+</head>
+
+<body>
+
+
+
+<div style="position:absolute;bottom:10px;color:#ffffff;">本页推荐使用360浏览器查看完整效果<small>（谷歌浏览器禁止了页面自动播放音频……）</small></div>
+<style>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #66677c;
+  cursor: url(data:image/png;base64,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) 10 2, auto;
+  overflow: hidden;
+}
+body:active {
+  cursor: url(data:image/png;base64,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) 10 2, auto;
+}
+body:after {
+  background-color: #66677c;
+  content: '';
+  will-change: transform;
+  z-index: -1;
+}
+
+.card {
+  left: 0;
+  top: 0;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  width: 250px;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+.card:active {
+  cursor: url(data:image/png;base64,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) 10 2, auto;
+}
+
+.card-image {
+  display: block;
+  pointer-events: none;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  will-change: transform;
+  user-drag: none;
+  -webkit-user-select: none;
+    -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+</style>
+
+<div class="card">
+	<img src="/5/pvo/炉石传说/hearthstone-ragnaros.png" class="card-image" draggable="false">
+</div>
+
+<script type="text/javascript">
+	var card,
+		image,
+		cardw,
+		cardh,
+		cardx,
+		cardy,
+		ocardx,
+		ocardy,
+		pinx,
+		piny,
+		pinxperc,
+		pinyperc,
+		targetx,
+		targety,
+		rx,
+		ry,
+		targetrx,
+		targetry,
+		scale,
+		targetscale,
+		ww,
+		wh,
+		md,
+		mx,
+		my,
+		whoosh,
+		whooshvol,
+		whooshvoltarget,
+		majesty,
+		majestyvol,
+		majestyvoltarget,
+		audioloaded;
+
+	function audioload() {
+		audioloaded++;
+		if( audioloaded == 2 ) {
+			document.body.classList.add( 'loaded' );
+			majesty.play();
+			whoosh.play();
+			bindevents();
+			loop();
+		}
+	}
+
+	function init() {
+		onresize();
+		card = document.querySelector( '.card' );
+		image = document.querySelector( '.card-image' );
+		cardw = image.width;
+		cardh = image.height;
+		cardx = ww / 2 - cardw / 2;
+		cardy = wh / 2 - cardh / 2;
+		ocardx = cardx;
+		ocardy = cardy;
+		pinx = 0;
+		piny = 0;
+		pinxperc = 0;
+		pinyperc = 0;
+		targetx = cardx;
+		targety = cardy;
+		rx = 0;
+		ry = 0;
+		targetrx = 0;
+		targetry = 0;
+		scale = 1;
+		targetscale = scale;
+		md = false;
+		mx = cardx;
+		my = cardy;
+		audioloaded = 0;
+		
+		whooshvol = 0;
+		whooshvoltarget = 0;
+		whoosh = new Audio();
+		whoosh.addEventListener( 'canplaythrough', audioload );
+		whoosh.src = '/5/pvo/炉石传说/hs-whoosh.ogg';
+		whoosh.volume = 0;
+		whoosh.loop = true;
+		
+		majestyvol = 0;
+		majestyvoltarget = 0;
+		majesty = new Audio();
+		majesty.addEventListener( 'canplaythrough', audioload );
+		majesty.src = '/5/pvo/炉石传说/hs-majesty.ogg';
+		majesty.volume = 0;
+		majesty.loop = true;
+	}
+
+	function bindevents() {
+		card.addEventListener( 'mousedown', onmousedown );
+		window.addEventListener( 'mouseup', onmouseup );
+		window.addEventListener( 'mousemove', onmousemove );
+		window.addEventListener( 'resize', onresize );
+	}
+
+	function onmousedown( e ) {
+		md = true;
+		mx = e.pageX;
+		my = e.pageY;
+		pinx = cardw / 2;
+		piny = cardh / 2;
+		//pinx = mx - cardx; // to pin to click point
+		//piny = my - cardy; // to pin to click point
+		pinxperc = 100 - ( pinx / cardw ) * 100;
+		pinyperc = 100 - ( piny / cardh ) * 100;
+	}
+
+	function onmouseup() {
+		md = false;
+	}
+
+	function onmousemove( e ) {
+		if( md ) {
+			mx = e.pageX;
+			my = e.pageY;
+		}
+	}
+
+	function onresize() {
+		ww = window.innerWidth;
+		wh = window.innerHeight;
+	}
+
+	function loop() {
+		requestAnimationFrame( loop )
+		
+		targetx = mx - cardx - pinx;
+		targety = my - cardy - piny;
+		
+		cardx += targetx * 0.25;
+		cardy += targety * 0.25;
+		
+		if( cardx < -cardw / 2 ) {
+			cardx = -cardw / 2;
+		}
+		if( cardx > ww - cardw / 2 ) {
+			cardx = ww - cardw / 2;
+		}
+		if( cardy < -cardh / 2 ) {
+			cardy = -cardh / 2;
+		}
+		if( cardy > wh - cardh / 2 ) {
+			cardy = wh - cardh / 2;
+		}
+		
+		targetrx = ( ocardy - cardy - rx ) * 3;
+		targetry = ( cardx - ocardx - ry ) * 3;
+		targetrx = Math.min( targetrx, 90 );
+		targetrx = Math.max( targetrx, -90 );
+		targetry = Math.min( targetry, 90 );
+		targetry = Math.max( targetry, -90 );
+		
+		rx += targetrx * 0.1;
+		ry += targetry * 0.1;
+			
+		targetscale = md ? 1.2 - scale : 1 - scale;
+		scale += targetscale * 0.2;
+		
+		card.style[ 'transform' ] = 'translate3d(' + cardx + 'px, ' + cardy + 'px, 0)';
+		image.style[ 'transform-origin' ] = pinxperc + '% ' + pinyperc + '%';
+		image.style[ 'transform' ] = 'scale(' + scale + ') rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)';
+		
+		majestyvoltarget = md ? 0.2 : 0;
+		majestyvol += ( majestyvoltarget - majestyvol ) * 0.1;
+		majesty.volume = majestyvol;
+		
+		whooshvoltarget = ( Math.abs( ( ocardy - cardy ) ) + Math.abs( ( ocardx - cardx ) ) ) * 0.003;
+		whooshvol += ( whooshvoltarget - whooshvol ) * 0.1;
+		whoosh.volume = Math.min( whooshvol, 1 );
+		
+		ocardx = cardx;
+		ocardy = cardy;
+	}
+
+	window.onload = init;
+</script>
+
+
+
+
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="" class="leancloud_visitors" data-flag-title="pvo">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

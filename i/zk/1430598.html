@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>最终幻想14 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+<style>
+@media screen and (min-width: 768px) { /*电脑*/
+    body{background-color: #F4F8FB;}
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
+    #nav_zk2{position: relative;margin: auto;width:70%;}
+} /*电脑*/
+
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+} /*手机*/
+.juzhong{text-align:center;}
+</style>
+
+</head><body>
+
+<div id="上级"></div>
+
+<div id="wen_body">
+<div id="right_anchor"></div>
+
+<style>h5{display:inline;font-size:1.05em;}</style>
+<style>
+    #wen_body,body{
+        background-color: #F7DEBD;
+        color:#4F3A27;
+    }
+
+    div.body{box-shadow: 0 0 0 #fff;}
+
+    h1,h2,h3,h4,h5{color:#966a48;}
+    h3{font-size:1.3em;}
+    h5{display:inline;font-size:1.1em;}
+
+    .qbt{font-size:3em;
+        color:#2E1D09;
+    }
+
+    .说明{background-color: #E8C8A4;color:#71584D;}
+    .特别说明{background-color: #29231D;color:#F6F1EE;}
+    .背包{color:#9D6D49}
+</style>
+<div class="说明">
+FF14的分级为全年龄，可能因此在游戏中会弱化甚至移除让玩家喝酒的情节（比如酒类道具几乎都是任务物品、NPC提到请玩家喝酒不会兑现、酒馆的商人不卖酒、情节中宴会明明有酒玩家能点的只有食物），找酒的体验不是很好。<br>
+这篇笔记的记录会更偏向于RP（角色扮演），比如情节里应该有酒，却只能点击食物，我就可以认为是我把酒带走了，背包中实际没有这件物品，我会用/em指令对这瓶酒进行操作（如/em 拿出酒神之酒端详了一会）。<br>
+</div>
+
+<hr>
+<br>
+
+<h3>我的收藏</h3>
+
+<h5>酒神之酒</h5> 任务物品<br>
+任务：人的命运，酒的命运<br>
+“在第六星历1547年酿制的美酒。”<br>
+用酒神葡萄酿造的极品葡萄酒。<br>
+夏马尼·洛马尼(酿酒师)评价：“那味道的力量堪比位于天界的十二神，将双目失明的我带到了一个色彩斑斓的世界中。”<br>
+<span class="说明">我接到委托去寻找三大美食和最上等的葡萄酒，夏马尼·洛马尼提到酒神之酒，但一通寻找无果，且酿造酒神之酒所需的酒神葡萄全部被毁。正打算放弃，意外发现了酒神葡萄的叶子，顺着线索找到酒神葡萄的枝条，可以借此培育出酒神葡萄，夏马尼·洛马尼将枝条交由酒厂老板比格莱恩特培育，比格莱恩特为表达感谢将私藏了一瓶酒神之酒送给了我。交付委托后发现这场宴会是为我准备的，在宴会中吃光了三大美食，酒神之酒被我留下了。<br>
+这瓶是被冠以梦幻之名，1547年的最高级古典葡萄酒。<br></span>
+<br>
+
+<h5>工匠麦酒</h5> 任务物品<br>
+“工匠村酿制的爽口麦酒。”<br>
+工匠村的知名产品，以爽口润喉为特征，游末邦众多美酒爱好者都喜欢的出色麦酒。<br>
+生产麦酒的原料大麦现在是重要的粮食，所以麦酒的生产量也在不断减少。<br>
+<span class="说明">接到委托要寻找这种酒，用金黄大麦和老年村民换来一瓶自己留下了，收集金黄大麦又换了一瓶交给委托人。<br>
+老年村民：“这可是被誉为因为太过美味，一不注意就会喝醉的美酒啊。给，拿去吧。可要注意别喝到宿醉哦！”<br></span>
+我和罗尼图为了喝到工匠麦酒，一起帮助工匠村的土地变得肥沃。<br>
+<br>
+
+<h5>矮人拳</h5> 剧情提到<br>
+由我亲自调制，加入了苦液和酸粉的鲁卡首饰鸡尾酒。<br>
+“极具冲击力的苦味直击口舌，经典中的经典。”<br>
+吉奥图：“这种苦味才是矮人的味道啊！这味道让我不禁想起了家乡和家人……”<br>
+莱楠：“这、这……这比水晶都的麦酒还要苦！我有点不习惯苦味呢……”<br>
+<br>
+
+<h5>光之泛滥</h5> 剧情提到<br>
+由我亲自调制，加入了苦液和甜水的鲁卡首饰鸡尾酒。<br>
+“好喝但易醉，充斥着危险又神秘的成熟味道。”<br>
+吉奥图：“刚开始我还以为这是给小孩子喝的果汁呢，没想到越喝酒劲儿越大！”<br>
+吉奥图和莱楠都评价其名字不吉利。<br>
+<br>
+
+<h5>河狸之梦</h5> 剧情提到<br>
+加入了酸粉和甜水的鲁卡首饰鸡尾酒。<br>
+“快乐与疯狂无需言表。”<br>
+吉奥图：“这酸甜的口味……让我不禁想起了年轻的时候。”<br>
+<br>
+
+<h5>苍穹蛋奶酒</h5> 食品<br>
+“教皇厅御用的乳饮料，口感纯正，香甜可口。”<br>
+<span class="说明">相轻天赠送了一份。</span><br>
+<br>
+
+<h5>冻雾鸡尾酒</h5> 食品<br>
+“将冰冻云海香蕉和旧世界无花果混合制成的饮料。”<br>
+<span class="说明">相轻天赠送了一份。</span><br>
+<br>
+
+<h5>鸡尾酒</h5> 剧情提到<br>
+游末邦蜂箱夜总会售卖的酒，按规定不能给劳动民，不过安弗里格会在下班后偷偷给想喝酒的劳动民。<br>
+<br>
+
+<h5>重生之境</h5> 杂货（季节活动）<br>
+“葡萄酒巷的首席酿酒师比格莱恩特专门为了庆典而研究出的发泡酒，名字是为了纪念艾欧泽亚的重生。”<br>
+（唯一玩家可以使用并且明确说明是酒的物品，但是却不能喝，只是一个“喷香槟”的动作。）<br>
+<span class="说明">在市场的告示板买了一份。</span><br>
+<br>
+
+<h5>莫尔斯</h5> 食品<br>
+（不确定是不是酒）<br>
+“用山莓发酵后表层清澈的液体制作而成的传统饮料。”<br>
+<span class="说明">相轻天赠送了两份。</span><br>
+<br>
+
+<h5>果香特饮</h5> 食品<br>
+（不确定是不是酒）<br>
+“在发酵苹果汁中加入各种香料，趁热喝下，唇齿留香。”<br>
+<br>
+
+<h5>末木的米酒</h5> 剧情提到<br>
+末木：“异乡之人，不来和我对饮几杯吗？正好我也想拿你的旅途故事做下酒菜。”<br>
+<br>
+
+<h5>飞燕的清酒</h5> 剧情提到<br>
+决战多玛城前夜，飞燕请我喝的酒。<br>
+<br>
+
+<h5>麦酒</h5> 剧情提到<br>
+漏洞小舟亭售卖的酒。<br>
+<br>
+
+<h5>小麦酒</h5> 剧情提到<br>
+彷徨阶梯亭的酒。<br>
+<span class="说明">趁着格林纳德请大家尽情畅饮时，带走了一瓶。<br></span>
+<br>
+
+<h5>蜂蜜酒</h5> 剧情提到<br>
+彷徨阶梯亭的酒。<br>
+<span class="说明">趁着格林纳德请大家尽情畅饮时，带走了一瓶。<br></span>
+<br>
+
+<h5>蜂蜜酒</h5> 剧情提到<br>
+漏洞小舟亭售卖的酒。<br>
+<br>
+
+<hr>
+<br>
+
+<h3>记录</h3>
+
+<h5>矮人火酿</h5> 任务物品<br>
+任务：矮人战车，全速前进！<br>
+“喝下去会让喉咙感到仿佛是被火燎到一样的烈性混合酒。”<br>
+奥佐古酿造的醇香烈酒。<br>
+格拉古：“真是好酒啊。我感觉正飘在天上，好舒服……”<br>
+<br>
+
+<h5>小麦酒</h5> 剧情中提到<br>
+断罪党海贼团开酒宴时会用的酒。<br>
+<span class="说明">跟他们跳了会舞，说是把我当同伴了，居然不请我喝酒，哼。<br></span>
+<br>
+
+<h5>矮人麦酒</h5> 剧情提到<br>
+使用碎石山地一带的野生熔岩草的种子制作而成。<br>
+据佐尔图所说，黑风海的海风吹拂下生长的熔岩草更为醇厚美味。<br>
+<br>
+
+<h5>试饮用的麦酒</h5> 任务物品<br>
+任务：试饮用的麦酒<br>
+“在来往的人们休息时可以品尝一下香醇的麦酒。”<br>
+<br>
+
+<h5>蜂蜜酒</h5> 剧情中提到<br>
+罗尔佛·霍桑：“有空的话记得再来啊，跟我讲讲你的冒险故事，我会准备好蜂蜜酒招待你的！”<br>
+<span class="说明">等有空再去找他。</span><br>
+<br>
+
+<h5>蜂蜜酒</h5> 剧情提到<br>
+临危受命：祝福的佳酿<br>
+十二神大圣堂举办的喜事准备的酒。<br>
+香甜气味会吸引巨蝇，导致搬运工遭受袭击。<br>
+<br>
+
+<h5>卢恩浊酒</h5> 任务物品<br>
+任务：成熟的友情<br>
+“用卢恩族的传统方法酿出的浊酒。”<br>
+巴斯卡隆很喜欢的酒，评价为“让人欲罢不能”。<br>
+窖藏一年会变得香气四溢。<br>
+材料：好喝的水、长须豹幼崽的胡须。<br>
+<span class="说明">巴斯卡隆邀请我一年后去品尝，期待一下（2021年2月23日-2022年2月23日）。</span><br>
+<span class="说明">更：等了一天去找巴斯卡隆，他可能已经忘了这件事了，完全避开不提，唉。</span><br>
+<br>
+
+<h5>玛瑙白兰地</h5> 任务物品<br>
+任务：回忆的土产酒<br>
+“特别调制的白兰地酒，颜色像玛瑙一样美丽。”<br>
+维斯凯特最爱的酒。<br>
+<br>
+
+<h5>洛马尼的红酒</h5> 任务物品<br>
+任务：密林中的男人<br>
+“夏马尼·洛马尼第一次尝试做的红酒。”<br>
+<br>
+
+<h5>热葡萄酒</h5> 任务物品<br>
+任务：醉生梦死<br>
+“吉布里隆所给的葡萄酒，里面加入了香料。”<br>
+<br>
+
+<h5>热红酒</h5> 任务物品<br>
+任务：仰望天穹之街<br>
+“慰问品。”<br>
+<br>
+
+<h5>特制香葡萄酒</h5> 任务物品<br>
+任务：悲伤往事/令人怀念的香气<br>
+“给希丽莎/热拉迪厄的热葡萄酒，里面放了香草。”<br>
+吉布里隆特制的香葡萄酒，材料使用了新鲜香草（“龙堡内陆低地采取的新鲜香草”）。<br>
+<br>
+
+<h5>香葡萄酒</h5> 剧情提到<br>
+忘忧骑士亭售卖的酒。<br>
+塔塔露：“吉布里隆先生这里的香葡萄酒不光美味，还有一定的药效，喝下去整个身子都暖呼呼的！”<br>
+<br>
+
+<h5>没度数的红酒</h5> 剧情提到<br>
+任务：海盗登陆<br>
+偷懒的农夫渥特因为没钱只能喝没度数的红酒，想醉都醉不了。<br>
+<br>
+
+<h5>低地白葡萄酒</h5> 任务物品<br>
+任务：防波堤的兄弟<br>
+“葡萄酒巷出品，味道有保证。”<br>
+<br>
+
+<h5>椰子酒</h5> 任务物品<br>
+任务：友情之果<br>
+“将树汁存放到椰子壳中自然发酵制成的酒，发酵的时间掌控非常重要。”<br>
+放在瀑布中冰镇着的酒。<br>
+<br>
+
+<h5>金碟游乐园的鸡尾酒</h5> 剧情提到<br>
+金碟游乐场<br>
+温金：“这里制作的鸡尾酒广受好评，喝过的人都说它像一场不会醒的美梦，那种甜蜜感、幸福感，绝对值得一试。”<br>
+<br>
+
+<h5>最上级纯米酒</h5> 剧情提到<br>
+潮风亭卖的酒，红州酿出的最上级纯米酒。<br>
+<br>
+
+<h5>奶酒</h5> 剧情提到<br>
+太阳神草原暮晖之民的酒。<br>
+<br>
+
+<h5>阿剌吉酒</h5> 剧情提到<br>
+阿拉基利的酒。<br>
+<br>
+
+<h5>通透的阿剌吉酒</h5> 任务物品<br>
+任务：寒炉村的年轻人<br>
+“基拉巴尼亚特产的蒸馏酒，清澈透亮。”<br>
+<br>
+
+<h5>绝品蒸馏酒</h5> 剧情提到<br>
+盖罗尔特自制的酒。<br>
+<br>
+
+<h5>御神酒</h5> 剧情提到<br>
+祭礼上供奉在神前的酒。<br>
+<br>
+
+<h5>异乡的地酒</h5> 任务物品<br>
+任务：​禁止偷喝<br>
+“为开发燃料作参考用的异乡的地酒。”<br>
+从尘族商人处购买。<br>
+<br>
+
+<hr>
+<br>
+
+<h3>不能喝的</h3>
+
+<h5>蜂毒酒</h5> 任务物品<br>
+任务：瓶中毒物<br>
+“浸泡了黄蜂的毒酒。”<br>
+瓦尔塞奥夫(黑衣森林)特制，将黄蜂尸骸放进酒里制成。<br>
+玛尔戈评价“是一种刺激性的酒，能使舌头发麻”，看起来是可以饮用的。<br>
+主要作用是喷洒在田地里，防止基萨尔野菜生虫。<br>
+<br>
+
+<h5>走味的麦酒</h5> 任务物品<br>
+任务：无法治愈的创伤<br>
+“没什么味道的小麦酒。”<br>
+洒在腐生蛞蝓的巢穴外可以将它们吸引出来。<br>
+<br>
+
+<h5>娜娜莫的毒酒</h5> 剧情提到<br>
+娜娜莫女王喝下了有毒的葡萄酒。<br>
+<br>
+
+<hr>
+<br>
+
+<h3>其他</h3>
+
+<h5>料酒</h5> 食材<br>
+“烹饪用葡萄酒。”<br>
+素材商出售。<br>
+<br>
+
+<h5>高级料酒</h5> 食材<br>
+“烹饪用的高级葡萄酒。”<br>
+<br>
+
+<h5>味淋酒</h5> 食材<br>
+“调味用米酒。”<br>
+远东之国的素材商有售。<br>
+<br>
+
+<h5>乳根</h5> 任务物品<br>
+任务：初次接触<br>
+“里面含有乳白色的树汁，送给妖精们最合适不过。”<br>
+对妖精族来说像是和酒一样的东西。<br>
+对其他种族来说很臭，罗尔佛·霍桑评价为“臭味比陆行鸟还重，或许比魔界花的臭气还要厉害”。<br>
+<br>
+
+<h5>酒神之水</h5> 技能<br>
+陆行鸟赛跑中得到的道具。<br>
+“使跑在自己前面的竞赛陆行鸟陷入失控状态。”<br>
+<br>
+
+<h5>御神茶</h5> 剧情提到<br>
+鲶鱼精喝茶才会醉，因此鲶鱼精供奉时会使用御神茶。<br>
+<br>
+
+<h5>模儿部的豆茶</h5> 任务物品<br>
+“运用模儿部传统的技法沏的豆茶。”<br>
+鲶鱼精茶会用的茶，相当于他们的酒。<br>
+<br>
+
+<hr>
+<br>
+
+<h1>和酒有关的</h1>
+
+<h2>种族</h2>
+
+<b>矮人族</b><br>
+矮人族会洗酒水澡来放松心情。<br>
+在路边看到美酒也绝不放过。<br>
+矮人喝酒喜欢用鬣蜥的尾巴作为下酒菜，除了酒和下酒菜之外还有一件重要的事——干杯之歌。<br>
+不过矮人们对干杯之歌通常只记得“啦哩吼”，大部分时间都是醉醺醺随便唱的，已经不知道原本的歌词了。<br>
+佐尔图：“只要喊出啦哩吼并一起干杯，不管多么难受的事情都能抛到脑后啦哩。”<br>
+用以染料为目的开发出来的酒精制作鸡尾酒，可能并不美味，用赚到的钱开发矮人战车。<br>
+
+<br>
+
+<h2>角色</h2>
+
+<b>李猫球</b><br>
+来到艾欧泽亚的冒险者，在世界各地旅行、帮助当地居民解决麻烦。<br>
+在矮人族酒馆“鲁卡的首饰”担任调酒师。<br>
+
+<br>
+
+<b>夏马尼·洛马尼</b><br>
+在与蛮神泰坦的激战中双目失明，绝望中被酒神之酒的味道重燃生活的希望，成为酿酒师。“那时我饮下的酒神之酒，它不光是我活下去的希望，同时也是我那份坚强内心的证明。”<br>
+
+<br>
+
+<b>比格莱恩特</b><br>
+酿酒厂的老板，资深酿酒师，被称为“利姆萨·罗敏萨的葡萄酒之王”，对葡萄酒非常狂热。酒厂采用的几乎都是“低地葡萄”，品质算是相当不错的。<br>
+
+<br>
+
+<b>破墨</b><br>
+破墨：“酒可是有着很深的学问的……产地和种类不同，味道和香气也会完全不一样。尝遍天下美酒——这就是我的奢望……”<br>
+
+<br>
+
+<b>赛克迈特</b><br>
+临危受命：饮酒魔兽——赛克迈特<br>
+“一些生物渴望鲜血，同时另一些生物渴望宝藏。然而赛克迈特却相当与众不同，它所感兴趣的只有美酒。频繁的盗酒令公众的情绪变得异常气愤，请立刻消灭这只奇异的魔兽！”<br>
+
+<br>
+
+<b>海德伦</b><br>
+临危受命：嗜酒如命——海德伦<br>
+“一只羊不小心闯入连队野营地，偷喝了营地里的酒。那以后它嗜酒如命，每当想喝酒时就会袭击他人，请打倒海德伦！”<br>
+
+<hr>
+<br>
+
+<h2>地点</h2>
+
+<b>鲁卡的首饰</b> 酒馆<br>
+矮人族吉鲁图的酒馆。<br>
+位于诺弗兰特-雷克兰德-9.12<br>
+<br>
+
+<b>崖畔亭</b> 酒馆<br>
+亚德基拉：“你可以在这里品尝美酒和美食，暂时忘却现实的烦恼。”<br>
+<br>
+
+<b>永远少女亭</b> 酒馆<br>
+海盗团红血圣女团的地盘。<br>
+<br>
+
+<b>小麦酒巷</b><br>
+享有酒税优惠政策，所以这里的小麦酒交易很兴盛。<br>
+<br>
+
+<b>巴斯卡隆酒家</b><br>
+巴斯卡隆：“不管你是卫兵、商人、还是冒险者，放下身上的重担，好好在我这喝上一杯吧。这就是我巴斯卡隆酒家的礼仪。”<br>
+<br>
+
+<b>忘忧骑士亭</b><br>
+吉布里隆：“我就是这小破酒馆的老板吉布里隆。你们随便喝点，不用拘谨。”<br>
+吉布里隆：“这里是忘忧骑士亭……靠一些酒鬼常客们支撑的小破酒馆。”<br>
+上面一层专门招待结束任务的骑兵。<br>
+一层聚集的是云雾街的居民们，因为他们都没什么钱，所以一般都会给他们低质多量的酒菜。<br>
+<br>
+
+<b>潮风亭</b><br>
+位于远东之国-黄金港-10.10<br>
+琴风（老板娘）：“欢迎光临。客人想喝点什么，先来上一杯吧？”<br>
+琴风：“这里是黄金港最大的酒馆，因为空气中飘满了海潮的香气，所以有了潮风亭这么一个名字。卖的酒呢，全都是红州酿出的最上级纯米酒。”<br>
+琴风：“来来来，先尝尝本店的招牌纯米酒吧！”<br>
+卡尔瓦兰（海盗）的评价：“那是黄金港最好的酒馆。刚结束海上旅行，或者是将要出海的人都喜欢在那家店里喝上一杯。”<br>
+<br>
+
+<b>奥温酒窖</b><br>
+<br>
+
+<b>彷徨阶梯亭</b> 酒馆<br>
+诺弗兰特-水晶都-11,15<br>
+<br>
+
+<hr>
+<br>
+
+<h2>其他</h2>
+
+<b>酒神葡萄</b><br>
+人们对低地葡萄进行品种改良，偶然间创造出的品种。颗粒饱满，只有在葡萄酒巷的肥沃土地中才能结出。被夏马尼·洛马尼评价“那种巧合简直像是神明的恶作剧一般”。<br>
+<br>
+
+<b>蒸馏酒收藏瓶</b> 家具<br>
+“用于收藏的酒瓶子，营造一种成熟有品味的氛围。”<br>
+<br>
+
+<b>鲁卡的首饰鸡尾酒</b><br>
+酒馆“鲁卡的首饰”中售卖的酒。<br>
+吉鲁图：“只需要根据客人的对话来判断其喜好，然后加入2种辅助材料调制鸡尾酒即可。”<br>
+以矮人酒精为基酒，矮人酒精是以染料为目的开发出来的东西，雷吉图认为“很难再拿去做出美味的鸡尾酒了，但是赚到的钱可以当作开发资金。”<br>
+矮人酒精是纯粹的酒精，无法直接饮用，因此需要用辅助材料来增加味道，辅助材料包括增加苦味的“苦液”、增加酸味的“酸粉”、以及增加甜味的“甜水”。<br>
+<br>
+
+<b>场景的酒瓶子</b><br>
+sakedenat<br>
+Bomebome<br>
+YO-FZ<br>
+<br>
+
+<hr>
+<br>
+
+<h1>没喝到的酒</h1>
+
+<h3>各种不卖酒的酒馆</h3>
+
+永远少女亭<br>
+巴斯卡隆酒家<br>
+忘忧骑士亭<br>
+潮风亭<br>
+
+<hr>
+<br>
+
+<h3>没有酒的酒宴</h3>
+
+鱼人族诺布，说要给我准备接风酒宴，只是说说而已。<br>
+
+<br>
+
+在沙城要举办庆功宴，说是要喝上一杯。<br>
+开始前娜娜莫女王邀请我去私人谈话，侍女给我们各倒了一杯酒，我还没来得及喝，娜娜莫喝了一口就倒下了。<br>
+我被怀疑谋害女王，庆功宴成了逃亡。<br>
+
+<br>
+
+在龙堡要举办庆典，艾默里克：“等庆典顺利结束后，我们找个地方喝上一杯吧。”<br>
+然后庆典就出事了。<br>
+由于庆典的事故，我们需要在军演中取胜，来振奋人心。<br>
+艾默里克：“我相信我们一定会胜利，并共饮胜利的美酒。”<br>
+军演胜利了，庆典却又出事了。<br>
+终于，打完最强大的敌人，一切都结束了。<br>
+博雷尔家的总管：“此次应我家主人艾默里克大人之意，为您准备了酒席，希望能够符合您胃口。”<br>
+酒席上，管家端来一瓶酒，虽然我十分想要，可总觉得在龙堡喝酒很不吉利，还是忍痛摇了摇头。<br>
+
+
+</div>
+
+<!-- <div id="下级"></div> -->
+
+<div id="nav_zk" style="display: none;">
+<div id="nav_zk2">
+<!-- <script src='/5/new/vcomments/Valine.min.js'></script>
+<script src="/5/new/vcomments/Leancloud.min.js"></script> -->
+
+<!-- do not set the version number -->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- or set latest -->
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<!-- or Default value -->
+<script src="//unpkg.com/valine"></script>
+
+<br><br><hr>
+<style>
+    textarea#veditor{
+        height:160px;
+        background-attachment: scroll,scroll;
+        background-image: url('/img/background/pinglun/a1.png'),url('/img/background/pinglun/a2.png');
+        background-repeat:no-repeat,no-repeat;
+        background-position:bottom left,bottom right;}
+    .vemoji{width:40px !important;height:auto !important;}
+    .vemojis i{width:50px !important;}
+    .vemoji{width:40px !important;}
+    p .vemoji{width:56px !important;}
+    .vsys,.markdown{display:none !important;}
+    .vimg{width:70px !important; height:70px !important;}
+    /* .vnick{font-size:1.1em !important;} */
+</style>
+<div id="v_pl_s"></div>
+<div id="vcomments" style="width:90%;"></div>
+<script>
+    let v_pl_a=["a"];
+    let v_pl_b={
+        "3.16":["mqsr"],
+        "10.31":["wsj"],
+        "11.1":["wsj"],
+
+        "2022.2.15":["tym","tye"],//元宵节
+    };
+    let v_pl_c=new Date().getMonth()+1+"."+new Date().getDate();
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_c=new Date().getFullYear()+"."+v_pl_c;
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_b=new Date().getTime();
+    v_pl_b=Math.floor(v_pl_b/1000/60/60);
+    v_pl_b=v_pl_b%v_pl_a.length;
+    v_pl_b=v_pl_a[v_pl_b];
+    v_pl_b="/img/background/pinglun/"+v_pl_b;
+    document.getElementById("v_pl_s").innerHTML = "<style>textarea#veditor{background-image: url('"+v_pl_b+"1.png'),url('"+v_pl_b+"2.png');}</style>";
+
+    new Valine({
+        el: '#vcomments',
+        appId: 'mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz',
+        appKey: 'YCCregxILHitovzescjVs4X1',
+        Array: ['nick'],
+        avatar: 'mp',
+        visitor: true,
+        placeholder: "说点啥？&#13;&#10;(本站暂时没有回复通知功能)",
+
+        emojiCDN: 'https://limaoqiu.com/img/i/em/',
+        emojiMaps: {
+            "k02": "kmj/02.jpg",
+            "k07": "kmj/07.jpg",
+            "k13": "kmj/13.jpg",
+            "k15": "kmj/15.jpg",
+            "k16": "kmj/16.jpg",
+            "k18": "kmj/18.jpg",
+            "k21": "kmj/21.jpg",
+            "k22": "kmj/22.jpg",
+            "k25": "kmj/25.jpg",
+            "k28": "kmj/28.jpg",
+            "k29": "kmj/29.jpg",
+            "k31": "kmj/31.jpg",
+            "k34": "kmj/34.jpg",
+            "k38": "kmj/38.jpg",
+            "k41": "kmj/41.jpg",
+            "k44": "kmj/44.jpg",
+            "k47": "kmj/47.jpg",
+            "k53": "kmj/53.jpg",
+            "k58": "kmj/58.jpg",
+            "k60": "kmj/60.jpg",
+            "k70": "kmj/70.jpg",
+            "k75": "kmj/75.jpg",
+            "k78": "kmj/78.jpg",
+            "k79": "kmj/79.jpg",
+            "k80": "kmj/80.jpg",
+            "m01": "mq/01.jpg",
+            "m02": "mq/02.jpg",
+            "m03": "mq/03.jpg",
+            "m04": "mq/04.jpg",
+            "m05": "mq/05.jpg",
+            "m06": "mq/06.jpg",
+            "m07": "mq/07.jpg",
+            "m09": "mq/09.jpg",
+            "m10": "mq/10.jpg",
+            "m11": "mq/11.jpg",
+            "m12": "mq/12.jpg",
+            "m13": "mq/13.jpg",
+            "m14": "mq/14.jpg",
+            "m17": "mq/17.jpg",
+            "m18": "mq/18.jpg",
+            "m20": "mq/20.jpg",
+            "q03": "mq/b03.jpg",
+            "q04": "mq/b04.jpg",
+            "q06": "mq/b06.jpg",
+            "e01": "mq/c01.jpg",
+            "e02": "mq/c02.jpg",
+            "e03": "mq/c03.jpg",
+            "e04": "mq/c04.jpg",
+            "e05": "mq/c05.jpg",
+            "e06": "mq/c06.jpg",
+            "e07": "mq/c07.jpg",
+            "e08": "mq/c08.jpg",
+            "e09": "mq/c09.jpg",
+            "e10": "mq/c10.jpg",
+        }
+    })
+</script>
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/i/zk/1430598"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/i/zk/1430598')\">https://李猫球.com/i/zk/1430598</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/i/zk/1430598\" class=\"leancloud_visitors\" data-flag-title=\"最终幻想14\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+</div>
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/jiuxian">酒仙笔记</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+</div>
+
+<script>
+if(top.location==self.location){var 返回="<div class=\"qbt\">最终幻想14</div>";
+document.getElementById("上级").innerHTML=返回;
+document.getElementById("wen_body").className = 'body';
+document.getElementById("nav_zk").style.display = "block";
+}
+else{
+    //展开的子页面
+    var bodyH = $(document).height()+20;
+    var bodyHa = 0;
+    var bodyJ = window.location.href.split('/i/zk/')[1];
+    var bodyK = "／／" + bodyJ;
+    var bodyL = "／" + bodyJ + "／";
+
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    window.parent.document.getElementById(bodyL).innerHTML = "";
+
+    window.onload = function () {
+    bodyH = $(document).height();
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    }
+}
+let p_link = "i/zk/1430598".split("/");
+localStorage.setItem(p_link[2], "1");
+</script>
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor2{position: fixed;bottom:0%;right:3%;width:14%;height: 40%;overflow:auto;
+            /* margin: 0 auto 0 67%; */
+        }
+        #right_anchor2 table{width:100%;}
+        #right_anchor2 td{border:1px solid #ccc;}
+        #right_anchor,.shouji{display:none;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor2{display:none;}
+    } /*手机*/
+    #right_anchor2 a{display:block;}
+    #right_anchor table{width:60%;cursor:pointer;}
+    #right_anchor,#right_anchor{z-index:2001;}
+</style>
+<div id="right_anchor2"></div><!--🔻🔺-->
+<script>
+    if (top.location == self.location) {
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor_name = 0;
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_name+=1;
+            anchor_dy += "<tr><td onclick=\"window.location.href='#" + anchor[i]["name"] + "'\"><a>" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<br><br><table>"+anchor_dy+"</table><br>";}
+        if(anchor_name>5){
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+        }else{
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
+        }
+    }
+}
+function anchor_zk(){
+if(anchor_an2==1){
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=0;
+}else{
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
+}
+}
+
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor2").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor2').fadeIn();
+            } else {
+                $('#right_anchor2').fadeOut();
+            }
+        });
+    });
+    });
+}else{
+    $('#right_anchor2').fadeOut();
+}
+    }
+</script>
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="i/zk/1430598" class="leancloud_visitors" data-flag-title="最终幻想14">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

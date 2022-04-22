@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+</head>
+
+<body>
+
+
+
+<link rel="prefetch" href="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"/>
+<link rel="prefetch" href="/css/all.css"/>
+<link rel="prefetch" href="/img/nav/index.jpg"/>
+<link rel="prefetch" href="/5/rili/ib.js"/>
+<style>
+.jrmqbk{
+position: relative;
+width: 10px;
+height: 10px;
+animation: jrmqbk_a 1s infinite;
+}
+@keyframes jrmqbk_a{
+0% {left:0px}
+70%{left: 10px;}
+100%{left: 0px;}
+}
+[onclick]{cursor:pointer;}
+</style>
+
+<style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #7cd3fc;
+    }
+    
+    .outer_wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .wrapper {
+      position: absolute;
+      height: calc(100vh - 100px);
+      width: 100%;
+      top: 0;
+    }
+    
+    .ground {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background-color: #7ef15b;
+    
+    }
+    
+    .cat {
+      position: absolute;
+      bottom: 65px;
+      left: 100px;
+      height: 30px;
+      width: 60px;
+      transition: 1.5s;
+      transform-origin: center;
+      background-color: transparent;
+    }
+    
+    /* body */
+    
+    .body {
+      position: absolute;
+      height: 30px;
+      width: 60px;
+    }
+    
+    .face_left .body { 
+      animation: turn_body_left forwards 0.5s;
+    }
+    
+    @keyframes turn_body_left {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(0.5, 1); }
+    }
+    
+    .face_right .body {
+      animation: turn_body_right forwards 0.5s;
+    }
+    
+    @keyframes turn_body_right {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(0.5, 1); }
+    }
+    
+    /* head */
+    .cat_head {
+      position: absolute;
+      height: 40px;
+      width: 48px;
+      right: -10px;
+      top: -30px;
+      transition: 0.5s;
+      z-index: 50;
+    }
+    
+    .first_pose .cat_head,
+    .face_left .cat_head{ 
+      right: 22px;
+    }
+    
+    
+    /* tail */
+    .tail {
+      position: absolute;
+      top: -25px;
+      height: 36px;
+      width: 15px;
+      animation: tail_motion forwards 2s;
+      transform-origin: bottom right;
+    }
+    
+    @keyframes tail_motion {
+      0%,100% { 
+        left: -5px;
+        transform: rotate(0deg) scale(1); 
+      }
+      50% { 
+        left: -10px;
+        transform: rotate(-50deg) scale(-1,1); 
+      }
+    }
+    
+    .first_pose .tail ,
+    .face_left .tail {
+      left: 45px;
+      animation: tail_motion_alt forwards 2s;
+    }
+    
+    @keyframes tail_motion_alt {
+      0%,100% { 
+        left: 45px;
+        transform: rotate(0deg) scale(1); 
+      }
+      50% { 
+        left: 40px;
+        transform: rotate(50deg) scale(-1,1); 
+      }
+    }
+    
+    
+    
+    /* legs */
+    .leg {
+      position: absolute;
+      height: 20px;
+      width: 10px;
+      transform-origin: top center;
+    }
+    
+    .front_legs,
+    .back_legs {
+      position: absolute;
+      height: 30px;
+      transition: 0.7s;
+    }
+    
+    .front_legs {
+      width: 30px;
+      right: 0;
+    }
+    
+    .back_legs {
+      width: 25px;
+      left: 0; 
+    }
+    
+    .face_left .leg svg {
+      transform: scale(-1,1);
+    }
+    
+    .face_right .front_legs{ right: 0; }
+    
+    .first_pose .front_legs,
+    .face_left .front_legs{ right: 30px; }
+    
+    .face_right .back_legs{ left: 0; }
+    
+    .first_pose .back_legs,
+    .face_left .back_legs{ left: 35px; }
+    
+    .one,
+    .three  {
+      bottom: -15px;
+      right: 0;
+    }
+    
+    .two, 
+    .four {
+      bottom: -15px;
+      left: 0px;
+    }
+    
+    .one.walk, 
+    .three.walk {
+      animation: infinite 0.3s walk;
+    }
+    
+    .two.walk, 
+    .four.walk {
+      animation: infinite 0.3s walk_alt;
+    }
+    
+    @keyframes walk {
+      0%,100% {transform: rotate(-10deg);}
+      50% {transform: rotate(10deg);}
+    }
+    
+    @keyframes walk_alt {
+      0%,100% {transform: rotate(10deg);}
+      50% {transform: rotate(-10deg);}
+    }
+    
+    
+    /* jump */
+    .cat_wrapper {
+      position: absolute;
+      bottom: 0;
+    }
+    
+    .cat_wrapper.jump .one { 
+      animation: infinite 0.3s walk;
+    }
+    
+    .cat_wrapper.jump .two { 
+      animation: infinite 0.3s walk_alt;
+    }
+    
+    .cat_wrapper.jump .three,
+    .cat_wrapper.jump .four {
+      animation: none;
+    }
+    
+    .cat_wrapper.jump .cat.face_right .back_legs {
+      transform-origin: center;
+      transform: rotate(50deg);
+    }
+    
+    .cat_wrapper.jump .cat.face_left .back_legs {
+      transform-origin: center;
+      transform: rotate(-50deg);
+    }
+    
+    .cat_wrapper.jump .cat.face_right .front_legs {
+      transform-origin: center;
+      transform: rotate(-60deg);
+    }
+    
+    .cat_wrapper.jump .cat.face_left .front_legs {
+      transform-origin: center;
+      transform: rotate(60deg);
+    }
+    
+    .cat_wrapper.jump{
+      animation: jump forwards 1s;
+    }
+    
+    @keyframes jump {
+      0%, 100%  {bottom: 0px;}
+      50% {bottom: 200px;}
+    }
+    
+    .jump .face_left{ 
+      animation: forwards 0.5s body_stand_left;
+      transform-origin: right bottom;
+    }
+    
+    .jump .face_right{ 
+      animation: forwards 0.5s body_stand_right;
+      transform-origin: left bottom;
+    }
+    
+    @keyframes body_stand_right {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(-45deg);}
+    }
+    
+    @keyframes body_stand_left {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(45deg);}
+    }
+    
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+    
+    polygon.eyes {
+      fill: #313131;
+    }
+    
+    polygon,
+    path {
+      fill: white;
+    }
+    
+    .sign {
+      position: absolute;
+      color: white;
+      bottom: 10px;
+      right: 10px;
+      font-size: 10px;
+    }
+    
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .文字{
+      position: absolute;top:20%;left:40%;font-size:1.1em;z-index:10000;
+    }
+    </style>
+    
+    <div class="文字" style="color:#fff;">
+      <a onclick="window.parent.location.href='/i'">进入 猫球博客</a><span class="jrmqbk">&lt;</span>
+    </div>
+    
+    <div class="outer_wrapper">
+        <div class="wrapper">
+    
+          <div class="cat_wrapper">
+            <div class="cat first_pose">
+              <div class="cat_head">
+                <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 76.4 61.2">
+                  <polygon class="eyes" points="63.8,54.1 50.7,54.1 50.7,59.6 27.1,59.6 27.1,54.1 12.4,54.1 12.4,31.8 63.8,31.8 "></polygon>
+                  <path d="M15.3,45.9h5.1V35.7h-5.1C15.3,35.7,15.3,45.9,15.3,45.9z M45.8,56.1V51H30.6v5.1H45.8z M61.1,35.7H56v10.2h5.1
+                    V35.7z M10.2,61.2v-5.1H5.1V51H0V25.5h5.1V15.3h5.1V5.1h5.1V0h5.1v5.1h5.1v5.1h5.1v5.1c0,0,15.2,0,15.2,0v-5.1h5.1V5.1H56V0h5.1v5.1
+                    h5.1v10.2h5.1v10.2h5.1l0,25.5h-5.1v5.1h-5.1v5.1H10.2z"></path>
+                </svg>
+    
+              </div>
+              <div class="body">
+                <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 91.7 40.8">
+                  <path class="st0" d="M91.7,40.8H0V10.2h5.1V5.1h5.1V0h66.2v5.1h10.2v5.1h5.1L91.7,40.8z"></path>
+                </svg>
+    
+                <div class="tail">
+                  <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 25.5 61.1">
+                    <polygon class="st0" points="10.2,56 10.2,50.9 5.1,50.9 5.1,40.7 0,40.7 0,20.4 5.1,20.4 5.1,10.2 10.2,10.2 10.2,5.1 15.3,5.1 
+                      15.3,0 25.5,0 25.5,10.2 20.4,10.2 20.4,15.3 15.3,15.3 15.3,20.4 10.2,20.4 10.2,40.7 15.3,40.7 15.3,45.8 20.4,45.8 20.4,50.9 
+                      25.5,50.9 25.5,61.1 15.3,61.1 15.3,56 "></polygon>
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="front_legs">
+                <div class="leg one">
+                  <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 14 30.5">
+                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "></polygon>
+                  </svg>
+                </div>
+                <div class="leg two">
+                  <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 14 30.5">
+                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "></polygon>
+                  </svg>
+                </div>  
+              </div>
+              
+              <div class="back_legs">
+                <div class="leg three">
+                  <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 14 30.5">
+                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "></polygon>
+                  </svg>
+                </div>
+                <div class="leg four">
+                  <svg x="0px" y="0px" width="100%" height="100%" viewbox="0 0 14 30.5">
+                    <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "></polygon>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ground"></div>
+    
+      </div>
+    
+    <script>
+      function init() { 
+      const catWrapper = document.querySelector('.cat_wrapper')
+      const wrapper = document.querySelector('.wrapper')
+      const cat = document.querySelector('.cat')
+      const head = document.querySelector('.cat_head')
+      const legs = document.querySelectorAll('.leg')
+      const pos = {
+        x: null,
+        y: null
+      }
+    
+      const walk = () =>{
+        cat.classList.remove('first_pose')
+        legs.forEach(leg=>leg.classList.add('walk'))
+      }
+    
+      const handleMouseMotion = e =>{
+        pos.x = e.clientX
+        pos.y = e.clientY
+        walk()
+      }
+    
+      const handleTouchMotion = e =>{
+        if (e.targetTouches) return
+        // pos.x = e.targetTouches[0].offsetX
+        // pos.y = e.targetTouches[0].offsetY
+        pos.x = e.clientX
+        pos.y = e.clientY
+        walk()
+      }
+    
+      const turnRight = () =>{
+        cat.style.left = `${pos.x - 90}px`
+        cat.classList.remove('face_left')
+        cat.classList.add('face_right')
+      }
+    
+      const turnLeft = () =>{
+        cat.style.left = `${pos.x + 10}px`
+        cat.classList.remove('face_right')
+        cat.classList.add('face_left')
+      }
+    
+      const decideTurnDirection = () =>{
+        cat.getBoundingClientRect().x < pos.x ?
+          turnRight()
+          :
+          turnLeft()
+      }
+    
+      const headMotion = () =>{
+        pos.y > (wrapper.clientHeight - 100) ?
+          head.style.top = '-15px'
+          :
+          head.style.top = '-30px'
+      }
+    
+      const jump = () =>{
+        catWrapper.classList.remove('jump')
+        if (pos.y < (wrapper.clientHeight - 250)) {
+          setTimeout(()=>{
+            catWrapper.classList.add('jump')
+          },100)
+        } 
+      }
+    
+      const decideStop = ()=>{
+        if (cat.classList.contains('face_right') && pos.x - 90 === cat.offsetLeft ||
+            cat.classList.contains('face_left') && pos.x + 10 === cat.offsetLeft) {
+          legs.forEach(leg=>leg.classList.remove('walk'))    
+        }
+      }
+      
+      setInterval(()=>{
+        if (!pos.x || !pos.y) return
+        decideTurnDirection()
+        headMotion()
+        decideStop()
+      },100)
+    
+      setInterval(()=>{
+        if (!pos.x || !pos.y) return
+        jump()
+      },1000)
+    
+      document.addEventListener('mousemove', handleMouseMotion)
+      document.addEventListener('mousemove', handleTouchMotion)
+    }
+    
+    window.addEventListener('DOMContentLoaded', init)
+    </script>
+
+
+
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="i/3794819" class="leancloud_visitors" data-flag-title="">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

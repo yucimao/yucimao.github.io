@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+<style>
+@media screen and (min-width: 768px) { /*电脑*/
+    body{background-color: #F4F8FB;}
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
+    #nav_zk2{position: relative;margin: auto;width:70%;}
+} /*电脑*/
+
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+} /*手机*/
+.juzhong{text-align:center;}
+</style>
+
+</head><body>
+
+<div id="上级"></div>
+
+<div id="wen_body">
+<div id="right_anchor"></div>
+
+数据来源：国家统计局第五次人口普查（2000年）、第六次人口普查（2010年）<br>
+<br>
+性别比<br>
+<table border="1">
+<tr><td>出生年份</td><td>第五次人口普查</td><td>第六次人口普查</td></tr>
+<tr><td>2005-2009</td><td>-</td><td>115.98</td></tr>
+<tr><td>2000-2004</td><td>-</td><td>116.76</td></tr>
+<tr><td>1995-2001</td><td>120.17</td><td>115.51</td></tr>
+<tr><td>1990-1996</td><td>115.42</td><td>104.76</td></tr>
+<tr><td>1985-1989</td><td>108.81</td><td>103.42</td></tr>
+<tr><td>1980-1984</td><td>105.43</td><td>102.09</td></tr>
+<tr><td>1975-1979</td><td>102.79</td><td>104.08</td></tr>
+<tr><td>1970-1974</td><td>104.98</td><td>106.31</td></tr>
+</table>
+<br>
+死亡人口性别比例
+<table border="1">
+<tr><td>0岁</td><td>男53.18%</td><td>女46.81%</td></tr>
+<tr><td>1-4岁</td><td>男58.39%</td><td>女41.6%</td></tr>
+<tr><td>5-9岁</td><td>男64.3%</td><td>女35.69%</td></tr>
+<tr><td>10-14岁</td><td>男66.02%</td><td>女33.97%</td></tr>
+<tr><td>15-19岁</td><td>男69.4%</td><td>女30.59%</td></tr>
+<tr><td>20-24岁</td><td>男69.92%</td><td>女30.07%</td></tr>
+<tr><td>25-29岁</td><td>男70.05%</td><td>女29.94%</td></tr>
+<tr><td>30-34岁</td><td>男69.78%</td><td>女30.21%</td></tr>
+<tr><td>35-39岁</td><td>男70%</td><td>女29.99%</td></tr>
+<tr><td>40-44岁</td><td>男68%</td><td>女31%</td></tr>
+<tr><td>45-49岁</td><td>男31.07%</td><td>31.64%</td></tr>
+<tr><td>50-54岁</td><td>男67.24%</td><td>女32.75%</td></tr>
+<tr><td>55-59岁</td><td>男65.7%</td><td>女34.29%</td></tr>
+<tr><td>60-64岁</td><td>男64.32%</td><td>女35.67%</td></tr>
+<tr><td>65-69岁</td><td>男62.53%</td><td>女37.46%</td></tr>
+<tr><td>70-74岁</td><td>男59.96%</td><td>女40.03%</td></tr>
+<tr><td>75-59岁</td><td>男56.51%</td><td>女43.48%</td></tr>
+<tr><td>80-84岁</td><td>男51.18%</td><td>女48.81%</td></tr>
+<tr><td>85-89岁</td><td>男44.67%</td><td>女55.32%</td></tr>
+<tr><td>90-94岁</td><td>男37.21%</td><td>女62.78%</td></tr>
+<tr><td>95-99岁</td><td>男31.16%</td><td>女68.83%</td></tr>
+<tr><td>100岁及以上</td><td>男28.33%</td><td>女71.66%</td></tr>
+</table>
+<br>
+文盲人口占15岁及以上人口比重<br>
+<table border="1">
+<tr><td>普查年份</td><td>全国</td><td>男性</td><td>女性</td></tr>
+<tr><td>2000年</td><td>9.08%</td><td>4.86%</td><td>13.47</td></tr>
+<tr><td>2010年</td><td>4.88%</td><td>2.52%</td><td>7.29%</td></tr>
+</table>
+<br>
+<table border="1">
+<tr><td>排名</td><td>2010年</td></tr>
+<tr><td>1</td><td>西藏 32.29%</td></tr>
+<tr><td>2</td><td>青海 12.94%</td></tr>
+<tr><td>3</td><td>贵州 11.4%</td></tr>
+<tr><td>4</td><td>甘肃 10.62%</td></tr>
+<tr><td>5</td><td>安徽 9.9%</td></tr>
+<tr><td>6</td><td>宁夏 7.82%</td></tr>
+<tr><td>7</td><td>云南 7.6%</td></tr>
+<tr><td>8</td><td>四川 6.55%</td></tr>
+<tr><td>9</td><td>浙江 6.47%</td></tr>
+<tr><td>10</td><td>山东 5.89%</td></tr>
+<tr><td>11</td><td>河南 5.37%</td></tr>
+<tr><td>12</td><td>湖北 5.32%</td></tr>
+<tr><td>13</td><td>重庆 5.08%</td></tr>
+<tr><td>14</td><td>海南 5.07%</td></tr>
+<tr><td>15</td><td>内蒙古 4.73%</td></tr>
+<tr><td>16</td><td>陕西 4.39%</td></tr>
+<tr><td>17</td><td>江苏 4.36%</td></tr>
+<tr><td>18</td><td>江西 4.02%</td></tr>
+<tr><td>19</td><td>广西 3.46%</td></tr>
+<tr><td>20</td><td>湖南 3.24%</td></tr>
+<tr><td>21</td><td>河北 3.14%</td></tr>
+<tr><td>22</td><td>新疆 3.01%</td></tr>
+<tr><td>23</td><td>上海 3%</td></tr>
+<tr><td>24</td><td>福建 2.89%</td></tr>
+<tr><td>25</td><td>山西 2.57%</td></tr>
+<tr><td>26</td><td>广东 2.41%</td></tr>
+<tr><td>27</td><td>黑龙江 2.34%</td></tr>
+<tr><td>28</td><td>天津 2.33%</td></tr>
+<tr><td>29</td><td>辽宁 2.18%</td></tr>
+<tr><td>30</td><td>吉林 2.18%</td></tr>
+<tr><td>31</td><td>北京 1.86%</td></tr>
+</table>
+<br>
+2010年6岁及以上人口受教育程度<br>
+<table border="1">
+<tr><td>地点</td><td>总人数</td><td>未上过学</td><td>小学</td><td>初中</td><td>高中</td><td>大学专科</td><td>大学本科</td><td>研究生</td></tr>
+<tr><td>男性</td><td>633278387</td><td>17503480</td><td>168297261</td><td>279031847</td><td>104007090</td><td>36870375</td><td>25217083</td><td>2351251</td></tr>
+<tr><td>女性</td><td>609267735</td><td>44632925</td><td>188914472</td><td>239144375</td><td>82639775</td><td>31740144</td><td>20408710</td><td>1787334</td></tr>
+<tr><td>北京</td><td>18813279</td><td>363770</td><td>1952619</td><td>6157444</td><td>4161674</td><td>2377944</td><td>3109069</td><td>690759</td></tr>
+<tr><td>天津</td><td>12388491</td><td>312312</td><td>2205954</td><td>4936137</td><td>2672387</td><td>1089221</td><td>1069485</td><td>102995</td></tr>
+<tr><td>河北</td><td>66150575</td><td>2153698</td><td>17719711</td><td>31902985</td><td>9131670</td><td>3329231</td><td>1813264</td><td>100016</td></tr>
+<tr><td>山西</td><td>33521349</td><td>868223</td><td>7804836</td><td>16115283</td><td>5618618</td><td>1999192</td><td>1055226</td><td>59971</td></tr>
+<tr><td>内蒙古</td><td>23362679</td><td>1131271</td><td>6278818</td><td>9689532</td><td>3740299</td><td>1602849</td><td>875760</td><td>44150</td></tr>
+<tr><td>辽宁</td><td>41873047</td><td>975536</td><td>9364681</td><td>19829444</td><td>6469305</td><td>2817201</td><td>2233535</td><td>183345</td></tr>
+<tr><td>吉林</td><td>26136514</td><td>637242</td><td>6604755</td><td>11549212</td><td>4630133</td><td>1416006</td><td>1216386</td><td>82780</td></tr>
+<tr><td>黑龙江</td><td>36619463</td><td>913586</td><td>9211366</td><td>17245267</td><td>5756969</td><td>1995107</td><td>1413428</td><td>83740</td></tr>
+<tr><td>上海</td><td>22085668</td><td>694616</td><td>3121808</td><td>8406458</td><td>4823221</td><td>2216495</td><td>2401283</td><td>421787</td></tr>
+<tr><td>江苏</td><td>74119475</td><td>3448220</td><td>19033077</td><td>30423013</td><td>12703757</td><td>4899462</td><td>3298133</td><td>313813</td></tr>
+<tr><td>浙江</td><td>51484414</td><td>3372461</td><td>15687367</td><td>19961827</td><td>7384253</td><td>2808016</td><td>2098829</td><td>171661</td></tr>
+<tr><td>安徽</td><td>55103738</td><td>5158856</td><td>16518988</td><td>22969845</td><td>6449846</td><td>2457181</td><td>1446936</td><td>102086</td></tr>
+<tr><td>福建</td><td>34366573</td><td>1190153</td><td>10994768</td><td>13977601</td><td>5119371</td><td>1737607</td><td>1263231</td><td>83842</td></tr>
+<tr><td>江西</td><td>40413800</td><td>1682257</td><td>13399357</td><td>16787837</td><td>5488361</td><td>1937740</td><td>1057732</td><td>60516</td></tr>
+<tr><td>山东</td><td>89358154</td><td>5326632</td><td>23912234</td><td>38468023</td><td>13322584</td><td>4933489</td><td>3161869</td><td>233323</td></tr>
+<tr><td>河南</td><td>85563558</td><td>4529564</td><td>22669174</td><td>39925272</td><td>12423541</td><td>4034524</td><td>1858760</td><td>122723</td></tr>
+<tr><td>湖北</td><td>53724341</td><td>2994419</td><td>13092079</td><td>22677927</td><td>9503078</td><td>3180279</td><td>2077526</td><td>199033</td></tr>
+<tr><td>湖南</td><td>60715957</td><td>2012174</td><td>17600932</td><td>25977062</td><td>10133885</td><td>3196149</td><td>1680612</td><td>115143</td></tr>
+<tr><td>广东</td><td>97649498</td><td>2611734</td><td>23788746</td><td>44075971</td><td>18267539</td><td>5294533</td><td>3287295</td><td>323680</td></tr>
+<tr><td>广西</td><td>41837842</td><td>1587939</td><td>14579571</td><td>17840416</td><td>5078715</td><td>1733473</td><td>955852</td><td>61876</td></tr>
+<tr><td>海南</td><td>7949791</td><td>390150</td><td>1958821</td><td>3642423</td><td>1288237</td><td>415159</td><td>242323</td><td>12678</td></tr>
+<tr><td>重庆</td><td>26962605</td><td>1348719</td><td>9707595</td><td>9646397</td><td>3814455</td><td>1374449</td><td>989687</td><td>81303</td></tr>
+<tr><td>四川</td><td>75277913</td><td>4960433</td><td>27846551</td><td>28058292</td><td>9045928</td><td>3247880</td><td>1962005</td><td>156824</td></tr>
+<tr><td>贵州</td><td>31837765</td><td>3313944</td><td>13546008</td><td>10506809</td><td>2617659</td><td>1134876</td><td>689649</td><td>28820</td></tr>
+<tr><td>云南</td><td>42475720</td><td>3392628</td><td>20042984</td><td>12591002</td><td>3813068</td><td>1574493</td><td>1002321</td><td>59224</td></tr>
+<tr><td>西藏</td><td>2705849</td><td>925237</td><td>1098468</td><td>385793</td><td>131027</td><td>93704</td><td>68266</td><td>3354</td></tr>
+<tr><td>陕西</td><td>35187233</td><td>1636786</td><td>8740957</td><td>14981471</td><td>5887718</td><td>2364637</td><td>1438244</td><td>137420</td></tr>
+<tr><td>甘肃</td><td>23912906</td><td>2448945</td><td>8313301</td><td>7982874</td><td>3244504</td><td>1171858</td><td>705613</td><td>45811</td></tr>
+<tr><td>青海</td><td>5184022</td><td>700487</td><td>1984288</td><td>1427740</td><td>586713</td><td>293579</td><td>183274</td><td>7941</td></tr>
+<tr><td>宁夏</td><td>5798346</td><td>419166</td><td>1868716</td><td>2130699</td><td>792711</td><td>359428</td><td>218374</td><td>9252</td></tr>
+<tr><td>新疆</td><td>19965557</td><td>635247</td><td>6563203</td><td>7906166</td><td>2545639</td><td>1524757</td><td>751826</td><td>38719</td></tr>
+</table>
+<br>
+按大学及以上人口排序（由多到少）<br>
+<table border="1">
+<tr><td>地点</td><td>未上过学</td><td>小学</td><td>初中</td><td>高中</td><td>大学专科</td><td>大学本科</td><td>研究生</td><td>大学及以上</td></tr>
+<tr><td>男性</td><td>2.7</td><td>26.5</td><td>44</td><td>16.4</td><td>5.8</td><td>3.9</td><td>0.3</td><td>10</td></tr>
+<tr><td>女性</td><td>7.3</td><td>31</td><td>39.2</td><td>13.5</td><td>5.2</td><td>3.3</td><td>0.2</td><td>8.7</td></tr>
+<tr><td>北京</td><td>1.9</td><td>10.3</td><td>32.7</td><td>22.1</td><td>12.6</td><td>16.5</td><td>3.6</td><td>32.7</td></tr>
+<tr><td>上海</td><td>3.1</td><td>14.1</td><td>38</td><td>21.8</td><td>10</td><td>10.8</td><td>1.9</td><td>22.7</td></tr>
+<tr><td>天津</td><td>2.5</td><td>17.8</td><td>39.8</td><td>21.5</td><td>8.7</td><td>8.6</td><td>0.8</td><td>18.1</td></tr>
+<tr><td>辽宁</td><td>2.3</td><td>22.3</td><td>47.3</td><td>15.4</td><td>6.7</td><td>5.3</td><td>0.4</td><td>12.4</td></tr>
+<tr><td>江苏</td><td>4.6</td><td>25.6</td><td>41</td><td>17.1</td><td>6.6</td><td>4.4</td><td>0.4</td><td>11.4</td></tr>
+<tr><td>新疆</td><td>3.1</td><td>32.8</td><td>39.5</td><td>12.7</td><td>7.6</td><td>3.7</td><td>0.1</td><td>11.4</td></tr>
+<tr><td>陕西</td><td>4.6</td><td>24.8</td><td>42.5</td><td>16.7</td><td>6.7</td><td>4</td><td>0.3</td><td>11</td></tr>
+<tr><td>内蒙古</td><td>4.8</td><td>26.8</td><td>41.4</td><td>16</td><td>6.8</td><td>3.7</td><td>0.1</td><td>10.6</td></tr>
+<tr><td>吉林</td><td>2.4</td><td>25.2</td><td>44.1</td><td>17.7</td><td>5.4</td><td>4.6</td><td>0.3</td><td>10.3</td></tr>
+<tr><td>湖北</td><td>5.5</td><td>24.3</td><td>42.2</td><td>17.6</td><td>5.9</td><td>3.8</td><td>0.3</td><td>10</td></tr>
+<tr><td>宁夏</td><td>7.2</td><td>32.2</td><td>36.7</td><td>13.6</td><td>6.1</td><td>3.7</td><td>0.1</td><td>9.9</td></tr>
+<tr><td>浙江</td><td>6.5</td><td>30.4</td><td>38.7</td><td>14.3</td><td>5.4</td><td>4</td><td>0.3</td><td>9.7</td></tr>
+<tr><td>黑龙江</td><td>2.4</td><td>25.1</td><td>47</td><td>15.7</td><td>5.4</td><td>3.8</td><td>0.2</td><td>9.4</td></tr>
+<tr><td>山东</td><td>5.9</td><td>26.7</td><td>43</td><td>14.9</td><td>5.5</td><td>3.5</td><td>0.2</td><td>9.2</td></tr>
+<tr><td>青海</td><td>13.5</td><td>38.2</td><td>27.5</td><td>11.3</td><td>5.6</td><td>3.5</td><td>0.1</td><td>9.2</td></tr>
+<tr><td>山西</td><td>2.5</td><td>23.2</td><td>48</td><td>16.7</td><td>5.9</td><td>3.1</td><td>0.1</td><td>9.1</td></tr>
+<tr><td>广东</td><td>2.6</td><td>24.3</td><td>45.1</td><td>18.7</td><td>5.4</td><td>3.3</td><td>0.3</td><td>9</td></tr>
+<tr><td>重庆</td><td>5</td><td>36</td><td>35.7</td><td>14.1</td><td>5</td><td>3.6</td><td>0.3</td><td>8.9</td></tr>
+<tr><td>福建</td><td>3.4</td><td>31.9</td><td>40.6</td><td>14.9</td><td>5</td><td>3.6</td><td>0.2</td><td>8.8</td></tr>
+<tr><td>海南</td><td>4.9</td><td>24.6</td><td>45.8</td><td>16.2</td><td>5.2</td><td>3</td><td>0.1</td><td>8.3</td></tr>
+<tr><td>湖南</td><td>3.3</td><td>28.9</td><td>42.7</td><td>16.6</td><td>5.2</td><td>2.7</td><td>0.1</td><td>8</td></tr>
+<tr><td>甘肃</td><td>10.2</td><td>34.7</td><td>33.3</td><td>13.5</td><td>4.9</td><td>2.9</td><td>0.1</td><td>7.9</td></tr>
+<tr><td>河北</td><td>3.2</td><td>26.7</td><td>48.2</td><td>13.8</td><td>5</td><td>2.7</td><td>0.1</td><td>7.8</td></tr>
+<tr><td>江西</td><td>4.1</td><td>33.1</td><td>41.5</td><td>13.5</td><td>4.7</td><td>2.6</td><td>0.1</td><td>7.4</td></tr>
+<tr><td>四川</td><td>6.5</td><td>36.9</td><td>37.2</td><td>12</td><td>4.3</td><td>2.6</td><td>0.2</td><td>7.1</td></tr>
+<tr><td>安徽</td><td>9.3</td><td>29.9</td><td>41.6</td><td>11.7</td><td>4.4</td><td>2.6</td><td>0.1</td><td>7.1</td></tr>
+<tr><td>河南</td><td>5.2</td><td>26.4</td><td>46.6</td><td>14.5</td><td>4.7</td><td>2.1</td><td>0.1</td><td>6.9</td></tr>
+<tr><td>广西</td><td>3.7</td><td>34.8</td><td>42.6</td><td>12.1</td><td>4.1</td><td>2.2</td><td>0.1</td><td>6.4</td></tr>
+<tr><td>云南</td><td>7.9</td><td>47.1</td><td>29.6</td><td>8.9</td><td>3.7</td><td>2.3</td><td>0.1</td><td>6.1</td></tr>
+<tr><td>西藏</td><td>34.1</td><td>40.5</td><td>14.2</td><td>4.8</td><td>3.4</td><td>2.5</td><td>0.1</td><td>6</td></tr>
+<tr><td>贵州</td><td>10.4</td><td>42.5</td><td>33</td><td>8.2</td><td>3.5</td><td>2.1</td><td>0</td><td>5.6</td></tr>
+</table>
+<br>
+按未上过学人口排序（由少到多）<br>
+<table border="1">
+<tr><td>地点</td><td>未上过学</td><td>小学</td><td>初中</td><td>高中</td><td>大学专科</td><td>大学本科</td><td>研究生</td><td>大学及以上</td></tr>
+<tr><td>男性</td><td>2.7</td><td>26.5</td><td>44</td><td>16.4</td><td>5.8</td><td>3.9</td><td>0.3</td><td>10</td></tr>
+<tr><td>女性</td><td>7.3</td><td>31</td><td>39.2</td><td>13.5</td><td>5.2</td><td>3.3</td><td>0.2</td><td>8.7</td></tr>
+<tr><td>北京</td><td>1.9</td><td>10.3</td><td>32.7</td><td>22.1</td><td>12.6</td><td>16.5</td><td>3.6</td><td>32.7</td></tr>
+<tr><td>辽宁</td><td>2.3</td><td>22.3</td><td>47.3</td><td>15.4</td><td>6.7</td><td>5.3</td><td>0.4</td><td>12.4</td></tr>
+<tr><td>吉林</td><td>2.4</td><td>25.2</td><td>44.1</td><td>17.7</td><td>5.4</td><td>4.6</td><td>0.3</td><td>10.3</td></tr>
+<tr><td>黑龙江</td><td>2.4</td><td>25.1</td><td>47</td><td>15.7</td><td>5.4</td><td>3.8</td><td>0.2</td><td>9.4</td></tr>
+<tr><td>天津</td><td>2.5</td><td>17.8</td><td>39.8</td><td>21.5</td><td>8.7</td><td>8.6</td><td>0.8</td><td>18.1</td></tr>
+<tr><td>山西</td><td>2.5</td><td>23.2</td><td>48</td><td>16.7</td><td>5.9</td><td>3.1</td><td>0.1</td><td>9.1</td></tr>
+<tr><td>广东</td><td>2.6</td><td>24.3</td><td>45.1</td><td>18.7</td><td>5.4</td><td>3.3</td><td>0.3</td><td>9</td></tr>
+<tr><td>上海</td><td>3.1</td><td>14.1</td><td>38</td><td>21.8</td><td>10</td><td>10.8</td><td>1.9</td><td>22.7</td></tr>
+<tr><td>新疆</td><td>3.1</td><td>32.8</td><td>39.5</td><td>12.7</td><td>7.6</td><td>3.7</td><td>0.1</td><td>11.4</td></tr>
+<tr><td>河北</td><td>3.2</td><td>26.7</td><td>48.2</td><td>13.8</td><td>5</td><td>2.7</td><td>0.1</td><td>7.8</td></tr>
+<tr><td>湖南</td><td>3.3</td><td>28.9</td><td>42.7</td><td>16.6</td><td>5.2</td><td>2.7</td><td>0.1</td><td>8</td></tr>
+<tr><td>福建</td><td>3.4</td><td>31.9</td><td>40.6</td><td>14.9</td><td>5</td><td>3.6</td><td>0.2</td><td>8.8</td></tr>
+<tr><td>广西</td><td>3.7</td><td>34.8</td><td>42.6</td><td>12.1</td><td>4.1</td><td>2.2</td><td>0.1</td><td>6.4</td></tr>
+<tr><td>江西</td><td>4.1</td><td>33.1</td><td>41.5</td><td>13.5</td><td>4.7</td><td>2.6</td><td>0.1</td><td>7.4</td></tr>
+<tr><td>江苏</td><td>4.6</td><td>25.6</td><td>41</td><td>17.1</td><td>6.6</td><td>4.4</td><td>0.4</td><td>11.4</td></tr>
+<tr><td>陕西</td><td>4.6</td><td>24.8</td><td>42.5</td><td>16.7</td><td>6.7</td><td>4</td><td>0.3</td><td>11</td></tr>
+<tr><td>内蒙古</td><td>4.8</td><td>26.8</td><td>41.4</td><td>16</td><td>6.8</td><td>3.7</td><td>0.1</td><td>10.6</td></tr>
+<tr><td>海南</td><td>4.9</td><td>24.6</td><td>45.8</td><td>16.2</td><td>5.2</td><td>3</td><td>0.1</td><td>8.3</td></tr>
+<tr><td>重庆</td><td>5</td><td>36</td><td>35.7</td><td>14.1</td><td>5</td><td>3.6</td><td>0.3</td><td>8.9</td></tr>
+<tr><td>河南</td><td>5.2</td><td>26.4</td><td>46.6</td><td>14.5</td><td>4.7</td><td>2.1</td><td>0.1</td><td>6.9</td></tr>
+<tr><td>湖北</td><td>5.5</td><td>24.3</td><td>42.2</td><td>17.6</td><td>5.9</td><td>3.8</td><td>0.3</td><td>10</td></tr>
+<tr><td>山东</td><td>5.9</td><td>26.7</td><td>43</td><td>14.9</td><td>5.5</td><td>3.5</td><td>0.2</td><td>9.2</td></tr>
+<tr><td>浙江</td><td>6.5</td><td>30.4</td><td>38.7</td><td>14.3</td><td>5.4</td><td>4</td><td>0.3</td><td>9.7</td></tr>
+<tr><td>四川</td><td>6.5</td><td>36.9</td><td>37.2</td><td>12</td><td>4.3</td><td>2.6</td><td>0.2</td><td>7.1</td></tr>
+<tr><td>宁夏</td><td>7.2</td><td>32.2</td><td>36.7</td><td>13.6</td><td>6.1</td><td>3.7</td><td>0.1</td><td>9.9</td></tr>
+<tr><td>云南</td><td>7.9</td><td>47.1</td><td>29.6</td><td>8.9</td><td>3.7</td><td>2.3</td><td>0.1</td><td>6.1</td></tr>
+<tr><td>安徽</td><td>9.3</td><td>29.9</td><td>41.6</td><td>11.7</td><td>4.4</td><td>2.6</td><td>0.1</td><td>7.1</td></tr>
+<tr><td>甘肃</td><td>10.2</td><td>34.7</td><td>33.3</td><td>13.5</td><td>4.9</td><td>2.9</td><td>0.1</td><td>7.9</td></tr>
+<tr><td>贵州</td><td>10.4</td><td>42.5</td><td>33</td><td>8.2</td><td>3.5</td><td>2.1</td><td>0</td><td>5.6</td></tr>
+<tr><td>青海</td><td>13.5</td><td>38.2</td><td>27.5</td><td>11.3</td><td>5.6</td><td>3.5</td><td>0.1</td><td>9.2</td></tr>
+<tr><td>西藏</td><td>34.1</td><td>40.5</td><td>14.2</td><td>4.8</td><td>3.4</td><td>2.5</td><td>0.1</td><td>6</td></tr>
+
+</table>
+
+
+
+
+</div>
+
+<!-- <div id="下级"></div> -->
+
+<div id="nav_zk" style="display: none;">
+<div id="nav_zk2">
+
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/')\">https://李猫球.com/</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/\" class=\"leancloud_visitors\" data-flag-title=\"\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+</div>
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+</div>
+
+<script>
+if(top.location==self.location){var 返回="<div class=\"qbt\"></div>";
+document.getElementById("上级").innerHTML=返回;
+document.getElementById("wen_body").className = 'body';
+document.getElementById("nav_zk").style.display = "block";
+}
+else{
+    //展开的子页面
+    var bodyH = $(document).height()+20;
+    var bodyHa = 0;
+    var bodyJ = window.location.href.split('/i/zk/')[1];
+    var bodyK = "／／" + bodyJ;
+    var bodyL = "／" + bodyJ + "／";
+
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    window.parent.document.getElementById(bodyL).innerHTML = "";
+
+    window.onload = function () {
+    bodyH = $(document).height();
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    }
+}
+let p_link = "".split("/");
+localStorage.setItem(p_link[2], "1");
+</script>
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor2{position: fixed;bottom:0%;right:3%;width:14%;height: 40%;overflow:auto;
+            /* margin: 0 auto 0 67%; */
+        }
+        #right_anchor2 table{width:100%;}
+        #right_anchor2 td{border:1px solid #ccc;}
+        #right_anchor,.shouji{display:none;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor2{display:none;}
+    } /*手机*/
+    #right_anchor2 a{display:block;}
+    #right_anchor table{width:60%;cursor:pointer;}
+    #right_anchor,#right_anchor{z-index:2001;}
+</style>
+<div id="right_anchor2"></div><!--🔻🔺-->
+<script>
+    if (top.location == self.location) {
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor_name = 0;
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_name+=1;
+            anchor_dy += "<tr><td onclick=\"window.location.href='#" + anchor[i]["name"] + "'\"><a>" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<br><br><table>"+anchor_dy+"</table><br>";}
+        if(anchor_name>5){
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+        }else{
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
+        }
+    }
+}
+function anchor_zk(){
+if(anchor_an2==1){
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=0;
+}else{
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
+}
+}
+
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor2").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor2').fadeIn();
+            } else {
+                $('#right_anchor2').fadeOut();
+            }
+        });
+    });
+    });
+}else{
+    $('#right_anchor2').fadeOut();
+}
+    }
+</script>
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="" class="leancloud_visitors" data-flag-title="">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

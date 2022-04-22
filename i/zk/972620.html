@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>杨笠的脱口秀 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+<style>
+@media screen and (min-width: 768px) { /*电脑*/
+    body{background-color: #F4F8FB;}
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
+    #nav_zk2{position: relative;margin: auto;width:70%;}
+} /*电脑*/
+
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+} /*手机*/
+.juzhong{text-align:center;}
+</style>
+
+</head><body>
+
+<div id="上级"></div>
+
+<div id="wen_body">
+<div id="right_anchor"></div>
+
+<style>
+    *{cursor:default;}
+    p.b{margin-top:-12px;border: 1px solid #c0c0c0;padding:8px;border-radius: 12px;}
+</style>
+
+<div id="dy"></div>
+
+<script>
+let data=[
+"特别让我生气的是，我花很久留胡子，这些女演员见到我第一句不是“你好帅啊”，而是“你留胡子了”。<br>"+
+"我想请问哪个男生留胡子就是为了让你看出他留胡子了，你疯了？<br>"+
+"正常的流程应该是，我一出来，然后你们就说：哎，你今天好帅啊。<br>"+
+"然后由我来说：那是因为我留胡子了。<br>"+
+"但是现在我一出来你们就说“你开始留胡子了”，那我咋办，我只能说“对，我今天好帅啊”。<br>"+
+"我从小就知道我是长得很普通的人，在我小学四年级的时候，我喜欢上我们班一个女生，我特别喜欢她。<br>"+
+"正在我鼓足勇气要跟她告白的时候，我的好朋友告诉我：大力，你知道吗，你暗恋的那个谁谁谁，和咱们班班草在一起了。<br>"+
+"我当时特别难过，我想说，咱们班班草，不是我吗？<br>"+
+"你们能体会我那种难过吗？<br>"+
+"我当时觉得不可能啊，我就是我们班里长得最帅气的，我妈就是这么跟我说的，我妈妈不可能骗我啊。／"+
+"特别让我生气的是，我花很久去化妆，这些男演员见到我第一句不是“你真好看”，而是“你化妆了”。<br>"+
+"我想请问有哪个女生化妆就是为了让你看出她化妆了，你疯了？<br>"+
+"正常的流程应该是，我一出来，然后你们就说：哎，你今天真好看。<br>"+
+"然后由我来说：那是因为我化妆了。<br>"+
+"但是现在我一出来你们就说“你今天化妆了”，那我咋办，我只能说“对，我今天真好看呀”。<br>"+
+"我从小就知道我是长得很普通的人，在我小学四年级的时候，我喜欢上我们班一个男生，我特别喜欢他。<br>"+
+"正在我鼓足勇气要跟他告白的时候，我的好朋友告诉我：杨笠，你知道吗，你暗恋的那个谁谁谁，和咱们班班花在一起了。<br>"+
+"我当时特别难过，我想说，咱们班班花，不是我吗？<br>"+
+"你们能体会我那种难过吗？<br>"+
+"我当时觉得不可能啊，我就是我们班里长得最好看的，我妈就是这么跟我说的，我妈妈不可能骗我啊。",
+
+"随着年龄的增大，我越来越喜欢孩子，但是随着年龄的增大，我也越来越不相信女人。<br>"+
+"就是越长大越恐婚，跟电视剧演的都不一样，电视剧里经常出现一些情节，就是男的经常问一个女的：请问你愿意嫁给我吗？你就感觉男的都好爱结婚啊。<br>"+
+"或者是一次求婚被答应了，就很激动，很兴奋，就那个兴奋的程度就好像他娶了别人老婆。<br>"+
+"但是在现实生活中，我没有见过我一个朋友对结婚那么兴奋，我的朋友如果他们女朋友突然变得鬼鬼祟祟的话，他们都会开始变得特别紧张，就想说：不是想结婚了吧，千万不要，啊，只是怀孕了啊，吓死我了，虚惊一场。<br>"+
+"你知道在一场婚姻里，真正开心的只有朋友，因为跟她们没有关系，她就没有任何心理压力。<br>"+
+"有些人也不知道为什么这么闲，看到认识的人单身就会特别兴奋，她根本就不了解这两个人是什么样的人，她就会不负责任的撮合他们在一起。<br>"+
+"就在旁边鼓掌说“在一起”。<br>"+
+"然后那个男的说：我对她的过去一点都不了解。<br>"+
+"朋友还是鼓着掌说“在一起”。<br>"+
+"男生也没有那么爱结婚，你想结婚对我们有啥好处，你想想，你就要更努力工作，你还要承担更多的压力，而且运气不好的话还可能遇上家庭暴力。<br>"+
+"到时候吧，你还不能打回去，想要离婚吧还有一堆人劝你，为了孩子忍一忍。<br>"+
+"就感觉跟劝别人结婚的是一拨人。<br>"+
+"你下次再看到别人单身，你也不要喊什么在一起，你就直接喊忍一忍。<br>"+
+"男生谈恋爱一定要谨慎，因为可能谈恋爱对我们来说都是一件很危险的事，尤其是分手的时候。<br>"+
+"我就看过那种新闻，一对情侣，男生要分手，女生不同意，不开心，不愿意，不甘心，最后怎么办，用刀把男朋友给捅死了。<br>"+
+"所以我谈恋爱的时候，家里从来不敢放刀具，觉得很危险。<br>"+
+"在这种情况下，是不是男的更有理由恐婚，女的凭什么恐婚，你想离婚的时候起码还能离，一个男的要想纠缠你，能怎么样，他做不了什么，亲戚朋友全都会站在女性的一方。／"+
+"随着年龄的增大，我越来越喜欢孩子，但是随着年龄的增大，我也越来越不相信男人。<br>"+
+"就是越长大越恐婚，跟电视剧演的都不一样，电视剧里经常出现一些情节，就是女的经常问一个男的，你到底什么时候娶我？你就感觉女的都好爱结婚啊。<br>"+
+"或者是一个女的被求婚了，就很激动，很惊讶，就那个惊讶的程度就好像她不认识这个人。<br>"+
+"但是在现实生活中，我没有见过我一个朋友被求婚那么惊讶，我的朋友如果她们男朋友突然变得鬼鬼祟祟的话，她们都会开始变得特别紧张，就想说：不是要求婚了吧，千万不要，啊，只是劈腿了啊，吓死我了，虚惊一场。<br>"+
+"你知道在一场求婚里，真正开心的只有路人，因为跟他们没有关系，他就没有任何心理压力。<br>"+
+"有些人也不知道为什么这么闲，在街上看到有人求婚就会停下来，他根本就不了解这个男的是什么样的人，他就会不负责任的鼓励你嫁给他。<br>"+
+"就在旁边鼓掌说“嫁给他”。<br>"+
+"然后那个女的说：但是他有时候喝多了会打我。<br>"+
+"路人还是鼓着掌说“嫁给他”。<br>"+
+"女生也没有那么爱结婚，你想结婚对我们有啥好处，你想想，你还是要继续工作，你还要承担更多的家务，而且运气不好的话还可能遇上家庭暴力。<br>"+
+"到时候吧，你打也打不过他，想要离婚吧还有一堆人劝你，为了孩子忍一忍。<br>"+
+"就感觉跟劝别人结婚的是一拨人。<br>"+
+"你下次再看到别人结婚，你也不要喊什么嫁给他，你就直接喊忍一忍。<br>"+
+"女生谈恋爱一定要谨慎，因为可能谈恋爱对我们来说都是一件很危险的事，尤其是分手的时候。<br>"+
+"我就看过那种新闻，一对情侣，女生要分手，男生不同意，不开心，不愿意，不甘心，最后怎么办，把女生从楼上推下去了。<br>"+
+"所以我谈恋爱的时候，我从来不去高的地方，觉得很危险。<br>"+
+"在这种情况下，是不是女的更有理由恐婚，男的凭什么恐婚，你想离婚的时候起码还能离，一个女的要想纠缠你，能怎么样，她做不了什么，无非就是哭、闹、给你生个孩子。",
+
+"谈恋爱第一点很难的就是，你一定要放低你的标准。<br>"+
+"我作为一个单身很久的人，我经常绝望的发现，那些比我优秀很多的男生，他们的女朋友，我竟然都看不上。<br>"+
+"要是以前的话，台上的女演员我一个都看不上，现在的话，谁都行。<br>"+
+"第二点很难的就是，你一定要学会道歉。<br>"+
+"就是不管她做错了什么，你都假装没脑子，你就看她的眼睛说“都是我错”。<br>"+
+"这样很快你就能走进婚姻的殿堂。<br>"+
+"还有一点很难，就是当你们在一起以后，当她要求你叫她宝宝的时候，你一定要忍住那股恶心。<br>"+
+"我想说，怎么了，叫什么宝宝，大家都是成年人，彼此放尊重一些不好吗？／"+
+"谈恋爱第一点很难的就是，你一定要放低你的标准。<br>"+
+"我作为一个单身很久的人，我经常绝望的发现，那些比我优秀很多的女生，她们的男朋友，我竟然都看不上。<br>"+
+"要是以前的话，台上的男演员我一个都看不上，现在的话，谁都行。<br>"+
+"第二点很难的就是，你一定要学会装傻。<br>"+
+"就是不管他跟你说什么，你都假装听不懂，你都瞪大眼睛问他“啥意思啊”。<br>"+
+"这样很快你就能走进婚姻的殿堂。<br>"+
+"还有一点很难，就是当你们在一起以后，当他深情的叫你宝宝的时候，你一定要忍住那股恶心。<br>"+
+"我想说，怎么了，叫什么宝宝，大家都是成年人，彼此放尊重一些不好吗？",
+
+"我觉得很多女生有点误会我了，她们会觉得，我在台上讲段子感觉很凶，好像很喜欢攻击女生，以为我讨厌女生。<br>"+
+"没有，恰恰相反，我是因为喜欢你们才攻击你们的。<br>"+
+"真的，我太喜欢你们了，我喜欢你们喜欢到我都不忍心谈恋爱，因为我没办法在众多的你们当中选出一个。<br>"+
+"像女人这么美好的东西，竟然需要选？<br>"+
+"女人不光美好，还特别神秘，就是你永远也猜不透，她那小脑袋瓜里到底在想一些什么。<br>"+
+"就是为什么她明明看起来那么普通，但是她却可以那么自信。<br>"+
+"比如在这个台上，看到很多很奇形怪状的女演员，但是她们其中没有任何一个想过说，我这个长相要是上电视的话，是不是得稍微整整容啊。<br>"+
+"我从小就很困惑，每个班都有那种男生，他体育成绩很好，他每次都能跑85分以上，但他就是不开心，他就想为什么我没有跑100分。<br>"+
+"但是有些女同学，她就能跑20分，但是她可开心了，就感觉她拥有全世界，她能拿着张成绩单拍张照发朋友圈。就好像在说：你看我就跑20分，你看，我是个瘸子。<br>"+
+"还有女生跟男朋友吵架的时候，她们特别爱说，你能不能不要这么态度强硬，你能不能让着我点。<br>"+
+"我每次都想说，大姐，所以你觉得他当年之所以选择跟你谈恋爱是因为他比别人谦让吗？<br>"+
+"而且谈恋爱为什么要让着你的，谈恋爱要是谦让了，跟单身有什么区别。<br>"+
+"他要是想礼让，他要是想展示他的谦逊有礼和尊老爱幼，他为什么要谈恋爱，他去做慈善好了，他为什么要浪费时间跟你谈，他每天到福利机构和空巢老人谈一谈，说不定还能谈成慈善家。<br>"+
+"你们试过和女生倾诉心事吗？我试过。<br>"+
+"有一次我失恋了，我就和一个女生朋友说，我说我失恋了，她跟别人跑了。<br>"+
+"那个女生朋友说：那也是没有办法。<br>"+
+"她说我一直就觉得，你太矮了，你有点配不上她，我是拿你当朋友才跟你说的。<br>"+
+"我说你别拿我当朋友了，你拿我当个人吧，一个有感情的人。<br>"+
+"我就想为什么，为什么这些女的一定要这样。<br>"+
+"我后来想明白了，还是因为你们特别自信。<br>"+
+"因为像我们男生，我们就知道我们自己说的话不重要，除了朋友在意，没有人在意。<br>"+
+"所以我们就是朋友怎么开心我们就怎么说。<br>"+
+"但你们女生不一样，你们是世界的主角啊，你们永远站在世界的中心，你们说的每一句话都特别重要，都是至理名言，都为这个世界指名了发展的方向。<br>"+
+"所以你们会想说，啊，这个人只是单纯来找我倾诉心事的？不可能，他一定是暗恋我才会来找我聊天的。<br>"+
+"然后，你们就会用自己的实际行动，教给他们人生最重要的一个道理，那就是：女的，垃圾。／"+
+"我觉得很多男生有点误会我了，他们会觉得，我在台上讲段子感觉很凶，好像很喜欢攻击男生，以为我讨厌男生。<br>"+
+"没有，恰恰相反，我是因为喜欢你们才攻击你们的。<br>"+
+"真的，我太喜欢你们了，我喜欢你们喜欢到我都不忍心谈恋爱，因为我没办法在众多的你们当中选出一个。<br>"+
+"像男人这么美好的东西，竟然需要选？<br>"+
+"男人不光美好，还特别神秘，就是你永远也猜不透，他那小脑袋瓜里到底在想一些什么。<br>"+
+"就是为什么他明明看起来那么普通，但是他却可以那么自信。<br>"+
+"比如在这个台上，看到很多很奇形怪状的男演员，但是他们其中没有任何一个想过说，我这个长相要是上电视的话，是不是得稍微整整容啊。<br>"+
+"我从小就很困惑，每个班都有那种女生，她学习成绩很好，她每次都能考85分以上，但她就是不开心，她就想为什么我没有考100分。<br>"+
+"但是有些男同学，他就能考40分，但是他可开心了，就感觉他拥有全世界，他能拿着那张卷子在班里来回穿梭。就好像在说：你看我就考40分，你看，我是个傻子。<br>"+
+"还有男生跟女朋友吵架的时候，他们特别爱说，你能不能不要这么无理取闹，你能不能理智一点。<br>"+
+"我每次都想说，大哥，所以你觉得她当年之所以选择跟你谈恋爱是因为她比别人理智吗？<br>"+
+"而且谈恋爱为什么要是理智的，谈恋爱要是理智了，跟单身有什么区别。<br>"+
+"她要是想理智，她要是想展示她的逻辑思维能力和文化知识水平，她为什么要谈恋爱，她去工作就好了，她为什么要浪费时间跟你谈，她每天下班以后都跟自己经理谈一谈，说不定还能谈成副经理。<br>"+
+"你们试过和男生倾诉心事吗？我试过。<br>"+
+"有一次我失恋了，我就和一个男生朋友说，我说我失恋了，他跟别人跑了。<br>"+
+"那个男生朋友说：那也是没有办法。<br>"+
+"他说我一直就觉得，他很优秀，你有点配不上他，我是拿你当朋友才跟你说的。<br>"+
+"我说你别拿我当朋友了，你拿我当个人吧，一个有感情的人。<br>"+
+"我就想为什么，为什么这些男的一定要这样。<br>"+
+"我后来想明白了，还是因为你们特别自信。<br>"+
+"因为像我们女生，我们就知道我们自己说的话不重要，除了朋友在意，没有人在意。<br>"+
+"所以我们就是朋友怎么开心我们就怎么说。<br>"+
+"但你们男生不一样，你们是世界的主角啊，你们永远站在世界的中心，你们说的每一句话都特别重要，都是至理名言，都为这个世界指名了发展的方向。<br>"+
+"所以你们会想说，啊，这个人只是单纯来找我倾诉心事的？不可能，她一定是想从我身上学到一些什么。<br>"+
+"然后，你们就会用自己的实际行动，教给她们人生最重要的一个道理，那就是：男的，垃圾。",
+
+"前几天吧，因为进了决赛，我很开心，叫了几个朋友去喝酒庆祝一下，我就喝的有点多，结果有一个我特别喜欢的女生送我回家。<br>"+
+"第二天的时候，我就衣着整齐的独自在床上醒来。<br>"+
+"唉。<br>"+
+"然后我就给那个女的打电话，我说，首先是这样的，我非常敬重你的人品，以后你在我心目中就是一个大写的人了。<br>"+
+"但是我依然想问你，Why？（为什么）What happened？（发生什么了）What's wrong with you？（你到底怎么了）／"+
+"前几天吧，因为进了决赛，我很开心，叫了几个朋友去喝酒庆祝一下，我就喝的有点多，结果有一个我特别喜欢的男生送我回家。<br>"+
+"第二天的时候，我就衣着整齐的独自在床上醒来。<br>"+
+"唉。<br>"+
+"然后我就给那个男的打电话，我说，首先是这样的，我非常敬重你的人品，以后你在我心目中就是一个大写的人了。<br>"+
+"但是我依然想问你，Why？（为什么）What happened？（发生什么了）What's wrong with you？（你到底怎么了）",
+
+"我真是太烦了，我看现场还有很多女观众，你们准备好了吗？<br>"+
+"这一季节目播完之后，有一天我收到一条评论，说：哥，我也觉得，女的真的好垃圾啊，可是为什么，还是好想和她们谈恋爱。<br>"+
+"我当时脑子里就闪过一句话，就是“海内存知己”。<br>"+
+"我觉得他听懂了，在这么多观众之间，他懂我。<br>"+
+"他从我那些看似犀利的言语中，听出了我对女人满满的爱。<br>"+
+"真的，很多人就说，我在讨好男观众。我没有，我想讨好的明明只有女观众，只不过没讨好，讨坏了。<br>"+
+"这可把我骂的，你就感觉我是这个世界上最可恶的直男癌，感觉她人生中所有的苦难，都是由于我说了一句：你为什么看起来这么普通却这么自信。<br>"+
+"你们女的也太难讨好了吧，我感觉我说啥都不对，我说你是个垃圾你肯定是不乐意，但如果我说你是个好人你也觉得我在侮辱你，现在我说你是个普通人你也不高兴，那你到底是什么人啊，贱人。<br>"+
+"（见仁）见智的事情。<br>"+
+"对不起，我错了，我不应该这么说，我也不是这个意思。<br>"+
+"昨天我给朋友讲这个段子，朋友说：你这是在挑战女人的底线。<br>"+
+"我听完以后特别震惊，女人，还有底线呢？／"+
+"我真是太烦了，我看现场还有很多男观众，你们准备好了吗？<br>"+
+"这一季节目播完之后，有一天我收到一条评论，说：姐，我也觉得，男的真的好垃圾啊，可是为什么，还是好想和他们谈恋爱。<br>"+
+"我当时脑子里就闪过一句话，就是“海内存知己”。<br>"+
+"我觉得她听懂了，在这么多观众之间，她懂我。<br>"+
+"她从我那些看似犀利的言语中，听出了我对男人满满的爱。<br>"+
+"真的，很多人就说，我在讨好女观众。我没有，我想讨好的明明只有男观众，只不过没讨好，讨坏了。<br>"+
+"这可把我骂的，你就感觉我是这个世界上最可恶的老巫婆，感觉他人生中所有的苦难，都是由于我说了一句：你为什么看起来这么普通却这么自信。<br>"+
+"你们男的也太难讨好了吧，我感觉我说啥都不对，我说你是个垃圾你肯定是不乐意，但如果我说你是个好人你也觉得我在侮辱你，现在我说你是个普通人你也不高兴，那你到底是什么人啊，贱人。<br>"+
+"（见仁）见智的事情。<br>"+
+"对不起，我错了，我不应该这么说，我也不是这个意思。<br>"+
+"昨天我给朋友讲这个段子，朋友说：你这是在挑战男人的底线。<br>"+
+"我听完以后特别震惊，男人，还有底线呢？",
+
+"台下女演员1号：女人就是垃圾。<br>"+
+"台下女演员2号：当个垃圾挺好。／"+
+"台下男演员1号：男人就是垃圾。<br>"+
+"台下男演员2号：当个垃圾挺好。",
+
+"网上评论：<br>"+
+"如果有女观众觉得被冒犯，说明她觉得大力说的就是自己，就是承认自己是垃圾。<br>"+
+"脱口秀就是冒犯的艺术，有冒犯性没问题。／"+
+"网上评论：<br>"+
+"如果有男观众觉得被冒犯，说明他觉得杨笠说的就是自己，就是承认自己是垃圾。<br>"+
+"脱口秀就是冒犯的艺术，有冒犯性没问题。",
+
+"后续：<br>"+
+"大力因为这场演出接到了很多代言，包括：沙滩之家（知名女装品牌，广告词“女性的衣柜”）。／"+
+"后续：<br>"+
+"杨笠因为这场演出接到了很多代言，包括：海澜之家（知名男装品牌，广告词“男人的衣柜”）。",
+
+    ]
+    let dy="";
+
+for (let i=0;data.length>i;i++){
+    if (data[i]=="<br/>"){
+        dy += "<br/>";
+    }
+    else{
+        let 临时=data[i].split("／");
+        dy += "<p class=\"b\" onmouseover=\"javascript:this.innerHTML='" + 临时[1] + "'\" onmouseout=\"javascript:this.innerHTML='" + 临时[0] + "'\">" + 临时[0] + "</p>";
+    }
+}
+
+document.getElementById("dy").innerHTML = dy;
+    </script>
+
+</div>
+
+<!-- <div id="下级"></div> -->
+
+<div id="nav_zk" style="display: none;">
+<div id="nav_zk2">
+
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/i/zk/972620"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/i/zk/972620')\">https://李猫球.com/i/zk/972620</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/i/zk/972620\" class=\"leancloud_visitors\" data-flag-title=\"杨笠的脱口秀\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+</div>
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/nvquan/xingbiehuhuan">性别互换</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+</div>
+
+<script>
+if(top.location==self.location){var 返回="<div class=\"qbt\">大力的脱口秀</div>";
+document.getElementById("上级").innerHTML=返回;
+document.getElementById("wen_body").className = 'body';
+document.getElementById("nav_zk").style.display = "block";
+}
+else{
+    //展开的子页面
+    var bodyH = $(document).height()+20;
+    var bodyHa = 0;
+    var bodyJ = window.location.href.split('/i/zk/')[1];
+    var bodyK = "／／" + bodyJ;
+    var bodyL = "／" + bodyJ + "／";
+
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    window.parent.document.getElementById(bodyL).innerHTML = "";
+
+    window.onload = function () {
+    bodyH = $(document).height();
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    }
+}
+let p_link = "i/zk/972620".split("/");
+localStorage.setItem(p_link[2], "1");
+</script>
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor2{position: fixed;bottom:0%;right:3%;width:14%;height: 40%;overflow:auto;
+            /* margin: 0 auto 0 67%; */
+        }
+        #right_anchor2 table{width:100%;}
+        #right_anchor2 td{border:1px solid #ccc;}
+        #right_anchor,.shouji{display:none;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor2{display:none;}
+    } /*手机*/
+    #right_anchor2 a{display:block;}
+    #right_anchor table{width:60%;cursor:pointer;}
+    #right_anchor,#right_anchor{z-index:2001;}
+</style>
+<div id="right_anchor2"></div><!--🔻🔺-->
+<script>
+    if (top.location == self.location) {
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor_name = 0;
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_name+=1;
+            anchor_dy += "<tr><td onclick=\"window.location.href='#" + anchor[i]["name"] + "'\"><a>" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<br><br><table>"+anchor_dy+"</table><br>";}
+        if(anchor_name>5){
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+        }else{
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
+        }
+    }
+}
+function anchor_zk(){
+if(anchor_an2==1){
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=0;
+}else{
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
+}
+}
+
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor2").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor2').fadeIn();
+            } else {
+                $('#right_anchor2').fadeOut();
+            }
+        });
+    });
+    });
+}else{
+    $('#right_anchor2').fadeOut();
+}
+    }
+</script>
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="i/zk/972620" class="leancloud_visitors" data-flag-title="杨笠的脱口秀">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

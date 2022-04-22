@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>最终幻想14 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+<style>
+@media screen and (min-width: 768px) { /*电脑*/
+    body{background-color: #F4F8FB;}
+    .qbt {text-align: center;margin-top: 1.2em;font-size: 3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 70%;padding:20px;margin: auto;background-color: #fff;box-shadow: 2px 4px 8px #ddd;line-height: 30px;border-radius: 25px;}
+    #nav_zk2{position: relative;margin: auto;width:70%;}
+} /*电脑*/
+
+@media screen and (max-width: 767px) { /*手机*/
+    .qbt {font-weight: 600;text-align: center;margin-top: 1.2em;font-size: 2.3em;color: #0bb1f5;cursor: default;}
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+} /*手机*/
+.juzhong{text-align:center;}
+</style>
+
+</head><body>
+
+<div id="上级"></div>
+
+<div id="wen_body">
+<div id="right_anchor"></div>
+
+<table>
+    <tr><td>推荐网站</td><td>说明</td></tr>
+    <tr><td><a href="https://ff14.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5" target="_blank">维基百科</a></td><td></td></tr>
+    <tr><td><a href="https://actff1.web.sdo.com/Project/20181018ffactive/index.html" target="_blank">官方活动中心</a></td><td></td></tr>
+    <tr><td><a href="https://tools.ffxiv.cn/lajipai/" target="_blank">素素辣鸡排</a></td><td>风脉、宠物、坐骑等查询工具</td></tr>
+    <tr><td><a href="https://universalis.app/" target="_blank">universalis</a></td><td>各服务器告示板比价</td></tr>
+    <tr><td><a href="https://www.ffxivsc.cn/" target="_blank">光之收藏家</a></td><td>幻化数据分享</td></tr>
+    <tr><td><a href="https://www.youwanc.com/" target="_blank">时尚品鉴攻略</a></td><td></td></tr>
+    <tr><td><a href="https://ff14.huijiwiki.com/wiki/%E6%96%87%E6%9C%AC%E6%8C%87%E4%BB%A4" target="_blank">文本指令列表</a></td><td>宏</td></tr>
+    <tr><td><a href="/i/zk/1430598" target="_blank">酒类记录</a></td><td></td></tr>
+    <tr><td><a href="https://wx1.sinaimg.cn/large/006c7ANely1goafdmgeghj30xy3gnwr0.jpg" target="_blank">青魔法师技能表</a></td><td></td></tr>
+</table>
+
+<input type="text" id="wiki输入" placeholder="搜索内容" /><button onclick="wiki()">搜索wiki</button>
+
+<script>
+    function wiki(){
+        let wiki输入 = document.getElementById("wiki输入").value;
+        window.open("https://ff14.huijiwiki.com/index.php?search="+wiki输入);
+    }
+</script>
+
+<br>
+
+<table>
+    <tr><td>私人内容</td><td>说明</td></tr>
+    <tr><td><a href="/myid" target="_blank">我的账号</a></td><td></td></tr>
+    <tr><td><a href="/maoqiu/player/ff14" target="_blank">衣服搭配</a></td><td></td></tr>
+    <tr><td><a href="/i/zk/1430598" target="_blank">酒类记录</a></td><td></td></tr>
+    <tr><td><a href="/i/zk/2247545" target="_blank">复制宏</a></td><td></td></tr>
+</table>
+
+<br>
+
+<a name="地点"></a><h3>地点</h3>
+
+<table>
+    <tr><td>地名</td><td>简称、外号</td><td>主城</td><td>其他</td></tr>
+    <tr><td>黑衣森林</td><td>森都</td><td>格里达尼亚</td><td></td></tr>
+    <tr><td>萨纳兰</td><td>沙都</td><td>乌尔达哈</td><td></td></tr>
+    <tr><td>拉诺西亚</td><td>海都</td><td>利姆萨罗敏萨</td><td>甲板</td></tr>
+    <tr><td>伊修加德</td><td>山都/雪都</td><td>库尔扎斯</td><td></td></tr>
+    <tr><td>远东之国</td><td></td><td>黄金港</td><td>白银乡 日式 海都-轮渡码头-东阿尔迪纳德商会的商船船员 300G</td></tr>
+    <tr><td>诺弗兰特</td><td></td><td>水晶都</td><td>第一世界 摩杜纳 (X:28 Y:14)-船头-传送装置管理员</td></tr>
+</table>
+
+<br>
+
+成就兑换：格里达尼亚（森都）-旧街-音乐广场左侧-碧企鹅瀑布<br>
+
+<br>
+
+<a name="金碟币"></a><h3>金碟币</h3>
+<b>小游戏</b>：不推荐，收益低，浪费时间精力。<br>
+小游戏中比较推荐砍树（孤树无援），在入口广场 (X:4.4 Y:6.6)守梯人-陆行鸟广场-右转。<br>
+玩法：开始后，竖条是选择游戏难度，最大的颜色区为最简单，很容易选到。<br>
+扇形时有一个位置会是隐藏的目标，需要玩家点击按钮，如果正中目标直接胜利，如果接近会减少一定的进度条，根据提示猜测这个目标的位置，进度条全空为胜利，有时间和点击次数限制。<br>
+胜利后可以选择“挑战翻倍”，将再来一局，成功获得更多金碟币，失败则失去奖励。可以视剩余时间而定，熟练后建议翻倍到400即可。<br>
+<br>
+<b>机遇任务</b>：每小时的00、20、40分会有机遇任务，可以提前找到“金碟工作人员”（地图里有标）传送到活动地点。<br>
+机遇任务有一定难度，成功会有几千金碟币奖励，失败只有几百。<br>
+如果长时间泡在金碟游乐场可以选择玩一下，在间隙可以参加别的游戏。<br>
+<br>
+<b>日常、周常</b>：简单，收益高，一定要参加。<br>
+仙人微彩：每天可以参与3次。在3x3的卡上隐藏着9个数字，玩家要选择其中一行，根据特定的数字组合会得到不同金额的金碟币奖励。一开始会随机显示一个数字，有三次刮开的机会，用于方便玩家判断，其中奖励最高的是1、2、3，其次是7、8、9。<br>
+仙人彩：每周可以参与3次，周六21点开奖。<br>
+时尚品鉴：每周一次，根据关键词搭配衣服进行评分（去网上搜攻略），每周参加获得1万金碟币，每周评分高于80分可获得5万金碟币。<br>
+<br>
+<b>挑战笔记</b>：完成特定挑战可以获得金碟币，每周二16点刷新。手册管理-挑战笔记-金碟游乐场。<br>
+进入幻卡对局室，找绿之手挑战（他最简单），取胜10场可以完成四个挑战，共计18500金碟币。<br>
+参加五场萌宠之王的人机对战，只需要挂机输掉即可，完成5场可以完成三个挑战，共计27000金碟币。<br>
+<br>
+<b>比赛</b>：幻卡、陆行鸟赛跑等。需要投入很多的时间精力，如果喜欢哪个比赛可以玩一下，如果单纯以赚金碟币为目的则不推荐。<br>
+<br>
+
+<br>
+
+<a name="诗学神典石"></a><h3>诗学神典石</h3>
+<table>
+    <tr><td>奥里亚娜</td><td>摩杜纳 (X:22.7 Y:6.7)</td><td>120品级装备和魂武材料</td></tr>
+    <tr><td>希丝梅娜</td><td>田园郡 (X:5.8 Y:5.3)</td><td>260品级装备和三级土</td></tr>
+    <tr><td>德雷克</td><td>黑衣森林北部林区 (X:30.4 Y:20.1)</td><td>130品级装备</td></tr>
+    <tr><td>青花</td><td>田园郡 (X:6.7 Y:7.4)</td><td>270品级装备</td></tr>
+</table>
+
+<br>
+
+<a name="佣兵理符"></a><h3>佣兵理符</h3>
+1级：拉诺西亚低地赤血雄鸡农场、黑衣森林中央林区烤饼练兵所、西萨纳兰毒蝎交易所<br>
+5级：拉诺西亚低地赤血雄鸡农场、黑衣森林中央林区烤饼练兵所、西萨纳兰毒蝎交易所<br>
+10级：西拉诺西亚雨燕塔殖民地、黑衣森林中央林区弯枝牧场、西萨纳兰地平关<br>
+15级：西拉诺西亚小麦酒港、黑衣森林东部林区霍桑山寨、东萨纳兰枯骨营地<br>
+20级：拉诺西亚低地莫拉比造船厂、黑衣森林南部林区石场水车<br>
+25级：黑衣森林南部林区石场水车、南萨纳兰小阿拉米格<br>
+30级：东拉诺西亚太阳海岸、黑衣森林南部林区恬静路营地、<br>
+35级：东拉诺西亚葡萄酒港、库尔札斯中央高地阿德内尔占星台<br>
+40级：北萨纳兰蓝雾营地、库尔札斯中央高地白云崖前哨<br>
+45级：摩杜纳圣寇伊纳克调查地<br>
+50级到58级：伊修加德砥柱层<br>
+
+<br>
+
+<a name="宏"></a><h2>宏</h2>
+推荐网站：<br>
+<a href="https://ff14.huijiwiki.com/wiki/%E6%96%87%E6%9C%AC%E6%8C%87%E4%BB%A4" target="_blank">文本指令列表</a><br>
+<a href="https://nga.178.com/read.php?tid=12826390" target="_blank">宏综合指南</a><br>
+<br>
+
+<br>
+<table>
+    <tr><td>/micon 图标名 分类名</td><td>改宏的图标（分类名在后面有列）</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/ac 技能名</td><td>施放技能</td></tr>
+    <tr><td>/ac 技能名 玩家名</td><td>对指定玩家施放</td></tr>
+    <tr><td>/blueaction 技能名</td><td>青魔法技能</td></tr>
+    <tr><td>/pvpac 技能名</td><td>对战技能</td></tr>
+    <tr><td>/gaction</td><td>共通技能，比如 随机坐骑</td></tr>
+    <tr><td>/cac 技能名</td><td>搭档技能</td></tr>
+    <tr><td>/pac 技能名</td><td>召唤兽技能</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/mount 坐骑名</td><td>上坐骑</td></tr>
+    <tr><td>/minion 宠物名</td><td>召唤宠物</td></tr>
+    <tr><td>/动作 motion</td><td>只做动作不显示文字 如：/干杯 motion</td></tr>
+    <tr><td>/wait 时间</td><td>等待（秒，最多60） 用&lt;wait.X>可以不独占一排</td></tr>
+    <tr><td></td><td>放在技能和喊话之间，防止连续按键刷屏</td></tr>
+    <tr><td>/mlock</td><td>锁定宏，这个宏完成前不允许其他宏执行</td></tr>
+    <tr><td>/mcancel</td><td>停止宏，可以停止锁定。</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/s 文字</td><td>说话，大约每秒可以说一句话，多的会被吞</td></tr>
+    <tr><td>/em 文字</td><td>情感动作，限制连续发言。</td></tr>
+    <tr><td>/y 文字</td><td>呼喊，范围比说话大一些，限制连续发言。</td></tr>
+    <tr><td>/sh 文字</td><td>喊话，该地图全屏可见，限制连续发言。</td></tr>
+    <tr><td>/tell 名字@服务器 文字</td><td>悄悄话，限制连续发言。同服可省略@服务器</td></tr>
+    <tr><td>/reply 文字</td><td>悄悄话，给上一个给你发悄悄话的人。</td></tr>
+    <tr><td>/p 文字</td><td>小队频道。</td></tr>
+    <tr><td>/a 文字</td><td>团队频道</td></tr>
+    <tr><td>/fc 文字</td><td>部队频道</td></tr>
+    <tr><td>/pvpteam 文字</td><td>战队频道</td></tr>
+    <tr><td>/l编号 文字</td><td>通讯贝频道</td></tr>
+    <tr><td>/b 文字</td><td>新人频道</td></tr>
+    <tr><td>/e 文字</td><td>默语，仅自己可见</td></tr>
+    <tr><td>/cl</td><td>清屏</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>&lt;t></td><td>目标</td></tr>
+    <tr><td>&lt;tt></td><td>目标的目标</td></tr>
+    <tr><td>&lt;me></td><td>自己的名字</td></tr>
+    <tr><td>&lt;1~8></td><td>队伍中对应编号的人的名字</td></tr>
+    <tr><td>&lt;f></td><td>焦点目标的名字</td></tr>
+    <tr><td>&lt;lt></td><td>上个选中的目标的名字</td></tr>
+    <tr><td>&lt;le></td><td>上个选中的敌人的名字</td></tr>
+    <tr><td>&lt;la></td><td>上个对自己造成伤害的敌人的名字</td></tr>
+    <tr><td>&lt;c></td><td>自己的陆行鸟的名字</td></tr>
+    <tr><td>&lt;p></td><td>自己的召唤物的名字</td></tr>
+    <tr><td>&lt;pos></td><td>自己的当前坐标，可以被点击插旗。</td></tr>
+    <tr><td>&lt;flag></td><td>当前插旗地点的坐标，可以被别人点击插旗。</td></tr>
+    <tr><td>&lt;mo></td><td>当前鼠标指向的目标名字</td></tr>
+    <tr><td>&lt;item></td><td>最近选择过展示属性的道具链接</td></tr>
+    <tr><td>&lt;recast.技能名></td><td>指定技能的冷却时间，--:--(分:秒)</td></tr>
+    <tr><td>&lt;r></td><td>上一个悄悄话你的人的名字</td></tr>
+    <tr><td>&lt;job></td><td>自己当前职业等级 同理：tjob(选中目标) fjob(焦点目标)</td></tr>
+    <tr><td>当前值/最大值：</td></tr>
+    <tr><td>&lt;hp></td><td>hp</td></tr>
+    <tr><td>&lt;mp></td><td>魔力</td></tr>
+    <tr><td>&lt;tp></td><td>技力（不显示最大值）</td></tr>
+    <tr><td>&lt;bhp></td><td>陆行鸟hp</td></tr>
+    <tr><td>&lt;php></td><td>召唤兽hp</td></tr>
+    <tr><td>当前值的百分比</td></tr>
+    <tr><td>&lt;hpp></td><td>hp</td></tr>
+    <tr><td>&lt;mpp></td><td>魔力</td></tr>
+    <tr><td>&lt;bhpp></td><td>陆行鸟</td></tr>
+    <tr><td>&lt;phpp></td><td>召唤兽</td></tr>
+    <tr><td>&lt;thpp></td><td>当前选中目标</td></tr>
+    <tr><td>&lt;fhpp></td><td>焦点目标</td></tr>
+    <tr><td>&lt;se.1~16></td><td>发出提示音,只在小队/团队/默语频道有效果。可以认为是指代了一个本来不能用语言描述的“声音“,会显示在发言中。</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/ta 目标名</td><td>选中目标</td></tr>
+    <tr><td>/facetarget</td><td>面向目标</td></tr>
+    <tr><td>/automove on/off</td><td>开关自动行走，省略on/off则在开关间切换。</td></tr>
+    <tr><td>/nt</td><td>右侧选中最近敌人(相当于tab)</td></tr>
+    <tr><td>/tlt</td><td>选中上次选定的目标</td></tr>
+    <tr><td>/tle</td><td>选中上次选定的敌人</td></tr>
+    <tr><td>/busy on/off</td><td>开关忙碌模式，省略on/off则在开关间切换。</td></tr>
+    <tr><td>/称号 设置 称号名</td><td>快捷改称号，可以与切职业宏绑定。</td></tr>
+    <tr><td>/merror on/off</td><td>开启/关闭错误提示</td></tr>
+    <tr><td>/mountbgm on/off</td><td>开关坐骑背景音乐</td></tr>
+    <tr><td>/随机数 上限值</td><td>掷骰子</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/gs 套装</td><td></td></tr>
+    <tr><td>/gs change 编号</td><td>装备套装</td></tr>
+    <tr><td>/gs view 编号</td><td>查看套装</td></tr>
+    <tr><td>/gs save 编号</td><td>保存当前套装到指定编号，编号留空则创建新套装</td></tr>
+    <tr><td>/gs remove 编号</td><td>删除套装</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>闹钟</td><td>/闹钟 "闹钟名" 时间类型 时间 重复(留空为不重复) 提前提醒(分钟)</td></tr>
+    <tr><td></td><td>时间类型：本 服 艾（本地、服务器、艾欧泽亚）</td></tr>
+    <tr><td></td><td>时间：如12点30 则为1230</td></tr>
+    <tr><td></td><td>/闹钟 "测试" 本 1332 1</td></tr>
+    <tr><td>/闹钟 撤除</td><td>删除所有闹钟</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/道具整理</td><td>整理物品</td></tr>
+    <tr><td>/道具整理 条件 对象 指定 顺序</td><td>设置排列的对象、顺序</td></tr>
+    <tr><td>/道具整理 实行 对象</td><td>执行设置</td></tr>
+    <tr><td></td><td>对象 和 指定 在后面有列</td></tr>
+    <tr><td>　</td><td></td></tr>
+    <tr><td>/hudlayout 编号</td><td>改变界面UI设置至保存的一套，编号省略则打开设置面板。</td></tr>
+</table>
+<table>
+    <tr><td>/热键栏 更换 编号</td><td>将默认热键栏更换为指定编号</td></tr>
+    <tr><td>/热键栏 清除 热键栏 位置(或all)</td><td>清除热键</td></tr>
+    <tr><td>/热键栏 技能(或设置) 技能名 热键栏编号 位置</td><td>将技能设置到热键栏</td></tr>
+    <tr><td></td><td>其中“技能”可替换为 青魔法技能、共通技能、道具、情感动作、搭档、召唤兽、宠物、坐骑、标记</td></tr>
+    <tr><td></td><td>更换：将指定编号的热键栏切换到默认热键栏1的位置</td></tr>
+    <tr><td>/热键栏 复制 职业名1 热键栏编号2 职业名2 热键栏编号2</td><td>将职业1的热键栏内容复制给职业2的热键栏编号</td></tr>
+    <tr><td></td><td>或当前、共通</td></tr>
+</table>
+分类：<br>
+技能(action) 对战技能(pvpaction) 共通技能(general)<br>
+情感动作(emote) 搭档(buddy)<br>
+召唤兽(pet) 宠物(minion) 坐骑(mount)<br>
+道具(item) 标记(marking) 场景标记(waymark)<br>
+套装(gearset) 职业(classjob)<br>
+<br>
+整理物品<br>
+对象：物品、雇员物品、兵装库、主手、副手、头部、身体、手臂、腰带、腿部、脚部、颈部、耳部、腕部、戒指、灵魂水晶<br>
+指定：道具编号、精炼度、道具种类、装备等级、物品品级、打包数量、优质道具、魔晶石数、物理基本性能、魔法基本性能、攻击间隔、物理自动攻击、格挡发动力、格挡性能、物理防御力、魔法防御力、力量、灵巧、耐力、智力、精神、作业精度、加工精度、获得力、鉴别力、分栏
+顺序：升序、降序<br>
+<br>
+<a name="推荐的宏"></a><h4>推荐的宏</h4>
+一键整理兵装库、物品栏：<br>
+<blockquote>
+/道具整理 条件 兵装库 物品品级 降序<br>
+/道具整理 实行 兵装库<br>
+/道具整理 条件 物品 打包数量 降序<br>
+/道具整理 条件 物品 精炼度 降序<br>
+/道具整理 条件 物品 魔晶石数 降序<br>
+/道具整理 条件 物品 优质道具 降序<br>
+/道具整理 条件 物品 道具编号 降序<br>
+/道具整理 条件 物品 物品品级 降序<br>
+/道具整理 条件 物品 装备等级 降序<br>
+/道具整理 条件 物品 道具种类 降序<br>
+/道具整理 条件 物品 分栏<br>
+/道具整理 实行 物品<br>
+</blockquote>
+<br>
+一键收宠物、陆行鸟，并关闭战斗特效：<br>
+<blockquote>
+/宠物<br>
+/搭档技能 离开<br>
+/战斗特效 自己 简单<br>
+/战斗特效 小队 关<br>
+/战斗特效 他人 关<br>
+</blockquote>
+开启战斗特效（全部、简单、关 按自己需求修改）：<br>
+<blockquote>
+/战斗特效 自己 全部<br>
+/战斗特效 小队 简单<br>
+/战斗特效 他人 简单<br>
+</blockquote>
+<br>
+副本小抄（提前搜好攻略，写小抄放在宏里，以下只是示例）：<br>
+<blockquote>
+/神典石 motion<br>
+/e ——————————<br>
+/e 站在矮石头旁边，注意左右哪边被连线，去另一边<br>
+/e boss1 去没点亮石柱的半边<br>
+/e 去boss身上没发亮的半边<br>
+/e boss2 注意柱子的影子<br>
+/e boss3 连线拉到变成紫色<br>
+/e 分摊到boss面前中间<br>
+/e 毒圈放到已经有毒的那条<br>
+/e 红点名到boss两侧<br>
+/e ——————————<br>
+/em 拿出手机查起了攻略。<br>
+</blockquote>
+<br>
+上坐骑或加速跑：<br>
+<blockquote>
+/gaction 随机坐骑<br>
+/ac 速行 &lt;wait.1><br>
+/ac 速行<br>
+/ac 冲刺<br>
+/gaction 随机宠物<br>
+/micon 速行 action<br>
+</blockquote>
+
+
+</div>
+
+<!-- <div id="下级"></div> -->
+
+<div id="nav_zk" style="display: none;">
+<div id="nav_zk2">
+<!-- <script src='/5/new/vcomments/Valine.min.js'></script>
+<script src="/5/new/vcomments/Leancloud.min.js"></script> -->
+
+<!-- do not set the version number -->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- or set latest -->
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<!-- or Default value -->
+<script src="//unpkg.com/valine"></script>
+
+<br><br><hr>
+<style>
+    textarea#veditor{
+        height:160px;
+        background-attachment: scroll,scroll;
+        background-image: url('/img/background/pinglun/a1.png'),url('/img/background/pinglun/a2.png');
+        background-repeat:no-repeat,no-repeat;
+        background-position:bottom left,bottom right;}
+    .vemoji{width:40px !important;height:auto !important;}
+    .vemojis i{width:50px !important;}
+    .vemoji{width:40px !important;}
+    p .vemoji{width:56px !important;}
+    .vsys,.markdown{display:none !important;}
+    .vimg{width:70px !important; height:70px !important;}
+    /* .vnick{font-size:1.1em !important;} */
+</style>
+<div id="v_pl_s"></div>
+<div id="vcomments" style="width:90%;"></div>
+<script>
+    let v_pl_a=["a"];
+    let v_pl_b={
+        "3.16":["mqsr"],
+        "10.31":["wsj"],
+        "11.1":["wsj"],
+
+        "2022.2.15":["tym","tye"],//元宵节
+    };
+    let v_pl_c=new Date().getMonth()+1+"."+new Date().getDate();
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_c=new Date().getFullYear()+"."+v_pl_c;
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_b=new Date().getTime();
+    v_pl_b=Math.floor(v_pl_b/1000/60/60);
+    v_pl_b=v_pl_b%v_pl_a.length;
+    v_pl_b=v_pl_a[v_pl_b];
+    v_pl_b="/img/background/pinglun/"+v_pl_b;
+    document.getElementById("v_pl_s").innerHTML = "<style>textarea#veditor{background-image: url('"+v_pl_b+"1.png'),url('"+v_pl_b+"2.png');}</style>";
+
+    new Valine({
+        el: '#vcomments',
+        appId: 'mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz',
+        appKey: 'YCCregxILHitovzescjVs4X1',
+        Array: ['nick'],
+        avatar: 'mp',
+        visitor: true,
+        placeholder: "说点啥？&#13;&#10;(本站暂时没有回复通知功能)",
+
+        emojiCDN: 'https://limaoqiu.com/img/i/em/',
+        emojiMaps: {
+            "k02": "kmj/02.jpg",
+            "k07": "kmj/07.jpg",
+            "k13": "kmj/13.jpg",
+            "k15": "kmj/15.jpg",
+            "k16": "kmj/16.jpg",
+            "k18": "kmj/18.jpg",
+            "k21": "kmj/21.jpg",
+            "k22": "kmj/22.jpg",
+            "k25": "kmj/25.jpg",
+            "k28": "kmj/28.jpg",
+            "k29": "kmj/29.jpg",
+            "k31": "kmj/31.jpg",
+            "k34": "kmj/34.jpg",
+            "k38": "kmj/38.jpg",
+            "k41": "kmj/41.jpg",
+            "k44": "kmj/44.jpg",
+            "k47": "kmj/47.jpg",
+            "k53": "kmj/53.jpg",
+            "k58": "kmj/58.jpg",
+            "k60": "kmj/60.jpg",
+            "k70": "kmj/70.jpg",
+            "k75": "kmj/75.jpg",
+            "k78": "kmj/78.jpg",
+            "k79": "kmj/79.jpg",
+            "k80": "kmj/80.jpg",
+            "m01": "mq/01.jpg",
+            "m02": "mq/02.jpg",
+            "m03": "mq/03.jpg",
+            "m04": "mq/04.jpg",
+            "m05": "mq/05.jpg",
+            "m06": "mq/06.jpg",
+            "m07": "mq/07.jpg",
+            "m09": "mq/09.jpg",
+            "m10": "mq/10.jpg",
+            "m11": "mq/11.jpg",
+            "m12": "mq/12.jpg",
+            "m13": "mq/13.jpg",
+            "m14": "mq/14.jpg",
+            "m17": "mq/17.jpg",
+            "m18": "mq/18.jpg",
+            "m20": "mq/20.jpg",
+            "q03": "mq/b03.jpg",
+            "q04": "mq/b04.jpg",
+            "q06": "mq/b06.jpg",
+            "e01": "mq/c01.jpg",
+            "e02": "mq/c02.jpg",
+            "e03": "mq/c03.jpg",
+            "e04": "mq/c04.jpg",
+            "e05": "mq/c05.jpg",
+            "e06": "mq/c06.jpg",
+            "e07": "mq/c07.jpg",
+            "e08": "mq/c08.jpg",
+            "e09": "mq/c09.jpg",
+            "e10": "mq/c10.jpg",
+        }
+    })
+</script>
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/i/zk/1743585"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/i/zk/1743585')\">https://李猫球.com/i/zk/1743585</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/i/zk/1743585\" class=\"leancloud_visitors\" data-flag-title=\"最终幻想14\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+</div>
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/biji/game">游戏笔记</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+</div>
+
+<script>
+if(top.location==self.location){var 返回="<div class=\"qbt\">最终幻想14</div>";
+document.getElementById("上级").innerHTML=返回;
+document.getElementById("wen_body").className = 'body';
+document.getElementById("nav_zk").style.display = "block";
+}
+else{
+    //展开的子页面
+    var bodyH = $(document).height()+20;
+    var bodyHa = 0;
+    var bodyJ = window.location.href.split('/i/zk/')[1];
+    var bodyK = "／／" + bodyJ;
+    var bodyL = "／" + bodyJ + "／";
+
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    window.parent.document.getElementById(bodyL).innerHTML = "";
+
+    window.onload = function () {
+    bodyH = $(document).height();
+    if(bodyH < bodyHa){bodyH=bodyHa;}
+    window.parent.document.getElementById(bodyK).height = bodyH+20;
+    }
+}
+let p_link = "i/zk/1743585".split("/");
+localStorage.setItem(p_link[2], "1");
+</script>
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor2{position: fixed;bottom:0%;right:3%;width:14%;height: 40%;overflow:auto;
+            /* margin: 0 auto 0 67%; */
+        }
+        #right_anchor2 table{width:100%;}
+        #right_anchor2 td{border:1px solid #ccc;}
+        #right_anchor,.shouji{display:none;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor2{display:none;}
+    } /*手机*/
+    #right_anchor2 a{display:block;}
+    #right_anchor table{width:60%;cursor:pointer;}
+    #right_anchor,#right_anchor{z-index:2001;}
+</style>
+<div id="right_anchor2"></div><!--🔻🔺-->
+<script>
+    if (top.location == self.location) {
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor_name = 0;
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_name+=1;
+            anchor_dy += "<tr><td onclick=\"window.location.href='#" + anchor[i]["name"] + "'\"><a>" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<br><br><table>"+anchor_dy+"</table><br>";}
+        if(anchor_name>5){
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+        }else{
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
+        }
+    }
+}
+function anchor_zk(){
+if(anchor_an2==1){
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=0;
+}else{
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
+}
+}
+
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor2").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor2').fadeIn();
+            } else {
+                $('#right_anchor2').fadeOut();
+            }
+        });
+    });
+    });
+}else{
+    $('#right_anchor2').fadeOut();
+}
+    }
+</script>
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="i/zk/1743585" class="leancloud_visitors" data-flag-title="最终幻想14">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

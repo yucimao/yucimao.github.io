@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="/5/new/notyf/notyf.min.css">
+<script src="/5/new/notyf/notyf.min.js" type="text/javascript"></script>
+
+<a onclick="测试()">测试</a>
+
+<script>
+    let notyf = new Notyf({delay:3000});
+    function 测试(){
+		notyf.alert("失败");
+		notyf.confirm("成功");
+	}
+</script>

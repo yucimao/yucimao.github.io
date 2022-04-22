@@ -1,0 +1,38 @@
+
+<input type="text" id="日期" placeholder="日期 2022-01-01" onkeyup="输入()" autocomplete="off"/>
+<input type="text" id="标题" placeholder="标题" onkeyup="输入()" autocomplete="off"/>
+<input type="text" id="说明" placeholder="说明" onkeyup="输入()" autocomplete="off"/>
+<input type="text" id="zk码" placeholder="zk码" onkeyup="输入()" autocomplete="off"/>
+
+<br><br>
+
+<div id="dy"></div>
+
+<script>
+
+let weekArray = new Array("Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat");
+let 月=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+
+function 输入(){
+    let 日期=document.getElementById("日期").value;
+    let 星期 = weekArray[new Date(日期).getDay()];
+    日期=日期.split("-");
+    日期[1]=日期[1]*1;
+    let 时=new Date().getHours();
+    if(时<10){时="0"+时;}
+    let 分=new Date().getMinutes();
+    if(分<10){分="0"+分;}
+    
+    let dy="<item>／"+
+        "<title>"+document.getElementById("标题").value+"</title>／"+
+        "<description>"+document.getElementById("说明").value+"</description>／"+
+        "<pubDate>"+星期+", "+日期[2]+" "+月[日期[1]]+" "+日期[0]+" "+时+":"+分+":00 +0480</pubDate>／"+
+        "<link>{{ site.mq }}/i/zk/"+document.getElementById("zk码").value+"</link>／"+
+        "<guid isPermaLink=\"true\">{{ site.mq }}/i/zk/"+document.getElementById("zk码").value+"</guid>／"+
+        "</item>";
+    let dy1=dy.replace(/</g, "&lt;");
+    dy1=dy1.replace(/／/g, "<br>");
+    
+    document.getElementById("dy").innerHTML = dy1;
+}
+</script>

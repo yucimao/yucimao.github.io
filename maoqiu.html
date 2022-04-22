@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>关于我 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+
+
+<style>
+html,body {margin: 0;padding: 0;}
+
+@media (max-width: 730px) { /*小于730px*/
+    div.body {position: relative;top: 20px;width: 96%;margin: auto;}
+}
+
+@media (min-width: 730px) { /*大于730*/
+    div.body {position: relative;top: 20px;width: 80%;margin: auto;}
+}
+
+@media (min-width: 950px) { /*大于950*/
+    div.body {position: relative;top: 20px;width: 65%;margin: auto;}
+}
+</style>
+
+</head>
+
+<body>
+
+<style>
+@media (max-width: 730px) { /*小于730px*/
+    .qbt {color: #fffffe;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
+    .qbt {position: absolute;left: 35%;top: 8%;font-size: 30px;}
+}
+
+@media (min-width: 730px) { /*大于730*/
+    .qbt {color: #fffffe;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
+    .qbt {position: absolute;left: 35%;top: 15%;font-size: 60px;}
+}
+
+@media (min-width: 950px) { /*大于950*/
+    .qbt {position: absolute;left: 35%;top: 25%;font-size: 70px;}
+}
+#head_img {background-repeat: no-repeat;background-size: 100%;}
+#head_img:after {content: "";display: block;padding-bottom: 40%;}</style>
+<div id="head_img" style="background-image: url('/img/nav/blog.jpg');"></div>
+<img class="yincang" style="width:1px;" src="/img/nav/blog.jpg" onerror="改头图();this.src='/img/nav/blog.jpg';this.onerror=null;">
+<script>
+function 改头图(){
+head_img.style.backgroundImage= "url('/img/nav/blog.jpg')";
+}
+</script>
+<span class="qbt">关于我</span>
+
+<div class="body">
+
+<style>
+@media screen and (min-width: 768px) { /*电脑*/
+.chart{width:50%;}
+.sy25{width:20%;}
+} /*电脑*/
+
+@media screen and (max-width: 767px) { /*手机*/
+.sy25{width:55%}
+} /*手机*/
+
+[onclick^="undefined"]{cursor:default;}
+</style>
+<script src="/5/new/chart.xkcd.js"></script>
+
+<a name="关于猫球"></a><h2>关于猫球</h2>
+<a class="anniu" onclick="zwjs('普通版')">普通版</a> 
+<a class="anniu" onclick="zwjs('网上冲浪版')">网上冲浪版</a> 
+<a class="anniu" onclick="zwjs('二次元版')">二次元版</a> 
+<a class="anniu" onclick="zwjs('简历版')">简历版</a> 
+<a class="anniu" onclick="zwjs('装逼版')">装逼版 <img height=22px src="/img/RightUp.png"></a> 
+<div id="zwjs_dy" style="line-height:30px"></div>
+
+<script>
+// let zwjs_当前;
+let zwjs_dy;
+function zwjs(zwjs_当前){
+    if(zwjs_当前=="普通版"){
+        zwjs_dy="你好，我是李猫球。<br>"+
+        "<span class=\"redX\">今年</span><ruby><rb>十七岁</rb><rt>永远</rt></ruby>，身高<span class=\"heimu\">不高</span>，体重<span class=\"heimu\">减肥中</span>。<span class=\"zhushi\">男人的年龄也是个秘密</span><br>"+
+        "一个还是新人就已经过气的up主。<br>"+
+        "一个没拍过正片，只游场和当后勤的小透明coser。<br>"+
+        "一个画画不好，却总想着写代码的美术生。<br>"+ //如果不是三分钟热度的话……
+        "人生目标是完成<ruby><rb>一部小说</rb><rt>自娱自乐</rt></ruby>。<br>";
+        }
+    if(zwjs_当前=="网上冲浪版"){
+        zwjs_dy="你也在网上冲浪啊，你是<span style=\"color:blue\">GG</span>还是<span style=\"color:red\">MM</span>？<br>"+
+        "欢迎光临<span style=\"background-color: yellow;\">我的博客</span>，有空常来坐坐<img src=\"/img/i/em/BBS/loveliness.gif\"><br>"+
+        "我叫李猫球，今年**岁，<ruby><rb>不抽烟</rb><rt>戒了</rt></ruby>，<ruby><rb>不喝酒</rb><rt>过敏</rt></ruby>，爱好广泛，其中坚持最久的是写小说和玩游戏。<br>"+
+        "希望能和年轻人多交朋友，不要out。<br>"+
+        "最后，祝福朋友们健康快乐！<img src=\"/img/i/em/BBS/lol.gif\">";
+    }
+    if(zwjs_当前=="二次元版"){
+        zwjs_dy="幸识<small>吖~这里</small><big>猫球</big><small>(｢･ω･)｢ 请多指教~(鞠躬</small><br>"+
+        "<small>来自</small><ruby><rb>冰雪之都</rb><rt>哈尔滨</rt></ruby> <small>目前坐标</small><ruby><rb>北国春城</rb><rt>长春</rt></ruby><big>🌱</big><br>"+
+        "<small>自设：</small>黑瞳 白发<small>（准确点说是深灰色瞳孔，浅灰色头发）</small> 猫耳 呆毛 右眼下有一条直线 <small><a href=\"/i/zk/569990\" target=\"_blank\">人设图戳这里←</a></small><br>"+
+        "<small>入的坑有</small><ruby><rb>ＪＯＪＯ</rb><rt>ko no dio da</rt></ruby>、<ruby><rb>ＷＯＷ</rb><rt>为了部落</rt></ruby><small>（已afk）</small>、以及其他<small>（一时想不起来了）</small>。<br>"+
+        "<small>想扩些能一起聊</small>脑洞<small>和</small>设定<small>的朋友 就这样吧ヽ(•̀ω•́ )ゝ</small>";
+    }
+    if(zwjs_当前=="简历版"){
+        zwjs_dy="<span class=\"zhushi\">可以把鼠标移动到文字上面</span><br>"+
+        "<span onmouseover=\"javascript:this.innerHTML='仅限于在网上'\" onmouseout=\"javascript:this.innerHTML='本人热情随和'\">本人热情随和</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='朋友面前'\" onmouseout=\"javascript:this.innerHTML='活波开朗'\">活波开朗</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='组队打ｐｖｅ副本的时候'\" onmouseout=\"javascript:this.innerHTML='具有进取精神和团队精神'\">具有进取精神和团队精神</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='拆过家里的电饭煲'\" onmouseout=\"javascript:this.innerHTML='有较强的动手潜力'\">有较强的动手潜力</span>、"+
+        "<span onmouseover=\"javascript:this.innerHTML='善于和喷子们互怼'\" onmouseout=\"javascript:this.innerHTML='良好协调沟通潜力'\">良好协调沟通潜力</span>。<br>"+
+        "<span onmouseover=\"javascript:this.innerHTML='玩解谜小游戏找线索的能力还是可以的'\" onmouseout=\"javascript:this.innerHTML='两年的设计师经历锻炼了我细心的准则'\">两年的设计师经历锻炼了我细心的准则</span>，"+
+        "<span onmouseover=\"javascript:this.innerHTML='玩推理类小游戏也还可以'\" onmouseout=\"javascript:this.innerHTML='以及冷静解决困难的潜力'\">以及冷静解决困难的潜力</span>。"+
+        "<span onmouseover=\"javascript:this.innerHTML='总体来讲就是拒绝出门'\" onmouseout=\"javascript:this.innerHTML='但是参加实践活动有限'\">但是参加实践活动有限</span>，"+
+        "<span onmouseover=\"javascript:this.innerHTML='社交恐惧症就是我'\" onmouseout=\"javascript:this.innerHTML='社会经验相对缺乏'\">社会经验相对缺乏</span>，"+
+        "<span onmouseover=\"javascript:this.innerHTML='一定会当上ＣＥＯ迎娶白富美走上人生巅峰'\" onmouseout=\"javascript:this.innerHTML='我相信透过立足于社会能不断提升发展自己'\">我相信透过立足于社会能不断提升发展自己</span>。";
+    }
+    if(zwjs_当前=="装逼版"){
+        zwjs_dy="";
+        window.open("/who/maoqiu");
+    }
+
+    document.getElementById("zwjs_dy").innerHTML = zwjs_dy;
+}
+zwjs("普通版");
+</script>
+
+<hr>
+
+<div id="粉丝数"><iframe src="/i/zk/2839370" frameborder="0" width="500px" height="400px"></iframe></div>
+
+<br>
+
+<a href="/chengjiu"><img class="tubiao sy25" src="/img/index/chengjiu.jpg" onerror="this.src='/img/index/chengjiu.jpg';this.onerror=null;"></a>
+<a href="/myid"><img class="tubiao sy25" src="/img/index/myid.jpg" onerror="this.src='/img/index/myid.jpg';this.onerror=null;"></a>
+<a href="/dafen"><img class="tubiao sy25" src="/img/index/paihangbang.jpg" onerror="this.src='/img/index/paihangbang.jpg';this.onerror=null;"></a>
+<a href="/kuoliexuzhi"><img class="tubiao sy25" src="/img/index/kuoliexuzhi.jpg" onerror="this.src='/img/index/kuoliexuzhi.jpg';this.onerror=null;"></a>
+<!-- <a href="/private"><img class="tubiao sy25" src="/img/index/sirenwangye.jpg" onerror="this.src='/img/index/sirenwangye.jpg';this.onerror=null;"></a> -->
+
+<hr>
+
+<a name="　猫球的关键词"></a><h3>猫球的关键词 <small><small>点击查看详情 刷新随机排序</small></small></h3>
+
+<script src='/5/new/svg3dtagcloud_onclick.js'></script>
+
+<div id="tag-cloud"></div>
+
+<script>
+
+function 粉丝数(fss){
+    if(fss=="粉丝数"){fss="2839370";}
+    if(fss=="浏览量"){fss="2839382";}
+    if(fss=="赞同数"){fss="2839384";}
+    document.getElementById("粉丝数").innerHTML = "<iframe src='/i/zk/"+fss+"' frameborder='0' width='500px' height='400px'></iframe>";
+}
+
+    let entries=[];
+    let tagcloud=[
+        //"／dw(dwb='',dwd='狗球')",
+        //"／window.open('')",
+        //"／dw(dwb='<img src=\"/i/cj/\">',dwd='狗球')",
+        "pvo／window.open('/pvoink')",
+        "听歌／window.open('/shoucangjia/gedan')",
+        "游戏／window.open('/wanyouxi')",
+        "酒仙笔记／window.open('/jiuxian')",
+        "大乱斗／window.open('/tuijian/daluandou')",
+        "小植物保护协会／dw(dwb='328392',dwd='小植物保护协会')",
+        "帽权协会／dw(dwb='328904',dwd='帽权协会')",
+
+        //标签
+        "INFJ／window.open('https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC')",
+        "双鱼座／",
+        "五音不全／",
+
+        //猫球家族
+        "猫球家族／window.open('/maoqiujiazu')",
+        "二扯／window.open('/who/erche')",
+        "猪又／dw(dwb='398538',dwd='猪又')",
+        "胡糊／dw(dwb='398544',dwd='胡糊')",
+        "狗球／dw(dwb='398556',dwd='狗球')",
+        "刺猬猬／dw(dwb='398548',dwd='刺猬猬')",
+        "傻子／dw(dwb='398553',dwd='傻子')",
+        "秃子／dw(dwb='398551',dwd='秃子')",
+        "泥球／dw(dwb='3292066',dwd='泥球')",
+        "土块／dw(dwb='3292067',dwd='土块')",
+        "姜饼人／dw(dwb='398559',dwd='姜饼人')",
+        "吵鸭／dw(dwb='398562',dwd='吵鸭')",
+        "哎鸭／dw(dwb='398566',dwd='哎鸭')",
+        "小居／dw(dwb='398568',dwd='小居')",
+
+        //场景
+        "彩色烟囱／dw(dwb='哈尔滨一处不起眼的角落<br><img src=\"/i/cj/653333.jpg\">')",
+        "中央大街／dw(dwb='哈尔滨中央大街<br><img src=\"/i/cj/657414.jpg\">')",
+        "星海广场／dw(dwb='大连星海广场<br><img src=\"/i/cj/657416.jpg\">')",
+
+        //服装
+        "帽子／dw(dwb='不戴帽子不出门星人<br><img src=\"/i/cj/653354.jpg\">',dwd='帽子')",
+        "巫师帽／dw(dwb='一套中二的衣服<br><img src=\"/i/cj/653365.jpg\">',dwd='巫师帽')",
+        "风衣+猫／dw(dwb='一套喜欢的套装<br><img src=\"/i/cj/657415.jpg\">',dwd='风衣+猫')",
+
+        //小物件
+        "小黄鸭／dw(dwb='<img src=\"/i/cj/653353.jpg\">',dwd='小黄鸭')",
+        "怨影娃娃／dw(dwb='出自精灵宝可梦<br><img src=\"/i/cj/653355.jpg\">',dwd='怨影娃娃')",
+        "骰子／dw(dwb='不小心买了好多<br><img src=\"/i/cj/653366.jpg\">',dwd='骰子')",
+        "鼠标球／dw(dwb='现在也算“老物件”了吧？<br><img src=\"/i/cj/653368.jpg\">',dwd='鼠标球')",
+        ":O :D／dw(dwb='最喜欢的两个颜文字<br><img src=\"/i/cj/671139.jpg\">',dwd=':O :D')",
+
+    ];
+
+    let p = Array.from(tagcloud), i, a = [];
+        while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+        tagcloud = a;
+
+    for(let i=0;tagcloud.length>i;i++){
+        if(i<30){
+            let 临时=tagcloud[i].split("／");
+            if (临时[1].indexOf("window.open") != -1){临时[0]=临时[0]+" ◥";}
+            let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+            let 颜色_i=i%颜色.length;
+            entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
+        }
+    }
+
+    let settings = {
+    entries: entries,
+    width: 640,
+    height: 480,
+    radius: '80%',
+    radiusMin: 100,
+    bgDraw: false,
+    opacityOver: 1.00,
+    opacityOut: 0.15,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 0.4,
+    fontSize: '20',
+    fontColor: '#009688',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    fontToUpperCase: false
+};
+$( '#tag-cloud' ).svg3DTagCloud( settings );
+</script>
+
+<hr>
+
+<a name="关于博客"></a><h2>关于博客</h2>
+<ul>
+<li><small>2006年9月20日</small> 注册网易博客，分享自己的生活和爱好，在这里结交了很多博友。<br>
+    <span class="zhushi" id="blogday_dy"></span><br>
+期间短暂尝试过百度空间、点点轻博客，后来这两家都没了。</li>
+<li><small>2015年9月5日</small> 网易开始主推lofter轻博客，原本的网易博客像是被放弃了，各种BUG和问题都得不到回应。<br>
+试着启用lofter，同时也没有放弃网易博客，毕竟陪伴了我十年。</li>
+<li><small>2017年8月20日</small> 在网易博客发了最后一篇日志，网易博客彻底无法使用，发表的日志不会对其他人显示，网易博客被网易放弃了。</li>
+<li><small>2018年9月25日</small> 逃难到lofter的第三年，也放弃了这里，搬家到WordPress。<br>
+在lofter，几乎每次上线都能收到“违规提示”，然而什么都不用改动去申诉也能通过，但是有的图片没了就是没了，比如我在荒川镇的游戏截图。</li>
+<li><small>2020年5月8日</small> 因网友的强烈推荐，尝试用GitHub搭建博客<span class="shanshuo">_</span></li>
+</ul>
+
+<div class="chart"><svg class="pie-chart"></svg></div>
+
+<a href="/links" class="anniu">友情链接</a> 
+<a href="/riji/all" class="anniu">归档</a> 
+
+<hr>
+
+<a name="　域名"></a><h3>域名</h3>
+<span class="zhushi">参观别人博客的时候看到大家都在介绍自己的域名，那我也搞一个吧。</span><br>
+<a href="https://limaoqiu.com" target="_blank" class="dk">limaoqiu.com</a>：我的名字“李猫球”的拼音。<br>
+<a href="https://李猫球.com" target="_blank" class="dk">李猫球.com</a>：我的名字“李猫球”。<small><a href="/i/zk/3783246#中文域名" target="_blank" class="dk">为什么要买中文域名？</a></small><br>
+<a href="https://猫.cafe" target="_blank" class="dk">猫.cafe</a>：想发小说，却不想被人看，于是想到一个天才的主意：起一个让人不感兴趣的标题。<br>
+
+<hr>
+
+<a name="　老样子"></a><h3>老样子</h3>
+<a href="/i/0/2020/0612.jpg" target="_blank" class="dk">2020年6月12日</a><br>
+<a href="/i/0/2021/1215.jpg" target="_blank" class="dk">2021年12月15日</a>：好像没啥变化<br>
+
+<script>
+let blogday = new Date().getTime() - new Date('2006/09/20').getTime();
+blogday = Math.floor(blogday / 1000 / 60 / 60 / 24);
+let blogday_year = Math.floor(blogday / 365);
+let blogday_dy = "距离今天已有" + blogday + "天（" + blogday_year + "年）";
+document.getElementById("blogday_dy").innerHTML = blogday_dy;
+
+let blogday_new = new Date().getTime() - new Date('2020/05/08/').getTime(); //运行时间
+blogday_new = Math.floor(blogday_new / 1000 / 60 / 60 / 24);
+
+const svg = document.querySelector('.pie-chart');
+const pieChart = new chartXkcd.Pie(svg, {
+    title: '博客运行时间(天)',
+    data: {
+        labels: ['NetEase:3987', 'lofter:1116', 'WordPress:591', 'GitHub:'+blogday_new],
+        datasets: [{
+            data: [3987, 1116, 591, blogday_new],
+        }],},
+    options: {innerRadius: 0.5,legendPosition: chartXkcd.config.positionType.upRight,},});
+
+$("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字 组成猫球的成分
+let anp_data=new Array(
+    "pvo","二扯","猪又","胡糊","汽水","烤冷面",":O","猫薄荷"
+);
+let anp_color=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+let anp_i=0;
+function anp(e){
+	let 随机数 = Math.floor(Math.random()*anp_data.length);
+	let n=anp_data[随机数];
+	let $i=$("<b class='bukexuanzhong'>").text(n);
+	let x=e.pageX,y=e.pageY;
+	$i.css({top:y-20,left:x,position:"absolute",color:anp_color[anp_i]});
+	anp_i+=1;
+	if(anp_color.length==anp_i){anp_i=0;}
+	$("body").append($i);
+	$i.animate({top:y-180,opacity:0,"font-size":"1.4em"},1500,function(){
+		$i.remove();
+	});
+	e.stopPropagation();
+}
+</script>
+
+
+
+<!-- <script src='/5/new/vcomments/Valine.min.js'></script>
+<script src="/5/new/vcomments/Leancloud.min.js"></script> -->
+
+<!-- do not set the version number -->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- or set latest -->
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<!-- or Default value -->
+<script src="//unpkg.com/valine"></script>
+
+<br><br><hr>
+<style>
+    textarea#veditor{
+        height:160px;
+        background-attachment: scroll,scroll;
+        background-image: url('/img/background/pinglun/a1.png'),url('/img/background/pinglun/a2.png');
+        background-repeat:no-repeat,no-repeat;
+        background-position:bottom left,bottom right;}
+    .vemoji{width:40px !important;height:auto !important;}
+    .vemojis i{width:50px !important;}
+    .vemoji{width:40px !important;}
+    p .vemoji{width:56px !important;}
+    .vsys,.markdown{display:none !important;}
+    .vimg{width:70px !important; height:70px !important;}
+    /* .vnick{font-size:1.1em !important;} */
+</style>
+<div id="v_pl_s"></div>
+<div id="vcomments" style="width:90%;"></div>
+<script>
+    let v_pl_a=["a"];
+    let v_pl_b={
+        "3.16":["mqsr"],
+        "10.31":["wsj"],
+        "11.1":["wsj"],
+
+        "2022.2.15":["tym","tye"],//元宵节
+    };
+    let v_pl_c=new Date().getMonth()+1+"."+new Date().getDate();
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_c=new Date().getFullYear()+"."+v_pl_c;
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_b=new Date().getTime();
+    v_pl_b=Math.floor(v_pl_b/1000/60/60);
+    v_pl_b=v_pl_b%v_pl_a.length;
+    v_pl_b=v_pl_a[v_pl_b];
+    v_pl_b="/img/background/pinglun/"+v_pl_b;
+    document.getElementById("v_pl_s").innerHTML = "<style>textarea#veditor{background-image: url('"+v_pl_b+"1.png'),url('"+v_pl_b+"2.png');}</style>";
+
+    new Valine({
+        el: '#vcomments',
+        appId: 'mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz',
+        appKey: 'YCCregxILHitovzescjVs4X1',
+        Array: ['nick'],
+        avatar: 'mp',
+        visitor: true,
+        placeholder: "说点啥？&#13;&#10;(本站暂时没有回复通知功能)",
+
+        emojiCDN: 'https://limaoqiu.com/img/i/em/',
+        emojiMaps: {
+            "k02": "kmj/02.jpg",
+            "k07": "kmj/07.jpg",
+            "k13": "kmj/13.jpg",
+            "k15": "kmj/15.jpg",
+            "k16": "kmj/16.jpg",
+            "k18": "kmj/18.jpg",
+            "k21": "kmj/21.jpg",
+            "k22": "kmj/22.jpg",
+            "k25": "kmj/25.jpg",
+            "k28": "kmj/28.jpg",
+            "k29": "kmj/29.jpg",
+            "k31": "kmj/31.jpg",
+            "k34": "kmj/34.jpg",
+            "k38": "kmj/38.jpg",
+            "k41": "kmj/41.jpg",
+            "k44": "kmj/44.jpg",
+            "k47": "kmj/47.jpg",
+            "k53": "kmj/53.jpg",
+            "k58": "kmj/58.jpg",
+            "k60": "kmj/60.jpg",
+            "k70": "kmj/70.jpg",
+            "k75": "kmj/75.jpg",
+            "k78": "kmj/78.jpg",
+            "k79": "kmj/79.jpg",
+            "k80": "kmj/80.jpg",
+            "m01": "mq/01.jpg",
+            "m02": "mq/02.jpg",
+            "m03": "mq/03.jpg",
+            "m04": "mq/04.jpg",
+            "m05": "mq/05.jpg",
+            "m06": "mq/06.jpg",
+            "m07": "mq/07.jpg",
+            "m09": "mq/09.jpg",
+            "m10": "mq/10.jpg",
+            "m11": "mq/11.jpg",
+            "m12": "mq/12.jpg",
+            "m13": "mq/13.jpg",
+            "m14": "mq/14.jpg",
+            "m17": "mq/17.jpg",
+            "m18": "mq/18.jpg",
+            "m20": "mq/20.jpg",
+            "q03": "mq/b03.jpg",
+            "q04": "mq/b04.jpg",
+            "q06": "mq/b06.jpg",
+            "e01": "mq/c01.jpg",
+            "e02": "mq/c02.jpg",
+            "e03": "mq/c03.jpg",
+            "e04": "mq/c04.jpg",
+            "e05": "mq/c05.jpg",
+            "e06": "mq/c06.jpg",
+            "e07": "mq/c07.jpg",
+            "e08": "mq/c08.jpg",
+            "e09": "mq/c09.jpg",
+            "e10": "mq/c10.jpg",
+        }
+    })
+</script>
+
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a onclick="dw(dwb='3750221')"><img class="tubiao" src="/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a onclick="dw(dwb='3750221')"><img class="tubiao" src="/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["mf"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/maoqiu"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/maoqiu')\">https://李猫球.com/maoqiu</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/maoqiu\" class=\"leancloud_visitors\" data-flag-title=\"关于我\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+
+</div>
+
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/riji">猫球日记</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+
+</body>
+
+<!-- <a name=""></a> 自动在右下角设置跳转列表 -->
+<style>
+    @media screen and (min-width: 768px) { /*电脑*/
+        #right_anchor2{position: fixed;bottom:0%;right:3%;width:14%;height: 40%;overflow:auto;
+            /* margin: 0 auto 0 67%; */
+        }
+        #right_anchor2 table{width:100%;}
+        #right_anchor2 td{border:1px solid #ccc;}
+        #right_anchor,.shouji{display:none;}
+    } /*电脑*/
+
+    @media screen and (max-width: 767px) { /*手机*/
+        #right_anchor2{display:none;}
+    } /*手机*/
+    #right_anchor2 a{display:block;}
+    #right_anchor table{width:60%;cursor:pointer;}
+    #right_anchor,#right_anchor{z-index:2001;}
+</style>
+<div id="right_anchor2"></div><!--🔻🔺-->
+<script>
+    if (top.location == self.location) {
+let anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+let anchor_an2 = 0;
+let anchor_dy = "";
+let anchor_name = 0;
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_name+=1;
+            anchor_dy += "<tr><td onclick=\"window.location.href='#" + anchor[i]["name"] + "'\"><a>" + anchor[i]["name"] + "</a></td></tr>";
+        }
+    }
+    if(anchor_dy!=""){
+        if(document.getElementById("right_anchor")){document.getElementById("right_anchor").innerHTML = "<br><br><table>"+anchor_dy+"</table><br>";}
+        if(anchor_name>5){
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+        }else{
+            document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_dy+"</table>";
+        }
+    }
+}
+function anchor_zk(){
+if(anchor_an2==1){
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>收回 ▲</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+anchor_dy+"</table>";
+    anchor_an2=0;
+}else{
+    anchor_an = "<tr><td onclick=\"anchor_zk()\"><a>展开 ▼</a></td></tr>";
+    document.getElementById("right_anchor2").innerHTML = "<table>"+anchor_an+"</table><br>";
+    anchor_an2=1;
+}
+}
+
+var windowWidth = $(window).width();
+    if(windowWidth > 767){
+        $(document).ready(function() {
+    $("#right_anchor2").hide();
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#right_anchor2').fadeIn();
+            } else {
+                $('#right_anchor2').fadeOut();
+            }
+        });
+    });
+    });
+}else{
+    $('#right_anchor2').fadeOut();
+}
+    }
+</script>
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="maoqiu" class="leancloud_visitors" data-flag-title="关于我">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

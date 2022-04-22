@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>租房笔记 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+<style>
+html,body {margin: 0;padding: 0;}
+
+@media screen and (min-width: 768px) { /*电脑*/
+    .biaotib {text-align: center;position: relative;top: 40px;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+} /*电脑*/
+
+@media screen and (max-width: 768px) { /*手机*/
+    .biaotib {text-align: center;position: relative;top: 50px;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
+    div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+} /*手机*/
+</style>
+
+</head>
+
+<body>
+
+<div class="biaotib">租房笔记</div>
+<div class="body">
+
+<style>
+    .tsx {  /*底部提示框*/
+        position: relative;
+        display: inline-block;
+    }
+
+    .tsx .tsxt {
+        border: 1px solid #c0c0c0;
+        visibility: hidden;
+        width: 600px;
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 5px 0;
+        
+        /* 定位 */
+        position: absolute;
+        z-index: 1;
+        top: 80%;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    .tsx:hover .tsxt {
+        transform:translate(0,20px);
+        transition:all 0.5s;
+        visibility: visible;
+    }
+    </style>
+<div>（自用的笔记，参考自网络上租房相关话题）</div>
+<br/>
+<h2>房源</h2>
+
+<h4>中介</h4>
+优点：价格和服务透明（黑中介除外）。<br>
+缺点：比较贵，通常会收半个月或一个月的房租作为中介费。<br>
+多层中介的房子会多收更多钱，直接去小区周边，大门或窗户上贴的联系方式可以直接找到房东（不排除中介伪装成房东）。<br/>
+中介带去看房通常会先去租不出去的房子，可以多看几个房子，有挑选的余地。<br/>
+中介会先给你看符合心理价位但是不好的房子，再看贵但是更好的房子，让租客形成心里落差。<br/>
+
+<h4>房主</h4>
+没有中介费，但是很难找，房主的人品也参差不齐，很看运气。<br>
+看起来很难相处、刻薄、优越感强的房东，可能会有许多麻烦。<br/>
+油嘴滑舌、什么都能答应的房东，可能会不靠谱。<br>
+中介可能伪装成房东，可以打电话问“房子还在么”，看对方会不会问“哪个房子”。<br/>
+打电话时，可以先停顿一下不说话，听对方的背景音，如果能听到对方那里有很多人在打电话谈房子，就可以判断是中介了。<br>
+
+<h4>二房东</h4>
+非常不推荐，得不到保障，甚至二房东可能直接卷钱跑路。<br>
+
+<h4>第三方公司（公寓）</h4>
+非常不推荐，坑很多，得不到保障，同二房东。<br>
+
+<h4>骗子</h4>
+豆瓣等社交网站上骗子很多，一定要小心。<br>
+上网搜一下中介的名字，可能找到网友分享的受害记录，辨别黑中介。<br/>
+房租要直接交给房东，如果中介表示房租要交给他转交给房东，很可能是坑。<br>
+标注“只租女生”有可能是微商在打假广告吸引人气、用套路骗色。<br>
+网上找房，用搜图功能搜索配图，如果发现是网图就可以判断是骗子了。<br>
+图片精美，价格比同地段便宜很多，百分百是假的。<br>
+不要相信口头承诺，没写在合同里的承诺就是没有，合同外交的钱就是没了（不要在签合同前交任何钱，比如看房费、订金）。<br>
+开头是170、171的电话号不需要实名注册，用这种号码的很可能是骗子。<br>
+<br/>
+
+<h2>看房</h2>
+看房前明确自己的需求（地段、预算等），不要受中介的话术、套路影响，保持冷静。<br>
+看房时不要表现出太喜欢这个房子。<br/>
+白天晚上各去一次，看看光线和噪音情况。<br/>
+水龙头、花洒的出水情况。<br/>
+不要住隔断，法律不允许，发现就会被拆除。可以敲墙听是不是实心的。<br/>
+观察电梯的繁忙情况。<br/>
+检查门窗、电器、家具、下水道、漏水问题。<br>
+
+<h4>噪音</h4>
+楼下如果有五金店、烧烤、饭店、广场舞，会有噪音。<br/>
+下午如果附近楼的垃圾桶都堆在楼下，说明晚上垃圾车会在这里处理垃圾，噪音很大。<br/>
+附近如果有高速公路，晚上可能有货车路过，或者飙车族炸街。<br>
+
+<h4>朝向</h4>
+<b>朝东</b><br>
+优点：随日出起床。<br>
+缺点：早上会很晒。<br>
+<br>
+<b>朝南</b><br>
+优点：采光好，衣服更快晾干。<br>
+缺点：夏季温度容易升高，租金更贵。<br>
+<br>
+<b>朝西</b><br>
+优点：暖和。<br>
+缺点：下午太阳直射，又闷又热。<br>
+<br>
+<b>朝北</b><br>
+优点：凉快。<br>
+缺点：光照不好，阴冷潮湿。<br>
+
+<h4>位置</h4>
+离公交车站、地铁站的行走距离。<br>
+垃圾桶、便利店、社区医院、菜市场位置是否方便。<br/>
+打开外卖、网约车软件，看附近接单的多不多。<br/>
+<b>一楼</b>：安全性、隐私性、光线不好，潮湿，虫害，下水道异味，容易堵塞。<br/>
+<b>顶楼</b>：晚上很热、可能漏水、水压不好容易停水。<br/>
+<b>临街</b>：开窗灰尘大，噪音多。<br/>
+
+<h4>合租</h4>
+要规定好各项费用如何分担。<br/>
+问一下有多少人在住，不放心可以敲门去问一下，人太多会抢厕所。<br>
+周末去看房，能观察到更真实的状态。<br>
+看厨房、厕所、冰箱的整洁程度，可以看出室友爱不爱干净。<br>
+确定自己房间的门可以在里面锁住，如果不能和房东商量换锁。<br>
+室友的性格、生活习惯都很看运气，尽可能不要合租。<br>
+出门要锁好房间门，可以的话上厕所都要锁个门。<br>
+
+<h4>房屋情况</h4>
+<b>老房子</b>：电器和设备老旧，容易损坏。<br/>
+<b>新建成的房子</b>：附近会经常有装修声。<br/>
+<b>商住两用</b>：人杂，物业水平参差不齐，可能不通燃气，做饭需要用电磁炉，用水用电价格更高。<br/>
+<b>违规改建</b>：确认房产证户型图和房子是否相符，严打时会被扫地出门（比如两室两厅被改成三室一厅，住在改造成“室”原本是“厅”的房间的人会被赶出去）。<br>
+<br/>
+
+<h2>合同</h2>
+一定要签合同，合同一定要看仔细​，一式两份，保存好自己的这份。<br/>
+口头协议也要写进合同，合同以外的承诺不要轻信。<br/>
+对方准备的合同一定要看仔细，里面可能有坑。<br>
+要辨别房东身份，看房东的房产证，要确定房东拥有房子产权，避免被假房东欺骗。<br>
+合同里明确房主姓名、身份证号、手机号等。<br/>
+明确押金是否可退，针对租客违规的后果，还有房东违规的后果也要写在合同里。<br/>
+需要租客支付的费用有哪些，房租、水电、管理费、网费、燃气、卫生费、取暖费，是否还有其他费用，需要确认清楚并分项列出。<br/>
+记录水电表的数字，确认是商用水电还是民用水电，确认宽带、水电、取暖是否有欠费。<br/>
+是否可以对房屋进行改造，可以改造的程度明确清楚。<br/>
+写明目前家中物品有哪些，试一下是否可以使用，以免退租时房东要求赔偿不存在的物件。有必要的话可以拍照留证据。<br/>
+明确家电维修房东是否负责。<br/>
+记录当前家具的破损情况，明确家具发生自然损耗、老化由谁负责。已经损坏的家具，如果对方承诺维修，可以等修好再搬进来，或者把这部分也写进合同，口头答应的可能签完合同就不管了。<br/>
+租客提前解约如果需要违约金，那么房东提前解约也应该付违约金，否则随时可能住到一半被要求搬走。参考写法：“因房屋问题/房东意愿等问题终止合约时，损失由房东负责（如搬家）。”<br/>
+<br/>
+
+<h2>退房</h2>
+将室内情况录像留证，包括家具完好、电器可以正常使用、房屋整洁。<br/>
+如果房东以借口（如没空到场）要求先交还钥匙以后再退押金，需要警惕，拿回押金前不要还钥匙。<br/>
+家具、电器正常使用的损耗，不可以作为不退押金的理由。
+<div class="tsx">（点击查看相关法律依据）<span class="tsxt">《中华人民共和国合同法》<br/>
+    第二百一十八条 正当使用租赁物的责任<br/>
+    承租人按照约定的方法或者租赁物的性质使用租赁物，致使租赁物受到损耗的，不承担损害赔偿责任。</span></div>
+<br/>
+
+<h2>其他</h2>
+如果对网速有要求，跟物业确认一下小区可不可以接正规运营商的网络。<br/>
+app或者房东如果要求提供证件照片（如手持证件照、身份证正反面照片），要打上水印，如“此信息提供给xx公司，仅用于xx用途，如有发现其他用途请及时向公安部门举报”。<br>
+<b>买卖不破租赁</b>：房东将房子卖出，新房主不愿出租要你搬走，可以用法律保护自己。<br/>
+<b>租售同权</b>：租房期间除了公安机关任何人都不得未经允许闯入你的出租屋，不然就算私闯民宅。<br>
+<b>时间</b>：毕业季和年后房租会贵，年前房租最便宜。<br/>
+房租和中介费是可以讲价的，可以提自己工作稳定、会爱惜房子，不要让中介知道你有多少预算。<br/>
+房子可能租过许多次，中介手里也可能有钥匙，最好和房东商量更换门锁。<br/>
+期间电器、家具出现问题可以找房东维修。
+<div class="tsx">（点击查看相关法律依据）
+<span class="tsxt">《中华人民共和国合同法》第二百二十一条 出租人履行维修义务<br/>
+承租人在租赁物需要维修时可以要求出租人在合理期限内维修。<br/>出租人未履行维修义务的，承租人可以自行维修，维修费用由出租人负担。<br/>因维修租赁物影响承租人使用的，应当相应减少租金或者延长租期。</span></div><br/>
+<br/>
+
+<h2>一些坑和套路</h2>
+用虚假房源吸引人：广告上条件非常好，价格非常低，等人到了再说这间已经租出去了，再看看别的吧，其实那间房可能原本就不存在。<br>
+<br>
+交完中介费，假房东马上反悔，中介以提供了服务为由不退中介费。<br>
+<br>
+二房东卷钱跑路：A原本也是租户，说自己公司搬家或者其他原因想转租出去，以“房东不允许转租”等理由不让你联系到房东，跟你签几个月的合同，而他的租期可能只有几天就到期了，交完钱人跑了。（签合同一定要确保对方拥有房子产权，或者房东在场）<br/>
+<br>
+锚点效应：一个汉堡标价16元，人们会觉得贵，一个包含汉堡的套餐标价20元，人们会觉得便宜。16元的汉堡其实并不是真正的价格，而是给人一个预期，让人们心里觉得汉堡值这个价，那么只比汉堡贵4元就能买一个套餐，就显得很便宜了。<br>
+中介给看的第一个房子可能就是这个“汉堡”，不是为了让你选中这间，而是让你不自觉的以这间的条件和价格当作预期。<br>
+<br>
+在水电费上赚钱：查一下当地水电费，避免如五六毛一度电但被房东按一元一度收费，每月可能多交上百元。<br>
+<br>
+贷款合同：中介称可以减少租金或押金，签的合同是一份贷款合同，实际是贷款公司将一年或几年的租金交给中介，你每月的租金其实是在还贷，其中会产生利息、手续费、服务费等，如果产生纠纷会很麻烦，比如中途不住了要退租、中介卷钱跑路。<br>
+<br>
+房东把房子租给你的同时计划出售，如果常带人来看房，可以直接拒绝，租售同权。（遇到这种情况一次都不要同意，有一次就会有第二次、第三次。）<br>
+房东将还在租期的房子出售，要求你搬走，也可以拒绝，买卖不破租赁。<br>
+
+<h2>投诉</h2>
+如果不涉及伤害、威胁，报警没什么用。<br>
+建议走法律渠道，收集证据、起诉。<br>
+12315：消费者权益中心<br>
+12345：市长热线<br>
+
+
+<!-- <script src='/5/new/vcomments/Valine.min.js'></script>
+<script src="/5/new/vcomments/Leancloud.min.js"></script> -->
+
+<!-- do not set the version number -->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- or set latest -->
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<!-- or Default value -->
+<script src="//unpkg.com/valine"></script>
+
+<br><br><hr>
+<style>
+    textarea#veditor{
+        height:160px;
+        background-attachment: scroll,scroll;
+        background-image: url('/img/background/pinglun/a1.png'),url('/img/background/pinglun/a2.png');
+        background-repeat:no-repeat,no-repeat;
+        background-position:bottom left,bottom right;}
+    .vemoji{width:40px !important;height:auto !important;}
+    .vemojis i{width:50px !important;}
+    .vemoji{width:40px !important;}
+    p .vemoji{width:56px !important;}
+    .vsys,.markdown{display:none !important;}
+    .vimg{width:70px !important; height:70px !important;}
+    /* .vnick{font-size:1.1em !important;} */
+</style>
+<div id="v_pl_s"></div>
+<div id="vcomments" style="width:90%;"></div>
+<script>
+    let v_pl_a=["a"];
+    let v_pl_b={
+        "3.16":["mqsr"],
+        "10.31":["wsj"],
+        "11.1":["wsj"],
+
+        "2022.2.15":["tym","tye"],//元宵节
+    };
+    let v_pl_c=new Date().getMonth()+1+"."+new Date().getDate();
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_c=new Date().getFullYear()+"."+v_pl_c;
+    if(v_pl_b[v_pl_c]){v_pl_a=v_pl_b[v_pl_c];}
+    v_pl_b=new Date().getTime();
+    v_pl_b=Math.floor(v_pl_b/1000/60/60);
+    v_pl_b=v_pl_b%v_pl_a.length;
+    v_pl_b=v_pl_a[v_pl_b];
+    v_pl_b="/img/background/pinglun/"+v_pl_b;
+    document.getElementById("v_pl_s").innerHTML = "<style>textarea#veditor{background-image: url('"+v_pl_b+"1.png'),url('"+v_pl_b+"2.png');}</style>";
+
+    new Valine({
+        el: '#vcomments',
+        appId: 'mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz',
+        appKey: 'YCCregxILHitovzescjVs4X1',
+        Array: ['nick'],
+        avatar: 'mp',
+        visitor: true,
+        placeholder: "说点啥？&#13;&#10;(本站暂时没有回复通知功能)",
+
+        emojiCDN: 'https://limaoqiu.com/img/i/em/',
+        emojiMaps: {
+            "k02": "kmj/02.jpg",
+            "k07": "kmj/07.jpg",
+            "k13": "kmj/13.jpg",
+            "k15": "kmj/15.jpg",
+            "k16": "kmj/16.jpg",
+            "k18": "kmj/18.jpg",
+            "k21": "kmj/21.jpg",
+            "k22": "kmj/22.jpg",
+            "k25": "kmj/25.jpg",
+            "k28": "kmj/28.jpg",
+            "k29": "kmj/29.jpg",
+            "k31": "kmj/31.jpg",
+            "k34": "kmj/34.jpg",
+            "k38": "kmj/38.jpg",
+            "k41": "kmj/41.jpg",
+            "k44": "kmj/44.jpg",
+            "k47": "kmj/47.jpg",
+            "k53": "kmj/53.jpg",
+            "k58": "kmj/58.jpg",
+            "k60": "kmj/60.jpg",
+            "k70": "kmj/70.jpg",
+            "k75": "kmj/75.jpg",
+            "k78": "kmj/78.jpg",
+            "k79": "kmj/79.jpg",
+            "k80": "kmj/80.jpg",
+            "m01": "mq/01.jpg",
+            "m02": "mq/02.jpg",
+            "m03": "mq/03.jpg",
+            "m04": "mq/04.jpg",
+            "m05": "mq/05.jpg",
+            "m06": "mq/06.jpg",
+            "m07": "mq/07.jpg",
+            "m09": "mq/09.jpg",
+            "m10": "mq/10.jpg",
+            "m11": "mq/11.jpg",
+            "m12": "mq/12.jpg",
+            "m13": "mq/13.jpg",
+            "m14": "mq/14.jpg",
+            "m17": "mq/17.jpg",
+            "m18": "mq/18.jpg",
+            "m20": "mq/20.jpg",
+            "q03": "mq/b03.jpg",
+            "q04": "mq/b04.jpg",
+            "q06": "mq/b06.jpg",
+            "e01": "mq/c01.jpg",
+            "e02": "mq/c02.jpg",
+            "e03": "mq/c03.jpg",
+            "e04": "mq/c04.jpg",
+            "e05": "mq/c05.jpg",
+            "e06": "mq/c06.jpg",
+            "e07": "mq/c07.jpg",
+            "e08": "mq/c08.jpg",
+            "e09": "mq/c09.jpg",
+            "e10": "mq/c10.jpg",
+        }
+    })
+</script>
+
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    <a href="/maoqiu"><img class="tubiao" src="/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a=["me"];
+
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节
+"2022.1.31":["jr/ch"],
+"2022.2.1":["jr/ch"],
+"2022.2.2":["jr/ch"],
+"2022.2.3":["jr/ch"],
+"2022.2.4":["jr/ch"],
+"2022.2.5":["jr/ch"],
+"2022.2.6":["jr/ch"],
+
+//端午节
+"2022.6.3":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="https://李猫球.com/biji/zufang"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='https://李猫球.com/biji/zufang')\">https://李猫球.com/biji/zufang</a>";
+    
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/biji/zufang\" class=\"leancloud_visitors\" data-flag-title=\"租房笔记\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+
+
+
+
+</div>
+
+<style>
+    #nav {position: fixed;top:0%;width: 100%;height:50px;background-color: #ffffff70;z-index:1002;}
+    #nav:hover{background-color: #ffffffaa;}
+    #nav>a,.nav_drop {color: #333;font-weight: 600;height: 50px;padding: 18px 1% 5px;line-height: 20px;text-decoration: none;}
+    #nav>a:hover {color: #0085A1;}
+    #nav>a:not(.nav_a) {float: left;font-size: 18px;}
+    .nav_a,.nav_drop {float: right;font-size: 12px;}
+    #nav>a:not([href]) {padding: 18px 0.2% 5px;}
+
+    .nav_drop_btn {color:#333;font-weight: 600;}
+    .nav_drop {position: relative;display: inline-block;z-index:1002;}
+    .nav_drop_down {display: none;position: absolute;left:-5%;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;}
+    .nav_drop_down a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop:hover .nav_drop_down {display: block;}
+    .nav_drop:hover .nav_drop_btn {color:#369;}
+
+    .nav_drop_btn2 {color: #444;font-weight: 600;}
+    .nav_drop2 {position: relative;display: inline-block;z-index:1002;width:100%;}
+    .nav_drop_down2 {display: none;position: absolute;right:100%;top:0;background-color: #fff;min-width: 160px;box-shadow: 0px 8px 16px 0px #00000033;z-index:1002;}
+    .nav_drop_down2 a {color: #444;padding: 12px 16px;text-decoration: none;display: block;}
+    .nav_drop_down2 a:hover {background-color: #ddd;color:#0085A1;}
+    .nav_drop2:hover .nav_drop_down2 {display: block;}
+    .nav_drop2:hover .nav_drop_btn2 {color:#369;}
+</style>
+
+<div id="nav">
+    <a href="/i">猫球博客</a><a>/</a><a href="/zatan">笔记</a>
+    <a href="/i" class="nav_a">返回主页　</a><div class="nav_drop"><a class="nav_drop_btn">更多 v</a><div class="nav_drop_down"><a href="/wangzhi">网址收藏</a><a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的账号</a><a href="/yishijie">异世界猫球</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/private">私人网页</a><a href="/lab">实验室</a></div></div></div></div></div>
+
+<script>
+$(document).ready(function() {
+let scroll_n=0;
+$(function() {
+    $(window).scroll(function() {
+        let scroll_i=$(this).scrollTop();
+        if (scroll_i > scroll_n){
+         $('#nav').fadeOut();
+        } else{
+            $('#nav').fadeIn();
+        }
+        scroll_n=scroll_i;
+    });
+});
+});
+</script>
+
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="biji/zufang" class="leancloud_visitors" data-flag-title="租房笔记">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

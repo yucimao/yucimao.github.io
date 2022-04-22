@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。">
+<meta name="keywords" content="猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界">
+
+<title>猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/all.css">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
+    加载中……<small>（如果长时间停留在此处，请尝试刷新页面）</small>
+</span><div id="dw_hd_r" onclick="dw_x()" class="bukexuanzhong">×</div></div></div></div>
+
+<script>
+    document.getElementById('dw_zz').style.display = "none";
+    document.getElementById('dw_x').style.display = "none";
+    let dwb = "";
+    let dwd = "0";
+    function dw() {
+        document.getElementById('dw_x').style.display = "";
+        document.getElementById('dw_zz').style.display = "";
+        document.getElementById('dw_zz').scrollTop=0;
+        if(isNaN(dwb)){} else {
+            dwb="<iframe src=\"/i/zk/" + dwb + "\" frameborder=\"0\" width=\"100%\" height=\"100\" id=\"／／" + dwb + "\"></iframe><p id=\"／" + dwb + "／\">加载中..</p>"
+        }
+        if(dwd!="0"){
+            document.getElementById("dwd").innerHTML = "<h3>"+dwd+"</h3>";
+            dwd="0";
+        }else{
+            document.getElementById("dwd").innerHTML = "";
+        }
+        dwb=dwb.replace(/［引号］/g, "\"");
+        document.getElementById("dwc").innerHTML = dwb;
+    }
+    function dw_x() {
+        document.getElementById("dwc").innerHTML = "";
+        document.getElementById("dwd").innerHTML = "";
+        document.getElementById('dw_zz').style.display = "none";
+        document.getElementById('dw_x').style.display = "none";
+    }
+</script>
+
+<div id="right_anchor"></div>
+
+</head>
+
+<body>
+
+
+
+<link rel="prefetch" href="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"/>
+<link rel="prefetch" href="/css/all.css"/>
+<link rel="prefetch" href="/img/nav/index.jpg"/>
+<link rel="prefetch" href="/5/rili/ib.js"/>
+<style>
+.jrmqbk{
+position: relative;
+width: 10px;
+height: 10px;
+animation: jrmqbk_a 1s infinite;
+}
+@keyframes jrmqbk_a{
+0% {left:0px}
+70%{left: 10px;}
+100%{left: 0px;}
+}
+[onclick]{cursor:pointer;}
+</style>
+<style>
+body {
+    background: #1E5799;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 600px;
+}
+
+div {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.camera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.camera.-x {
+    transform: rotateX(-30deg);
+}
+.camera.-y {
+    transform: rotateY(0deg);
+}
+.under-sea {
+    transform: scale3d(0.4, 0.4, 0.4);
+}
+
+.blowing-bubbles .bubble:nth-child(1) {
+    left: 23px;
+    width: 23px;
+    height: 23px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6106ms -9153ms linear infinite;
+            animation: bubbles 6106ms -9153ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(2) {
+    left: -32px;
+    width: 28px;
+    height: 28px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 3585ms -5017ms linear infinite;
+            animation: bubbles 3585ms -5017ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(3) {
+    left: 33px;
+    width: 21px;
+    height: 21px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6279ms -4582ms linear infinite;
+            animation: bubbles 6279ms -4582ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(4) {
+    left: -14px;
+    width: 27px;
+    height: 27px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4375ms -9344ms linear infinite;
+            animation: bubbles 4375ms -9344ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(5) {
+    left: 8px;
+    width: 27px;
+    height: 27px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6762ms -3430ms linear infinite;
+            animation: bubbles 6762ms -3430ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(6) {
+    left: 24px;
+    width: 29px;
+    height: 29px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4253ms -9852ms linear infinite;
+            animation: bubbles 4253ms -9852ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(7) {
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 3472ms -5024ms linear infinite;
+            animation: bubbles 3472ms -5024ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(8) {
+    left: -24px;
+    width: 18px;
+    height: 18px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 3302ms -1137ms linear infinite;
+            animation: bubbles 3302ms -1137ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(9) {
+    left: -27px;
+    width: 30px;
+    height: 30px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4209ms -7643ms linear infinite;
+            animation: bubbles 4209ms -7643ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(10) {
+    left: -4px;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 3431ms -9707ms linear infinite;
+            animation: bubbles 3431ms -9707ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(11) {
+    left: 11px;
+    width: 25px;
+    height: 25px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4729ms -179ms linear infinite;
+            animation: bubbles 4729ms -179ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(12) {
+    left: 24px;
+    width: 27px;
+    height: 27px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4306ms -716ms linear infinite;
+            animation: bubbles 4306ms -716ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(13) {
+    left: 17px;
+    width: 17px;
+    height: 17px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6193ms -7397ms linear infinite;
+            animation: bubbles 6193ms -7397ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(14) {
+    left: -8px;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6044ms -3339ms linear infinite;
+            animation: bubbles 6044ms -3339ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(15) {
+    left: -6px;
+    width: 29px;
+    height: 29px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5819ms -4415ms linear infinite;
+            animation: bubbles 5819ms -4415ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(16) {
+    left: -35px;
+    width: 23px;
+    height: 23px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5598ms -3060ms linear infinite;
+            animation: bubbles 5598ms -3060ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(17) {
+    left: 30px;
+    width: 21px;
+    height: 21px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6680ms -6411ms linear infinite;
+            animation: bubbles 6680ms -6411ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(18) {
+    left: -4px;
+    width: 29px;
+    height: 29px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 3154ms -6067ms linear infinite;
+            animation: bubbles 3154ms -6067ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(19) {
+    left: 5px;
+    width: 19px;
+    height: 19px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4808ms -5375ms linear infinite;
+            animation: bubbles 4808ms -5375ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(20) {
+    left: -3px;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5959ms -2904ms linear infinite;
+            animation: bubbles 5959ms -2904ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(21) {
+    left: 38px;
+    width: 23px;
+    height: 23px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5140ms -794ms linear infinite;
+            animation: bubbles 5140ms -794ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(22) {
+    left: 5px;
+    width: 11px;
+    height: 11px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5262ms -2023ms linear infinite;
+            animation: bubbles 5262ms -2023ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(23) {
+    left: 31px;
+    width: 23px;
+    height: 23px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5425ms -2679ms linear infinite;
+            animation: bubbles 5425ms -2679ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(24) {
+    left: -17px;
+    width: 21px;
+    height: 21px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6301ms -3939ms linear infinite;
+            animation: bubbles 6301ms -3939ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(25) {
+    left: 7px;
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5359ms -2474ms linear infinite;
+            animation: bubbles 5359ms -2474ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(26) {
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4361ms -2128ms linear infinite;
+            animation: bubbles 4361ms -2128ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(27) {
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4973ms -296ms linear infinite;
+            animation: bubbles 4973ms -296ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(28) {
+    left: 38px;
+    width: 14px;
+    height: 14px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4364ms -1097ms linear infinite;
+            animation: bubbles 4364ms -1097ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(29) {
+    left: 21px;
+    width: 30px;
+    height: 30px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5427ms -607ms linear infinite;
+            animation: bubbles 5427ms -607ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(30) {
+    left: -3px;
+    width: 25px;
+    height: 25px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5127ms -7656ms linear infinite;
+            animation: bubbles 5127ms -7656ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(31) {
+    left: -38px;
+    width: 14px;
+    height: 14px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6692ms -9254ms linear infinite;
+            animation: bubbles 6692ms -9254ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(32) {
+    left: -37px;
+    width: 23px;
+    height: 23px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6179ms -1891ms linear infinite;
+            animation: bubbles 6179ms -1891ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(33) {
+    left: 36px;
+    width: 22px;
+    height: 22px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4314ms -968ms linear infinite;
+            animation: bubbles 4314ms -968ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(34) {
+    left: -2px;
+    width: 27px;
+    height: 27px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 5514ms -3265ms linear infinite;
+            animation: bubbles 5514ms -3265ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(35) {
+    left: 33px;
+    width: 17px;
+    height: 17px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4934ms -2177ms linear infinite;
+            animation: bubbles 4934ms -2177ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(36) {
+    left: -32px;
+    width: 18px;
+    height: 18px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6397ms -2939ms linear infinite;
+            animation: bubbles 6397ms -2939ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(37) {
+    left: -1px;
+    width: 19px;
+    height: 19px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6633ms -9572ms linear infinite;
+            animation: bubbles 6633ms -9572ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(38) {
+    left: -36px;
+    width: 25px;
+    height: 25px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 4369ms -6643ms linear infinite;
+            animation: bubbles 4369ms -6643ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(39) {
+    left: 21px;
+    width: 13px;
+    height: 13px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 6395ms -8899ms linear infinite;
+            animation: bubbles 6395ms -8899ms linear infinite;
+}
+.blowing-bubbles .bubble:nth-child(40) {
+    left: -5px;
+    width: 22px;
+    height: 22px;
+    border-top: 1px solid #AFD2F7;
+    border-radius: 100%;
+    -webkit-animation: bubbles 3049ms -3137ms linear infinite;
+            animation: bubbles 3049ms -3137ms linear infinite;
+}
+
+@-webkit-keyframes bubbles {
+    0% {
+    transform: translateY(400px);
+    }
+    100% {
+    transform: translateY(-1000px);
+    }
+}
+
+@keyframes bubbles {
+    0% {
+    transform: translateY(400px);
+    }
+    100% {
+    transform: translateY(-1000px);
+    }
+}
+.fish-body .scale {
+    position: static;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 50px 100px;
+    -webkit-animation: fishColor 1000ms linear infinite alternate;
+            animation: fishColor 1000ms linear infinite alternate;
+}
+.fish-body .scale.-top.-front {
+    transform: scale(1, 1) skewX(4.5deg) rotateY(-11deg) rotateX(23deg) translate(1.5px, 2.5px);
+}
+.fish-body .scale.-top.-back {
+    transform: scale(-1, 1) skewX(4.5deg) rotateY(-11deg) rotateX(23deg) translate(1.5px, 2.5px);
+}
+.fish-body .scale.-bottom.-front {
+    transform: scale(1, -1) skewX(4.5deg) rotateY(-11deg) rotateX(23deg) translate(1.5px, 2.5px);
+}
+.fish-body .scale.-bottom.-back {
+    transform: scale(-1, -1) skewX(4.5deg) rotateY(-11deg) rotateX(23deg) translate(1.5px, 2.5px);
+}
+.fish-body > .half {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 100px;
+}
+.fish-body > .half.-left {
+    transform: translateZ(-1px);
+}
+.fish-body > .half.-left .scale.-top.-front {
+    -webkit-animation-delay: -200ms;
+            animation-delay: -200ms;
+}
+.fish-body > .half.-left .scale.-top.-back {
+    -webkit-animation-delay: -400ms;
+            animation-delay: -400ms;
+}
+.fish-body > .half.-left .scale.-bottom.-front {
+    -webkit-animation-delay: -600ms;
+            animation-delay: -600ms;
+}
+.fish-body > .half.-left .scale.-bottom.-back {
+    -webkit-animation-delay: -800ms;
+            animation-delay: -800ms;
+}
+.fish-body > .half.-right {
+    transform: scaleZ(-1) translateZ(-1px);
+}
+.fish-body > .half.-right .scale.-top.-front {
+    -webkit-animation-delay: -1000ms;
+            animation-delay: -1000ms;
+}
+.fish-body > .half.-right .scale.-top.-back {
+    -webkit-animation-delay: -1200ms;
+            animation-delay: -1200ms;
+}
+.fish-body > .half.-right .scale.-bottom.-front {
+    -webkit-animation-delay: -1400ms;
+            animation-delay: -1400ms;
+}
+.fish-body > .half.-right .scale.-bottom.-back {
+    -webkit-animation-delay: -1600ms;
+            animation-delay: -1600ms;
+}
+
+.fish-tail {
+    top: 10px;
+    left: -30px;
+    transform-origin: 100% 50%;
+    -webkit-animation: fishMotion 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+            animation: fishMotion 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+}
+.fish-tail > .scale {
+    position: static;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 40px 30px;
+    -webkit-animation: fishColor 1000ms linear infinite alternate;
+            animation: fishColor 1000ms linear infinite alternate;
+}
+.fish-tail > .scale.-top {
+    transform: scale(-1, 1);
+}
+.fish-tail > .scale.-bottom {
+    transform: scale(-1, -1);
+    -webkit-animation-delay: -200ms;
+            animation-delay: -200ms;
+}
+
+.swiming-fishes .rotate {
+    width: 400px;
+    transform-origin: 0 0;
+    -webkit-animation: rotateY 10000ms linear infinite;
+            animation: rotateY 10000ms linear infinite;
+}
+.swiming-fishes .swim:nth-child(1) .rotate {
+    width: 401px;
+    -webkit-animation-delay: -9466ms;
+            animation-delay: -9466ms;
+    -webkit-animation-duration: 8663ms;
+            animation-duration: 8663ms;
+}
+.swiming-fishes .swim:nth-child(1) .depth {
+    transform: translateY(-539px);
+}
+.swiming-fishes .swim:nth-child(1) .shadow {
+    transform: translate(-50px, 739px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(1) .fish {
+    -webkit-animation-delay: -1236ms;
+            animation-delay: -1236ms;
+}
+.swiming-fishes .swim:nth-child(1) .fish-tail {
+    -webkit-animation-delay: -936ms;
+            animation-delay: -936ms;
+}
+.swiming-fishes .swim:nth-child(2) .rotate {
+    width: 376px;
+    -webkit-animation-delay: -1164ms;
+            animation-delay: -1164ms;
+    -webkit-animation-duration: 9696ms;
+            animation-duration: 9696ms;
+}
+.swiming-fishes .swim:nth-child(2) .depth {
+    transform: translateY(-478px);
+}
+.swiming-fishes .swim:nth-child(2) .shadow {
+    transform: translate(-50px, 678px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(2) .fish {
+    -webkit-animation-delay: -768ms;
+            animation-delay: -768ms;
+}
+.swiming-fishes .swim:nth-child(2) .fish-tail {
+    -webkit-animation-delay: -468ms;
+            animation-delay: -468ms;
+}
+.swiming-fishes .swim:nth-child(3) .rotate {
+    width: 477px;
+    -webkit-animation-delay: -4868ms;
+            animation-delay: -4868ms;
+    -webkit-animation-duration: 13874ms;
+            animation-duration: 13874ms;
+}
+.swiming-fishes .swim:nth-child(3) .depth {
+    transform: translateY(-630px);
+}
+.swiming-fishes .swim:nth-child(3) .shadow {
+    transform: translate(-50px, 830px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(3) .fish {
+    -webkit-animation-delay: -1359ms;
+            animation-delay: -1359ms;
+}
+.swiming-fishes .swim:nth-child(3) .fish-tail {
+    -webkit-animation-delay: -1059ms;
+            animation-delay: -1059ms;
+}
+.swiming-fishes .swim:nth-child(4) .rotate {
+    width: 260px;
+    -webkit-animation-delay: -6965ms;
+            animation-delay: -6965ms;
+    -webkit-animation-duration: 10951ms;
+            animation-duration: 10951ms;
+}
+.swiming-fishes .swim:nth-child(4) .depth {
+    transform: translateY(-129px);
+}
+.swiming-fishes .swim:nth-child(4) .shadow {
+    transform: translate(-50px, 329px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(4) .fish {
+    -webkit-animation-delay: -1779ms;
+            animation-delay: -1779ms;
+}
+.swiming-fishes .swim:nth-child(4) .fish-tail {
+    -webkit-animation-delay: -1479ms;
+            animation-delay: -1479ms;
+}
+.swiming-fishes .swim:nth-child(5) .rotate {
+    width: 608px;
+    -webkit-animation-delay: -7300ms;
+            animation-delay: -7300ms;
+    -webkit-animation-duration: 13573ms;
+            animation-duration: 13573ms;
+}
+.swiming-fishes .swim:nth-child(5) .depth {
+    transform: translateY(-244px);
+}
+.swiming-fishes .swim:nth-child(5) .shadow {
+    transform: translate(-50px, 444px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(5) .fish {
+    -webkit-animation-delay: -1127ms;
+            animation-delay: -1127ms;
+}
+.swiming-fishes .swim:nth-child(5) .fish-tail {
+    -webkit-animation-delay: -827ms;
+            animation-delay: -827ms;
+}
+.swiming-fishes .swim:nth-child(6) .rotate {
+    width: 376px;
+    -webkit-animation-delay: -7446ms;
+            animation-delay: -7446ms;
+    -webkit-animation-duration: 13114ms;
+            animation-duration: 13114ms;
+}
+.swiming-fishes .swim:nth-child(6) .depth {
+    transform: translateY(-572px);
+}
+.swiming-fishes .swim:nth-child(6) .shadow {
+    transform: translate(-50px, 772px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(6) .fish {
+    -webkit-animation-delay: -1956ms;
+            animation-delay: -1956ms;
+}
+.swiming-fishes .swim:nth-child(6) .fish-tail {
+    -webkit-animation-delay: -1656ms;
+            animation-delay: -1656ms;
+}
+.swiming-fishes .swim:nth-child(7) .rotate {
+    width: 493px;
+    -webkit-animation-delay: -4122ms;
+            animation-delay: -4122ms;
+    -webkit-animation-duration: 10752ms;
+            animation-duration: 10752ms;
+}
+.swiming-fishes .swim:nth-child(7) .depth {
+    transform: translateY(-630px);
+}
+.swiming-fishes .swim:nth-child(7) .shadow {
+    transform: translate(-50px, 830px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(7) .fish {
+    -webkit-animation-delay: -726ms;
+            animation-delay: -726ms;
+}
+.swiming-fishes .swim:nth-child(7) .fish-tail {
+    -webkit-animation-delay: -426ms;
+            animation-delay: -426ms;
+}
+.swiming-fishes .swim:nth-child(8) .rotate {
+    width: 231px;
+    -webkit-animation-delay: -9842ms;
+            animation-delay: -9842ms;
+    -webkit-animation-duration: 11109ms;
+            animation-duration: 11109ms;
+}
+.swiming-fishes .swim:nth-child(8) .depth {
+    transform: translateY(-642px);
+}
+.swiming-fishes .swim:nth-child(8) .shadow {
+    transform: translate(-50px, 842px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(8) .fish {
+    -webkit-animation-delay: -1625ms;
+            animation-delay: -1625ms;
+}
+.swiming-fishes .swim:nth-child(8) .fish-tail {
+    -webkit-animation-delay: -1325ms;
+            animation-delay: -1325ms;
+}
+.swiming-fishes .swim:nth-child(9) .rotate {
+    width: 538px;
+    -webkit-animation-delay: -2138ms;
+            animation-delay: -2138ms;
+    -webkit-animation-duration: 9696ms;
+            animation-duration: 9696ms;
+}
+.swiming-fishes .swim:nth-child(9) .depth {
+    transform: translateY(-372px);
+}
+.swiming-fishes .swim:nth-child(9) .shadow {
+    transform: translate(-50px, 572px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(9) .fish {
+    -webkit-animation-delay: -1630ms;
+            animation-delay: -1630ms;
+}
+.swiming-fishes .swim:nth-child(9) .fish-tail {
+    -webkit-animation-delay: -1330ms;
+            animation-delay: -1330ms;
+}
+.swiming-fishes .swim:nth-child(10) .rotate {
+    width: 299px;
+    -webkit-animation-delay: -9821ms;
+            animation-delay: -9821ms;
+    -webkit-animation-duration: 13835ms;
+            animation-duration: 13835ms;
+}
+.swiming-fishes .swim:nth-child(10) .depth {
+    transform: translateY(-551px);
+}
+.swiming-fishes .swim:nth-child(10) .shadow {
+    transform: translate(-50px, 751px) rotateX(90deg);
+}
+.swiming-fishes .swim:nth-child(10) .fish {
+    -webkit-animation-delay: -2012ms;
+            animation-delay: -2012ms;
+}
+.swiming-fishes .swim:nth-child(10) .fish-tail {
+    -webkit-animation-delay: -1712ms;
+            animation-delay: -1712ms;
+}
+
+.fish-component {
+    top: -50px;
+    right: 0;
+    transform: rotateY(90deg) translateX(-100px);
+}
+.fish-component .fish {
+    transform-origin: 100px 50px;
+    -webkit-animation: fishMotion 500ms -200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+            animation: fishMotion 500ms -200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+}
+.fish-component .shadow {
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(ellipse at center, rgba(25, 44, 84, 0.2) 10%, rgba(14, 71, 145, 0) 50%);
+}
+
+@-webkit-keyframes rotateX {
+    0% {
+    transform: rotateX(0deg);
+    }
+    100% {
+    transform: rotateX(360deg);
+    }
+}
+
+@keyframes rotateX {
+    0% {
+    transform: rotateX(0deg);
+    }
+    100% {
+    transform: rotateX(360deg);
+    }
+}
+@-webkit-keyframes rotateY {
+    0% {
+    transform: rotateY(0deg);
+    }
+    100% {
+    transform: rotateY(360deg);
+    }
+}
+@keyframes rotateY {
+    0% {
+    transform: rotateY(0deg);
+    }
+    100% {
+    transform: rotateY(360deg);
+    }
+}
+@-webkit-keyframes rotateZ {
+    0% {
+    transform: rotateZ(0deg);
+    }
+    100% {
+    transform: rotateZ(360deg);
+    }
+}
+@keyframes rotateZ {
+    0% {
+    transform: rotateZ(0deg);
+    }
+    100% {
+    transform: rotateZ(360deg);
+    }
+}
+@-webkit-keyframes fishColor {
+    0% {
+    border-color: transparent transparent #6C99C6 transparent;
+    }
+    100% {
+    border-color: transparent transparent #1A5AB6 transparent;
+    }
+}
+@keyframes fishColor {
+    0% {
+    border-color: transparent transparent #6C99C6 transparent;
+    }
+    100% {
+    border-color: transparent transparent #1A5AB6 transparent;
+    }
+}
+@-webkit-keyframes fishMotion {
+    0% {
+    transform: rotateY(20deg);
+    }
+    100% {
+    transform: rotateY(-20deg);
+    }
+}
+@keyframes fishMotion {
+    0% {
+    transform: rotateY(20deg);
+    }
+    100% {
+    transform: rotateY(-20deg);
+    }
+}
+</style>
+
+<div class="camera -x">
+    <div class="camera -y">
+    <div class="camera -z">
+        <div class="under-sea">
+        <div class="cursor_pointer" style="bottom:1%;font-size:3em;z-index:10000;" onclick="window.parent.location.href='/i'">
+            <a onclick="window.parent.location.href='/i'" style="color:#fff;">点击进入<br>猫球博客</a>
+        </div>
+        
+        <div class="blowing-bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+        <div class="swiming-fishes">
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="swim">
+            <div class="depth">
+                <div class="rotate">
+                <div class="fish-component">
+                    <div class="shadow"></div>
+                    <div class="fish">
+                    <div class="fish-body">
+                        <div class="half -left">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                        <div class="half -right">
+                        <div class="scale -top -front"></div>
+                        <div class="scale -top -back"></div>
+                        <div class="scale -bottom -front"></div>
+                        <div class="scale -bottom -back"></div>
+                        </div>
+                    </div>
+                    <div class="fish-tail">
+                        <div class="scale -top"></div>
+                        <div class="scale -bottom"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+</body>
+
+
+
+<style>.tpfd_bigimg{width:600px;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:1004;border: 10px solid #fff;}.tpfd_mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 1003;transition:all 1s;display: none}.tpfd_mask:hover{cursor:zoom-out}.tpfd_mask>img{position: fixed;right:10px;top: 10px;width: 60px;}.tpfd_mask>img:hover{cursor:pointer}.tpfd{cursor:zoom-in;box-shadow: 2px 2px 5px #888888;}</style><script>let tpfd_a=$(window).height();let tpfd_b=$(window).width();if(tpfd_a>tpfd_b){tpfd_a="auto";}else{tpfd_b="auto";}function zoom(tpfd_mask, tpfd_bigimg, tpfd) {this.tpfd_bigimg = tpfd_bigimg; this.tpfd = tpfd; this.tpfd_mask = tpfd_mask}zoom.prototype = {init: function () {let that = this; this.tpfdClick();this.tpfd_maskClick();this.mouseWheel()}, tpfdClick: function () {let that = this;$("." + that.tpfd).click(function () {$("." + that.tpfd_bigimg).css({ height: tpfd_a, width: tpfd_b});$("." + that.tpfd_mask).fadeIn(); $("." + that.tpfd_bigimg).attr("src", $(this).attr("src")).fadeIn()})},tpfd_maskClick: function () {let that = this;$("." + that.tpfd_mask).click(function () {$("." + that.tpfd_bigimg).fadeOut();$("." + that.tpfd_mask).fadeOut()})},mouseWheel: function () {function mousewheel(obj, upfun, downfun) {if (document.attachEvent) {obj.attachEvent("onmousewheel", scrollFn)}else {if (document.addEventListener) {obj.addEventListener("mousewheel", scrollFn, false);obj.addEventListener("DOMMouseScroll", scrollFn, false)}}function scrollFn(e) {let ev = e || window.event;let dir = ev.wheelDelta || ev.detail;if (ev.preventDefault) {ev.preventDefault()}else { ev.returnValue = false }if (dir >0 || dir >0) { upfun() } else { downfun() }}}let that = this;mousewheel($("." + that.tpfd_bigimg)[0],function () {if ($("." + that.tpfd_bigimg).innerWidth() > $("body").width() && $("." + that.tpfd_bigimg).innerHeight() > $("body").height()) {notyf.alert("不能再放大了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() * 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() * 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })},function () {if ($("." + that.tpfd_bigimg).innerWidth() < 90) {notyf.alert("不能再缩小了");return}if ($("." + that.tpfd_bigimg).innerHeight() < 90) {notyf.alert("不能再缩小了");return}let zoomHeight = $("." + that.tpfd_bigimg).innerHeight() / 1.1;let zoomWidth = $("." + that.tpfd_bigimg).innerWidth() / 1.1;$("." + that.tpfd_bigimg).css({ height: zoomHeight + "px", width: zoomWidth + "px" })})}};$(function(){var obj = new zoom('tpfd_mask', 'tpfd_bigimg','tpfd');obj.init();})</script><img src="" alt="" class="tpfd_bigimg"><div class="tpfd_mask"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////8IX9KGAAAAFXRSTlMAEPAwwM/QgGCgIECwkHDg31BvXz+hLVJfAAAEeUlEQVR42ryW25asIAxEuQqoqO1p/v9Xj2ueRNAygZl6mlndTW1JKlHwpL8umENbStYciu6rxR/p6w7bqrZ5/20K7Ux6lvpFCB239Ep2H/u7j7tNBNld9rUPiSoV+13DNCeWwtjH3iS25nYEGVKTXGMv7Co1Sv1ruf0NHG5+BCANezC4+zOjm7Jj9eTicMvpedU3N+Zuur2xu0EZJOP6VbWtvQTYvsqwkcsQa8/+4w41LmsqRSxDqNhP4rVq1+Ao5Z/LKurm8RXe+9seSZpW0IrAH8YIy1372EqWf5TsJTpfCRj+6iMatND74AI9NO4zPRAJAsgOWZJ2YmRNj35nfkD38+RzgodIS5X5a9FJ/m0YDfBnS79rRIf8+fJv2mACX+pHoOrZ3oB/xywYUIDW/OMJUxmvowKErZLn7bjJR0BVfNw9Cu6xA/H+ad9M48MIiO1eeNGF+wtY6wXQ7QCjur0CAxKoLeXNZJ/NvKOkhex8kAAPpngBe8jWps05CfImArrav+8JtHp4//rUgzCCTWGLTYb9Dy2ilKmGPdZ6I+MrCbB/CmDh+NoWmMGPAIGG83TNvMoWnEQpmd4SaAX3vq/cdkRLwACCzB9t1DUVTbKh30hVEmB/A197bBkNcHRGAL403Jw1FjWIoGqAAPiXGq41sGANAgKqv1iuD3waDUIQCLA/rMF2SfksKATYH9dgzLtyESQCsn8Ze5+HXAsaAdm/iF0ALYAIWP5CZrNCghYABMAfNkHWg07QCYA/fDeUwoM5jAiAP5rGU/4Pg4Dhnz10fh0MAoZ/XnZzbggaAfbHMYgngEEQCIA/0DmHBuxvQID8MYACAIAA+GOA7G8aAd9fDBgAEzT4C9MfwPYHwP58Atu7CTFB/xgCAg6AJftjAgzQdRRbxijuu4wsfRm1ruPhf/Vmt6wgCEVhtiKmpuTx+P6vWjPdBc0HiELcVrNWk9re6wf2Bfw7PjiQGIF9AQcSGMkQH/YFHslgKGV8YADPoR3GcsYHBjiWw2KC+MCAFxNYzQifGPBqBssp4BMDvgRGWM8BHxjwem4/F6U1Bp8ZsEABEg3gEwP+BRYSqRifGbBIpSzKdA/GZwbuc9iECpW9D58ZzOQOLoFSrdI+fGbQoFTrF5Dd48dnBs5bvcI4y/XKePGZAcn1wYbF4MNnBncyLIItG2lcfGbQjGDZkGnlJtu0RAxtTQv3s8TYdjJrq28xSTA9xth2asrsHE8BxmVd1u3l5rV7hQ6+Vy+075XkDTDAHWClvgiHUvbCEEudMZ7iQabyUa6LwmxG6o3zlQ80lo90OqHW7miotYuN1YrJGev92wEfGGQKNoMnggyaLTXanWrpGIj2JxZUBvmVeP/xgsMGBYfEike3SVgv7oEVj/SSC3GQzdvKs23Oms//t0+sUPPJV3RyOqbt2g8dFJ1SywFc9dqx6pV+lsNlN3v77bpf+cJjBZXPCkqv7wabiYE3i6jsp51tKDp8+XOr38vZ/fOpv1s/uD0Z/LNjql/H7Lt51/+nROwnWnGkAjUnlb8AAAAASUVORK5CYII=" alt=""></div>
+
+<script>
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
+
+//     let target = document.querySelectorAll('a');
+//     if (target[0]) {
+//     for (let i = 0; i < target.length; i++) {
+//         if (target[i]["target"].indexOf("_blank") != -1){
+//             if (target[i]["href"].indexOf("limaoqiu.com") != -1){}else{target[i].setAttribute('rel', 'noopener noreferrer');}
+//         }
+//     }
+// }
+let target = document.querySelectorAll('img');
+if (target[0]) {
+for (let i = 0; i < target.length; i++) {
+    if (target[i]["onerror"]){}else{
+            target[i].setAttribute('onerror', "this.src='/i/cj/1.jpg';this.onerror=null;");
+        }
+    }
+}
+    
+// window.onload=function(){
+// var _hmt = _hmt || [];
+// (function() {
+// var hm = document.createElement("script");
+// hm.src = "https://hm.baidu.com/hm.js?3a77ceb942e4c674c63bf2d250727e32";
+// var s = document.getElementsByTagName("script")[0]; 
+// s.parentNode.insertBefore(hm, s);
+// })();}
+</script>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea><script>let 制;function 复(){制=制.replace(/［换行］/g, "\n");notyf.confirm("已复制");document.getElementById('复制').value = 制;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}</script>
+
+<style>
+.GalMenu {
+margin:0;
+padding:0;
+display:none;
+position:fixed;
+z-index:2001;
+}
+.circle,.ring {
+height:300px;
+position:relative;
+width:300px;
+}
+.circle {
+margin:0 auto;
+}
+.ring {
+border-radius:50%;
+opacity:0;
+-webkit-transform-origin:50% 50%;
+-moz-transform-origin:50% 50%;
+transform-origin:50% 50%;
+-webkit-transform:scale(0.1) rotate(-270deg);
+-moz-transform:scale(0.1) rotate(-270deg);
+-transform:scale(0.1) rotate(-270deg);
+-webkit-transition:all 0.4s ease-out;
+-moz-transition:all 0.4s ease-out;
+transition:all 0.4s ease-out;
+}
+.open .ring {
+opacity:1;
+-webkit-transform:scale(1) rotate(0);
+-moz-transform:scale(1) rotate(0);
+-transform:scale(1) rotate(0);
+}
+.menuItem {
+border-radius:50%;
+color:#eeeeee;
+display:block;
+height:80px;
+line-height:80px;
+margin-left:-41px;
+margin-top:-41px;
+position:absolute;
+text-align:center;
+width:80px;
+background-size:80px;
+border:2px #b59494 solid;
+box-shadow:inset 0px 0px 80px #ffffff30;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff30;
+-moz-box-shadow:inset 0px 0px 80px #ffffff30;
+}
+.menuItem:hover {
+box-shadow:inset 0px 0px 80px #ffffff00;
+-webkit-box-shadow:inset 0px 0px 80px #ffffff00;
+-moz-box-shadow:inset 0px 0px 80px #ffffff00;
+}
+.ring a:nth-of-type(1) {
+background-image:url("/img/index/menuItem1.jpg");
+}
+.ring a:nth-of-type(2) {
+background-image:url("/img/index/menuItem2.jpg");
+}
+.ring a:nth-of-type(3) {
+background-image:url("/img/index/menuItem3.jpg");
+}
+.ring a:nth-of-type(4) {
+background-image:url("/img/index/menuItem4.jpg");
+}
+.ring a:nth-of-type(5) {
+background-image:url("/img/index/menuItem5.jpg");
+}
+.ring a:nth-of-type(6) {
+background-image:url("/img/index/menuItem6.jpg");
+}
+</style>
+
+<div class="GalMenu GalDropDown">
+<div class="circle" id="gal">
+<div class="ring">
+<a href="/i" class="menuItem"></a>
+<a href="/liuyan" class="menuItem"></a>
+<a href="/contactus" class="menuItem"></a>
+<a href="/maoqiu" class="menuItem"></a>
+<a href="/donate" class="menuItem"></a>
+<a href="/notice" class="menuItem"></a></div>
+</div>
+</div>
+<script>let items = document.querySelectorAll('.menuItem');for (let i = 0,l = items.length; i < l; i++) {items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"}$(document).ready(function() {$('html').GalMenu({'menu': 'GalDropDown'})});(function($) {let GalMenu = {defaults: {click_to_close: true,stay_open: false},init: function(options) {let o = options,$this = $(this);$this.each(function(i) {let $this = $(this),settings = $.extend({},GalMenu.defaults, o),$menu = $('.' + settings.menu);$this.on('mousedown',function(e) {if (e.which !== 3 && $(e.target).parents('.GalMenu').length < 1 && settings.click_to_close) {$this.find('.GalMenu').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none').find('.active').removeClass('active').next().stop(true, true).slideUp('normal')}});$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);}});$this.on('contextmenu',function(e) {e.preventDefault();e.stopPropagation();GalMenu.getCoords(e);$('.GalMenu_close_me').stop(true, false).animate({opacity: 0},{duration: 100,queue: false,complete: function() {$(this).css('display', 'none')}});let add = 150;let top = Coords.clientY - add,left = ($('html')[0] === e.target) ? Coords.clickX - add: Coords.clientX - add;let bodyHe= document.documentElement.clientHeight;let bodyWi = document.documentElement.clientWidth;if(top<0) top=0;if(bodyHe-Coords.clientY<150) top=bodyHe-300;if(left<0) left=0;if($('html')[0] === e.target){if(bodyWi-Coords.clickX<150) left=bodyWi-300} else {if(bodyWi-Coords.clientX<150) left=bodyWi-300};$menu.css({top: top + 'px',left: left + 'px',display: 'block'}).stop(true, false).animate({opacity: 1},{duration: 100,queue: false});if ($("#gal").hasClass("open")) {$(".circle").removeClass("open");$(".GalMenu").delay(400).hide(0);} else {$(".circle").addClass("open");$(".GalMenu").show();}})})},getCoords: function(e) {let evt = e ? e: window.event;let clickX = 0,clickY = 0;if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {clickX = evt.clientX + document.body.scrollLeft;clickY = evt.clientY + document.body.scrollTop};if ((evt.clientX || evt.clientY) && document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.scrollLeft != null) {clickX = evt.clientX + document.documentElement.scrollLeft;clickY = evt.clientY + document.documentElement.scrollTop};if (evt.pageX || evt.pageY) {clickX = evt.pageX;clickY = evt.pageY};return Coords = {clickX: clickX,clickY: clickY,clientX: evt.clientX,clientY: evt.clientY,screenX: evt.screenX,screenY: evt.screenY}}};$.fn.GalMenu = function(method, options) {if (GalMenu[method]) {return GalMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))} else if (typeof method === 'object' || !method) {return GalMenu.init.apply(this, arguments)} else {$.error('Method ' + method + ' does not exist')}}})(jQuery);String.prototype.removeWS = function() {return this.toString().replace(/\s/g, '')};String.prototype.pF = function() {return parseFloat(this)};Number.prototype.pF = function() {return parseFloat(this)};</script>
+
+<!-- <span id="i/3810860" class="leancloud_visitors" data-flag-title="">
+<em class="post-meta-item-text"></em>
+<i class="leancloud-visitors-count"></i>
+</span> -->
+
+</html>

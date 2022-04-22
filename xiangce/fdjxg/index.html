@@ -1,0 +1,22 @@
+<script>
+    var LocString = String(window.document.location.href);
+function GetQueryString(name) {
+    var rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+    if (tmp = rs) {
+        return decodeURI(tmp[2]);
+    }
+    return "";
+}
+
+var id=GetQueryString("t");
+var id2=GetQueryString("s");
+
+if(id2==""){id2="200";}
+
+var fdjc = "<script>$(function(){$('#0').imageLens({ borderSize:1,borderColor: '#fff', lensSize: "+id2+", imageSrc: '\/xiangce\/2\/3\/"+id+"' });})<\/script>";
+var fdjd = "<img id='0' src='\/xiangce\/2\/0\/" +id +".jpg'\/><br>";
+var fdje='<script src="\/js\/jquery.min.js" type="text\/javascript"><\/script><script src="\/xiangce\/2\/jquery.imageLens.js" type="text/javascript"><\/script>'
+
+document.write(fdje+fdjc+fdjd);
+
+</script>
