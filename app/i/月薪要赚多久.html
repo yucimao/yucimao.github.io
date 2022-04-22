@@ -2,21 +2,23 @@
 layout: page2
 title: 月薪要赚多久
 nav_text: 月薪要赚多久
-nav_url: 
+nav_url: <a href="/xiaogongju">小工具</a><a>/</a><a href="/xiaogongju/jiemen">解闷</a>
 permalink: app/yxyzdj
+pinglun: 1
 ---
 <span class="zhushi">本页数据均来自网络，具体数值可能有误，仅供娱乐不要当真。</span><br>
 <br>
 
 
 输入你的<b>月收入</b>：
-<input type="number" id="输入" autocomplete="off" onkeyup="a()" onclick="a()" min="0">元(人民币)<br>
+<input type="number" id="输入" autocomplete="off" onkeyup="a(d=1)" onclick="a(d=1)" min="0">元(人民币)<br>
 <br>
 
 <h3>选择一个：</h3>
 <div id="dy1"></div>
 <br>
 
+<a name="换算结果"></a>
 <div id="dy2"></div>
 
 <br><br><br><br><br>
@@ -120,6 +122,7 @@ permalink: app/yxyzdj
     }
     document.getElementById("dy1").innerHTML = dy1;
     let c="";
+    let d=0;
     function a(){     
         if(c!=""){
         let dy2="<h3>换算结果：</h3>";
@@ -131,7 +134,7 @@ permalink: app/yxyzdj
             else{
                 let 年=b[1]/输入/12;年=年+"";年=年.split(".")[0];年=年*1;
                 数=b[1];整数();
-                dy2+="月收入<small>"+输入+"元</small>的你只要工作<b>";if(年==0){dy2+="不到一";}else{数=年;整数();dy2+=数;}数=b[1];整数();dy2+="年</b>，就可以赚到<b>"+b[0]+"</b><sub>("+数+"元)</sub>啦。<br>";
+                dy2+="月收入<small>"+输入+"元</small>的你只要工作<b>";if(年==0){dy2+="1";}else{数=年+1;整数();dy2+=数;}数=b[1];整数();dy2+="年</b>，就可以赚到<b>"+b[0]+"</b><sub>("+数+"元)</sub>啦。<br>";
                 if(datb[datb.length-1][0]>年){}else{dy2+="<br><small><b>假如</b>你已经赚到了这些钱，你会在工作中经历和见证：</small><br>";}
 
                 for(let i=0;datb.length>i;i++){
@@ -142,7 +145,14 @@ permalink: app/yxyzdj
             dy2+="请输入<b>正整数</b>。";
         }
         document.getElementById("dy2").innerHTML = dy2;
-    }}
+    }
+    if(d==1){
+        d=0;
+    }else{
+        window.location.href="#换算结果";
+    }
+
+}
 
     function 整数(){
         if(数>100000000){数=数/100000000;数=数+"";
