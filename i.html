@@ -187,6 +187,8 @@ let 农历节日="／nl/"+cMonth+"."+cDay;
 let 获取数据_地址="gyl/"+盖亚月+"."+盖亚日+"／gyl_xq/"+盖亚月+"."+第x个+"."+星期+"／gyl_xqds/"+盖亚月+"."+倒数第x个+"."+星期+农历节日+"／xel/"+希尔月+"."+希尔日;
 获取数据_地址=获取数据_地址.split("／");
 
+window.onload=function(){
+
 for(let i=0;获取数据_地址.length>i;i++){
     let GetJson = $.ajax({
         url: "/5/rili/"+获取数据_地址[i]+".json",
@@ -199,6 +201,8 @@ for(let i=0;获取数据_地址.length>i;i++){
     rili_节日+=GetJson.responseText;
 }
 document.getElementById("xttzb").innerHTML=rili_节日;
+
+}
 
 // let dy0=new Array("maoqiuheerche","xiaojuchang","world","yimeng","playgame","riji",
 // "xiangce","zatan","pvo","xiaogongju","bilibili","xinlangweibo","zhihu","chongdong","github","liuyan")
