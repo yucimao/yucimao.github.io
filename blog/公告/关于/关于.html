@@ -224,8 +224,24 @@ $( '#tag-cloud' ).svg3DTagCloud( settings );
 
 <div class="chart"><svg class="pie-chart"></svg></div>
 
-<a href="/links" class="anniu">友情链接</a> 
-<a href="/riji/all" class="anniu">归档</a> 
+<blockquote id="摘抄"></blockquote>
+
+<script>
+    let 摘抄=[
+        "摘抄自<a href=\"http://blog.dylanwu.space/about/\" target=\"_blank\" class=\"dk\">@瓠樽</a>：<br>"+
+        "大一的時候看過一部電影叫《Pirate Radio》，講的是1966年，大西洋北海上漂浮著的一艘船，是深受不列顛聽眾喜愛的搖滾電台的大本營。然而，政府高層決定設法取締非法電台。隨著政府向電台的贊助商施壓，電台日子舉步維艱。而我們這些時至今日仍在維護自己博客的人就好像汪洋大海上的一個又一個海盜電台。这难道不是以个人形态呈现出来的互联网的混沌原初的样子么？<br>"+
+        "後來我又想到一個比喻，之前忽悠了一個同學來寫 blog（結果後來更新得比我還快）。當時我問他，你不是也挺愛寫文章的麼，一起來玩 Blog 唄？他問我什麼是 Blog ，我說：<br>"+
+        "「就是現代人的文玩。」<br>"+
+        "「明白了，帶我一個。」<br>"+
+        "所谓现代人的文玩，就是文字或者技术，你总得把其中一样盘好。<br>",
+
+        "原句来自：<a href=\"https://cheapskatesguide.org/articles/personal-website-hunting.html\" target=\"_blank\" class=\"dk\">《寻找几乎看不见的个人网站》</a>，部分有修改：<br>"+
+        "个人网站是一种有点神秘的动物，它生活在互联网的丛林中，很少有人观察到。那些完全生活在微博和QQ的美丽花园中的互联网用户，甚至可能都不知道该物种的存在。其他没有经验的用户可能会认为，个人网站已经像恐龙那样灭绝。事实上野外还存在许多标本，只有了解该物种习性的猎人才能发现它们。<br>",
+        
+    ];
+
+    document.getElementById("摘抄").innerHTML = 摘抄[Math.floor(Math.random()*摘抄.length)];
+</script>
 
 <hr>
 
