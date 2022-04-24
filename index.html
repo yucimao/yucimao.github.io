@@ -1,7 +1,7 @@
 ---
 layout: o
 ---
-<style>body{margin:0;}#i{width:100%;height:100vh;margin:0;}iframe{position: absolute;top:0;left:0;}</style><div id="i"></div>
+<style>body{margin:0;}#i{width:100%;height:100vh;margin:0;}iframe{position: absolute;top:0;left:0;z-index:0;}</style><div id="i"></div>
 <script>
 let a=[
 "3794789",
@@ -40,6 +40,6 @@ if(b[c]){a=b[c];}
 b=new Date().getTime();
 b=Math.floor(b/1000/60/60);
 b=b%a.length;
-b="<iframe src=\"/i/"+a[b]+"\" frameborder=\"0\" width=\"100%\" height=\"100%\"></iframe>";
-document.getElementById("i").innerHTML="<a href=\"{{ site.mq_i }}\" style=\"position:absolute;color:#fff;text-shadow: 1px 1px 5px #000;\">直接进入</a>"+b;
+b="<iframe src='/i/"+a[b]+"' frameborder='0' scrolling='no' width='100%' height='100%'></iframe>";
+document.getElementById("i").innerHTML="<a href='{{ site.mq_i }}' style='z-index:100;position:absolute;color:#fff;text-shadow: 1px 1px 5px #000;'>直接进入</a>"+b;
 </script>
