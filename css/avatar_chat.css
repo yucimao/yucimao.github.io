@@ -14,10 +14,10 @@ display: inline-block;
 line-height: 22px;}
 .avatar_chat .a {float:left;}
 .avatar_chat .d {float:right;}
-.avatar_chat .m{background-color: #b3e1e1;color: #404040;}
-.avatar_chat .e{background-color: #ffcbbf;color: #404040;}
-.avatar_chat .n1{background-color:#DADADA;color: #000000;}
-.avatar_chat .n2{background-color:#12B7F5;color: #ffffff;}
+.avatar_chat .m{background-color: #5EACE3;color: #ffffff;}
+.avatar_chat .e{background-color: #f27b7f;color: #ffffff;}
+.avatar_chat .n1{background-color:#c2c2c2;color: #4e4e4e;}
+.avatar_chat .n2{background-color:#12B7F5;color: #4e4e4e;}
 .avatar_chat .n2 a{color: #ffffff;}
 .avatar_chat .n2 a:hover{color: #b3e1e1;}
 
