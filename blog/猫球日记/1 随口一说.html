@@ -10,7 +10,7 @@ anchor: 1
 <link rel="stylesheet" href="/css/avatar_chat.css">
 <style>
     .avatar_chat{
-        border: 1px solid #a1a1a1;
+        /* border: 1px solid #a1a1a1; */
 	    border-radius: 15px;
     }
     .avatar_chat .s{margin-top:0px;}
@@ -106,8 +106,9 @@ anchor: 1
     for(let i=0;data.length>i;i++){
         let 临时=data[i].split("／");
         if(临时[0]=="hr"){
-            if(临时[1]!=""){dy+="<a name=\""+临时[1]+"\"></a>";}
-            dy+="</div><br><h4>"+临时[1]+"</h4><div class=\"avatar_chat\">";
+            dy+="</div><br>";
+            if(临时[1]!=""){dy+="<a name=\""+临时[1]+"\"></a><h4>"+临时[1]+"</h4>";}
+            dy+="<div class=\"avatar_chat\">";
             pss+=1;
             if(pss==ps.length){pss=0;}
         }else if(临时[0]=="s"){
