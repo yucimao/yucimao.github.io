@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>疫情日记</title>
+            <description>3月突如其来的疫情，到现在终于解封了。</description>
+            <pubDate>Wed, 27 Apr 2022 23:24:00 +0480</pubDate>
+            <link>{{ site.mq }}/i/zk/5115847</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/5115847</guid>
+            </item>
+
+        <item>
             <title>月薪要赚多久</title>
             <description>输入你的月薪，看看你距离富豪榜还差多远。</description>
             <pubDate>Fri, 22 Apr 2022 19:15:00 +0800</pubDate>
