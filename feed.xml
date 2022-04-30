@@ -10,9 +10,17 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>酒仙笔记：魔兽世界</title>
+            <description>时隔几年重回艾泽拉斯，决定重新记录冒险过程中遇到的酒。</description>
+            <pubDate>Thur, 28 Apr 2022 23:37:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/5115940</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/5115940</guid>
+            </item>
+
+        <item>
             <title>疫情日记</title>
             <description>3月突如其来的疫情，到现在终于解封了。</description>
-            <pubDate>Wed, 27 Apr 2022 23:24:00 +0480</pubDate>
+            <pubDate>Wed, 27 Apr 2022 23:24:00 +0800</pubDate>
             <link>{{ site.mq }}/i/zk/5115847</link>
             <guid isPermaLink="true">{{ site.mq }}/i/zk/5115847</guid>
             </item>
