@@ -23,6 +23,7 @@ html,body {margin: 0;padding: 0;}
 <style>
 *{cursor:default;}
 p.b{margin-top:-12px;border: 1px solid #c0c0c0;padding:8px;border-radius: 12px;}
+p.br{margin-top:-12px;padding:8px;border-radius: 12px;}
 </style>
 
 <div id="dy"></div>
@@ -47,6 +48,8 @@ for (let i=0;data.length>i;i++){
     if(data[i].indexOf("／") != -1){
         let 临时=data[i].split("／");
         dy += "<p class=\"b\" onmouseover=\"javascript:this.innerHTML='" + 临时[1] + "'\" onmouseout=\"javascript:this.innerHTML='" + 临时[0] + "'\">" + 临时[0] + "</p>";
+    }else if(data[i]=="br"){
+        dy+="<p class=\"br\"><br></p>";
     }else{
         dy+="<p class=\"b\">"+data[i]+"</p>";
     }
