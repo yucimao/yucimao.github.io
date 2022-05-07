@@ -6,7 +6,8 @@ nav_url: <a href="/zatan">杂谈</a>
 permalink: oldnews/1
 ---
 <style>
-    #dy [href]{color:var(--body-color);border-bottom: 2.5px solid var(--a-color);}
+    #dy [href]{color:var(--body-color);border-bottom: 2px solid var(--a-color);}
+    #dy table{width:100%;}
 </style>
 
 <div id="dy2"></div>
@@ -30,6 +31,7 @@ permalink: oldnews/1
         ["1966146","2021年04月","上海地铁一男子翻越安全门自杀",[]],    
         ["5191949","2021年12月","花10万租520架无人机给宠物狗过生日",["贫富差距"]],    
         ["5191942","2022年4月","150碗熟肉被职业打假人举报",[""]],    
+        ["http://5191942","2022年4月","150碗熟肉被职业打假人举报",[""]],    
         // ["","","",[""]],    
     ];
 
@@ -42,7 +44,13 @@ permalink: oldnews/1
     function l(ll){
         let dy="<table>";
         for(let i=0;data.length>i;i++){
-            if(ll=="全部"||data[i][3].indexOf(ll)!=-1){dy+="<tr><td><small>"+data[i][1]+"</small> <a href='"+data[i][0]+"'>"+data[i][2]+"</a></td></tr>";}
+            if(ll=="全部"||data[i][3].indexOf(ll)!=-1){
+                if(data[i][0].split("/")[3]>0){
+                    dy+="<tr><td><small>"+data[i][1]+"</small> <a onclick=\"dw(dwb='"+data[i][0].split("/")[3]+"',dwd='"+data[i][2]+"')\">"+data[i][2]+"</a> <a href='"+data[i][0]+"'>打开</a></td></tr>";
+                }else{
+                    dy+="<tr><td><small>"+data[i][1]+"</small> "+data[i][2]+" <a href='"+data[i][0]+"'>打开</a></td></tr>";
+                }
+            }
         }
         dy+="</table>";
         document.getElementById("dy").innerHTML = dy;
