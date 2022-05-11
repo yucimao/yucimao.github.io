@@ -1,5 +1,5 @@
 dy="<div id=\"排行\"><style>td span.b{display:none;}</style></div>"+
-"点击作品名可以复制；点击评分展开评分细则；点击“排名”改为不并列模式。"+dy;
+"<small>点击作品名可以复制；点击评分展开评分细则；点击“排名”改为不并列模式。</small>"+dy;
 
 for(let i=0;data.length>i;i++){
     let 临时=0;
@@ -43,7 +43,7 @@ for(let i=1;data.length>i;i++){
     for(let i=0;datb.length>i;i++){
         let 临时2=排名;
         if(datb[i][0]==并列[1]){
-            临时2="<span class='a'>-</span><span class='b c'>"+(i+1)+"</span>";
+            临时2="<span class='a c'>-</span><span class='b c'>"+(i+1)+"</span>";
         }else{
             并列[0]=临时2;
             临时2="<span class='a'>"+临时2+"</span><span class='b'>"+(i+1)+"</span>";
