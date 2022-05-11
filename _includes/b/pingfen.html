@@ -1,4 +1,5 @@
-dy="点击作品名可以复制，点击评分展开评分细则。"+dy;
+dy="<div id=\"排行\"><style>td span.b{display:none;}</style></div>"+
+"点击作品名可以复制；点击评分展开评分细则；点击“排名”改为不并列模式。"+dy;
 
 for(let i=0;data.length>i;i++){
     let 临时=0;
@@ -42,9 +43,10 @@ for(let i=1;data.length>i;i++){
     for(let i=0;datb.length>i;i++){
         let 临时2=排名;
         if(datb[i][0]==并列[1]){
-            临时2="-";
+            临时2="<span class='a'>-</span><span class='b c'>"+(i+1)+"</span>";
         }else{
             并列[0]=临时2;
+            临时2="<span class='a'>"+临时2+"</span><span class='b'>"+(i+1)+"</span>";
             并列[1]=datb[i][0];
             排名+=1;
         }
@@ -97,7 +99,7 @@ dy+="</table>";
 
 dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>");
 
-dy+="<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em;}i[云]:after{content:'[云]';color:#258DF6;}i[通]:after{content:'[通]';color:#19D02A;}i[弃]:after{content:'[弃]';color:#FF4343;}</style>";
+dy+="<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em;}i[云]:after{content:'[云]';color:#258DF6;}i[通]:after{content:'[通]';color:#19D02A;}i[弃]:after{content:'[弃]';color:#FF4343;}td span.c{font-size: 0.8em;color:#999999;}</style>";
 
 document.getElementById("结果").innerHTML = dy;
 
@@ -120,6 +122,12 @@ if(分类排行!="／"){
 
 function dw2(){
     dw(dwb=分类排行榜[dwb2]);
+}
+
+let 排名的方式=0;
+function 排名方式(){
+    if(排名的方式==0){排名的方式=1;document.getElementById("排行").innerHTML = "<style>td span.a{display:none;}</style>";}
+    else{排名的方式=0;document.getElementById("排行").innerHTML = "<style>td span.b{display:none;}</style>";}
 }
 </script>
 <style>td small{color:#8c8b8b;}td[onclick^="复(制="],td[onclick^="dw(dwd="]{cursor:pointer;}.ysa{color:#77C94B;}.ysb{color:#DF402A;}</style>
