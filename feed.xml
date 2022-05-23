@@ -9,6 +9,15 @@ layout: null
         <link>{{ site.mq }}</link>
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
+
+        <item>
+            <title>小像素点</title>
+            <description>最近做了一个网页：“认养像素点”。这是个很无聊的网页，里面有一只小像素点，它可能会做些简单的动作，也可能一动不动，你能做的只是看着它，或者换一只不同颜色的小像素点。</description>
+            <pubDate>Mon, 23 May 2022 10:53:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/5323144</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/5323144</guid>
+            </item>
+
         <item>
             <title>酒仙笔记：魔兽世界</title>
             <description>时隔几年重回艾泽拉斯，决定重新记录冒险过程中遇到的酒。</description>
