@@ -29,8 +29,8 @@ nav_url: <a href="/youxiji">游戏机</a>
     <span class="a2 bukexuanzhong"><b>Ⓒ　余额：<span id="余额">100 钞</span></b></span>
     <a onclick="充值()"><span class="a2 a3 bukexuanzhong"><b>㊖　充值100钞</b></span></a>
     <br><br><br>
-    <form id="输入框" autocomplete="off">
-        <textArea id='输入' class="a2" placeholder="请输入押注的金额…" style="width:90%;height:200px;resize:none;"></textArea></form>
+    <!-- <input type="text" placeholder="请输入押注的金额…" class="a2" id="输入" style="width:90%;height:200px;resize:none;" autocomplete="off"><br> -->
+    <form id="输入框" autocomplete="off"><textArea onkeyup="输入文字()" id='输入' class="a2" placeholder="请输入押注的金额…" style="width:90%;height:200px;resize:none;"></textArea></form>
 
         <span class="a6 bukexuanzhong">（本页只是模拟蔷薇花园的“商店-运气”，余额不影响蔷薇花园的数据，并且刷新页面后重置）</span><br>
 
@@ -46,8 +46,11 @@ nav_url: <a href="/youxiji">游戏机</a>
         document.getElementById("余额").innerHTML = 余额+" 钞 <span style='color:#199100;'>+100</span>";
     }
 
+    let 输入;
+
     function 下注(){
-        let 输入 = document.getElementById("输入").value;
+        输入 = document.getElementById("输入").value.replace(/[\D]/g, "");
+        document.getElementById("输入").value = 输入;
         let 临时 = 输入.split(".");
         if(输入>0 && 输入<=余额 && 余额!=0 && 临时.length==1){
             输入=输入*1;
@@ -59,8 +62,14 @@ nav_url: <a href="/youxiji">游戏机</a>
                 余额=余额*1+输入;
                 document.getElementById("余额").innerHTML = 余额+" 钞 <span style='color:#199100;'>+"+输入+"</span>";
             }
-
-        }else if(isNaN(输入)||输入<1){alert("请输入正确的数字");}else if(输入>余额){alert("余额不足");}else if(临时.length!=1){alert("不可以有小数点");}
+        }else if(isNaN(输入)||输入<1){alert("请输入正确的数字");}else if(输入>余额){notyf.alert("余额不足");}else if(临时.length!=1){alert("不可以有小数点");}
     }
 
+    function 输入文字(){
+        输入 = document.getElementById("输入").value.replace(/[\D]/g, "");
+        document.getElementById("输入").value = 输入;
+        if (event.keyCode == 13){
+            下注();
+        }
+    }
 </script>
