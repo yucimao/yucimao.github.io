@@ -1,0 +1,47 @@
+---
+layout: zk
+title: 地域黑属地记录
+nav_text: 地域黑属地记录
+nav_url: <a href="/diyuhei/zggd">中国各地的地域黑</a>
+permalink: i/zk/5461569
+---
+2022年各大平台开始显示用户ip属地，以此记录我所见到发表地域黑言论的用户的ip属地并按照数量排序。<br>
+<br>
+
+
+<div id="dy"></div>
+
+<script>
+    let a="广东 澳大利亚 江苏 河北 天津 江苏 广东 江苏 河北 湖北 江苏 上海 重庆 江苏 安徽 浙江 广东 安徽 英国 河南 新疆 广西 北京 山东 未知 北京 上海 云南 上海 天津 海南 浙江 福建 云南 四川 广西 海南 海南 海南 广东 海南 海南".replace(/​/g, "").split(" ");
+    let b={}
+    let c=[]
+    for(let i=0;a.length>i;i++){
+        if(c.indexOf(a[i])!=-1){
+            b[a[i]]+=1;
+        }else{
+            c[c.length]=a[i];
+            b[a[i]]=1;
+        }
+    }
+
+    a=[]
+    for(let i=0;c.length>i;i++){
+        let d=0;
+        for(let ii=0;a.length>ii;ii++){
+            if(b[c[i]]>=b[a[ii]]&&d==0){
+                a.splice(ii,0,c[i]);
+                d=1;
+            }
+        }
+        if(d==0){a[a.length]=c[i]}
+    }
+
+    c="";
+    for(let i=0;a.length>i;i++){
+        c+=a[i]+"："+b[a[i]]+"<br>";
+    }
+    
+    document.getElementById("dy").innerHTML = c;
+
+
+</script>

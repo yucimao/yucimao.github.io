@@ -10,6 +10,7 @@ footer_fx: 1
 nav_url: <a href="/youxiji">游戏机</a>
 ---
 <style>
+    body{background-color:#BFBFBF;}
     .a0{background-color: #BFBFBF;padding: 20px;}
     .a1{background-color: #383838;color:#A5A5A5;padding: 10px;}
     .a2{background-color: #DEDEDE;color: #585858;padding: 20px;font-size: 0.8em;}
@@ -62,7 +63,7 @@ nav_url: <a href="/youxiji">游戏机</a>
                 余额=余额*1+输入;
                 document.getElementById("余额").innerHTML = 余额+" 钞 <span style='color:#199100;'>+"+输入+"</span>";
             }
-        }else if(isNaN(输入)||输入<1){alert("请输入正确的数字");}else if(输入>余额){notyf.alert("余额不足");}else if(临时.length!=1){alert("不可以有小数点");}
+        }else if(isNaN(输入)||输入<1){notyf.alert("请输入正确的数字");}else if(输入>余额){notyf.alert("余额不足");}else if(临时.length!=1){notyf.alert("不可以有小数点");}
     }
 
     function 输入文字(){
