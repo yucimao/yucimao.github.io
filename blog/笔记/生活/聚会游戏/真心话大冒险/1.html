@@ -1,0 +1,170 @@
+---
+layout: page2
+title: 聚会游戏：真心话大冒险
+nav_text: 真心话大冒险
+nav_url: <a href="/juhuiyouxi">聚会游戏</a>
+permalink: zxhdmx
+---
+<div id="名单"><input type="text" id="输入" placeholder="输入玩家名字：男生，女生。" autocomplete="off" style="width:500px"><button onclick="确定()">确定</button></div>
+<div id="名单2" style="display:none;"></div>
+<div id="题库选择"></div>
+<div id="选择惩罚" style="display:none;"></div>
+<br>
+<div id="惩罚内容"></div>
+
+<script src="/js/mq-wzjm.js"></script>
+
+<script>
+    /*
+    题库：［内容／代号］
+
+    〈惩罚男〉〈惩罚女〉〈惩罚〉
+    〈全0〉〈全1〉〈全2〉或 男 女 同 异
+
+    [1,2] 随机其一
+
+    */
+    let 名单,dy,x,y,xx,男=[],女=[],全=[],题库=[],使用,临时,arr;
+    
+    let 预设题库=[
+        ["题库标题","代号","说明"],
+    ];
+    let 题库dy="<h3>选择题库</h3>";
+    for(let i=0;预设题库.length>i;i++){
+        题库dy+="<p><b><a onclick=\"选择题库('"+预设题库[i][1]+"')\">"+预设题库[i][0]+"</a></b>："+预设题库[i][2]+"</p>";
+    }
+    题库dy+="<p><input type='text' id='输入题库' placeholder='输入题库' autocomplete='off'><button onclick='题库确定()'>确定</button></p>";
+
+    let wzjm_密码="ix";
+    let wzjm_输入="HSTEHSHBHSHAHSSzHRevHRe4HSS2HRezHSC5HSS3HSHCHRkxHSS3HRj0HSG3HSSzHRevHRe5HSS1HRjyHRfBHSSzHRevHRe4HSS1HSC1HSGzKATDKyS4KAS4MQS1OgTDLgTALQS4OgTDMATxPgS5LRCkKjKkPRWkOhSkMCGkPRekOSWkMRSyHRTCHSTEHSHBHRfEHSS0HSHAHSCzHSS1HRfEHSG3HSTEHSHBHSHCHRxxHSTEHSHBHSHAHSSzHRevHRe4HSS2HRezHSC5HSS3HSHCHRkxHSS3HRj0HSG3HSSzHRevHRe5HSS1HRjyHRfBHSSzHRevHRe4HSS1HSC1HSGzKATDKyS4KAS4MRGkPSWkOjKkMCWkPROkOjGkORKkPRSkMCWkOhakPSWkOjKkOjOkKCCkPSWkOjKkOjGkPRKkMBikMBekPRWkMBKkORjkPRakOjOkMSCkPRSkORSkOhKkPRKkMBikMBjkPRSkMRGkMCKkPRKkMBikMBekPRSkOjKkMBGvHSSzHRevHRe5KgTDPgTAOyS4PgTDLATAOgTxKyTDLQS4PgTALyTDPgTAOyTAPi==";
+    wzjm_解密();
+    wzjm_输入=wzjm_输入.split("［");
+    for(let i=1;wzjm_输入.length>i;i++){
+        题库[题库.length]=wzjm_输入[i].split("］")[0];
+    }
+
+    function 确定(){
+        名单=document.getElementById("输入").value;
+        if(名单.indexOf("，")!=-1||名单.indexOf("。")!=-1){
+            名单=名单.replace(/，/g, "，／").replace(/。/g, "。／").replace(/／$/g, "").split("／");
+            dy="玩家"+名单.length+"人 <small><a onclick='重选()'>重选</a></small>";
+            document.getElementById("名单2").innerHTML=dy;
+            document.getElementById("名单2").style="";
+            for(let i=0;名单.length>i;i++){
+                全[全.length]=名单[i].replace(/[，。]/g, "");
+                if(名单[i].indexOf("，")!=-1){男[男.length]=名单[i].replace(/，/g, "");}
+                if(名单[i].indexOf("。")!=-1){女[女.length]=名单[i].replace(/。/g, "");}
+            }
+            document.getElementById("名单").style="display:none";
+            document.getElementById("题库选择").innerHTML=题库dy;
+        }else{
+            document.getElementById("输入").value="";
+            notyf.alert("输入内容不正确。");
+        }
+    }
+
+    function 重选(){
+        document.getElementById("名单2").style="display:none";
+        document.getElementById("名单").style="";
+        document.getElementById("题库选择").innerHTML="";
+        document.getElementById("选择惩罚").style="display:none";
+    }
+
+    function 选择题库(x){
+        xx=x;
+        arr=[];
+        for(let i=0;题库.length>i;i++){
+            临时=题库[i].split("／");
+            if(临时[1].indexOf(x)!=-1){arr[arr.length]=临时[0];}
+        }
+        随机();
+        使用=arr;
+        document.getElementById("题库选择").innerHTML="题库加载完成 <small><a onclick='重新选择()'>重选</a></small>";
+        document.getElementById("选择惩罚").style="";
+        dy="<h3>选择要接受惩罚的玩家</h3><button onclick=\"玩家('随机')\">随机</button> ";
+        for(let i=0;名单.length>i;i++){
+            dy+="<button onclick=\"玩家('"+名单[i]+"')\">"+名单[i].replace(/[，。]/g, "")+"</button> ";
+        }
+        document.getElementById("选择惩罚").innerHTML=dy;
+    }
+
+    function 题库确定(){
+        x=document.getElementById("输入题库").value;
+        选择题库(xx);
+    }
+
+    function 重新选择(){
+        document.getElementById("题库选择").innerHTML=题库dy;
+        document.getElementById("选择惩罚").style="display:none";
+    }
+
+    function 随机(){
+        let _arr=arr.slice();
+        for(let i=0;i<_arr.length;i++){
+            let j=getRandomInt(0,i);
+            let t=_arr[i];
+            _arr[i]=_arr[j];
+            _arr[j]=t;
+        }
+        function getRandomInt(min,max) {
+        return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        arr=_arr;
+    }
+
+    function 玩家(y){
+        if(y=="随机"){y=名单[Math.floor(Math.random()*名单.length)]}
+        let 惩罚=y.replace(/[，。]/g, "");
+        arr=男;随机();let 临时男=arr;
+        arr=女;随机();let 临时女=arr;
+        arr=全;随机();let 临时全=arr;
+        if(y.indexOf("，")!=-1){y="男";for(let i=0;临时男.length>i;i++){if(临时男[i]==惩罚){临时男.splice(i,1);break;}}}
+        if(y.indexOf("。")!=-1){y="女";for(let i=0;临时女.length>i;i++){if(临时女[i]==惩罚){临时女.splice(i,1);break;}}}
+        for(let i=0;临时全.length>i;i++){if(临时全[i]==惩罚){临时全.splice(i,1);break;}}
+
+        let 采用=0;
+        for(let i=0;使用.length>i;i++){
+            采用="";
+            临时=使用[i];
+            if(y=="男"){临时=临时.replace("〈异","〈女").replace("〈同","〈男");}
+            if(y=="女"){临时=临时.replace("〈异","〈男").replace("〈同","〈女");}
+            if(临时.indexOf("〈惩罚男")!=-1&&y=="女"||临时.indexOf("〈惩罚女")!=-1&&y=="男"){}else{
+                临时=临时.replace(/〈惩罚男〉/g, "〈惩罚〉").replace(/〈惩罚女〉/g, "〈惩罚〉").replace(/〈惩罚〉/g, "<b>"+惩罚+"</b>");
+                临时=临时.split("〈");
+                采用=临时[0];
+                for(let i2=1;临时.length>i2;i2++){
+                    let 临时2=临时[i2].split("〉");
+                    if(临时2[0][0]=="男"){
+                        临时2[0]=临时2[0].replace(/男/g, "")*1;
+                        if(临时男[临时2[0]]){采用+="<b>"+临时男[临时2[0]]+"</b>"}else{采用=0;continue;}
+                    }else if(临时2[0][0]=="女"){
+                        临时2[0]=临时2[0].replace(/女/g, "")*1;
+                        if(临时女[临时2[0]]){采用+="<b>"+临时女[临时2[0]]+"</b>"}else{采用=0;continue;}
+                    }else{
+                        if(临时全[临时2[0]]){采用+="<b>"+临时全[临时2[0]]+"</b>"}else{采用=0;continue;}
+                    }
+                    采用+=临时2[1];
+                }
+            }
+            if(采用!=0){
+                使用.splice(i,1);break;
+            }
+        }
+        if(采用==0){
+            // notyf.alert("题库被抽空了，正在重新随机打乱。");
+            选择题库(xx);
+        }else{
+            采用=采用.split("[");
+            dy=采用[0];
+            for(let i=1;采用.length>i;i++){
+                临时=采用[i].split("]");
+                临时[0]=临时[0].split(",");
+                临时[0]=临时[0][Math.floor(Math.random()*临时[0].length)];
+                dy+=临时[0]+临时[1];
+            }
+            document.getElementById("惩罚内容").innerHTML=dy;
+        }
+    }
+</script>
+
+
