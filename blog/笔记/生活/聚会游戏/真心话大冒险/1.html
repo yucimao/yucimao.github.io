@@ -3,7 +3,7 @@ layout: page2
 title: 聚会游戏：真心话大冒险
 nav_text: 真心话大冒险
 nav_url: <a href="/juhuiyouxi">聚会游戏</a>
-permalink: zxhdmx
+permalink: zxh
 ---
 <div id="名单"><input type="text" id="输入" placeholder="输入玩家名字：男生，女生。" autocomplete="off" style="width:500px"><button onclick="确定()">确定</button></div>
 <div id="名单2" style="display:none;"></div>
@@ -15,19 +15,13 @@ permalink: zxhdmx
 <script src="/js/mq-wzjm.js"></script>
 
 <script>
-    /*
-    题库：［内容／代号］
-
-    〈惩罚男〉〈惩罚女〉〈惩罚〉
-    〈全0〉〈全1〉〈全2〉或 男 女 同 异
-
-    [1,2] 随机其一
-
-    */
     let 名单,dy,x,y,xx,男=[],女=[],全=[],题库=[],使用,临时,arr;
     
     let 预设题库=[
-        ["题库标题","代号","说明"],
+        ["普通","OR",""],
+        ["全年龄","O",""],
+        ["不正常","RX",""],
+        // ["题库标题","代号","说明"],
     ];
     let 题库dy="<h3>选择题库</h3>";
     for(let i=0;预设题库.length>i;i++){
@@ -35,8 +29,17 @@ permalink: zxhdmx
     }
     题库dy+="<p><input type='text' id='输入题库' placeholder='输入题库' autocomplete='off'><button onclick='题库确定()'>确定</button></p>";
 
+    let 地址="/i/0/zxh.json";
+    let GetJson=$.ajax({
+        url:地址,
+        type:"GET",
+        dataType:"json",
+        async:false,
+        success:function (data) {
+        }
+    });
     let wzjm_密码="ix";
-    let wzjm_输入="HSTEHSHBHSHAHSSzHRevHRe4HSS2HRezHSC5HSS3HSHCHRkxHSS3HRj0HSG3HSSzHRevHRe5HSS1HRjyHRfBHSSzHRevHRe4HSS1HSC1HSGzKATDKyS4KAS4MQS1OgTDLgTALQS4OgTDMATxPgS5LRCkKjKkPRWkOhSkMCGkPRekOSWkMRSyHRTCHSTEHSHBHRfEHSS0HSHAHSCzHSS1HRfEHSG3HSTEHSHBHSHCHRxxHSTEHSHBHSHAHSSzHRevHRe4HSS2HRezHSC5HSS3HSHCHRkxHSS3HRj0HSG3HSSzHRevHRe5HSS1HRjyHRfBHSSzHRevHRe4HSS1HSC1HSGzKATDKyS4KAS4MRGkPSWkOjKkMCWkPROkOjGkORKkPRSkMCWkOhakPSWkOjKkOjOkKCCkPSWkOjKkOjGkPRKkMBikMBekPRWkMBKkORjkPRakOjOkMSCkPRSkORSkOhKkPRKkMBikMBjkPRSkMRGkMCKkPRKkMBikMBekPRSkOjKkMBGvHSSzHRevHRe5KgTDPgTAOyS4PgTDLATAOgTxKyTDLQS4PgTALyTDPgTAOyTAPi==";
+    let wzjm_输入=GetJson.responseText;
     wzjm_解密();
     wzjm_输入=wzjm_输入.split("［");
     for(let i=1;wzjm_输入.length>i;i++){
@@ -75,7 +78,7 @@ permalink: zxhdmx
         arr=[];
         for(let i=0;题库.length>i;i++){
             临时=题库[i].split("／");
-            if(临时[1].indexOf(x)!=-1){arr[arr.length]=临时[0];}
+            if(临时[1].indexOf(x)!=-1||x.indexOf(临时[1])!=-1){arr[arr.length]=临时[0];}
         }
         随机();
         使用=arr;
@@ -128,6 +131,7 @@ permalink: zxhdmx
             临时=使用[i];
             if(y=="男"){临时=临时.replace("〈异","〈女").replace("〈同","〈男");}
             if(y=="女"){临时=临时.replace("〈异","〈男").replace("〈同","〈女");}
+            临时=临时.replace(/〈男〉/g, "〈男0〉").replace(/〈女〉/g, "〈女0〉").replace(/〈全〉/g, "〈全0〉");
             if(临时.indexOf("〈惩罚男")!=-1&&y=="女"||临时.indexOf("〈惩罚女")!=-1&&y=="男"){}else{
                 临时=临时.replace(/〈惩罚男〉/g, "〈惩罚〉").replace(/〈惩罚女〉/g, "〈惩罚〉").replace(/〈惩罚〉/g, "<b>"+惩罚+"</b>");
                 临时=临时.split("〈");
@@ -151,20 +155,26 @@ permalink: zxhdmx
             }
         }
         if(采用==0){
-            // notyf.alert("题库被抽空了，正在重新随机打乱。");
+            notyf.alert("题库被抽空了，正在重新随机打乱。");
             选择题库(xx);
         }else{
             采用=采用.split("[");
             dy=采用[0];
             for(let i=1;采用.length>i;i++){
                 临时=采用[i].split("]");
-                临时[0]=临时[0].split(",");
-                临时[0]=临时[0][Math.floor(Math.random()*临时[0].length)];
+                if(临时[0].indexOf(",")!=-1){
+                    临时[0]=临时[0].split(",");
+                    临时[0]=临时[0][Math.floor(Math.random()*临时[0].length)];
+                }else if(临时[0].indexOf("/")!=-1){
+                    if(y=="男"){
+                        临时[0]=临时[0].split("/")[0];
+                    }else{
+                        临时[0]=临时[0].split("/")[1];
+                    }
+                }
                 dy+=临时[0]+临时[1];
             }
             document.getElementById("惩罚内容").innerHTML=dy;
         }
     }
 </script>
-
-
