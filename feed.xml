@@ -9,6 +9,13 @@ layout: null
         <link>{{ site.mq }}</link>
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title>夏日祭风波</title>
+            <description>网上相关的讨论很多，但很少有人平静的思考和讨论，都只是在宣泄情绪，还出现许多阴谋论。</description>
+            <pubDate>Mon, 25 Jul 2022 23:14:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/5875160</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/5875160</guid>
+            </item>
 
         <item>
             <title>小像素点</title>

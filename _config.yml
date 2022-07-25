@@ -18,4 +18,5 @@ plugins:
   - jekyll-redirect-from
 
 mq_url: https://李猫球.com
+mq_b: https://李猫球.com
 mq_cafe: https://猫.cafe
