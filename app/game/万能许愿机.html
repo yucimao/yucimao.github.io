@@ -1,0 +1,147 @@
+---
+layout: page2
+title: 万能许愿机
+nav_text: 万能许愿机
+permalink: game/wannengxuyuanji
+footer_fx: 0
+nav_url: <a href="/youxiji">游戏机</a>
+---
+这里有一台<b>万能许愿机</b>，只要答对它的问题就可以向它许愿，它会完全理解你的愿望并以你期望的样子实现，如果是危险品还会帮你收容到合适的容器里。<br>
+<br>
+
+<b>万能许愿机</b>：<span id="问题"></span> <button onclick="提问()" id="换问题">换一个问题</button><br>
+<div id="回答"></div>
+<br>
+<div id="许愿"><input type="text" placeholder="你的愿望" id="你的愿望" autocomplete="off"><button onclick="许愿()">许愿</button></div>
+
+<br>
+
+<h2>免费区</h2>
+<b>工作人员</b>：你好，这里是免费区，可以提供基础的生活必需品。<br><br>
+<div id="免费区提示"></div>
+<div id="免费区内容"></div>
+
+<br><br>
+
+<h2>战利品仓库</h2>
+<div id="战利品"></div>
+
+<script>
+
+let 问题=[
+    ["1加1等于几？",["2","1","3"]],
+];
+let 免费区=[
+    ["","<h4>餐饮区</h4>"],
+    ["汉堡","你吃了一个汉堡。"],
+    ["可乐","你喝了一杯冰镇可乐。"],
+    ["矿泉水","你喝了一杯矿泉水。"],
+    ["br"],
+    ["中餐展位","你点了一份中餐，很好吃。"],
+    ["西餐展位","你点了一份西餐，很好吃。"],
+    ["小吃摊","你点了一份小吃，很好吃。"],
+
+    ["","<h4>住宿区</h4>"],
+    ["客房","你住进客房休息了一下。"],
+    ["厕所","你去上了趟厕所。"],
+    ["浴室","你洗了个澡。"],
+
+    ["","<h4>超市区</h4>"],
+    ["买东西","你买到了想要的东西，当然，是免费的。"],
+
+    ["","<h4>其他</h4>"],
+    ["管家","他会帮你处理一些杂事。"],
+    ["私人医生","他会治好你的所有病痛。"],
+    ["br"],
+    ["许愿参考书","你找到一本书，里面记录了许多别人许过的愿望，你可以在不知道许什么愿望的时候当作参考。　<a onclick=\\'参考许愿()\\'>随便翻一页</a><div id=\\'参考许愿\\'></div>"],
+];
+let 许愿参考=[
+    "家人健康长寿。",
+    "用不完的财富。",
+    "不限时、不限次数、所有费用都可以报销的旅行。",
+    "学会所有常见语言。",
+    "学会所有常见乐器。",
+];
+let 当前问题,arr,dy="",愿望="";
+
+for(let i=0;免费区.length>i;i++){
+    if(免费区[i][0]=="br"){dy+="<br>"}else if(免费区[i][0]==""){dy+=免费区[i][1]}else{dy+="<a onclick=\"免费物品('"+免费区[i][1]+"')\">"+免费区[i][0]+"</a>　"}
+}
+document.getElementById("免费区内容").innerHTML=dy;
+
+function 免费物品(o){
+    document.getElementById("免费区提示").innerHTML=o;
+}
+
+function 提问(){
+    当前问题=问题[Math.floor(Math.random()*问题.length)];
+    document.getElementById("问题").innerHTML=当前问题[0];
+    随机(arr=当前问题[1]);
+    dy="";
+    for(let i=0;arr.length>i;i++){
+        dy+="<p><button onclick='";
+        if(arr[i]==当前问题[1][0]){
+            dy+="答对()"
+        }else{
+            dy+="答错()"
+        }
+        dy+="'>"+arr[i]+"</button></p>";
+    }
+    document.getElementById("回答").innerHTML=dy;
+    document.getElementById("回答").style="";
+    document.getElementById("换问题").style="";
+    document.getElementById("许愿").style="display:none;";
+}
+
+
+function 随机(){
+  let _arr=arr.slice();
+  for(let i=0;i<_arr.length;i++){
+    let j=getRandomInt(0,i);
+    let t=_arr[i];
+    _arr[i]=_arr[j];
+    _arr[j]=t;
+  }
+  function getRandomInt(min,max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+arr=_arr;
+}
+
+function 答错(){
+    try{
+        notyf.alert("答错了，再想想吧。");
+    }
+    catch(e){
+        alert("答错了，再想想吧。");
+    }
+    
+}
+
+function 答对(){
+    document.getElementById("问题").innerHTML="恭喜你答对了，许个愿吧。";
+    document.getElementById("回答").style="display:none;";
+    document.getElementById("换问题").style="display:none;";
+    document.getElementById("许愿").value="";
+    document.getElementById("许愿").style="";
+}
+
+function 许愿(){
+    try{
+        notyf.confirm("你的愿望已经实现了。")
+    }
+    catch(e){
+        alert("你的愿望已经实现了。");
+    }
+    愿望+="<p>"+document.getElementById("你的愿望").value+"</p>";
+    document.getElementById("战利品").innerHTML=愿望;
+    提问()
+}
+
+function 参考许愿(){
+    document.getElementById("参考许愿").innerHTML=许愿参考[Math.floor(Math.random()*许愿参考.length)];
+}
+
+提问();
+
+</script>

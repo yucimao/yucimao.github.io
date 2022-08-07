@@ -5,14 +5,17 @@ permalink: c1
 <link rel="stylesheet" href="/css/all.css">
 
 <input type="file" id="filed" multiple="multiple"><br>
-<div id="dy">　</div>
+<div id="dy" class="bukexuanzhong">　</div>
 <img id="0" src=""><br>
+
+<br><a onclick="全部()" id="全部">.</a>
 
 <script>
     let img_data;
-    let 页;
+    let 页=0;
 
     function 翻页(o){
+        if(o=='随机'){o=Math.floor(Math.random()*img_data.length)+1}
         if(o==0){o=img_data.length}
         if(o>img_data.length){o=1}
         页=o;
@@ -24,13 +27,27 @@ permalink: c1
         document.getElementById("0").src=o[0];
         if(o[2]){}else{o[2]=""}
         if(o[3]){}else{o[3]=200}
-        document.getElementById("dy").innerHTML="<a onclick=\"翻页(页-1)\">上一页</a> <a onclick=\"翻页(页+1)\">下一页</a> （"+页+" / "+img_data.length+"） "+o[2];
+        document.getElementById("dy").innerHTML="<a onclick=\"翻页(页-1)\">上一页</a> <a onclick=\"翻页(页+1)\">下一页</a> <a onclick=\"翻页('随机')\">随机翻页</a> （"+页+" / "+img_data.length+"） "+o[2];
         $(function(){$('#0').imageLens({ borderSize:1,borderColor: '#fff', lensSize: o[3], imageSrc: o[1] });})
     }
 
+    function 全部(){
+        if(页!=0){
+            let dy="";
+            for(let i=0;img_data.length>i;i++){
+                let 临时=img_data[i].split("／");
+                dy+="<img src='data:image/jpeg;base64,/"+临时[0]+"'><br>";
+                dy+="<img src='data:image/jpeg;base64,/"+临时[1]+"'><br>";
+            }
+            document.getElementById("全部").innerHTML=dy;
+        }
+    }
+
     $('#filed').change(function(){
-        let resultFile = $('#filed').get(0).files[0];
-        if (resultFile) {
+        img_data=[];
+        for(let i=0;$('#filed').get(0).files.length>i;i++){
+            let resultFile = $('#filed').get(0).files[i];
+            if (resultFile) {
             this.file = resultFile
             this.fileName = resultFile.name
             let reader = new FileReader()
@@ -38,9 +55,11 @@ permalink: c1
             reader.onload = function (e) {
                 let data = e.target.result
                 if(data.indexOf("／")!=-1){
-                    img_data=data.split("／／");
+                    data=data.split("／／");
+                    img_data=img_data.concat(data);
                     翻页(1);
                 }else{}
+            }
             }
         }
     })
