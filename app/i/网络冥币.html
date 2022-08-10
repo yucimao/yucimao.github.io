@@ -25,7 +25,8 @@ pinglun: 1
             "留言":document.getElementById("留言").value,
         }
         转账="发往冥府";
-        try{notyf.confirm("转账成功")}catch(e){alert("转账成功");}
+        if(转账!="转账失败"){转账="转账成功";try{notyf.confirm(转账)}catch(e){alert(转账);}}
+        else{转账="转账失败";try{notyf.alert(转账);}catch(e){alert(转账);}}
         document.getElementById("收款人").value="";
         document.getElementById("金额").value="";
         document.getElementById("留言").value="";
