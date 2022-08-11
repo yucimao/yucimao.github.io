@@ -307,7 +307,7 @@ function grow(event){
         o[1]="data:image/jpeg;base64,/"+o[1];
         if(o[2]){}else{o[2]=""}
         if(o[3]){橡皮擦=o[3]}else{橡皮擦=70}
-        document.getElementById("dy").innerHTML="<a onclick=\"翻页(页-1)\">上一页</a> <a onclick=\"翻页(页+1)\">下一页</a> <a onclick=\"翻页('随机')\">随机翻页</a> （"+页+" / "+img_data.length+"） "+o[2];
+        document.getElementById("dy").innerHTML="<a onclick=\"翻页(页-1)\">上一页</a>　<a onclick=\"翻页(页+1)\">下一页</a>　<a onclick=\"翻页('随机')\">随机翻页</a> （"+页+" / "+img_data.length+"） "+o[2]+"　<a onclick=\"reset(event);\">重置</a>";
         document.getElementById("ro_dy").innerHTML="<img id='robot' src='"+o[1]+"'><img id='redux' src='"+o[0]+"'>";
         setTimeout(init,100);
     }
