@@ -1,0 +1,86 @@
+---
+layout: page2
+title: 点评猫球
+nav_text: 点评猫球
+nav_url: <a href="/maoqiu">关于猫球</a>
+permalink: dianpingmaoqiu
+pinglun: 1
+---
+<link rel="stylesheet" href="/css/all.css">
+<style>
+	.分a,.总分,.分条,.个评价{color:#fd9b07;}
+	.分b{color:#cccccc;}
+	.分c{color:#ffffff;}
+	.分a,.分b,.分c{font-size:1.3em;letter-spacing:.14em;line-height:0.8em;}
+	.总分{font-size:2em;}
+	.分条{background-color:#fd9b07;font-size:0.8em;}
+</style>
+
+点击<a href="#此处">此处</a>跳转到评价区域。<br>
+（其实就是留言板，手动输入1-5给猫球打个分，可以留具体评价也可以不留）<br>
+
+<hr>
+
+<div id="dy"></div>
+
+<a name="此处"></a>
+
+<script>
+	let data=[
+		["3","2022.10.16","暂无评价（这条是测试用的）"],
+	];
+	let 星={
+		"5":"★★★★★",
+		"4":"★★★★",
+		"3":"★★★",
+		"2":"★★",
+		"1":"★",
+		"-4":"★★★★",
+		"-3":"★★★",
+		"-2":"★★",
+		"-1":"★",
+		"-0":"",
+		"--1":"　　　　",
+		"--2":"　　　",
+		"--3":"　　",
+		"--4":"　",
+		"--5":"",
+	}
+
+	let 总分=0;
+	let 人数=0;
+	let 分={
+		"5":0,
+		"4":0,
+		"3":0,
+		"2":0,
+		"1":0,
+	}
+	let dy="";
+	for(let i=data.length-1;i>-1;i--){
+		总分+=data[i][0]*1;
+		人数+=1;
+		分[data[i][0]]+=1;
+		dy+="<fieldset><legend>";
+			if(data[i][3]){dy+=data[i][3];}else{dy+="匿名";}
+		dy+=" <small>"+data[i][1]+"</small></legend><span class='分a'>"+星[data[i][0]]+"</span><span class='分b'>"+星["-"+(5-data[i][0])]+"</span>";
+			if(data[i][2]&&data[i][2]!=""){dy+="<br>"+data[i][2];}
+		dy+="</fieldset>"
+	}
+
+	let dy2="<span class='总分'>★"+(总分/人数*10+"").split(".")[0]/10+"</span> &nbsp;<span class='个评价'>"+人数+"个评价</span>";
+	for(let i=5;i>0;i--){
+		dy2+="<br><span class='分c'>"+星["-"+(5-i)]+"</span><span class='分b'>"+星[i]+"</span>";
+		let 临时=分[i]/人数*10+"".split(".")[0]-1;
+		if(临时<0){临时=0;}
+		dy2+="　<span class='分条'>";
+		for(let i2=临时;i2>0;i2--){
+			dy2+="——";
+		}
+		dy2+="</span>";
+	}
+
+
+
+	document.getElementById("dy").innerHTML=dy2+"<hr>"+dy;
+</script>
