@@ -68,7 +68,7 @@ pinglun: 1
 		dy+="</fieldset>"
 	}
 
-	let dy2="<span class='总分'>★"+(总分/人数*10+"").split(".")[0]/10+"</span> &nbsp;<span class='个评价'>"+人数+"个评价</span>";
+	let dy2="<table><tr style='background-color:#ffffff;'><td style='text-align:center;width:30%'><br><br><span class='总分'>★"+(总分/人数*10+"").split(".")[0]/10+"</span><br><span class='个评价'>"+人数+"个评价</span></td><td>　</td><td>";
 	for(let i=5;i>0;i--){
 		dy2+="<br><span class='分c'>"+星["-"+(5-i)]+"</span><span class='分b'>"+星[i]+"</span>";
 		let 临时=分[i]/人数*10+"".split(".")[0]-1;
@@ -79,6 +79,7 @@ pinglun: 1
 		}
 		dy2+="</span>";
 	}
+	dy2+="<br><br></td></tr></table>";
 
 
 
