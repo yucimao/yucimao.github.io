@@ -1,0 +1,45 @@
+<div id="游戏厅">猫球游戏厅</div><script src="0.js"></script>
+
+<a id="账01" onclick="document.getElementById('账02').style='';document.getElementById('账01').style='display:none;'">设置</a>
+<div id="账02" style="display:none;">
+<b>设置</b><br>
+<a onclick="余额(-钱)">余额清零</a>
+<!-- <a onclick="余额(100)">充值</a> -->
+</div>
+
+<div id="游戏列表"></div>
+
+
+
+<script>
+    let 游戏列表=[
+        ["hr","益智"],
+        ["猜数字"],//10币
+        ["数字记忆练习"],//1、5、10、20币
+
+        ["hr","休闲"],
+        ["章鱼烧"],//20币
+
+        ["hr","赌场"],
+        ["二十一点"],//1、10、50、100、1000币
+        ["蔷薇赌场","模拟蔷薇花园的赌场，纯看运气，毫无技巧。"],
+
+        ["hr","其他"],
+        ["电子放生"],
+
+    ];
+    let dy="";
+    for(let i=0;游戏列表.length>i;i++){
+        if(游戏列表[i][0]=="hr"){
+            dy+="<br><h4>"+游戏列表[i][1]+"</h4>";
+        }else if(游戏列表[i][0]=="br"){
+            dy+="<br>";
+        }else{
+            dy+="<a href='"+游戏列表[i][0]+".html'>"+游戏列表[i][0]+"</a>";
+            if(游戏列表[i][1]){dy+="："+游戏列表[i][1];}
+            dy+="<br>";
+        }
+    }
+    document.getElementById("游戏列表").innerHTML=dy;
+</script>
+

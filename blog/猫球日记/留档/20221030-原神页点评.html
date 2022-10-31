@@ -1,12 +1,12 @@
 ---
 layout: page2
-title: 点评猫球
-nav_text: 点评猫球
-nav_url: <a href="/maoqiu">关于猫球</a>
-permalink: dianpingmaoqiu
+title: 点评“我对原神的看法”页面
+nav_text: 点评“我对原神的看法”页面
+nav_url: <a href="/i/zk/201333442">我对原神的看法</a>
+permalink: i/zk/201333442/dp
 pinglun: 1
 ---
-<link rel="stylesheet" href="/css/all.css">
+<link rel="stylesheet" href="/css/all2.css">
 <style>
 	.分a,.总分,.分条,.个评价{color:#fd9b07;}
 	.分b{color:#cccccc;}
@@ -64,6 +64,7 @@ pinglun: 1
 		人数+=1;
 		分[data[i][0]]+=1;
 		dy+="<fieldset><legend>";
+			dy+=(i+1)+". ";
 			if(data[i][3]){dy+=data[i][3];}else{dy+="匿名";}
 		dy+=" <small>"+data[i][1]+"</small></legend><span class='分a'>"+星[data[i][0]]+"</span><span class='分b'>"+星["-"+(5-data[i][0])]+"</span>";
 			if(data[i][2]&&data[i][2]!=""){dy+="<br>"+data[i][2];}

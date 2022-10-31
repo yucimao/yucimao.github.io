@@ -1,0 +1,94 @@
+<div id="游戏厅">猜数字</div><script src="0.js"></script>
+
+<div id="a1" style="display:block">
+    系统随机在0到100之间抽取一个数字，玩家和电脑轮流猜测数字，系统会提示这个数字偏大还是偏小以缩小范围，猜对数字获胜。<br>
+    获胜赚10币，失败没有损失。<br>
+    <button onclick="选择(模式=1)">开始游戏</button><br>
+</div>
+
+<div id="a2" style="font-size:1.5em">　</div>
+
+<br>
+
+<div id="a5">　</div>
+
+<div id="a3" style="display:none">
+    玩家<span id="a4"></span>的选择：<br>
+    <input id="a6" style="width:50px" onkeyup="if(event.keyCode==13){确定()}"/>
+    <button onclick="确定()">确定</button>
+</div>
+
+<div id="a7" style="display:none"><br><button onclick="再来一局()">再来一局</button></div>
+
+<script>
+    let 模式;
+    let 最大;
+    let 最小;
+    let x;
+    let 玩家;
+    let 电脑选择;
+    function 选择() {
+        document.getElementById("a1").style.display = "none";
+        document.getElementById("a3").style.display = "block";
+        document.getElementById("a2").innerHTML = "0 &lt; x &lt; 100";
+        x = Math.floor(Math.random() * 99) + 1;
+        最大 = 100;
+        最小 = 0;
+        玩家 = "";
+        document.getElementById("a4").innerHTML = "";
+    }
+    function 确定() {
+        let 输入 = document.getElementById("a6").value;
+        输入 *= 1;
+        document.getElementById("a6").value = "";
+        if (输入 <= 最小 || 输入 >= 最大 || 输入 === "" || isNaN(输入)) {
+            输入 = 最小 + 1;
+        }
+        if (输入 == x) {
+            余额(10);
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a2").innerHTML = "x=" + x;
+            document.getElementById("a2").className = "dui";
+            document.getElementById("a5").innerHTML = "恭喜玩家" + 玩家 + "获得胜利！";
+            document.getElementById("a7").style.display = "block";
+        }
+
+        if (输入 > x) { 最大 = 输入; }
+        else { 最小 = 输入; }
+
+        if (模式 == 1) {
+            let aa = 最大 - 最小 - 1;
+            let ab = 最小 + 1;
+            电脑选择 = Math.floor(Math.random() * aa) + ab;
+
+            if (电脑选择 == x) {
+                document.getElementById("a3").style.display = "none";
+                document.getElementById("a2").innerHTML = "x=" + x;
+                document.getElementById("a2").className = "cuo";
+                document.getElementById("a5").innerHTML = "很遗憾，电脑获胜（玩家选择" + 输入 + " 电脑选择" + 电脑选择 + "）";
+                document.getElementById("a7").style.display = "block";
+            }
+            else {
+                if (输入 != x) {
+                    document.getElementById("a5").innerHTML = "玩家选择" + 输入 + " 电脑选择" + 电脑选择;
+                }
+            }
+
+            if (电脑选择 > x) { 最大 = 电脑选择; }
+            else { 最小 = 电脑选择; }
+        }
+        if (输入 != x && 电脑选择 != x) {
+            document.getElementById("a2").innerHTML = 最小 + " &lt; x &lt; " + 最大;
+        }
+
+    }
+    function 再来一局(){
+        document.getElementById("a1").style.display = "block";
+        document.getElementById("a3").style.display = "none";
+        document.getElementById("a7").style.display = "none";
+        document.getElementById("a2").innerHTML = "　";
+        document.getElementById("a5").innerHTML = "　";
+        document.getElementById("a2").className = "";
+        选择();
+    }
+</script>

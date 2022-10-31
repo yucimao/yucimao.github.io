@@ -1,0 +1,239 @@
+<div id="游戏厅">游戏名</div><script src="0.js"></script>
+<small>
+    双方各持有10张牌，在牌堆里抽取一张，如果是数字牌（A算作1），则翻开自己手里对应位置的牌，将所有牌翻开为胜。获胜+20币。<br>
+    如果是J、Q、K，或者对应位置已经翻开，则轮到对方抽取。<br>
+    抽到大王、小王可以任选一个位置翻开。
+</small><br><br>
+
+<style>
+    .fanka{animation:fankab 0.3s linear 1;-webkit-animation:fankab 0.3s linear 1;}
+    @keyframes fankab{from{transform:rotateY(90deg);}to{transform:rotateY(0deg);}}@-webkit-keyframes fankab{from{transform:rotateY(90deg);}to{transform:rotateY(0deg);}}
+</style>
+
+<span id="电脑桌"></span>　<span id="电脑新"></span><br>
+<br>
+<span id="电脑抽到"></span> <span id="卡背"></span><span id="抽到"></span> <span id="裁判桌"></span><br>
+<br>
+<span id="玩家桌"></span>　<span id="玩家新"></span><br>
+
+<script>
+    let 单卡="<img src='img/背.png' width='50px'> ";
+    let 卡堆="<img src='img/背2.png' width='50px'> ";
+
+    function 刷新(){
+        document.getElementById("卡背").innerHTML=卡堆;
+        document.getElementById("裁判桌").innerHTML="<a onclick='开始游戏()'>开始游戏</a>";
+    }
+    刷新();
+
+    let 回合;
+    let dy;
+    let 电脑;
+    let 电脑表;
+    let 电脑数;
+    let 玩家;
+    let 玩家表;
+    let 玩家数;
+    let 封印;
+    function 开始游戏(){
+        document.getElementById("卡背").innerHTML=卡堆;
+        document.getElementById("抽到").innerHTML="";
+        电脑=[],玩家=[],电脑表=[],玩家表=[],封印="x",电脑数=0,玩家数=0;
+        回合=20;
+        洗牌(0);
+        for(let i=0;10>i;i++){电脑[i]=牌堆[i];}for(let i=10;20>i;i++){玩家[i-10]=牌堆[i];}
+        打印();
+
+        document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a>";
+        
+    }
+    function 打印(o){
+        dy="电脑：";
+        for(let i=0;10>i;i++){
+            if(i%5==0){dy+="<br>";}
+            if(o=="全部"){电脑表[i]=1;o[1]=i;}
+            if(电脑表[i]){
+                if(o[0]=="电脑"&&o[1]==i){dy+="<img class='fanka' src='img/"+电脑[i]+".png' width='50px'> ";}
+                else{dy+="<img src='img/"+电脑[i]+".png' width='50px'> ";}
+            }
+            else{dy+="<img src='img/背.png' width='50px'> ";}
+        }
+        document.getElementById("电脑桌").innerHTML=dy;
+        dy="玩家：";
+        for(let i=0;10>i;i++){
+            if(i%5==0){dy+="<br>";}
+            if(o=="全部"){玩家表[i]=1;o[1]=i;}
+            if(玩家表[i]){
+                if(o[0]=="玩家"&&o[1]==i){dy+="<img class='fanka' src='img/"+玩家[i]+".png' width='50px'> ";}
+                else{dy+="<img src='img/"+玩家[i]+".png' width='50px'> ";}
+            }
+            else{dy+="<img onclick='按钮("+i+")' src='img/背.png' width='50px'> ";}
+        }
+        document.getElementById("玩家桌").innerHTML=dy;
+    }
+
+    function 抽卡(o){
+        document.getElementById("抽到").className="";
+        if(o){
+            翻卡(o);
+        }else{
+            封印="x";
+            let 临时;
+            if(牌堆.length==回合){
+                打印("全部");
+                document.getElementById("裁判桌").innerHTML="已经没有牌了，游戏结束。<a onclick='开始游戏()'>重新开始</a>";
+            }else{
+                临时=牌堆[回合];
+                document.getElementById("电脑抽到").innerHTML="";
+                document.getElementById("抽到").innerHTML="<img class='fanka' src='img/"+临时+".png' width='50px'>";
+                回合+=1;
+                if(回合+1==牌堆.length){document.getElementById("卡背").innerHTML=单卡;}
+                if(回合==牌堆.length){document.getElementById("卡背").innerHTML="";}
+                if(临时=="J"||临时=="Q"||临时=="K"||临时=="A"&&玩家表[0]||玩家表[临时-1]){
+                    失败();
+                }else if(临时=="小王"||临时=="大王"){
+                    document.getElementById("裁判桌").innerHTML="恭喜抽到了王牌，可以任选一张翻开。";
+                    封印=0;
+                }else{
+                    封印=临时;
+                    document.getElementById("裁判桌").innerHTML="请翻开。（"+封印+"）";
+                    // document.getElementById("裁判桌").innerHTML="<a onclick=\"翻卡('"+临时+"')\">继续</a>";
+                }
+            }
+        }
+    }
+    function 翻卡(o){
+        document.getElementById("抽到").className="";
+        if(o=="A"){o=1;}
+        if(o>0&&!玩家表[o-1]){
+            玩家表[o-1]=1;
+            玩家数+=1;
+            打印(["玩家",(o-1)]);
+            if(玩家数==10){
+                try{notyf.confirm("恭喜获胜")}catch(e){alert("恭喜获胜");}
+                打印("全部");
+                document.getElementById("裁判桌").innerHTML="<span class='dui'>恭喜获胜，获得20币。</span><a onclick='开始游戏()'>重新开始</a>";
+                余额(20);
+            }else{
+                if(封印==0){
+                    封印="x";
+                    // 翻卡(玩家[o-1]);
+                // }else{
+                }
+                    封印=玩家[o-1];
+                    console.log(封印)
+                    if(封印=="A"){封印=1;}
+                    if(封印=="J"||封印=="Q"||封印=="K"||玩家表[封印-1]){失败();封印="x";}else{
+                        if(封印==1){封印="A";}
+                        document.getElementById("裁判桌").innerHTML="请翻开。（"+封印+"）";
+                    }
+                // document.getElementById("裁判桌").innerHTML="<a onclick=\"翻卡('"+玩家[o-1]+"')\">继续</a>";
+            
+            }
+        }else if(o=="小王"||o=="大王"){
+            document.getElementById("裁判桌").innerHTML="恭喜抽到了王牌，可以任选一张翻开。";
+            封印=0;
+        }else{
+            失败();
+        }
+    }
+    function 失败(){
+        document.getElementById("抽到").className="ssfd";
+        document.getElementById("裁判桌").innerHTML="<a onclick='电脑抽卡()'>继续</a> <span class='cuo'>很遗憾，轮到电脑了。</span>";
+    }
+    function 按钮(o){
+        document.getElementById("抽到").className="";
+        if(封印=="A"){封印=1;}
+        if(封印==0){
+            翻卡(o+1);
+        }else if(封印==o+1){
+            翻卡(o+1);
+            // alert(封印);
+            if(玩家数!=10){
+                if(封印=="小王"||封印=="大王"){翻卡(封印);}else if(封印=="J"||封印=="Q"||封印=="K"){封印="x";失败()}else{
+                    if(封印=="A"){o=1}else{o=封印}
+                    if(玩家表[o-1]){
+                        封印="x";失败();
+                    }
+                }
+            }
+        }
+    }
+
+    function 电脑抽卡(o){
+        document.getElementById("电脑抽到").className="";
+        if(o){
+            电脑翻卡(o);
+        }else{
+            let 临时;
+            if(牌堆.length==回合){
+                打印("全部");
+                document.getElementById("裁判桌").innerHTML="已经没有牌了，游戏结束。<a onclick='开始游戏()'>重新开始</a>";
+            }else{
+                临时=牌堆[回合];
+                document.getElementById("电脑抽到").innerHTML="<img class='fanka' src='img/"+临时+".png' width='50px'>";
+                document.getElementById("抽到").innerHTML="";
+                回合+=1;
+                if(回合+1==牌堆.length){document.getElementById("卡背").innerHTML=单卡;}
+                if(回合==牌堆.length){document.getElementById("卡背").innerHTML="";}
+                if(临时=="J"||临时=="Q"||临时=="K"||临时=="A"&&电脑表[0]||电脑表[临时-1]){
+                    // document.getElementById("抽到").innerHTML="";
+                    document.getElementById("电脑抽到").className="ssfd";
+                    document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a> <span class='dui'>轮到玩家了。</span>";
+                }else if(临时=="小王"||临时=="大王"){
+                    for(let i=0;10>i;i++){
+                    if(!电脑表[i]){
+                        o=i+1;
+                        break;
+                    }
+                }
+                // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+o+"')\">继续</a> 电脑抽到了王牌，它选择翻开……";
+                document.getElementById("裁判桌").innerHTML="电脑抽到了王牌，它选择翻开……";
+                setTimeout("电脑翻卡('"+o+"')",1000)
+                }else{
+                    // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+临时+"')\">继续</a> （电脑的回合）";
+                    document.getElementById("裁判桌").innerHTML="（电脑的回合）";
+                    setTimeout("电脑翻卡('"+临时+"')",500)
+                }
+            }
+        }
+    }
+    function 电脑翻卡(o){
+        document.getElementById("电脑抽到").className="";
+        if(o=="A"){o=1;}
+        if(o>0&&!电脑表[o-1]){
+            电脑表[o-1]=1;
+            电脑数+=1;
+            打印(["电脑",(o-1)]);
+            if(电脑数==10){
+                try{notyf.alert("电脑获胜");}catch(e){alert("电脑获胜");}
+                打印("全部");
+                document.getElementById("裁判桌").innerHTML="<span class='cuo'>电脑获胜。</span><a onclick='开始游戏()'>重新开始</a>";
+            }else{
+                // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+电脑[o-1]+"')\">继续</a> （电脑的回合）";
+                document.getElementById("裁判桌").innerHTML="（电脑的回合）";
+                setTimeout("电脑翻卡('"+电脑[o-1]+"')",500)
+            }
+        }else if(o=="小王"||o=="大王"){
+            for(let i=10;i>0;i--){
+                if(!电脑表[i-1]){
+                    o=i;
+                    break;
+                }
+            }
+            // for(let i=0;20>i;i++){
+            //     if(!电脑表[i]){
+            //         o=i+1;
+            //         break;
+            //     }
+            // }
+            // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+o+"')\">继续</a> 电脑抽到了王牌，它选择翻开……";
+            document.getElementById("裁判桌").innerHTML="电脑抽到了王牌，它选择翻开……";
+            setTimeout("电脑翻卡('"+o+"')",1000)
+        }else{
+            // document.getElementById("抽到").innerHTML="";
+            document.getElementById("电脑抽到").className="ssfd";
+            document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a> <span class='dui'>轮到玩家了。</span>";
+        }
+    }
+</script>
