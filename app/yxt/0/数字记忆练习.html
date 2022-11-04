@@ -17,10 +17,10 @@
 <br />
 
 <div id="dy_nd" style="display:block" class="bukexuanzhong">
-    <button onclick="难度(N=1)">难度1</button> <small>赚1币</small><br>
-    <button onclick="难度(N=2)">难度2</button> <small>赚5币</small><br>
-    <button onclick="难度(N=3)">难度3</button> <small>赚10币</small><br>
-    <button onclick="难度(N=4)">难度4</button> <small>赚20币</small><br>
+    <button onclick="难度(N=1)">难度1</button> <small>赚5币</small><br>
+    <button onclick="难度(N=2)">难度2</button> <small>赚10币</small><br>
+    <button onclick="难度(N=3)">难度3</button> <small>赚20币</small><br>
+    <button onclick="难度(N=4)">难度4</button> <small>赚50币</small><br>
 </div>
 
 
@@ -60,10 +60,10 @@
         document.getElementById("dy_ks").style.display = "block";
         document.getElementById("dy_tx").style.display = "none";
         let data0;
-        if (N == 1) { dataY = data1 ;赌注=1;}
-        if (N == 2) { dataY = data2 ;赌注=5;}
-        if (N == 3) { dataY = data3 ;赌注=10;}
-        if (N == 4) { dataY = data4 ;赌注=20;}
+        if (N == 1) { dataY = data1 ;赌注=5;}
+        if (N == 2) { dataY = data2 ;赌注=10;}
+        if (N == 3) { dataY = data3 ;赌注=20;}
+        if (N == 4) { dataY = data4 ;赌注=50;}
 
         let p = Array.from(dataY), i, a = [];
         while (p.length > 0) {
