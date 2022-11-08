@@ -18,7 +18,7 @@
 <div class="a0">
     <br>
     <span class="a2 bukexuanzhong"><b>ⓘ　您有50%的概率会赢</b></span>
-    <span class="a2 bukexuanzhong"><b>Ⓒ　余额：<span id="余额a">100 钞</span></b></span>
+    <span class="a2 bukexuanzhong"><b>Ⓒ　余额：<span id="余额a"></span></b></span>
     <!-- <a onclick="充值()"><span class="a2 a3 bukexuanzhong"><b>㊖　充值100钞</b></span></a> -->
     <br><br><br>
     <!-- <input type="text" placeholder="请输入押注的金额…" class="a2" id="输入" style="width:90%;height:200px;resize:none;" autocomplete="off"><br> -->
@@ -32,12 +32,6 @@
 
 <script>
     let 余额a=钱;
-
-    function 充值(){
-        余额a+=100;
-        document.getElementById("余额a").innerHTML = 余额+" 钞 <span style='color:#199100;'>+100</span>";
-    }
-
     document.getElementById("余额a").innerHTML=钱;
 
     let 输入;

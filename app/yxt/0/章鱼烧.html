@@ -35,9 +35,13 @@
     let 玩家表;
     let 玩家数;
     let 封印;
+
+    预加载(3);
+
     function 开始游戏(){
         document.getElementById("卡背").innerHTML=卡堆;
         document.getElementById("抽到").innerHTML="";
+        document.getElementById("电脑抽到").innerHTML="";
         电脑=[],玩家=[],电脑表=[],玩家表=[],封印="x",电脑数=0,玩家数=0;
         回合=20;
         洗牌(0);

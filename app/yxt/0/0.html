@@ -1,53 +1,80 @@
 <div id="游戏厅">猫球游戏厅</div><script src="0.js"></script>
 
-<a id="账01" onclick="document.getElementById('账02').style='';document.getElementById('账01').style='display:none;'">设置</a>
+<input id="搜索输入" onkeyup="搜索输入()" placeholder="搜索" autocomplete="off">
+<div id="搜索结果"></div>
+
+<div id="游戏列表"></div>
+
+<br>
+
+<a id="账01" onclick="document.getElementById('账02').style='';document.getElementById('账01').style='display:none;'">设置<br></a>
 <div id="账02" style="display:none;">
 <b>设置</b><br>
 <a onclick="余额(-钱)">余额清零</a>
 <!-- <a onclick="余额(100)">充值</a> -->
 </div>
 
-<div id="游戏列表"></div>
-
-
 
 <script>
     let 游戏列表=[ //hr 标题 , br , 游戏名 说明 子页面
-        ["hr","益智"],
+        ["h3","益智"],
         ["猜数字",,"双人版"],//10币
-        ["数字记忆练习"],//5、10、20、50币
         ["井字棋",,"双人版"],//5币
 
-        ["hr","休闲"],
+        ["h4","防老年痴呆"],
+        ["数字记忆练习"],//5、20、50、100币
+        ["顺序点数字"],//10、50、500币
+
+        ["h3","休闲"],
         ["章鱼烧"],//20币
 
-        ["hr","赌场"],
+        ["h3","赌场"],
         ["二十一点"],//1、10、50、100、1000币
         ["蔷薇赌场","模拟蔷薇花园的赌场，纯看运气，毫无技巧。"],
 
-        ["hr","其他"],
+        ["h3","其他"],
         ["电子放生"],
 
     ];
-    let dy="";
+    let dy="",临时dy;
     for(let i=0;游戏列表.length>i;i++){
-        if(游戏列表[i][0]=="hr"){
+        if(游戏列表[i][0]=="h3"){
+            dy+="<br><h3>"+游戏列表[i][1]+"</h3>";
+        }else if(游戏列表[i][0]=="h4"){
             dy+="<br><h4>"+游戏列表[i][1]+"</h4>";
         }else if(游戏列表[i][0]=="br"){
             dy+="<br>";
         }else{
-            dy+="<a href='"+游戏列表[i][0]+".html'>"+游戏列表[i][0]+"</a>";
-            if(游戏列表[i].length>2){
-                dy+="<small> ( ";
-                    for(let i2=2;游戏列表[i].length>i2;i2++){
-                        dy+="<a href='"+游戏列表[i][0]+"_"+游戏列表[i][i2]+".html'>"+游戏列表[i][i2]+"</a> ";
-                    }
-                dy+=")</small>";
-            }
-            if(游戏列表[i][1]&&游戏列表[i][1]!=""){dy+="："+游戏列表[i][1];}
-            dy+="<br>";
+            打印游戏(i);
+            dy+=临时dy;
         }
     }
     document.getElementById("游戏列表").innerHTML=dy;
+
+    function 打印游戏(o){
+        临时dy="<a href='"+游戏列表[o][0]+".html'>"+游戏列表[o][0]+"</a>";
+        if(游戏列表[o].length>2){
+            临时dy+="<small> ( ";
+                for(let i2=2;游戏列表[o].length>i2;i2++){
+                    临时dy+="<a href='"+游戏列表[o][0]+"_"+游戏列表[o][i2]+".html'>"+游戏列表[o][i2]+"</a> ";
+                }
+            临时dy+=")</small>";
+        }
+        if(游戏列表[o][1]&&游戏列表[o][1]!=""){临时dy+="："+游戏列表[o][1];}
+        临时dy+="<br>";
+    }
+
+    function 搜索输入(){
+        let 搜索=document.getElementById("搜索输入").value;
+        let 搜索结果="";
+        for(let i=0;游戏列表.length>i;i++){
+            if(游戏列表[i][0].indexOf(搜索)!=-1&&游戏列表[i][0]!="br"&&游戏列表[i][0]!="h3"&&游戏列表[i][0]!="h4"&&搜索!=""){
+                打印游戏(i);
+                搜索结果+=临时dy;
+            }
+        }
+        if(搜索结果==""){搜索结果="没有符合关键词的游戏。"}
+        document.getElementById("搜索结果").innerHTML=搜索结果;
+    }
 </script>
 
