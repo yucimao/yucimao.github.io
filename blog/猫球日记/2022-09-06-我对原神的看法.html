@@ -1732,7 +1732,15 @@ function 加载(o){
     }
     if(临时2[0]=="zk"){
         if(!临时2[3]){临时2[3]=临时2[2];}
-        if(window.location.href.indexOf("file:///")!=-1){dy+="<a href='留档/"+临时2[1]+".html'>"+临时2[2]+"</a>";}else{dy+="<a onclick=\"dw(dwb='"+临时2[1]+"',dwd='"+临时2[3]+"')\">"+临时2[2]+"</a>";}
+        if(window.location.href.indexOf("file:///")!=-1){
+            dy+="<a href='留档/"+临时2[1]+".html'>"+临时2[2]+"</a>";
+        }else{
+            dy+="<a onclick=\"dw(dwb='"+临时2[1].split("#")[0]+"',dwd='"+临时2[3]+"'";
+            if(临时2[1].indexOf("#")!=-1){
+                dy+=",dwe='"+临时2[1].split("#")[1]+"'";
+            }
+            dy+=")\">"+临时2[2]+"</a>";
+        }
     }
     if(临时2[0]=="dy"){
         if(临时2[1]=="粉丝"){
