@@ -6,6 +6,7 @@
 
 <div id="dy"></div>
 <script>
+    let 孙悟空=1;
     let 商品=[
         ["矿泉水",1,"倒进了河里","一瓶"],
         ["蚂蚁",1,"放进了森林","一只"],
@@ -29,11 +30,20 @@
     document.getElementById("dy").innerHTML=dy;
 
     function 选择(o){
-        if(商品[o][1]<钱){
+        if(商品[o][1]<=钱){
             余额(-商品[o][1]);
             try{notyf = new Notyf({delay:8888});notyf.confirm("成功购买<b>"+商品[o][3]+商品[o][0]+"</b><br><b>"+商品[o][2]+"</b>，真是功德无量。");notyf = new Notyf({delay:3000})}catch(e){alert("成功购买"+商品[o][0]+"并"+商品[o][2]);}
         }else{
+            if(孙悟空!=0&&商品[o][0]=="孙悟空"){孙悟空+=1;}else{孙悟空=0;}
+            if(孙悟空>10){
+                document.getElementById("dy").innerHTML="<input type=\"text\" placeholder=\"输入金额\" autocomplete=\"off\" id=\"输入金额\"> <a onclick=\"充值()\">充值</a>";
+            }
             try{notyf.alert("余额不足");}catch(e){alert("余额不足");}
         }
+    }
+
+    function 充值(){
+        dy=document.getElementById("输入金额").value;
+        if(dy>0){余额(dy)}else{try{notyf.alert("输入有误");}catch(e){alert("输入有误");}}
     }
 </script>

@@ -1,0 +1,50 @@
+<div id="游戏厅">反方向扭头</div><script src="0.js"></script>
+<small>
+    按任意键开始<small>(关机键之类的除外)</small>，屏幕上会显示一个箭头，玩家要立刻点击键盘上和箭头反方向的按键。根据速度可以获得2币或1币，错误扣5币。
+</small><br><br>
+
+<style>
+    #屏幕{font-size:5em;}
+</style>
+
+<div id="屏幕">❓</div>
+<div id="记录"></div>
+
+<script>
+    document.addEventListener("keydown",keydown);
+    let 当前="0";
+    let 计时;
+    let 箭头=["⬆️","⬇️","⬅️","➡️"];
+    let 答案={"⬆️":"40","⬇️":"38","⬅️":"39","➡️":"37"}
+    function 下一个(){
+        计时=new Date().getTime();
+        当前=箭头[Math.floor(Math.random()*箭头.length)];
+        document.getElementById("屏幕").innerHTML=当前;
+    }
+    let 统计=[0,0,0,0];
+    function keydown(event){
+        if(当前=="0"){
+            try{notyf.confirm("开始")}catch(e){alert("开始");}
+        }else{
+            if(event.keyCode==答案[当前]){
+                try{notyf.confirm("正确")}catch(e){alert("正确");}
+                统计[0]+=1;
+                统计[3]+=1;
+                当前=new Date().getTime()-计时;
+                统计[2]+=当前;
+                if(当前<100){余额(5);}else if(当前<300){余额(3);}else if(当前<500){余额(2);}else if(当前<1000){余额(1);}
+            }else{
+                try{notyf.alert("错误");}catch(e){alert("错误");}
+                统计[1]+=1;
+                统计[3]+=1;
+                统计[2]+=10000;
+                余额(-5);
+            }
+        }
+        下一个();
+        if(统计[3]!=0){
+            document.getElementById("记录").innerHTML="正确："+统计[0]+"次（"+(统计[2]/统计[3]/1000)+"秒）<br>错误："+统计[1]+"次";
+        }
+}
+</script>
+

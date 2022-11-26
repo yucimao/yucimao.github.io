@@ -1,11 +1,9 @@
 <div id="游戏厅">猫球游戏厅</div><script src="0.js"></script>
+<style>h3,h4{display:inline;line-height:2em;}</style>
 
 <input id="搜索输入" onkeyup="搜索输入()" placeholder="搜索" autocomplete="off">
-<div id="搜索结果"></div>
-
 <div id="游戏列表"></div>
-
-<br>
+<hr>
 
 <a id="账01" onclick="document.getElementById('账02').style='';document.getElementById('账01').style='display:none;'">设置<br></a>
 <div id="账02" style="display:none;">
@@ -17,31 +15,39 @@
 
 <script>
     let 游戏列表=[ //hr 标题 , br , 游戏名 说明 子页面
-        ["h3","益智"],
-        ["猜数字",,"双人版"],//10币
-        ["井字棋",,"双人版"],//5币
+        ["h3","益智<small> / 休闲</small>"],
+        ["猜数字",,"双人版"],// 10币
+        ["井字棋",,"双人版"],// 5币
+
+        ["t","<h4>休闲小游戏</h4>"],
+        ["章鱼烧"],// +20
+        ["扑克猜大小"],// +5 / -5
+        ["猜拳"],// +1 / -1
 
         ["h4","防老年痴呆"],
-        ["数字记忆练习"],//5、20、50、100币
-        ["顺序点数字"],//10、50、500币
+        ["数字记忆练习"],// 5、20、50、100币
+        ["顺序点数字"],// 10、50、500币
+        ["反方向扭头"],// +1 / -5
 
-        ["h3","休闲"],
-        ["章鱼烧"],//20币
-
-        ["h3","赌场"],
-        ["二十一点"],//1、10、50、100、1000币
+        ["h3","赌场<small> / 酒桌</small>"],
+        ["二十一点"],// 随意下注
+        ["三公","双方各抽三张牌比大小的扑克牌游戏。","骰子版"],// 随意下注
         ["蔷薇赌场","模拟蔷薇花园的赌场，纯看运气，毫无技巧。"],
 
         ["h3","其他"],
         ["电子放生"],
 
     ];
-    let dy="",临时dy;
+    let dy="<div id='搜索结果'>",临时dy;
     for(let i=0;游戏列表.length>i;i++){
-        if(游戏列表[i][0]=="h3"){
-            dy+="<br><h3>"+游戏列表[i][1]+"</h3>";
+        if(游戏列表[i][0]=="h3"||游戏列表[i][0]=="h4"){
+            dy+="</div>";
+            if(游戏列表[i][0]=="h3"){dy+="<hr>";}else{dy+="<br>";}
+            dy+="<"+游戏列表[i][0]+">"+游戏列表[i][1]+"</"+游戏列表[i][0]+"> <a onclick=\"document.getElementById('"+游戏列表[i][1]+"').style='';this.style='display:none;'\">展开</a><br><div id='"+游戏列表[i][1]+"' style='display:none;'>";
         }else if(游戏列表[i][0]=="h4"){
-            dy+="<br><h4>"+游戏列表[i][1]+"</h4>";
+            dy+="<br><h4>"+游戏列表[i][1]+"</h4><br>";
+        }else if(游戏列表[i][0]=="t"){
+            dy+="<br>"+游戏列表[i][1]+"<br>";
         }else if(游戏列表[i][0]=="br"){
             dy+="<br>";
         }else{
@@ -49,7 +55,7 @@
             dy+=临时dy;
         }
     }
-    document.getElementById("游戏列表").innerHTML=dy;
+    document.getElementById("游戏列表").innerHTML=dy+"</div>";
 
     function 打印游戏(o){
         临时dy="<a href='"+游戏列表[o][0]+".html'>"+游戏列表[o][0]+"</a>";
