@@ -52,6 +52,10 @@ else{
     var bodyK = "／／" + bodyJ;
     var bodyL = "／" + bodyJ + "／";
 
+    console.log(bodyJ);
+    console.log(bodyH);
+    console.log(window.parent.document.getElementById(bodyK).height);
+
     if(bodyH < bodyHa){bodyH=bodyHa;}
     window.parent.document.getElementById(bodyK).height = bodyH+20;
     window.parent.document.getElementById(bodyL).innerHTML = "";
@@ -62,10 +66,6 @@ else{
     window.parent.document.getElementById(bodyK).height = bodyH+20;
     }
 
-    
-    console.log(bodyJ);
-    console.log(bodyH);
-    console.log(window.parent.document.getElementById(bodyK).height);
 }
 let p_link = "{{ page.permalink }}".split("/");
 localStorage.setItem(p_link[2], "1");
