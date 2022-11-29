@@ -1,4 +1,3 @@
-/*已弃用，改为js*/
 dy="<div id=\"排行\"><style>td span.b{display:none;}</style></div>"+
 "<small>点击作品名可以复制；点击评分展开评分细则；点击“排名”改为不并列模式。</small>"+dy;
 
@@ -100,7 +99,7 @@ dy+="</table>";
 
 dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>");
 
-dy+="<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em;}i[云]:after{content:'[云]';color:#258DF6;}i[通]:after{content:'[通]';color:#19D02A;}i[弃]:after{content:'[弃]';color:#FF4343;}td span.c{font-size: 0.8em;color:#999999;}</style>";
+dy+="<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em;}i[云]:after{content:'[云]';color:#258DF6;}i[通]:after{content:'[通]';color:#19D02A;}i[弃]:after{content:'[弃]';color:#FF4343;}td span.c{font-size: 0.8em;color:#999999;}td small{color:#8c8b8b;}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer;}.ysa{color:#77C94B;}.ysb{color:#DF402A;}</style>";
 
 document.getElementById("结果").innerHTML = dy;
 
@@ -130,5 +129,3 @@ function 排名方式(){
     if(排名的方式==0){排名的方式=1;document.getElementById("排行").innerHTML = "<style>td span.a{display:none;}</style>";}
     else{排名的方式=0;document.getElementById("排行").innerHTML = "<style>td span.b{display:none;}</style>";}
 }
-</script>
-<style>td small{color:#8c8b8b;}td[onclick^="复(制="],td[onclick^="dw(dwd="]{cursor:pointer;}.ysa{color:#77C94B;}.ysb{color:#DF402A;}</style>
