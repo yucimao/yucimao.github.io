@@ -1,0 +1,41 @@
+---
+layout: page2
+title: MV
+nav_text: MV
+nav_url: <a href="/pingfen">我的排行榜</a>
+permalink: pingfen/mv
+redirect_from:
+ - dafen/mv
+---
+<div id="结果"></div>
+<script>let dy="<table><tr><th onclick='排名方式()'>排名</th><th>歌名</th><th>歌手</th><th>评分</th><th></th></tr>";let data = [
+
+    // 9 S 神作 非常喜欢
+    // 8 A 佳作 很喜欢
+    // 7 B 优秀 还不错
+    // 6 C 还行 算是及格
+    // 5 一般 勉强能看
+    // 4 不差
+    // 3 较差
+    // 2 很差
+    // 1 垃圾
+    // 0 粪作
+
+    // 情绪共鸣5 词曲3 演唱2
+    // 完美5
+    // 超棒4
+    // 很好3
+    // 还行2
+    // 一般1
+    // 不行0
+    
+    // [" +  +  + " , "／" ,, ""],
+    // [" +  +  + " , "／" ,, ""],
+    // [" +  +  + " , "／" ,, ""],
+
+    // [" +  +  + " , "／" ,, ""],
+
+];
+let 打分标准=[["总体分","90"],["情绪共鸣","5"],["词曲","3"],["演唱","2"],];
+</script>
+<script src="/js/mq-pingfen.js"></script>

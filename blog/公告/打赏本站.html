@@ -30,12 +30,15 @@ tpfd: 1
         <td></td></tr>
 </table>
 
-<!-- B站贝壳 实际到账需要x84% -->
 <a name="名单"></a>
-<div id="名单"></div>
+<div id="时间"></div>
+<div id="单次金额" style="display:none;"></div>
+<div id="总金额" style="display:none;"></div>
 
 <script>
 let 名单=[
+// B站充电：收到的贝壳x1.488才是付款金额 B站抽成好多 → →
+["荔枝-QwQ",1,"无"],
 ["二扯",3,"无"],
 ["不知道叫啥怪我咯",2,"_(:з」∠)_"],
 ["风色遐想",65,"加了个油"],
@@ -44,53 +47,47 @@ let 名单=[
 
 ];
 
-let 名单临时;
-let 临时名单={"李猫球":"0"};
-let 临时榜=[["李猫球",0,"测试"]];
-let 记录=1;
-let 临时;
+let 排序_总金额="",排序_单次金额="",排序_时间="";
+    let 临时={},临时2=[],临时3=[],临时4;
 
-for(let i=0;名单.length>i;i++){
-    临时=名单[i][0];
-    if(临时名单[临时]){
-        临时=临时名单[临时];
-        临时榜[临时][1]+=名单[i][1];
-    }else{
-        临时名单[临时]=记录;
-        临时榜[记录]=名单[i];
-        记录+=1;
-    }
-}
-临时榜.splice(0,1);
-let 排行榜=[临时榜[0]];
-
-for(let i=1;临时榜.length>i;i++){
-    临时=排行榜.length;
-    记录=0;
-    while (排行榜.length==临时){
-        if(排行榜[记录][1]>临时榜[i][1]){
-            if(记录+1==排行榜.length){排行榜[排行榜.length]=临时榜[i];}
-        }else{
-            排行榜.splice(记录,0,临时榜[i]);
-        }
-        记录+=1;
-    }
-}
-
-let 名单_dy="<p><b>名单</b> <small>时间排序</small><br>切换成<a class=\"bukexuanzhong\" onclick=\"换名单('排行')\">排行榜</a></p><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
     for(let i=0;名单.length>i;i++){
-        名单_dy+="<tr><td>"+名单[i][0]+"</td><td>"+名单[i][1]+"<sub>元</sub></td><td>"+名单[i][2]+"</td></tr>";
+        排序_时间+="<tr><td>"+名单[i][0]+"</td><td>"+名单[i][1]+"</td><td>"+名单[i][2]+"</td></tr>";
+        if(临时2.indexOf(名单[i][0])!=-1){临时[名单[i][0]]+=名单[i][1];}else{临时[名单[i][0]]=名单[i][1];临时2[临时2.length]=名单[i][0];}
     }
-    名单_dy+="</table>";
-let 名单排行_dy="<p><b>名单</b> <small>排行榜</small><br>切换成<a class=\"bukexuanzhong\" onclick=\"换名单('记录')\">时间排序</a></p><table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th><th style=\"min-width:20em\">留言</th></tr>";
-    for(let i=0;排行榜.length>i;i++){
-        名单排行_dy+="<tr><td>"+排行榜[i][0]+"</td><td>"+排行榜[i][1]+"<sub>元</sub></td><td>"+排行榜[i][2]+"</td></tr>";
-    }
-    名单排行_dy+="</table>";
 
-function 换名单(当前名单){
-    if(当前名单=="记录"){document.getElementById("名单").innerHTML=名单_dy;}
-    if(当前名单=="排行"){document.getElementById("名单").innerHTML=名单排行_dy;}
-}
-换名单("记录");
+    临时3=[临时2[0]];
+    for(let i=1;临时2.length>i;i++){
+        临时4=0;
+        for(let i2=1;临时3.length>i2;i2++){
+            if(临时[临时3[i2]]>临时[临时2[i]]){
+                临时3.splice(i2,0,临时2[i]);
+                临时4=1;
+                break;
+            }
+        }
+        if(临时4==0){临时3[临时3.length]=临时2[i];}
+    }
+    for(let i=0;临时3.length>i;i++){
+        排序_总金额="<tr><td>"+临时3[i]+"</td><td>"+临时[临时3[i]]+"</td></tr>"+排序_总金额;
+    }
+
+    临时3=[名单[0]];
+    for(let i=1;名单.length>i;i++){
+        临时4=0;
+        for(let i2=1;临时3.length>i2;i2++){
+            if(临时3[i2][1]>名单[i][1]){
+                临时3.splice(i2,0,名单[i]);
+                临时4=1;
+                break;
+            }
+        }
+        if(临时4==0){临时3[临时3.length]=名单[i];}
+    }
+    for(let i=0;临时3.length>i;i++){
+        排序_单次金额="<tr><td>"+临时3[i][0]+"</td><td>"+临时3[i][1]+"</td><td>"+临时3[i][2]+"</td></tr>"+排序_单次金额;
+    }
+
+    document.getElementById("时间").innerHTML="<b>名单</b> <small>时间排序</small><br>切换成：时间排序、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td><td><b>留言</b></td></tr>"+排序_时间+"</table>";
+    document.getElementById("单次金额").innerHTML="<b>名单</b> <small>单次金额排序</small><br>切换成：<a onclick=\"document.getElementById('单次金额').style='display:none;';document.getElementById('时间').style='';\">时间排序</a>、单次金额排序、<a onclick=\"document.getElementById('单次金额').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td><td><b>留言</b></td></tr>"+排序_单次金额+"</table>";
+    document.getElementById("总金额").innerHTML="<b>名单</b> <small>总金额排序</small><br>切换成：<a onclick=\"document.getElementById('总金额').style='display:none;';document.getElementById('时间').style='';\">时间排序</a>、<a onclick=\"document.getElementById('总金额').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、总金额排序<br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td></tr>"+排序_总金额+"</table>";
 </script>
