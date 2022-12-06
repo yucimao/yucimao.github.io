@@ -4,42 +4,47 @@
 			"path": "blog/猫球日记/2022-09-06-我对原神的看法.html",
 			"bookmarks": [
 				{
-					"line": 159,
+					"line": 38,
+					"column": 6,
+					"label": "舆情"
+				},
+				{
+					"line": 161,
 					"column": 5,
 					"label": "私人收藏"
 				},
 				{
-					"line": 322,
+					"line": 324,
 					"column": 10,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 472,
+					"line": 474,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 495,
+					"line": 497,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 501,
+					"line": 503,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 539,
+					"line": 541,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 602,
+					"line": 605,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 615,
+					"line": 617,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
@@ -49,117 +54,117 @@
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 726,
+					"line": 732,
 					"column": 17,
 					"label": "2020.11.11 - 1.1"
 				},
 				{
-					"line": 762,
+					"line": 768,
 					"column": 17,
 					"label": "2020.12.23 - 1.2"
 				},
 				{
-					"line": 788,
+					"line": 795,
 					"column": 16,
 					"label": "2021.02.03 - 1.3"
 				},
 				{
-					"line": 808,
+					"line": 816,
 					"column": 20,
 					"label": "2021.03.17 - 1.4"
 				},
 				{
-					"line": 822,
+					"line": 830,
 					"column": 31,
 					"label": "2021.04.28 - 1.5"
 				},
 				{
-					"line": 844,
+					"line": 852,
 					"column": 31,
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 875,
+					"line": 883,
 					"column": 13,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 914,
+					"line": 923,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 944,
+					"line": 953,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 964,
+					"line": 973,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1010,
+					"line": 1021,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1036,
+					"line": 1048,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1053,
+					"line": 1065,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1111,
+					"line": 1123,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1134,
+					"line": 1146,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1158,
+					"line": 1170,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1222,
+					"line": 1234,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1257,
+					"line": 1269,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1360,
+					"line": 1385,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 1495,
+					"line": 1521,
 					"column": 6,
 					"label": "【其他】"
 				},
 				{
-					"line": 1619,
+					"line": 1645,
 					"column": 8,
 					"label": "日记"
 				},
 				{
-					"line": 1633,
+					"line": 1659,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 1707,
+					"line": 1733,
 					"column": 0,
 					"label": "底层代码"
 				}
