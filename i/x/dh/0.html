@@ -7,7 +7,6 @@ redirect_from:
  - 小猫球
 ---
 <link rel="stylesheet" href="/css/avatar_chat.css">
-<script src="/js/mq-wzjm.js"></script>
 <style>@media screen and (min-width: 768px){.body{position: relative;width: 100%;top:1em;margin: auto;}}#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}#对话{border-radius: 20px;}#选择 ul{font-weight: bold;display: block;line-height: 40px;text-decoration: none;color: #58a4dd;cursor:pointer;Margin:5px;}#选择 ul:hover{color: #0085a1;background: #eef6fc;text-decoration: none;} [class="d n2"]{cursor:pointer;}</style>
 <div class="body" style="width:100%"><div id="对话" class="avatar_chat">
     <div><span class="a m">你好，我是李猫球。</span></div>
@@ -18,12 +17,19 @@ redirect_from:
 <div id="选择"></div></div>
 <script>
 let data=[
-{% include c/ixdh.html %}
+    "3810106／你好",
+    "3852287／你为什么叫“李猫球”？",
+    "4036139／你喜欢什么电影？/有什么电影推荐？",
+    "4036354／你喜欢什么游戏？/有什么游戏推荐？",
+    "4036392／你喜欢什么电视剧？/有什么电视剧推荐？",
+    "4036393／你喜欢什么漫画？/有什么漫画推荐？",
+    "4036407／你喜欢什么动画(动漫)？/有什么动画(动漫)推荐？",
+    "4040954／你喜欢什么歌曲？/有什么歌曲推荐？",
+    "4839522／你喜欢喝酒么？",
 ];
 
 let 可选;
 let wzjm_输入;
-let wzjm_密码="ix";
 
 function 确定() {
     可选="";
@@ -31,7 +37,6 @@ function 确定() {
     for(let i=0;data.length>i;i++){
         let 过程="0";
         wzjm_输入=data[i];
-        wzjm_解密();
         for(let i2=0;输入.length>i2;i2++){
             if (wzjm_输入.indexOf(输入[i2]) != -1 && 输入[i2] != "") {}
             else { 过程 = "1"; }
@@ -63,7 +68,6 @@ function 获(){
         }
     });
     wzjm_输入=GetJson.responseText;
-    wzjm_解密();
     地址=wzjm_输入.split("[");
     for(let i=1;地址.length>i;i++){
         if (地址[i].indexOf("／") != -1){
