@@ -1,5 +1,5 @@
 dy="<div id=\"排行\"><style>td span.b{display:none;}</style></div>"+
-"<small>点击作品名可以复制；点击评分展开评分细则；点击“排名”改为不并列模式。</small>"+dy;
+"<small>点击作品名可以复制；点击评分展开评分细则；点击“排名”改为不并列模式；点击标签展开同标签排行。</small>"+dy;
 
 for(let i=0;data.length>i;i++){
     let 临时=0;
@@ -80,8 +80,8 @@ for(let i=1;data.length>i;i++){
                     dy+="<a href=\""+临时2[1]+"\" target=\"_blank\" class=\"dk\">"+临时2[0]+"</a>";
                 }else if (datb[i][i2].indexOf("分类：") != -1){
                     临时2=临时2.split("：")[1];
-                    if (分类排行.indexOf("／"+临时2+"／") == -1){分类排行+=临时2+"／";分类排行榜[临时2]="“<b>"+临时2+"</b>”分类排名：<br><ol>";}
-                    分类排行榜[临时2]+="<li><b>"+datb[i][1].replace(new RegExp('／', "g"), "</b>　")+"</b> <small>"+datb[i][0]+"分</small></li>";
+                    if (分类排行.indexOf("／"+临时2+"／") == -1){分类排行+=临时2+"／";分类排行榜[临时2]="“<b>"+临时2+"</b>”标签排名：<br><ol>";}
+                    分类排行榜[临时2]+="<li><b>"+datb[i][1].split("<i")[0].replace(new RegExp('／', "g"), "</b>　")+"</b> <small>"+datb[i][0]+"分</small></li>";
                     // dy+="<a onclick=\"dw2(dwb2='"+临时2+"')\">"+临时2+"</a><small>(分类)</small>";
                     dy+="<a onclick=\"dw2(dwb2='"+临时2+"')\"><small><b>"+临时2+"</b></small></a>";
                 }else if (datb[i][i2].indexOf("：") != -1){
