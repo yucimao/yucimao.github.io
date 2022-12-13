@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>疫情结束了？</title>
+            <description>仿佛一夜之间人们改变了对疫情的态度，从好像很要命的事变成了普通流感……</description>
+            <pubDate>Mon, 12 Dec 2022 11:39:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/7090205</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/7090205</guid>
+        </item>
+
+        <item>
             <title>夏日祭风波</title>
             <description>网上相关的讨论很多，但很少有人平静的思考和讨论，都只是在宣泄情绪，还出现许多阴谋论。</description>
             <pubDate>Mon, 25 Jul 2022 23:14:00 +0800</pubDate>
