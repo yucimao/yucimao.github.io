@@ -82,8 +82,8 @@ for(let i=1;data.length>i;i++){
                     临时2=临时2.split("：")[1];
                     if (分类排行.indexOf("／"+临时2+"／") == -1){分类排行+=临时2+"／";分类排行榜[临时2]="“<b>"+临时2+"</b>”分类排名：<br><ol>";}
                     分类排行榜[临时2]+="<li><b>"+datb[i][1].replace(new RegExp('／', "g"), "</b>　")+"</b> <small>"+datb[i][0]+"分</small></li>";
-                    // 分类排行榜[临时2]+="<li><b>"+datb[i][1].split("<")[0]+"</b> <small>"+datb[i][0]+"分</small></li>";4
-                    dy+="<a onclick=\"dw2(dwb2='"+临时2+"')\">"+临时2+"</a><small>(分类)</small>";
+                    // dy+="<a onclick=\"dw2(dwb2='"+临时2+"')\">"+临时2+"</a><small>(分类)</small>";
+                    dy+="<a onclick=\"dw2(dwb2='"+临时2+"')\"><small><b>"+临时2+"</b></small></a>";
                 }else if (datb[i][i2].indexOf("：") != -1){
                     临时2=临时2.split("：");
                     dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
