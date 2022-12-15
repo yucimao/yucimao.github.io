@@ -104,72 +104,72 @@
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1023,
+					"line": 1024,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1050,
+					"line": 1051,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1067,
+					"line": 1068,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1125,
+					"line": 1126,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1148,
+					"line": 1149,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1172,
+					"line": 1173,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1236,
+					"line": 1237,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1271,
+					"line": 1272,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1346,
+					"line": 1347,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1400,
+					"line": 1404,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 1536,
+					"line": 1540,
 					"column": 6,
 					"label": "【其他】"
 				},
 				{
-					"line": 1660,
+					"line": 1664,
 					"column": 8,
 					"label": "日记"
 				},
 				{
-					"line": 1674,
+					"line": 1678,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 1748,
+					"line": 1752,
 					"column": 0,
 					"label": "底层代码"
 				}
