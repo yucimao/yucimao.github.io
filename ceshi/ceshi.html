@@ -1,5 +1,10 @@
 <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
 
+<a onclick="按钮('a')">a</a><br>
+<a onclick="按钮('b')">b</a><br>
+<a onclick="按钮('c')">c</a><br>
+<a onclick="按钮('d')">d</a><br>
+
 <script>
 AV.init({
   appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
@@ -7,10 +12,13 @@ AV.init({
   serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
 });
 
-const TestObject = AV.Object.extend('TestObject');
-const testObject = new TestObject();
-testObject.set('words', 'Hello world!');
-testObject.save().then((testObject) => {
-  console.log('保存成功。')
+function 按钮(o){
+    const TestObject = AV.Object.extend('TestObject');
+    const testObject = new TestObject();
+    testObject.set('words', o);
+    testObject.save().then((testObject) => {
+    console.log('保存成功。')
 })
+}
+
 </script>
