@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>坚果云弄丢了我的灵感</title>
+            <description>今天下午的午睡，在半睡半醒间，我的大脑自己写起了小说……</description>
+            <pubDate>Tue, 27 Dec 2022 18:59:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/7213733</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/7213733</guid>
+        </item>
+
+        <item>
             <title>疫情结束了？</title>
             <description>仿佛一夜之间人们改变了对疫情的态度，从好像很要命的事变成了普通流感……</description>
             <pubDate>Wed, 14 Dec 2022 10:45:00 +0800</pubDate>
