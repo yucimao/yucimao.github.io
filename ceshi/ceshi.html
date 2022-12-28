@@ -6,4 +6,11 @@ AV.init({
   appKey: "YCCregxILHitovzescjVs4X1",
   serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
 });
+
+const TestObject = AV.Object.extend('TestObject');
+const testObject = new TestObject();
+testObject.set('words', 'Hello world!');
+testObject.save().then((testObject) => {
+  console.log('保存成功。')
+})
 </script>
