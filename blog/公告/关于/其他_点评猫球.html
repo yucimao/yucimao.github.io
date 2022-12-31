@@ -117,11 +117,10 @@ permalink: dianpingmaoqiu
 		}
 	}
 
-	if(location.href.indexOf("?jiazai")!=-1){
-		window.onload=function(){
+	window.onload=function(){
+		if(location.href.indexOf("?jiazai")!=-1){
 			document.getElementById("打分").style="";
 			document.getElementById("打分前").style="display:none;";
-		}
-	}else{window.location.href=location.href+'?jiazai';}
-	
+		}else{window.location.href=location.href+'?jiazai';}
+	}
 </script>
