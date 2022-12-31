@@ -15,17 +15,23 @@ permalink: dianpingmaoqiu
 </style>
 
 <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
-打分 
-<input type="radio" name="a" id="a1" onclick="打分(0)"><label for="a1">0</label>
-<input type="radio" name="a" id="a1" onclick="打分(1)"><label for="a1">1</label>
-<input type="radio" name="a" id="a2" onclick="打分(2)"><label for="a2">2</label>
-<input type="radio" name="a" id="a3" onclick="打分(3)"><label for="a3">3</label>
-<input type="radio" name="a" id="a4" onclick="打分(4)"><label for="a4">4</label>
-<input type="radio" name="a" id="a5" onclick="打分(5)"><label for="a5">5</label>
-<br>
-<textarea id="输入" placeholder="你的评价" style="width:70%;height:7em;font-size:1.2em;"></textarea>
-<br>
-<button onclick="提交(0)">提交</button>
+
+<div id="打分" style="display:none;">
+	打分 
+	<input type="radio" name="a" id="a1" onclick="打分(0)"><label for="a1">0</label>
+	<input type="radio" name="a" id="a1" onclick="打分(1)"><label for="a1">1</label>
+	<input type="radio" name="a" id="a2" onclick="打分(2)"><label for="a2">2</label>
+	<input type="radio" name="a" id="a3" onclick="打分(3)"><label for="a3">3</label>
+	<input type="radio" name="a" id="a4" onclick="打分(4)"><label for="a4">4</label>
+	<input type="radio" name="a" id="a5" onclick="打分(5)"><label for="a5">5</label>
+	<br>
+	<textarea id="输入" placeholder="你的评价" style="width:70%;height:7em;font-size:1.2em;"></textarea>
+	<br>
+	<button onclick="提交(0)">提交</button>
+</div>
+<div id="打分前">加载中……</div>
+
+
 
 <br><br>
 
@@ -110,4 +116,11 @@ permalink: dianpingmaoqiu
 			try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
 		}
 	}
+
+	window.onload=function(){
+		document.getElementById("打分").style="";
+		document.getElementById("打分前").style="display:none;";
+	}
+	
+	// if(location.href.indexOf("?加载完毕")!=-1){}else{window.location.href=location.href+'?加载完毕';}
 </script>
