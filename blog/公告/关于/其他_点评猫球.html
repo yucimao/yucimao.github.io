@@ -4,9 +4,7 @@ title: 点评猫球
 nav_text: 点评猫球
 nav_url: <a href="/maoqiu">关于猫球</a>
 permalink: dianpingmaoqiu
-pinglun: 1
 ---
-<link rel="stylesheet" href="/css/all.css">
 <style>
 	.分a,.总分,.分条,.个评价{color:#fd9b07;}
 	.分b{color:#cccccc;}
@@ -14,21 +12,26 @@ pinglun: 1
 	.分a,.分b,.分c{font-size:1.3em;letter-spacing:.14em;line-height:0.8em;}
 	.总分{font-size:2em;}
 	.分条{background-color:#fd9b07;font-size:0.8em;}
-
-	.vcards,.vcount{display:none !important;}
 </style>
 
-点击<a href="#此处">此处</a>跳转到评价区域。
+<script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
+打分 
+<input type="radio" name="a" id="a1" onclick="分(1)"><label for="a1">1</label>
+<input type="radio" name="a" id="a2" onclick="分(2)"><label for="a2">2</label>
+<input type="radio" name="a" id="a3" onclick="分(3)"><label for="a3">3</label>
+<input type="radio" name="a" id="a4" onclick="分(4)"><label for="a4">4</label>
+<input type="radio" name="a" id="a5" onclick="分(5)"><label for="a5">5</label>
+<br>
+<textarea id="输入" placeholder="你的评价" style="width:70%;height:7em;"></textarea>
+<br>
+<button onclick="提交()">提交</button>
 
 <br><br>
 
 <div id="dy"></div>
 
-<br>
-<a name="此处"></a>（打分需要在留言里手动输入数字1到5）
-
 <script>
-	let data=[
+	let data=[ //分 日期 评价 名字
 		["3","2022.10.16","暂无评价（这条是测试用的）"],
 	];
 	let 星={
@@ -83,7 +86,29 @@ pinglun: 1
 	}
 	dy2+="<br><br></td></tr></table>";
 
-
-
 	document.getElementById("dy").innerHTML=dy2+"<br><br>"+dy;
+
+	let 打分=0;function 分(o){打分=o;}
+
+	function 提交(){
+		try {
+			AV.init({
+				appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
+				appKey: "YCCregxILHitovzescjVs4X1",
+				serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
+			});
+			const TestObject = AV.Object.extend('df');
+			const testObject = new TestObject();
+			testObject.set('pingjia', document.getElementById("输入").value);
+			testObject.set('fenshu', 打分);
+			testObject.save().then((testObject) => {
+				try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
+			})
+
+		}
+		catch(e){
+			try{notyf.alert("提交失败");}catch(e){alert("提交失败");}
+		}
+	}
+	
 </script>
