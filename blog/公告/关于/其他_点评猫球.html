@@ -16,7 +16,7 @@ permalink: dianpingmaoqiu
 
 <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
 
-<div id="打分" style="display:none;">
+<div id="打分" style="display:none;"><small>(如果是第一次打开这个页面，请<a onclick="javascript:location.reload();">刷新</a>一次。)</small><br>
 	打分 
 	<input type="radio" name="a" id="a1" onclick="打分(0)"><label for="a1">0</label>
 	<input type="radio" name="a" id="a1" onclick="打分(1)"><label for="a1">1</label>
@@ -118,9 +118,7 @@ permalink: dianpingmaoqiu
 	}
 
 	window.onload=function(){
-		if(location.href.indexOf("?jiazai")!=-1){
-			document.getElementById("打分").style="";
-			document.getElementById("打分前").style="display:none;";
-		}else{window.location.href=location.href+'?jiazai';}
+		document.getElementById("打分").style="";
+		document.getElementById("打分前").style="display:none;";
 	}
 </script>
