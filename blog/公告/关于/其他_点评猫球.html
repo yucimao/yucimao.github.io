@@ -107,14 +107,13 @@ permalink: dianpingmaoqiu
 				testObject.save().then((testObject) => {
 					成功=1;
 				})
-
 			}
 			catch(e){
-				成功=2;
+				if(成功==0){成功=2;}
 			}
-			if(成功!=0){break;}
+			if(成功==1){break;}
 		}
-		if(成功==0||成功==2){try{notyf.alert("提交失败");}catch(e){alert("提交失败");}}else{try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}}
+		if(成功==1){try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}}catch(e){alert("提交失败");}}else{try{notyf.alert("提交失败");}
 	}
 	
 </script>
