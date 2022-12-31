@@ -92,8 +92,6 @@ permalink: dianpingmaoqiu
 	let 分数=0;function 打分(o){分数=o;}
 
 	function 提交(o){
-		let 成功=o;
-
 		try{
 			AV.init({
 				appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
@@ -105,18 +103,11 @@ permalink: dianpingmaoqiu
 			testObject.set('pingjia', document.getElementById("输入").value);
 			testObject.set('fenshu', 分数);
 			testObject.save().then((testObject) => {
-				成功=1;
-				console.log(o,1)
+				try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
 			})
 		}
 		catch(e){
-			if(成功==0){成功=2;}
-			console.log(o,2)
+			try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
 		}
-
-		if(成功!=1&&o!=2){console.log(o,3);提交(2);}
-		console.log(o,"成功",成功);
-		if(成功==1){try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}}else if(o==2){try{notyf.alert("提交失败，请重试。");}catch(e){alert("提交失败，请重试。");}}
 	}
-	
 </script>
