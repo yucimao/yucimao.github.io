@@ -16,13 +16,14 @@ permalink: dianpingmaoqiu
 
 <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
 打分 
+<input type="radio" name="a" id="a1" onclick="打分(0)"><label for="a1">0</label>
 <input type="radio" name="a" id="a1" onclick="打分(1)"><label for="a1">1</label>
 <input type="radio" name="a" id="a2" onclick="打分(2)"><label for="a2">2</label>
 <input type="radio" name="a" id="a3" onclick="打分(3)"><label for="a3">3</label>
 <input type="radio" name="a" id="a4" onclick="打分(4)"><label for="a4">4</label>
 <input type="radio" name="a" id="a5" onclick="打分(5)"><label for="a5">5</label>
 <br>
-<textarea id="输入" placeholder="你的评价" style="width:70%;height:7em;"></textarea>
+<textarea id="输入" placeholder="你的评价" style="width:70%;height:7em;font-size:1.2em;"></textarea>
 <br>
 <button onclick="提交()">提交</button>
 
@@ -91,24 +92,29 @@ permalink: dianpingmaoqiu
 	let 分数=0;function 打分(o){分数=o;}
 
 	function 提交(){
-		try {
-			AV.init({
-				appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
-				appKey: "YCCregxILHitovzescjVs4X1",
-				serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
-			});
-			const TestObject = AV.Object.extend('df');
-			const testObject = new TestObject();
-			testObject.set('pingjia', document.getElementById("输入").value);
-			testObject.set('fenshu', 分数);
-			testObject.save().then((testObject) => {
-				try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
-			})
+		let 成功=0;
+		for(let i=0;3>i;i++){
+			try{
+				AV.init({
+					appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
+					appKey: "YCCregxILHitovzescjVs4X1",
+					serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
+				});
+				const TestObject = AV.Object.extend('df');
+				const testObject = new TestObject();
+				testObject.set('pingjia', document.getElementById("输入").value);
+				testObject.set('fenshu', 分数);
+				testObject.save().then((testObject) => {
+					成功=1;
+				})
 
+			}
+			catch(e){
+				成功=2;
+			}
+			if(成功!=0){break;}
 		}
-		catch(e){
-			try{notyf.alert("提交失败");}catch(e){alert("提交失败");}
-		}
+		if(成功==0||成功==2){try{notyf.alert("提交失败");}catch(e){alert("提交失败");}}else{try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}}
 	}
 	
 </script>
