@@ -16,11 +16,11 @@ permalink: dianpingmaoqiu
 
 <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
 打分 
-<input type="radio" name="a" id="a1" onclick="分(1)"><label for="a1">1</label>
-<input type="radio" name="a" id="a2" onclick="分(2)"><label for="a2">2</label>
-<input type="radio" name="a" id="a3" onclick="分(3)"><label for="a3">3</label>
-<input type="radio" name="a" id="a4" onclick="分(4)"><label for="a4">4</label>
-<input type="radio" name="a" id="a5" onclick="分(5)"><label for="a5">5</label>
+<input type="radio" name="a" id="a1" onclick="打分(1)"><label for="a1">1</label>
+<input type="radio" name="a" id="a2" onclick="打分(2)"><label for="a2">2</label>
+<input type="radio" name="a" id="a3" onclick="打分(3)"><label for="a3">3</label>
+<input type="radio" name="a" id="a4" onclick="打分(4)"><label for="a4">4</label>
+<input type="radio" name="a" id="a5" onclick="打分(5)"><label for="a5">5</label>
 <br>
 <textarea id="输入" placeholder="你的评价" style="width:70%;height:7em;"></textarea>
 <br>
@@ -88,7 +88,7 @@ permalink: dianpingmaoqiu
 
 	document.getElementById("dy").innerHTML=dy2+"<br><br>"+dy;
 
-	let 打分=0;function 分(o){打分=o;}
+	let 分数=0;function 打分(o){分数=o;}
 
 	function 提交(){
 		try {
@@ -100,7 +100,7 @@ permalink: dianpingmaoqiu
 			const TestObject = AV.Object.extend('df');
 			const testObject = new TestObject();
 			testObject.set('pingjia', document.getElementById("输入").value);
-			testObject.set('fenshu', 打分);
+			testObject.set('fenshu', 分数);
 			testObject.save().then((testObject) => {
 				try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
 			})
