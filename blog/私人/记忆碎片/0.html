@@ -4,27 +4,25 @@ title: 记忆碎片
 nav_text: 记忆碎片
 nav_url: <a href="/private">私人网页</a>
 permalink: jiyisuipian
+redirect_from:
+ - 记忆碎片
+footer_fxx: 记忆碎片
 ---
 <script src='/5/new/svg3dtagcloud_onclick.js'></script>
 <div id="tag-cloud"></div>
+<input type="text" placeholder="搜索" autocomplete="off" id="搜索" oninput="搜索(document.getElementById('搜索').value)">
+<div id="结果"></div>
 <script>
 let entries=[];
 let tagcloud=[
-    //"／dw(dwb='',dwd='【】')",
-    //"／window.open('')",
-    //"／dw(dwb='<img src=\"/i/cj/\"/>',dwd='【】')",
 
     "握握手好朋友／dw(dwb='童谣“握握手，好朋友，我是主人你是狗。”')",
-
     "岛主／dw(dwb='塞尔达里的蜥蜴人。<br>某次去找神庙，看到岛上站着一个怪，二扯问那是什么，猫球说可能是岛主吧。',dwd='岛主')",
     "棉被飞走啦／dw(dwb='悟空给界王讲的笑话。<br>出自《七龙珠》',dwd='棉被飞走啦')",
     "狗扯／dw(dwb='桌游《爆炸猫》的一张牌，效果是抵消另一张牌的效果。',dwd='狗扯')",
     "和牛／dw(dwb='日本的漫才组合，是跟猫球和二扯最能对的上电波的漫才组合。',dwd='和牛')",
     "咸盘／dw(dwb='二扯大学食堂，有一年换工作人员，麻辣拌改为装在方形铁盘里，不怎么好吃，不麻不辣，但是很咸。于是猫球和二扯给它取名为“咸盘”。',dwd='咸盘')",
-
-    "网瘾战争／window.open('/i/zk/926097')",
-    "游戏风云／window.open('/i/zk/3343186#游戏风云')",
-
+    "家里进蛤蟆了／dw(dwb='出自一个电视剧的台词。',dwd='家里进蛤蟆了')",
     "愿风指引你的道路／dw(dwb='926077',dwd='愿风指引你的道路')",
     "小自然／dw(dwb='2289477',dwd='小自然')",
     "史丹利同学／dw(dwb='2289898',dwd='史丹利同学')",
@@ -36,6 +34,13 @@ let tagcloud=[
     "你看我像啥／dw(dwb='2290664',dwd='你看我像啥')",
     "缩头乌龟／dw(dwb='2290680',dwd='缩头乌龟')",
     "打人柳／dw(dwb='2921669',dwd='打人柳')",
+    //"／dw(dwb='',dwd='【】')",
+    //"／dw(dwb='<img src=\"/i/cj/\"/>',dwd='【】')",
+
+    "网瘾战争／window.open('/i/zk/926097')",
+    "游戏风云／window.open('/i/zk/3343186#游戏风云')",
+    //"／window.open('')",
+
 
 
 ];
@@ -78,4 +83,17 @@ fontStretch: 'normal',
 fontToUpperCase: false
 };
 $( '#tag-cloud' ).svg3DTagCloud( settings );
+
+function 搜索(o){
+    let dy="";
+    for(let i=0;tagcloud.length>i;i++){
+        if(o!=""&&tagcloud[i].split("／")[0].indexOf(o)!=-1){
+            dy+="<p><a onclick=\""+tagcloud[i].split("／")[1]+"\">"+tagcloud[i].split("／")[0]+"</a></p>";
+        }
+    }
+    if(dy==""){
+        dy="没有结果。";
+    }
+    document.getElementById("结果").innerHTML=dy;
+}
 </script>

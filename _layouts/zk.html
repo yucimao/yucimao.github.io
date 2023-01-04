@@ -66,5 +66,6 @@ else{
 let p_link = "{{ page.permalink }}".split("/");
 localStorage.setItem(p_link[2], "1");
 </script>
-{% include anchor.html %}
+{% if page.anchor == 0 %}{% else %}{% include anchor.html %}{% endif %}
+
 </body>
