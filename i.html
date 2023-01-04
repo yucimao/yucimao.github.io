@@ -183,17 +183,26 @@ for(let i=0;获取数据_地址.length>i;i++){
     rili_节日+=GetJson.responseText;
 }
 document.getElementById("xttzb").innerHTML=rili_节日;
+}
+
+// let dy0=["xiaojuchang2","zatan2","yimeng2","yishijie2","chongdong2","zhihu2","xinlangweibo2","wyyyy2","zatan3"];
+// let dy1="";
+
+// // // //页面加载完把模糊图换成清晰图、预加载变化图
+// for(let i=0;i<dy0.length;i++){
+// // // //document.getElementById(dy0[i]).src = "/img/index/"+dy0[i]+"3.jpg";  //换成清晰图
+// dy1+='<img width="1px" src="/img/index/'+dy0[i]+'.jpg"/>';
 // }
-
-let dy0=["xiaojuchang2","zatan2","yimeng2","yishijie2","chongdong2","zhihu2","xinlangweibo2","wyyyy2","zatan3"];
-let dy1="";
-
-// // //页面加载完把模糊图换成清晰图、预加载变化图
-for(let i=0;i<dy0.length;i++){
-// // //document.getElementById(dy0[i]).src = "/img/index/"+dy0[i]+"3.jpg";  //换成清晰图
-dy1+='<img width="1px" src="/img/index/'+dy0[i]+'.jpg"/>';
-}
-dy1='<div style="display:none;">'+dy1+'</div>';
-document.getElementById("dy0").innerHTML=dy1;
-}
+// dy1='<div style="display:none;">'+dy1+'</div>';
+// document.getElementById("dy0").innerHTML=dy1;
+// }
 </script>
+<link rel="prefetch" href="/img/index/xiaojuchang2.jpg"/>
+<link rel="prefetch" href="/img/index/zatan2.jpg"/>
+<link rel="prefetch" href="/img/index/yimeng2.jpg"/>
+<link rel="prefetch" href="/img/index/yishijie2.jpg"/>
+<link rel="prefetch" href="/img/index/chongdong2.jpg"/>
+<link rel="prefetch" href="/img/index/zhihu2.jpg"/>
+<link rel="prefetch" href="/img/index/xinlangweibo2.jpg"/>
+<link rel="prefetch" href="/img/index/wyyyy2.jpg"/>
+<link rel="prefetch" href="/img/index/zatan3.jpg"/>
