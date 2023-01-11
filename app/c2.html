@@ -336,7 +336,7 @@ function grow(event){
             reader.onload = function (e) {
                 let data = e.target.result
                 if(data.indexOf("／")!=-1){
-                    data=data.split("／／");
+                    data=data.split("\n");
                     img_data=img_data.concat(data);
                     翻页(1);
                 }else{}

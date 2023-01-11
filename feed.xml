@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>原神经历了些什么</title>
+            <description>前几天看了原神的前瞻直播，非常期待下一个版本的“海灯节”活动，激动之情难以言表。虽然这已经是原神的第三个海灯节了，但我是第一次参加——或者说，我已经错过两年了。</description>
+            <pubDate>Sun, 08 Jan 2023 19:59:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/7308986</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/7308986</guid>
+        </item>
+
+        <item>
             <title>坚果云弄丢了我的灵感</title>
             <description>今天下午的午睡，在半睡半醒间，我的大脑自己写起了小说……</description>
             <pubDate>Tue, 27 Dec 2022 18:59:00 +0800</pubDate>

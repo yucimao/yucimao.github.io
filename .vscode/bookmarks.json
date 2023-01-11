@@ -4,169 +4,284 @@
 			"path": "blog/猫球日记/2022-09-06-我对原神的看法.html",
 			"bookmarks": [
 				{
-					"line": 104,
-					"column": 5,
-					"label": "私人收藏"
-				},
-				{
-					"line": 243,
+					"line": 165,
 					"column": 10,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 395,
+					"line": 317,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 418,
+					"line": 340,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 424,
+					"line": 346,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 462,
+					"line": 384,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 526,
+					"line": 448,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 538,
+					"line": 460,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
 				{
-					"line": 555,
+					"line": 477,
 					"column": 25,
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 653,
+					"line": 575,
 					"column": 17,
 					"label": "2020.11.11 - 1.1"
 				},
 				{
-					"line": 689,
+					"line": 611,
 					"column": 17,
 					"label": "2020.12.23 - 1.2"
 				},
 				{
-					"line": 716,
+					"line": 638,
 					"column": 16,
 					"label": "2021.02.03 - 1.3"
 				},
 				{
-					"line": 737,
+					"line": 659,
 					"column": 20,
 					"label": "2021.03.17 - 1.4"
 				},
 				{
-					"line": 751,
+					"line": 673,
 					"column": 31,
 					"label": "2021.04.28 - 1.5"
 				},
 				{
-					"line": 773,
+					"line": 695,
 					"column": 31,
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 804,
+					"line": 726,
 					"column": 13,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 844,
+					"line": 766,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 874,
+					"line": 796,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 894,
+					"line": 816,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 943,
+					"line": 865,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 970,
+					"line": 892,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 987,
+					"line": 909,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1045,
+					"line": 967,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1068,
+					"line": 990,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1092,
+					"line": 1014,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1156,
+					"line": 1078,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1191,
+					"line": 1113,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1266,
+					"line": 1188,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1328,
+					"line": 1256,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 1385,
-					"column": 6,
-					"label": "【其他】"
-				},
-				{
-					"line": 1509,
+					"line": 1413,
 					"column": 8,
 					"label": "日记"
 				},
 				{
-					"line": 1523,
+					"line": 1427,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 1597,
+					"line": 1501,
 					"column": 0,
 					"label": "底层代码"
+				}
+			]
+		},
+		{
+			"path": "blog/笔记/酒仙笔记/原神.html",
+			"bookmarks": [
+				{
+					"line": 42,
+					"column": 7,
+					"label": "旅行者"
+				},
+				{
+					"line": 55,
+					"column": 21,
+					"label": "【蒙德】"
+				},
+				{
+					"line": 92,
+					"column": 22,
+					"label": "民俗"
+				},
+				{
+					"line": 144,
+					"column": 22,
+					"label": "酒馆"
+				},
+				{
+					"line": 214,
+					"column": 22,
+					"label": "角色"
+				},
+				{
+					"line": 281,
+					"column": 21,
+					"label": "【璃月】"
+				},
+				{
+					"line": 292,
+					"column": 22,
+					"label": "酒馆"
+				},
+				{
+					"line": 315,
+					"column": 22,
+					"label": "角色"
+				},
+				{
+					"line": 324,
+					"column": 15,
+					"label": "【稻妻】"
+				},
+				{
+					"line": 335,
+					"column": 7,
+					"label": "酒馆"
+				},
+				{
+					"line": 353,
+					"column": 19,
+					"label": "【须弥】"
+				},
+				{
+					"line": 359,
+					"column": 16,
+					"label": "民俗"
+				},
+				{
+					"line": 366,
+					"column": 22,
+					"label": "酒馆"
+				},
+				{
+					"line": 385,
+					"column": 16,
+					"label": "【至冬】"
+				},
+				{
+					"line": 391,
+					"column": 21,
+					"label": "【其他】"
+				},
+				{
+					"line": 397,
+					"column": 19,
+					"label": "原魔"
+				},
+				{
+					"line": 414,
+					"column": 19,
+					"label": "虚构"
+				},
+				{
+					"line": 496,
+					"column": 14,
+					"label": "【其他的其他】"
+				},
+				{
+					"line": 510,
+					"column": 8,
+					"label": "【代码】"
+				},
+				{
+					"line": 548,
+					"column": 12,
+					"label": "酒"
+				},
+				{
+					"line": 608,
+					"column": 10,
+					"label": "人"
+				},
+				{
+					"line": 616,
+					"column": 10,
+					"label": "场景"
+				},
+				{
+					"line": 639,
+					"column": 12,
+					"label": "其他"
+				},
+				{
+					"line": 661,
+					"column": 2,
+					"label": "跳转和额外代码"
 				}
 			]
 		}
