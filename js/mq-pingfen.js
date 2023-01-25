@@ -1,7 +1,10 @@
+// 分类：内容
+// 按钮名：链接：地址
+// td 或 ／ </td><td>
+
 dy="<div id=\"排行\"><style>td span.b{display:none;}</style></div>"+
 "<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em;}i[云]:after{content:'[云]';color:#258DF6;}i[通]:after{content:'[通]';color:#19D02A;}i[弃]:after{content:'[弃]';color:#FF4343;}td span.c{font-size: 0.8em;color:#999999;}td small{color:#8c8b8b;}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer;}.ysa{color:#77C94B;}.ysb{color:#DF402A;}</style>"+
 "<small>点作品名可以复制；点分数展开评分细则；点“排名”改为不并列模式；点标签显示同标签排行。</small>"+dy;
-
 let dy2=dy;
 
 for(let i=0;data.length>i;i++){
@@ -23,7 +26,6 @@ for(let i=0;data.length>i;i++){
 }
 
 let datb=[data[0]];
-
 for(let i=1;data.length>i;i++){
     let 临时=datb.length;
     let 记录=0;
@@ -36,21 +38,35 @@ for(let i=1;data.length>i;i++){
         记录+=1;
     }
 }
-
 data=datb;
 
+// let 谁复特=0;
+// window.document.onkeydown = disableRefresh;
+// function disableRefresh(evt){
+//     evt=(evt)?evt:window.event
+//     if(evt.keyCode&&evt.keyCode == 16){
+//          谁复特=1;
+//     }else{谁复特=0;}
+// }
+let 关键词=[];
+
 function dw2(o){
+    let 谁复特=1;
+    if(o=="0"){关键词=[]}else if(o.indexOf(",")!=-1){关键词=o.split(",");}else if(关键词.length==0||谁复特==1){关键词[关键词.length]=o;}else{关键词=[o]}
     dy=dy2;
 
     if(o==0){datb=data;}else{
-        dy="<h2 style='display:inline;'>"+o+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+dy;
+        dy="<h2 style='display:inline;'>"+关键词+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+dy;
         datb=[];
         for(let i=0;data.length>i;i++){
-            if(data[i].indexOf("分类："+o)!=-1){
-                datb[datb.length]=data[i];
+            谁复特=1;
+            for(let i2=0;关键词.length>i2;i2++){
+                if(data[i].indexOf("分类："+关键词[i2])!=-1){}else{谁复特=0;}
             }
+            if(谁复特==1){datb[datb.length]=data[i];}
         }
     }
+    谁复特=0;
 
     let 并列=[0,0];
     let 排名=1;
@@ -94,11 +110,12 @@ function dw2(o){
                     dy+="<a href=\""+临时2[1]+"\" target=\"_blank\" class=\"dk\">"+临时2[0]+"</a>";
                 }else if(datb[i][i2].indexOf("分类：")!=-1){
                     临时2=临时2.split("：")[1];
-                    if(临时2!=o){dy+="<a onclick=\"dw2('"+临时2+"')\"><small><b>"+临时2+"</b></small></a>";}
+                    if(关键词.indexOf(临时2)!=-1){}else{dy+="<a onclick=\"dw2('"+临时2+"')\"><small><b>"+临时2+"</b></small></a>";}
                 }else if(datb[i][i2].indexOf("：")!=-1){
                     临时2=临时2.split("：");
                     dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
                     if(临时2[2]){dy+="<small>("+临时2[2]+")</small>";}
+                }else if(datb[i][i2]=="td"){dy+="</td><td>";
             }else if(临时2>0||临时2.length>40){ //超过字数为“更多” 原25
                 dy+="<a onclick=\"dw(dwd='更多',dwb='"+临时2+"')\">更多</a>";
             }else{
@@ -110,8 +127,9 @@ function dw2(o){
 dy+="</table>";
 
 dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>").replace(new RegExp(' / </small><small> / ', "g"), " / ").replace(new RegExp('<td><small> / </small>', "g"), "<td>").replace(new RegExp('<small> / </small></td>', "g"), "</td>");
+dy=dy.replace(/／/g, "</td><td>").replace(/<td><small>\ \/\ <\/small>/g, "<td>").replace(new RegExp(' / </small><small> / ', "g"), " / ").replace(new RegExp('<td><small> / </small>', "g"), "<td>").replace(new RegExp('<small> / </small></td>', "g"), "</td>");
 
-document.getElementById("结果").innerHTML = dy;
+document.getElementById("结果").innerHTML=dy;
 
 let 查重列表="／";
 for(let i=0;datb.length>i;i++){
@@ -120,9 +138,8 @@ for(let i=0;datb.length>i;i++){
         }else{
             查重列表+=datb[i]+"／";
         }
-}
-console.log("结束");
-
+    }
+    console.log("结束");
 }
 
 let 排名的方式=0;

@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>去北京玩</title>
+            <description>自从我记事以来就没再来过北京了，本来想见识一下首都的繁华……</description>
+            <pubDate>Tue, 24 Jan 2023 01:19:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/7449158</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/7449158</guid>
+        </item>
+
+        <item>
             <title>原神经历了些什么</title>
             <description>前几天看了原神的前瞻直播，非常期待下一个版本的“海灯节”活动，激动之情难以言表。虽然这已经是原神的第三个海灯节了，但我是第一次参加——或者说，我已经错过两年了。</description>
             <pubDate>Sun, 08 Jan 2023 19:59:00 +0800</pubDate>
