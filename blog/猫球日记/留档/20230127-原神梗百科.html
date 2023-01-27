@@ -13,9 +13,9 @@ footer_fxx: yuanshengeng,原神梗
 由于个人时间精力有限，不保证完整、准确、实时。<br>
 <small>“这个梗不是出自原神，你们OP偷梗”：就像“沙发”不是出自中国的词，但可以收录在汉语词典里，思考一下为什么吧，我懒得解释。</small><br>
 <br>
-<a onclick="随机()">随机</a>
 <script src='/5/new/svg3dtagcloud_onclick.js'></script>
-<input type="text" placeholder="搜索" autocomplete="off" id="搜索" oninput="搜索(document.getElementById('搜索').value)" style="font-size:1.2em;">
+<input type="text" placeholder="搜索" autocomplete="off" id="搜索" oninput="搜索(document.getElementById('搜索').value)" style="font-size:1.2em;"><br>
+<a onclick="随机()">随机</a>
 <div id="结果"></div>
 <div id="tag-cloud"></div>
 <script>
@@ -140,10 +140,10 @@ function 搜索(o){
     let dy="";
     let dy2="";
     for(let i=0;data.length>i;i++){
-        if(o!=""&&data[i].split("／")[0].toUpperCase().indexOf(o)!=-1){
-            dy+="<p><a onclick=\""+data[i].split("／")[1]+"\">"+data[i].split("／")[0]+"</a></p>";
+        if(o!=""&&data[i][0].toUpperCase().indexOf(o)!=-1){
+            dy+="<p><a onclick=\"dw(dwb='"+datb[i][1]+"',dwd='"+datb[i][0]+"')\">"+data[i][0]+"</a></p>";
         }else if(o!=""&&data[i].toUpperCase().indexOf(o)!=-1){
-            dy2+="<p><a onclick=\""+data[i].split("／")[1]+"\">"+data[i].split("／")[0]+"</a></p>";
+            dy+="<p><a onclick=\"dw(dwb='"+datb[i][1]+"',dwd='"+datb[i][0]+"')\">"+data[i][0]+"</a></p>";
         }
     }
     if(dy==""&&dy2==""){
