@@ -141,9 +141,9 @@ function 搜索(o){
     let dy2="";
     for(let i=0;data.length>i;i++){
         if(o!=""&&(data[i][0]+data[i][2]).toUpperCase().indexOf(o)!=-1){
-            dy+="<p><a onclick=\"dw(dwb='"+datb[i][1]+"',dwd='"+datb[i][0]+"')\">"+data[i][0]+"</a></p>";
+            dy+="<p><a onclick=\"dw(dwb='"+data[i][1]+"',dwd='"+data[i][0]+"')\">"+data[i][0]+"</a></p>";
         }else if(o!=""&&(data[i][1]+data[i][3]).toUpperCase().indexOf(o)!=-1){
-            dy+="<p><a onclick=\"dw(dwb='"+datb[i][1]+"',dwd='"+datb[i][0]+"')\">"+data[i][0]+"</a></p>";
+            dy+="<p><a onclick=\"dw(dwb='"+data[i][1]+"',dwd='"+data[i][0]+"')\">"+data[i][0]+"</a></p>";
         }
     }
     if(dy==""&&dy2==""){
