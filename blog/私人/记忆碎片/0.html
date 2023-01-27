@@ -44,6 +44,8 @@ let tagcloud=[
 
 
 ];
+let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
 
 let p = Array.from(tagcloud), i, a = [];
     while (p.length > 0) {
@@ -56,11 +58,9 @@ let p = Array.from(tagcloud), i, a = [];
 for(let i=0;tagcloud.length>i;i++){
     if(i<30){
         let 临时=tagcloud[i].split("／");
-        let 颜色=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
-"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
         let 颜色_i=i%颜色.length;
         entries.push({label: 临时[0],onclick:临时[1],fontColor:颜色[颜色_i],fontWeight:"normal"});
-    }
+    }else{break;}
 }
 
 let settings = {

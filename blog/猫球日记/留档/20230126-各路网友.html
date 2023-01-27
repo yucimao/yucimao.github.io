@@ -1,0 +1,66 @@
+---
+layout: zk
+title: 各路网友
+nav_text: 各路网友
+nav_url: <a href="/i/zk/201333442">我对原神的看法</a>
+permalink: i/zk/7469804
+---
+<link rel="stylesheet" href="/css/all.css">
+
+<div id="dy"></div>
+
+<script>
+let data=[ // ["名字","地址","介绍","更多"],
+["支持原神",
+    ["十神绯夜","https://space.bilibili.com/3812","游戏区up主",["链接／https://www.bilibili.com/video/BV18A411j7oA／关于原神的节奏","链接／https://www.bilibili.com/video/BV1J44y1i7Zk／黑红营销"]],
+    ["奈须蘑菇","","作家，“型月世界”的创设者，代表作《空之境界》、《Fate/stay night》"],
+    ["BeryL","","英雄联盟职业选手，2020年、2022年英雄联盟全球总决赛冠军"],
+    ["逍遥散人","","游戏区up主，600万粉丝"],
+    ["吉田修平","","日本索尼全球工作室总裁"],
+    ["滨田龙臣","","演员"],
+    // ["","",""],
+
+],["中立",
+    // ["","",""],
+
+],["反原神",
+    ["瓶子君152","https://space.bilibili.com/730732","动漫区up主，300万粉丝"],
+    ["STN工作室","https://space.bilibili.com/7349","游戏自媒体，200万粉丝"],
+    ["Xylt","https://www.zhihu.com/people/xylet","腾讯游戏设计师"],
+    ["我的队友四条狗","https://weibo.com/u/6613432472","游戏博主，摔游戏机事件主角"],
+    ["狸子Neazle","https://weibo.com/u/6505580910","游戏开发程序员，第五届中国互联网大学生创新创业大赛上海赛区铜奖，代表作《活字引擎》",["链接／https://weibo.com/6505580910/JkSdfsE2g／原神抄袭"]],
+    ["EXILE0611","","插画师"],
+    ["郑翔Zard","https://weibo.com/zard921","游戏主播，200万粉丝"],
+    ["短刀与毒药","https://space.bilibili.com/28832","动漫区up主，20万粉丝"],
+    ["真夏zwei","https://weibo.com/u/7226979270","coser，游戏博主"],
+    // ["","",""],
+]];
+let dy="根据对«原神»的态度分类：<br>";
+for(let i=0;data.length>i;i++){
+    dy+="<a href='#"+data[i][0]+"'>"+data[i][0]+"</a><br>";
+}
+dy+="<br>蓝色的名字可以点击跳转到忚的主页。";
+for(let i=0;data.length>i;i++){
+    dy+="<br><hr><h3>"+data[i][0]+"</h3><table>";
+    for(let i2=1;data[i].length>i2;i2++){
+        let o=data[i][i2];
+        dy+="<tr><td><b>";if(o[1]&&o[1]!=""){dy+="<a href='"+o[1]+"'>"+o[0]+"</a>"}else{dy+=o[0]}dy+="</b></td>";
+        dy+="<td>";if(o[3]&&o[3]!=""){dy+="<a id='a_"+i+"_"+i2+"' onclick=\"document.getElementById('a_"+i+"_"+i2+"').style='display:none;';document.getElementById('b_"+i+"_"+i2+"').style='';\">展开</a>";}dy+="</td>";
+        dy+="<td>"+o[2]+"</td></tr>";
+
+        if(o[3]&&o[3]!=""){
+            dy+="<tr id='b_"+i+"_"+i2+"' style='display:none;'><td colspan='3'>";
+                for(let i3=0;o[3].length>i3;i3++){
+                    if(i3!=0){dy+=" | ";}
+                    if(o[3][i3].indexOf("／")!=-1){
+                        o[3][i3]=o[3][i3].split("／");
+                        if(o[3][i3][0]=="链接"){dy+="<a href='"+o[3][i3][1]+"'>"+o[3][i3][2]+"</a>"}
+                    }else{dy+=o[3][i3];}
+                }
+            dy+="</td></tr>";
+        }
+    }
+    dy+="</table>";
+}
+document.getElementById("dy").innerHTML=dy;
+</script>
