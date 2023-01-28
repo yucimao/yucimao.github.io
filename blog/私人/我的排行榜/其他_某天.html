@@ -1,0 +1,36 @@
+---
+layout: page2
+title: 某天
+nav_text: 某天
+nav_url: <a href="/pingfen">我的排行榜</a>
+permalink: pingfen/moutian
+redirect_from:
+ - dafen/moutian
+ - 打分/某天
+---
+<div id="结果"></div>
+<script>let dy="<table><tr><th onclick='排名方式()'>排名</th><th>日期</th><th>评分</th><th></th></tr>";let data = [
+    // 9 有此一天，此生无憾
+    // 8 想永远留在这天
+    // 7 为可能再也没有这样的一天而难过
+    // 6 非常期待再经历这样的一天
+    // 5 非常快乐的一天
+    // 4 不错的一天
+    // 3 还行的一天
+    // 2 一般的一天
+    // 1 很差的一天
+    // 0 想死
+    // 持续时间3 情绪3 无瑕疵3 幸运1
+
+    ["60 + 2 + 1 + 0 + 1" , "2023-01-25／测试" ,, ""],
+    //[" +  +  +  + " , "／" ,, ""],
+
+
+];
+let 打分标准=[["总体分","90"],["持续时间","3"],["情绪","3"],["无瑕疵","3"],["幸运","1"],];
+for(let i=0;data.length>i;i++){
+data[i][1]=data[i][1].split("／");
+data[i][1]="<small>"+data[i][1][0]+"</small> "+data[i][1][1];
+}
+</script>
+<script src="/js/mq-pingfen.js"></script>
