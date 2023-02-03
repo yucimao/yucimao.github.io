@@ -7,10 +7,11 @@ const oe=function(){const e=document.createElement("link").relList;if(e&&e.suppo
       position: ${c?"unset":"absolute"};
       padding: .2em .3em;
       display: inline-block;
-      border-radius: .3em;
+      border-radius: .5em;
       margin: .15em .1em;
       opacity: .8;
       transition: opacity .2s;
+      cursor:default;
     }
     mark a::after { content: "${a}"; }
     mark a:hover::after { animation: move .5s linear infinite; position: relative; }
