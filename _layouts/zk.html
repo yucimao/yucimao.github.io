@@ -39,6 +39,9 @@ layout: default
 </div>
 
 <script>
+
+window.onload=function(){
+
 if(top.location==self.location){var 返回="<div class=\"qbt\">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</div>{% if page.zk_ly %}<div class=\"juzhong\">{{ page.zk_ly }}</div>{% endif %}";
 document.getElementById("上级").innerHTML=返回;
 document.getElementById("wen_body").className = 'body';
@@ -61,10 +64,11 @@ else{
     if(bodyH < bodyHa){bodyH=bodyHa;}
     window.parent.document.getElementById(bodyK).height = bodyH+20;
     }
-
 }
 let p_link = "{{ page.permalink }}".split("/");
 localStorage.setItem(p_link[2], "1");
+
+}
 </script>
 {% if page.anchor == 0 %}{% else %}{% include anchor.html %}{% endif %}
 
