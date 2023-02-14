@@ -104,6 +104,7 @@ function dw2(o){
             for(let i2=3;datb[i].length>i2;i2++){
                 dy+="<small> / </small>";
                 临时2=datb[i][i2]+"";
+                if(datb[i][i2][0]=="："){datb[i][i2]="分类"+datb[i][i2];}
                 if(临时2.length==1){临时2+=".0";}
                 if(datb[i][i2].indexOf("：链接：")!=-1){
                     临时2=临时2.split("：链接：");
