@@ -43,4 +43,15 @@ pinglun: 1
 
         ],
     };
+
+    if(window.location.href.indexOf("?chongdong")!=-1){
+        let 虫洞=[];
+        for(let i=0;cj_data.length>i;i++){
+            let 临时=cj_data[i].split("／");
+            if(临时[5]&&临时[5][0]=="h"&&临时[5][1]=="t"&&临时[5][2]=="t"&&临时[5][3]=="p"){
+                虫洞[虫洞.length]=临时[5];
+            }
+        }
+        window.location.href=虫洞[Math.floor(Math.random()*虫洞.length)];
+    }
 </script>
