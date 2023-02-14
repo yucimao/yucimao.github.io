@@ -53,7 +53,7 @@ for(let i=0;data.length>i;i++){
             dy+="<tr><td><div class=\"tsx\">"+临时2+"天<span class=\"tsxt\">"+临时[0]+"<br>"+临时[1]+"</span></div></td>";
         }
         dy+="<td><b>"+临时[2]+"</b></td><td>"+临时[3]+"</td>";
-        if(临时[4].length>0){
+        if(临时[4]&&临时[4].length>0){
             dy+="<td>";
             临时2=临时[4].split("＼");
             for(i2=0;临时2.length>i2;i2++){
