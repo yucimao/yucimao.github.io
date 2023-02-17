@@ -125,6 +125,18 @@ function 粉丝数(fss){
         烤冷面/2/(ˉ﹃ˉ)
         锅包肉/2/(ˉ﹃ˉ)
         小像素点/2/作品/https://像素点.cn
+        猫球仓买/2/愿望
+        环球旅行/2/愿望
+        睡衣派对/2/愿望
+        夏日入侵企划/2/喜欢的东西
+        原神/2/喜欢的东西
+        纵贯线/2/喜欢的东西
+        魔兽世界/2/喜欢的东西
+        武林外传/2/喜欢的东西
+        任天堂明星大乱斗/2/喜欢的东西
+        我的世界/2/喜欢的东西
+        二手玫瑰/2/喜欢的东西
+        JOJO的奇妙冒险/2/喜欢的东西
     </div>
     </my-tags>
     </tags-default-style>
@@ -201,12 +213,15 @@ const pieChart = new chartXkcd.Pie(svg, {
         }],},
     options: {innerRadius: 0.5,legendPosition: chartXkcd.config.positionType.upRight,},});
 
-$("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字 组成猫球的成分
-let anp_data=new Array(
-    "pvo","二扯","猪又","胡糊","汽水","烤冷面",":O","猫薄荷"
-);
-let anp_color=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
-"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
+$("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字
+let anp_data=[
+    "pvo占领世界",
+    "愿风指引你的道路","当你重新踏上旅途之后 一定要记得旅途本身的意义",
+    "又怂又菜 但爱玩","可能是假东北人",
+    
+];
+let anp_color=["#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
+"#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D"];
 let anp_i=0;
 
 let arr;function 随机(){let _arr=arr.slice();for(let i=0;i<_arr.length;i++){let j=getRandomInt(0,i);let t=_arr[i];_arr[i]=_arr[j];_arr[j]=t;}function getRandomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}arr=_arr;}
