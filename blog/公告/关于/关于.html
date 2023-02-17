@@ -216,7 +216,7 @@ anp_data=arr;
 arr=0;
 
 function anp(e){
-	if(arr>anp_data.length){arr=0;}
+	if(arr==anp_data.length){arr=0;}
 	let n=anp_data[arr];
 	let $i=$("<b class='bukexuanzhong'>").text(n);
 	let x=e.pageX,y=e.pageY;
