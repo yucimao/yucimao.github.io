@@ -14,6 +14,7 @@ redirect_from:
     <div><span class="a n1"><small>（由于是关键词检索，请精简输入的内容，如「你喜欢什么电影？」可以精简为“电影”或者“喜欢 电影”）</small></span></div>
 </div><br>
 <meta name="viewport" content="width=device-width, initial-scale=1"><form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="说点啥？" onkeyup="确定()"/></form>
+<br>
 <div id="选择"></div></div>
 <script>
 let data=[
@@ -30,6 +31,7 @@ let data=[
 
 let 可选;
 let wzjm_输入;
+let 取;
 
 function 确定(){
     可选="";
@@ -46,17 +48,24 @@ function 确定(){
             可选+="<ul onclick=\"获(取='"+临时[0]+"／"+临时[1]+"')\">"+临时[1]+"</ul>";
         }
     }
+    if(可选==""){可选="<ul>暂无“"+输入+"”相关，可以尝试换个词，或精简内容</ul>";}
     document.getElementById("选择").innerHTML = 可选;
 }
 
-let 取="";
-let 聊天;
-function 获(){
-    document.getElementById("输入").value="";
-    document.getElementById("选择").innerHTML="";
-    取=取.split("／");
-    聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
+function 延迟(o){
+    if (o.indexOf("／") != -1){
+        let 临时2=o.split("]")[0].split("／");
+        if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small> (点击选择)</small></span></div>";}
+        if(临时2[0]=="颜色"){聊天+="<div><span class=\"a "+临时2[1]+"\">"+临时2[2]+"</span></div>";}
+    }else{
+        聊天+="<div><span class=\"a m\">"+o.split("]")[0]+"</span></div>"; 
+    }
     document.getElementById("对话").innerHTML = 聊天;
+}
+
+function 获(){
+    document.getElementById("选择").innerHTML="";
+    document.getElementById("输入").style="display:none;";
 
     let 地址="/i/x/dh/"+取[0]+".json";
     let GetJson = $.ajax({
@@ -67,17 +76,45 @@ function 获(){
         success: function (data) {
         }
     });
-    wzjm_输入=GetJson.responseText;
-    地址=wzjm_输入.split("[");
+    地址=GetJson.responseText.split("[");
     for(let i=1;地址.length>i;i++){
-        if (地址[i].indexOf("／") != -1){
-            let 临时2=地址[i].split("]")[0].split("／");
-            if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small> (点击选择)</small></span></div>";}
-            if(临时2[0]=="颜色"){聊天+="<div><span class=\"a "+临时2[1]+"\">"+临时2[2]+"</span></div>";}
-        }else{
-            聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
-        }
-        document.getElementById("对话").innerHTML = 聊天;
+        setTimeout("延迟(地址[i])",1000);
     }
+    document.getElementById("输入").value="";
+    document.getElementById("输入").style="";
+    取=取.split("／");
+    聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
+    document.getElementById("对话").innerHTML = 聊天;
 }
+
+
+// function 获(){
+//     document.getElementById("输入").value="";
+//     document.getElementById("选择").innerHTML="";
+//     取=取.split("／");
+//     聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
+//     document.getElementById("对话").innerHTML = 聊天;
+
+//     let 地址="/i/x/dh/"+取[0]+".json";
+//     let GetJson = $.ajax({
+//         url: 地址,//json文件位置
+//         type: "GET",
+//         dataType: "json",
+//         async: false,
+//         success: function (data) {
+//         }
+//     });
+//     wzjm_输入=GetJson.responseText;
+//     地址=wzjm_输入.split("[");
+//     for(let i=1;地址.length>i;i++){
+//         if (地址[i].indexOf("／") != -1){
+//             let 临时2=地址[i].split("]")[0].split("／");
+//             if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small> (点击选择)</small></span></div>";}
+//             if(临时2[0]=="颜色"){聊天+="<div><span class=\"a "+临时2[1]+"\">"+临时2[2]+"</span></div>";}
+//         }else{
+//             聊天+="<div><span class=\"a m\">"+地址[i].split("]")[0]+"</span></div>"; 
+//         }
+//         document.getElementById("对话").innerHTML = 聊天;
+//     }
+// }
 </script>
