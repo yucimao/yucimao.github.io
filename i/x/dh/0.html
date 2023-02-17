@@ -55,11 +55,11 @@ function 确定(){
 function 延迟(o){
     let 聊天="";
     if (o.indexOf("／") != -1){
-        let 临时2=o.split("]")[0].split("／");
+        let 临时2=o.split("／");
         if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small> (点击选择)</small></span></div>";}
         if(临时2[0]=="颜色"){聊天+="<div><span class=\"a "+临时2[1]+"\">"+临时2[2]+"</span></div>";}
     }else{
-        聊天+="<div><span class=\"a m\">"+o.split("]")[0]+"</span></div>"; 
+        聊天+="<div><span class=\"a m\">"+o+"</span></div>"; 
     }
     document.getElementById("对话").innerHTML=document.getElementById("对话").innerHTML+聊天;
 }
@@ -79,10 +79,9 @@ function 获(){
         }
     });
     地址=GetJson.responseText.split("[");
-    console.log(地址)
     for(let i=1;地址.length>i;i++){
         console.log(地址[i])
-        setTimeout("延迟('"+地址[i]+"')",1000);
+        setTimeout("延迟('"+地址[i].split("]")[0]+"')",1000);
     }
     document.getElementById("输入").value="";
     document.getElementById("输入").style="";
