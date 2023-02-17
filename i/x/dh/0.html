@@ -35,13 +35,13 @@ let 取;
 
 function 确定(){
     可选="";
-    let 输入 = document.getElementById("输入").value.split(" ");
+    let 输入=document.getElementById("输入").value.split(" ");
     for(let i=0;data.length>i;i++){
         let 过程="0";
         wzjm_输入=data[i];
         for(let i2=0;输入.length>i2;i2++){
-            if (wzjm_输入.indexOf(输入[i2]) != -1 && 输入[i2] != "") {}
-            else { 过程 = "1"; }
+            if(wzjm_输入.indexOf(输入[i2])!=-1&&输入[i2]!=""){}
+            else{过程="1";}
         }
         if(过程=="0"){
             let 临时=wzjm_输入.split("／");
@@ -49,7 +49,7 @@ function 确定(){
         }
     }
     if(可选==""){可选="暂无相关内容，可以尝试换个词，或精简内容";}
-    document.getElementById("选择").innerHTML = 可选;
+    document.getElementById("选择").innerHTML=可选;
 }
 
 function 延迟(o){
@@ -61,7 +61,7 @@ function 延迟(o){
     }else{
         聊天+="<div><span class=\"a m\">"+o.split("]")[0]+"</span></div>"; 
     }
-    document.getElementById("对话").innerHTML = document.getElementById("对话").innerHTML+聊天;
+    document.getElementById("对话").innerHTML=document.getElementById("对话").innerHTML+聊天;
 }
 
 function 获(){
@@ -79,7 +79,7 @@ function 获(){
     });
     地址=GetJson.responseText.split("[");
     for(let i=1;地址.length>i;i++){
-        setTimeout("延迟("+地址[i]+")",1000);
+        setTimeout("延迟('"+地址[i]+"')",1000);
     }
     document.getElementById("输入").value="";
     document.getElementById("输入").style="";
