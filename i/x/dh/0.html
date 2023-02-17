@@ -79,6 +79,7 @@ function 获(){
     });
     地址=GetJson.responseText.split("[");
     for(let i=1;地址.length>i;i++){
+        console.log(地址[i])
         setTimeout("延迟('"+地址[i]+"')",1000);
     }
     document.getElementById("输入").value="";
