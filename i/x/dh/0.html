@@ -52,7 +52,7 @@ function 确定(){
     document.getElementById("选择").innerHTML=可选;
 }
 
-function 延迟(o){
+async function 延迟(o){
     let 聊天="";
     if (o.indexOf("／") != -1){
         let 临时2=o.split("／");
@@ -64,7 +64,7 @@ function 延迟(o){
     document.getElementById("对话").innerHTML=document.getElementById("对话").innerHTML+聊天;
 }
 
-function 获(){
+async function 获(){
     取=取.split("／");
     document.getElementById("选择").innerHTML="";
     document.getElementById("输入").style="display:none;";
