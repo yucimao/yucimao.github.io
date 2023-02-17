@@ -54,6 +54,7 @@
         avatar: 'mp',
         visitor: true,
         placeholder: "说点啥？&#13;&#10;(暂时没有邮件通知功能……)",
+        avatarForce: true,
 
         emojiCDN: '{{ site.mq }}/img/i/em/',
         emojiMaps: {
@@ -114,8 +115,4 @@
         }
     })
 
-
-let 测试=document.getElementById("vcomments").innerHTML;
-测试=测试.replace(new RegExp('class=\"vimg\"', "g"), 'class=\"vimg\" referrerpolicy=\"no-referrer\"')
-document.getElementById("vcomments").innerHTML=测试;
 </script>
