@@ -48,7 +48,7 @@ function 确定(){
             可选+="<ul onclick=\"获(取='"+临时[0]+"／"+临时[1]+"')\">"+临时[1]+"</ul>";
         }
     }
-    if(可选==""){可选="<ul>暂无“"+输入+"”相关，可以尝试换个词，或精简内容</ul>";}
+    if(可选==""){可选="暂无相关内容，可以尝试换个词，或精简内容";}
     document.getElementById("选择").innerHTML = 可选;
 }
 
@@ -79,7 +79,7 @@ function 获(){
     });
     地址=GetJson.responseText.split("[");
     for(let i=1;地址.length>i;i++){
-        setTimeout("延迟(地址[i])",1000);
+        setTimeout("延迟("+地址[i]+")",1000);
     }
     document.getElementById("输入").value="";
     document.getElementById("输入").style="";
