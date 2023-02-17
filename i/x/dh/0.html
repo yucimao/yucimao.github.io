@@ -65,6 +65,7 @@ function 延迟(o){
 }
 
 function 获(){
+    取=取.split("／");
     document.getElementById("选择").innerHTML="";
     document.getElementById("输入").style="display:none;";
 
@@ -78,13 +79,13 @@ function 获(){
         }
     });
     地址=GetJson.responseText.split("[");
+    console.log(地址)
     for(let i=1;地址.length>i;i++){
         console.log(地址[i])
         setTimeout("延迟('"+地址[i]+"')",1000);
     }
     document.getElementById("输入").value="";
     document.getElementById("输入").style="";
-    取=取.split("／");
     聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
     document.getElementById("对话").innerHTML = document.getElementById("对话").innerHTML+聊天;
 }
