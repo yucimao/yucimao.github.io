@@ -208,9 +208,16 @@ let anp_data=new Array(
 let anp_color=new Array("#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
 "#4B9A9E","#5C9197","#688A91","#7F7D87","#92727D","#A36775","#B85B6B","#D14D60","#E64156","#FB364D");
 let anp_i=0;
+
+let arr;function 随机(){let _arr=arr.slice();for(let i=0;i<_arr.length;i++){let j=getRandomInt(0,i);let t=_arr[i];_arr[i]=_arr[j];_arr[j]=t;}function getRandomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}arr=_arr;}
+arr=anp_data;
+随机();
+anp_data=arr;
+arr=0;
+
 function anp(e){
-	let 随机数 = Math.floor(Math.random()*anp_data.length);
-	let n=anp_data[随机数];
+	if(arr>anp_data.length){arr=0;}
+	let n=anp_data[arr];
 	let $i=$("<b class='bukexuanzhong'>").text(n);
 	let x=e.pageX,y=e.pageY;
 	$i.css({top:y-20,left:x,position:"absolute",color:anp_color[anp_i]});
@@ -221,6 +228,7 @@ function anp(e){
 		$i.remove();
 	});
 	e.stopPropagation();
+    arr+=1;
 }
 </script>
 
