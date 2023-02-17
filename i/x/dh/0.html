@@ -53,6 +53,7 @@ function 确定(){
 }
 
 function 延迟(o){
+    let 聊天="";
     if (o.indexOf("／") != -1){
         let 临时2=o.split("]")[0].split("／");
         if(临时2[0]=="选项"){聊天+="<div><span class=\"d n2 cursor_pointer\" onclick=\"获(取='"+临时2[2]+"／"+临时2[1]+"')\">"+临时2[1]+"<small> (点击选择)</small></span></div>";}
@@ -60,7 +61,7 @@ function 延迟(o){
     }else{
         聊天+="<div><span class=\"a m\">"+o.split("]")[0]+"</span></div>"; 
     }
-    document.getElementById("对话").innerHTML = 聊天;
+    document.getElementById("对话").innerHTML = document.getElementById("对话").innerHTML+聊天;
 }
 
 function 获(){
@@ -84,7 +85,7 @@ function 获(){
     document.getElementById("输入").style="";
     取=取.split("／");
     聊天="<div><span align=\"right\" class=\"d n1\">"+取[1]+"</span></div>";
-    document.getElementById("对话").innerHTML = 聊天;
+    document.getElementById("对话").innerHTML = document.getElementById("对话").innerHTML+聊天;
 }
 
 
