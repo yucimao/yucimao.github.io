@@ -58,8 +58,6 @@ async function 获(o){
     document.getElementById("选择").innerHTML="";
     document.getElementById("输入").style="display:none;";
 
-    document.getElementById("对话").innerHTML = document.getElementById("对话").innerHTML+"<div><span align=\"right\" class=\"d n1\">"+o[1]+"</span></div>";
-
     let 地址="/i/x/dh/"+o[0]+".json";
     let GetJson = $.ajax({
         url: 地址,//json文件位置
@@ -71,8 +69,7 @@ async function 获(o){
     });
     let 临时=GetJson.responseText.split("[");
 
-    
-    let 聊天=[];
+    let 聊天=["<div><span align=\"right\" class=\"d n1\">"+o[1]+"</span></div>"];
     for(let i=1;临时.length>i;i++){
         临时[i]=临时[i].split("]")[0];
 
@@ -88,7 +85,7 @@ async function 获(o){
 
 
 
-    for(let i=1;临时.length>i;i++)
+    for(let i=0;聊天.length>i;i++)
     {
     await (new Promise((resolve)=>setTimeout(resolve,1000))).then(
         document.getElementById("对话").innerHTML=document.getElementById("对话").innerHTML+聊天[i]
