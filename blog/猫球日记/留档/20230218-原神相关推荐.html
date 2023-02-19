@@ -8,13 +8,6 @@ permalink: i/zk/7673525
 <link rel="stylesheet" href="/css/all2.css">
 
 <style>
-    #目录{
-        position:fixed;
-        right:10px;
-        bottom:10px;
-        background-color:#ffffff;
-        padding:10px;
-    }
     .已阅{color:#c3c3c3;}
 </style>
 
@@ -28,7 +21,7 @@ permalink: i/zk/7673525
 <script>
     let d=[
 
-        ["h2","官方"],
+        ["h2","<b>官方</b>"],
         ["注","官方视频通常以主角为哥哥为视角，如果玩家选择了妹妹请自行脑补视频里主角是妹妹。<small>（我也不知道为啥官方就是不肯出妹妹视角的版本 → → ）</small>"],
 
         ["h3","版本和活动"],
@@ -219,7 +212,7 @@ permalink: i/zk/7673525
 
 
 
-        ["h2","同人、二创"],
+        ["h2","<b>同人、二创</b>"],
         ["注","以下大致按城市区分，建议先做完对应的主线、主要支线、传说任务、活动等。"],
 
         ["h3","蒙德"],
@@ -299,6 +292,7 @@ permalink: i/zk/7673525
             if(d[i][0]==""){
 
             }else if(d[i][0]=="h2"||d[i][0]=="h3"){
+                if(i!=0){dy+="</table><br><table>";}
                 dy+="<td><a name='"+d[i][1]+"'></a><"+d[i][0]+">"+d[i][1]+"</"+d[i][0]+"></td>";
                 if(d[i][0]=="h2"){d[i][0]="b";}else{d[i][0]="span";}
                 目录[目录.length]=d[i];
@@ -321,12 +315,7 @@ permalink: i/zk/7673525
         dy+="</tr>";
     }
 
-    let dy2="";
-    for(let i=0;目录.length>i;i++){
-        dy2+="<a href='#"+目录[i][1]+"'><"+目录[i][0]+">"+目录[i][1]+"</"+目录[i][0]+"></a><br>";
-    }
-
-    document.getElementById("dy").innerHTML=dy2+"<br>"+dy+"<div id='目录'>"+dy2+"</div>";
+    document.getElementById("dy").innerHTML=dy;
 
     function 链接(o){
         if(localStorage.getItem("原神相关推荐").indexOf("／"+o+"／")!=-1){}else{
