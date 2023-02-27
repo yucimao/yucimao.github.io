@@ -250,7 +250,7 @@ AsamiAkise的［https［］zhuanlan.zhihu.com/p/447860817［］原神往事II］
 “我不想看事件，我想看讨论” → 〈#|我对原神的看法|我的看法〉、〈zk|7469804|各路网友〉<br>
 <br>
 
-<b>只看特定内容</b>：<small id="只看已选">（可多选）</small><br>
+〈标题|只看特定内容|b〉：<small id="只看已选">（可多选）</small><br>
 〈dy|只看〉<br>
 
 <!-- 研发阶段 - 2017年1月20日 - 2019年6月7日 --><br><h3>研发阶段<small>（2017.01.20 - 2019.06.07）</small></h3>
@@ -2071,9 +2071,7 @@ function 打印评分all(){
 }
 
 if(window.location.href.indexOf("?")!=-1){
-    let 临时=window.location.href.split("?")[1].split("#")[0];
-    if(事件_只看[临时]){
-        只看(临时);
-    }
+    只看(window.location.href.split("?")[1].split("#")[0]);
+    window.location.href=window.location.href+"#只看特定内容";
 }
 </script>
