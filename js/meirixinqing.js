@@ -64,7 +64,7 @@ for(let i=1;13>i;i++){
                 }else{
                     dy+="<td class='xq'>"+i2+"</td>";
                 }
-            }else{猫球
+            }else{
                 break;
             }
         }

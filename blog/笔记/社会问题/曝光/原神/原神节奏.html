@@ -1295,7 +1295,7 @@ AsamiAkise的［https［］zhuanlan.zhihu.com/p/447860817［］原神往事II］
     〈li|恶评〉“<i>必胜客联动翅膀，在国内需要买披萨才给，在国外免费送。</i>”<br>
     实际国外是和亚马逊联动，需要有亚马逊会员（12.99美元/月，约合人民币90元），需要每个月领一个游戏礼包，第四个礼包里有翅膀。</li>
     〈li|普通 恶评〉迪希雅pv发布，其中剧情被玩家调侃为“希望工程公益广告”，玩家们受到触动自发捐款。<br>
-    反原势力：“<i>米哈游自己不捐款而是指使玩家捐款</i>”（米哈游有自己的薪火公益计划）、“<i>未经许可利用公益宣传游戏角色的商业行为</i>”、建立捐款团队命名为“OP”但一分未捐。〈分|离谱值|2〉</li>
+    反原势力：“<i>米哈游自己不捐款而是指使玩家捐款</i>”（米哈游有自己的薪火公益计划）、“<i>未经许可利用公益宣传游戏角色的商业行为</i>”、建立捐款团队命名为“OP”但一分未捐、盗别人捐款的截图嘲笑原神玩家捐款不如自己多。〈分|离谱值|2〉</li>
 </ol>
 
 
@@ -2071,7 +2071,10 @@ function 打印评分all(){
 }
 
 if(window.location.href.indexOf("?")!=-1){
-    只看(window.location.href.split("?")[1].split("#")[0]);
-    window.location.href=window.location.href+"#只看特定内容";
+    let 临时=decodeURI(window.location.href.split("?")[1].split("#")[0]);
+    if(临时.length==2){
+        只看(临时);
+        window.location.href=window.location.href.split("#")[0]+"#只看特定内容";
+    }
 }
 </script>
