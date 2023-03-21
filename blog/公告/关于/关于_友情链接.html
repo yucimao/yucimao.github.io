@@ -25,7 +25,7 @@ pinglun: 1
         // "5147864／标题／limaoqiu.com／介绍<br><br>留档：<br><a href=\"/i/0//.jpg\" target=\"_blank\" class=\"dk\">x年x月x日</a>／u／https://",
 
         "hr／感谢／",
-        "3716272／个站商店／storeweb.cn／带社交元素的个人网站发布平台<br><br>留档：<br><a href=\"/i/0/2021/3716487.jpg\" target=\"_blank\" class=\"dk\">2021年11月17日</a>／u／http://www.storeweb.cn",
+        // "3716272／个站商店／storeweb.cn／带社交元素的个人网站发布平台<br><br>留档：<br><a href=\"/i/0/2021/3716487.jpg\" target=\"_blank\" class=\"dk\">2021年11月17日</a>／u／http://www.storeweb.cn",
         "4308883／十年之约／foreverblog.cn／一个人的寂寞，一群人的狂欢。／u／https://www.foreverblog.cn",
         "5068655／博客圈／bokequan.net／致力于优秀个人独立博客。／u／https://www.bokequan.net",
         "5079413／Blog We／blogwe.com／致敬还在写博客的我们／u／https://blogwe.com",
@@ -47,7 +47,7 @@ pinglun: 1
         let 虫洞=[];
         for(let i=0;cj_data["友情链接"].length>i;i++){
             let 临时=cj_data["友情链接"][i].split("／");
-            if(临时[1]=="失效"){break;}
+            if(临时[1]=="失效"||临时[1]=="感谢"){break;}
             if(临时[5]&&临时[5][0]=="h"&&临时[5][1]=="t"&&临时[5][2]=="t"&&临时[5][3]=="p"){
                 虫洞[虫洞.length]=临时[5];
             }

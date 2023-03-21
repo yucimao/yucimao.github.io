@@ -84,87 +84,92 @@
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 804,
+					"line": 805,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 825,
+					"line": 826,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 878,
+					"line": 879,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 906,
+					"line": 907,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 925,
+					"line": 926,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 983,
+					"line": 984,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1012,
+					"line": 1013,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1044,
+					"line": 1045,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1117,
+					"line": 1119,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1155,
+					"line": 1157,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1234,
+					"line": 1237,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1266,
+					"line": 1269,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1350,
+					"line": 1302,
+					"column": 19,
+					"label": "2023.03.01 - 3.5"
+				},
+				{
+					"line": 1365,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 1424,
+					"line": 1439,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 1607,
+					"line": 1622,
 					"column": 8,
 					"label": "日记"
 				},
 				{
-					"line": 1634,
+					"line": 1649,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 1710,
+					"line": 1725,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -384,7 +389,7 @@
 					"label": "隐藏"
 				},
 				{
-					"line": 262,
+					"line": 265,
 					"column": 11,
 					"label": "最新"
 				}
@@ -394,144 +399,209 @@
 			"path": "blog/笔记/社会问题/曝光/原神/zk/20230218-原神相关推荐.html",
 			"bookmarks": [
 				{
-					"line": 18,
+					"line": 21,
 					"column": 9,
 					"label": "6 完美"
 				},
 				{
-					"line": 19,
+					"line": 22,
 					"column": 10,
 					"label": "5 非常好"
 				},
 				{
-					"line": 20,
+					"line": 23,
 					"column": 8,
 					"label": "4 很好"
 				},
 				{
-					"line": 21,
+					"line": 24,
 					"column": 7,
 					"label": "3 不错"
 				},
 				{
-					"line": 22,
+					"line": 25,
 					"column": 9,
 					"label": "2 还行"
 				},
 				{
-					"line": 23,
+					"line": 26,
 					"column": 7,
 					"label": "1 一般"
 				},
 				{
-					"line": 41,
-					"column": 18,
-					"label": "【强烈推荐】"
+					"line": 27,
+					"column": 12,
+					"label": "————"
+				},
+				{
+					"line": 58,
+					"column": 13,
+					"label": "b：bilibili/BV"
+				},
+				{
+					"line": 59,
+					"column": 30,
+					"label": "b2：bilibili/cv"
+				},
+				{
+					"line": 60,
+					"column": 42,
+					"label": "2b：collectiondetail"
 				},
 				{
 					"line": 61,
+					"column": 37,
+					"label": "2b2：seriesdetail"
+				},
+				{
+					"line": 62,
+					"column": 30,
+					"label": "2b3：b站个人主页搜索"
+				},
+				{
+					"line": 63,
+					"column": 14,
+					"label": "2b4：b站收藏夹"
+				},
+				{
+					"line": 64,
+					"column": 30,
+					"label": "w2：163/album"
+				},
+				{
+					"line": 65,
+					"column": 19,
+					"label": "y：youtube"
+				},
+				{
+					"line": 68,
+					"column": 1,
+					"label": "————"
+				},
+				{
+					"line": 75,
+					"column": 18,
+					"label": "【注意】"
+				},
+				{
+					"line": 94,
 					"column": 18,
 					"label": "【官方】"
 				},
 				{
-					"line": 107,
+					"line": 142,
 					"column": 15,
 					"label": "版本和活动"
 				},
 				{
-					"line": 194,
+					"line": 231,
 					"column": 14,
 					"label": "角色pv"
 				},
 				{
-					"line": 210,
+					"line": 251,
 					"column": 14,
 					"label": "幕后故事"
 				},
 				{
-					"line": 218,
+					"line": 259,
 					"column": 9,
 					"label": "音乐相关"
 				},
 				{
-					"line": 264,
+					"line": 305,
 					"column": 8,
 					"label": "EP"
 				},
 				{
-					"line": 305,
+					"line": 384,
 					"column": 15,
 					"label": "参展、联动"
 				},
 				{
-					"line": 311,
+					"line": 390,
 					"column": 12,
 					"label": "短片"
 				},
 				{
-					"line": 334,
+					"line": 415,
 					"column": 26,
 					"label": "【观赏类二创】"
 				},
 				{
-					"line": 355,
+					"line": 431,
+					"column": 10,
+					"label": "合集"
+				},
+				{
+					"line": 457,
 					"column": 12,
 					"label": "蒙德"
 				},
 				{
-					"line": 395,
+					"line": 508,
 					"column": 12,
 					"label": "璃月"
 				},
 				{
-					"line": 422,
+					"line": 543,
 					"column": 12,
 					"label": "稻妻"
 				},
 				{
-					"line": 444,
+					"line": 570,
 					"column": 12,
 					"label": "须弥"
 				},
 				{
-					"line": 446,
+					"line": 572,
 					"column": 23,
 					"label": "【游玩类二创】"
 				},
 				{
-					"line": 462,
+					"line": 589,
 					"column": 14,
 					"label": "【其他玩法】"
 				},
 				{
-					"line": 464,
-					"column": 19,
-					"label": "考究"
+					"line": 601,
+					"column": 15,
+					"label": "原学家 考究"
 				},
 				{
-					"line": 482,
-					"column": 14,
+					"line": 609,
+					"column": 15,
+					"label": "杂谈"
+				},
+				{
+					"line": 616,
+					"column": 15,
+					"label": "原壶 建筑"
+				},
+				{
+					"line": 630,
+					"column": 15,
 					"label": "手工"
 				},
 				{
-					"line": 492,
+					"line": 652,
 					"column": 15,
-					"label": "美食"
+					"label": "原厨 美食"
 				},
 				{
-					"line": 514,
-					"column": 12,
+					"line": 660,
+					"column": 15,
 					"label": "异界旅行者"
 				},
 				{
-					"line": 522,
-					"column": 24,
+					"line": 667,
+					"column": 15,
 					"label": "摄影"
 				},
 				{
-					"line": 528,
-					"column": 34,
-					"label": "节奏"
+					"line": 682,
+					"column": 14,
+					"label": "原史官 节奏"
 				}
 			]
 		}

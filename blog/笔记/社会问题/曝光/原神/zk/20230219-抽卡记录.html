@@ -7,13 +7,17 @@ permalink: i/zk/7677616
 ---
 <link rel="stylesheet" href="/css/all2.css">
 
-<style>.限定{background-color:#ff8aef;color:#ffffff;}.常驻{background-color:#3e8fff;color:#ffffff;}.up{color:#f9ac07}.emoji{font-size:1.6em;position:absolute;bottom:-5px;}.黑条{background-color:#000000;color:#000000;}</style>
+<style>.限定{background-color:#ff8aef;color:#ffffff;}.常驻{background-color:#3e8fff;color:#ffffff;}.up{color:#f9ac07}.emoji{font-size:1.6em;position:absolute;bottom:-5px;}.黑条{background-color:#000000;color:#000000;}
+#猫球二扯{position: fixed;top:0;}
+</style>
+<br><br><br><br><br>
+<br>
 <table><tr><td id="猫球1"></td><td id="二扯1"></td></tr><tr><td id="猫球2"></td><td id="二扯2"></td></tr></table><a name="抽卡"></a>
 <script>let dy,dy2;
 
 let 抽={ //已抽
-    "猫球限定":29, "猫球常驻":31, //
-    "二扯限定":22, "二扯常驻":62, //
+    "猫球限定":0, "猫球常驻":31, //
+    "二扯限定":4, "二扯常驻":62, //
 
     "猫球":[
         "迪​卢克 限定 79 歪",
@@ -32,6 +36,7 @@ let 抽={ //已抽
         "琴 限定 75 歪",
         "夜兰 限定 59",
         "胡桃 限定 80",
+        "申鹤 限定 59",
     ],
 
     "二扯":[
@@ -45,6 +50,8 @@ let 抽={ //已抽
         "神里绫人 限定 81",
         "夜兰 限定 75",
         "胡桃 限定 79",
+        "七七 限定 76 歪",
+        "神里绫华 限定 12",
     ],
 }
 let 猫球二扯=["猫球","二扯"];
@@ -109,7 +116,7 @@ let 需=[
     ["五郎",4,"有"],
     ["荒泷一斗",5],
     ["云堇",4,"有"],
-    ["申鹤",5],
+    ["申鹤",5,"有"],
     ["八重神子",5],
     ["神里绫人",5],
     ["夜兰",5,"有"],
@@ -127,6 +134,8 @@ let 需=[
     ["流浪者",5],
     ["瑶瑶",4,"有"],
     ["艾尔海森",5],
+    ["迪希雅",5],
+    ["米卡",4,"有"],
 
 ];
 
@@ -145,7 +154,7 @@ for(let i=0;猫球二扯.length>i;i++){
     if(猫球二扯[i]=="猫球"){if(抽["猫球"].length<抽["二扯"].length){for(let i2=0;抽["二扯"].length-抽["猫球"].length>i2;i2++){dy+="<tr><td>　</td></tr>"}}}
     if(猫球二扯[i]=="二扯"){if(抽["二扯"].length<抽["猫球"].length){for(let i2=0;抽["猫球"].length-抽["二扯"].length>i2;i2++){dy+="<tr><td>　</td></tr>"}}}
     
-    dy+="<tr><td><h4>"+猫球二扯[i]+"</h4></td></tr>";
+    // dy+="<tr><td><h4>"+猫球二扯[i]+"</h4></td></tr>";
     for(let i2=0;抽[猫球二扯[i]].length>i2;i2++){
         let 临时=抽[猫球二扯[i]][i2].split(" ");
         dy+="<tr><td><b";
@@ -167,6 +176,7 @@ for(let i=0;猫球二扯.length>i;i++){
         if(临时[2][1]=="4"||临时[2][1]=="9"){dy+=".."}
         dy+="</span></td></tr>";
     }
+
     抽卡记录[猫球二扯[i]+"金"]=抽卡记录[猫球二扯[i]+"金"]-抽卡记录[猫球二扯[i]+"歪"];
     if(抽卡记录[猫球二扯[i]+"金"]==0){抽卡记录[猫球二扯[i]+"金"]=1;}
     dy+="<tr><td colspan='4'><span class='限定' style='padding:7px 8px'>限定</span>　<b>"+抽卡记录[猫球二扯[i]+"限定A"]+"</b>抽<small>(<b>"+(抽卡记录[猫球二扯[i]+"限定A"]*160+"").split(".")[0]+"</b>原石)</small> / <b>"+抽卡记录[猫球二扯[i]+"限定B"]+"</b>金 = <b>"+((抽卡记录[猫球二扯[i]+"限定A"]/抽卡记录[猫球二扯[i]+"限定B"])+"").split(".")[0]+"</b>抽<small>(<b>"+((抽卡记录[猫球二扯[i]+"限定A"]*160)/抽卡记录[猫球二扯[i]+"限定B"]+"").split(".")[0]+"</b>原石)</small></td></tr>";
@@ -178,7 +188,7 @@ for(let i=0;猫球二扯.length>i;i++){
 
 
 for(let i=0;猫球二扯.length>i;i++){
-    dy2="<table>";
+    dy2="<table id='猫球二扯'>";
     let 临时=[];
     临时[0]=((抽卡记录[猫球二扯[i]+"限定A"]/抽卡记录[猫球二扯[i]+"限定B"])+"").split(".")[0];
     if(临时[0]>=抽[猫球二扯[i]+"限定"]){临时[1]=临时[0]-抽[猫球二扯[i]+"限定"];临时[1]="<small>预计还有</small><b>"+临时[1]+"</b><small>抽</small>"+抽卡记录[猫球二扯[i]+"保底"];}else{临时[1]="<small>离</small>"+抽卡记录[猫球二扯[i]+"保底"]+"<small>不远了</small>";}
@@ -189,6 +199,9 @@ for(let i=0;猫球二扯.length>i;i++){
     临时[5]=90-抽[猫球二扯[i]+"限定"];if(临时[5]<=0){临时[5]="<b>就是现在!</b>"}else{临时[5]="最多<b>"+临时[5]+"</b>";}
     临时[6]=抽[猫球二扯[i]+"限定"];if(临时[6]<74){临时[6]="0.6";}else if(临时[6]>=90){临时[6]="100";}else{临时[6]=0.6+(临时[6]*1-73)*6;}
     临时[7]=抽[猫球二扯[i]+"常驻"];if(临时[7]<74){临时[7]="0.6";}else if(临时[7]>=90){临时[7]="100";}else{临时[7]=0.6+(临时[7]*1-73)*6;}
+
+    
+    dy2+="<tr><td colspan='4'><h4>"+猫球二扯[i]+"</h4></td></tr>";
 
     dy2+="<tr><td class='限定'>限定</td><td>已垫<b>"+抽[猫球二扯[i]+"限定"]+"</b>发</td><td>概率<b>"+临时[6]+"%</b></td><td>"+临时[1]+"<small>("+临时[5]+")</small></td></tr>"+
     "<tr><td class='常驻'>常驻</td><td>已垫<b>"+抽[猫球二扯[i]+"常驻"]+"</b>发</td><td>概率<b>"+临时[7]+"%</b></td><td>↖歪率"+临时[2]+"%<span style='position:relative'><span class='emoji'>"+临时[3]+"</span></span></td></tr>";
