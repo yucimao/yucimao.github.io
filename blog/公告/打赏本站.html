@@ -18,7 +18,8 @@ tpfd: 1
     <li>日常维护费用</li>
     <li>奖励猫球一罐可乐<span style="position: relative;"><img style="position:absolute;bottom:0;width:50px;" src="/img/i/em/mq/12.jpg"></span></li>
     <li><small>（<a href="/mqf" target="_blank">MQF基金会</a>是文学作品中虚构的组织，并不真实存在，可以支持创作，但请<b>不要为MQF基金会的项目捐款</b>）</small></li>
-</ul></p>
+</ul>
+（可以在备注里留下你的名字和要说的话）</p>
 
 <table>
     <tr><td><img src="{{ site.mq_d }}/img/i/qita/ewm_wx.jpg" class="tpfd" onerror="this.src='/img/i/qita/ewm_wx.jpg';this.onerror=null;" width="300px" alt="微信打赏"></td>
@@ -42,14 +43,16 @@ tpfd: 1
 let 名单=[// 新的在上
 // B站充电：收到的贝壳x1.488才是付款金额 B站抽成好多 → →
 // ["",,""],
+["隐藏",0,""],
+["1*2",50,"支持个人创作者！"],
 ["安吉",7,"谢谢你。"],
-["十佳员工的非洲生活",2,"无"],
-["荔枝-QwQ",1,"无"],
-["二扯",3,"无"],
+["十佳员工的非洲生活",2,""],
+["荔枝-QwQ",1,""],
+["二扯",3,""],
 ["不知道叫啥怪我咯",2,"_(:з」∠)_"],
 ["风色遐想",65,"加了个油"],
-["人間藝術家",3,"无"],
-["高冷老攻酱",3,"无"],
+["人間藝術家",3,""],
+["高冷老攻酱",3,""],
 
 ];
 
@@ -57,7 +60,9 @@ let 排序_总金额="",排序_单次金额="",排序_时间="";
     let 临时={},临时2=[],临时3=[],临时4;
 
     for(let i=0;名单.length>i;i++){
-        排序_时间+="<tr><td>"+名单[i][0]+"</td><td>"+名单[i][1]+"</td><td>"+名单[i][2]+"</td></tr>";
+        if(名单[i][0]!="隐藏"){
+            排序_时间+="<tr><td>"+名单[i][0]+"</td><td>"+名单[i][1]+"</td><td>"+名单[i][2]+"</td></tr>";
+        }
         if(临时2.indexOf(名单[i][0])!=-1){临时[名单[i][0]]+=名单[i][1];}else{临时[名单[i][0]]=名单[i][1];临时2[临时2.length]=名单[i][0];}
     }
 
@@ -74,7 +79,7 @@ let 排序_总金额="",排序_单次金额="",排序_时间="";
         if(临时4==0){临时3[临时3.length]=临时2[i];}
     }
     for(let i=0;临时3.length>i;i++){
-        排序_总金额="<tr><td>"+临时3[i]+"</td><td>"+临时[临时3[i]]+"</td></tr>"+排序_总金额;
+        if(临时3[i]!="隐藏"){排序_总金额="<tr><td>"+临时3[i]+"</td><td>"+临时[临时3[i]]+"</td></tr>"+排序_总金额;}
     }
 
     临时3=[名单[0]];
@@ -90,7 +95,7 @@ let 排序_总金额="",排序_单次金额="",排序_时间="";
         if(临时4==0){临时3[临时3.length]=名单[i];}
     }
     for(let i=0;临时3.length>i;i++){
-        排序_单次金额="<tr><td>"+临时3[i][0]+"</td><td>"+临时3[i][1]+"</td><td>"+临时3[i][2]+"</td></tr>"+排序_单次金额;
+        if(临时3[i][0]!="隐藏"){排序_单次金额="<tr><td>"+临时3[i][0]+"</td><td>"+临时3[i][1]+"</td><td>"+临时3[i][2]+"</td></tr>"+排序_单次金额;}
     }
 
     document.getElementById("时间").innerHTML="<b>名单</b> <small>时间排序</small><br>切换成：时间排序、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td><td><b>留言</b></td></tr>"+排序_时间+"</table>";
