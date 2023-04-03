@@ -134,37 +134,37 @@
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1260,
+					"line": 1259,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1302,
+					"line": 1301,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1342,
+					"line": 1341,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1420,
+					"line": 1419,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 1494,
+					"line": 1493,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 1677,
+					"line": 1676,
 					"column": 8,
 					"label": "日记"
 				},
 				{
-					"line": 1704,
+					"line": 1703,
 					"column": 13,
 					"label": "游戏建议"
 				},
@@ -550,56 +550,61 @@
 				},
 				{
 					"line": 570,
-					"column": 12,
+					"column": 8,
 					"label": "须弥"
 				},
 				{
-					"line": 572,
+					"line": 576,
+					"column": 8,
+					"label": "其他"
+				},
+				{
+					"line": 578,
 					"column": 23,
 					"label": "【游玩类二创】"
 				},
 				{
-					"line": 589,
+					"line": 595,
 					"column": 14,
 					"label": "【其他玩法】"
 				},
 				{
-					"line": 601,
+					"line": 607,
 					"column": 15,
 					"label": "原学家 考究"
 				},
 				{
-					"line": 609,
+					"line": 615,
 					"column": 15,
 					"label": "杂谈"
 				},
 				{
-					"line": 616,
+					"line": 622,
 					"column": 15,
 					"label": "原壶 建筑"
 				},
 				{
-					"line": 630,
+					"line": 636,
 					"column": 15,
 					"label": "手工"
 				},
 				{
-					"line": 652,
+					"line": 658,
 					"column": 15,
 					"label": "原厨 美食"
 				},
 				{
-					"line": 660,
+					"line": 666,
 					"column": 15,
 					"label": "异界旅行者"
 				},
 				{
-					"line": 667,
+					"line": 673,
 					"column": 15,
 					"label": "摄影"
 				},
 				{
-					"line": 684,
+					"line": 690,
 					"column": 14,
 					"label": "原史官 节奏"
 				}
