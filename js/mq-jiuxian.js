@@ -21,8 +21,7 @@ let oo="";
 
 let 跳转="";
 
-window.onload=function(){
-    alert(1);
+// window.onload=function(){
     let 正=document.getElementById("正文").innerHTML.split("〈");
     let 文=正[0];
     let 遗漏="";
@@ -56,7 +55,7 @@ window.onload=function(){
     if(遗漏!=""){文+="<br><br><small><b>出现遗漏：</b>"+遗漏+"</small>";alert("出现遗漏");}
     文=文.split("［跳转］")
     document.getElementById("正文").innerHTML = 文[0]+跳转+文[1];
-}
+// }
 
 function 进入(){
     if(表[o]){
