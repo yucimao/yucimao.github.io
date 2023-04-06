@@ -22,6 +22,7 @@ let oo="";
 let 跳转="";
 
 window.onload=function(){
+    alert(1);
     let 正=document.getElementById("正文").innerHTML.split("〈");
     let 文=正[0];
     let 遗漏="";
