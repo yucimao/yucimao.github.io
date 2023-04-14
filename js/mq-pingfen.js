@@ -149,8 +149,7 @@ function 排名方式(){
     else{排名的方式=0;document.getElementById("排行").innerHTML = "<style>td span.b{display:none;}</style>";}
 }
 
+dw2(0);
 if(location.href.indexOf("?w=")!=-1){
     dw2(decodeURI(location.href.split("?w=")[1]));
-}else{
-    dw2(0);
 }
