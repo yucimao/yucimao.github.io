@@ -114,8 +114,12 @@ function dw2(o){
                     if(关键词.indexOf(临时2)!=-1){}else{dy+="<a onclick=\"dw2('"+临时2+"')\"><small><b>"+临时2+"</b></small></a>";}
                 }else if(datb[i][i2].indexOf("：")!=-1){
                     临时2=临时2.split("：");
-                    dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
-                    if(临时2[2]){dy+="<small>("+临时2[2]+")</small>";}
+                    if(临时2[0]=="x"){
+                        dy+=临时2[1];
+                    }else{
+                        dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
+                        if(临时2[2]){dy+="<small>("+临时2[2]+")</small>";}
+                    }
                 }else if(datb[i][i2]=="td"){dy+="</td><td>";
             }else if(临时2>0||临时2.length>40){ //超过字数为“更多” 原25
                 dy+="<a onclick=\"dw(dwd='更多',dwb='"+临时2+"')\">更多</a>";
