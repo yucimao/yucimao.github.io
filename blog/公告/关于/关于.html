@@ -107,7 +107,7 @@ function 粉丝数(fss){
 <hr>
 
 <tags-default-style mqgjc="猫球关键词" scale="0.8" width="100%" height="400px" icon="⤴️" inorder="true"><my-tags>
-    <div style="display: none" slot="text">
+    <div style="display: none" slot="text" id="ceshi">
         游戏/2/爱好//pingfen/youxi
         音乐/2/爱好//pingfen/gequ
         电影/2/爱好//pingfen/dianying
@@ -140,9 +140,15 @@ function 粉丝数(fss){
 
 <hr>
 
+<script>
+    function 测试(){
+        document.getElementById("ceshi").innerHTML="测试/3/测试2";
+    }
+</script>
+
 <a name="关于博客"></a><h2>关于博客</h2>
 <ul>
-<li><small>2006年9月20日</small> 注册网易博客，分享自己的生活和爱好，在这里结交了很多博友。<br>
+<li><small>2006年9月20日</small> 注册网易博客，分享自己的生活和爱好，在这里结交了很多博友。<a onclick="测试()">　</a><br>
     <span class="zhushi" id="blogday_dy"></span><br>
 期间短暂尝试过百度空间、点点轻博客，后来这两家都没了( ﹁ ﹁ )。</li>
 <li><small>2015年9月5日</small> 网易开始主推lofter轻博客，原本的网易博客像是被放弃了，各种BUG和问题都得不到回应。<br>
@@ -212,10 +218,9 @@ const pieChart = new chartXkcd.Pie(svg, {
 $("html,body").on("click",function(e){anp(e);}) //鼠标点击弹字
 let anp_data=[
     "pvo占领世界",
-    "愿风指引你的道路","要记得旅途本身的意义",
+    "愿风指引你的道路",
     "又怂又菜 但爱玩","可能是假东北人","网瘾少年","咖啡过敏",
-    "人生的意义就是旅行、电影、音乐、游戏","“越过长城，走向世界”",
-    "穿过中央大街，坐在江边发呆",
+    "人生的意义就是旅行、电影、音乐、游戏",
     
 ];
 let anp_color=["#FB364D","#E64156","#D14D60","#B85B6B","#A36775","#92727D","#7F7D87","#688A91","#5C9197","#4B9A9E","#33A8AA",
