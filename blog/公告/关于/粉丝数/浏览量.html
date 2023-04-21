@@ -5,18 +5,18 @@ permalink: i/zk/2839382
 <script src="{{ site.mq_d }}/5/new/chart.xkcd.js"></script>
 <a href="/i/zk/2839370">粉丝数</a>　浏览量　<a href="/i/zk/2839384">赞同数</a>　<br>
 <div class="chart"><svg class="bar-chart"></svg></div>
-<small>（更新时间：2023.1.4）</small><br/>
+<small>（更新时间：2023.4.21）</small><br/>
 
 <script>
 const svg2 = document.querySelector('.bar-chart');
 const barChart = new chartXkcd.Bar(svg2, {
-    title: '浏览量', //删后四个数字
+    title: '浏览量',
     data: {
         labels: ['bilibili','zhihu','weibo'],
         datasets: [{
             data: [
-                1380160 + 36286, //哔哩哔哩 https://member.bilibili.com/platform/home
-                19340331 + 227020, //知乎 https://www.zhihu.com/creator/analytics/work/all
+                1471825 + 37714, //哔哩哔哩 https://member.bilibili.com/platform/home
+                20928074 + 227276, //知乎 https://www.zhihu.com/creator/analytics/work/all
                 0, //微博
             ],
         }],
