@@ -1,0 +1,48 @@
+---
+layout: zk
+title: 星穹铁道评分记录
+nav_text: 星穹铁道评分记录
+nav_url: <a href="/i/zk/201333442">我对原神的看法</a>
+permalink: i/zk/8268747
+---
+<style>
+    .a{color:#00d30e;}
+    .b{color:#ff0000;}
+</style>
+<div id="dy"></div>
+
+<script>
+    let dy="<table>";
+    let a=[
+        ["","<a href='https://www.taptap.cn/app/224267'>TapTap</a>",
+        "<a href='https://www.taptap.cn/app/305268'>电脑版</a>",
+        "<a href='https://www.biligame.com/detail/?id=107800'>B站</a>",
+        "<a href='https://www.biligame.com/detail/?id=108586'>电脑版</a>",
+        "<a href='https://www.zhihu.com/topic/21874407/hot'>知乎</a>",
+        "<a href='https://www.douban.com/game/35925645/'>豆瓣</a>"],
+        ["开服前","8.4","7.1","8.8","9.7","79",""],
+        ["4.26","6.5","4.3","8","8.4","76","6.1"],
+        ["4.28","6.3","5.4","7.9","8.2","76","6.2"],
+        // ["","","","","","",""],
+    ]
+    for(let i=0;a.length>i;i++){
+        dy+="<tr>";
+        for(let i2=0;a[i].length>i2;i2++){
+            dy+="<td>";
+            dy+=a[i][i2];
+            if(i2!=0&&i>1&&a[i-1][i2]!=""){
+                let 临时=((a[i][i2]-a[i-1][i2])*10+"").split(".")[0]/10;
+                let 临时2="";
+                if(临时>0){临时2="a";临时="+"+临时;}else if(临时<0){临时2="b";}
+                if(临时2!=""){
+                    dy+=" <small class='"+临时2+"'>"+临时+"</small>";
+                }
+            }
+            dy+="</td>";
+        }
+        dy+="</tr>";
+    }
+    dy+="</table>";
+    document.getElementById("dy").innerHTML=dy;
+</script>
+<link rel="stylesheet" href="/css/all.css">

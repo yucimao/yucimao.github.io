@@ -1,5 +1,5 @@
 // 分类：内容
-// 按钮名：链接：地址
+// 按钮名：链接：地址 （或直接链接）
 // td 或 ／ </td><td>
 
 dy="<div id=\"排行\"><style>td span.b{display:none;}</style></div>"+
@@ -106,6 +106,9 @@ function dw2(o){
                 临时2=datb[i][i2]+"";
                 if(datb[i][i2][0]=="："){datb[i][i2]="分类"+datb[i][i2];}
                 if(临时2.length==1){临时2+=".0";}
+                if(datb[i][i2].split("://")[0]=="http"||datb[i][i2].split("://")[0]=="https"){
+                    datb[i][i2]="链接：链接："+datb[i][i2];临时2=datb[i][i2];
+                }
                 if(datb[i][i2].indexOf("：链接：")!=-1){
                     临时2=临时2.split("：链接：");
                     dy+="<a href=\""+临时2[1]+"\" target=\"_blank\" class=\"dk\">"+临时2[0]+"</a>";
