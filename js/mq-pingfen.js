@@ -40,23 +40,20 @@ for(let i=1;data.length>i;i++){
 }
 data=datb;
 
-// let 谁复特=0;
-// window.document.onkeydown = disableRefresh;
-// function disableRefresh(evt){
-//     evt=(evt)?evt:window.event
-//     if(evt.keyCode&&evt.keyCode == 16){
-//          谁复特=1;
-//     }else{谁复特=0;}
-// }
 let 关键词=[];
 
 function dw2(o){
     let 谁复特=1;
-    if(o=="0"){关键词=[]}else if(o.indexOf(",")!=-1){关键词=o.split(",");}else if(关键词.length==0||谁复特==1){关键词[关键词.length]=o;}else{关键词=[o]}
+    if(o=="0"){关键词=[]}else if(o=="1"){}else if(o.indexOf(",")!=-1){关键词=o.split(",");}else if(关键词.length==0||谁复特==1){关键词[关键词.length]=o;}else{关键词=[o]}
     dy=dy2;
 
     if(o==0){datb=data;}else{
-        dy="<h2 style='display:inline;'>"+关键词+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+dy;
+        let 临时="";
+        for(let i=0;关键词.length>i;i++){
+            if(i!=0){临时+=",";}
+            临时+="<a onclick=\"取消('"+关键词[i]+"')\">"+关键词[i]+"</a>";
+        }
+        dy="<h2 style='display:inline;'>"+临时+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+dy;
         datb=[];
         for(let i=0;data.length>i;i++){
             谁复特=1;
@@ -159,4 +156,16 @@ function 排名方式(){
 dw2(0);
 if(location.href.indexOf("?w=")!=-1){
     dw2(decodeURI(location.href.split("?w=")[1]));
+}
+
+function 取消(o){
+    if(关键词.indexOf(o)!=-1){
+        for(let i=0;关键词.length>i;i++){
+            if(关键词[i]==o){
+                关键词.splice(i,1);
+                dw2(1);
+                break;
+            }
+        }
+    }
 }
