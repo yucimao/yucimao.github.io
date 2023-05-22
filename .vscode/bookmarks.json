@@ -89,112 +89,117 @@
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 906,
+					"line": 907,
 					"column": 15,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 950,
+					"line": 951,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 989,
+					"line": 990,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 1015,
+					"line": 1016,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1065,
+					"line": 1066,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1102,
+					"line": 1103,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1127,
+					"line": 1128,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1159,
+					"line": 1160,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1194,
+					"line": 1196,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1236,
+					"line": 1238,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1341,
+					"line": 1343,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1391,
+					"line": 1393,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1458,
+					"line": 1460,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1507,
+					"line": 1509,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1557,
+					"line": 1559,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1616,
+					"line": 1618,
 					"column": 10,
 					"label": "2023.04.12 - 3.6"
 				},
 				{
-					"line": 1760,
+					"line": 1753,
+					"column": 15,
+					"label": "其他"
+				},
+				{
+					"line": 1763,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 1843,
+					"line": 1846,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 1956,
+					"line": 1959,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2042,
+					"line": 2045,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2070,
+					"line": 2073,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 2155,
+					"line": 2158,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -624,72 +629,72 @@
 			"path": "../../目录/物品位置.html",
 			"bookmarks": [
 				{
-					"line": 24,
+					"line": 22,
 					"column": 18,
 					"label": "【客厅】"
 				},
 				{
-					"line": 25,
+					"line": 23,
 					"column": 22,
 					"label": "鞋柜"
 				},
 				{
-					"line": 28,
+					"line": 26,
 					"column": 21,
 					"label": "零食柜"
 				},
 				{
-					"line": 37,
+					"line": 34,
 					"column": 20,
 					"label": "二扯电脑桌"
 				},
 				{
-					"line": 42,
+					"line": 40,
 					"column": 15,
 					"label": "猫球角落"
 				},
 				{
-					"line": 49,
+					"line": 47,
 					"column": 19,
 					"label": "【厨房】"
 				},
 				{
-					"line": 92,
+					"line": 94,
 					"column": 24,
 					"label": "厨房外桌子"
 				},
 				{
-					"line": 93,
+					"line": 95,
 					"column": 21,
 					"label": "工具箱"
 				},
 				{
-					"line": 104,
+					"line": 106,
 					"column": 18,
 					"label": "大药箱"
 				},
 				{
-					"line": 124,
+					"line": 130,
 					"column": 27,
 					"label": "【主卧】"
 				},
 				{
-					"line": 137,
+					"line": 143,
 					"column": 27,
 					"label": "【次卧】"
 				},
 				{
-					"line": 139,
+					"line": 145,
 					"column": 29,
 					"label": "【卫生间】"
 				},
 				{
-					"line": 186,
+					"line": 192,
 					"column": 18,
 					"label": "【不常用】"
 				},
 				{
-					"line": 188,
+					"line": 194,
 					"column": 25,
 					"label": "搬家用"
 				}
@@ -794,47 +799,52 @@
 					"label": "2023"
 				},
 				{
-					"line": 243,
+					"line": 246,
 					"column": 30,
 					"label": "2022"
 				},
 				{
-					"line": 301,
+					"line": 304,
 					"column": 30,
 					"label": "2021"
 				},
 				{
-					"line": 320,
+					"line": 323,
 					"column": 32,
 					"label": "2020"
 				},
 				{
-					"line": 344,
+					"line": 347,
 					"column": 32,
 					"label": "2019"
 				},
 				{
-					"line": 355,
+					"line": 360,
+					"column": 32,
+					"label": "2018"
+				},
+				{
+					"line": 362,
 					"column": 5,
 					"label": "对照组 原神"
 				},
 				{
-					"line": 359,
+					"line": 366,
 					"column": 9,
 					"label": "【对照组 其他作品】"
 				},
 				{
-					"line": 374,
+					"line": 381,
 					"column": 10,
 					"label": "对照组 其他作品"
 				},
 				{
-					"line": 376,
+					"line": 383,
 					"column": 5,
 					"label": "【暂时存活】"
 				},
 				{
-					"line": 414,
+					"line": 420,
 					"column": 7,
 					"label": "【不记录】"
 				}
