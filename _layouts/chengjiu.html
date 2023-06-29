@@ -45,6 +45,7 @@ hr{width:100%;}
 <div id="right_anchor2" style="z-index: 102;"></div>
 
 <div id="dy"></div>
+<a onclick="加载()"><div id="loadink" class="cj"><img class="loading" src="{{ site.mq_d }}/i/cj/loading.jpg" onerror="this.src='/i/cj/loading.jpg';this.onerror=null;"/><b>加载更多</b><br></div></a>
 
 {{ content }}
 
@@ -64,10 +65,10 @@ if(cj_data_b.length>1){
 }
 document.getElementById("anniu_b").innerHTML = 当前;
 
-
-let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img class=\"loading\" src=\"{{ site.mq_d }}/i/cj/loading.jpg\" onerror=\"this.src='/i/cj/loading.jpg';this.onerror=null;\"/><b>加载更多</b><br></div></a>";
 let data_jl={};
 let right={};
+
+let obink=document.querySelector('.loading');
 
 function 加载(){
 data_jl[当前]+="";
@@ -107,11 +108,12 @@ cj_data[当前].splice(0, 1);
 
 }
 
-if (cj_data[当前] != "") {
-    document.getElementById("dy").innerHTML = data_jl[当前] + loading;
-} else {
-    document.getElementById("dy").innerHTML = data_jl[当前];
+if(cj_data[当前]=="") {
+    document.getElementById("loadink").style="display:none;";
+}else if(document.querySelector('.loading')){
+    obink=document.querySelector('.loading');
 }
+document.getElementById("dy").innerHTML = data_jl[当前];
 document.getElementById("right_anchor2").innerHTML = "<table>"+right[当前]+"</table>";
 }
 
@@ -141,12 +143,10 @@ document.getElementById("anniu_b").innerHTML = 当前;
 加载();
 }
 
-let obink=document.querySelector('.loading');
 let ob=new IntersectionObserver(
     function (o){
         if(o[0].isIntersecting){
             加载();
-            if(document.querySelector('.loading')){obink=document.querySelector('.loading');}
         }
     },{
         thresholds:0.5,
