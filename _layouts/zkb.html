@@ -1,0 +1,47 @@
+---
+layout: default
+---
+</head><body>
+
+<style>
+body{position: relative;width: 60%;top: 1em;margin: auto;}
+#index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}
+h1,h2,h3,h4,h5,h6,nav{display:inline;}
+h1 small{font-weight: normal;font-size:0.7em;}
+h2 small,h3 small,h4 small,h5 small,h6 small{color:var(--huise-color);}
+@media screen and (max-width: 767px){
+    body{width: 90%;}
+    #index{display:none;}
+}
+</style>
+<div id="zkb_dy"></div>
+<div id="index"></div>
+<script>
+let zkb_h1="{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}";
+let zkb_nav="{% if page.zkb_nav %}{{ page.zkb_nav }}{% else %}{% endif %}".split("／");
+let zkb_nav_dy="<a href='/i'>猫球博客</a>";
+for(let i=0;zkb_nav.length>i;i++){
+    zkb_nav_dy+=" / <a href='/"+zkb_nav[i].split(",")[0]+"'>"+zkb_nav[i].split(",")[1]+"</a>";
+}
+zkb_nav_dy="<h1>"+zkb_h1+"</h1> "+zkb_nav_dy+"<hr>";
+document.getElementById("zkb_dy").innerHTML = zkb_nav_dy;
+</script>
+
+{{ content }}
+
+<script>
+let anchor_dy="";
+let anchor = document.querySelectorAll('a');
+if (anchor[0]) {
+    for (let i = 0; i < anchor.length; i++) {
+        if (anchor[i]["name"]) {
+            anchor_dy += "<a onclick=\"window.location.href='#" + anchor[i]["name"] + "'\">" + anchor[i]["name"] + "</a><br>";
+        }
+    }
+}
+document.getElementById("index").innerHTML = "<br><br>"+anchor_dy;
+</script>
+
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
+
+</body>

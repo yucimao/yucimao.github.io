@@ -1,0 +1,104 @@
+<div id="游戏厅">三公</div><script src="0.js"></script>
+<small>
+    下注后，电脑和玩家各抽3张牌，根据自己手中的牌决定要不要加倍下注。<br>
+    最后双方亮牌，先比较牌型，如果牌型相同则比较点数。<br>
+    大三公 > 小三公 > 混三公 > 散牌<br>
+    大三公：三张相同的 J 或 Q 或 K<br>
+    小三公：三张相同的 数字牌 或 A<br>
+    混三公：三张不同的 J 或 Q 或 K
+</small><br><br>
+
+<div id="请下注">
+    请下注：<br>
+    <a onclick="开始(1)">1币</a>、<a onclick="开始(10)">10币</a>、<a onclick="开始(50)">50币</a>、<a onclick="开始(100)">100币</a>、<a onclick="开始(1000)">1000币</a><br>
+    <input type="text" placeholder="输入赌注" autocomplete="off" id="输入赌注"> <a onclick="开始(0)">确定</a>
+</div>
+<div id="桌" style="display:none;">
+    电脑的牌：
+    <span id="电脑的牌"></span><br>
+    玩家的牌：
+    <span id="玩家的牌"></span>
+    <div id="结束"></div>
+</div>
+
+<script>
+    let 下注,电脑牌型,玩家牌型,结局,电脑点数,玩家点数;
+    let 牌型=["无","混三公","小三公","大三公"];
+    let 结局类型=["平局","恭喜，玩家获胜","很遗憾，玩家失败"];
+
+    function 开始(o){
+        if(o==0){o=document.getElementById("输入赌注").value;}
+        if(o>0&&钱>=o){
+            下注=o;
+            余额(-o);
+            document.getElementById("请下注").style="display:none;";
+            洗牌(2);
+            
+            电脑牌型=0;玩家牌型=0;
+            电脑点数=牌值[牌堆[0]]+牌值[牌堆[1]]+牌值[牌堆[2]];
+            玩家点数=牌值[牌堆[3]]+牌值[牌堆[4]]+牌值[牌堆[5]];
+            if(牌堆[0]==牌堆[1]&&牌堆[0]==牌堆[2]){
+                if(牌堆[0]=="J"||牌堆[0]=="Q"||牌堆[0]=="K"){
+                    电脑牌型=3;
+                }else{
+                    电脑牌型=2;
+                }
+            }else if(牌堆[0].indexOf("JQK")!=-1&&牌堆[1].indexOf("JQK")!=-1&&牌堆[2].indexOf("JQK")!=-1){
+                电脑牌型=1;
+            }
+            if(牌堆[3]==牌堆[4]&&牌堆[3]==牌堆[5]){
+                if(牌堆[3]=="J"||牌堆[3]=="Q"||牌堆[3]=="K"){
+                    玩家牌型=3;
+                }else{
+                    玩家牌型=2;
+                }
+            }else if(牌堆[3].indexOf("JQK")!=-1&&牌堆[4].indexOf("JQK")!=-1&&牌堆[5].indexOf("JQK")!=-1){
+                玩家牌型=1;
+            }
+
+            document.getElementById("电脑的牌").innerHTML="<br><img src='img/背.png' width='50px'> <img src='img/背.png' width='50px'> <img src='img/背.png' width='50px'>";
+            document.getElementById("玩家的牌").innerHTML="<small>("+牌型[玩家牌型]+" "+玩家点数+"点)</small><br><img src='img/"+牌堆[3]+".png' width='50px' class='fanka'> <img src='img/"+牌堆[4]+".png' width='50px' class='fanka'> <img src='img/"+牌堆[5]+".png' width='50px' class='fanka'>";
+            document.getElementById("结束").innerHTML="<button onclick='结束()'>判定</button> <button onclick='加倍()'>加倍下注</button>";
+            document.getElementById("桌").style="";
+        }else{
+            try{notyf.alert("下注数额错误");}catch(e){alert("下注数额错误");}
+        }
+    }
+    function 加倍(){
+        if(钱>=下注){
+            if(电脑牌型==0&&电脑点数<15&&玩家牌型==0){try{notyf.alert("电脑拒绝了你的加倍下注");}catch(e){alert("电脑拒绝了你的加倍下注");}}else{余额(-下注);下注+=下注*1;try{notyf.confirm("加倍成功")}catch(e){alert("加倍成功");}}
+        }else{try{notyf.alert("余额不足");}catch(e){alert("余额不足");}}
+        document.getElementById("结束").innerHTML="<button onclick='结束()'>判定</button>";
+    }
+    function 结束(){
+        document.getElementById("电脑的牌").innerHTML="<small>("+牌型[电脑牌型]+" "+电脑点数+"点)</small><br><img src='img/"+牌堆[0]+".png' width='50px' class='fanka'> <img src='img/"+牌堆[1]+".png' width='50px' class='fanka'> <img src='img/"+牌堆[2]+".png' width='50px' class='fanka'>";
+        if(玩家牌型>电脑牌型){
+            结局=1;
+        }else if(电脑牌型>玩家牌型){
+            结局=2;
+        }else{
+            if(玩家点数>电脑点数){
+                结局=1;
+            }else if(电脑点数>玩家点数){
+                结局=2;
+            }else{
+                结局=0;
+            }
+        }
+        if(结局==1){
+            try{notyf.confirm(结局类型[结局])}catch(e){alert(结局类型[结局]);}
+            余额(下注*2);
+        }else if(结局==2){
+            try{notyf.alert(结局类型[结局]);}catch(e){alert(结局类型[结局]);}
+        }else{
+            try{notyf.alert(结局类型[结局]);}catch(e){alert(结局类型[结局]);}
+        }
+        document.getElementById("结束").innerHTML="电脑牌型："+牌型[电脑牌型]+"，点数："+电脑点数+"<br>玩家牌型："+牌型[玩家牌型]+"，点数："+玩家点数+"<br><b>"+结局类型[结局]+"</b><br><br><button onclick='重新开始()'>重新开始</button>";
+    }
+
+    function 重新开始(){
+        document.getElementById("请下注").style="";
+        document.getElementById("桌").style="display:none;";
+    }
+</script>
+

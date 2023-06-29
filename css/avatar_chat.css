@@ -1,0 +1,26 @@
+.avatar_chat{
+padding: 10px;
+width:100%;
+background-color: #f7f7f7;
+position:relative;}
+.avatar_chat>div{
+display: inline-block;
+padding: 4px;
+width:98%;}
+.avatar_chat>div>span {
+padding: 5px 12px;
+border-radius: 15px;
+display: inline-block;
+line-height: 22px;}
+.avatar_chat .a {float:left;}
+.avatar_chat .d {float:right;}
+.avatar_chat .m,a .m{background-color: #5EACE3;color: #ffffff;}
+.avatar_chat .e,a .e{background-color: #f27b7f;color: #ffffff;}
+.avatar_chat .n1{background-color:#c2c2c2;color: #4e4e4e;}
+.avatar_chat .n2{background-color:#12B7F5;color: #4e4e4e;}
+.avatar_chat .n2 a,.avatar_chat .n1 a{color: #ffffff;}
+.avatar_chat .n2 a:hover,.avatar_chat .n1 a:hover{color: #b3e1e1;}
+
+.avatar_chat .s{width:100%;display:inline-block;text-align:center;color:#808080;font-size:.9em;margin-top:30px;}
+.avatar_chat img{padding:10px 10px}
+.avatar_chat a{border-bottom: 1px solid;}

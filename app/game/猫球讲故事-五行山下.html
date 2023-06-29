@@ -1,0 +1,58 @@
+---
+layout: page2
+title: 猫球讲故事：五行山下
+nav_text: <small>猫球讲故事 之</small> 五行山下
+permalink: game/mqjgs-wxsx
+redirect_from:
+ - 猫球讲故事/五行山下
+ - app/game/mqjgs-wxsx
+footer_fx: 1
+nav_url: <a href="/youxiji">游戏机</a>
+---
+<!-- 版本：1.1.1 -->
+传说，孙悟空大闹天宫，被如来佛祖压在五行山下。<br>
+<br>
+<div id="dy"></div>
+<script>
+    let 年 = new Date().getFullYear();
+    let 今天 = 年 + "／" + new Date().getMonth() + "／" + new Date().getDate();
+    let 记录 = "0";
+    if (localStorage.getItem("猫球讲故事_五行山下")) {
+        记录 = localStorage.getItem("猫球讲故事_五行山下");
+    };
+    let dy = "";
+    if (记录 == "0") {
+
+        dy="<button onclick=\"开始游戏()\">开始游戏</button>";
+
+    } else {
+        记录 = 记录.split("／");
+
+        if (记录[0] < 2021 || 年 < 记录[0]) { //作弊
+            localStorage.removeItem("猫球讲故事_五行山下");
+            dy = "孙悟空试着耍小聪明逃脱五行山，却没能成功，这五百年还要重新算起。<br><br><button onclick=\"开始游戏()\">重新游戏</button>";
+        } else {
+            let 已过 = 年 - 记录[0];
+            if (已过 < 500) { //未到
+                dy = "已经过去了" + 已过 + "年。<br><br><button onclick=\"继续()\">继续等待</button>";
+            } else { //结局
+                let wzjm_输入 = "HSS3HSHAHRe4HSS0HSHxHRfDHSTEHSHBHRfBHSS0HSHxHRj0HSS3HRj5HSHDHSS1HSG5HSG0HSS4HSHEHRe3HSS1HRfDHSHAHSS0HSHxHRe2HSTEHSHBHRfBHSS0HSG4HRevHSS0HSHCHRfCHSS1HRfEHRj2HSS3HSHAHRfEHSS0HSHxHSHxHSS2HRkCHSC1HSS1HRe4HSGvHSS4HSHEHRj5HSS5HRe3HRfBHSSzHRevHReyHRLBWmGkK0SkK0LgagSzPQTDLgS5LgTAKATDLyS5OQS4LATDLgS5LQS4LQTDLATAOQS4OgTDPgTAOyS4OyTDLgS4OgS4MQTDLQTAOyS4KATDLQTAOQS4PgTDLQTAMQS5LQTDKyS4KAS4Ke==";
+                wzjm_解密();
+                dy = wzjm_输入;
+            }
+        }
+    }
+
+    document.getElementById("dy").innerHTML = dy;
+
+    function 开始游戏(){
+        localStorage.setItem("猫球讲故事_五行山下",今天);
+        location.reload();
+    }
+
+    function 继续(){
+
+        location.reload();
+    }
+
+</script>

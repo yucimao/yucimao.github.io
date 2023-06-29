@@ -1,0 +1,43 @@
+---
+layout: page2
+title: 生成随机密码
+nav_text: 生成随机密码
+nav_url: <a href="/xiaogongju">小工具</a>
+permalink: app/5124000
+pinglun: 1
+---
+注意：本页只会生成简单的随机密码，有可能被暴力破解，不要用在重要的地方。<br>
+<br>
+
+使用字符：
+<input type="checkbox" onclick="a()" id="a" name="a" checked><label for="a">0-9</label> 
+<input type="checkbox" onclick="b()" id="b" name="b" checked><label for="b">A-Z</label> 
+<input type="checkbox" onclick="c()" id="c" name="c" checked><label for="c">a-z</label><br>
+位数：<input autocomplete="off" type="number" value="10" id="位数"> <input type="button" onclick="确定()" value="生成">
+
+<div id="结果"></div>
+
+<script>
+let aa,bb,cc;
+let aaa="0123456789";
+let bbb="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let ccc="abcdefghijklmnopqrstuvwxyz";
+function a(){if(aa==1){aa=0;}else{aa=1;}}
+function b(){if(bb==1){bb=0;}else{bb=1;}}
+function c(){if(cc==1){cc=0;}else{cc=1;}}
+function 确定(){
+    let 输入=document.getElementById("位数").value;
+    let 列表="";
+    if(aa!=1){列表+=aaa;}
+    if(bb!=1){列表+=bbb;}
+    if(cc!=1){列表+=ccc;}
+    if(列表==""){document.getElementById("结果").innerHTML = "至少要保留一组字符。";}
+    else{
+        let 结果="";
+        for(let i=0;输入>i;i++){
+            结果+=列表[Math.floor(Math.random()*列表.length)];
+        }
+        document.getElementById("结果").innerHTML = 结果+" <small><a onclick=\"复(制='"+结果+"')\">复制</a></small>";
+    }
+}
+</script>

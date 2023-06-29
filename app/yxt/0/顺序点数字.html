@@ -1,0 +1,114 @@
+<div id="游戏厅">顺序点数字</div><script src="0.js"></script>
+<small>
+    数字被随机打乱，按照顺序点击即可，根据不同难度和使用时间赚币。
+</small><br><br>
+
+<style>
+    .按钮{color:#AAAAAA;}
+    .dui{color:#00d400;}
+    .cuo{color:#db0202;}
+    .按钮,.b2{font-size:2em;}
+    .难度{font-size:1.2em;}
+</style>
+
+<div id="选择难度">
+<b>选择难度：</b><br>
+<a onclick="开始(0)" class="难度">3x3</a><br>
+<a onclick="开始(1)" class="难度">5x5</a><br>
+<a onclick="开始(2)" class="难度">10x10</a>
+</div>
+<a onclick="开始(3)" id="重新开始" style="display:none;">重新开始</a>
+<div id="棋盘"></div>
+<div id="播报"></div>
+
+<script>
+    let 数字;
+    let 全角数字;
+    let 当前;
+    let 计时;
+    let 难度=[[9,25,100],[3,5,10]];
+    let 当前难度;
+    let 奖励=[//低于秒 赚币
+        [//基础4秒
+            [1,100,"不可思议，你是怎么做到的？"],
+            [2,50,"天哪，好厉害！"],
+            [3,10,"好棒！"],
+            [4,5,"不错！"],
+            [5,3,""],
+            [10,2,"有点慢，"],
+            [999,1,"慢的不可思议！"],
+        ],[//基础20秒
+            [5,300,"不可思议，你是怎么做到的？"],
+            [10,100,"天哪，好厉害！"],
+            [20,50,"好棒！"],
+            [30,20,"不错！"],
+            [50,10,""],
+            [100,5,"有点慢，"],
+            [999,2,"慢的不可思议！"],
+        ],[//基础400秒
+            [100,1000,"不可思议，你是怎么做到的？"],
+            [200,500,"天哪，好厉害！"],
+            [300,300,"好棒！"],
+            [400,200,"不错！"],
+            [500,100,""],
+            [600,50,"有点慢，"],
+            [9999,20,"慢的不可思议！"],
+        ]
+    ];
+
+    function 开始(o){
+        document.getElementById("播报").innerHTML="";
+        document.getElementById("棋盘").innerHTML="";
+        if(o==3){
+            document.getElementById("选择难度").style="";
+            document.getElementById("重新开始").style="display:none;";
+        }else{
+            document.getElementById("选择难度").style="display:none;";
+            document.getElementById("重新开始").style="";
+            当前难度=o;
+            当前=1;
+            计时=new Date().getTime();
+            数字=[];
+            全角数字=[];
+            for(let i=0;难度[0][o]>i;i++){
+                数字[i]=i+1;
+                if(i+1>=20){全角数字[i]=牌["全角"][2]+牌["全角"][(i+1+"")[1]]}
+                else if(i+1>=10){全角数字[i]=牌["全角"][1]+牌["全角"][(i+1+"")[1]]}
+                else if(当前难度==1){全角数字[i]=牌["全角"][0]+牌["全角"][i+1];}
+                else{全角数字[i]=牌["全角"][i+1];}
+            }
+            arr=数字;随机();数字=arr;
+            let dy="<table><tr>"
+            for(let i=0;数字.length>i;i++){
+                if(i%难度[1][o]==0&&i!=0){dy+="</tr><tr>"}
+                if(当前难度!=2){dy+="<td id='按钮"+数字[i]+"' onclick='按钮("+数字[i]+")' class='按钮'>"+全角数字[数字[i]-1]+"</td>";}
+                else{dy+="<td id='按钮"+数字[i]+"' onclick='按钮("+数字[i]+")' class='按钮'>"+数字[i]+"</td>";}
+            }
+            dy+="</tr></table>";
+            document.getElementById("棋盘").innerHTML=dy;
+        }
+    }
+
+    function 按钮(o){
+        if(o==当前&&当前!=难度[0][当前难度]+1){
+            document.getElementById("按钮"+o).className="dui b2";
+            当前+=1;
+            if(当前==难度[0][当前难度]+1){
+                try{notyf.confirm("恭喜胜利")}catch(e){alert("恭喜胜利");}
+                计时=((new Date().getTime()-计时)/1000+"").split(".")[0];
+                for(let i=0;奖励[当前难度].length>i;i++){
+                    if(计时<=奖励[当前难度][i][0]){
+                        
+                document.getElementById("播报").innerHTML=奖励[当前难度][i][2]+"用时"+计时+"秒。";
+                        余额(奖励[当前难度][i][1]);break;
+                    }
+                }
+            }else{
+                document.getElementById("按钮"+当前).className="按钮";
+            }
+        }else{
+            document.getElementById("按钮"+o).className="cuo b2";
+            // 计时-=1000;
+        }
+    }
+</script>

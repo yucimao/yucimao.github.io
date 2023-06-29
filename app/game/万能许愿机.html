@@ -1,0 +1,189 @@
+---
+layout: page2
+title: 万能许愿机
+nav_text: 万能许愿机
+permalink: game/wannengxuyuanji
+footer_fx: 0
+nav_url: <a href="/youxiji">游戏机</a>
+---
+<style>
+    .dui {
+        background: #ffffff;
+        animation: duib 0.7s linear 1;
+        /*Safari 和 Chrome:*/
+        -webkit-animation: duib 0.7s linear 1;
+    }
+
+    @keyframes duib {
+        from {
+            background-color: #00ff00;
+        }
+
+        to {
+            background-color: #ffffff;
+        }
+    }
+
+    /*Safari 和 Chrome:*/
+    @-webkit-keyframes duib {
+        from {
+            background-color: #00ff00;
+        }
+
+        to {
+            background-color: #ffffff;
+        }
+    }
+</style>
+这里有一台<b>万能许愿机</b>，它会提出问题，只要选到正确的答案就可以向它许愿，它会完全理解你的愿望并以你期望的样子实现，如果是危险品还会帮你收容到合适的容器里。<br>
+<br>
+
+<b>万能许愿机</b>：<span id="问题"></span> <button onclick="提问()" id="换问题">换一个问题</button><br>
+<div id="回答"></div>
+<br>
+<div id="许愿"><input type="text" placeholder="你的愿望" id="你的愿望" autocomplete="off"><button onclick="许愿()">许愿</button></div>
+
+<br>
+
+<h2>免费区</h2>
+<b>工作人员</b>：你好，这里是免费区，可以提供基础的生活必需品。<br><br>
+<div id="免费区提示"></div>
+<div id="免费区内容"></div>
+
+<br><br>
+
+<h2>战利品仓库</h2>
+<div id="战利品"></div>
+
+<script>
+let 问题=[
+    ["1加1等于几？",["2","1","3"]],
+    ["英法百年战争打了多少年？",["116年","1年","100年"]],
+    ["阿拉伯数字是哪国人发明的？",["印度人","阿拉伯人","中国人"]],
+    ["俄国人在几月庆祝十月革命？",["11月","10月","1月"]],
+    ["《铁甲小宝》中的蟑螂恶霸的原型是什么动物？",["眼镜蛇","蟑螂","猫"]],
+    ["飞机上的黑匣子是什么颜色的？",["桔红色","黑色","彩虹色"]],
+    ["2020东京奥运会是在哪一年举行？",["2021年","2022年","2020年"]],
+    ["万能许愿机的制造者是谁？",["猫球","二扯","许愿机之主"]],
+    ["歌曲《爱我中华》的第一句是？",["五十六个星座","五十六个民族","五十六个花朵"]],
+    // ["",["","",""]],
+    // ["",["","",""]],
+];
+let 免费区=[
+    ["","<h4>餐饮区</h4>"],
+    ["汉堡","你吃了一个汉堡。"],
+    ["可乐","你喝了一杯冰镇可乐。"],
+    ["矿泉水","你喝了一杯矿泉水。"],
+    ["br"],
+    ["中餐展位","你点了一份中餐，很好吃。"],
+    ["西餐展位","你点了一份西餐，很好吃。"],
+    ["小吃摊","你点了一份小吃，很好吃。"],
+
+    ["","<h4>住宿区</h4>"],
+    ["客房","你住进客房休息了一下。"],
+    ["厕所","你去上了趟厕所。"],
+    ["浴室","你洗了个澡。"],
+
+    ["","<h4>商业区</h4>"],
+    ["超市","你买到了想要的东西，当然，是免费的。"],
+    ["网吧","你上了会儿网，当然，是免费的。"],
+    ["游乐场","你在游乐场玩了一会儿，当然，是免费的。"],
+
+    ["","<h4>其他</h4>"],
+    ["管家","他会帮你处理一些杂事。"],
+    ["私人医生","医生瞬间给你做好了全身检查，并瞬间治好了你想要治疗的问题。"],
+    ["br"],
+    ["许愿参考书","你找到一本书，里面记录了许多别人分享的愿望，你可以在不知道许什么愿望的时候当作参考。　<a onclick=\\'参考许愿()\\'>随便翻一页</a><div id=\\'参考许愿\\'></div>"],
+];
+let 许愿参考=[
+    "家人健康长寿。",
+    "用不完的财富。",
+    "不限时、不限次数、所有费用都可以报销的旅行。",
+    "学会所有常见语言。",
+    "学会所有常见乐器。",
+    "会飞。",
+    "会隐身，并且隐身时不会受到伤害。",
+    "想睡觉的时候不会失眠，不想睡的时候不会觉得困也不会伤身体。",
+    "学会魔法。",
+    "不想死的时候就绝对不会死，并且在需要的时候可以解除一切负面状态、瞬移到安全的地方。",
+    "随意加减别人的好感度。",
+    "得到一个绝对忠诚的仆人。",
+    "获得治好癌症的配方。",
+    "获得治好艾滋病的配方。",
+    "得到一只皮卡丘。",
+    "得到一只大白。",
+];
+let 当前问题,arr,dy="",愿望="",问题数=0;
+
+function 随机(){
+    let _arr=arr.slice();
+    for(let i=0;i<_arr.length;i++){
+        let j=getRandomInt(0,i);
+        let t=_arr[i];
+        _arr[i]=_arr[j];
+        _arr[j]=t;
+    }
+    function getRandomInt(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+arr=_arr;
+}
+随机(arr=问题);
+问题=arr;
+
+for(let i=0;免费区.length>i;i++){
+    if(免费区[i][0]=="br"){dy+="<br>"}else if(免费区[i][0]==""){dy+=免费区[i][1]}else{dy+="<a onclick=\"免费物品('"+免费区[i][1]+"')\">"+免费区[i][0]+"</a>　"}
+}
+document.getElementById("免费区内容").innerHTML=dy;
+
+function 免费物品(o){
+    document.getElementById("免费区提示").innerHTML="<span class='dui'>"+o+"</span>";
+}
+
+function 提问(){
+    if(问题数==问题.length){问题数=0}
+    当前问题=问题[问题数];问题数+=1;
+    document.getElementById("问题").innerHTML=当前问题[0];
+    随机(arr=当前问题[1]);
+    dy="";
+    for(let i=0;arr.length>i;i++){
+        dy+="<button onclick='";
+        if(arr[i]==当前问题[1][0]){
+            dy+="答对()"
+        }else{
+            dy+="答错()"
+        }
+        dy+="'>"+arr[i]+"</button><br>";
+    }
+    document.getElementById("回答").innerHTML=dy;
+    document.getElementById("回答").style="";
+    document.getElementById("换问题").style="";
+    document.getElementById("许愿").style="display:none;";
+}
+
+function 答错(){
+    try{notyf.alert("答错了，再想想吧。");}catch(e){alert("答错了，再想想吧。");}
+}
+
+function 答对(){
+    document.getElementById("问题").innerHTML="恭喜你答对了，许个愿吧。";
+    document.getElementById("回答").style="display:none;";
+    document.getElementById("换问题").style="display:none;";
+    document.getElementById("许愿").value="";
+    document.getElementById("许愿").style="";
+}
+
+function 许愿(){
+    try{notyf.confirm("你的愿望已经实现了。")}catch(e){alert("你的愿望已经实现了。");}
+    愿望+="<p>"+document.getElementById("你的愿望").value+"</p>";
+    document.getElementById("战利品").innerHTML=愿望;
+    提问()
+}
+
+function 参考许愿(){
+    document.getElementById("参考许愿").innerHTML="“"+许愿参考[Math.floor(Math.random()*许愿参考.length)]+"”";
+}
+
+提问();
+
+</script>

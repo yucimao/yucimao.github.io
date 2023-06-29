@@ -1,12 +1,22 @@
-title: 小像素点
-description: 小像素点们构建起这个虚拟世界，但人们很少注意到它们，在这里你可以静下心来观察它们。
-keywords: 小像素点
+title: 猫球博客
+description: 这里是李猫球的个人博客，记录着猫球和二扯的日常、作品、笔记、小工具。
+keywords: 猫球,李猫球,猫球社长,猫球和二扯,pvo占领世界
 favicon: favicon.ico
 
 mq: https://limaoqiu.com
 mq_d: 
 mq_i: /i
+mq_qq: 123719932
 jquery: https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
 
-mq_url: https://像素点.cn
+nav_color: 666
+nav_img: blog.jpg
+nav_qbt_left: 35%
+nav_drop: <a href="/liuyan">留言板</a><a href="/notice">常见问题</a><div class="nav_drop2"><a class="nav_drop_btn2">关于 &lt;</a><div class="nav_drop_down2"><a href="/maoqiu">关于我</a><a href="/links">友情链接</a><a href="/chengjiu">获得成就</a><a href="/myid">我的id</a><a href="/pingfen">我的排行榜</a><a href="/donate">打赏</a></div></div><div class="nav_drop2"><a class="nav_drop_btn2">比更多还多 &lt;</a><div class="nav_drop_down2"><a href="/riji">日记</a><a href="/wanyouxi">玩游戏</a><a href="/xiaogongju">小工具</a><a href="https://猫.cafe">猫.cafe</a><a href="/lab">实验室</a></div></div>
+
+plugins:
+  - jekyll-redirect-from
+
+mq_url: https://李猫球.com
+mq_b: https://李猫球.com
 mq_cafe: https://猫.cafe

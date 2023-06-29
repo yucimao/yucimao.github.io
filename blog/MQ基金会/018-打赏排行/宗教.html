@@ -1,0 +1,57 @@
+---
+layout: zk
+title: 打赏排行 - 宗教榜
+nav_text: 打赏排行 - 宗教榜
+nav_url: <a href="/mqf">MQ基金会</a><a>/</a><a href="/i/zk/3993965">打赏排行</a>
+permalink: i/zk/3994080
+pinglun: 1
+zk_ly: <span class=\"zhushi\">注意：本页面来自MQ基金会，如果你不知道它们是什么，请不要继续阅读，以免造成误解。（<a href=\"/i/zk/328367\" target=\"_blank\">MQ基金会</a>）</span>
+---
+<div id="名单"></div>
+
+<script>
+let 名单=[
+["暂无",0],
+
+];
+
+let 名单临时;
+let 临时名单={"测试":"0"};
+let 临时榜=[["测试",0]];
+let 记录=1;
+let 临时;
+
+for(let i=0;名单.length>i;i++){
+    临时=名单[i][0];
+    if(临时名单[临时]){
+        临时=临时名单[临时];
+        临时榜[临时][1]+=名单[i][1];
+    }else{
+        临时名单[临时]=记录;
+        临时榜[记录]=名单[i];
+        记录+=1;
+    }
+}
+临时榜.splice(0,1);
+let 排行榜=[临时榜[0]];
+
+for(let i=1;临时榜.length>i;i++){
+    临时=排行榜.length;
+    记录=0;
+    while (排行榜.length==临时){
+        if(排行榜[记录][1]>临时榜[i][1]){
+            if(记录+1==排行榜.length){排行榜[排行榜.length]=临时榜[i];}
+        }else{
+            排行榜.splice(记录,0,临时榜[i]);
+        }
+        记录+=1;
+    }
+}
+
+let 名单排行_dy="<table><tr><th style=\"min-width:12em\">捐助者</th><th style=\"min-width:4em\">金额</th></tr>";
+    for(let i=0;排行榜.length>i;i++){
+        名单排行_dy+="<tr><td>"+排行榜[i][0]+"</td><td>"+排行榜[i][1]+"<sub>元</sub></td></tr>";
+    }
+    名单排行_dy+="</table>";
+    document.getElementById("名单").innerHTML=名单排行_dy;
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <script src="https://pvo.gitee.io/5/new/highlight/highlight.js"></script>
+
+<pre><code>
+&lt;script src="/js/jquery.min.js">&lt;/script>
+&lt;script type="text/javascript">
+    let GetJson = $.ajax({
+        url: "/5/随机题库/数据.json",//json文件位置
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+        }
+    });
+    if (GetJson.responseText[0] == "[" || GetJson.responseText[0] == "{") {
+        GetJson = $.parseJSON(GetJson["responseText"])
+    }
+    else {
+        GetJson = GetJson.responseText;
+    }
+    alert(GetJson) //GetJson是json的内容
+&lt;/script>
+</code></pre>
+
+<script>
+    hljs.initHighlightingOnLoad();
+    var allpre = document.getElementsByTagName("pre");
+    for(i = 0; i < allpre.length; i++) {
+       var onepre = document.getElementsByTagName("pre")[i];
+       var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+       onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
+    }
+</script>
+
+</html>

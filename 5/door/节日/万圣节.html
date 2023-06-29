@@ -1,0 +1,62 @@
+---
+layout: o
+permalink: i/3794804
+---
+{% include door.html %}
+<body onclick="跳转()">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  body {
+    text-align: center;
+    background: url('/5/door/i/3704217.jpg') no-repeat center top;
+    background-color: #000000;
+    background-size: 100vh;
+  }
+
+  @media screen and (min-width: 700px) {
+    body {
+      background-size: 80%;
+    }
+  }
+
+  @media screen and (max-width: 699px) {
+    body {
+      background-size: 180%;
+    }
+  }
+</style>
+<script src="/5/new/snow/ThreeCanvas.js"></script>
+<script src="/5/new/snow/Snow.js"></script>
+<script src="/5/new/snow/snowFall.js"></script>
+<script>
+  $.snowFall({
+    //创建粒子数量，密度
+    particleNo: 300,
+    //粒子下拉速度
+    particleSpeed: 40,
+    //粒子在垂直（Y轴）方向运动范围
+    particleY_Range: 1300,
+    //粒子在垂直（X轴）方向运动范围
+    particleX_Range: 1000,
+    //是否绑定鼠标事件
+    bindMouse: false,
+    //相机离Z轴原点距离
+    zIndex: 600,
+    //摄像机视野角度
+    angle: 55,
+    wind_weight: 0
+  });
+
+  function 跳转() {
+    window.parent.location.href = "{{ site.mq_i }}";
+  }
+
+</script>
+<canvas></canvas>
+</body>

@@ -1,0 +1,36 @@
+---
+layout: page2
+title: 贴纸
+nav_text: 贴纸
+nav_url: <a href="/richang">猫球和二扯的日常</a>
+permalink: zhoubian/tiezhi
+nav_yes: 1
+---
+<style>
+body {background-color: #52accc;}
+.biaotib {color:#ffffff;}
+div.body{width:90%;}
+.sticker {position: relative;width: 180px;height: 180px;margin: 50px;display:inline-block;}
+.sticker-img{background-size:100%;}
+.sticker-shadow {opacity: 0.6;}
+
+.example-1 .sticker-img {background-image: url("/i/cj/649405.jpg");}
+.example-2 .sticker-img {background-image: url("/i/cj/684119.jpg");}
+.example-3 .sticker-img {background-image: url("/i/cj/775465.jpg");}
+.example-4 .sticker-img {background-image: url("/i/cj/775466.jpg");}
+
+</style>
+
+<div class="sticker example-1"></div>
+<div class="sticker example-2"></div>
+<div class="sticker example-3"></div>
+<div class="sticker example-4"></div>
+
+
+
+<script src="/5/new/sticker.js"></script>
+<script>
+    window.onload = function() {
+        Sticker.init('.sticker');
+    }
+</script>

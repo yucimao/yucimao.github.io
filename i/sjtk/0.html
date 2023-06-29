@@ -1,0 +1,206 @@
+---
+layout: page2
+permalink: sjtk
+title: 随机题库
+nav_url: <a href="/xiaogongju">小工具</a>
+---
+<style>
+    .biaotic {
+        text-align: center;
+        margin-top: 1em;
+        font-size: 2.3em;
+        color: #0bb1f5;
+        font-weight: bold;
+        cursor: default;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+<div id="标题" class="biaotic">测试</div>
+<button onclick="抽取()">抽取</button>
+<input id="抽取次数" style="width:6em" placeholder="抽取次数" autocomplete="off" />
+<span id="是否允许重复"></span>
+<br /><br />
+<div id="打印"></div>
+
+<script src="/js/mq-wzjm.js"></script>
+
+<script type="text/javascript">
+    let LocString = String(window.document.location.href);
+    function GetQueryString(name) {
+        let rs = new RegExp("(^|)" + name + "=([^&]*)(&|$)", "gi").exec(LocString), tmp;
+        if (tmp = rs) { return decodeURI(tmp[2]); }
+        return "";
+    }
+    let t = GetQueryString("t"); //题库地址
+    if(t){}else{
+        window.location.href="/ceshi/备忘文档.html#随机题库";
+    }
+    let c = GetQueryString("c"); //每次抽取次数 默认1
+    let f = GetQueryString("f"); //允许重复 默认不允许
+    if(f=="1"){
+        f="checked";
+    }else{
+        f="";
+    }
+    document.getElementById("是否允许重复").innerHTML = "<input type=\"checkbox\" name=\"允许重复\" id=\"允许重复\" "+f+"/><label for=\"允许重复\">允许重复</label>";
+
+
+    let wzjm_密码 = GetQueryString("m");
+    if (c > 0) { }
+    else { c = 1; }
+    document.getElementById("抽取次数").value = c;
+
+    let JsonUrl = "/i/sjtk/" + t + ".json";
+    let GetJson = $.ajax({
+        url: JsonUrl,
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+        }
+    });
+
+    let 临时 = GetJson.responseText.split("[");
+    let 临时2 = "";
+    let wzjm_输入;
+    if (临时[0].indexOf("／wzjm") != -1) {
+        for (let i = 1; 临时.length > i; i++) {
+            wzjm_输入 = 临时[i].split("]")[0];
+            wzjm_解密();
+            临时2 += "／" + wzjm_输入;
+        }
+    }
+    else {
+        for (let i = 1; 临时.length > i; i++) {
+            临时2 += "／" + 临时[i].split("]")[0];
+        }
+    }
+    let 替换 = new RegExp('^／', "g");
+    临时2 = 临时2.replace(替换, '');
+
+    let sjtk = { "0": 临时2 }; //题库
+    临时 = GetJson.responseText.split("］")[0].split("［")[1];
+    document.getElementById("标题").innerHTML = 临时;
+    let 临时抽取 = "";
+
+    if (t.indexOf("/") != -1) {
+        临时 = t.split("/");
+        临时2 = 临时.length - 1;
+        t = "";
+        for (let i = 0; 临时.length > i; i++) {
+            t += "/" + 临时[i];
+        }
+    }
+
+    function 抽取() {
+        let 允许重复 = 0;
+        let 次数 = document.getElementById("抽取次数").value;
+        let checks = document.getElementsByTagName("input"), cnt = 0, count = 0;
+        for (let i = 0; i < checks.length; i++) {
+            if (checks[i].type == "checkbox") {
+                count += 1;
+                if (checks[i].checked != false) {
+                    允许重复 = 1;
+                }
+            }
+        }
+        let 结果 = "";
+
+        if (临时抽取.length < 1) {
+            临时抽取 = sjtk["0"].split("／");
+        }
+        for (let i = 0; 次数 > i; i++) {
+            if (临时抽取.length < 1) {
+                break;
+            }
+            else {
+                let 随机数 = Math.floor(Math.random() * 临时抽取.length);
+                结果 += "<tr><td>" + 临时抽取[随机数] + "</td></tr>";
+                if (允许重复 != 1) {
+                    临时抽取.splice(随机数, 1);
+                }
+            }
+        }
+        if (临时抽取.length < 1) {
+            结果 += "<tr><td>（题库已经抽空，再次点击“抽取”将重新开始。）</td></tr>";
+        }
+        while (结果.indexOf("［") != -1) {
+            临时 = 结果.split("［");
+            结果 = 临时[0];
+            for (let i = 1; 临时.length > i; i++) {
+                临时2 = 临时[i].split("］")[0];
+                if (临时2[0] == "/") {
+                    let 临时5 = 临时2;
+                    if (临时2[1] == "/") {
+                        临时5 = t + 临时5;
+                        替换 = new RegExp('//', "g");
+                        临时5 = JsonUrl.replace(临时5, '/');
+                    }
+                    let 新抽取 = "";
+                    if (sjtk[临时5]) {
+                        新抽取 = sjtk[临时5];
+                    }
+                    else {
+                        JsonUrl = "/i/sjtk" + 临时5 + ".json";
+                        GetJson = $.ajax({
+                            url: JsonUrl,
+                            type: "GET",
+                            dataType: "json",
+                            async: false,
+                            success: function (data) {
+                            }
+                        });
+                        let 临时3 = GetJson.responseText.split("[");
+
+                        if (临时3[0].indexOf("／wzjm") != -1) {
+                            for (let i = 1; 临时3.length > i; i++) {
+                                wzjm_输入 = 临时3[i].split("]")[0];
+                                wzjm_解密();
+                                新抽取 += "／" + wzjm_输入;
+                            }
+                        }
+                        else {
+                            for (let i = 1; 临时3.length > i; i++) {
+                                新抽取 += "／" + 临时3[i].split("]")[0];
+                            }
+                        }
+
+                        let 替换 = new RegExp('^／', "g");
+                        新抽取 = 新抽取.replace(替换, '');
+                        sjtk[临时5] = 新抽取;
+                    }
+                    新抽取 = 新抽取.split("／");
+                    随机数 = Math.floor(Math.random() * 新抽取.length);
+
+                    结果 += 新抽取[随机数];
+                }
+                else {
+                    if (临时2.indexOf("-") != -1) {
+                        let 临时3 = 临时2.split("-");
+                        let 临时4 = 临时3[1] - 临时3[0] + 1;
+                        随机数 = Math.floor(Math.random() * 临时4);
+                        临时3 = 临时3[0] * 1 + 随机数;
+                        结果 += 临时3;
+                    }
+                    if (临时2.indexOf(",") != -1) {
+                        let 临时3 = 临时2.split(",");
+                        随机数 = Math.floor(Math.random() * 临时3.length);
+                        结果 += 临时3[随机数];
+                    }
+                }
+                结果 += 临时[i].split("］")[1];
+            }
+        }
+        替换 = new RegExp('\n', "g");
+        结果 = 结果.replace(替换, '<br/>');
+        结果 = "<table>" + 结果 + "</table>";
+        document.getElementById("打印").innerHTML = 结果;
+    }
+</script>

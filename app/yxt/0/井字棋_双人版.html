@@ -1,0 +1,96 @@
+<div id="游戏厅">井字棋（双人版）</div><script src="0.js"></script>
+<small>
+    双方轮流下棋，率先连上3格为胜。
+</small><br><br>
+
+<style>
+    .按钮{font-size:2em;}
+    .按钮 td{color:#AAAAAA;}
+    .dui{color:#00d400;}
+    .cuo{color:#db0202;}
+</style>
+
+<a onclick="重新开始()" id="开始游戏">开始游戏</a>
+<table id="玩家" class="按钮" style="display:none;"><tr><td id="当前"></td></tr></table>
+<table id="表格" class="按钮" style="display:none;">
+    <tr><td id="按钮1" onclick="按钮(1)"></td><td id="按钮2" onclick="按钮(2)"></td><td id="按钮3" onclick="按钮(3)"></td></tr>
+    <tr><td id="按钮4" onclick="按钮(4)"></td><td id="按钮5" onclick="按钮(5)"></td><td id="按钮6" onclick="按钮(6)"></td></tr>
+    <tr><td id="按钮7" onclick="按钮(7)"></td><td id="按钮8" onclick="按钮(8)"></td><td id="按钮9" onclick="按钮(9)"></td></tr>
+</table>
+
+
+
+<script>
+    let 数字={1:"１",2:"２",3:"３",4:"４",5:"５",6:"６",7:"７",8:"８",9:"９"}
+    let 棋盘={}
+    let 随机数=[1,2,3,4,5,6,7,8,9]
+    let 玩家;
+    let 锁;
+    let w=["123","159","147","258","357","369","456","789"]
+    function 重新开始(){
+        玩家=0;
+        锁=0;
+        document.getElementById("表格").style="";
+        document.getElementById("玩家").style="";
+        document.getElementById("开始游戏").innerHTML="重新开始";
+        document.getElementById("当前").innerHTML="<small><small>当前：</small></small><span class='dui'>Ｏ</span>"
+        for(let i=1;10>i;i++){
+            document.getElementById("按钮"+i).innerHTML=数字[i];
+            document.getElementById("按钮"+i).className="";
+            棋盘[i]=0;
+        }
+    }
+
+    function 按钮(o){
+        if(棋盘[o]==0&&锁==0){
+            if(玩家==0){document.getElementById("按钮"+o).innerHTML="<span class='dui'>Ｏ</span>";棋盘[o]=1;}
+            else{document.getElementById("按钮"+o).innerHTML="<span class='cuo'>Ｘ</span>";棋盘[o]=10;}
+            let 检测=0;
+            for(let i=0;w.length>i;i++){
+                if(棋盘[w[i][0]]+棋盘[w[i][1]]+棋盘[w[i][2]]==3){检测=1;}
+            }
+            for(let i=0;w.length>i;i++){
+                if(棋盘[w[i][0]]+棋盘[w[i][1]]+棋盘[w[i][2]]==30){检测=2;}
+            }
+            if(检测==1){//玩家1获胜
+                for(let i=1;10>i;i++){
+                    if(棋盘[i]==1){
+                        document.getElementById("按钮"+i).className="dui";
+                    }
+                }
+                try{notyf.confirm("恭喜玩家1获胜")}catch(e){alert("恭喜玩家1获胜");}
+                余额(1);
+                锁=1;
+            }else if(检测==2){//玩家2获胜
+                for(let i=1;10>i;i++){
+                    if(棋盘[i]==10){
+                        document.getElementById("按钮"+i).className="cuo";
+                    }
+                }
+                try{notyf.alert("恭喜玩家2获胜");}catch(e){alert("恭喜玩家2获胜");}
+                余额(1);
+                锁=1;
+            }else{
+                平局检测();
+            }
+            if(玩家==0){玩家=1;document.getElementById("当前").innerHTML="<small><small>当前：</small></small><span class='cuo'>Ｘ</span>"}else{玩家=0;document.getElementById("当前").innerHTML="<small><small>当前：</small></small><span class='dui'>Ｏ</span>";}
+        }else{
+            try{notyf.alert("这里不可选");}catch(e){alert("这里不可选");}
+        }
+    }
+
+    function 平局检测(){
+        let 检测=0;
+        for(let i=1;10>i;i++){
+            if(棋盘[i]==0){
+                检测=1;
+                break;
+            }
+        }
+        if(检测==0){
+            try{notyf.alert("平局");}catch(e){alert("平局");}
+            余额(1);
+            锁=1;
+        }
+    }
+</script>

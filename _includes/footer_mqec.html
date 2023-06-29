@@ -1,0 +1,119 @@
+<style>
+@media (min-width: 730px) {
+footer {position: relative;top: 300px;z-index: -1001;}
+footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+.sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+#footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+#footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+#sidebar_fz6m{display:none;}
+.dn_inline{display:inline;}
+.footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+}
+@media screen and (max-width: 730px){
+footer {display:none;}
+#sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+.sidebar_fz6m{display:none;}
+.footer_me_m{position: absolute;bottom:0;left:0;}
+.footer_me_e{position: absolute;bottom:0;right:0;}
+}
+</style>
+    <div class="sidebar_fz6m" id="footer_me_m"></div>
+    <div class="sidebar_fz6m" id="footer_me_e"></div>
+<footer class="bukexuanzhong">
+
+    {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
+    {% elsif page.footer_mb == "打赏" %}<a onclick="dw(dwb='3750221')"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
+    {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% endif %}
+
+</footer>
+
+<div id="sidebar_fz6m" class="bukexuanzhong">
+    <br><br>
+    <div style="position: absolute;bottom:140px;left:30%;">
+
+    {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
+    {% elsif page.footer_mb == "打赏" %}<a onclick="dw(dwb='3750221')"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
+    {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% endif %}
+    
+</div>
+<div id="footer_dy"></div>
+</div>
+
+<script>
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+let footer_a={% if page.footer_img %}["{{ page.footer_img }}"];{% else %}["me"];{% endif %}
+{% if page.footer_xjr %}let footer_b;{% else %}
+let footer_b={
+"3.16":["me/mqsr"],
+"6.1":["jr/etj"],
+"8.1":["jr/gq"],
+"10.1":["jr/gq"],
+"10.31":["jr/jiangshi"],
+"11.1":["jr/jiangshi"],
+
+//春节 除夕-初六
+"2023.1.21":["jr/ch"],
+"2023.1.22":["jr/ch"],
+"2023.1.23":["jr/ch"],
+"2023.1.24":["jr/ch"],
+"2023.1.25":["jr/ch"],
+"2023.1.26":["jr/ch"],
+"2023.1.27":["jr/ch"],
+
+//端午节
+"2023.6.22":["jr/zongzi"],
+
+};
+
+let footer_c=new Date().getMonth()+1+"."+new Date().getDate();
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+footer_c=new Date().getFullYear()+"."+footer_c;
+if(footer_b[footer_c]){footer_a=footer_b[footer_c];}
+{% endif %}
+footer_b=new Date().getTime();
+footer_b=Math.floor(footer_b/1000/60/60);
+footer_b=footer_b%footer_a.length;
+footer_b=footer_a[footer_b];
+footer_b="/img/i/footer/"+footer_b;
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+
+let 分享_fo_m=window.location.href;
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=decodeURI(分享_fo_m);
+
+if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/{{ page.permalink }}')\">{{ site.mq_url }}/{{ page.permalink }}</a>";
+    {% if page.footer_fxx %}
+    let footer_fx="{{ page.footer_fxx }}".split(",");
+        for(let i=0;footer_fx.length>i;i++){
+            分享_fo_m+="<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='{{ site.mq_url }}/"+footer_fx[i]+"')\">{{ site.mq_url }}/"+footer_fx[i]+"</a>";
+    }{% endif %}
+}else{
+    分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
+}
+// 分享_fo_m+="<br><br><span id=\"/{{ page.permalink }}\" class=\"leancloud_visitors\" data-flag-title=\"{{ page.title }}\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
+
+
+let footer分享_a;
+function footer分享_b(){
+    复(制=footer分享_a);
+    dw_x();
+}
+</script>
+

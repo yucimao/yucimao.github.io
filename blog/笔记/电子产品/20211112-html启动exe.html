@@ -1,0 +1,39 @@
+---
+layout: zk
+title: html启动exe
+nav_text: html启动exe
+nav_url: <a href="/biji/dianzichanpin">电子产品笔记</a>
+permalink: i/zk/3668980
+---
+
+名称：<input type="text" id="输入_A" onkeyup="确定()" /><br>
+（使用英文、数字，不要用符号）<br>
+.exe完整路径：<input type="text" id="输入_B" onkeyup="确定()" /><br>
+
+<button onclick="复制()">复制</button><br>
+<br>
+
+将复制的内容创建reg文件，运行reg将注册表导入。<br>
+在浏览器输入“名称://”，回车即可启动程序。<br>
+<br>
+
+<div id="预览"></div>
+
+<textArea id="复制" style="position:absolute;top:-1000px"></textArea>
+<script>
+
+let 内容="";
+
+function 确定() {
+    let 输入_A = document.getElementById("输入_A").value;
+    let 输入_B = document.getElementById("输入_B").value;
+    输入_B=输入_B.replace(/\\/g, "\\\\");
+    内容="Windows Registry Editor Version 5.00［换行］［换行］[HKEY_CLASSES_ROOT\\"+输入_A+"]［换行］@=\""+输入_A+" Protocol\"［换行］\"URL Protocol\"=\"\"［换行］［换行］[HKEY_CLASSES_ROOT\\"+输入_A+"\\Defaultlcon]［换行］@=\""+输入_B+"\"［换行］［换行］[HKEY_CLASSES_ROOT\\"+输入_A+"\\shell]［换行］［换行］[HKEY_CLASSES_ROOT\\"+输入_A+"\\shell\\open]［换行］［换行］[HKEY_CLASSES_ROOT\\"+输入_A+"\\shell\\open\\command]［换行］@=\""+输入_B+"\"";
+    let 打印=内容.replace(/［换行］/g, "<br>");
+    document.getElementById("预览").innerHTML = "预览：<br><blockquote>"+打印+"</blockquote>";
+}
+
+function 复制(){
+let 复制内容=内容.replace(/［换行］/g, "\n");
+document.getElementById('复制').value = 复制内容;let 复制 = document.querySelector('#复制');复制.select();document.execCommand("Copy");}
+</script>

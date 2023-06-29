@@ -1,0 +1,98 @@
+---
+layout: page2
+title: 出门玩点啥
+nav_text: 出门玩点啥
+nav_url: <a href="/zatan">笔记</a>
+permalink: biji/wandiansha
+pinglun: 1
+---
+点击【<a onclick="随机()">这里</a>】随机一个<span id="dyy"></span><br>
+<div id="dy"></div>
+<script>
+    let data=[
+        "hr／展览",
+        "博物馆",
+        "科技馆",
+        "车展",
+        "游戏、动漫展",
+        "艺术展",
+
+        "hr／园",
+        "动物园",
+        "室内动物园",
+        "公园",
+        "游乐园",
+        "植物园",
+        "寺庙",
+        "图书馆",
+
+        "hr／逛街",
+        "超市",
+        "商场",
+        "花鸟鱼市场（有小宠物）",
+
+        "hr／运动",
+        "放风筝",
+        "打球（篮球、乒乓球、羽毛球、网球）",
+        "钓鱼",
+        "划船",
+        "爬山",
+        "射箭",
+        "台球",
+        "滑雪",
+
+        "hr／玩",
+        "KTV",
+        "电玩厅",
+        "网吧",
+        "蹦床馆",
+        "桌游",
+        "猫咖（还有狗咖等各种不同的主题）",
+        "鬼屋",
+
+        "hr／DIY",
+        "手工DIY",
+        "做蛋糕",
+        "做泥塑",
+
+        "hr／其他",
+        "教堂",
+        "电影院",
+        "私人影院",
+        "去法院旁听",
+        "去果园摘水果",
+        "演唱会",
+        "音乐节",
+    ];
+    let arr=[];
+
+    let dy="";
+    for(let i=0;data.length>i;i++){
+        let 临时=data[i].split("／");
+        if(临时[0]=="hr"){
+            dy+="<h4>"+临时[1]+"</h4>";
+            if(临时[2]){dy+=临时[2]+"<br>";}
+        }else{
+            arr[arr.length]=data[i];
+            dy+=临时[0]+"<br>";
+        }
+    }
+
+    document.getElementById("dy").innerHTML = dy;
+
+    function 随机(){
+        let _arr=arr.slice();
+        for(let i=0;i<_arr.length;i++){
+            let j=getRandomInt(0,i);
+            let t=_arr[i];
+            _arr[i]=_arr[j];
+            _arr[j]=t;
+        }
+        function getRandomInt(min,max) {
+        return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        arr=_arr;
+        document.getElementById("dyy").innerHTML = "：<b>"+arr[0]+"</b>";
+    }
+
+</script>

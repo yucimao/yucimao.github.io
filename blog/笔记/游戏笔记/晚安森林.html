@@ -1,0 +1,92 @@
+---
+layout: zk
+title: 晚安森林 南瓜小火山
+nav_text: 南瓜小火山 排列组合
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/zk/5138065
+pinglun: 1
+---
+<h4>已解锁材料</h4>
+<small>添加新材料：</small><input type="text" placeholder="材料名" autocomplete="off" id="添加材料"><input type="button" value="添加" onclick="添加材料()">
+<div id="材料"></div>
+<br>
+<h4>未使用的排列组合</h4>
+<div id="排列组合"></div>
+<br>
+<h4>已经使用过的排列组合</h4>
+<div id="用过的排列组合"></div>
+
+<script>
+    let 临时,临时2,dy,材料,已解锁1,已解锁2,已解锁3,结果1,结果2,结果3;
+
+    function 刷新(){
+        材料=[],结果1=[],结果2=[],结果3=[],已解锁1=[],已解锁2=[],已解锁3=[];
+        dy="";
+        if(localStorage.getItem("南瓜小火山_材料")){
+            材料=localStorage.getItem("南瓜小火山_材料").split("／");
+            dy+="<small>(删除材料只用于写错材料名字的情况，请勿用于更改材料顺序，会导致记录“已经使用过的排列组合”出错)</small><br>";
+            for(let i=0;材料.length>i;i++){dy+=材料[i]+" <small><a onclick=\"删除材料('"+i+"')\">删除材料</a></small><br>";}
+        }else{
+            dy="还没有材料，无法排列组合，请添加新材料。";
+        }
+        document.getElementById("材料").innerHTML = dy;
+        if(localStorage.getItem("南瓜小火山_已解锁1")){已解锁1=localStorage.getItem("南瓜小火山_已解锁1").split("／");}
+        if(localStorage.getItem("南瓜小火山_已解锁2")){已解锁2=localStorage.getItem("南瓜小火山_已解锁2").split("／");}
+        if(localStorage.getItem("南瓜小火山_已解锁3")){已解锁3=localStorage.getItem("南瓜小火山_已解锁3").split("／");}
+        for(let i=0;材料.length>i;i++){临时=材料[i];if(已解锁1.indexOf(临时)==-1){结果1[结果1.length]=临时;}
+        for(let i2=i+1;材料.length>i2;i2++){临时=材料[i]+" "+材料[i2];if(已解锁2.indexOf(临时)==-1){结果2[结果2.length]=临时;}
+        for(let i3=i2+1;材料.length>i3;i3++){临时=材料[i]+" "+材料[i2]+" "+材料[i3];if(已解锁3.indexOf(临时)==-1){结果3[结果3.length]=临时;}
+        }
+        }
+        }
+        let 结果=结果1.concat(结果2).concat(结果3);
+        dy="";
+        for(let i=0;结果.length>i;i++){
+        dy+=结果[i]+" <small><a onclick=\"使用('"+结果[i]+"')\">使用</a></small><br>";
+        }
+        if(dy==""){dy="无";}
+        document.getElementById("排列组合").innerHTML = dy;
+        dy="";
+        for(let i=0;已解锁1.length>i;i++){dy+=已解锁1[i]+" <small><a onclick=\"删除已解锁('1／"+i+"')\">删除</a></small><br>"}
+        for(let i=0;已解锁2.length>i;i++){dy+=已解锁2[i]+" <small><a onclick=\"删除已解锁('2／"+i+"')\">删除</a></small><br>"}
+        for(let i=0;已解锁3.length>i;i++){dy+=已解锁3[i]+" <small><a onclick=\"删除已解锁('3／"+i+"')\">删除</a></small><br>"}
+        if(dy==""){dy="无";}
+        document.getElementById("用过的排列组合").innerHTML = dy;
+    }
+
+    function 删除材料(临时){
+        材料.splice(临时,1);
+        保存材料();
+    }
+    function 添加材料(){
+        let 临时=document.getElementById("添加材料").value;
+        if(临时.length>0){
+            材料[材料.length]=临时;保存材料();
+            document.getElementById("添加材料").value = "";
+        }else{notyf.alert("不可留空");}
+    }
+    function 使用(临时){
+        临时2=临时.split(" ");
+        if(临时2.length==1){已解锁1[已解锁1.length]=临时;}
+        if(临时2.length==2){已解锁2[已解锁2.length]=临时;}
+        if(临时2.length==3){已解锁3[已解锁3.length]=临时;}
+        保存排列组合();
+    }
+    function 删除已解锁(临时){
+        临时=临时.split("／");
+        if(临时[0]=="1"){已解锁1.splice(临时,1);}
+        if(临时[0]=="2"){已解锁2.splice(临时,1);}
+        if(临时[0]=="3"){已解锁3.splice(临时,1);}
+        保存排列组合();
+    }
+    function 保存材料(){dy="／";for(let i=0;材料.length>i;i++){dy+="／"+材料[i];}dy=dy.replace(/／／/g, "");if(dy=="／"){localStorage.removeItem("南瓜小火山_材料");}else{localStorage.setItem("南瓜小火山_材料", dy);}刷新();}
+    function 保存排列组合(){
+        dy="／";for(let i=0;已解锁1.length>i;i++){dy+="／"+已解锁1[i];}dy=dy.replace(/／／/g, "");if(dy=="／"){localStorage.removeItem("南瓜小火山_已解锁1");}else{localStorage.setItem("南瓜小火山_已解锁1", dy);}
+        dy="／";for(let i=0;已解锁2.length>i;i++){dy+="／"+已解锁2[i];}dy=dy.replace(/／／/g, "");if(dy=="／"){localStorage.removeItem("南瓜小火山_已解锁2");}else{localStorage.setItem("南瓜小火山_已解锁2", dy);}
+        dy="／";for(let i=0;已解锁3.length>i;i++){dy+="／"+已解锁3[i];}dy=dy.replace(/／／/g, "");if(dy=="／"){localStorage.removeItem("南瓜小火山_已解锁3");}else{localStorage.setItem("南瓜小火山_已解锁3", dy);}
+        刷新();
+    }
+
+    刷新();
+
+</script>

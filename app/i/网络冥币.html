@@ -1,0 +1,34 @@
+---
+layout: page2
+title: 网络冥币
+nav_text: 网络冥币
+nav_url: <a href="/xiaogongju">小工具</a>
+permalink: app/6014559
+redirect_from:
+ - app/wangluomingbi
+footer_fx: 1
+pinglun: 1
+---
+将网络冥币通过互联网转账到冥府，便捷、环保。<br>
+<br>
+
+收款人：<input type="text" placeholder="收款人" id="收款人" autocomplete="off"><br>
+金额：<input type="text" placeholder="金额" id="金额" autocomplete="off"><br>
+留言：<input type="text" placeholder="留言" id="留言" autocomplete="off"><br>
+<button onclick="确认转账()">确认转账</button>
+
+<script>
+    function 确认转账(){
+        let 转账={
+            "收款人":document.getElementById("收款人").value,
+            "金额":document.getElementById("金额").value,
+            "留言":document.getElementById("留言").value,
+        }
+        转账="发往冥府";
+        if(转账!="转账失败"){转账="转账成功";try{notyf.confirm(转账)}catch(e){alert(转账);}}
+        else{转账="转账失败";try{notyf.alert(转账);}catch(e){alert(转账);}}
+        document.getElementById("收款人").value="";
+        document.getElementById("金额").value="";
+        document.getElementById("留言").value="";
+    }
+</script>

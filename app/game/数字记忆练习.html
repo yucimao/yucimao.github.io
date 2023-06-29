@@ -1,0 +1,213 @@
+---
+layout: page2
+title: 数字记忆练习
+nav_text: 数字记忆练习
+permalink: game/szjylx
+redirect_from:
+ - app/game/szjylx
+footer_fx: 0
+nav_url: <a href="/youxiji">游戏机</a>
+---
+<style>
+    td {
+        font-size:2.5em;
+        width: 1.5em;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    td:hover{
+        background: #e1fff6;
+    }
+
+    .dui {
+        background: #ffffff;
+        animation: duib 0.7s linear 1;
+        /*Safari 和 Chrome:*/
+        -webkit-animation: duib 0.7s linear 1;
+    }
+
+    @keyframes duib {
+        from {
+            background-color: #00ff00;
+        }
+
+        to {
+            background-color: #ffffff;
+        }
+    }
+
+    /*Safari 和 Chrome:*/
+    @-webkit-keyframes duib {
+        from {
+            background-color: #00ff00;
+        }
+
+        to {
+            background-color: #ffffff;
+        }
+    }
+
+    .cuo {
+        background: #ffffff;
+        animation: cuob 1s linear 1;
+        /*Safari 和 Chrome:*/
+        -webkit-animation: cuob 0.7s linear 1;
+    }
+
+    @keyframes cuob {
+        from {
+            background-color: #ff0000;
+        }
+
+        to {
+            background-color: #ffffff;
+        }
+    }
+
+    /*Safari 和 Chrome:*/
+    @-webkit-keyframes cuob {
+        from {
+            background-color: #ff0000;
+        }
+
+        to {
+            background-color: #ffffff;
+        }
+    }
+</style>
+
+<div>选择难度，记住数字顺序，点击开始，按顺序点击方块。</div>
+<br />
+
+<div id="dy_nd" style="display:block" class="bukexuanzhong">
+    <button onclick="难度(N=1)">难度1</button>
+    <button onclick="难度(N=2)">难度2</button>
+    <button onclick="难度(N=3)">难度3</button>
+    <button onclick="难度(N=4)">难度4</button>
+</div>
+
+
+<div id="dy_ks" style="display:none" class="bukexuanzhong">
+    <button onclick="开始()">开始</button>
+</div>
+
+<div id="dy_tx" style="display:none" class="bukexuanzhong">
+    　　　<button onclick="投降()">投降</button>
+</div>
+
+
+<br />
+
+<div id="dy" class="bukexuanzhong"></div>
+
+
+<script>
+    let N;//难度
+    let G;//按钮
+    let Y;//玩家位置
+    let T;//终点
+    let dataG;
+    let dataY;
+    let dy;
+    let dy1;
+    let data1 = new Array("1", "2", "3", "4", "5");
+    let data2 = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9");
+    let data3 = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9",
+        "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　", "　")
+    let data4 = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+        "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+        "21", "22", "23", "24", "25");
+    function 难度() {
+        document.getElementById("dy_nd").style.display = "none";
+        document.getElementById("dy_ks").style.display = "block";
+        document.getElementById("dy_tx").style.display = "none";
+        let data0;
+        if (N == 1) { dataY = data1 }
+        if (N == 2) { dataY = data2 }
+        if (N == 3) { dataY = data3 }
+        if (N == 4) { dataY = data4 }
+
+        let p = Array.from(dataY), i, a = [];
+        while (p.length > 0) {
+            i = parseInt(Math.random() * p.length);
+            a.push(p[i]);
+            p.splice(i, 1);
+        }
+
+        dataG = a;
+
+        dy = "<table border=\"1\"><tr>";
+        for (let i = 0; i < dataG.length; i++) {
+            if (N == 3 || N == 4) {
+                if (i == 5 || i == 10 || i == 15 || i == 20) {
+                    dy += "</tr><tr>";
+                }
+            }
+            dy += "<td>" + dataG[i] + "</td>";
+        }
+        dy += "</tr></table>";
+        document.getElementById("dy").innerHTML = dy;
+    }
+    function 开始() {
+        document.getElementById("dy_nd").style.display = "none";
+        document.getElementById("dy_ks").style.display = "none";
+        document.getElementById("dy_tx").style.display = "block";
+        Y = 0;
+        dy1 = "<table border=\"1\"><tr>";
+        if (N == 1 || N == 2) {
+            for (let i = 0; i < dataG.length; i++) {
+                if (dataG[i] == "　") {
+                    dy1 += "<td onclick=\"按钮(G=A" + i + ")\" id=\"A" + i + "\">　</td>";
+                } else {
+                    dy1 += "<td onclick=\"按钮(G=" + dataG[i] + ")\" id=\"B" + dataG[i] + "\">　</td>";
+                }
+            }
+            dy += "</tr></table>";
+            document.getElementById("dy").innerHTML = dy1;
+        }
+        if (N == 1) { T = 4 }
+        if (N == 2 || N == 3) { T = 8 }
+        if (N == 4) { T = 24 }
+        if (N == 3 || N == 4) {
+            for (let i = 0; i < dataG.length; i++) {
+                if (i == 5 || i == 10 || i == 15 || i == 20) {
+                    dy1 += "</tr><tr>";
+                }
+                if (dataG[i] == "　") {
+                    dy1 += "<td onclick=\"按钮(G=A" + i + ")\" id=\"A" + i + "\">　</td>";
+                } else {
+                    dy1 += "<td onclick=\"按钮(G=" + dataG[i] + ")\" id=\"B" + dataG[i] + "\">　</td>";
+                }
+            }
+            dy += "</tr></table>";
+            document.getElementById("dy").innerHTML = dy1;
+        }
+    }
+    function 投降(){
+        document.getElementById("dy").innerHTML = dy + "<br/><span class=\"cuo\">游戏结束。</span><br/><br/>选择难度重新开始。";
+            document.getElementById("dy_nd").style.display = "block";
+            document.getElementById("dy_ks").style.display = "none";
+            document.getElementById("dy_tx").style.display = "none";
+    }
+    function 按钮() {
+        if (G == dataY[Y]) {
+            let dydt = "B" + G;
+            document.getElementById(dydt).innerHTML = G;
+            document.getElementById(dydt).className = "dui";
+            if (Y == T) {
+                document.getElementById("dy").innerHTML = dy + "<br/><span class=\"dui\">恭喜！</span><br/><br/>选择难度重新开始。";
+                document.getElementById("dy_nd").style.display = "block";
+                document.getElementById("dy_ks").style.display = "none";
+                document.getElementById("dy_tx").style.display = "none";
+            }
+            Y += 1;
+        }
+        else {
+            document.getElementById("dy").innerHTML = dy + "<br/><span class=\"cuo\">点错了，游戏失败。</span><br/><br/>选择难度重新开始。";
+            document.getElementById("dy_nd").style.display = "block";
+            document.getElementById("dy_ks").style.display = "none";
+            document.getElementById("dy_tx").style.display = "none";
+        }
+    }
+</script>

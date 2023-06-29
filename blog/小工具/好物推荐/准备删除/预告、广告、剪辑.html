@@ -1,0 +1,39 @@
+---
+layout: biji_cj
+title: 预告、广告、剪辑
+nav_text: 预告、广告、剪辑
+nav_url: <a href="/tuijian">好物推荐</a>
+permalink: tuijian/yugaojianji
+---
+<div id="dy"></div>
+<script>
+    let data = [//"图片／名字／说明／展开说明／u／链接／关键词",
+    "hr／说明／本页仅记录优秀的视频，与其所宣传的内容无关",
+    "https://i0.hdslb.com/bfs/archive/1b7ea4f4daeace59edd46f62f92f67cdc4cfb96b.jpg／《黑神话：悟空》／预告片／／u／https://www.bilibili.com/video/BV1x54y1e7zf／游戏",
+    "https://i2.hdslb.com/bfs/archive/2adefbebf4697cea229a5dfd8add2ff293575995.jpg／《虐杀原形》／宣传片／含暴力、血腥、肢解镜头／u／https://www.bilibili.com/video/BV1Ft4y1v7yC／游戏",
+    "https://i0.hdslb.com/bfs/archive/a6a4626a7ff73a7d4647922680f89236051a4102.jpg／快银救人片段／《X战警》<br/>片段／／u／https://www.bilibili.com/video/BV1Xv411y7xT／电影",
+    "https://i0.hdslb.com/bfs/archive/000e63ac4edf922373f7d9fb27ecc27fe614c8cb.jpg／医院火拼／《唐人街探案》<br/>片段／／u／https://www.bilibili.com/video/BV1g4411K7K9／电影",
+    "https://i2.hdslb.com/bfs/archive/9032363ee476f737ff118fb396eb17a10baab52d.jpg／争霸艾泽拉斯／《魔兽世界》<br/>开场动画／相关视频推荐：<br/><a href=\"https://www.bilibili.com/video/BV1HE411R7AU\" target=\"_blank\">了断</a>／u／https://www.bilibili.com/video/BV15x411j7FX／WOW 暴雪 游戏",
+    "https://i2.hdslb.com/bfs/archive/68e97ceedfa1fbb4dcaa3fad072cb4568803a72b.jpg／熊猫人之谜／《魔兽世界》<br/>开场动画／／u／https://www.bilibili.com/video/BV1Db411s7Q1／WOW 暴雪 游戏",
+    "https://i0.hdslb.com/bfs/archive/b2a5cdc509b2079f2d8977e47b8957842270976d.jpg／巫妖王之怒／《魔兽世界》<br/>开场动画／／u／https://www.bilibili.com/video/BV1qJ411B7pi／WOW 暴雪 游戏",
+    "https://i2.hdslb.com/bfs/archive/c9ee70f50e1ecd968eb7b3300480783cbd58191d.jpg／冒险伙伴／《精灵宝可梦GO》<br/>宣传片／／u／https://www.bilibili.com/video/BV16J411t7Tr／游戏",
+    "https://i1.hdslb.com/bfs/archive/0c6f793c0e76c71e5071c1394eb9b7e1340d49f7.jpg／口袋妖怪在现实中／《精灵宝可梦GO》<br/>宣传片／／u／https://www.bilibili.com/video/BV1ks41117gH／游戏",
+    "https://i1.hdslb.com/bfs/archive/2e36ba1445f02da5f7622e70d2bc0eb08e02a49b.jpg／啥是佩奇／《小猪佩奇过大年》<br/>宣传片／预告比正片好看。／u／https://www.bilibili.com/video/BV1Pt411a755／电影",
+    "https://i0.hdslb.com/bfs/archive/8325af8923ebcf2d51e4de57affc6d19ddf6603f.jpg／梦的开始／《赛博朋克:2077》<br/>宣传片／／u／https://www.bilibili.com/video/BV15541157vg／游戏",
+    "https://i2.hdslb.com/bfs/archive/c1e5dbaf2e73e94937f6db04e94b384088fe8cfe.jpg／重逢／《守望先锋》<br/>宣传片／／u／https://www.bilibili.com/video/BV1jb411w7Rr／暴雪 游戏",
+    "https://i1.hdslb.com/bfs/archive/e51d59a0b7dc54936c5011b21d291e108ee33746.jpg／帝国崛起／《红色警戒3》<br/>开场动画／／u／https://www.bilibili.com/video/BV1mE411r7o5／游戏",
+    "https://i2.hdslb.com/bfs/archive/372683f068aa0795cf07971564d6feb80d996ced.jpg／解夏／《刺青》<br/>预告片／正片夭折了，只剩下一个预告片。／u／https://www.bilibili.com/video/BV1P4411r7RB／动画",
+    "https://i0.hdslb.com/bfs/archive/1b7ea4f4daeace59edd46f62f92f67cdc4cfb96b.jpg／《无敌破坏王2》／预告片／预告片把电影最精彩的部分都放完了……／u／https://www.bilibili.com/video/BV13W411A7Fr／电影",
+    "https://i1.hdslb.com/bfs/archive/7fd20b4309ee8bcc4047db15ebd779a9b005652d.jpg／总有新奇在身边／陌陌<br/>广告／／u／https://www.bilibili.com/video/BV1fJ411n7kn／",
+    "https://i0.hdslb.com/bfs/archive/1fb2b7808ae64a2d873698bdefc1c9db7be3eb68.jpg／Holly Holy／《好景在望》<br/>片段／／u／https://www.bilibili.com/video/BV1Mx411n7Bw／电影",
+
+    "hr／酷，带感。／",
+    "https://i2.hdslb.com/bfs/archive/e07a25ab387958fc951ff4e84d693dd4c8f0fc45.jpg／饭店，石井御莲出场／《杀死比尔》<br/>片段／不包括之后打斗的部分／u／https://www.bilibili.com/video/BV1Rt411x7nm／电影",
+
+    "hr／功夫、打斗、暴力美学／",
+    "https://i0.hdslb.com/bfs/archive/1b01a53c55416b3486e47ff09e46e3635ce9c156.jpg／打斗片段／《黑客帝国》<br/>片段／／u／https://www.bilibili.com/video/BV1Sx411n7xR／电影",
+
+    "hr／仙术、异能、魔法世界／",
+
+];
+</script>

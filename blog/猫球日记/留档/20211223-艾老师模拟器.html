@@ -1,0 +1,31 @@
+---
+layout: page2
+title: 艾老师模拟器
+nav_text: 艾老师模拟器
+permalink: i/zk/4026460
+pinglun: 1
+---
+<style>#输入框 input {border: none;font-size: 1.4em;padding: .5em .7em;max-width: 30em;width: 100%;background: #F8F8F8;box-shadow: 0 0 0 1px #DDD inset, 0 1px 2px rgba(0, 0, 0, .2);transition: box-shadow .3s ease;border-radius: 4px;text-align: center;-webkit-appearance: none;}#输入框 input:focus {box-shadow: 0 0 0 2px #58a4dd inset, 0 3px 3px rgba(0, 0, 0, .2) inset;}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1"><form id="输入框" autocomplete="off"><input type="text" id="输入" placeholder="艾老师模拟器"/></form>
+<button onclick="确定()">转换</button><br>
+<div id="结果"></div>
+<script>
+function 确定() {
+    let 输入 = document.getElementById("输入").value;
+    let 临时;
+    let 输出=输入;
+    if (输出.indexOf("的") != -1){临时=输出.split("的");输出=临时[临时.length-1];}
+    if (输出.indexOf("地") != -1){临时=输出.split("地");输出=临时[临时.length-1];}
+    if (输出.indexOf("得") != -1){临时=输出.split("得");输出=临时[0];}
+    // 输入=输入.replace(/[“”]/g, "");
+    // 输入=输入.replace(/：/g, "，");
+    // 输入=输入.replace(/我/g, "他");
+    // if (输入.indexOf("？") != -1){输入=输入.replace(/？/g, "。");
+    // if (输入.indexOf("不") != -1){输入=输入.replace(/不/g, "");}
+    // else{输入="不"+输入;}}else if(输入.indexOf("。") != -1){输入=输入.replace(/。/g, "？");}
+    // 输入=输入.replace(/难道/g, "");
+    // 输入=输入.replace(/怎么/g, "");
+    // 输入=输入.replace(/[吗呢]/g, "");
+    document.getElementById("结果").innerHTML = "<p>原句："+输入+"</p><p>艾老师缩句："+输出+"</p>";
+}
+</script>

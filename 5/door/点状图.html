@@ -1,0 +1,140 @@
+---
+layout: o
+permalink: i/4869850
+---
+{% include door.html %}
+
+<style>body {margin: 0;padding: 0;}</style>
+
+<a onclick="window.parent.location.href='{{ site.mq_i }}'">
+<canvas width="400" height="300" id="myLove"></canvas>
+</a>
+
+<script>
+    window.requestAnimFrame = (function () {
+        return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+            .oRequestAnimationFrame ||
+            window.msRequestAnimationFrame || function (callback) {
+                window.setTimeout(callback,  1000/ 60);
+            };
+    })();
+
+    var FX = {
+        config: {
+            background: '#ffffff',
+            color: '#0080ff', //初始的颜色 
+            highlight: '#015099' //鼠标经过de鼠标经过的颜色 #015099 #223CCE
+        },
+        dots: []
+    };
+    FX.canvas = document.getElementById('myLove');
+    FX.ctx = FX.canvas.getContext('2d');
+    Math.TO_RAD = Math.PI / 180;
+    Math.getDistance = function (x1,
+        y1, x2, y2) {
+        var xs = 0,
+            ys = 0;
+        xs = x1 - x2;
+        ys = y1 - y2;
+        xs = xs * xs;
+        ys = ys * ys;
+        return Math.sqrt(xs + ys);
+    };
+    Math.getDegree = function (x1, y1, x2, y2) {
+        var dx = x2 - x1,
+            dy = y2 - y1;
+        return Math.atan2(dy, dx) / Math.TO_RAD;
+    };
+    
+    var Dot = function (opts) {
+        this.color = opts.color;
+        this.x = 0;
+        this.y = 0;
+        this.dest_x = (opts.dest_x - 200);//75
+        this.dest_y = (opts.dest_y - 120);//75
+    };
+    Dot.prototype.update = function () {
+        var d = this,
+            dist_x = d.dest_x - d.x,
+            dist_y = d.dest_y - d.y;
+        d.x += dist_x * 0.05;
+        d.y += dist_y * 0.05;
+        FX.ctx.fillStyle = d.color;
+        FX.ctx.fillRect(d.x - 2,
+            d.y - 2, 8, 8);//2, 4, 4
+    };
+    FX.setFullscreen = function () {
+        FX.width = FX.canvas.width = window.innerWidth;
+        FX.height = FX.canvas.height = window.innerHeight;
+    };
+    FX.handleMouseEvent = function (e, power) {
+        var radius = 75,
+            k = FX.dots.length,
+            i = 0,
+            mx, my, dist, degree, d;
+        if (e.offsetX) {
+            mx = e.offsetX;
+            my = e.offsetY;
+        } else if (e.layerX) {
+            mx = e.layerX;
+            my = e.layerY;
+        }
+        mx -= FX.width / 2;
+        my
+            -= FX.height / 2;
+        for (; i < k; i = i + 1) {
+            d = FX.dots[i];
+            dist = Math.getDistance(mx, my, d.x, d.y);
+            if (dist < radius) {
+                degree = Math.getDegree(d.x, d.y, mx, my);
+                d.x += (Math.cos(degree * Math.TO_RAD) * ((radius - dist) * power));
+                d.y += (Math.sin(degree * Math.TO_RAD) * ((radius - dist) * power));
+                d.color = FX.config.highlight;
+            } else {
+                d.color = FX.config.color;
+            }
+        }
+    };
+    FX.createHeart = function () {
+        var
+            coords = [
+                [1,2],[1,4],[1,6],[1,8],[2,3],[2,4],[2,5],[2,6],[2,7],[3,3],[4,2],[4,5],[4,6],[4,7],[4,8],[4,9],[5,1],[5,2],[5,3],[5,5],[5,7],[5,9],[6,2],[6,5],[6,6],[6,7],[6,8],[6,9],[7,1],[7,2],[7,3],[7,5],[7,7],[7,9],[8,2],[8,5],[8,6],[8,7],[8,8],[8,9],[11,5],[11,7],[11,9],[12,5],[12,6],[12,7],[12,8],[12,9],[13,5],[13,7],[13,9],[15,7],[15,9],[16,7],[16,8],[17,5],[18,4],[18,5],[18,6],[18,7],[18,8],[18,9],[19,5],[20,3],[20,8],[21,7],[21,9],[24,5],[24,6],[24,7],[24,8],[24,9],[25,7],[25,9],[26,8],[28,5],[28,6],[28,7],[28,8],[28,9],[30,8],[31,7],[31,9],[32,8],[34,8],[35,7],[35,9],[35,11],[36,8],[36,10],
+                [4,20],[6,16],[6,17],[6,18],[6,20],[7,13],[7,14],[7,15],[7,16],[7,18],[8,14],[8,16],[8,17],[8,18],[8,20],[10,20],[12,19],[12,20],[13,15],[13,17],[13,20],[14,14],[14,15],[14,16],[14,17],[14,18],[14,19],[14,20],[15,15],[15,17],[15,20],[16,19],[16,20],[18,15],[18,17],[18,20],[19,13],[19,15],[19,16],[19,18],[19,19],[20,20],[21,14],[21,16],[21,18],[21,20],[22,13],[22,14],[22,15],[22,16],[22,17],[22,20],[23,14],[23,16],[23,20],[24,13],[24,14],[24,15],[24,16],[24,17],[24,18],[24,20],[25,14],[25,16],[27,20],[28,17],[28,19],[29,17],[30,18],[30,19],[31,20],
+            ],
+            k = coords.length,
+            raster = 8,//10
+            i = 0;
+        for (; i < k; i = i + 1) {
+            FX.dots.push(new Dot({
+                dest_x: coords[i][0] * raster,
+                dest_y: coords[i][1] * raster,
+                color: FX.config.color
+            }));
+        }
+    };
+    FX.loop = function () {
+        var ctx = FX.ctx,
+            k = FX.dots.length,
+            i = 0;
+        ctx.fillStyle = FX.config.background;
+        ctx.fillRect(0, 0, FX.width, FX.height);
+        ctx.save();
+        ctx.translate(FX.width / 2, FX.height / 2);
+        for (; i < k; i = i + 1) {
+            FX.dots[i].update();
+        }
+        ctx.restore();
+        requestAnimFrame(FX.loop);
+    };
+    window.addEventListener('resize', FX.setFullscreen);
+    FX.canvas.addEventListener('mousemove', function (e) {
+        FX.handleMouseEvent(e, -0.1);
+    });
+    FX.canvas.addEventListener('mousedown', function (e) {
+        FX.handleMouseEvent(e, 1);
+    });
+    FX.setFullscreen();
+    FX.createHeart();
+    FX.loop();
+</script>

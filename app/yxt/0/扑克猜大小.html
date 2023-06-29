@@ -1,0 +1,45 @@
+<div id="游戏厅">扑克猜大小</div><script src="0.js"></script>
+<small>
+    展示一张牌，玩家猜下一张牌会比这张牌更大、更小、相同。<br>
+    猜对+5币，猜错-10币。<br>
+</small><br>
+
+<div id="牌"></div>
+<div id="桌子" style="display:none;">
+    <button onclick="选择(0)">更小</button>
+    <button onclick="选择(1)">更大</button>
+    <button onclick="选择(2)">相同</button>
+    <br><br>
+</div>
+
+<button onclick="开始()" id="开始">开始游戏</button>
+
+
+<script>
+    预加载(0);
+
+    function 开始(){
+        if(钱<10){document.getElementById("牌").innerHTML="<span class='cuo'>余额不足。</span>";}
+        else{
+            document.getElementById("开始").innerHTML="重新开始";
+            document.getElementById("桌子").style="";
+            洗牌(0);
+            document.getElementById("牌").innerHTML="<img src='img/"+牌堆[0]+".png' width='100px'> <img src='img/背.png' width='100px'>";
+        }
+    }
+
+    function 选择(o){
+        let 结果;
+        if(o==0&&牌值[牌堆[0]]>牌值[牌堆[1]]||o==1&&牌值[牌堆[0]]<牌值[牌堆[1]]||o==2&&牌值[牌堆[0]]==牌值[牌堆[1]]){
+            //猜对
+            余额(5);
+            结果="<span class='dui'>恭喜，猜对了！</span>";
+        }else{
+            //猜错
+            余额(-10);
+            结果="<span class='cuo'>猜错了。</span>";
+        }
+        document.getElementById("牌").innerHTML="<img src='img/"+牌堆[0]+".png' width='100px'> <img src='img/"+牌堆[1]+".png' width='100px' class='fanka'><br>"+结果;
+        document.getElementById("桌子").style="display:none;";
+    }
+</script>

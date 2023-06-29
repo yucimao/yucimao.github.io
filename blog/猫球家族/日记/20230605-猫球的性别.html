@@ -1,0 +1,26 @@
+---
+layout: zk
+title: 猫球的性别
+nav_url: <a href="/maoqiujiazu">猫球家族</a>
+permalink: i/zk/8596552
+zk_height_a: 500
+---
+<div id="a">
+请从以下选项中，选择您最认同的说法：<br>
+<a onclick="选择(1)">男女平等，但女性要比男性更加“平等”</a><br>
+<a onclick="选择(2)">人的性别取决于自我认同</a><br>
+<a onclick="选择(0)">以上均不认同</a><br>
+</div>
+
+<script>
+    function 选择(o){
+        let dy="";
+        if(o==1){dy+="我的性别：<br>生理男性<br>心理女性<br>同性恋（喜欢女性）<br>异装癖（穿男装）<br>轻微语言障碍（有时会把自己性别说成“男性”）<br>身体原教旨主义（反对通过手术改变性别）";}
+        if(o==2){
+            let 临时=["猫","世界的主宰","美国总统","气球","隐形人"];
+            dy+="我的性别认同为："+临时[Math.floor(Math.random()*临时.length)];
+        }
+        if(o==0){dy+="我是男性";}
+        document.getElementById("a").innerHTML=dy;
+    }
+</script>

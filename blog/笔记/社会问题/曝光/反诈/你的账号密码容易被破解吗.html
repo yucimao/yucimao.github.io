@@ -1,0 +1,20 @@
+---
+layout: o
+title: 你的账号密码容易被破解吗
+permalink: fanzha/ndzhmmrybpjm
+---
+<div id="dy">
+    <h2>测一下，你的账号密码容易被破解吗？</h2>
+
+    <input type="text" id="输入" placeholder="输入账号" onkeydown="确定()" /><br>
+    <input type="text" id="输入2" placeholder="输入密码" onkeydown="确定()" /><br>
+    <button onclick="确定()">点击测试</button>
+
+</div>
+
+<script>
+    function 确定(){
+        let dy="<h2>反诈宣传</h2>不要在奇怪的网站输入你的账号和密码！";
+        document.getElementById("dy").innerHTML = dy;
+    }
+</script>

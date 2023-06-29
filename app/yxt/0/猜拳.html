@@ -1,0 +1,47 @@
+<div id="游戏厅">猜拳</div><script src="0.js"></script>
+<small>
+    有剪刀、石头、布三张牌。双方同时选择一张，输赢判断规则：<br>
+    石头 > 剪刀，剪刀 > 布，布 > 石头。<br>
+    获胜+1币，失败-1币。
+</small><br><br>
+
+<div id="桌"></div>
+
+选择你要出的牌：<br>
+<table>
+    <tr><td onclick="选择(0)">石头<br><img src="img/猜拳/石头.png" width="50px"></td><td onclick="选择(1)">剪刀<br><img src="img/猜拳/剪刀.png" width="50px"></td><td onclick="选择(2)">布<br><img src="img/猜拳/布.png" width="50px"></td></tr>
+</table><br>
+
+<div id="统计"></div>
+
+<script>
+    let 电脑胜=0;
+    let 玩家胜=0;
+    let 猜拳=["石头","剪刀","布"];
+    let 口令=[
+        ["石头、剪刀——布！",["","",""],["石头","剪刀","布"]],
+        ["<ruby><rb><span class='左右字'>卒瓦</span></rb><rt>cèi</rt></ruby>丁——壳！",["","",""],["石头","剪刀","布"]],
+        ["定杠——锤！",["","",""],["石头","剪刀","布"]],
+        ["包剪——揼！",["","",""],["揼","剪","包"]],
+        ["将将——<ruby><rb>才</rb><rt>céi</rt></ruby>！",["","",""],["<ruby><rb>锛</rb><rt>bēn</rt></ruby>","<ruby><rb>铰</rb><rt>jiǎo</rt></ruby>","<ruby><rb>裹</rb><rt>guǒ</rt></ruby>"]],
+        ["土豆、土豆、土豆——锤！",["嘎吱嘎吱","削皮——","啊啊——"],["石头","剪刀","布"]],
+        ["警察、警察、警察——锤！",["Yes sir madam","biu biu——","啊啊——"],["石头","剪刀","布"]],
+        ["两只小蜜蜂啊，飞在花丛中啊，飞啊——",["mua mua","啪啪——","啊啊——"],["石头","剪刀","布"]],
+        ["狗熊、猎人、枪、枪、枪——",["","",""],["狗熊","猎人","枪"]],
+        ["拍拍——",["","",""],["告老师","打小抄","写作业"]],
+    ];
+    for(let i=0;3>i;i++){
+        口令[口令.length]=口令[0];
+    }
+    function 选择(o){
+        let 电脑=Math.floor(Math.random()*3);
+        let 结果=[];
+        let 说=口令[Math.floor(Math.random()*口令.length)];
+        结果[2]=说[0];
+        if(o==电脑){结果[0]="平局";结果[1]="";结果[2]+=" "+说[1][0];}
+        else if(电脑==0&&o==1||电脑==1&&o==2||电脑==2&&o==0){结果[0]="电脑胜";结果[1]="cuo";try{notyf.alert("电脑胜");}catch(e){alert("电脑胜");}余额(-1);电脑胜+=1;结果[2]+=" "+说[1][1];}
+        else{结果[0]="玩家胜";结果[1]="dui";try{notyf.confirm("玩家胜")}catch(e){alert("玩家胜");}余额(+1);玩家胜+=1;结果[2]+=" "+说[1][2];}
+        document.getElementById("桌").innerHTML=结果[2]+"<table><tr><td>电脑<small>("+说[2][电脑]+")</small><br><img src=\"img/猜拳/"+猜拳[电脑]+".png\" width=\"50px\" class=\"fanka\"></td><td>玩家<small>("+说[2][o]+")</small><br><img src=\"img/猜拳/"+猜拳[o]+".png\" width=\"50px\" class=\"fanka\"></td><td>结果：<br><b class=\""+结果[1]+"\">"+结果[0]+"</b></td></tr></table><br>";
+        document.getElementById("统计").innerHTML="电脑获胜次数："+电脑胜+"<br>玩家获胜次数："+玩家胜;
+    }
+</script>

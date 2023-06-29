@@ -1,0 +1,350 @@
+---
+layout: zk
+title: 饥荒 联机版
+nav_text: 饥荒 联机版
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/zk/4722951
+pinglun: 1
+---
+<style>input{width:4em;}</style>
+
+<a href="steam://rungameid/322330" target="_blank">打开Steam版饥荒</a><br>
+<br>
+
+<a name="MOD"></a><h3>MOD</h3>
+<b>[DST]WhaRang</b>：千年狐。<br>
+<b>Ice Backpack</b>：冰背包。<br>
+<b>More In Tumbleweed</b>：风滚草盲盒。<br>
+<b>Storeroom</b>：地窖。<br>
+<br>
+
+<div id="dy"></div>
+
+<script>
+    let dy="";
+
+    let 常用=[
+        ["重生 restart<br><small>按U用密语发送文字</small>","#restart"],
+    ];
+
+    dy+="<a name='常用'></a><h3>常用</h3>";
+    dy+="<table>";
+    for(let i=0;常用.length>i;i++){
+        dy+="<tr><td>"+常用[i][0]+"</td>";
+        dy+="<td><a onclick=\"生成复(生成制='"+常用[i][1]+"')\">复制</a></td>";
+        dy+="<td>"+常用[i][1]+"</td></tr>";
+    }
+    dy+="</table>";
+    
+    let 常用制="";
+    function 常用复(){
+        复(制=生成制);
+    }
+
+    let 控制台=[
+        ["当前生命",
+            "c_sethealth(／)"],
+        ["当前精神",
+            "c_setsanity(／)"],
+        ["当前饥饿",
+            "c_sethunger(／)"],
+        ["生命上限",
+            "GetPlayer().components.health:SetMaxHealth(／)"],
+        ["精神上限",
+            "GetPlayer().components.sanity:SetMax(／)"],
+        ["饥饿上限",
+            "GetPlayer().components.hunger:SetMax(／)"],
+        ["设置速度<br><small>标准速度为1，值越大速度越快</small>",
+            "c_speed(／)"],
+        ["停止饥饿",
+            "GetPlayer().components.hunger:Pause(true)"],
+        ["取消停止饥饿",
+            "GetPlayer().components.hunger:Pause(false)"],
+        ["上帝模式<br><small>不掉生命精神饥饿</small>",
+            "c_godmode()"],
+        ["创造模式<br><small>可以制作全物品</small>",
+            "GetPlayer().components.builder:GiveAllRecipes()"],
+        ["地图全开",
+            "GetWorld().minimap.MiniMap:ShowArea(0,0,0,10000)"],
+        ["吴迪变成海狸",
+            "GetPlayer().components.beaverness:SetPercent(1)"],
+        ["传送<br><small>把你传送到附近的“代码”的位置<br>如传送到牛的附近：c_gonest(\"beefalo\")</small>",
+            "c_gonext(\"代码\")"],
+        ["删除鼠标位置的物体",
+            "TheInput:GetWorldEntityUnderMouse():Remove()"],
+    ];
+
+    dy+="<a name='控制台代码'></a><h3>控制台代码</h3>";
+    dy+="“~”打开，Ctrl+L关闭。<br>";
+    dy+="使用小数点表示百分数，如0.8=80%<br>";
+    dy+="<table>";
+        for(let i=0;控制台.length>i;i++){
+            if (控制台[i][1].indexOf("／") != -1){
+                dy+="<tr><td>"+控制台[i][0]+"</td>";
+                dy+="<td><a onclick=\"控制台复(控制台制='控制台id"+i+"／"+控制台[i][1]+"')\">复制</a></td><td>";
+                let 临时=控制台[i][1].split("／");
+                dy+=临时[0];
+                dy+="<input type='text' id='控制台id"+i+"' placeholder='值' autocomplete='off'/>";
+                dy+=临时[1];
+                dy+="</td></tr>";
+            }else{
+                dy+="<tr><td>"+控制台[i][0]+"</td><td><a onclick=\"复(制='"+控制台[i][1]+"')\">复制</a><td>"+控制台[i][1]+"</td></tr>";
+            }
+        }
+    dy+="</table><br><br>";
+
+    let 控制台制="";
+    function 控制台复(){
+        let 临时=控制台制.split("／");
+        let 输入=document.getElementById(临时[0]).value;
+        复(制=临时[1]+输入+临时[2]);
+    }
+
+    let 材料=[
+        ["hr","材料"],
+        ["曼德拉草汤","mandrakesoup"],
+        ["草","cutgrass"],
+        ["芦苇","cutreeds"],
+        ["树枝","twigs"],
+        ["木头","log"],
+        ["松果","pinecone"],
+        ["木炭","charcoal"],
+        ["灰","ash"],
+        ["花瓣","petals"],
+        ["噩梦花瓣","petals_evil"],
+        ["燧石","flint"],
+        ["硝石","nitre"],
+        ["岩石","rocks"],
+        ["黄金","goldnugget"],
+        ["红宝石","redgem"],
+        ["蓝宝石","bluegem"],
+        ["紫宝石","purplegem"],
+        ["绿宝石","greengem"],
+        ["橙宝石","orangegem"],
+        ["黄宝石","yellowgem"],
+        ["齿轮","gears"],
+        ["晶体管","transistor"],
+        ["大理石","marble"],
+        ["冰","ice"],
+
+        ["hr","怪物掉落"],
+        ["虫子果","wormlight"],
+        ["食人花种子","lureplantbulb"],
+        ["犬牙","houndstooth"],
+        ["猪皮","pigskin"],
+        ["兔人尾巴","manrabbit_tail"],
+        ["蜘蛛丝","silk"],
+        ["蜘蛛腺体","spidergland"],
+        ["蜘蛛卵","spidereggsack"],
+        ["胡子","beardhair"],
+        ["牛毛","beefalowool"],
+        ["蜂巢","honeycomb"],
+        ["蜂刺","stinger"],
+        ["海象牙","walrus_tusk"],
+        ["乌鸦羽毛","feather_crow"],
+        ["红雀羽毛","feather_robin"],
+        ["雪雀羽毛","feather_robin_winter"],
+        ["牛角","horn"],
+        ["触手皮","tentaclespots"],
+        ["夏象鼻","trunk_summer"],
+        ["冬象鼻","trunk_winter"],
+        ["蜗牛龟粘液","slurtleslime"],
+        ["蜗牛龟壳片","slurtle_shellpieces"],
+        ["蝴蝶翅膀","butterflywings"],
+        ["蚊子血囊","mosquitosack"],
+        ["啜食者皮","slurper_pelt"],
+        ["远古守护者角","minotaurhorn"],
+        ["巨鹿眼球","deerclops_eyeball"],
+        ["闪电羊角","lightninggoathorn"],
+        ["格罗门翅膀","glommerwings"],
+        ["格罗门花","glommerflower"],
+        ["格罗门燃料","glommerfuel"],
+        ["活木头","livinglog"],
+        ["噩梦燃料","nightmarefuel"],
+        ["硬骨头","boneshard"],
+        ["便便","poop"],
+        ["鸟粪","guano"],
+        ["蜻蜓鳞片","dragon_scales"],
+        ["鹿鸭羽毛","goose_feather"],
+        ["浣熊尾巴","coontail"],
+        ["熊皮","bearger_fur"],
+
+        ["hr","千年狐"],
+        ["专属地皮","turf_asia"],
+        ["专属地皮2","turf_flamerose"],
+        ["专属地皮3","turf_orient"],
+        ["鱼排","driedcroaker"],
+        ["月兔包","moondumplings"],
+        ["寿司","songpyeon"],
+        ["红色果实","peppertreeroot"],
+        ["花","sakurahat"],
+        ["棒棒糖","handfan"],
+        ["香扇","gumifan"],
+        ["红箫","flute_flame"],
+        ["蓝箫","flute_frost"],
+        ["治疗小号","flute_healing"],
+        ["面具","foxmask"],
+        ["小狐狸铃铛","mihobell"],
+        ["龙蛋","miregg"],
+
+    ];
+
+    dy+="<a name='获得材料'></a><h3>获得材料</h3>";
+    dy+="在背包里生成：c_give(\"代码\",数量)<br>";
+    dy+="在鼠标位置生成：c_spawn(\"代码\",数量)<br>";
+    dy+="<table>";
+        for(let i=0;材料.length>i;i++){
+            if(材料[i][0]=="hr"){
+                dy+="<tr><td colspan='3'><a name='　"+材料[i][1]+"'></a>"+材料[i][1]+"</h4></td></tr>";
+            }else{
+                dy+="<tr><td>"+材料[i][0]+"</td>";
+                dy+="<td><input type='text' id='材料id"+i+"' placeholder='数量' autocomplete='off'/> <a onclick=\"材料复(材料制='材料id"+i+"／背包／"+材料[i][1]+"')\">背包</a> <a onclick=\"材料复(材料制='材料id"+i+"／鼠标')\">鼠标</a></td>";
+                dy+="<td>"+材料[i][1]+"</td></tr>";
+            }
+        }
+    dy+="</table><br><br>";
+
+    let 材料制="";
+    function 材料复(){
+        let 临时=材料制.split("／");
+        let 输入=document.getElementById(临时[0]).value;
+        if(临时[1]=="背包"){临时="c_give(\""+临时[2]+"\","+输入+")";}
+        else{临时="c_spawn(\""+临时[2]+"\","+输入+")"}
+        复(制=临时);
+    }
+
+    let 生成=[
+        ["荧光草","flower_cave"],
+        ["兔子","rabbit"],
+        ["火鸡","perd"],
+        ["乌鸦","crow"],
+        ["红雀","robin"],
+        ["雪雀","robin_winter"],
+        ["蝴蝶","butterfly"],
+        ["萤火虫","fireflies"],
+        ["蜜蜂","bee"],
+        ["杀人蜂","killerbee"],
+        ["苍蝇","flies"],
+        ["蚊子","mosquito"],
+        ["青蛙","frog"],
+        ["牛","beefalo"],
+        ["小牛","babybeefalo"],
+        ["闪电羊","lightninggoat"],
+        ["猪人","pigman"],
+        ["猪守卫","pigguard"],
+        ["兔人","bunnyman"],
+        ["鱼人","merm"],
+        ["洞穴蜘蛛","spider_hider"],
+        ["喷射蜘蛛","spider_spitter"],
+        ["地面小蜘蛛","spider"],
+        ["地面绿蜘蛛","spider_warrior"],
+        ["蜘蛛女王","spiderqueen"],
+        ["白蜘蛛","spider_dropper"],
+        ["猎狗","hound"],
+        ["红色猎狗","firehound"],
+        ["冰狗","icehound"],
+        ["触手","tentacle"],
+        ["巨型触手","tentacle_garden"],
+        ["树精","leif"],
+        ["稀有树精","leif_sparse"],
+        ["海象","walrus"],
+        ["小海象","little_walrus"],
+        ["小高鸟","smallbird"],
+        ["青年高鸟","teenbird"],
+        ["高鸟","tallbird"],
+        ["夏象","koalefant_summer"],
+        ["冬象","koalefant_winter"],
+        ["企鹅","penguin"],
+        ["蜗牛龟","slurtle"],
+        ["黏糊虫","snurtle"],
+        ["蝙蝠","bat"],
+        ["龙虾","rocky"],
+        ["猴子","monkey"],
+        ["缀食者","slurper"],
+        ["秃鹫","buzzard"],
+        ["鼹鼠","mole"],
+        ["浣熊","catcoon"],
+        ["发条骑士","knight"],
+        ["主教","bishop"],
+        ["战车","rook"],
+        ["爬行暗影怪","crawlinghorror"],
+        ["尖嘴暗影怪","terrorbeak"],
+        ["巨鹿","deerclops"],
+        ["远古守护者","minotaur"],
+        ["远古虫子","worm"],
+        ["阿比盖尔","abigail"],
+        ["幽灵","ghost"],
+        ["麦斯威尔黑影小人","shadowwaxwell"],
+        ["坎普斯","krampus"],
+        ["格罗门","glommer"],
+        ["切斯特","chester"],
+        ["食人花","lureplant"],
+        ["食人花眼睛","eyeplant"],
+        ["大脚","bigfoot"],
+        ["猪王","pigking"],
+        ["鹿鸭","moose"],
+        ["小鸭","mossling"],
+        ["蜻蜓","dragonfly"],
+        ["座狼","warg"],
+        ["熊","bearger"],
+        ["坚果鸭","birchnutdrake"],
+        ["鹿鸭蛋","mooseegg"],
+
+        ["hr","角色"],
+        ["威尔逊","wilson"],
+        ["麦斯威尔","waxwell"],
+        ["温蒂","wendy"],
+        ["伍迪","woodie"],
+        ["韦斯","wes"],
+        ["图书管理员","wickerbottom"],
+        ["薇洛","willow"],
+        ["沃尔夫冈","wolfgang"],
+        ["机器人","wx78"],
+        ["瓦丝格雷斯","wathgrithr"],
+        ["韦伯","webber"],
+
+        ["hr","千年狐"],
+        ["八角亭","asiahouse2"],
+        ["房子","asiahouse"],
+        ["冰火柱","firepit_chill"],
+        ["冰火","firepit_chill_fire"],
+        ["火柱","firepit_ghost"],
+        ["火","firepit_ghost_fire"],
+        ["挨打后的小火","foxfire"],
+        ["腌菜坛","gumipot"],
+        ["小狐狸","miho"],
+        ["龙宝宝","mir"],
+        ["暗影小跟班","reddrake"],
+        ["暗影小跟班2","shadowbeak"],
+        ["千年狐","wharang"],
+
+    ];
+
+    dy+="<a name='生成物体'></a><h3>生成物体</h3>";
+    dy+="DebugSpawn(\"代码\")<br>";
+    dy+="<table>";
+        for(let i=0;生成.length>i;i++){
+            if(生成[i][0]=="hr"){
+                dy+="<tr><td colspan='3'><a name='　"+生成[i][1]+"'></a><h4>"+生成[i][1]+"</h4></td></tr>";
+            }
+            else{
+                dy+="<tr><td>"+生成[i][0]+"</td>";
+                dy+="<td><a onclick=\"生成复(生成制='"+生成[i][1]+"')\">复制</a></td>";
+                dy+="<td>"+生成[i][1]+"</td></tr>";
+            }
+        }
+    dy+="</table><br><br>";
+
+    let 生成制="";
+    function 生成复(){
+        复(制="DebugSpawn(\""+生成制+"\")");
+    }
+
+    document.getElementById("dy").innerHTML = dy;
+
+</script>
+
+
+<br>
+
+
