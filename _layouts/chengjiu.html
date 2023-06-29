@@ -141,18 +141,16 @@ document.getElementById("anniu_b").innerHTML = 当前;
 加载();
 }
 
-let loadink=document.querySelector('.loading');
 let ob=new IntersectionObserver(
-    function (entries){
-        let entry=entries[0];
-        if(entry.isIntersecting){
+    function (o){
+        if(o[0].isIntersecting){
             加载();
         }
     },{
         thresholds:0.5,
     }
 );
-ob.observe(loadink);
+ob.observe(document.querySelector('.loading'));
 
 </script>
 
