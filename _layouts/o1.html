@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<title>{% if page.BiaoTi %}{{ page.BiaoTi }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+</head>
+<body>
+<style>#all{position: relative;width: 60%;top: 1em;margin: auto;}.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}</style>
+<div id='index' class='index'></div>
+<div id="all">
+{% if page.h1 %}<h1 style="display:inline;">{{ page.h1 }}</h1> {{ page.h2 }}<hr>{% else %}{% endif %}
+
+{{ content }}
+
+</div>
+
+</body>

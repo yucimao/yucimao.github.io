@@ -1,14 +1,8 @@
 ---
 layout: default
 ---
+<title>{% if page.BiaoTi %}{{ page.BiaoTi }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>
-
 <body>
-
-{% if page.nav_yes %}{% include nav_a.html %}{% endif %}
-
 {{ content }}
-
-{% if page.nav_yes %}{% include footer_mqec.html %}{% endif %}
-
 </body>

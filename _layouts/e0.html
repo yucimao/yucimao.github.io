@@ -1,0 +1,238 @@
+---
+layout: default
+---
+<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<style>
+    html,body {margin: 0;padding: 0;}
+    body {
+        /* background-repeat: no-repeat; */
+        background-size: 100% auto;
+        background-attachment: fixed;
+    }
+
+    .大标题,.下箭头{
+        text-align: center;
+        text-shadow:#00000050 0px 0px 3px;
+    }
+
+    .标题{
+        display: inline-block;
+        position: relative;
+        font-size: 40px;
+        height: 60px;
+        line-height: 60px;
+        color: #ffffff;
+    }
+
+    .标题::after{
+        content: '';
+        position: absolute;
+        right: -10px;
+        top: 5px;
+        height: 50px;
+        width: 3px;
+        background-color: #fff;
+        animation: 标题变化 0.5s steps(1) infinite;
+    }
+
+    @keyframes 标题变化{
+        0%,
+        100% {
+            background-color: #fff;
+        }
+        50% {
+            background-color: transparent;
+        }
+    }
+
+    .下箭头{
+        position: absolute;
+        animation: 下箭头变化 1s infinite;
+    }
+    .下箭头:before{font-size:1.4em;color:#ffffff;content:"▼";}
+    @keyframes 下箭头变化{
+        0%{top:0px}
+        30%{top:10px;}
+        100%{top:0px;}
+    }
+
+    .内容0{
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px 50px;
+        background-color: #ffffff50;
+        border-radius: 25px;
+    }
+
+    @media screen and (max-width: 767px){
+        .内容0{padding:3%;margin:0;width:95%;}
+    }
+
+    .导航{
+        position: fixed;
+        top:0;
+        margin: 15px;font-weight:bold;
+        text-shadow:#00000050 0px 0px 3px;
+        z-index: 2000;
+    }
+
+    .左.导航{
+        left:0;
+    }
+
+    .右.导航{
+        right:0;
+    }
+
+    .导航 a{
+        color:#ffffff;
+    }
+
+    .导航 a:hover{
+        color:#d1d1d1;
+    }
+
+    .内容背景{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        width:auto;
+        height:auto;
+        z-index: -2000;
+        background-size: 100% auto;
+        background-position: center top;
+        /* background-repeat: no-repeat; */
+        background-attachment: fixed;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -ms-filter: blur(10px);
+        -o-filter: blur(10px);
+        filter: blur(10px);
+    }
+
+    .书名,.章节{font-weight:800;cursor:default;font-size: 24px;}
+    .章节{margin:auto 8px;}
+    .书名:before,.书名:after{color:var(--huise-color);}
+    .书名:before{content:"‹‹ ";}.书名:after{content:" ››\00A0";}
+
+    footer{position: relative;top: 300px;z-index: -1001;}footer img {position: relative;bottom: 50px;display: block;margin: 0 auto;}
+</style>
+
+</head>
+
+<body>
+    <div id="打印背景图片"></div>
+    <div id="ziti"></div>
+
+    <div style="position: absolute;top:40%;width:100%;"><h1 class="大标题"><span class="标题">加载中..</span></h1></div>
+    <div class="左 导航"><a href="{{ site.mq }}">猫球博客</a> &nbsp;<a>/</a> &nbsp;<a href="{{ site.mq_cafe }}">猫.cafe</a> &nbsp;<a>/</a> &nbsp;<a href="/">像素点.cn</a></div>
+    <div class="右 导航"><a></a></div>
+    <div style="position: absolute;top:85%;width:100%;text-align:center;" class="下箭头a"><span class="下箭头 cursor_pointer" onclick="window.location.href='#内容'"></span></div>
+    <a style="position: absolute;top:100%;" name="内容"></a>
+    <div id="div0" style="position: absolute;top:100%;width:100%;"><div class="内容0">
+
+    {% if page.h1 %}<h1 style="display:inline;">{{ page.h1 }}</h1> {{ page.h2 }}<hr>{% else %}{% endif %}
+
+    {{ content }}
+
+    <div class="内容背景"></div></div>
+    <!-- <footer><a href="{{ site.mq }}/maoqiu"><img class="tubiao" src="/img/footer.png" alt="关于我" title="关于我" width=120px id="footer" style=""/></a></footer> -->
+    <footer><a href="{{ site.mq }}/maoqiu"><img class="tubiao" src="/img/logo/ufo.gif" alt="关于猫球" width=70px id="footer" style=""/></a></footer>
+    </div>
+
+    <script>
+        let 背景图片地址="/img/nav/";
+        let 打印背景图片="";
+        if(document.body.clientWidth<768){
+            打印背景图片="{% if page.BeiJing_SJ %}{{ page.BeiJing_SJ }}{% else %}0{% endif %}";
+            if(typeof(替换背景图片_sj)!="undefined"){if(替换背景图片_sj!=""){打印背景图片=替换背景图片_sj;}}
+            背景图片地址+="sj/";
+        }else{
+            打印背景图片="{% if page.BeiJing %}{{ page.BeiJing }}{% else %}0{% endif %}";
+            if(typeof(替换背景图片)!="undefined"){if(替换背景图片!=""){打印背景图片=替换背景图片;}}
+        }
+        打印背景图片=打印背景图片.split("／");
+        打印背景图片=打印背景图片[Math.floor(Math.random()*打印背景图片.length)];
+        let 背景图片颜色="";
+        if(打印背景图片[0]=="0"||打印背景图片[0]=="2"){
+            背景图片颜色=":root{--a-color:#50a3ec;--a-hover-color:#8cbee9;--body-color:#e0e0e0;--huise-color:#bbbbbb;}.内容0{background-color: #22222250;}body{background-color:#ffffff;}";
+            // document.getElementById("footer").style = "filter: drop-shadow(0 0 3px #00000070) invert(100%);";
+        }else{
+            // document.getElementById("footer").style = "filter: drop-shadow(0 0 3px #ffffff70);";
+        }
+        if(打印背景图片[0]=="2"||打印背景图片[0]=="3"){
+            背景图片颜色+="body,.内容背景{background-position:bottom;}";
+        }
+        if (打印背景图片.indexOf(".") != -1){}else{打印背景图片+=".jpg";}
+        document.getElementById("打印背景图片").innerHTML = "<style>"+背景图片颜色+"body{background-image: url('"+背景图片地址+打印背景图片+"');}.内容背景{background-image: url('"+背景图片地址+打印背景图片+"');}</style>";
+
+        const 标题文字 = "{% if page.BiaoTi %}{{ page.BiaoTi }}{% else %}欢迎光临。／虽然这里也没什么东西...{% endif %}／".split("／");
+        const 标题 = document.querySelector('.标题');
+        let 标题字符 = 0;
+        let 标题下标 = 0;
+        let 标题换字 = true;
+        setInterval(function () {
+            if (标题换字) {
+                标题.innerHTML = 标题文字[标题下标].slice(0, ++标题字符);
+            }
+            else {
+                标题.innerHTML = 标题文字[标题下标].slice(0, 标题字符--);
+            }
+
+            if (标题字符 == 标题文字[标题下标].length + 3) {
+                标题换字 = false;
+            }
+            else if (标题字符 < 0) {
+                标题字符 = 0;
+                标题换字 = true;
+                标题下标++;
+                if (标题下标 >= 标题文字.length) {
+                    标题下标 = 0;
+                }
+            }
+        }, 200)
+
+        $(document).ready(function() {
+        let scroll_n=0;
+        $(function() {
+            $(window).scroll(function() {
+                let scroll_i=$(this).scrollTop();
+                if (scroll_i > scroll_n){
+                $('.导航').fadeOut();
+                $('.下箭头a').fadeOut();
+                } else{
+                    $('.导航').fadeIn();
+                    $('.下箭头a').fadeIn();
+                }
+                scroll_n=scroll_i;
+            });
+        });
+        });
+
+        function 改字体(o){
+            if(o==0){
+                localStorage.removeItem("改字体");
+                document.getElementById("ziti").innerHTML="";
+            }else{
+                document.getElementById("ziti").innerHTML="<style>@font-face{font-family:"+o+";src:url('/i/w/字体/"+o+".ttf')}body{font-family:'"+o+"'}</style>";
+                localStorage.setItem("改字体",o);
+            }
+        }
+
+        if(localStorage.getItem("改字体")){
+            document.getElementById("ziti").innerHTML="<style>@font-face{font-family:"+localStorage.getItem("改字体")+";src:url('/i/w/字体/"+localStorage.getItem("改字体")+".ttf')}</style>";
+        }
+
+        window.onload=function(){
+            if(localStorage.getItem("改字体")){
+                改字体(localStorage.getItem("改字体"));
+            }
+        }
+
+        document.getElementById('div0').scrollIntoView();
+    </script>
+
+</body>

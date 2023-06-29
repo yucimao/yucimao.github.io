@@ -1,0 +1,134 @@
+---
+layout: o
+permalink: w/yundonghui/jiangpai
+BiaoTi: 展示奖牌动作演示
+title: 展示奖牌动作演示
+---
+<style>#all{position: relative;width: 60%;top: 1em;margin: auto;}.index{position: fixed;top:1em;left:2.5%;width:15%;height: 100%;overflow:auto;}</style>
+<div id='index' class='index'></div>
+<div id="all">
+
+<h1 style="display:inline;">展示奖牌动作演示</h1> <a href="/">返回</a> / <a onclick="改颜色()">改颜色</a><hr>
+
+动作文案：（小像素点的名字）拿来了“（）杯”的（金牌/银牌）。<br>
+展示奖牌按钮：在第（）届小像素点运动会“（）杯”获得（金牌/银牌）。 <a>展示奖牌</a><br>
+<br>
+如果对文案或者动作有别的想法，可以和我说。<br>
+
+<div id="style_root"><style>:root{--点点:#ffffff;--背景:#000000;--反色:#ffffff;}</style></div>
+<style>#房子{width:400px;height:400px;background-color:var(--背景);overflow:hidden}#小窝{position: relative;top:270px;left:191px}.点点,.群演{position: relative;width:10px;height:10px;top:0;left:0;animation:infinite;animation-duration: 20s;}.点点,.群演{background-color:var(--点点)}.群演{position:absolute;opacity:0}</style>
+<div id="style"></div><h2 id="h2"></h2><div id='房子'><div id='小窝'></div></div>
+<script>
+let data=[
+    "o／0%{top:0}",
+
+    //https://像素点.cn/w/yundonghui/jiangpai
+    //↑可以选一个展示奖牌的动作
+
+    //〈x〉拿来了“【尼斯湖水怪】杯”的【金牌/银牌】。
+    //</blockquote>在第【一】届小像素点运动会“【尼斯湖水怪】杯”获得【金牌/银牌】。 [a,,展示奖牌,,运动会【1】_【C77232】]
+
+    "展示奖牌1（蹦跶）／0%,20%,70%,100%{left:0}5%,85%{left:300px}0%,22%,24%,26%{top:0}23%,25%{top:-10px}，0%,100%{background-color:#ffffff00;opacity:1;width:32px;height:32px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAG1BMVEUAAAD42kr/8XP42kr/8XPooiPftiLwxET89bQcpDWtAAAAA3RSTlMAICBUnMC0AAAAh0lEQVQI103OwQ3CMAyFYXPonSWYwCkMEDdcgxTUARq5A+RgJujcPLtC4p0+/QfLhL0xolAStvCUFBuV6NIU8aMzYunZbBy90q3Iw4zT9qLWxSXHDD5tsGTnHpGDEZ3rPjyeZBYGF1o3TvnkdI8ovYIdMRWQmnrUxT/LikmNf3FMfr9jV/rfF9d4MSf/O25XAAAAAElFTkSuQmCC);background-size: 100% 100%;background-repeat:no-repeat}20%,70%{left:-10px}0%,5%,85%,100%{left:290px}0%,22%,24%,26%,100%{top:-32px}23%,23.4%,25%,25.4%{top:-42px}",
+    //0%,20%,70%,100%{left:0}5%,85%{left:300px}0%,22%,24%,26%{top:0}23%,25%{top:-10px}，0%,100%{background-color:#ffffff00;opacity:1;width:32px;height:32px;background-image:url(/i/w/运动会/【】.png);background-size: 100% 100%;background-repeat:no-repeat}20%,70%{left:-10px}0%,5%,85%,100%{left:290px}0%,22%,24%,26%,100%{top:-32px}23%,23.4%,25%,25.4%{top:-42px}
+    
+    "展示奖牌2（高冷）／0%,30%,40%,75%,100%{left:0}15%,55%{left:300px}，0%,100%{background-color:#ffffff00;opacity:1;top:-32px;width:32px;height:32px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAG1BMVEUAAAD42kr/8XP42kr/8XPooiPftiLwxET89bQcpDWtAAAAA3RSTlMAICBUnMC0AAAAh0lEQVQI103OwQ3CMAyFYXPonSWYwCkMEDdcgxTUARq5A+RgJujcPLtC4p0+/QfLhL0xolAStvCUFBuV6NIU8aMzYunZbBy90q3Iw4zT9qLWxSXHDD5tsGTnHpGDEZ3rPjyeZBYGF1o3TvnkdI8ovYIdMRWQmnrUxT/LikmNf3FMfr9jV/rfF9d4MSf/O25XAAAAAElFTkSuQmCC);background-size: 100% 100%;background-repeat:no-repeat}30%,40%{left:-10px}0%,15%,55%,100%{left:290px}",
+    //0%,30%,40%,75%,100%{left:0}15%,55%{left:300px}，0%,100%{background-color:#ffffff00;opacity:1;top:-32px;width:32px;height:32px;background-image:url(/i/w/运动会/【】.png);background-size: 100% 100%;background-repeat:no-repeat}30%,40%{left:-10px}0%,15%,55%,100%{left:290px}
+    
+    "展示奖牌3（拖出来）／0%,25%,35%,85%,100%{left:0}10%,60%{left:300px}38%{left:50px}，0%,100%{background-color:#ffffff00;opacity:1;width:32px;height:32px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAG1BMVEUAAAD42kr/8XP42kr/8XPooiPftiLwxET89bQcpDWtAAAAA3RSTlMAICBUnMC0AAAAh0lEQVQI103OwQ3CMAyFYXPonSWYwCkMEDdcgxTUARq5A+RgJujcPLtC4p0+/QfLhL0xolAStvCUFBuV6NIU8aMzYunZbBy90q3Iw4zT9qLWxSXHDD5tsGTnHpGDEZ3rPjyeZBYGF1o3TvnkdI8ovYIdMRWQmnrUxT/LikmNf3FMfr9jV/rfF9d4MSf/O25XAAAAAElFTkSuQmCC);background-size: 100% 100%;background-repeat:no-repeat}25%,35%,38%{left:12px}0%,10%,64%,100%{left:312px}0%,100%{top:-16px}",
+    //0%,25%,35%,85%,100%{left:0}10%,60%{left:300px}38%{left:50px}，0%,100%{background-color:#ffffff00;opacity:1;width:32px;height:32px;background-image:url(/i/w/运动会/【】.png);background-size: 100% 100%;background-repeat:no-repeat}25%,35%,38%{left:12px}0%,10%,64%,100%{left:312px}0%,100%{top:-16px}
+
+];
+let 颜色=0;
+let dy="<br>";
+for(let i=0;data.length>i;i++){
+    let 临时=data[i].split("／");
+    if(临时[0]=="hr"){
+        dy+="<h4>"+临时[1]+"</h4>";
+    }else if(临时[0]=="br"){
+        dy+="<br>";
+    }else{
+        dy+="<a onclick=\"动作('"+i+"')\">"+临时[0]+"</a><br>";
+    }
+}
+document.getElementById("index").innerHTML = dy+"<br><br><br>";
+
+function 动作(d){
+    let 临时=data[d].split("／");
+    dy="";
+
+    let 临时2=临时[1].split("，");
+    let dy3="";
+    let 匀速="";
+    if (临时[0].indexOf("_匀速") != -1){匀速="animation-timing-function:linear;"}
+    for(let ii=0;临时2.length>ii;ii++){
+        if(ii==0){dy+="@keyframes "+临时[0]+"{";}
+        else{dy+="@keyframes "+临时[0]+"_群演"+ii+"{";}
+    if(临时2[ii].indexOf("({")!=-1){
+        let 临时3=临时2[ii].split("({"); //临时3= 1,2})3,4})5
+        dy+=临时3[0];
+        for(let i3=1;临时3.length>i3;i3++){
+            let 临时4=临时3[i3].split("})"); //临时4=2,3
+            临时4[0]=临时4[0].split(",");
+            if(临时4[0][0]=="a"){dy+="background-color:#00000000;background-blend-mode:lighten;background-size:cover;-webkit-mask-mode:luminance;mask-mode:luminance;background-image:url("+临时4[0][2]+"),linear-gradient("+临时4[0][1]+","+临时4[0][1]+");-webkit-mask-image:url("+临时4[0][2]+");mask-image:url("+临时4[0][2]+");"}
+            if(临时4[0][0]=="b"){if(临时4[0][4]){临时4[0][4]=临时4[0][4].split(".");}for(let i4=0;临时4[0][3]>i4;i4++){if(临时4[0][4]&&临时4[0][4].indexOf((i4+1).toString())!=-1){}else{dy+=(临时4[0][1]*1+(临时4[0][2]*i4))+"%,"}}}
+            if(临时4[0][0]=="c"){
+                if(颜色==0){dy+="#"+临时4[0][2];}else{dy+="#"+临时4[0][1];}
+            }
+            if(临时4[0][0]=="y"){dy+="/i/y/"}
+            dy+=临时4[1];
+        }
+    }
+    else{dy+=临时2[ii];}
+    dy+="}";
+    if(ii!=0){dy3="<div class='群演' style='animation-name:"+临时[0]+"_群演"+ii+";"+匀速+"'></div>"+dy3;}
+    }
+    document.getElementById("h2").innerHTML=临时[0];
+    document.getElementById("小窝").innerHTML=dy3+"<div class='点点' style='animation-name:"+临时[0]+";"+匀速+"'></div>";
+    document.getElementById("style").innerHTML="<style>"+dy+"</style>";
+}
+// function 动作(d){
+//     let 临时=data[d].split("／");
+//     dy="";
+
+//     let 临时2=临时[1].split("，");
+//     dy+="@keyframes "+临时[0]+"{"+临时2[0]+"}";
+//     let dy3="";
+//     let 匀速="";
+//     if (临时[0].indexOf("_匀速") != -1){匀速="animation-timing-function:linear;"}
+//     for(let ii=1;临时2.length>ii;ii++){
+
+//     dy+="@keyframes "+临时[0]+"_群演"+ii+"{";
+//     if(临时2[ii].indexOf("({")!=-1){
+//         let 临时3=临时2[ii].split("({");
+//         dy+=临时3[0];
+//         for(let i3=1;临时3.length>i3;i3++){
+//             let 临时4=临时3[1].split("})");
+//             临时4[0]=临时4[0].split(",");
+//             if(临时4[0][0]=="a"){dy+="background-color:#00000000;background-blend-mode:lighten;background-size:cover;-webkit-mask-mode:luminance;mask-mode:luminance;background-image:url("+临时4[0][2]+"),linear-gradient("+临时4[0][1]+","+临时4[0][1]+");-webkit-mask-image:url("+临时4[0][2]+");mask-image:url("+临时4[0][2]+");"}
+//             if(临时4[0][0]=="b"){for(let i4=0;临时4[0][3]>i4-1;i4++){dy+=(临时4[0][1]+(临时4[0][2]*i4))+"%,"}}
+//             if(临时4[0][0]=="y"){dy+="/i/y/"}
+//             dy+=临时4[1];
+//         }
+//     }
+//     else{dy+=临时2[ii];}
+//     dy+="}";
+//     dy3="<div class='群演' style='animation-name:"+临时[0]+"_群演"+ii+";"+匀速+"'></div>"+dy3;
+//     }
+//     document.getElementById("h2").innerHTML = 临时[0];
+//     document.getElementById("小窝").innerHTML = dy3+"<div class='点点' style='animation-name:"+临时[0]+";"+匀速+"'></div>";
+//     document.getElementById("style").innerHTML = "<style>"+dy+"</style>";
+// }
+动作(0);
+
+function 改颜色(){
+    if(颜色==0){
+        颜色=1;
+        document.getElementById("style_root").innerHTML="<style>:root{--点点:#000000;--背景:#ffffff;--反色:#000000;}</style>";
+    }else{
+        颜色=0;
+        document.getElementById("style_root").innerHTML="<style>:root{--点点:#ffffff;--背景:#000000;--反色:#ffffff;}</style>";
+    }
+}
+</script>
+
+</div>
