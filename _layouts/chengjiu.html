@@ -65,7 +65,7 @@ if(cj_data_b.length>1){
 document.getElementById("anniu_b").innerHTML = 当前;
 
 
-let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img src=\"{{ site.mq_d }}/i/cj/loading.jpg\" onerror=\"this.src='/i/cj/loading.jpg';this.onerror=null;\"/><b>加载更多</b><br></div></a>";
+let loading = "<a onclick=\"加载()\"><div class=\"cj\"><img class=\"loading\" src=\"{{ site.mq_d }}/i/cj/loading.jpg\" onerror=\"this.src='/i/cj/loading.jpg';this.onerror=null;\"/><b>加载更多</b><br></div></a>";
 let data_jl={};
 let right={};
 
@@ -114,7 +114,6 @@ if (cj_data[当前] != "") {
 }
 document.getElementById("right_anchor2").innerHTML = "<table>"+right[当前]+"</table>";
 }
-加载();
 
 function 切换() {
 let 切换_i=0;
@@ -139,6 +138,19 @@ document.getElementById("anniu_a").innerHTML = "<a class=\"anniu\" onclick=\"切
 document.getElementById("anniu_b").innerHTML = 当前;
 加载();
 }
+
+let loadink=document.querySelector('loading');
+let ob=new IntersectionObserver(
+    function (entries){
+        if(entry.isIntersecting){
+            加载();
+        }
+    },{
+        thresholds:0.5,
+    }
+);
+ob.observe(loadink);
+
 </script>
 
 {% if page.pinglun %}{% include Valine.html %}{% endif %}
