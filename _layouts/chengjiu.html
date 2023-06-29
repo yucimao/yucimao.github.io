@@ -79,7 +79,7 @@ if(right[当前]=="undefined"){
     right[当前]="";
 }
 
-let 计时 = 30;
+let 计时 = 20;
 while (计时 > 0 && cj_data[当前].length != 0) {
 let 临时=cj_data[当前][0].split("／");
 if(临时[0]=="hr"){
@@ -114,6 +114,8 @@ if (cj_data[当前] != "") {
 }
 document.getElementById("right_anchor2").innerHTML = "<table>"+right[当前]+"</table>";
 }
+
+加载();
 
 function 切换() {
 let 切换_i=0;
