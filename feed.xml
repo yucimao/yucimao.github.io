@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>纪念一个杠精朋友</title>
+            <description>我很少会把纯网友列为“朋友”，而今天我删了一个。</description>
+            <pubDate>Fri, 25 Aug 2023 21:21:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/9296903</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/9296903</guid>
+        </item>
+
+        <item>
             <title>家是逼疯港</title>
             <description>以前网上随处可见的抑郁症，我还感叹自己心理挺健康的，遇到什么压力和不快都能很快平息下来。直到，压力来自家庭。</description>
             <pubDate>Tue, 08 Aug 2023 11:59:00 +0800</pubDate>
