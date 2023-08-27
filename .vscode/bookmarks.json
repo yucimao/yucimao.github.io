@@ -134,87 +134,87 @@
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1349,
+					"line": 1350,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1457,
+					"line": 1458,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1508,
+					"line": 1509,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1581,
+					"line": 1582,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1639,
+					"line": 1640,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1705,
+					"line": 1706,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1766,
+					"line": 1767,
 					"column": 10,
 					"label": "2023.04.12 - 3.6"
 				},
 				{
-					"line": 1860,
+					"line": 1861,
 					"column": 46,
 					"label": "2023.05.24 - 3.7"
 				},
 				{
-					"line": 1951,
+					"line": 1952,
 					"column": 11,
 					"label": "2023.07.05 - 3.8"
 				},
 				{
-					"line": 2019,
+					"line": 2021,
 					"column": 11,
 					"label": "2023.08.16 - 4.0"
 				},
 				{
-					"line": 2054,
+					"line": 2059,
 					"column": 15,
 					"label": "其他"
 				},
 				{
-					"line": 2085,
+					"line": 2090,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2169,
+					"line": 2174,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 2282,
+					"line": 2287,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2374,
+					"line": 2379,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2402,
+					"line": 2407,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 2488,
+					"line": 2493,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -1084,13 +1084,13 @@
 					"label": "时间"
 				},
 				{
-					"line": 15606,
+					"line": 15886,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 15628,
-					"column": 3,
+					"line": 15910,
+					"column": 8,
 					"label": "未通过"
 				}
 			]
@@ -1099,34 +1099,39 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 15725,
-					"column": 23,
+					"line": 15926,
+					"column": 58,
+					"label": ""
+				},
+				{
+					"line": 15934,
+					"column": 2,
 					"label": "data尾"
 				},
 				{
-					"line": 15727,
-					"column": 7,
+					"line": 15937,
+					"column": 9,
 					"label": "自定义"
 				},
 				{
-					"line": 15732,
-					"column": 5,
+					"line": 15942,
+					"column": 7,
 					"label": "永久"
 				},
 				{
-					"line": 15734,
+					"line": 15944,
 					"column": 9,
 					"label": "黑名单"
 				},
 				{
-					"line": 15743,
-					"column": 9,
+					"line": 15990,
+					"column": 1,
 					"label": "需留意"
 				},
 				{
-					"line": 15816,
-					"column": 157,
-					"label": ""
+					"line": 15993,
+					"column": 1,
+					"label": "敏感词"
 				}
 			]
 		},
