@@ -184,37 +184,37 @@
 					"label": "2023.08.16 - 4.0"
 				},
 				{
-					"line": 2091,
+					"line": 2093,
 					"column": 15,
 					"label": "其他"
 				},
 				{
-					"line": 2122,
+					"line": 2124,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2206,
+					"line": 2208,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 2319,
+					"line": 2321,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2411,
+					"line": 2413,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2439,
+					"line": 2441,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 2525,
+					"line": 2527,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -429,214 +429,44 @@
 			"path": "blog/笔记/社会问题/曝光/原神/zk/原神相关推荐.html",
 			"bookmarks": [
 				{
-					"line": 21,
-					"column": 9,
-					"label": "6 完美"
-				},
-				{
-					"line": 22,
-					"column": 10,
-					"label": "5 非常好"
-				},
-				{
-					"line": 23,
-					"column": 8,
-					"label": "4 很好"
-				},
-				{
-					"line": 24,
-					"column": 7,
-					"label": "3 不错"
-				},
-				{
-					"line": 25,
-					"column": 9,
-					"label": "2 还行"
-				},
-				{
-					"line": 26,
-					"column": 7,
-					"label": "1 一般"
-				},
-				{
-					"line": 27,
-					"column": 12,
-					"label": "————"
-				},
-				{
-					"line": 58,
+					"line": 33,
 					"column": 13,
 					"label": "b：bilibili/BV"
 				},
 				{
-					"line": 59,
+					"line": 34,
 					"column": 30,
 					"label": "b2：bilibili/cv"
 				},
 				{
-					"line": 60,
+					"line": 35,
 					"column": 42,
 					"label": "2b：collectiondetail"
 				},
 				{
-					"line": 61,
+					"line": 36,
 					"column": 37,
 					"label": "2b2：seriesdetail"
 				},
 				{
-					"line": 62,
+					"line": 37,
 					"column": 30,
 					"label": "2b3：b站个人主页搜索"
 				},
 				{
-					"line": 63,
+					"line": 38,
 					"column": 14,
 					"label": "2b4：b站收藏夹"
 				},
 				{
-					"line": 64,
+					"line": 39,
 					"column": 30,
 					"label": "w2：163/album"
 				},
 				{
-					"line": 65,
+					"line": 40,
 					"column": 19,
 					"label": "y：youtube"
-				},
-				{
-					"line": 68,
-					"column": 1,
-					"label": "————"
-				},
-				{
-					"line": 75,
-					"column": 18,
-					"label": "【注意】"
-				},
-				{
-					"line": 94,
-					"column": 18,
-					"label": "【官方】"
-				},
-				{
-					"line": 142,
-					"column": 15,
-					"label": "版本和活动"
-				},
-				{
-					"line": 231,
-					"column": 14,
-					"label": "角色pv"
-				},
-				{
-					"line": 251,
-					"column": 14,
-					"label": "幕后故事"
-				},
-				{
-					"line": 259,
-					"column": 9,
-					"label": "音乐相关"
-				},
-				{
-					"line": 309,
-					"column": 8,
-					"label": "EP"
-				},
-				{
-					"line": 391,
-					"column": 15,
-					"label": "参展、联动"
-				},
-				{
-					"line": 397,
-					"column": 12,
-					"label": "短片"
-				},
-				{
-					"line": 424,
-					"column": 26,
-					"label": "【观赏类二创】"
-				},
-				{
-					"line": 441,
-					"column": 10,
-					"label": "合集"
-				},
-				{
-					"line": 467,
-					"column": 12,
-					"label": "蒙德"
-				},
-				{
-					"line": 519,
-					"column": 12,
-					"label": "璃月"
-				},
-				{
-					"line": 554,
-					"column": 12,
-					"label": "稻妻"
-				},
-				{
-					"line": 585,
-					"column": 8,
-					"label": "须弥"
-				},
-				{
-					"line": 591,
-					"column": 8,
-					"label": "其他"
-				},
-				{
-					"line": 593,
-					"column": 23,
-					"label": "【游玩类二创】"
-				},
-				{
-					"line": 610,
-					"column": 14,
-					"label": "【其他玩法】"
-				},
-				{
-					"line": 622,
-					"column": 15,
-					"label": "原学家 考究"
-				},
-				{
-					"line": 630,
-					"column": 15,
-					"label": "杂谈"
-				},
-				{
-					"line": 637,
-					"column": 15,
-					"label": "原壶 建筑"
-				},
-				{
-					"line": 651,
-					"column": 15,
-					"label": "手工"
-				},
-				{
-					"line": 673,
-					"column": 15,
-					"label": "原厨 美食"
-				},
-				{
-					"line": 681,
-					"column": 15,
-					"label": "异界旅行者"
-				},
-				{
-					"line": 688,
-					"column": 15,
-					"label": "摄影"
-				},
-				{
-					"line": 705,
-					"column": 14,
-					"label": "原史官 节奏"
 				}
 			]
 		},
