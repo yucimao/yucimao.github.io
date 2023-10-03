@@ -67,6 +67,7 @@ function dw2(o){
 
     let 并列=[0,0];
     let 排名=1;
+    let hr=1;
     for(let i=0;datb.length>i;i++){
         let 临时2=排名;
         if(datb[i][0]==并列[1]){
@@ -77,15 +78,19 @@ function dw2(o){
             并列[1]=datb[i][0];
             排名+=1;
         }
+        if(标准[hr]&&标准[hr][0]*10+10>datb[i][0]){
+            dy+="<tr><td></td><td colspan='4'><b><small>"+标准[hr][0]+"+</small> "+标准[hr][1]+"</b></td></tr>"
+            hr+=1;
+        }
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1].split("／")[0].split("<")[0]+"')\">"+datb[i][1]+"</td>";
         临时2=datb[i][0]/10;
         if(临时2>10){临时2="10+";}if(临时2<0){临时2="0-";}
         dy+="<td onclick=\"dw(dwd='"+datb[i][1].split("／")[0]+"',dwb='<table>";
         let 临时=datb[i][2];
             for(let i2=0;临时.length>i2;i2++){
-                if(打分标准[i2]){
-                    let 百分比=Math.round(临时[i2] / 打分标准[i2][1] * 10000) / 100.00;
-                    dy+="<tr><td>"+打分标准[i2][0]+"</td><td>"+临时[i2]+" / "+打分标准[i2][1]+"</td><td";
+                if(标准[0][i2]){
+                    let 百分比=Math.round(临时[i2] / 标准[0][i2][1] * 10000) / 100.00;
+                    dy+="<tr><td>"+标准[0][i2][0]+"</td><td>"+临时[i2]+" / "+标准[0][i2][1]+"</td><td";
                     if(百分比>=100){dy+=" class=［引号］ysa［引号］";}else if(百分比<0){dy+=" class=［引号］ysb［引号］";}
                     dy+=">("+百分比+ "%)</td></tr>";
                 }else{

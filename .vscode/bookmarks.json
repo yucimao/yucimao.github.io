@@ -1004,6 +1004,106 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "blog/私人/我的排行榜/娱乐_作品内外.html",
+			"bookmarks": [
+				{
+					"line": 31,
+					"column": 8,
+					"label": "TOP"
+				},
+				{
+					"line": 114,
+					"column": 9,
+					"label": "黑神话悟空"
+				},
+				{
+					"line": 120,
+					"column": 10,
+					"label": "【星穹铁道】"
+				},
+				{
+					"line": 121,
+					"column": 6,
+					"label": "剧情"
+				},
+				{
+					"line": 122,
+					"column": 6,
+					"label": "活动"
+				},
+				{
+					"line": 124,
+					"column": 7,
+					"label": "PV"
+				},
+				{
+					"line": 135,
+					"column": 9,
+					"label": "BOSS战"
+				},
+				{
+					"line": 138,
+					"column": 7,
+					"label": "动画短片"
+				},
+				{
+					"line": 146,
+					"column": 7,
+					"label": "BGM"
+				},
+				{
+					"line": 148,
+					"column": 6,
+					"label": "其他"
+				},
+				{
+					"line": 152,
+					"column": 7,
+					"label": "【原神】"
+				},
+				{
+					"line": 153,
+					"column": 5,
+					"label": "剧情"
+				},
+				{
+					"line": 203,
+					"column": 6,
+					"label": "活动"
+				},
+				{
+					"line": 223,
+					"column": 11,
+					"label": "PV"
+				},
+				{
+					"line": 289,
+					"column": 6,
+					"label": "预告"
+				},
+				{
+					"line": 291,
+					"column": 9,
+					"label": "BOSS战"
+				},
+				{
+					"line": 301,
+					"column": 6,
+					"label": "动画"
+				},
+				{
+					"line": 315,
+					"column": 7,
+					"label": "BGM"
+				},
+				{
+					"line": 334,
+					"column": 6,
+					"label": "二创"
+				}
+			]
 		}
 	]
 }
