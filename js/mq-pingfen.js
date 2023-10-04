@@ -49,13 +49,12 @@ function dw2(o){
 
     if(o==0){datb=data;}else{
         let 临时="";
-        let 临时2="";
         for(let i=0;关键词.length>i;i++){
             if(i!=0){临时+=",";}
             临时+="<a onclick=\"取消('"+关键词[i]+"')\">"+关键词[i]+"</a>";
-            if(说明[关键词[i]]){临时2+="<br><b>"+关键词[i]+"</b>："+说明[关键词[i]]}
+            if(说明[关键词[i]]){临时+="<sup><a onclick=\"dw(dwb='"+说明[关键词[i]]+"',dwd='"+关键词[i]+"')\">[注]</a></sup>"}
         }
-        dy="<h2 style='display:inline;'>"+临时+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+临时2+dy;
+        dy="<h2 style='display:inline;'>"+临时+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+dy;
         datb=[];
         for(let i=0;data.length>i;i++){
             谁复特=1;
