@@ -1034,72 +1034,67 @@
 					"label": "活动"
 				},
 				{
-					"line": 124,
-					"column": 7,
-					"label": "PV"
+					"line": 125,
+					"column": 8,
+					"label": "角色"
 				},
 				{
-					"line": 135,
+					"line": 183,
 					"column": 9,
 					"label": "BOSS战"
 				},
 				{
-					"line": 138,
+					"line": 186,
 					"column": 7,
 					"label": "动画短片"
 				},
 				{
-					"line": 146,
+					"line": 198,
 					"column": 7,
 					"label": "BGM"
 				},
 				{
-					"line": 148,
-					"column": 6,
-					"label": "其他"
-				},
-				{
-					"line": 152,
+					"line": 202,
 					"column": 7,
 					"label": "【原神】"
 				},
 				{
-					"line": 153,
+					"line": 203,
 					"column": 5,
 					"label": "剧情"
 				},
 				{
-					"line": 203,
+					"line": 253,
 					"column": 6,
 					"label": "活动"
 				},
 				{
-					"line": 223,
+					"line": 274,
 					"column": 11,
 					"label": "PV"
 				},
 				{
-					"line": 289,
+					"line": 340,
 					"column": 6,
 					"label": "预告"
 				},
 				{
-					"line": 291,
+					"line": 342,
 					"column": 9,
 					"label": "BOSS战"
 				},
 				{
-					"line": 301,
+					"line": 352,
 					"column": 6,
 					"label": "动画"
 				},
 				{
-					"line": 315,
+					"line": 366,
 					"column": 7,
 					"label": "BGM"
 				},
 				{
-					"line": 334,
+					"line": 385,
 					"column": 6,
 					"label": "二创"
 				}
