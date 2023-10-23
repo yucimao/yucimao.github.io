@@ -1,232 +1,312 @@
 {
 	"files": [
 		{
+			"path": "../../【小像素点】",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../../目录/小像素点.html",
+			"bookmarks": [
+				{
+					"line": 16431,
+					"column": 69,
+					"label": ""
+				},
+				{
+					"line": 16437,
+					"column": 2,
+					"label": "data尾"
+				},
+				{
+					"line": 16440,
+					"column": 9,
+					"label": "自定义"
+				},
+				{
+					"line": 16445,
+					"column": 7,
+					"label": "永久"
+				},
+				{
+					"line": 16447,
+					"column": 9,
+					"label": "黑名单"
+				},
+				{
+					"line": 16499,
+					"column": 1,
+					"label": "需留意"
+				},
+				{
+					"line": 16502,
+					"column": 1,
+					"label": "敏感词"
+				}
+			]
+		},
+		{
+			"path": "../xn-o1qx19eeqi.github.io/i/b.html",
+			"bookmarks": [
+				{
+					"line": 27,
+					"column": 64,
+					"label": "时间"
+				},
+				{
+					"line": 16381,
+					"column": 5,
+					"label": "通过"
+				},
+				{
+					"line": 16411,
+					"column": 8,
+					"label": "未通过"
+				}
+			]
+		},
+		{
+			"path": "../../【原神相关】",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
 			"path": "blog/笔记/社会问题/曝光/原神/原神节奏.html",
 			"bookmarks": [
 				{
-					"line": 185,
+					"line": 186,
 					"column": 1,
 					"label": "注释"
 				},
 				{
-					"line": 267,
+					"line": 268,
 					"column": 13,
 					"label": "目录"
 				},
 				{
-					"line": 323,
+					"line": 325,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 363,
+					"line": 365,
 					"column": 6,
 					"label": "简述"
 				},
 				{
-					"line": 391,
+					"line": 393,
 					"column": 30,
 					"label": "原神之前"
 				},
 				{
-					"line": 413,
+					"line": 415,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 424,
+					"line": 426,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 473,
+					"line": 475,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 566,
+					"line": 568,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 590,
+					"line": 592,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
 				{
-					"line": 621,
+					"line": 623,
 					"column": 25,
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 729,
+					"line": 731,
 					"column": 8,
 					"label": "2020.11.11 - 1.1"
 				},
 				{
-					"line": 793,
+					"line": 795,
 					"column": 18,
 					"label": "2020.12.23 - 1.2"
 				},
 				{
-					"line": 827,
+					"line": 829,
 					"column": 11,
 					"label": "2021.02.03 - 1.3"
 				},
 				{
-					"line": 867,
+					"line": 869,
 					"column": 13,
 					"label": "2021.03.17 - 1.4"
 				},
 				{
-					"line": 900,
+					"line": 902,
 					"column": 23,
 					"label": "2021.04.28 - 1.5"
 				},
 				{
-					"line": 940,
+					"line": 942,
 					"column": 21,
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 991,
+					"line": 993,
 					"column": 15,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 1038,
+					"line": 1040,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 1078,
+					"line": 1080,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 1105,
+					"line": 1107,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1162,
+					"line": 1164,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1205,
+					"line": 1207,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1232,
+					"line": 1234,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1274,
+					"line": 1276,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1316,
+					"line": 1318,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1365,
+					"line": 1367,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1474,
+					"line": 1476,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1525,
+					"line": 1527,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1598,
+					"line": 1600,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1656,
+					"line": 1658,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1723,
+					"line": 1725,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1784,
+					"line": 1786,
 					"column": 10,
 					"label": "2023.04.12 - 3.6"
 				},
 				{
-					"line": 1878,
+					"line": 1880,
 					"column": 46,
 					"label": "2023.05.24 - 3.7"
 				},
 				{
-					"line": 1970,
+					"line": 1972,
 					"column": 11,
 					"label": "2023.07.05 - 3.8"
 				},
 				{
-					"line": 2042,
+					"line": 2044,
 					"column": 11,
 					"label": "2023.08.16 - 4.0"
 				},
 				{
-					"line": 2116,
+					"line": 2122,
 					"column": 14,
 					"label": "2023.09.27 - 4.1"
 				},
 				{
-					"line": 2136,
+					"line": 2158,
 					"column": 15,
 					"label": "其他"
 				},
 				{
-					"line": 2167,
+					"line": 2189,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2252,
+					"line": 2274,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 2365,
+					"line": 2387,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2457,
+					"line": 2479,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2485,
+					"line": 2507,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 2571,
+					"line": 2593,
 					"column": 0,
 					"label": "底层代码"
 				}
 			]
 		},
 		{
-			"path": "blog/笔记/酒仙笔记/原神.html",
+			"path": "blog/笔记/酒仙笔记/酒仙_原神.html",
 			"bookmarks": [
 				{
 					"line": 39,
@@ -501,81 +581,6 @@
 			]
 		},
 		{
-			"path": "../../目录/物品位置.html",
-			"bookmarks": [
-				{
-					"line": 22,
-					"column": 18,
-					"label": "【客厅】"
-				},
-				{
-					"line": 23,
-					"column": 22,
-					"label": "鞋柜"
-				},
-				{
-					"line": 26,
-					"column": 21,
-					"label": "零食柜"
-				},
-				{
-					"line": 33,
-					"column": 20,
-					"label": "二扯电脑桌"
-				},
-				{
-					"line": 39,
-					"column": 15,
-					"label": "猫球角落"
-				},
-				{
-					"line": 48,
-					"column": 19,
-					"label": "【厨房】"
-				},
-				{
-					"line": 103,
-					"column": 24,
-					"label": "厨房外桌子"
-				},
-				{
-					"line": 104,
-					"column": 21,
-					"label": "工具箱"
-				},
-				{
-					"line": 113,
-					"column": 18,
-					"label": "大药箱"
-				},
-				{
-					"line": 116,
-					"column": 27,
-					"label": "【主卧】"
-				},
-				{
-					"line": 158,
-					"column": 29,
-					"label": "【卫生间】"
-				},
-				{
-					"line": 201,
-					"column": 18,
-					"label": "【不常用】"
-				},
-				{
-					"line": 203,
-					"column": 25,
-					"label": "搬家用"
-				},
-				{
-					"line": 150,
-					"column": 1,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "blog/笔记/社会问题/曝光/原神/zk/原神考古.html",
 			"bookmarks": [
 				{
@@ -786,212 +791,12 @@
 			]
 		},
 		{
-			"path": "blog/笔记/社会问题/曝光/原神/zk/原神考古：关于真相.html",
+			"path": "../../【其他】",
 			"bookmarks": [
 				{
-					"line": 31,
-					"column": 13,
-					"label": "2017.01.20 - 研发"
-				},
-				{
-					"line": 38,
-					"column": 17,
-					"label": "2019.06.08 - 公布pv"
-				},
-				{
-					"line": 45,
-					"column": 16,
-					"label": "2019.06.21 - 一测"
-				},
-				{
-					"line": 50,
-					"column": 13,
-					"label": "2020.03.19 - 二测"
-				},
-				{
-					"line": 57,
-					"column": 10,
-					"label": "2020.06.12 - 三测"
-				},
-				{
-					"line": 64,
-					"column": 16,
-					"label": "2020.09.15 - 1.0"
-				},
-				{
-					"line": 71,
-					"column": 35,
-					"label": "2020.11.11 - 1.1"
-				},
-				{
-					"line": 76,
-					"column": 25,
-					"label": "2020.12.23 - 1.2"
-				},
-				{
-					"line": 81,
-					"column": 21,
-					"label": "2021.02.03 - 1.3"
-				},
-				{
-					"line": 86,
-					"column": 25,
-					"label": "2021.03.17 - 1.4"
-				},
-				{
-					"line": 91,
-					"column": 20,
-					"label": "2021.04.28 - 1.5"
-				},
-				{
-					"line": 96,
-					"column": 18,
-					"label": "2021.06.09 - 1.6"
-				},
-				{
-					"line": 103,
-					"column": 24,
-					"label": "2021.07.21 - 2.0"
-				},
-				{
-					"line": 108,
-					"column": 24,
-					"label": "2021.09.01 - 2.1"
-				},
-				{
-					"line": 113,
-					"column": 20,
-					"label": "2021.10.13 - 2.2"
-				},
-				{
-					"line": 118,
-					"column": 23,
-					"label": "2021.11.24 - 2.3"
-				},
-				{
-					"line": 123,
-					"column": 14,
-					"label": "2022.01.05 - 2.4"
-				},
-				{
-					"line": 128,
-					"column": 31,
-					"label": "2022.02.16 - 2.5"
-				},
-				{
-					"line": 133,
-					"column": 25,
-					"label": "2022.03.31 - 2.6"
-				},
-				{
-					"line": 138,
-					"column": 21,
-					"label": "2022.06.01 - 2.7"
-				},
-				{
-					"line": 143,
-					"column": 28,
-					"label": "2022.07.13 - 2.8"
-				},
-				{
-					"line": 148,
-					"column": 17,
-					"label": "2022.08.24 - 3.0"
-				},
-				{
-					"line": 153,
-					"column": 9,
-					"label": "2022.09.28 - 3.1"
-				},
-				{
-					"line": 158,
-					"column": 22,
-					"label": "2022.11.02 - 3.2"
-				},
-				{
-					"line": 163,
-					"column": 19,
-					"label": "2022.12.07 - 3.3"
-				},
-				{
-					"line": 168,
-					"column": 25,
-					"label": "2023.01.18 - 3.4"
-				},
-				{
-					"line": 173,
-					"column": 22,
-					"label": "2023.03.01 - 3.5"
-				},
-				{
-					"line": 186,
-					"column": 26,
-					"label": "2023.04.12 - 3.6"
-				},
-				{
-					"line": 227,
-					"column": 18,
-					"label": "2023.05.24 - 3.7"
-				}
-			]
-		},
-		{
-			"path": "../xn-o1qx19eeqi.github.io/i/b.html",
-			"bookmarks": [
-				{
-					"line": 27,
-					"column": 64,
-					"label": "时间"
-				},
-				{
-					"line": 16276,
-					"column": 5,
-					"label": "通过"
-				},
-				{
-					"line": 16305,
-					"column": 8,
-					"label": "未通过"
-				}
-			]
-		},
-		{
-			"path": "../../目录/小像素点.html",
-			"bookmarks": [
-				{
-					"line": 16326,
-					"column": 100,
+					"line": 0,
+					"column": 0,
 					"label": ""
-				},
-				{
-					"line": 16331,
-					"column": 2,
-					"label": "data尾"
-				},
-				{
-					"line": 16334,
-					"column": 9,
-					"label": "自定义"
-				},
-				{
-					"line": 16339,
-					"column": 7,
-					"label": "永久"
-				},
-				{
-					"line": 16341,
-					"column": 9,
-					"label": "黑名单"
-				},
-				{
-					"line": 16393,
-					"column": 1,
-					"label": "需留意"
-				},
-				{
-					"line": 16396,
-					"column": 1,
-					"label": "敏感词"
 				}
 			]
 		},
@@ -1001,6 +806,81 @@
 				{
 					"line": 0,
 					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../../目录/物品位置.html",
+			"bookmarks": [
+				{
+					"line": 22,
+					"column": 18,
+					"label": "【客厅】"
+				},
+				{
+					"line": 23,
+					"column": 22,
+					"label": "鞋柜"
+				},
+				{
+					"line": 26,
+					"column": 21,
+					"label": "零食柜"
+				},
+				{
+					"line": 33,
+					"column": 20,
+					"label": "二扯电脑桌"
+				},
+				{
+					"line": 39,
+					"column": 15,
+					"label": "猫球角落"
+				},
+				{
+					"line": 48,
+					"column": 19,
+					"label": "【厨房】"
+				},
+				{
+					"line": 103,
+					"column": 24,
+					"label": "厨房外桌子"
+				},
+				{
+					"line": 104,
+					"column": 21,
+					"label": "工具箱"
+				},
+				{
+					"line": 113,
+					"column": 18,
+					"label": "大药箱"
+				},
+				{
+					"line": 116,
+					"column": 27,
+					"label": "【主卧】"
+				},
+				{
+					"line": 158,
+					"column": 29,
+					"label": "【卫生间】"
+				},
+				{
+					"line": 201,
+					"column": 18,
+					"label": "【不常用】"
+				},
+				{
+					"line": 203,
+					"column": 25,
+					"label": "搬家用"
+				},
+				{
+					"line": 150,
+					"column": 1,
 					"label": ""
 				}
 			]
