@@ -84,7 +84,7 @@
 			"path": "blog/笔记/社会问题/曝光/原神/原神节奏.html",
 			"bookmarks": [
 				{
-					"line": 186,
+					"line": 9,
 					"column": 1,
 					"label": "注释"
 				},
@@ -269,37 +269,37 @@
 					"label": "2023.09.27 - 4.1"
 				},
 				{
-					"line": 2158,
+					"line": 2160,
 					"column": 15,
 					"label": "其他"
 				},
 				{
-					"line": 2189,
+					"line": 2191,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2274,
+					"line": 2276,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 2387,
+					"line": 2389,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2479,
+					"line": 2481,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2507,
+					"line": 2509,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 2593,
+					"line": 2595,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -894,89 +894,94 @@
 					"label": "TOP"
 				},
 				{
-					"line": 117,
-					"column": 9,
-					"label": "黑神话悟空"
-				},
-				{
-					"line": 123,
+					"line": 113,
 					"column": 10,
 					"label": "【星穹铁道】"
 				},
 				{
-					"line": 124,
+					"line": 114,
 					"column": 6,
 					"label": "剧情"
 				},
 				{
-					"line": 125,
+					"line": 115,
 					"column": 6,
 					"label": "活动"
 				},
 				{
-					"line": 128,
+					"line": 118,
 					"column": 8,
 					"label": "角色"
 				},
 				{
-					"line": 186,
+					"line": 176,
 					"column": 9,
 					"label": "BOSS战"
 				},
 				{
-					"line": 189,
+					"line": 179,
 					"column": 7,
 					"label": "动画短片"
 				},
 				{
-					"line": 201,
+					"line": 191,
 					"column": 7,
 					"label": "BGM"
 				},
 				{
-					"line": 205,
+					"line": 195,
 					"column": 7,
 					"label": "【原神】"
 				},
 				{
-					"line": 206,
+					"line": 196,
 					"column": 5,
 					"label": "剧情"
 				},
 				{
-					"line": 256,
+					"line": 246,
 					"column": 6,
 					"label": "活动"
 				},
 				{
-					"line": 277,
+					"line": 267,
 					"column": 11,
 					"label": "PV"
 				},
 				{
-					"line": 343,
+					"line": 333,
 					"column": 6,
 					"label": "预告"
 				},
 				{
-					"line": 345,
+					"line": 335,
 					"column": 9,
 					"label": "BOSS战"
 				},
 				{
-					"line": 355,
+					"line": 345,
 					"column": 6,
 					"label": "动画"
 				},
 				{
-					"line": 369,
+					"line": 359,
 					"column": 7,
 					"label": "BGM"
 				},
 				{
-					"line": 388,
+					"line": 378,
 					"column": 6,
 					"label": "二创"
+				},
+				{
+					"line": 385,
+					"column": 8,
+					"label": "«黑神话悟空»"
+				},
+				{
+					"line": 394,
+					"column": 7,
+					"label": "«明日方舟»"
 				}
 			]
 		}
