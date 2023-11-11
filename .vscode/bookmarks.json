@@ -264,42 +264,47 @@
 					"label": "2023.08.16 - 4.0"
 				},
 				{
-					"line": 2124,
+					"line": 2123,
 					"column": 14,
 					"label": "2023.09.27 - 4.1"
 				},
 				{
-					"line": 2167,
+					"line": 2161,
+					"column": 5,
+					"label": "2023.11.08 - 4.2"
+				},
+				{
+					"line": 2193,
 					"column": 15,
 					"label": "其他"
 				},
 				{
-					"line": 2198,
+					"line": 2224,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2283,
+					"line": 2298,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 2396,
+					"line": 2411,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2488,
+					"line": 2503,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2516,
+					"line": 2531,
 					"column": 13,
 					"label": "游戏建议"
 				},
 				{
-					"line": 2602,
+					"line": 2624,
 					"column": 0,
 					"label": "底层代码"
 				}
