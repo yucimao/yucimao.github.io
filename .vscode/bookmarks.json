@@ -14,37 +14,37 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 16507,
-					"column": 14,
+					"line": 16581,
+					"column": 7,
 					"label": ""
 				},
 				{
-					"line": 16512,
+					"line": 16585,
 					"column": 2,
 					"label": "data尾"
 				},
 				{
-					"line": 16515,
+					"line": 16588,
 					"column": 9,
 					"label": "自定义"
 				},
 				{
-					"line": 16520,
+					"line": 16593,
 					"column": 7,
 					"label": "永久"
 				},
 				{
-					"line": 16522,
+					"line": 16595,
 					"column": 9,
 					"label": "黑名单"
 				},
 				{
-					"line": 16574,
+					"line": 16651,
 					"column": 1,
 					"label": "需留意"
 				},
 				{
-					"line": 16577,
+					"line": 16654,
 					"column": 1,
 					"label": "敏感词"
 				}
@@ -59,12 +59,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 16453,
+					"line": 16525,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 16488,
+					"line": 16562,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -89,222 +89,217 @@
 					"label": "注释"
 				},
 				{
-					"line": 268,
+					"line": 271,
 					"column": 13,
 					"label": "目录"
 				},
 				{
-					"line": 325,
+					"line": 328,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 365,
+					"line": 368,
 					"column": 6,
 					"label": "简述"
 				},
 				{
-					"line": 393,
+					"line": 396,
 					"column": 30,
 					"label": "原神之前"
 				},
 				{
-					"line": 415,
+					"line": 418,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 426,
+					"line": 429,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 475,
+					"line": 478,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 568,
+					"line": 571,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 592,
+					"line": 595,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
 				{
-					"line": 623,
+					"line": 626,
 					"column": 25,
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 731,
+					"line": 734,
 					"column": 8,
 					"label": "2020.11.11 - 1.1"
 				},
 				{
-					"line": 796,
+					"line": 799,
 					"column": 18,
 					"label": "2020.12.23 - 1.2"
 				},
 				{
-					"line": 830,
+					"line": 833,
 					"column": 11,
 					"label": "2021.02.03 - 1.3"
 				},
 				{
-					"line": 870,
+					"line": 873,
 					"column": 13,
 					"label": "2021.03.17 - 1.4"
 				},
 				{
-					"line": 903,
+					"line": 906,
 					"column": 23,
 					"label": "2021.04.28 - 1.5"
 				},
 				{
-					"line": 943,
+					"line": 946,
 					"column": 21,
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 994,
+					"line": 997,
 					"column": 15,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 1041,
+					"line": 1044,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 1081,
+					"line": 1084,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 1108,
+					"line": 1111,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1165,
+					"line": 1168,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1208,
+					"line": 1211,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1235,
+					"line": 1238,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1277,
+					"line": 1280,
 					"column": 27,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1319,
+					"line": 1324,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1368,
+					"line": 1373,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1477,
+					"line": 1482,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1528,
+					"line": 1533,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1601,
+					"line": 1606,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1659,
+					"line": 1664,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1726,
+					"line": 1731,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1787,
+					"line": 1792,
 					"column": 10,
 					"label": "2023.04.12 - 3.6"
 				},
 				{
-					"line": 1881,
+					"line": 1886,
 					"column": 46,
 					"label": "2023.05.24 - 3.7"
 				},
 				{
-					"line": 1974,
+					"line": 1981,
 					"column": 11,
 					"label": "2023.07.05 - 3.8"
 				},
 				{
-					"line": 2046,
+					"line": 2053,
 					"column": 11,
 					"label": "2023.08.16 - 4.0"
 				},
 				{
-					"line": 2123,
+					"line": 2132,
 					"column": 14,
 					"label": "2023.09.27 - 4.1"
 				},
 				{
-					"line": 2161,
+					"line": 2170,
 					"column": 5,
 					"label": "2023.11.08 - 4.2"
 				},
 				{
-					"line": 2193,
+					"line": 2212,
 					"column": 15,
 					"label": "其他"
 				},
 				{
-					"line": 2224,
+					"line": 2243,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2298,
+					"line": 2317,
 					"column": 12,
 					"label": "我对原神的看法"
 				},
 				{
-					"line": 2411,
+					"line": 2430,
 					"column": 10,
 					"label": "回网友评论"
 				},
 				{
-					"line": 2503,
+					"line": 2522,
 					"column": 8,
 					"label": "私人内容"
 				},
 				{
-					"line": 2531,
-					"column": 13,
-					"label": "游戏建议"
-				},
-				{
-					"line": 2624,
+					"line": 2581,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -739,57 +734,57 @@
 			"path": "blog/笔记/社会问题/曝光/原神/zk/其他游戏节奏.html",
 			"bookmarks": [
 				{
-					"line": 18,
+					"line": 42,
 					"column": 18,
 					"label": "2007"
 				},
 				{
-					"line": 21,
+					"line": 52,
 					"column": 18,
 					"label": "2014"
 				},
 				{
-					"line": 26,
+					"line": 57,
 					"column": 17,
 					"label": "2015"
 				},
 				{
-					"line": 30,
+					"line": 61,
 					"column": 13,
 					"label": "2016"
 				},
 				{
-					"line": 39,
+					"line": 70,
 					"column": 14,
 					"label": "2017"
 				},
 				{
-					"line": 42,
+					"line": 73,
 					"column": 18,
 					"label": "2018"
 				},
 				{
-					"line": 53,
+					"line": 85,
 					"column": 15,
 					"label": "2019"
 				},
 				{
-					"line": 69,
+					"line": 103,
 					"column": 16,
 					"label": "2020"
 				},
 				{
-					"line": 79,
+					"line": 115,
 					"column": 15,
 					"label": "2021"
 				},
 				{
-					"line": 108,
+					"line": 147,
 					"column": 14,
 					"label": "2022"
 				},
 				{
-					"line": 122,
+					"line": 166,
 					"column": 15,
 					"label": "2023"
 				}
@@ -894,99 +889,114 @@
 			"path": "blog/私人/我的排行榜/娱乐_作品内外.html",
 			"bookmarks": [
 				{
-					"line": 31,
+					"line": 32,
 					"column": 8,
 					"label": "TOP"
 				},
 				{
-					"line": 113,
+					"line": 114,
 					"column": 10,
 					"label": "【星穹铁道】"
 				},
 				{
-					"line": 114,
+					"line": 115,
 					"column": 6,
 					"label": "剧情"
 				},
 				{
-					"line": 115,
+					"line": 116,
 					"column": 6,
 					"label": "活动"
 				},
 				{
-					"line": 118,
+					"line": 119,
 					"column": 8,
-					"label": "角色"
+					"label": "预告、角色、技能动画"
 				},
 				{
-					"line": 176,
+					"line": 177,
 					"column": 9,
 					"label": "BOSS战"
 				},
 				{
-					"line": 179,
+					"line": 180,
 					"column": 7,
 					"label": "动画短片"
 				},
 				{
-					"line": 191,
+					"line": 192,
 					"column": 7,
 					"label": "BGM"
 				},
 				{
-					"line": 195,
+					"line": 196,
 					"column": 7,
 					"label": "【原神】"
 				},
 				{
-					"line": 196,
+					"line": 197,
+					"column": 4,
+					"label": "元素"
+				},
+				{
+					"line": 273,
 					"column": 5,
 					"label": "剧情"
 				},
 				{
-					"line": 246,
+					"line": 329,
 					"column": 6,
 					"label": "活动"
 				},
 				{
-					"line": 267,
+					"line": 350,
 					"column": 11,
 					"label": "PV"
 				},
 				{
-					"line": 333,
+					"line": 446,
 					"column": 6,
 					"label": "预告"
 				},
 				{
-					"line": 335,
+					"line": 450,
 					"column": 9,
 					"label": "BOSS战"
 				},
 				{
-					"line": 345,
+					"line": 460,
 					"column": 6,
 					"label": "动画"
 				},
 				{
-					"line": 359,
+					"line": 495,
 					"column": 7,
 					"label": "BGM"
 				},
 				{
-					"line": 378,
+					"line": 514,
 					"column": 6,
 					"label": "二创"
 				},
 				{
-					"line": 385,
+					"line": 521,
 					"column": 8,
 					"label": "«黑神话悟空»"
 				},
 				{
-					"line": 394,
+					"line": 530,
 					"column": 7,
 					"label": "«明日方舟»"
+				}
+			]
+		},
+		{
+			"path": "../../文件/工作台/废案.txt",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
 				}
 			]
 		}
