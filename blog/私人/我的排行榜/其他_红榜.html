@@ -1,0 +1,86 @@
+---
+layout: page2
+title: 红榜
+nav_text: 红榜
+nav_url: <a href="/pingfen">我的排行榜</a>
+permalink: pingfen/hongbang
+redirect_from:
+ - dafen/hongbang
+ - 打分/红榜
+---
+<link rel="stylesheet" href="/css/all2.css">
+<div id="结果"></div>
+<script>
+    let a={
+        0:"<sup onclick=\"this.innerHTML='",1:"';\">[?]</sup>",
+    }
+
+    let b={
+        // "摇一摇广告":a[0]+"摇晃手机就会跳转的广告"+a[1],
+    }
+
+    let d=[
+        //hr,标题,其他说明
+        //标题,说明,额外说明
+        ["hr","IP"],
+        ["宝可梦",""],
+        ["米哈游","原神＝星穹铁道＞绝区零"],
+        ["DC","蝙蝠侠＞超人"],
+        ["JOJO的奇妙冒险",""],
+        ["暴雪","魔兽世界＞暗黑破坏神"],
+        ["迪士尼","小熊维尼＞米老鼠＞公主"],
+        ["马里奥",""],
+        ["环球影业","欢乐好声音＞小黄人"],
+        ["漫威",""],
+        // ["",""],
+        // ["",""],
+
+        
+        // ["hr","其他分类",
+        //     "<h4><a href=\"{{ site.mq_cafe }}/limaoqiu.com/漫展记录\">漫展</a></h4>"
+        // ],
+        // [""],
+        // [""],
+    ];
+
+let dy="";
+
+let t=10;
+let 记=0,录=0;
+
+for(let i=0;d.length>i;i++){
+    if(d[i][0]=="hr"){
+        if(i!=0){dy+="</ol>";}
+        if(录>=t){dy+="</div>"}
+        记+=1;
+        dy+="<h3>"+d[i][1]+"</h3>";
+        if(d[i][2]){dy+=d[i][2]}
+        dy+="<ol>";
+    }else{
+
+        录+=1;
+        if(录==t){
+            dy+="<a onclick=\"显示('_"+记+"')\" id='显示_"+记+"'><b>更多</b></a><div id='隐藏_"+记+"' style='display:none;'>";
+        }
+
+        dy+="<li>";
+            if(d[i][0]){
+                dy+="<b>"+d[i][0]+"</b>";
+                if(d[i][1]){dy+="："}
+            }
+            if(d[i][1]){dy+=d[i][1]}
+            if(d[i][2]){
+                dy+=" <fieldset id='隐藏"+i+"' style='display:none;'><legend>";
+                if(d[i][0]){dy+=d[i][0]}else{dy+="　"}
+                dy+="</legend>"+d[i][2]+"</fieldset><a onclick='显示("+i+")' id='显示"+i+"'>详情</a>";
+            }
+        dy+="</li>";
+    }
+}
+document.getElementById("结果").innerHTML=dy+"</ol>";
+
+function 显示(o){
+    document.getElementById("显示"+o).style="display:none;";
+    document.getElementById("隐藏"+o).style="";
+}
+</script>
