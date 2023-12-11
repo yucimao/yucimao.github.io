@@ -1,0 +1,99 @@
+---
+layout: page2
+title: 猜敏感词
+nav_text: 猜敏感词
+permalink: game/caiminganci
+nav_url: <a href="/youxiji">游戏机</a>
+---
+<link rel="stylesheet" href="/css/all2.css">
+
+<div id="上一题"></div>
+
+<p id="dy"></p>
+<a onclick="开始()" id="公布答案">公布答案</a><br>
+
+<br>
+
+<small>
+（当前是第<span id="题"></span>题）<br>
+<!-- <a onclick="localStorage.setItem('敏感词小游戏',问题-1)">保存进度</a><br> -->
+跳到第<input type='text' autocomplete='off' id='跳关' style="width:3em">题 
+<a onclick="localStorage.setItem('敏感词小游戏',document.getElementById('跳关').value-1);location.replace(location.href)">确定</a><br>
+<a onclick="localStorage.removeItem('敏感词小游戏');location.replace(location.href)">删除存档</a><br>
+</small>
+
+<script>
+    let d=[
+        ["不要让","我操","心"],
+        ["他蹲","下身","捡起什么"],
+        ["他生","性爱","自由"],
+        ["他的表","情欲","言又止"],
+        ["这下你可惹上","大麻","烦了"],
+        ["晚上可以和精华","乳交","替使用"],
+        ["具","体位","置","你现在的具","置在哪？"],
+        ["强","调教","师的专业性"],
+        ["接下来就要","靠","你自己了"],
+        ["理","性爱","国","倡导理"],
+        ["他推","开房","门"],
+        ["陛","下体","恤民情"],
+        ["DN","A片","段"],
+        ["白","色情","人节","今天是白","人节，是个浪漫的节日"],
+        ["众","人大","喊","见状，众","喊：救命啊——"],
+        ["帝","国军","队","强大的帝","队整装待发"],
+        ["一","波推","平了敌军","在战场上，苏联军队一","平了德国军队"],
+        ["","我靠","着墙壁"],
+        ["这是买给妈","妈的","礼物"],
+        ["黑","夜总会","过去",,"过去，光明才是永恒的"],
+        ["冻得我","快感","冒了"],
+        ["那是","我日","夜思念的人"],
+        ["拒绝","做爱","情的奴隶"],
+        ["红","色魔","法帽"],
+        // [""],
+        // ","
+
+    ];
+    // let arr;function 随机(){let _arr=arr.slice();for(let i=0;i<_arr.length;i++){let j=getRandomInt(0,i);let t=_arr[i];_arr[i]=_arr[j];_arr[j]=t;}function getRandomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}arr=_arr;}
+    // arr=d;
+    // 随机();
+    // d=arr;
+    let 问题=localStorage.getItem("敏感词小游戏"),选项,答案;
+    if(问题){问题=问题*1;}else{问题=0;}
+    let 开玩=0;
+
+    function 开始(o){
+        if(开玩==0){开玩=1}else{
+            document.getElementById("上一题").innerHTML=document.getElementById("上一题").innerHTML+"<p>"+d[问题-1][0]+"<b>"+d[问题-1][1]+"</b>"+d[问题-1][2]+"</p>";
+            localStorage.setItem('敏感词小游戏',问题-1)
+        }
+        let dy;
+        if(问题>=d.length){
+            document.getElementById("dy").innerHTML="已经没题了。";
+            document.getElementById("公布答案").innerHTML="";
+        }else{
+            答案=d[问题][1];
+            dy="<span id='前'>"+d[问题][0]+"</span><input type='text' placeholder='"+答案.length+"字' autocomplete='off' id='输入' style='width:"+(答案.length+1)+"em'><span id='后'>"+d[问题][2]+"</span>　<a onclick='确定()'>确定</a>";
+            if(d[问题][3]||d[问题][4]){
+                dy+="<sup id='提示'>　<a onclick=\"提示()\">[提示]</a></sup>"
+            }
+            问题+=1;
+            document.getElementById("dy").innerHTML=dy;
+        }
+        document.getElementById("题").innerHTML=问题+"/"+d.length;
+    }
+    开始();
+
+    function 确定(){
+        if(document.getElementById("输入").value==答案){
+            try{notyf.confirm("回答正确")}catch(e){alert("回答正确");}
+            开始();
+        }else{
+            try{notyf.alert("回答错误");}catch(e){alert("回答错误");}
+        }
+    }
+
+    function 提示(){
+        document.getElementById("提示").innerHTML="";
+        if(d[问题-1][3]){document.getElementById("前").innerHTML=d[问题-1][3];}
+        if(d[问题-1][4]){document.getElementById("后").innerHTML=d[问题-1][4];}
+    }
+</script>
