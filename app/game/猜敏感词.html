@@ -23,77 +23,100 @@ nav_url: <a href="/youxiji">游戏机</a>
 </small>
 
 <script>
-    let d=[
-        ["不要让","我操","心"],
-        ["他蹲","下身","捡起什么"],
-        ["他生","性爱","自由"],
-        ["他的表","情欲","言又止"],
-        ["这下你可惹上","大麻","烦了"],
-        ["晚上可以和精华","乳交","替使用"],
-        ["具","体位","置","你现在的具","置在哪？"],
-        ["强","调教","师的专业性"],
-        ["接下来就要","靠","你自己了"],
-        ["理","性爱","国","倡导理"],
-        ["他推","开房","门"],
-        ["陛","下体","恤民情"],
-        ["DN","A片","段"],
-        ["白","色情","人节","今天是白","人节，是个浪漫的节日"],
-        ["众","人大","喊","见状，众","喊：救命啊——"],
-        ["帝","国军","队","强大的帝","队整装待发"],
-        ["一","波推","平了敌军","在战场上，苏联军队一","平了德国军队"],
-        ["","我靠","着墙壁"],
-        ["这是买给妈","妈的","礼物"],
-        ["黑","夜总会","过去",,"过去，光明才是永恒的"],
-        ["冻得我","快感","冒了"],
-        ["那是","我日","夜思念的人"],
-        ["拒绝","做爱","情的奴隶"],
-        ["红","色魔","法帽"],
-        // [""],
-        // ","
+let d=[
+    ["不要让","我操","心"],
+    ["他蹲","下身","捡起什么"],
+    ["他生","性爱","自由"],
+    ["他的表","情欲","言又止"],
+    ["这下你可惹上","大麻","烦了"],
+    ["晚上可以和精华","乳交","替使用"],
+    ["具","体位","置","你现在的具","置在哪？"],
+    ["强","调教","师的专业性"],
+    ["接下来就要","靠","你自己了"],
+    ["理","性爱","国","倡导理"],
+    ["他推","开房","门"],
+    ["陛","下体","恤民情"],
+    ["DN","A片","段"],
+    ["白","色情","人节","今天是白","人节，是个浪漫的节日"],
+    ["众","人大","喊","见状，众","喊：救命啊——"],
+    ["帝","国军","队","强大的帝","队整装待发"],
+    ["一","波推","平了敌军","在战场上，苏联军队一","平了德国军队"],
+    ["","我靠","着墙壁"],
+    ["这是买给妈","妈的","礼物"],
+    ["黑","夜总会","过去",,"过去，光明才是永恒的"],
+    ["冻得我","快感","冒了"],
+    ["那是","我日","夜思念的人"],
+    ["拒绝","做爱","情的奴隶"],
+    ["红","色魔","法帽","戴着红","法帽的人凭空出现了"],
+    ["我爹爹今","日逼","你做了选择"],
+    ["量了","下体","温"],
+    ["工会这边最好一次","性交","接清楚"],
+    ["狼","群交","流会嚎叫或用身体语言"],
+    ["摆上","几把","小椅，泡上一壶清茶，茶香袅袅，清风徐来"],
+    ["他的梦想就是","做爱","豆",,"豆，成为舞台上最耀眼的人"],
+    ["花里胡哨的衣服，粉","白粉","白的脸蛋，傻乎乎的大笑容"],
+    ["要不然将那食铁","兽交","给掌门保管"],
+    ["日","色欲","尽花含烟，月明欲素愁不眠"],
+    ["小孩子天","性爱","玩"],
+    ["这样的不真实感，是此刻所有人心","中共","有的"],
+    ["他打了个哈","欠干","脆钻进了被子里"],
+    ["他咬了一","口爆","浆软糖"],
+    ["在","下体","弱","他说：“在","弱多病”"],
+    ["我奶","奶头","疼"],
+    ["他对小","黑道","了歉"],
+    ["直","男","根本不会这样想"],
+    ["女孩们的嬉闹声","被操","场的风带出很远"],
+    ["蟹","肉棒","是她最喜欢吃的东西"],
+    ["他喜欢班里一个","女同","学"],
+    ["躲在一个狭","小逼","仄的房间里"],
+    ["叫他们帮忙","发春／卖春","联，事后送他们一人一副"],
+    // [""],
+    // [""],
+    // ","
 
-    ];
-    // let arr;function 随机(){let _arr=arr.slice();for(let i=0;i<_arr.length;i++){let j=getRandomInt(0,i);let t=_arr[i];_arr[i]=_arr[j];_arr[j]=t;}function getRandomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}arr=_arr;}
-    // arr=d;
-    // 随机();
-    // d=arr;
-    let 问题=localStorage.getItem("敏感词小游戏"),选项,答案;
-    if(问题){问题=问题*1;}else{问题=0;}
-    let 开玩=0;
+];
+// let arr;function 随机(){let _arr=arr.slice();for(let i=0;i<_arr.length;i++){let j=getRandomInt(0,i);let t=_arr[i];_arr[i]=_arr[j];_arr[j]=t;}function getRandomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}arr=_arr;}
+// arr=d;
+// 随机();
+// d=arr;
+let 问题=localStorage.getItem("敏感词小游戏"),选项,答案;
+if(问题){问题=问题*1;}else{问题=0;}
+let 开玩=0;
 
-    function 开始(o){
-        if(开玩==0){开玩=1}else{
-            document.getElementById("上一题").innerHTML=document.getElementById("上一题").innerHTML+"<p>"+d[问题-1][0]+"<b>"+d[问题-1][1]+"</b>"+d[问题-1][2]+"</p>";
-            localStorage.setItem('敏感词小游戏',问题-1)
-        }
-        let dy;
-        if(问题>=d.length){
-            document.getElementById("dy").innerHTML="已经没题了。";
-            document.getElementById("公布答案").innerHTML="";
-        }else{
-            答案=d[问题][1];
-            dy="<span id='前'>"+d[问题][0]+"</span><input type='text' placeholder='"+答案.length+"字' autocomplete='off' id='输入' style='width:"+(答案.length+1)+"em'><span id='后'>"+d[问题][2]+"</span>　<a onclick='确定()'>确定</a>";
-            if(d[问题][3]||d[问题][4]){
-                dy+="<sup id='提示'>　<a onclick=\"提示()\">[提示]</a></sup>"
-            }
-            问题+=1;
-            document.getElementById("dy").innerHTML=dy;
-        }
-        document.getElementById("题").innerHTML=问题+"/"+d.length;
+function 开始(o){
+    if(开玩==0){开玩=1}else{
+        document.getElementById("上一题").innerHTML=document.getElementById("上一题").innerHTML+"<p>"+d[问题-1][0]+"<b>"+d[问题-1][1]+"</b>"+d[问题-1][2]+"</p>";
+        localStorage.setItem('敏感词小游戏',问题-1)
     }
-    开始();
-
-    function 确定(){
-        if(document.getElementById("输入").value==答案){
-            try{notyf.confirm("回答正确")}catch(e){alert("回答正确");}
-            开始();
-        }else{
-            try{notyf.alert("回答错误");}catch(e){alert("回答错误");}
+    let dy;
+    if(问题>=d.length){
+        document.getElementById("dy").innerHTML="已经没题了。";
+        document.getElementById("公布答案").innerHTML="";
+    }else{
+        if(d[问题][1].indexOf("／")!=-1){答案=d[问题][1].split("／")}else{答案=[d[问题][1]]}
+        dy="<span id='前'>"+d[问题][0]+"</span><input type='text' placeholder='"+答案[0].length+"字' autocomplete='off' id='输入' style='width:"+(答案[0].length+1)+"em'><span id='后'>"+d[问题][2]+"</span>　<a onclick='确定()'>确定</a>";
+        if(d[问题][3]||d[问题][4]){
+            dy+="<sup id='提示'>　<a onclick=\"提示()\">[提示]</a></sup>"
         }
+        问题+=1;
+        document.getElementById("dy").innerHTML=dy;
     }
+    document.getElementById("题").innerHTML=问题+"/"+d.length;
+}
+开始();
 
-    function 提示(){
-        document.getElementById("提示").innerHTML="";
-        if(d[问题-1][3]){document.getElementById("前").innerHTML=d[问题-1][3];}
-        if(d[问题-1][4]){document.getElementById("后").innerHTML=d[问题-1][4];}
+function 确定(){
+    if(答案.indexOf(document.getElementById("输入").value)!=-1){
+        try{notyf.confirm("回答正确")}catch(e){}
+        开始();
+    }else{
+        try{notyf.alert("回答错误");}catch(e){alert("回答错误");}
     }
+}
+
+function 提示(){
+    document.getElementById("提示").innerHTML="";
+    if(d[问题-1][3]){document.getElementById("前").innerHTML=d[问题-1][3];}
+    if(d[问题-1][4]){document.getElementById("后").innerHTML=d[问题-1][4];}
+}
 </script>
