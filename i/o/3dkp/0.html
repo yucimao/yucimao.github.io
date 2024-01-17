@@ -10,7 +10,7 @@ permalink: ceshi20240117
   float:left;
 }
 .card_pt img{
-  width:100px;height:100px;
+  width:120px;height:120px;
 }
 .card_hr{
   float:left;width:100%;height:100px;
@@ -61,11 +61,14 @@ permalink: ceshi20240117
 
 <script>
   let d=[
-    [1,"1","/ceshi"],
-    [2,"2","/ceshi","提示"],
+    [1,"猫球","/ceshi"],
+    [1,"二扯","/ceshi"],
+    [2,"775875","/ceshi","日记本"],
     "hr",
+    [1,"3","/ceshi"],
   ];
   let 地址="/i/o/3dkp/";
+  let 地址2="/i/cj/";
   let dy="";
   for(let i=0;d.length>i;i++){
     if(d[i]=="hr"){
@@ -76,9 +79,9 @@ permalink: ceshi20240117
       if(d[i][0]==1){
         dy+="<div class='card'>"+链接[0]+"<img src='"+地址+d[i][1]+".jpg' class='cover'><img src='"+地址+d[i][1]+"b.png' class='title'><img src='"+地址+d[i][1]+".png' class='hero'>"+链接[1]+"</div>";
       }else if(d[i][0]==2&&d[i][3]&&d[i][3]!=""){
-        dy+="<div class='提 card_pt tubiao'>"+链接[0]+"<img src='"+地址+d[i][1]+".jpg'><span class='示'>"+d[i][3]+"</span>"+链接[1]+"</div>";
+        dy+="<div class='提 card_pt tubiao'>"+链接[0]+"<img src='"+地址2+d[i][1]+".jpg'>"+链接[1]+"<span class='示'>"+d[i][3]+"</span></div>";
       }else if(d[i][0]==2){
-        dy+="<div class='card_pt tubiao'>"+链接[0]+"<img src='"+地址+d[i][1]+".jpg'>"+链接[1]+"</div>";
+        dy+="<div class='card_pt tubiao'>"+链接[0]+"<img src='"+地址2+d[i][1]+".jpg'>"+链接[1]+"</div>";
       }
     }
   }
