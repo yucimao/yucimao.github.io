@@ -1,0 +1,56 @@
+---
+layout: zk
+title: 作品内外：二创
+nav_text: 作品内外：二创
+nav_url: <a href="/pingfen">我的排行榜</a>
+permalink: pingfen/zuopinneiwai/erchuang
+redirect_from:
+ - dafen/zuopinneiwai/erchuang
+---
+<div id="结果"></div>
+<script>let dy="<table><tr><th onclick='排名方式()'>排名</th><th>作品</th><th>条目</th><th>评分</th><th></th></tr>",标准=[[["总体分","90"],["情绪","3"],["质感","3"],["用心","3"],["重温","1"],],
+[9,"神作 非常喜欢"],
+[8,"佳作 很喜欢"],
+[7,"优秀 还不错"],
+[6,"还行 算是及格"],
+[5,"一般 勉强能看"],
+[4,"微差"],
+[3,"较差"],
+[2,"很差"],
+[1,"垃圾"],
+[0,"粪作"],
+],data=[
+
+//分类是二创的分类，不是原作的分类
+// ["70 + 2 + 1 + 2 + 0" , "标题／备注" ,, "原神","b：ceshi"],
+
+["90 + 3 + 2 + 3 + 1" , "我不曾忘记／ChiliChill" ,, "原神","：MV"],
+["85 + 3 + 2 + 3 + 1" , "可莉的夏日休假计划！／KKOMDA" ,, "原神","：动画"],
+
+];
+let 说明={
+    
+}
+let 额外={
+  "原神":"米哈游",
+}
+for(let i=0;data.length>i;i++){
+    if(data[i][1].indexOf("／")!=-1){
+      let 临时=data[i][1].split("／")
+        data[i][1]=""+临时[0]+" <small>"+临时[1]+"</small>";
+        if(临时[2]){data[i][1]+="<small>("+临时[2]+")</small>"}
+    }else{
+        data[i][1]=""+data[i][1]+"";
+    }
+
+    if(额外[data[i][3]]){data[i][data[i].length]="："+额外[data[i][3]]}
+    data[i][1]="<small>"+data[i][3]+"</small>／"+data[i][1];
+    data[i][3]="："+data[i][3];
+
+    if(data[i][4][0]=="b"&&data[i][4][1]=="："){
+        data[i][4]="视频：链接：https://www.bilibili.com/video/BV"+data[i][4].split("：")[1];
+    }
+}
+
+</script>
+<script src="/js/mq-pingfen.js"></script>
