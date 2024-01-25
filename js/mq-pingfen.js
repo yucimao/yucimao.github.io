@@ -79,8 +79,9 @@ function dw2(o){
             并列[1]=datb[i][0];
             排名+=1;
         }
-        if(o==0&&标准[hr]&&标准[hr][0]*10+10>datb[i][0]){
-            dy+="<tr><td></td><td colspan='4'><b><small>"+标准[hr][0]+"+</small> "+标准[hr][1]+"</b></td></tr>"
+        if(o==0&&标准[hr]&&标准[hr][0]*10+10>datb[i][0]&&标准[hr][0]*10<=datb[i][0]
+            ||o==0&&标准[hr]&&标准[hr][0]>9&&datb[i][0]>99){
+            dy+="<tr><td></td><td colspan='4'><b><small>"+标准[hr][0]+"+</small> "+标准[hr][1]+"</b></td></tr>";
             hr+=1;
         }
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1].split("／")[0].split("<")[0]+"')\">"+datb[i][1]+"</td>";
