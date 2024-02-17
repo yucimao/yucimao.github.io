@@ -43,7 +43,7 @@ redirect_from:
         // [""],
     ];
 
-let dy="";
+    let dy="";
 
 let t=10;
 let 记=0,录=0;
@@ -56,8 +56,8 @@ for(let i=0;d.length>i;i++){
         dy+="<h3>"+d[i][1]+"</h3>";
         if(d[i][2]){dy+=d[i][2]}
         dy+="<ol>";
+        录=0;
     }else{
-
         录+=1;
         if(录==t){
             dy+="<a onclick=\"显示('_"+记+"')\" id='显示_"+记+"'><b>更多</b></a><div id='隐藏_"+记+"' style='display:none;'>";

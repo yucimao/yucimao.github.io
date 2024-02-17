@@ -14,12 +14,12 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 16874,
-					"column": 69,
+					"line": 16947,
+					"column": 68,
 					"label": ""
 				},
 				{
-					"line": 16878,
+					"line": 16953,
 					"column": 2,
 					"label": ""
 				}
@@ -34,12 +34,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 16810,
+					"line": 16880,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 16853,
+					"line": 16927,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -69,212 +69,217 @@
 					"label": "注释 ↑"
 				},
 				{
-					"line": 291,
+					"line": 295,
 					"column": 13,
 					"label": "目录"
 				},
 				{
-					"line": 340,
+					"line": 344,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 382,
+					"line": 386,
 					"column": 6,
 					"label": "简述"
 				},
 				{
-					"line": 410,
+					"line": 414,
 					"column": 30,
 					"label": "原神之前"
 				},
 				{
-					"line": 434,
+					"line": 438,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 446,
+					"line": 450,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 497,
+					"line": 501,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 585,
+					"line": 589,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 608,
+					"line": 612,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
 				{
-					"line": 638,
+					"line": 643,
 					"column": 25,
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 747,
+					"line": 752,
 					"column": 8,
 					"label": "2020.11.11 - 1.1"
 				},
 				{
-					"line": 811,
+					"line": 816,
 					"column": 18,
 					"label": "2020.12.23 - 1.2"
 				},
 				{
-					"line": 845,
+					"line": 850,
 					"column": 11,
 					"label": "2021.02.03 - 1.3"
 				},
 				{
-					"line": 880,
+					"line": 885,
 					"column": 13,
 					"label": "2021.03.17 - 1.4"
 				},
 				{
-					"line": 913,
+					"line": 918,
 					"column": 23,
 					"label": "2021.04.28 - 1.5"
 				},
 				{
-					"line": 954,
+					"line": 959,
 					"column": 21,
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 1005,
+					"line": 1010,
 					"column": 15,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 1051,
+					"line": 1056,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 1076,
+					"line": 1081,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 1103,
+					"line": 1108,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1161,
+					"line": 1166,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1204,
+					"line": 1209,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1231,
+					"line": 1236,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1273,
+					"line": 1278,
 					"column": 19,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1318,
+					"line": 1323,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1366,
+					"line": 1371,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1474,
+					"line": 1479,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1525,
+					"line": 1530,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1598,
+					"line": 1603,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1659,
+					"line": 1664,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1727,
+					"line": 1732,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1789,
+					"line": 1795,
 					"column": 10,
 					"label": "2023.04.12 - 3.6"
 				},
 				{
-					"line": 1884,
+					"line": 1891,
 					"column": 46,
 					"label": "2023.05.24 - 3.7"
 				},
 				{
-					"line": 1980,
+					"line": 1986,
 					"column": 11,
 					"label": "2023.07.05 - 3.8"
 				},
 				{
-					"line": 2057,
+					"line": 2063,
 					"column": 11,
 					"label": "2023.08.16 - 4.0"
 				},
 				{
-					"line": 2136,
+					"line": 2142,
 					"column": 14,
 					"label": "2023.09.27 - 4.1"
 				},
 				{
-					"line": 2175,
+					"line": 2181,
 					"column": 5,
 					"label": "2023.11.08 - 4.2"
 				},
 				{
-					"line": 2272,
+					"line": 2277,
 					"column": 79,
 					"label": "2023.12.20 - 4.3"
 				},
 				{
-					"line": 2343,
+					"line": 2357,
+					"column": 8,
+					"label": "2024.01.31 - 4.4"
+				},
+				{
+					"line": 2373,
 					"column": 4,
 					"label": "最新"
 				},
 				{
-					"line": 2361,
+					"line": 2391,
 					"column": 19,
 					"label": "专题"
 				},
 				{
-					"line": 2458,
+					"line": 2491,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2554,
+					"line": 2587,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -809,7 +814,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 361,
+					"line": 367,
 					"column": 19,
 					"label": "书签"
 				}

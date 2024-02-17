@@ -27,7 +27,7 @@ nav_url: <a href="/youxiji">游戏机</a>
 
 <br>
 
-<a onclick="document.getElementById('删1').style=''">删除存档</a> <span style="display:none;" id="删1">确定删除？ <a onclick="清理缓存();location.replace(location.href)">确定</a></span><br>
+<a onclick="document.getElementById('删1').style=''">删除存档</a> <span style="display:none;" id="删1">确定删除？ <a onclick="清理缓存();">确定</a></span><br>
 
 <br>
 
@@ -35,7 +35,7 @@ nav_url: <a href="/youxiji">游戏机</a>
 
 <script>
     function 清理缓存(){
-        localStorage.removeItem("超神");localStorage.removeItem("超神数值");
+        localStorage.removeItem("超神");localStorage.removeItem("超神数值");location.replace(location.href);
     }
 
 
@@ -67,7 +67,7 @@ nav_url: <a href="/youxiji">游戏机</a>
         1:["你成功的击败了巨龙，并解决了其中的一系列阴谋。","／前往下一个城市,3"],
         2:["］毁灭蒙德>4:你没有理会巨龙，甚至在期待它毁灭城市。{毁灭蒙德+1}］毁灭蒙德>0:你没有理会巨龙，再次任由它将城市毁灭。{毁灭蒙德+1}］你没有理会巨龙，任由它将城市毁灭。{毁灭蒙德+1}","］毁灭蒙德>4:在城市的废墟中，你看到无数平民残破的尸体，你的嘴角露出微笑。］毁灭蒙德>0:在城市的废墟中，你看到无数平民残破的尸体，你的内心毫无触动。］在城市的废墟中，你看到无数平民残破的尸体。","／去下一个城市,3"],
         3:["你来到璃月，在这里见证了神明的陨落。","你解决了这里的阴谋。",通关],
-        4:["你来到蒙德，在这里结识了安柏、琴、丽莎、凯亚、迪卢克等人。","一头巨龙袭击了城市。","／击败它,1／不管,2"],
+        4:["你来到蒙德，在这里结识了安柏、琴、丽莎、<del>凯亚</del>、<del>迪卢克</del>等人。","一头巨龙袭击了城市。","／击败它,1／不管,2"],
         5:["你看到这里有棵桔子树。","／驻足,6／继续前进,7／回到蒙德,4"],
         "5b":["你看到这里有棵桔子树。","／驻足,6／继续前进,7／回到蒙德,4／我要更自由的开放世界,11"],
         7:["你越过了几座山，路过了几棵桔子树，你发现这个世界不能攀爬、不能游泳，你很欣慰，这不是个抄袭游戏。","／继续前进,8／回到桔子树,5"],
@@ -281,7 +281,7 @@ nav_url: <a href="/youxiji">游戏机</a>
     }
 
     function 卸载(){
-        document.getElementById("游戏").innerHTML="确认卸载（清除缓存）？ <a onclick='localStorage.removeItem(\"超神\");localStorage.removeItem(\"超神数值\");document.getElementById(\"游戏\").innerHTML=\"卸载完成\";'>确认</a>";
+        document.getElementById("游戏").innerHTML="确认卸载（清除缓存）？ <a onclick='清理缓存()'>确认</a>";
     }
 </script>
 
