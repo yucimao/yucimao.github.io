@@ -115,7 +115,7 @@ function dw2(o){
                 }
                 if(datb[i][i2].indexOf("：链接：")!=-1){
                     临时2=临时2.split("：链接：");
-                    dy+="<a href=\""+临时2[1]+"\" target=\"_blank\" class=\"dk\">"+临时2[0]+"</a>";
+                    dy+="<a href=\""+临时2[1]+"\" target=\"_blank\">"+临时2[0]+"</a>";
                 }else if(datb[i][i2].indexOf("分类：")!=-1){
                     临时2=临时2.split("：")[1];
                     if(关键词.indexOf(临时2)!=-1){}else{dy+="<a onclick=\"dw2('"+临时2+"')\"><small><b>"+临时2+"</b></small></a>";}
@@ -123,6 +123,9 @@ function dw2(o){
                     临时2=临时2.split("：");
                     if(临时2[0]=="x"){
                         dy+=临时2[1];
+                    }else if(临时2[0]=="b"){
+                        dy+="<a href=\"https://www.bilibili.com/video/BV"+临时2[1]+"\" target=\"_blank\">视频</a>";
+                    
                     }else{
                         dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
                         if(临时2[2]){dy+="<small>("+临时2[2]+")</small>";}

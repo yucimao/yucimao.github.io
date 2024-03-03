@@ -297,10 +297,6 @@ for(let i=0;data.length>i;i++){
     if(额外[data[i][3]]){data[i][data[i].length]="："+额外[data[i][3]]}
     data[i][1]="<small>"+data[i][3]+"</small>／"+data[i][1];
     data[i][3]="："+data[i][3];
-
-    if(data[i][5][0]=="b"&&data[i][5][1]=="："){
-        data[i][5]="视频：链接：https://www.bilibili.com/video/BV"+data[i][5].split("：")[1];
-    }
 }
 
 </script>
