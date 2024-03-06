@@ -508,7 +508,7 @@ CCTV17,http://[2409:8087:2001:20:2800:0:df6e:eb11]:80/wh7f454c46tw1333382053_-33
 全球,#genre#
 环球电视,http://zb.xzxwhcb.com:9999/hls/world.m3u8
 半岛新闻,http://live-hls-web-aja.getaj.net/AJA/02.m3u8
-Thai PBS 3,http://thaipbs-live.cdn.byteark.com/live/playlist_1080p/index.m3u8
+泰·Thai PBS 3,http://thaipbs-live.cdn.byteark.com/live/playlist_1080p/index.m3u8
 Love Nature 4K,https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
 FASHIONTV,http://lb.streaming.sk/fashiontv/stream/chunklist_w1906011378.m3u8
 俄罗斯中文,http://brics.bonus-tv.ru/cdn/brics/chinese/tracks-v1a1/index.m3u8
@@ -1254,7 +1254,7 @@ EYE TV戏剧台,mitv://generationnexxxt.com:19806/2831986ed4b448c9b626788fbd3f2f
 MTV,mitv://generationnexxxt.com:19806/eb5ba5262e2e4779a1418c78d14ad1e5
 
 日本,#genre#
-ABCテレビ,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=gx02&isp=10&bind=0&uin=159413&playseek=0
+ABC电视台(ABCテレビ),http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=gx02&isp=10&bind=0&uin=159413&playseek=0
 BS-TBS,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs04&isp=10&bind=0&uin=159413&playseek=0
 BSアニマックス,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&isp=10&bind=0&uin=159413&playseek=0
 BSテレ東,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs05&isp=10&bind=0&uin=159413&playseek=0
@@ -1627,29 +1627,45 @@ Gay,http://live.adultiptv.net/gay.m3u8
 Asian,http://live.adultiptv.net/asian.m3u8
 MILF,http://live.adultiptv.net/milf.m3u8
 
-测试,#genre#
-时尚女人,http://121.237.52.101:8888/rtp/239.49.0.208:953
-生活时尚,http://121.237.52.101:8888/rtp/239.49.1.181:6000
-生活时尚HD,http://121.237.52.101:8888/rtp/239.49.8.175:6000
-CCTV女性时尚,http://121.237.52.101:8888/rtp/239.49.1.69:6000#http://121.237.52.101:8888/rtp/239.49.0.159:9266
-CCTV女性时尚HD,http://121.237.52.101:8888/rtp/239.49.9.14:6000
-书画频道,http://121.237.52.101:8888/rtp/239.49.1.227:6000
-优漫卡通,http://121.237.52.101:8888/rtp/239.49.0.21:8160
-游戏风云,http://121.237.52.101:8888/rtp/239.49.1.177:6000
-游戏风云HD,http://121.237.52.101:8888/rtp/239.49.8.176:6000
-游戏竞技,http://121.237.52.101:8888/rtp/239.49.1.71:6000
-直播室1,http://121.237.52.101:8888/rtp/239.49.1.189:6000
-直播室10,http://121.237.52.101:8888/rtp/239.49.1.209:6000
-直播室10HD,http://121.237.52.101:8888/rtp/239.49.8.171:6000
-金鹰卡通,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225744/index.m3u8
-哈哈炫动,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226213/index.m3u8
-优漫卡通,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225795/index.m3u8
-嘉佳卡通,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226227/index.m3u8
-北京卡酷,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225743/index.m3u8
-山东少儿,http://222.135.78.62:8154/tsfile/live/1007_1.m3u8?key=txiptv
-黑龙江文体,http://[2409:8087:1a01:df::4025]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226239/1.m3u8
-黑龙江都市,http://[2409:8087:1a01:df::4025]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226301/1.m3u8
-黑龙江少儿,http://[2409:8087:1a01:df::4035]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226304/1.m3u8
-黑龙江影视,http://[2409:8087:1a01:df::4035]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226298/1.m3u8
-黑龙江新闻,http://[2409:8087:1a01:df::4036]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226330/1.m3u8
-黑龙江科教,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226242/1.m3u8?icpid=88888888&from=1&hms_devid=1012&vqe=3
+旅游,#genre#
+爱旅行,http://[2409:8087:7000:20:1000::22]:6060/000000001000/6000000006000250630/index.m3u8?channel-id=wasusyt&Contentid=6000000006000250630&livemode=1&stbId=3
+TLC旅游生活,mitv://generationnexxxt.com:19806/621ca70412034f5eb919c1ec03679804
+亚洲旅游台,mitv://generationnexxxt.com:19806/259c24cb79ce4b5db1fb1e1b894c517e
+EYE TV旅游台,mitv://generationnexxxt.com:19806/2d426994acef44deb401aa8a4cd5a92e
+旅チャンネル,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs12&isp=10&bind=0&uin=159413&playseek=0
+
+动物,#genre#
+求索动物,http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000010046/index.m3u8?channel-id=wasusyt&Contentid=6000000002000010046&livemode=1&stbId=3
+动物频道,https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
+动物星球,mitv://generationnexxxt.com:19806/5b41e724ea8e4e7eb92e3dac95589165
+动物星球台,http://ali.hlspull.yximgs.com/live/twlivexcvbpzyhvzcvnzzsfzvbhfhczhbnzszbcvzfdvzsfcbzbnzzwxz.flv
+Animal Planet,p3p://fccsen.dyndns.tv:29706/5da51e490005df2446683f8a02a66ebe
+Love Nature 4K,https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
+Love Nature,p3p://fccsen.dyndns.tv:29706/5f5550330007d5fcd614522b5d6972f3#mitv://generationnexxxt.com:19806/574be1e2e0054216abe436413ea4221a
+
+少儿,#genre#
+CCTV-14少儿,http://150.138.40.183/liveali-tpgq.cctv.cn/live/cctv14.m3u8#http://36.156.208.131/liveali-tpgq.cctv.cn/live/cctv14.m3u8#http://61.170.81.240/liveali-tpgq.cctv.cn/live/cctv14.m3u8#http://222.92.7.170:3333/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
+卡酷少儿,http://zteres.sn.chinamobile.com:6060/000000001000/7851974109718180595/1.m3u8?channel-id=bestzb&Contentid=7851974109718180595&livemode=1&stbId=3
+黑龙江少儿,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225979/index.m3u8
+韩·EBS少儿,http://ebsonairios.ebs.co.kr/ebsutablet500k/_definst_/tablet500k/chunklist_w1965791004.m3u8
+爱动漫,http://[2409:8087:7000:20:1000::22]:6060/000000001000/6000000006000280630/index.m3u8?channel-id=wasusyt&Contentid=6000000006000280630&livemode=1&stbId=3
+i-Fun动漫台,mitv://generationnexxxt.com:19806/91a0e3fa1a714dd7b7cf55343052cd4f
+嘉佳卡通,http://zteres.sn.chinamobile.com:6060/000000001000/1000000002000025964/1.m3u8?channel-id=ystenlive&Contentid=1000000002000025964&livemode=1&stbId=3#http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226227/index.m3u8
+金鹰卡通,http://zteres.sn.chinamobile.com:6060/000000001000/5000000006000040024/1.m3u8?channel-id=bestzb&Contentid=5000000006000040024&livemode=1&stbId=3#http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225744/index.m3u8
+优漫卡通,http://zteres.sn.chinamobile.com:6060/000000001000/1000000002000010063/1.m3u8?channel-id=ystenlive&Contentid=1000000002000010063&livemode=1&stbId=3#http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225795/index.m3u8
+CN卡通频道,mitv://generationnexxxt.com:19806/f4dd909eedc64e6b9736e248aedf6d61
+靖洋卡通Nice Bingo,mitv://generationnexxxt.com:19806/1279fb2d1ae14676a31b2e5b38a2cd57
+靖天卡通台,mitv://generationnexxxt.com:19806/0e27e5f319264b609ec810e126edf969
+Animal Planet,p3p://fccsen.dyndns.tv:29706/5da51e490005df2446683f8a02a66ebe
+Animax,mitv://generationnexxxt.com:19806/22f75ace87a545aab39a2e4cd244bbad
+Cartoon Network,p3p://fccsen.dyndns.tv:29706/5da7abac0005edf150608a4463c94ae2#p3p://fccsen.dyndns.tv:29706/615bcd6f000d0a9cbf6c228a724f214f
+BSアニマックス,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&isp=10&bind=0&uin=159413&playseek=0
+
+时尚,#genre#
+CCTV女性时尚,http://zteres.sn.chinamobile.com:6060/yinhe/2/ch00000090990000002475/index.m3u8?virtualDomain=yinhe.live_hls.zte.com#http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8#http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8#http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8
+爱时尚,http://[2409:8087:7000:20:1000::22]:6060/000000001000/6000000006000140630/index.m3u8?channel-id=wasusyt&Contentid=6000000006000140630&livemode=1&stbId=3
+法国时尚,http://lb.streaming.sk/fashiontv/stream/chunklist.m3u8
+FASHIONTV,http://lb.streaming.sk/fashiontv/stream/chunklist_w1906011378.m3u8
+FashionTV HD,p3p://108.181.20.159:71421/64577742000d1a6986e1aac95b701e8b
+FashionTV HD,p3p://fccsen.dyndns.tv:29706/615276c1000841769af1921e0239571f
+Fashion TV,p3p://fccsen.dyndns.tv:29706/5a43e5ea0002d22c54e2300409a71dad
