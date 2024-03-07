@@ -264,159 +264,24 @@
 					"label": "2024.01.31 - 4.4"
 				},
 				{
-					"line": 2387,
+					"line": 2388,
 					"column": 4,
 					"label": "最新"
 				},
 				{
-					"line": 2405,
+					"line": 2406,
 					"column": 19,
 					"label": "专题"
 				},
 				{
-					"line": 2506,
+					"line": 2507,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2602,
+					"line": 2603,
 					"column": 0,
 					"label": "底层代码"
-				}
-			]
-		},
-		{
-			"path": "blog/笔记/酒仙笔记/酒仙_原神.html",
-			"bookmarks": [
-				{
-					"line": 39,
-					"column": 7,
-					"label": "旅行者"
-				},
-				{
-					"line": 52,
-					"column": 21,
-					"label": "【蒙德】"
-				},
-				{
-					"line": 89,
-					"column": 22,
-					"label": "民俗"
-				},
-				{
-					"line": 141,
-					"column": 22,
-					"label": "酒馆"
-				},
-				{
-					"line": 212,
-					"column": 22,
-					"label": "角色"
-				},
-				{
-					"line": 284,
-					"column": 21,
-					"label": "【璃月】"
-				},
-				{
-					"line": 296,
-					"column": 22,
-					"label": "酒馆"
-				},
-				{
-					"line": 326,
-					"column": 22,
-					"label": "角色"
-				},
-				{
-					"line": 335,
-					"column": 15,
-					"label": "【稻妻】"
-				},
-				{
-					"line": 347,
-					"column": 7,
-					"label": "酒馆"
-				},
-				{
-					"line": 365,
-					"column": 19,
-					"label": "【须弥】"
-				},
-				{
-					"line": 372,
-					"column": 16,
-					"label": "民俗"
-				},
-				{
-					"line": 389,
-					"column": 22,
-					"label": "酒馆"
-				},
-				{
-					"line": 408,
-					"column": 18,
-					"label": "【枫丹】"
-				},
-				{
-					"line": 421,
-					"column": 16,
-					"label": "【至冬】"
-				},
-				{
-					"line": 427,
-					"column": 21,
-					"label": "【其他】"
-				},
-				{
-					"line": 433,
-					"column": 19,
-					"label": "原魔"
-				},
-				{
-					"line": 450,
-					"column": 19,
-					"label": "虚构"
-				},
-				{
-					"line": 459,
-					"column": 5,
-					"label": "酒具"
-				},
-				{
-					"line": 538,
-					"column": 14,
-					"label": "【其他的其他】"
-				},
-				{
-					"line": 553,
-					"column": 8,
-					"label": "【代码】"
-				},
-				{
-					"line": 593,
-					"column": 12,
-					"label": "酒"
-				},
-				{
-					"line": 666,
-					"column": 10,
-					"label": "人"
-				},
-				{
-					"line": 674,
-					"column": 10,
-					"label": "场景"
-				},
-				{
-					"line": 690,
-					"column": 12,
-					"label": "其他"
-				},
-				{
-					"line": 712,
-					"column": 2,
-					"label": "跳转和额外代码"
 				}
 			]
 		},
@@ -809,14 +674,174 @@
 					"label": "2023"
 				},
 				{
-					"line": 287,
+					"line": 288,
 					"column": 18,
 					"label": "2024"
 				},
 				{
-					"line": 376,
+					"line": 315,
 					"column": 19,
 					"label": "书签"
+				}
+			]
+		},
+		{
+			"path": "blog/笔记/酒仙笔记/酒仙_原神.html",
+			"bookmarks": [
+				{
+					"line": 39,
+					"column": 7,
+					"label": "旅行者"
+				},
+				{
+					"line": 52,
+					"column": 21,
+					"label": "【蒙德】"
+				},
+				{
+					"line": 90,
+					"column": 22,
+					"label": "民俗"
+				},
+				{
+					"line": 142,
+					"column": 22,
+					"label": "酒馆"
+				},
+				{
+					"line": 213,
+					"column": 22,
+					"label": "角色"
+				},
+				{
+					"line": 285,
+					"column": 21,
+					"label": "【璃月】"
+				},
+				{
+					"line": 297,
+					"column": 22,
+					"label": "酒馆"
+				},
+				{
+					"line": 327,
+					"column": 22,
+					"label": "角色"
+				},
+				{
+					"line": 336,
+					"column": 15,
+					"label": "【稻妻】"
+				},
+				{
+					"line": 348,
+					"column": 7,
+					"label": "酒馆"
+				},
+				{
+					"line": 366,
+					"column": 19,
+					"label": "【须弥】"
+				},
+				{
+					"line": 373,
+					"column": 16,
+					"label": "民俗"
+				},
+				{
+					"line": 390,
+					"column": 22,
+					"label": "酒馆"
+				},
+				{
+					"line": 407,
+					"column": 18,
+					"label": "【枫丹】"
+				},
+				{
+					"line": 446,
+					"column": 16,
+					"label": "【至冬】"
+				},
+				{
+					"line": 452,
+					"column": 21,
+					"label": "【其他】"
+				},
+				{
+					"line": 458,
+					"column": 19,
+					"label": "原魔"
+				},
+				{
+					"line": 475,
+					"column": 19,
+					"label": "虚构"
+				},
+				{
+					"line": 484,
+					"column": 5,
+					"label": "酒具"
+				},
+				{
+					"line": 563,
+					"column": 14,
+					"label": "【其他的其他】"
+				},
+				{
+					"line": 578,
+					"column": 8,
+					"label": "【代码】"
+				},
+				{
+					"line": 618,
+					"column": 12,
+					"label": "酒"
+				},
+				{
+					"line": 694,
+					"column": 10,
+					"label": "人"
+				},
+				{
+					"line": 702,
+					"column": 10,
+					"label": "场景"
+				},
+				{
+					"line": 718,
+					"column": 12,
+					"label": "其他"
+				},
+				{
+					"line": 740,
+					"column": 2,
+					"label": "跳转和额外代码"
+				}
+			]
+		},
+		{
+			"path": "blog/笔记/酒仙笔记/酒仙_星穹铁道.html",
+			"bookmarks": [
+				{
+					"line": 23,
+					"column": 10,
+					"label": "仙舟罗浮"
+				},
+				{
+					"line": 52,
+					"column": 7,
+					"label": "匹诺康尼"
+				},
+				{
+					"line": 81,
+					"column": 8,
+					"label": "模拟宇宙"
+				},
+				{
+					"line": 138,
+					"column": 5,
+					"label": "let 表"
 				}
 			]
 		},
