@@ -1,0 +1,176 @@
+---
+layout: page2
+title: 二扯奶茶店
+nav_text: <span class='redX'>绝密</span>配方
+nav_url: <a href="/zatan">笔记</a>
+permalink: biji/erchenaichadian
+---
+<link rel="stylesheet" href="/css/all2.css">
+<input type="text" placeholder="搜索" autocomplete="off" id="搜索框">
+<div id="dy_分类"></div>
+<style id="style_分类"></style>
+
+<style>
+#搜索框{line-height:36px;font-size:1.4em;text-align:center;padding:.5em .7em;max-width:30em;width:80%;background:#F8F8F8;border-style:solid;border-width:5px;border-color:#00a2ff;border-radius:20px;outline:none;}
+#搜索框:focus{box-shadow:0 1px 0 1px #DDD inset,0 2px 5px #00000033;border-color:#0095eb;}
+
+.符合1{background-color:#00ff0025;}
+.符合2{background-color:#FFff0025;}
+.符合3{background-color:#ff000025;}
+fieldset{background-color:#ffffff;}
+</style>
+
+<hr>
+
+<div id="dy"></div>
+<script>
+    let d=[
+        ["招牌薄荷汽水","汽水 果饮","气泡水 薄荷糖浆 柠檬","共［360］ml：［50］ml薄荷榨汁+［10］ml柠檬+［300］ml〈招牌薄荷汽水1〉〈https://ceshi.com〉"],
+        ["招牌薄荷汽水1","汽水 果饮","气泡水 薄荷糖浆 柠檬","共［360］ml：［50］ml薄荷榨汁+［10］ml柠檬+［300］ml〈招牌薄荷汽水2〉〈https://ceshi.com〉"],
+        ["招牌薄荷汽水2","汽水 果饮","气泡水 薄荷糖浆 柠檬","共［360］ml：［50］ml薄荷榨汁+［10］ml柠檬+［300］ml〈招牌薄荷汽水〉〈https://ceshi.com〉"],
+    ];
+
+    let 分类表=["奶茶","果茶","汽水","咖啡","酒"];
+    let 选中分类=[];
+    let dy="";
+    for(let i=0;分类表.length>i;i++){
+        if(分类表[i][0]=="."){
+            dy+=分类表[i];
+        }else{
+            dy+="<a class='anniu 分类_"+分类表[i]+"' onclick=\"分类('"+分类表[i]+"')\">"+分类表[i]+"</a> ";
+        }
+    }
+    document.getElementById("dy_分类").innerHTML=dy;
+
+    function 分类(o){
+        if(选中分类.indexOf(o)!=-1){
+            选中分类=选中分类.filter(item=>item!==o);
+        }else{
+            选中分类[选中分类.length]=o;
+        }
+        if(选中分类[0]){
+            document.getElementById("style_分类").innerHTML=".分类_"+选中分类.join(",.分类_")+"{font-weight:bold;color:#ff0000;}";
+        }else{
+            document.getElementById("style_分类").innerHTML="";
+        }
+        打印()
+    }
+
+    for(let i=0;d.length>i;i++){
+        let 临时=d[i][3].split("〈");
+        dy="<fieldset><legend><b>"+d[i][0]+"</b> <small>"+d[i][1]+" | ";
+        d[i][2]=d[i][2].split(" ");
+        for(let i2=0;d[i][2].length>i2;i2++){
+            if(i2!=0){dy+=" ";}
+            dy+="<a class='"+d[i][2][i2]+"' onclick=\"配料('"+d[i][2][i2]+"')\">"+d[i][2][i2]+"</a>";
+        }
+        dy+="</small></legend>"+临时[0];
+
+        d[i][1]=d[i][1].split(" ");
+        for(let i2=1;临时.length>i2;i2++){
+            临时[i2]=临时[i2].split("〉");
+            if(临时[i2][0].indexOf("://")!=-1){
+                dy+="<sub>[<a href='"+临时[i2][0]+"' target='_blank'>链接</a>]</sub>";
+            }else{
+                dy+="<a onclick=\"弹窗('"+临时[i2][0]+"')\">"+临时[i2][0]+"</a>";
+            }
+            dy+=临时[i2][1];
+        }
+        dy+="</fieldset>"
+        d[i][3]=dy;
+    }
+
+function removeDuplicates(array){//去重
+  return [...new Set(array)];
+}
+
+    function 打印(o){
+        let dy1={
+            1:"",//名字完全符合
+            2:"",//材料完全符合
+            3:"",//材料部分符合
+        }
+
+        if(!o){o=0}
+        else{
+            o=o.split(" ");
+            o=removeDuplicates(o);
+        }
+
+        for(let i=0;d.length>i;i++){
+            let 继续=1;
+            if(选中分类[0]){
+                for(let i2=0;选中分类.length>i2;i2++){
+                    if(d[i][1].indexOf(选中分类[i2])==-1){继续=0;break;}
+                }
+            }
+            if(继续==1){
+                if(o==0){//无搜索
+                    继续=1;
+                }else{
+                    if(o.indexOf(d[i][0])!=-1){继续=1;}//名字完全符合
+                    else{
+                        for(let i2=0;o.length>i2;i2++){
+                            if(d[i][0].indexOf(o[i2])!=-1||d[i][2].indexOf(o[i2])!=-1){//名字或材料包含搜索内容
+                                if(继续==1){继续=2}
+                                if(继续==4){继续=3}
+                            }else{
+                                if(继续==1){继续=4}
+                                if(继续==2){继续=3}
+                            }
+                        }
+                    }
+                }
+                dy1[继续]+="<div class='符合"+继续+"'>"+d[i][3]+"</div><br>";
+            }
+        }
+
+        document.getElementById("dy").innerHTML=dy1[1]+dy1[2]+dy1[3];
+ 
+    }
+
+    打印();
+
+
+    let isComposition=false;
+    let 搜索框=document.getElementById("搜索框");
+    搜索框.addEventListener('input',function(){
+        if(!isComposition){
+            打印(搜索框.value)
+        }
+    })
+    搜索框.addEventListener('compositionstart',()=>{
+        isComposition=true;
+    })
+    搜索框.addEventListener('compositionend',()=>{
+        isComposition=false;
+        打印(搜索框.value)
+    })
+
+    function 弹窗(o){
+        for(let i=0;d.length>i;i++){
+            if(d[i][0]==o){
+                dw(dwb=d[i][3]);
+                o=0;
+                break;
+            }
+        }
+        if(o!=0){try{notyf.alert("未找到");}catch(e){alert("未找到");}}
+    }
+
+    // let url=window.location.href;
+    // if(url.indexOf("?")!=-1){
+    //     url=url.split("?")[1].split("#")[0];
+    //     url=decodeURI(url);
+    //     for(let i=0;d.length>i;i++){
+    //         if(d[i][0]==url){
+    //             document.body.innerHTML=d[i][3];
+    //             url=0;
+    //             break;
+    //         }
+    //     }
+    //     if(url!=0){
+    //         document.body.innerHTML="未找到"+url;
+    //     }
+    // }
+</script>
