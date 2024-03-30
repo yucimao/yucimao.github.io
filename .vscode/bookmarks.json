@@ -269,22 +269,22 @@
 					"label": "2024.03.13 - 4.5"
 				},
 				{
-					"line": 2415,
+					"line": 2420,
 					"column": 4,
 					"label": "最新"
 				},
 				{
-					"line": 2433,
+					"line": 2438,
 					"column": 19,
 					"label": "专题"
 				},
 				{
-					"line": 2536,
+					"line": 2541,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2632,
+					"line": 2637,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -679,7 +679,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 377,
+					"line": 381,
 					"column": 12,
 					"label": "书签"
 				}
@@ -714,107 +714,107 @@
 					"label": "角色"
 				},
 				{
-					"line": 286,
+					"line": 287,
 					"column": 21,
 					"label": "【璃月】"
 				},
 				{
-					"line": 298,
+					"line": 299,
 					"column": 22,
 					"label": "酒馆"
 				},
 				{
-					"line": 328,
+					"line": 329,
 					"column": 22,
 					"label": "角色"
 				},
 				{
-					"line": 337,
+					"line": 338,
 					"column": 15,
 					"label": "【稻妻】"
 				},
 				{
-					"line": 349,
+					"line": 350,
 					"column": 7,
 					"label": "酒馆"
 				},
 				{
-					"line": 367,
+					"line": 368,
 					"column": 19,
 					"label": "【须弥】"
 				},
 				{
-					"line": 374,
+					"line": 375,
 					"column": 16,
 					"label": "民俗"
 				},
 				{
-					"line": 391,
+					"line": 392,
 					"column": 22,
 					"label": "酒馆"
 				},
 				{
-					"line": 408,
+					"line": 409,
 					"column": 18,
 					"label": "【枫丹】"
 				},
 				{
-					"line": 447,
+					"line": 448,
 					"column": 16,
 					"label": "【至冬】"
 				},
 				{
-					"line": 453,
+					"line": 454,
 					"column": 21,
 					"label": "【其他】"
 				},
 				{
-					"line": 459,
+					"line": 460,
 					"column": 19,
 					"label": "原魔"
 				},
 				{
-					"line": 476,
+					"line": 477,
 					"column": 19,
 					"label": "虚构"
 				},
 				{
-					"line": 485,
+					"line": 486,
 					"column": 5,
 					"label": "酒具"
 				},
 				{
-					"line": 564,
+					"line": 565,
 					"column": 14,
 					"label": "【其他的其他】"
 				},
 				{
-					"line": 579,
+					"line": 580,
 					"column": 8,
 					"label": "【代码】"
 				},
 				{
-					"line": 620,
+					"line": 621,
 					"column": 12,
 					"label": "酒"
 				},
 				{
-					"line": 696,
+					"line": 697,
 					"column": 10,
 					"label": "人"
 				},
 				{
-					"line": 704,
+					"line": 705,
 					"column": 10,
 					"label": "场景"
 				},
 				{
-					"line": 720,
+					"line": 721,
 					"column": 12,
 					"label": "其他"
 				},
 				{
-					"line": 742,
+					"line": 743,
 					"column": 2,
 					"label": "跳转和额外代码"
 				}
@@ -834,12 +834,12 @@
 					"label": "匹诺康尼"
 				},
 				{
-					"line": 81,
+					"line": 212,
 					"column": 8,
 					"label": "模拟宇宙"
 				},
 				{
-					"line": 138,
+					"line": 269,
 					"column": 5,
 					"label": "let 表"
 				}
@@ -941,71 +941,6 @@
 			]
 		},
 		{
-			"path": "blog/私人/我的排行榜/娱乐_作品内外.html",
-			"bookmarks": [
-				{
-					"line": 29,
-					"column": 8,
-					"label": "TOP"
-				},
-				{
-					"line": 42,
-					"column": 10,
-					"label": "【星穹铁道】"
-				},
-				{
-					"line": 43,
-					"column": 6,
-					"label": "剧情"
-				},
-				{
-					"line": 44,
-					"column": 6,
-					"label": "活动"
-				},
-				{
-					"line": 46,
-					"column": 4,
-					"label": "元素"
-				},
-				{
-					"line": 82,
-					"column": 9,
-					"label": "BOSS战"
-				},
-				{
-					"line": 88,
-					"column": 7,
-					"label": "【原神】"
-				},
-				{
-					"line": 89,
-					"column": 4,
-					"label": "元素"
-				},
-				{
-					"line": 165,
-					"column": 5,
-					"label": "剧情"
-				},
-				{
-					"line": 221,
-					"column": 6,
-					"label": "活动"
-				},
-				{
-					"line": 242,
-					"column": 9,
-					"label": "BOSS战"
-				},
-				{
-					"line": 253,
-					"column": 7,
-					"label": "BGM"
-				}
-			]
-		},
-		{
 			"path": "../../文件/工作台/废案.txt",
 			"bookmarks": [
 				{
@@ -1024,7 +959,7 @@
 					"label": "沈灰"
 				},
 				{
-					"line": 25,
+					"line": 34,
 					"column": 11,
 					"label": "汤尼"
 				}
