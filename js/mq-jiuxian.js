@@ -14,7 +14,7 @@ let 表_代码={ //"按钮_跳转":"h4_按钮"
 <script src="/js/mq-jiuxian.js"></script>
 */
 
-document.getElementById("酒仙").innerHTML="<style>#弹窗{position: absolute;left:0;position:fixed;bottom:0;margin:0 0 15px 20px;line-height:18px;padding:7px;width:300px;border-style:solid;border-radius:5px;border:2pxsolid #535353;background-color:#060f27d3;color:#b6b6b6;font-size:12px;z-index:1000;}#弹窗 .标题{color:#e4e4e4;font-weight:bold;font-size:14px;}#弹窗 .绿{color:#07F602;}#弹窗 .白{color:#e4e4e4;}#弹窗 .黄{color:#EBBC06;}#弹窗 .酒{color:#23A8F2;}#弹窗 .水{color:#3ffcff}#弹窗 .人{color:#07F602;}#弹窗 .使用{color:#CCCCCC;}[onmousemove]{color:#006699;}[onmousemove].x{color:var(--body-color);border-bottom:1.8px solid #08f;}</style><div id=\"弹窗\" style=\"display:none;\"></div>";
+document.getElementById("酒仙").innerHTML="<style>#弹窗{position: absolute;left:0;position:fixed;bottom:0;margin:0 0 15px 20px;line-height:18px;padding:7px;width:300px;border-style:solid;border-radius:5px;border:2pxsolid #535353;background-color:#060f27d3;color:#b6b6b6;font-size:12px;z-index:1000;}#弹窗 .标题{color:#e4e4e4;font-weight:bold;font-size:14px;}#弹窗 .绿{color:#07F602;}#弹窗 .白{color:#e4e4e4;}#弹窗 .黄{color:#EBBC06;}#弹窗 .酒{color:#23A8F2;}#弹窗 .水{color:#3ffcff}#弹窗 .人{color:#07F602;}#弹窗 .使用{color:#CCCCCC;}[onmousemove]{color:#006699;}[onmousemove].x{color:var(--body-color);border-bottom:1.8px solid #08f;}#right_anchor,#right_anchor2{display:none !important}</style><div id=\"弹窗\" style=\"display:none;\"></div>";
 
 let o="";
 let oo="";
@@ -84,4 +84,4 @@ function 进入(){
     }
     document.getElementById("弹窗").style="";
 }
-function 离开(){document.getElementById("弹窗").style="display:none;";}
+function 离开(){document.getElementById("弹窗").style="display:none"}
