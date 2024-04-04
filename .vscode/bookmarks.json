@@ -269,22 +269,22 @@
 					"label": "2024.03.13 - 4.5"
 				},
 				{
-					"line": 2427,
+					"line": 2428,
 					"column": 4,
 					"label": "最新"
 				},
 				{
-					"line": 2445,
+					"line": 2446,
 					"column": 19,
 					"label": "专题"
 				},
 				{
-					"line": 2548,
+					"line": 2549,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2644,
+					"line": 2645,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -674,12 +674,12 @@
 					"label": "2023"
 				},
 				{
-					"line": 332,
+					"line": 333,
 					"column": 18,
 					"label": "2024"
 				},
 				{
-					"line": 405,
+					"line": 409,
 					"column": 12,
 					"label": "书签"
 				}
@@ -829,17 +829,17 @@
 					"label": "仙舟罗浮"
 				},
 				{
-					"line": 55,
+					"line": 57,
 					"column": 7,
 					"label": "匹诺康尼"
 				},
 				{
-					"line": 254,
+					"line": 267,
 					"column": 8,
 					"label": "模拟宇宙"
 				},
 				{
-					"line": 318,
+					"line": 335,
 					"column": 5,
 					"label": "let 表"
 				}
@@ -962,6 +962,66 @@
 					"line": 34,
 					"column": 11,
 					"label": "汤尼"
+				}
+			]
+		},
+		{
+			"path": "../../异梦笔记/biji/创作／人设／mbti（本地）.html",
+			"bookmarks": [
+				{
+					"line": 41,
+					"column": 5,
+					"label": "ts"
+				},
+				{
+					"line": 89,
+					"column": 14,
+					"label": "判断、测试"
+				},
+				{
+					"line": 122,
+					"column": 17,
+					"label": "I E"
+				},
+				{
+					"line": 164,
+					"column": 16,
+					"label": "S N"
+				},
+				{
+					"line": 193,
+					"column": 16,
+					"label": "F T"
+				},
+				{
+					"line": 216,
+					"column": 15,
+					"label": "P J"
+				},
+				{
+					"line": 226,
+					"column": 14,
+					"label": "【具体人格】"
+				},
+				{
+					"line": 236,
+					"column": 12,
+					"label": "INFP 小蝴蝶"
+				},
+				{
+					"line": 244,
+					"column": 21,
+					"label": "INFJ 绿老头"
+				},
+				{
+					"line": 277,
+					"column": 13,
+					"label": "ENFP 快乐小狗"
+				},
+				{
+					"line": 351,
+					"column": 6,
+					"label": "【档案】"
 				}
 			]
 		}
