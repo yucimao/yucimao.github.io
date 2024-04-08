@@ -1,0 +1,25 @@
+---
+layout: o
+permalink: app/game/yyl
+title: 摇摇乐
+footer_fx: 0
+---
+<div class="ctrl-box">
+    <a class="set-orientation-link" onclick="setOrientationListener()" data-locale="gyroscope"></a>
+    <a class="set-voice" onclick="toggleVoiceMute()" data-locale="mute"></a>
+    <a class="trigger-magic-link" onclick="triggerMagic()" data-locale="magic"></a>
+    <a class="locale-switch" onclick="switchLocale()" data-locale="lang"></a>
+</div>
+
+<script src="01.js"></script>
+<script src="02.js"></script>
+
+<style>
+html{background:#3f80b6;color:#FFF;overflow:hidden;}
+</style>
+
+<style id="style"></style>
+<script>
+    let url=location.href.split("?")[1].split("#")[0];
+    url=".sakana-box .sakana-character[data-character=chisato]{background-image:url("+url+"_1)}.sakana-box .sakana-character[data-character=takina]{background-image:url("+url+"_2.png)}"
+</script>
