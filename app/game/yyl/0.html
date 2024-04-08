@@ -1,8 +1,10 @@
 ---
 layout: o
-permalink: app/game/yyl
+permalink: app/game/yyl/0
 title: 摇摇乐
 footer_fx: 0
+redirect_from:
+ - app/game/yyl
 ---
 <div class="ctrl-box">
     <a class="set-orientation-link" onclick="setOrientationListener()" data-locale="gyroscope"></a>
@@ -11,17 +13,17 @@ footer_fx: 0
     <a class="locale-switch" onclick="switchLocale()" data-locale="lang"></a>
 </div>
 
-<script src="yyl/01.js"></script>
-<script src="yyl/02.js"></script>
+<script src="01.js"></script>
+<script src="02.js"></script>
 
 <style>
     html{background:#3f80b6;color:#FFF;overflow:hidden;}
-    .sakana-box .sakana-character[data-character=takina]{background-image:url(yyl/20170906_1.png)}
-    .sakana-box .sakana-character[data-character=chisato]{background-image:url(yyl/20170906_2.png)}
+    .sakana-box .sakana-character[data-character=takina]{background-image:url(20170906_1.png)}
+    .sakana-box .sakana-character[data-character=chisato]{background-image:url(20170906_2.png)}
 </style>
 
 <style id="style"></style>
 <script>
     let url=location.href.split("?")[1].split("#")[0];
-    url=".sakana-box .sakana-character[data-character=chisato]{background-image:url(yyl/"+url+"_1.png)}.sakana-box .sakana-character[data-character=takina]{background-image:url(yyl/"+url+"_2.png)}"
+    url=".sakana-box .sakana-character[data-character=chisato]{background-image:url("+url+"_1.png)}.sakana-box .sakana-character[data-character=takina]{background-image:url("+url+"_2.png)}"
 </script>
