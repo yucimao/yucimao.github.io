@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	html{margin:30px;}
+	a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.3em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000;}
+	#dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff;}
+	[搜]:before{content:" [搜]";}
+	.提示{position:relative;border-bottom:1.5px dashed #aaa;}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%);}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989;}
+</style>
+<div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
+<script>
+	let url=decodeURI(location.href.split("?")[1]).replace(new RegExp(' ',"g"),"+").split("+");
+	let 默认="https://www.baidu.com/s?wd=";
+
+let d={//大写
+
+	// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
+	// "A":["选择","B","C_D"], //显示按钮 B、C（_后面不显示）
+	// "A":".B", //A同B
+
+	"萌娘百科":["https://zh.moegirl.org.cn/","https://zh.moegirl.org.cn/index.php?search=【】"],
+	"识图":["https://graph.baidu.com/pcpage/index"],
+	"SHITU":".识图",
+	"百科":["https://baike.baidu.com/","https://baike.baidu.com/item/【】"],
+	"STEAM":["https://store.steampowered.com/","https://store.steampowered.com/search/?term=【】"],
+	"微博":["https://weibo.com/","https://s.weibo.com/weibo?q=【】"],
+	"知乎":["https://www.zhihu.com/","https://www.zhihu.com/search?q=【】"],
+	"微信":["https://weixin.qq.com/","https://weixin.sogou.com/weixin?query=【】"],
+	"GITHUB":["https://www.github.com/"],
+	"EPIC":["https://www.epicgames.com/store/zh-CN",""],
+	"路由器":["http://192.168.1.1",""],
+	"WIFI":".路由器",
+	"奶牛关":["https://cowlevel.net/",""],
+	"推特":["https://twitter.com/",""],
+	"蔷薇花园":["https://iirose.com/#s=56b331ffaac6c",""],
+	"SCP":["选择","SCP基金会","中国站_SCP基金会"],
+	"SCP基金会":["http://www.scp-wiki.net"],
+	"中国站_SCP基金会":["http://scp-wiki-cn.wikidot.com"],
+	"知网":["https://www.cnki.net/"],
+	"KTV":["https://limaoqiu.com/shoucangjia/gedan#KTV歌单"],
+	"叔叔不约":["http://www.shushubuyue.net/"],
+	"聊天室":["选择","蔷薇花园","叔叔不约"],
+	"二扯奶茶店":["https://limaoqiu.com/biji/erchenaichadian",""],
+	// "":["",""],
+
+	"星穹铁道":["https://www.miyoushe.com/sr/","https://www.miyoushe.com/sr/search?keyword=【】"],
+	"星铁":".星穹铁道",
+	"原神":["https://www.miyoushe.com/ys/","https://www.miyoushe.com/ys/search?keyword=【】"],
+
+	"P站":["选择","pixiv","PornHub"],
+	"P":".P站",
+	"PIXIV":["https://pixiv.net/","https://www.pixiv.net/tags/【】","插画"],
+	"PORNHUB":["https://www.pornhub.com/","https://www.pornhub.com/video/search?search=【】","成人视频"],
+
+	"搜索":["选择","百度","必应","谷歌搜索"],
+	"S":".搜索",
+	"百度":["https://www.baidu.com/","https://www.baidu.com/s?wd=【】","广告多、流氓、结果全"],
+	"必应":["https://cn.bing.com/","https://cn.bing.com/search?q=【】"],
+	"谷歌搜索":["https://www.google.com/","https://www.google.com/search?q=【】","需要科学上网"],
+	// "":["",""],
+	// "":["",""],
+
+	"翻译":["选择","百度翻译","DeepL"],
+	"百度翻译":["https://fanyi.baidu.com/"],
+	"DEEPL":["https://www.deepl.com/translator",,"更适合国人习惯的翻译网站"],
+	// "":["",""],
+
+	"测试":["js","document.getElementById('dy').innerHTML=\"<a onclick='编辑()'>编辑</a>\";"],
+	"编辑":".测试",
+
+	
+
+}
+
+let 制;function 复(){document.getElementById('复制').value=制;let 复制=document.querySelector('#复制');复制.select();document.execCommand("Copy");}
+
+	function 开始(){
+		let 搜索=url[0].toUpperCase();
+		if(d[搜索]&&d[搜索][0]=="."){搜索=d[搜索].split(".")[1];}
+		let 跳转=0;
+
+		if(d[搜索]&&d[搜索][0]=="选择"){//选择
+			let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
+			if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>";}
+			for(let i=1;d[搜索].length>i;i++){
+				dy+="<a onclick=\"url[0]='"+d[搜索][i]+"';开始()\"";
+				if(d[d[搜索][i].toUpperCase()]&&d[d[搜索][i].toUpperCase()][2]){dy+=" class='提示' data-msg='"+d[d[搜索][i].toUpperCase()][2]+"'"}
+				dy+=">"+d[搜索][i].split("_")[0];
+				if(url[1]&&d[d[搜索][i].toUpperCase()]&&d[d[搜索][i].toUpperCase()][1]){dy+="<sub 搜> </sub>"}
+				dy+="</a>";
+			}
+			document.getElementById("dy").innerHTML=dy;
+		}else if(d[搜索]&&d[搜索][0]=="js"){//执行js
+			console.log(d[搜索][1])
+			eval(d[搜索][1]);
+		}else if(d[搜索]&&d[搜索][1]&&url[1]){//搜索
+			跳转=d[搜索][1].replace(new RegExp('【】',"g"),url[1]);
+		}else if(d[搜索]){//直接打开
+			跳转=d[搜索][0];
+		}else{
+			if(url[0][0]=="。"){
+				url[0]=url[0].split("。")[1];
+			}
+			跳转=默认+url.join(" ");
+		}
+
+		if(跳转!=0){
+			document.getElementById("dy").innerHTML="<div id='dy0'>跳转中……<br>目标："+跳转+"</div>";
+			location.replace(跳转);
+		}
+	}
+
+	if(url&&url[0]!="undefined"){开始()}
+
+	function 编辑(){
+		制=window.location.href.replace(/file:\/\/\//g,'').split(':/');制='C:/mq/app/code.lnk /'+decodeURI(制[1].split('#')[0].split("?")[0])+' & exit';复();window.location.href='pvocmd://';
+	}
+
+	function 取消(){
+		url.splice(1,1);
+		document.getElementById("搜索").innerHTML="<style>[搜]:before{content:'';}</style>";
+		document.getElementById("搜索").style="display:none;";
+	}
+	
+</script>
+</html>

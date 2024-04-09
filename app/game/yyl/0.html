@@ -24,5 +24,9 @@ redirect_from:
 <style id="style"></style>
 <script>
     let url=location.href.split("?")[1].split("#")[0];
-    url=".sakana-box .sakana-character[data-character=chisato]{background-image:url("+url+"_1.png)}.sakana-box .sakana-character[data-character=takina]{background-image:url("+url+"_2.png)}"
+    if(url){
+        url=".sakana-box .sakana-character[data-character=takina]{background-image:url("+url+"_1.png)}.sakana-box .sakana-character[data-character=chisato]{background-image:url("+url+"_2.png)}";
+        document.getElementById("style").innerHTML=url;
+    }
+    
 </script>

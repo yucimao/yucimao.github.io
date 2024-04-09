@@ -3,7 +3,7 @@ a.innerHTML=".sakana-box{width:500px;height:800px;position:relative;transform-or
 ".sakana-box canvas{position:absolute;left:0;right:0;bottom:0;pointer-events:none}"+
 ".sakana-box .sakana-character{width:400px;height:400px;position:absolute;left:0;right:0;margin:0 auto;bottom:235px;cursor:pointer;pointer-events:auto;transform-origin:50% 400px;background:no-repeat 50% 50%;background-size:cover}"+
 ".sakana-box .sakana-bed{width:160px;height:20px;position:absolute;left:0;right:0;margin:0 auto;bottom:0;background:rgba(255,255,255,.5) no-repeat 50% 50%;border-radius:2px;cursor:pointer;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMARLt37hGZzDMiZt2IqlUoxiOvAAACgElEQVRYw+2Xv2/TQBTHHayY2PyQEVOmRv0HiIQQbAghGBDCqSrBglQWBhaCkDpWDahbh0YKYqUDeyY2pHRBQurQ/gfpUHVuWqu/rPb13l19Z8fnPJ86tIO/y/3w+8h37975PVulSl2dvnVomykA8OXIBVh4YoY4bLRnhsyx0b4ZssFGL4wQF5iaRghuJWwZISuJrczUCyEPIKlmAcSGlPa6NPID0mrQyHAM+UAi9hgR0gtbQrNpIeC+o5DqIuueJV7YIJE7aLapZsMWibRZLxJmbsD6I431jeQZWB42R+LJO36SJNLHZlVFwYFFIR4oMwf7X0ikL3wkd3XY0iOURpdAdE7eMEdsc8TqmyMON7nHhM5mzX0SqaLJLs5cxHCFQNCkRK4f0ntoiNQfM8wMGeCtjxFsT0gE1UwiowmICvpGjHgEUlmHNCIu23E+shPERCQX5mCbh/RUPvnbkU6+id+wPOSpTCT/E0c5h7koD+mrPFqBPO2mkF/xtF8YuWWOOADh5ykjxIOXWxaJ5EVybTrWIqC+ynEjB8l4fk1NkIgLXEckkkkghySSPd61wkgN41SWDBSisncPw65TFBnixeeVyR8SSWXvFZmRaaQtSiobyXkakZkM1ydeQyN8D7Aae2G+ALLM6zZZKUUdErEDVU8uYfcVhVSH4iXqSOEfgfyGeCfyNZE/EfnOiWepyIGD7gTkpwhgteNlQD0f9/QMKyLaHJkNAPVRzCuPw+uu/qvv9wTxJvnwLXCd+tqv0vuLp+lVbOv+L24DV2SDzj/uELJVaU0gZ/wuhpki9+5AU5IPQNh6+nOzg2xJju5aeMT/9D5ZGs0O8i90pW6VKnW1OgfC8OvrrM0udwAAAABJRU5ErkJggg==);background-size:20px 20px;box-shadow:0 0 0 2px rgba(0,0,0,.05)}"+
-".sakana-box[data-can-switch-character=true] .sakana-bed{pointer-events:auto}",
+".sakana-box[data-can-switch-character=true] .sakana-bed{pointer-events:auto}.a1{top:10px;}",
 document.head.appendChild(a);const{log:e}=console,n="color:#FED;background-color:#C34;padding:2px 4px;",o="color:#CCC;background-color:#235;padding:2px 4px;",
 r={chisato:{r:1,y:40,t:0,w:0,d:.99},takina:{r:12,y:2,t:0,w:0,d:.988}},s={chisato:new Audio(""),takina:new Audio(""),isMute:!0};
 s.takina.volume=s.chisato.volume=.8,s.takina.muted=s.chisato.muted=s.isMute;
@@ -15,7 +15,7 @@ if(m.constructor===String&&(m=document.querySelector(m)),!m)throw new Error("inv
 g||(g=.08),g=Math.min(.5,Math.max(0,g));
 let x;
 const w=m;
-w.classList.add("sakana-box"),w.innerHTML='<canvas></canvas><div class="sakana-character"></div><div class="sakana-bed"></div>';
+w.classList.add("sakana-box"),w.innerHTML='<canvas></canvas><div class="sakana-character"></div><div class="sakana-bed a1"></div><div class="sakana-bed"></div>';
 const y=w.querySelector(".sakana-character"),M=w.querySelector(".sakana-bed"),f=w.querySelector("canvas");
 w.style.transform=`translateY(${d||0}) scale(${u})`;
 let C=!1;

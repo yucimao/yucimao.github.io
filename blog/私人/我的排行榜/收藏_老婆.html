@@ -10,7 +10,8 @@ redirect_from:
 <link rel="stylesheet" href="/css/all2.css">
 <style>
     .灰{color:#00000020;}
-    td:nth-child(2) sub,li sub{color:#00000060;}
+    td:nth-child(2) sub,li sub{color:#00000060;font-weight:none;}
+    td:nth-child(2){font-weight:bold;}
 </style>
 <div id="dy"></div>
 <script>
@@ -135,15 +136,15 @@ function 作品分类(){
         }
     }
     for(let i=0;排序.length>i;i++){
-        dy+="<h4>"+排序[i]+" <small>♥"+作品[排序[i]][0]+"</small></h4><ol>"
+        dy+="<h4>"+排序[i]+" <small class='提示' data-msg='平均"+(作品[排序[i]][0]/(作品[排序[i]].length-1)+"").split(".")[0]+"'>♥"+作品[排序[i]][0]+"</small></h4><ol>"
         for(let o=1;作品[排序[i]].length>o;o++){
-            dy+="<li>"+作品[排序[i]][o][0]+" <small>"+作品[排序[i]][o][2]+"</small></li>";
+            dy+="<li><b>"+作品[排序[i]][o][0]+"</b> <small>"+作品[排序[i]][o][2]+"</small></li>";
         }
         dy+="</ol>"
     }
     dy+="<h4>其他</h4><ol>";
     for(let i=0;其他.length>i;i++){
-        dy+="<li>"+其他[i][0];
+        dy+="<li><b>"+其他[i][0]+"</b>";
         if(其他[i][1]&&其他[i][1]!=""){
             dy+=" <sub>«"+其他[i][1][0]+"»"+其他[i][1][1]+"</sub>";
         }
