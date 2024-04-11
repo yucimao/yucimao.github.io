@@ -12,7 +12,9 @@
 </style>
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
-	let url=decodeURI(location.href.split("?")[1]).replace(new RegExp(' ',"g"),"+").split("+");
+	let 原=decodeURI(location.href.split("?")[1]).replace(new RegExp('\\+',"g")," ");
+	let url=原.replace(new RegExp(' ',"g"),"+").split("+");
+	原=原.toUpperCase();
 	let 默认="https://www.baidu.com/s?wd=";
 
 let d={//大写
@@ -44,6 +46,9 @@ let d={//大写
 	"叔叔不约":["http://www.shushubuyue.net/"],
 	"聊天室":["选择","蔷薇花园","叔叔不约"],
 	"二扯奶茶店":["https://limaoqiu.com/biji/erchenaichadian",""],
+	"知乎 收藏":".知乎收藏",
+	"知乎收藏":["https://www.zhihu.com/collections/mine"],
+	"博客":["https://limaoqiu.com/","https://limaoqiu.com/【】"],
 	// "":["",""],
 
 	"星穹铁道":["https://www.miyoushe.com/sr/","https://www.miyoushe.com/sr/search?keyword=【】"],
@@ -79,9 +84,11 @@ let 制;function 复(){document.getElementById('复制').value=制;let 复制=do
 
 	function 开始(){
 		let 搜索=url[0].toUpperCase();
-		if(d[搜索]&&d[搜索][0]=="."){搜索=d[搜索].split(".")[1];}
+		if(d[原]&&d[原][0]=="."){搜索=d[原].split(".")[1];}
+		else if(d[搜索]&&d[搜索][0]=="."){搜索=d[搜索].split(".")[1];}
 		let 跳转=0;
 
+		
 		if(d[搜索]&&d[搜索][0]=="选择"){//选择
 			let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
 			if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>";}

@@ -1,14 +1,73 @@
 ---
 layout: zk
-title: KY
-nav_text: KY
+title: 截图记录
+nav_text: 截图记录
 nav_url: <a href="/yuanshenjiezou">原神节奏</a>
 permalink: i/zk/8317226
 ---
-<style>#图 img{width:100%;box-shadow: 5px 5px 8px rgba(0, 0, 0, .2);}.滑动阅读{height:500px;}</style>
-<div id="图">
-<div class="滑动阅读"><img src="/i/0/0/yuanshen/b/ky3.jpg"></div><br><br>
-<div class="滑动阅读"><img src="/i/0/0/yuanshen/b/ky1.jpg"></div><br><br>
-<div class="滑动阅读"><img src="/i/0/0/yuanshen/b/ky2.jpg"></div><br><br>
-<div class="滑动阅读"><img src="/i/0/0/yuanshen/b/a4.jpg"></div><br><br>
-</div>
+<div id="dy"></div>
+
+<script>
+    let d=[
+        // "／<h3>反原群体</h3>",
+        "1.jpg",
+        "2.jpg",
+        "／“原神玩家喜欢KY”",
+        "3.jpg",
+        "4.jpg",
+        "5.jpeg",
+        "6.jpeg",
+        "／“不如原神”",
+        "7.jpg",
+        "／“原批玩梗”",
+        "8.jpg",
+        "9.jpg",
+        "退伍消防员",
+        "10.jpg",
+        "／“逆天言论”",
+        "11.jpg",
+        "／买断制玩家对抄袭的态度",
+        "12.jpg",
+        "／“笑死，颁给一个手游”",
+        "13.jpeg",
+
+        "／<h3>塞尔达玩家</h3>",
+        "s/1.png",
+        "s/3.jpg",
+        "s/4.jpg",
+        "s/5.jpg",
+        "s/6.jpg",
+        "s/8.png",
+        "s/7.jpg",
+        "s/9.jpg",
+        "s/10.jpg",
+        "s/11.jpg",
+        "s/12.jpg",
+        "／肖战同款",
+        "s/15.jpg",
+        "／崩坏3摩托车",
+        "s/16.jpg",
+        "s/17.jpg",
+        "／和平共处",
+        "s/18.jpeg",
+        "／小飞侠",
+        "s/19.jpg",
+        "／腾讯展台",
+        "s/20.jpg",
+        "／“提前实现了塞尔达的玩法”",
+        "s/21.jpg",
+        "s/22.jpg",
+        "／便携锅炸知乎",
+        // "s/",
+    ];
+    let 链接="/i/0/0/yuanshen/c/";
+    let dy="";
+    for(let i=0;d.length>i;i++){
+        if(d[i][0]=="／"){
+            dy+=d[i].split("／")[1]+"<br>";
+        }else{//<a href=""></a>
+            dy+="<a href='"+链接+d[i]+"'><img src='"+链接+d[i]+"' width='400px'></a><br>";
+        }
+    }
+    document.getElementById("dy").innerHTML=dy;
+</script>

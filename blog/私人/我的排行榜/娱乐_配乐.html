@@ -7,12 +7,6 @@ permalink: pingfen/peiyue
 redirect_from:
  - dafen/peiyue
 ---
-<link rel="stylesheet" href="/css/all2.css">
-<style>
-    .灰{color:#00000020;}
-    td:nth-child(2) sub,li sub{color:#00000060;font-weight:none;}
-    td:nth-child(2){font-weight:bold;}
-</style>
 <div id="dy"></div>
 <script>
 let data=//["名字","作品／第几季","额外说明",并列],
@@ -22,7 +16,9 @@ let data=//["名字","作品／第几季","额外说明",并列],
 [["★★★★★ 超级喜欢",//5
     ["璃月","原神／BGM",""],
     ["三千娑世御咏歌","原神／BGM（散兵BOSS战）",""],
+    ["Life Will Change","女神异闻录／5 BGM","",1],
     ["喧繁之港","原神／BGM（须弥）",""],
+    ["Minecraft","我的世界／BGM",""],
     // ["","",""],
 
 ],["★★★★ 非常喜欢",//4
@@ -31,15 +27,25 @@ let data=//["名字","作品／第几季","额外说明",并列],
     ["太空漫步","星穹铁道／BGM",""],
     ["野火","星穹铁道／插曲（可可利亚BOSS战）",""],
     ["魔法少女の宿命","魔法少女小圆／BGM","一直在用这首当手机铃声",1],
+    ["卡布奇诺","云端的日子／BGM（下集预告）",""],
+    ["Stormstout Brew","魔兽世界／BGM（熊猫人酒馆）","",1],
     ["蝉喓歌·仙骸有终","星穹铁道／BGM（幻胧BOSS战）",""],
     ["Da Capo","崩坏3／PV",""],
     ["踏上旅途","星穹铁道／插曲",""],
+    ["3-Part Inventions: No. 13 in A Minor, BWV 799","慢爆了／BGM",""],
     // ["","",""],
 
 ],["★★★ 很喜欢",//3
     ["岩壑之崩","原神／BGM（若陀龙王BOSS战）",""],
     ["轻涟","原神／插曲（芙宁娜传说任务）",""],
-    ["杯中明月","原神／BGM（璃月）",""],
+    ["杯中明月","原神／BGM（璃月）","",1],
+    ["Beneath the Mask -instrumental version-","女神异闻录／5 BGM",""],
+    ["Theme From San Andreas","GTA／BGM","",1],
+    ["Power of the horde","魔兽世界／插曲（牛头人酋长乐队）",""],
+    ["在云端","云端的日子／OP",""],
+    ["Loves Me Not","QQ飞车／BGM",""],
+    ["Buckle Your Pants (Finale Version)","战斗方块剧场／BGM","",1],
+    ["森林","元气骑士／BGM",""],
     // ["","",""],
 
 ],["★★ 喜欢",//2
@@ -58,83 +64,11 @@ let data=//["名字","作品／第几季","额外说明",并列],
     ["canzoni preferite","JOJO的奇妙冒险／插曲（黑帮摇）",""],
     ["水龙吟","星穹铁道／插曲",""],
     // ["","",""],
+    // ["","",""],
 
 ]];
 
-let 作品={}
 
-let 排名=0;
-let dy="<a onclick='作品分类()'>按作品分类</a><br><br>";
-for(let i=0;data.length>i;i++){
-    dy+="<table><tr><td colspan='3'><b>"+data[i][0]+"</b></td></tr>"
-    for(let o=1;data[i].length>o;o++){
-        dy+="<tr><td>";
-        if(data[i][o][3]){
-            dy+="<span class='灰'>-</span>"
-        }else{
-            排名+=1;
-            dy+=排名;
-        }
-        dy+="</td><td>"+data[i][o][0]+"";
-        if(data[i][o][1]&&data[i][o][1]!=""){
-            data[i][o][1]=data[i][o][1].split("／");
-            if(!data[i][o][1][1]){data[i][o][1][1]=""}
-            dy+=" <sub>«"+data[i][o][1][0]+"»"+data[i][o][1][1]+"</sub>";
-            if(作品[data[i][o][1][0]]){
-                作品[data[i][o][1][0]][0]+=(5-i);
-            }else{
-                作品[data[i][o][1][0]]=[(5-i)];
-            }
-            作品[data[i][o][1][0]].push(data[i][o]);
-        }else{
-            作品["."+data[i][o][0]]=[0,data[i][o]];
-        }
-        dy+="</td><td>"+data[i][o][2]+"</td></tr>";
-    }
-dy+="</table><br>";
-}
-document.getElementById("dy").innerHTML=dy;
-
-function 作品分类(){
-    dy="<a onclick='location.replace(location.href)'>总排名</a>";
-    data=Object.keys(作品);
-    let 排序=[data[1]];
-    let 其他=[作品[data[0]][1]];
-    for(let i=2;data.length>i;i++){
-        if(data[i][0]=="."||作品[data[i]][0]==1){//||作品[data[i]].length==2
-            其他[其他.length]=作品[data[i]][1];
-        }else{
-            let 比较=0;
-            for(let o=0;排序.length>o;o++){
-                if(作品[data[i]][0]>作品[排序[o]][0]){
-                    排序.splice(o,0,data[i]);
-                    比较=1;
-                    break;
-                }
-            }
-            if(比较==0){
-                排序[排序.length]=data[i];
-            }
-        }
-    }
-    for(let i=0;排序.length>i;i++){
-        //<span class="提示" data-msg="内容">表面</span>
-        dy+="<h4>"+排序[i]+" <small class='提示' data-msg='平均"+(作品[排序[i]][0]/(作品[排序[i]].length-1)+"").split(".")[0]+"'>♥"+作品[排序[i]][0]+"</small></h4><ol>"
-        for(let o=1;作品[排序[i]].length>o;o++){
-            dy+="<li><b>"+作品[排序[i]][o][0]+"</b> <small>"+作品[排序[i]][o][2]+"</small></li>";
-        }
-        dy+="</ol>"
-    }
-    dy+="<h4>其他</h4><ol>";
-    for(let i=0;其他.length>i;i++){
-        dy+="<li><b>"+其他[i][0]+"</b>";
-        if(其他[i][1]&&其他[i][1]!=""){
-            dy+=" <sub>«"+其他[i][1][0]+"»"+其他[i][1][1]+"</sub>";
-        }
-        dy+=" <small>"+其他[i][2]+"</small></li>";
-    }
-    dy+="</ol>";
-    document.getElementById("dy").innerHTML=dy;
-}
 
 </script>
+<script src="/js/mq-pingfen3.js"></script>
