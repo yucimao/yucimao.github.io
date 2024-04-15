@@ -7,19 +7,19 @@ permalink: dianpingmaoqiu
 footer_fxx: dianping
 ---
 <style>
-	.分a,.总分,.分条,.个评价{color:#fd9b07;}
-	.分b{color:#cccccc;}
-	.分c{color:#ffffff;}
-	.分a,.分b,.分c{font-size:1.3em;letter-spacing:.14em;line-height:0.8em;}
-	.总分{font-size:2em;}
-	.分条{background-color:#fd9b07;font-size:0.8em;}
+.分a,.总分,.分条,.个评价{color:#fd9b07}
+.分b{color:#cccccc}
+.分c{color:#ffffff}
+.分a,.分b,.分c{font-size:1.3em;letter-spacing:.14em;line-height:0.8em}
+.总分{font-size:2em}
+.分条{background-color:#fd9b07;font-size:0.8em}
 </style>
 
 <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
 
 <div id="打分" style="display:none;"><small>(提交后不是实时显示评价，可能需要几天后才会更新)</small><br>
 	打分 
-	<input type="radio" name="a" id="a1" onclick="打分(0)"><label for="a1">0</label>
+	<input type="radio" name="a" id="a0" onclick="打分(0)"><label for="a0">0</label>
 	<input type="radio" name="a" id="a1" onclick="打分(1)"><label for="a1">1</label>
 	<input type="radio" name="a" id="a2" onclick="打分(2)"><label for="a2">2</label>
 	<input type="radio" name="a" id="a3" onclick="打分(3)"><label for="a3">3</label>
@@ -40,7 +40,7 @@ footer_fxx: dianping
 
 <script>
 	let data=[ //分 日期 评价 名字
-		["3","2022.10.16","暂无评价（这条是测试用的）"],
+		["5","2024.04.15","也就那么地吧"],
 	];
 	let 星={
 		"5":"★★★★★",
@@ -96,30 +96,47 @@ footer_fxx: dianping
 
 	document.getElementById("dy").innerHTML=dy2+"<br><br>"+dy;
 
-	let 分数=0;function 打分(o){分数=o;}
+	let 分数=-1;function 打分(o){分数=o;}
 
 	function 提交(o){
-		try{
-			AV.init({
-				appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
-				appKey: "YCCregxILHitovzescjVs4X1",
-				serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
-			});
-			const TestObject = AV.Object.extend('df');
-			const testObject = new TestObject();
-			testObject.set('pingjia', document.getElementById("输入").value);
-			testObject.set('fenshu', 分数);
-			testObject.save().then((testObject) => {
-				try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
-			})
-		}
-		catch(e){
-			try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
+		if(分数==-1){
+			try{notyf.alert("未打分");}catch(e){alert("未打分");}
+		}else{
+			try{
+				AV.init({
+					appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
+					appKey: "YCCregxILHitovzescjVs4X1",
+					serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
+				});
+				const TestObject = AV.Object.extend('df');
+				const testObject = new TestObject();
+				testObject.set('pingjia', document.getElementById("输入").value);
+				testObject.set('fenshu', "猫球_"+分数);
+				testObject.save().then((testObject) => {
+					try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
+					resetRadio();
+					分数=-1;
+					document.getElementById("输入").value="";
+				})
+			}
+			catch(e){
+				try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
+			}
 		}
 	}
 
 	window.onload=function(){
 		document.getElementById("打分").style="";
 		document.getElementById("打分前").style="display:none;";
+	}
+
+	function resetRadio() {
+		// 获取所有单选按钮
+		var radios = document.getElementsByName('a');
+		
+		// 遍历并取消选中
+		radios.forEach(function(radio) {
+			radio.checked = false;
+		});
 	}
 </script>

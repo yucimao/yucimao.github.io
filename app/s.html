@@ -19,6 +19,7 @@
 
 let html_a1={//编辑html
 	"yucimao":"C:/mq/博客/yucimao.github.io/",
+	"异梦":"C:/mq/异梦笔记/biji/",
 }
 let d={//大写
 
@@ -67,11 +68,16 @@ let d={//大写
 	"星铁":".星穹铁道",
 	"原神":["https://www.miyoushe.com/ys/","https://www.miyoushe.com/ys/search?keyword=【】"],
 	"小工具":["https://limaoqiu.com/xiaogongju"],
+	"图片_找灵感":["C:/mq/异梦笔记/biji/找灵感／图片（本地）.html"],
+	"图片文件夹_找灵感":["文件夹","C:/mq/异梦笔记/0/2/找灵感/"],
+	"文字_找灵感":["C:/mq/异梦笔记/biji/找灵感（本地）.html"],
+	"小翻译器":["C:/mq/目录/小翻译器.html","C:/mq/目录/小翻译器.html?【】"],
 	// "":["",""],
 
 	//目录
 	"搜索":["选择","百度","必应","谷歌搜索"],
-	"翻译":["选择","百度翻译","DeepL"],
+	"翻译":["选择","小翻译器",".<br>","百度翻译","DeepL"],
+	"找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
 
 	//字母
 	"B":".B站",
@@ -104,12 +110,16 @@ function 开始(){
 		let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
 		if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>";}
 		for(let i=1;d[搜索].length>i;i++){
-			dy+="<a onclick=\"url[0]='"+d[搜索][i]+"';开始()\"";
-			let 临时=d[d[搜索][i].toUpperCase()];
-			if(临时&&临时[2]){dy+=" class='提示' data-msg='"+临时[2]+"'"}
-			dy+=">"+d[搜索][i].split("_")[0];
-			if(url[1]&&临时&&临时[1]&&临时[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>"}
-			dy+="</a>";
+			if(d[搜索][i][0]=="."){
+				dy+=d[搜索][i].split(".")[1];
+			}else{
+				dy+="<a onclick=\"url[0]='"+d[搜索][i]+"';开始()\"";
+				let 临时=d[d[搜索][i].toUpperCase()];
+				if(临时&&临时[2]){dy+=" class='提示' data-msg='"+临时[2]+"'"}
+				dy+=">"+d[搜索][i].split("_")[0];
+				if(url[1]&&临时&&临时[1]&&临时[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>"}
+				dy+="</a>";
+			}
 		}
 		document.getElementById("dy").innerHTML=dy;
 	}else if(d[搜索]&&d[搜索][0]=="js"){//执行js
