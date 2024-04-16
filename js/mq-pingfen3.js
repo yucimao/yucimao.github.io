@@ -18,10 +18,11 @@ for(let i=0;data.length>i;i++){
             data[i][o][1]=data[i][o][1].split("／");
             if(!data[i][o][1][1]){data[i][o][1][1]=""}
             dy+=" <sub>«"+data[i][o][1][0]+"»"+data[i][o][1][1]+"</sub>";
+            let 分=5-i;if(分<0){分=0}
             if(作品[data[i][o][1][0]]){
-                作品[data[i][o][1][0]][0]+=(5-i);
+                作品[data[i][o][1][0]][0]+=分;
             }else{
-                作品[data[i][o][1][0]]=[(5-i)];
+                作品[data[i][o][1][0]]=[分];
             }
             作品[data[i][o][1][0]].push(data[i][o]);
         }else{

@@ -6,12 +6,12 @@ let 记=0,录=0;
 let 编号=1;
 
 for(let i=0;d.length>i;i++){
-    if(d[i][0]=="hr"){
+    if(d[i][0][0]=="h"&&d[i][0][1]>0&&d[i][0].length==2){
         编号=1;
 
         if(录>=t){dy+="</table></div>"}else if(i!=0){dy+="</table>";}
         记+=1;
-        dy+="<h3>"+d[i][1]+"</h3>";
+        dy+="<"+d[i][0]+">"+d[i][1]+"</"+d[i][0]+">";
         if(d[i][2]){dy+=d[i][2]}
         dy+="<table>";
         录=0;

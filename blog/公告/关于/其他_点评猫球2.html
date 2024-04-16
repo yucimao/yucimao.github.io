@@ -97,30 +97,36 @@ footer_fxx: dianping
 	document.getElementById("dy").innerHTML=dy2+"<br><br>"+dy;
 
 	let 分数=-1;function 打分(o){分数=o;}
+	let 重试=0;
 
 	function 提交(o){
-		if(分数==-1){
-			try{notyf.alert("未打分");}catch(e){alert("未打分");}
-		}else{
-			try{
-				AV.init({
-					appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
-					appKey: "YCCregxILHitovzescjVs4X1",
-					serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
-				});
-				const TestObject = AV.Object.extend('df');
-				const testObject = new TestObject();
-				testObject.set('pingjia', document.getElementById("输入").value);
-				testObject.set('fenshu', "猫球_"+分数);
-				testObject.save().then((testObject) => {
+		try{
+			AV.init({
+				appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
+				appKey: "YCCregxILHitovzescjVs4X1",
+				serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
+			});
+			const TestObject = AV.Object.extend('df');
+			const testObject = new TestObject();
+			testObject.set('pingjia', document.getElementById("输入").value);
+			testObject.set('fenshu', 分数);
+			testObject.save().then((testObject) => {
+				if(分数==-1){
+					try{notyf.alert("未打分");}catch(e){alert("未打分");}
+				}else{
 					try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
 					resetRadio();
 					分数=-1;
 					document.getElementById("输入").value="";
-				})
-			}
-			catch(e){
+				}
+			})
+		}
+		catch(e){
+			if(重试>1){
+				try{notyf.alert("提交失败，请刷新页面");}catch(e){alert("提交失败，请刷新页面");}
+			}else{
 				try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
+				重试+=1;
 			}
 		}
 	}
