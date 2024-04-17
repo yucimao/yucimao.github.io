@@ -36,11 +36,20 @@
         if(i==0){
             for(i=1;i<17;i++){
                 let dy="sbsj"+i;
-                document.getElementById(dy).innerHTML = "未生效";
+                document.getElementById(dy).innerHTML="未生效";
             }
         }else{
-        let dy="sbsj"+i;
-        document.getElementById(dy).innerHTML = "生效";
+            let dy="sbsj"+i;
+            let 临时=document.getElementById(dy).innerHTML;
+            if(临时=="未生效"){
+                临时="生效";
+            }else if(临时=="生效"){
+                临时="生效2次";
+            }else{
+                临时=临时.split("生效")[1].split("次")[0]*1+1;
+                临时="生效"+临时+"次";
+            }
+            document.getElementById(dy).innerHTML=临时;
         }
 
     }

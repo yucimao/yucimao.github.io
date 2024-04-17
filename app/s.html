@@ -72,12 +72,19 @@ let d={//大写
 	"图片文件夹_找灵感":["文件夹","C:/mq/异梦笔记/0/2/找灵感/"],
 	"文字_找灵感":["C:/mq/异梦笔记/biji/找灵感（本地）.html"],
 	"小翻译器":["C:/mq/目录/小翻译器.html","C:/mq/目录/小翻译器.html?【】"],
+	"谷歌":".谷歌搜索",
+	"GOOGLE":".谷歌搜索",
+	"编辑_点评猫球":["html","yucimao","blog/公告/关于/其他_点评猫球2.html"],
+	"在线_点评猫球":["https://limaoqiu.com/dianping"],
+	"库_点评猫球":["https://console.leancloud.cn/apps/mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz/storage/data/df"],
 	// "":["",""],
 
 	//目录
 	"搜索":["选择","百度","必应","谷歌搜索"],
 	"翻译":["选择","小翻译器",".<br>","百度翻译","DeepL"],
 	"找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
+	"点评":["选择","编辑_点评猫球","在线_点评猫球","库_点评猫球"],
+	// "":["选择",""],
 
 	//字母
 	"B":".B站",
@@ -105,7 +112,6 @@ function 开始(){
 	else if(d[搜索]&&d[搜索][0]=="."){搜索=d[搜索].split(".")[1];}
 	let 跳转=0;
 
-	
 	if(d[搜索]&&d[搜索][0]=="选择"){//选择
 		let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
 		if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>";}
@@ -130,7 +136,7 @@ function 开始(){
 	}else if(d[搜索]&&d[搜索][0]=="文件夹"){//打开文件夹
 		文件夹(d[搜索][1])
 	}else if(d[搜索]&&d[搜索][1]&&url[1]){//搜索
-		跳转=d[搜索][1].replace(new RegExp('【】',"g"),url[1]);
+		跳转=d[搜索][1].replace(new RegExp('【】',"g"),url.slice(1).join(" "));
 	}else if(d[搜索]){//直接打开
 		跳转=d[搜索][0];
 	}else{
