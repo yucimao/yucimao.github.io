@@ -1,12 +1,13 @@
 
-<input type="text" id="日期" placeholder="日期 2022-01-01" onkeyup="输入()" autocomplete="off"/>
-<input type="text" id="标题" placeholder="标题" onkeyup="输入()" autocomplete="off"/>
-<input type="text" id="说明" placeholder="说明" onkeyup="输入()" autocomplete="off"/>
-<input type="text" id="zk码" placeholder="zk码" onkeyup="输入()" autocomplete="off"/>
+<input type="text" id="输入" placeholder="复制目录里的内容" onkeyup="输入()" autocomplete="off"/>
 
 <br><br>
 
-<div id="dy"></div>
+<div id="dy">如：<br>
+["网页小说","关于最近试着创作的小说，和探索新的小说类型。","/i/zk/11343503",<br>
+"2024.4.18","649405","打开"],
+
+</div>
 
 <script>
 
@@ -14,7 +15,8 @@ let weekArray = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
 let 月=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 function 输入(){
-    let 日期=document.getElementById("日期").value;
+    let 内容=document.getElementById("输入").value.split('\"');
+    let 标题=内容[1],说明=内容[3],zk码=内容[5].split("zk/")[1],日期=内容[7].split(".").join("-");
     let 星期 = weekArray[new Date(日期).getDay()];
     日期=日期.split("-");
     日期[1]=日期[1]*1;
@@ -24,11 +26,11 @@ function 输入(){
     if(分>59){分="59";}
     
     let dy="<item>／"+
-        "<title>"+document.getElementById("标题").value+"</title>／"+
-        "<description>"+document.getElementById("说明").value+"</description>／"+
+        "<title>"+标题+"</title>／"+
+        "<description>"+说明+"</description>／"+
         "<pubDate>"+星期+", "+日期[2]+" "+月[日期[1]]+" "+日期[0]+" "+时+":"+分+":00 +0800</pubDate>／"+
-        "<link>{{ site.mq }}/i/zk/"+document.getElementById("zk码").value+"</link>／"+
-        "<guid isPermaLink=\"true\">{{ site.mq }}/i/zk/"+document.getElementById("zk码").value+"</guid>／"+
+        "<link>{{ site.mq }}/i/zk/"+zk码+"</link>／"+
+        "<guid isPermaLink=\"true\">{{ site.mq }}/i/zk/"+zk码+"</guid>／"+
         "</item>";
     let dy1=dy.replace(/</g, "&lt;");
     dy1=dy1.replace(/／/g, "<br>");

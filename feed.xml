@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>网页小说</title>
+            <description>关于最近试着创作的小说，和探索新的小说类型。</description>
+            <pubDate>Thu, 18 Apr 2024 23:37:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/zk/11343503</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/zk/11343503</guid>
+        </item>
+
+        <item>
             <title>下春山</title>
             <description>一场正常的演出，却被网友解析出了各种版本，可笑的“春山学”。</description>
             <pubDate>Mon, 15 Jan 2024 12:40:00 +0800</pubDate>

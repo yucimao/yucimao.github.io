@@ -27,13 +27,12 @@ let d={//大写
 	// "A":["选择","B","C_D"], //显示按钮 B、C（_后面不显示）
 	// "A":".B", //A同B
 	// "编辑本页":["html","yucimao","app/s.html"],
-	// "打开文件夹":["文件夹","C:/mq/目录"],
+	// "打开程序或文件夹":["打开","C:/mq/目录"],
 
 	"萌娘百科":["https://zh.moegirl.org.cn/","https://zh.moegirl.org.cn/index.php?search=【】"],
 	"识图":["https://graph.baidu.com/pcpage/index"],
 	"SHITU":".识图",
 	"百科":["https://baike.baidu.com/","https://baike.baidu.com/item/【】"],
-	"STEAM":["https://store.steampowered.com/","https://store.steampowered.com/search/?term=【】"],
 	"微博":["https://weibo.com/","https://s.weibo.com/weibo?q=【】"],
 	"知乎":["https://www.zhihu.com/","https://www.zhihu.com/search?q=【】"],
 	"微信":["https://weixin.qq.com/","https://weixin.sogou.com/weixin?query=【】"],
@@ -69,7 +68,7 @@ let d={//大写
 	"原神":["https://www.miyoushe.com/ys/","https://www.miyoushe.com/ys/search?keyword=【】"],
 	"小工具":["https://limaoqiu.com/xiaogongju"],
 	"图片_找灵感":["C:/mq/异梦笔记/biji/找灵感／图片（本地）.html"],
-	"图片文件夹_找灵感":["文件夹","C:/mq/异梦笔记/0/2/找灵感/"],
+	"图片文件夹_找灵感":["打开","C:/mq/异梦笔记/0/2/找灵感/"],
 	"文字_找灵感":["C:/mq/异梦笔记/biji/找灵感（本地）.html"],
 	"小翻译器":["C:/mq/目录/小翻译器.html","C:/mq/目录/小翻译器.html?【】"],
 	"谷歌":".谷歌搜索",
@@ -77,6 +76,11 @@ let d={//大写
 	"编辑_点评猫球":["html","yucimao","blog/公告/关于/其他_点评猫球2.html"],
 	"在线_点评猫球":["https://limaoqiu.com/dianping"],
 	"库_点评猫球":["https://console.leancloud.cn/apps/mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz/storage/data/df"],
+	"官网_STEAM":["https://store.steampowered.com/","https://store.steampowered.com/search/?term=【】"],
+	"软件_STEAM":["打开","C:/mq/app/game/steam/Steam.exe"],
+	"文件夹_STEAM":["打开","C:/mq/app/game/steam/steamapps/common/"],
+	"斗鱼":["https://www.douyu.com/","https://www.douyu.com/search?kw=【】"],
+	"B站直播":["https://live.bilibili.com/","https://search.bilibili.com/live?keyword=【】"],
 	// "":["",""],
 
 	//目录
@@ -84,6 +88,9 @@ let d={//大写
 	"翻译":["选择","小翻译器",".<br>","百度翻译","DeepL"],
 	"找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
 	"点评":["选择","编辑_点评猫球","在线_点评猫球","库_点评猫球"],
+	"游戏":["选择",".<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
+	"STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
+	"直播":["选择","B站直播","斗鱼"],
 	// "":["选择",""],
 
 	//字母
@@ -133,8 +140,8 @@ function 开始(){
 		eval(d[搜索][1]);
 	}else if(d[搜索]&&d[搜索][0]=="html"){//编辑html
 		编辑_html(d[搜索][1],d[搜索][2])
-	}else if(d[搜索]&&d[搜索][0]=="文件夹"){//打开文件夹
-		文件夹(d[搜索][1])
+	}else if(d[搜索]&&d[搜索][0]=="打开"){//打开文件夹
+		打开(d[搜索][1])
 	}else if(d[搜索]&&d[搜索][1]&&url[1]){//搜索
 		跳转=d[搜索][1].replace(new RegExp('【】',"g"),url.slice(1).join(" "));
 	}else if(d[搜索]){//直接打开
@@ -162,7 +169,7 @@ function 编辑_html(a1,a2){
 	}
 	制='C:/mq/app/code.lnk '+制+' & exit';复();window.location.href='pvocmd://';
 }
-function 文件夹(o){
+function 打开(o){
 	制=o.split(":")[0]+": & explorer \""+o.replace(/\//g, "\\")+"\" & exit";复();window.location.href='pvocmd://';
 }
 
