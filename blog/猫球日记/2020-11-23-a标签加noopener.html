@@ -9,10 +9,10 @@ pinglun: 1
 <link href="/5/new/highlight/vsc.css" rel="stylesheet"/>
 <script src="/5/new/highlight/highlight.js"></script>
 
-据说a标签用target="_blank"跳转时，新页面可以通过window.opener获取到源页面的部分控制权。<br/>
-用target="_blank"时就需要加上rel="noopener noreferrer"，用来防止钓鱼网站。<br/>
-有时候会忘了加，或者觉得麻烦懒得加，就想用js为页面里所有的a标签自动添加。<br/>
-代码如下：<br/>
+　　据说a标签用target="_blank"跳转时，新页面可以通过window.opener获取到源页面的部分控制权。<br/>
+　　用target="_blank"时就需要加上rel="noopener noreferrer"，用来防止钓鱼网站。<br/>
+　　有时候会忘了加，或者觉得麻烦懒得加，就想用js为页面里所有的a标签自动添加。<br/>
+　　代码如下：<br/>
 <pre><code>
 let target = document.querySelectorAll('a');
 if (target[0]) {
@@ -27,8 +27,8 @@ if (target[0]) {
 }
 </code></pre>
 <br/>
-发现个问题，在&lt;svg&gt;里的超链接会报错：<br/>
-target[i].target.indexOf is not a function
+　　发现个问题，在&lt;svg&gt;里的超链接会报错：<br/>
+　　target[i].target.indexOf is not a function
 
 <script>
     hljs.initHighlightingOnLoad();
