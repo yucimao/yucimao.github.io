@@ -269,22 +269,22 @@
 					"label": "2024.03.13 - 4.5"
 				},
 				{
-					"line": 2448,
+					"line": 2453,
 					"column": 4,
 					"label": "最新"
 				},
 				{
-					"line": 2466,
+					"line": 2471,
 					"column": 19,
 					"label": "专题"
 				},
 				{
-					"line": 2576,
+					"line": 2581,
 					"column": 4,
 					"label": "总计"
 				},
 				{
-					"line": 2672,
+					"line": 2677,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -684,7 +684,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 419,
+					"line": 420,
 					"column": 12,
 					"label": "书签"
 				}
@@ -851,7 +851,17 @@
 			]
 		},
 		{
-			"path": "../../【其他】",
+			"path": "../../【小说】",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../../文件/工作台/_废案.txt",
 			"bookmarks": [
 				{
 					"line": 0,
@@ -862,6 +872,46 @@
 		},
 		{
 			"path": "../../文件/工作台/_.txt",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../../异梦笔记/biji/草稿（本地）.html",
+			"bookmarks": [
+				{
+					"line": 8,
+					"column": 7,
+					"label": "沈灰"
+				},
+				{
+					"line": 34,
+					"column": 11,
+					"label": "汤尼"
+				},
+				{
+					"line": 39,
+					"column": 5,
+					"label": "黑圈"
+				}
+			]
+		},
+		{
+			"path": "../../异梦笔记/biji/章节备忘／第0页（本地）.html",
+			"bookmarks": [
+				{
+					"line": 55,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../../【其他】",
 			"bookmarks": [
 				{
 					"line": 0,
@@ -941,46 +991,6 @@
 				{
 					"line": 139,
 					"column": 1,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "../../异梦笔记/biji/草稿（本地）.html",
-			"bookmarks": [
-				{
-					"line": 8,
-					"column": 7,
-					"label": "沈灰"
-				},
-				{
-					"line": 34,
-					"column": 11,
-					"label": "汤尼"
-				},
-				{
-					"line": 39,
-					"column": 5,
-					"label": "黑圈"
-				}
-			]
-		},
-		{
-			"path": "../../异梦笔记/biji/章节备忘／第0页（本地）.html",
-			"bookmarks": [
-				{
-					"line": 55,
-					"column": 8,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "../../文件/工作台/_废案.txt",
-			"bookmarks": [
-				{
-					"line": 0,
-					"column": 0,
 					"label": ""
 				}
 			]

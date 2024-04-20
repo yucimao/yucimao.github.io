@@ -32,8 +32,6 @@ footer_fxx: dianping
 </div>
 <div id="打分前">加载中……</div>
 
-
-
 <br><br>
 
 <div id="dy"></div>
@@ -46,6 +44,7 @@ footer_fxx: dianping
 		[5,"2024.04.16","猫球，猫球科生物，长相圆润，与猫科生物有几分相似，通常都是身体颜色比耳朵颜色浅，眼下有一条标志的竖杠，异常好分辨该生物生性温和。只不过数量稀少，还请各位多加保护。"],
 		[5,"2024.04.18",""],
 		[5,"2024.04.19","这是什么，猫球？我吃！"],
+		[5,"2024.04.20","我爱猫球像素点好猫球好吃www"],
 		// [,"",""],
 	];
 	let 星={
@@ -84,7 +83,7 @@ footer_fxx: dianping
 			if(data[i][3]){dy+=data[i][3];}else{dy+="匿名";}
 		dy+=" <small>"+data[i][1]+"</small></legend><span class='分a'>"+星[data[i][0]]+"</span><span class='分b'>"+星["-"+(5-data[i][0])]+"</span>";
 			if(data[i][2]&&data[i][2]!=""){dy+="<br>"+data[i][2];}
-		dy+="</fieldset>"
+		dy+="</fieldset><br>";
 	}
 
 	let dy2="<table><tr style='background-color:#ffffff;'><td style='text-align:center;width:30%'><br><br><span class='总分'>★"+(总分/人数*10+"").split(".")[0]/10+"</span><br><span class='个评价'>"+人数+"个评价</span></td><td>　</td><td>";
@@ -114,7 +113,7 @@ footer_fxx: dianping
 			});
 			const TestObject = AV.Object.extend('df');
 			const testObject = new TestObject();
-			testObject.set('pingjia', document.getElementById("输入").value);
+			testObject.set('pingjia', document.getElementById("输入").value.replace(new RegExp('\n',"g"),"【换行】"));
 			testObject.set('fenshu', 分数);
 			testObject.save().then((testObject) => {
 				if(分数==-1){
