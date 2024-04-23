@@ -41,14 +41,14 @@ if(当前url.indexOf("?") != -1){
 }
 if(url问号[1]){}else{url问号[1]="";}
 
-if(当前url.indexOf("%E2%80%8E") != -1){ //删零宽空格
-	跳转url=当前url.replace(/%E2%80%8E/g, "");
-}else if(当前url.indexOf("gitee.io/") != -1){ //gitee转主站
+if(当前url.indexOf("%E2%80%8E")!=-1){ //删零宽空格
+	跳转url=当前url.replace(/%E2%80%8E/g,"");
+}else if(当前url.indexOf("gitee.io/")!=-1){ //gitee转主站
 	跳转url="{{ site.mq }}"+"/"+当前url.split("gitee.io/")[1];
-}else if(当前url[当前url.length-1]=="/" && url问号[1].indexOf("A") == -1){ //删除最后的“/” A
+}else if(当前url[当前url.length-1]=="/"&&url问号[1].indexOf("A")==-1){ //删除最后的“/” A
 	跳转url=当前url.slice(0,当前url.length-1); url问号[1]+="A";
-}else if(当前url.split(".com/")[1].replace(/\//g, "")>0){ //链接只有数字，尝试跳转到zk
-	跳转url="/i/zk/"+当前url.split(".com/")[1].replace(/\//g, "");
+}else if(当前url.split(".com/")[1].replace(/\//g,"")>0||当前url.split(".com/i/")[1].replace(/\//g,"")>0||当前url.split(".com/zk/")[1].replace(/\//g,"")>0){ //尝试跳转到zk
+	跳转url="/i/zk/"+当前url.split(".com/")[1].replace(new RegExp('i',"g"),"").replace(new RegExp('zk',"g"),"").replace(/\//g, "");
 }else if(当前url.replace(/[A-Z]/g, "A").indexOf("A") != -1){ //转为小写
 	跳转url=当前url.toLowerCase();
 }else{
