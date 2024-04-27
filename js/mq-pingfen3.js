@@ -1,7 +1,7 @@
 let 作品={}
 
 let 排名=0;
-let dy头="<link rel='stylesheet' href='/css/all2.css'><style>.灰{color:#00000020;}td:nth-child(2) sub,li sub{color:#00000060;}</style>";
+let dy头="<link rel='stylesheet' href='/css/all2.css'><style>.灰{color:#00000020;}td:nth-child(2) sub,li sub{color:#00000060;}sub[smh]:before{content:'«'}sub[smh]:after{content:'»'}</style>";
 let dy=dy头+"<a onclick='作品分类()'>按作品分类</a>　<a onclick='one()'>one</a><br><br>";
 for(let i=0;data.length>i;i++){
     dy+="<table><tr><td colspan='2'><b>"+data[i][0]+"</b></td></tr>"
@@ -17,7 +17,7 @@ for(let i=0;data.length>i;i++){
         if(data[i][o][1]&&data[i][o][1]!=""){
             data[i][o][1]=data[i][o][1].split("／");
             if(!data[i][o][1][1]){data[i][o][1][1]=""}
-            dy+=" <sub>«"+data[i][o][1][0]+"»"+data[i][o][1][1]+"</sub>";
+            dy+=" <sub smh>"+data[i][o][1][0]+"</sub><sub>"+data[i][o][1][1]+"</sub>";
             let 分=5-i;if(分<0){分=0}
             if(作品[data[i][o][1][0]]){
                 作品[data[i][o][1][0]][0]+=分;
