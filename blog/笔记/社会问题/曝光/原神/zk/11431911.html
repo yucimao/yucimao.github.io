@@ -1,7 +1,7 @@
 ---
 layout: zk
-title: 
-nav_text: 
+title: 米家游戏评分记录
+nav_text: 米家游戏评分记录
 nav_url: <a href="/yuanshenjiezou">原神节奏</a>
 permalink: i/zk/11431911
 ---
@@ -15,7 +15,13 @@ permalink: i/zk/11431911
     .E{color:#932213;font-weight:bold;}
     td:first-child{font-size:0.8em;color:#909090;}
 </style>
+
 <div id="dy"></div>
+
+
+
+
+
 
 <script>//原神 星铁 绝区零
     let d=[
@@ -29,6 +35,7 @@ permalink: i/zk/11431911
             ["2022年12月","8.7"],
             ["2023年4月","8.6"],
             ["2023年12月","8.5","8.5","9.1"],
+            ["2023年4月","8","7.6","9"],
             // ["年月","","",""],
         ],
         ["TapTap·PC","10",
@@ -36,6 +43,7 @@ permalink: i/zk/11431911
             ["2022年12月","4.8"],
             ["2023年4月","4.8"],
             ["2023年12月","4.8","6.8"],
+            ["2023年4月","4.9","6.9"],
             // ["年月","","",""],
         ],
         ["B站·手机","10",
@@ -46,6 +54,7 @@ permalink: i/zk/11431911
             ["2022年12月","6.4"],
             ["2023年4月","6.4"],
             ["2023年12月","6.5","8.2","8.8"],
+            ["2023年4月","6.5","8.4","8.9"],
             // ["年月","","",""],
         ],
         ["B站·PC","10",
@@ -53,6 +62,7 @@ permalink: i/zk/11431911
             ["2022年12月","5.7"],
             ["2023年4月","5.7"],
             ["2023年12月","5.9"],
+            ["2023年4月","5.8","8.8"],
             // ["年月","","",""],
         ],
         ["谷歌商店","5",
@@ -60,12 +70,14 @@ permalink: i/zk/11431911
             ["2022年12月","4.5"],
             ["2023年4月","4.5"],
             ["2023年12月","4.3","4.1"],
+            ["2023年4月","3.6","4.3"],
             // ["年月","","",""],
         ],
         ["Appstore","5",
             ["2020年9月","4.2"],
             ["2023年4月","4.4"],
             ["2023年12月","4.4","4.3"],
+            ["2023年4月","4.3","4.3"],
             // ["年月","","",""],
         ],
         ["知乎","100",
@@ -80,6 +92,7 @@ permalink: i/zk/11431911
             ["2022年12月","59"],
             ["2023年4月","59"],
             ["2023年12月","58","73","82"],
+            ["2023年4月","58","73","82"],
             // ["年月","","",""],
         ],
         ["NGA","10",
@@ -87,12 +100,14 @@ permalink: i/zk/11431911
             ["2022年12月","3.5"],
             ["2023年4月","3.5"],
             ["2023年12月","3.5","6.4"],
+            ["2023年4月","3.4","6.3"],
             // ["年月","","",""],
         ],
         ["豆瓣","10",
             ["2022年12月","7.3"],
             ["2023年4月","7.3"],
             ["2023年12月","7.3","7.1"],
+            ["2023年4月","7.3","7.3"],
             // ["年月","","",""],
         ],
     ];
@@ -137,3 +152,59 @@ permalink: i/zk/11431911
         document.getElementById("全部展开").style.display='none'
     }
 </script>
+
+<a id="评分网站按钮" onclick="document.getElementById('评分网站').style.display='inline';document.getElementById('评分网站按钮').style.display='none'">评分网站</a>
+<div id="评分网站" style="display:none;">
+    <fieldset><legend>原神</legend>
+        <a href="https://www.taptap.cn/app/168332">TapTap（手机）</a><br>
+    <a href="https://www.taptap.cn/app/197826">TapTap（PC）</a><br>
+    <a href="https://www.biligame.com/detail/?id=103496">B站（手机）</a><br>
+    <a href="https://www.biligame.com/detail/?id=105667">B站（PC）</a><br>
+    <a href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact">谷歌商店</a><br>
+    <a href="https://apps.apple.com/cn/app/id1467190251">Appstore</a><br>
+    <a href="https://www.zhihu.com/topic/20760895/hot">知乎</a><br>
+    <a href="https://bbs.nga.cn/read.php?tid=23347410">NGA</a><br>
+    <a href="https://www.douban.com/game/34441376/">豆瓣</a><br>
+    </fieldset>
+    
+    <br>
+
+    <fieldset><legend>星穹铁道</legend>
+    <a href="https://www.taptap.cn/app/224267">TapTap（手机）</a><br>
+    <a href="https://www.taptap.cn/app/305268">TapTap（PC）</a><br>
+    <a href="https://www.biligame.com/detail/?id=107800">B站（手机）</a><br>
+    <a href="https://www.biligame.com/detail/?id=108586">B站（PC）</a><br>
+    <a href="https://play.google.com/store/apps/details?id=com.HoYoverse.hkrpgoversea">谷歌商店</a><br>
+    <a href="https://apps.apple.com/cn/app/%E5%B4%A9%E5%9D%8F-%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93/id1523037824">Appstore</a><br>
+    <a href="https://www.zhihu.com/topic/21874407/hot">知乎</a><br>
+    <a href="https://bbs.nga.cn/read.php?tid=36121921">NGA</a><br>
+    <a href="https://www.douban.com/game/35925645/">豆瓣</a><br>
+    </fieldset>
+    
+    <br>
+
+    <fieldset><legend>绝区零</legend>
+        <a href="https://www.taptap.cn/app/234493">TapTap</a><br>
+        <a href="https://www.biligame.com/detail/?id=108434">B站</a><br>
+        <!-- <a href="">谷歌商店</a><br> -->
+        <!-- <a href="">Appstore</a><br> -->
+        <a href="https://www.zhihu.com/topic/25521399/hot">知乎</a><br>
+        <!-- <a href="">NGA</a><br> -->
+        <a href="https://www.douban.com/game/35900589/">豆瓣</a><br>
+    </fieldset>
+    
+    
+    <!--
+    <a href="">TapTap（手机）</a><br>
+    <a href="">TapTap（PC）</a><br>
+    <a href="">B站（手机）</a><br>
+    <a href="">B站（PC）</a><br>
+    <a href="">谷歌商店</a><br>
+    <a href="">Appstore</a><br>
+    <a href="">知乎</a><br>
+    <a href="">NGA</a><br>
+    <a href="">豆瓣</a><br>
+ -->
+    </div>
+
+    
