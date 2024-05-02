@@ -48,6 +48,7 @@ for(let i=1;13>i;i++){
         for(let i2=1;天[i]+1>i2;i2++){
             if(空==7){dy+="</tr><tr>";空=1;}else{空+=1;}
             if(d[i][当前]){
+                if(typeof d[i][当前]=="number"){d[i][当前]+=""}
                 if(d[i][当前].indexOf(".")==-1){
                     d[i][当前]=d[i][当前]+".3.3";
                     }

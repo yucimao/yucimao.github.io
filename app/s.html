@@ -14,6 +14,7 @@
 <script>
 	let 原=decodeURI(location.href.split("?")[1]).replace(new RegExp('\\+',"g")," ");
 	let url=原.replace(new RegExp(' ',"g"),"+").split("+");
+	let 句号=原;
 	原=原.toUpperCase();
 
 	let 默认="https://www.baidu.com/s?wd=";
@@ -82,6 +83,7 @@ let d={//大写
 	"波士顿":["https://space.bilibili.com/346563107"],
 	"百度指数":["https://index.baidu.com/v2/index.html#/"],
 	"UID":["https://space.bilibili.com/515330","https://space.bilibili.com/【】"],
+	"NGA":["https://bbs.nga.cn/","https://bbs.nga.cn/thread.php?key=【】"],
 	// "":["",""],
 
 	//目录
@@ -128,6 +130,14 @@ function 开始(){
 	// 原 原链接获取?后 大写
 	// url 分割成关键词 不大写
 	// 搜索 url[0].大写
+	// 句号 原链接获取?后 完全不变
+
+	if(原=="。"||原=="，"){
+		location.replace(默认+localStorage.getItem("s_html"));
+		return;
+	}else{
+		localStorage.setItem("s_html",句号);
+	}
 
 	let 搜索=url[0].toUpperCase();
 	if(url.length==1&&d[原]&&d[原][0]=="."){搜索=d[原].split(".")[1];}
@@ -175,10 +185,11 @@ function 开始(){
 		if(url[0][0]=="。"){
 			url[0]=url[0].split("。")[1];
 		}
-		跳转=默认+url.join(" ");
+		跳转=默认+句号;
 	}
 
 	if(跳转!=0){
+		跳转=跳转.replace(new RegExp('%2F',"g"),"/");
 		document.getElementById("dy").innerHTML="<div id='dy0'>跳转中……<br>目标："+跳转+"</div>";
 		location.replace(跳转);
 	}
