@@ -162,6 +162,7 @@ function 开始(){
 	if(d[搜索]&&d[搜索][0]=="选择"){//选择
 		let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
 		if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>";}
+		let 临时2="";
 		for(let i=1;d[搜索].length>i;i++){
 			if(d[搜索][i][0]=="."){
 				dy+=d[搜索][i].split(".")[1];
@@ -170,11 +171,12 @@ function 开始(){
 				let 临时=d[d[搜索][i].toUpperCase()];
 				if(临时&&临时[2]){dy+=" class='提示' data-msg='"+临时[2]+"'"}
 				dy+=">"+d[搜索][i].split("_")[0];
-				if(url[1]&&临时&&临时[1]&&临时[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>"}
+				if(url[1]&&临时&&临时[1]&&临时[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>";if(临时2==""){临时2=i}else{临时2="x"}}
 				dy+="</a>";
 			}
 		}
 		document.getElementById("dy").innerHTML=dy;
+		if(临时2>-1){url[0]=d[搜索][临时2];开始()}
 	}else if(d[搜索]&&d[搜索][0]=="js"){//执行js
 		console.log(d[搜索][1])
 		eval(d[搜索][1]);
