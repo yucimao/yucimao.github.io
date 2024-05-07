@@ -19,18 +19,12 @@
 
 	let 默认="https://www.baidu.com/s?wd=";
 
-let html_a1={//编辑html
+let 代码={//编辑html
+	"":"",
 	"yucimao":"C:/mq/博客/yucimao.github.io/",
 	"异梦":"C:/mq/异梦笔记/biji/",
 }
-let d={//大写
-
-	// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
-	// "A":["选择","B","C_D"], //显示按钮 B、C（_后面不显示）
-	// "A":".B", //A同B
-	// "编辑本页":["html","yucimao","app/s.html"],
-	// "打开程序或文件夹":["打开","C:/mq/目录"],
-
+let d={
 	"萌娘百科":["https://zh.moegirl.org.cn/","https://zh.moegirl.org.cn/index.php?search=【】"],
 	"识图":["https://graph.baidu.com/pcpage/index"],
 	"SHITU":".识图",
@@ -85,7 +79,16 @@ let d={//大写
 	"UID":["https://space.bilibili.com/515330","https://space.bilibili.com/【】"],
 	"NGA":["https://bbs.nga.cn/","https://bbs.nga.cn/thread.php?key=【】"],
 	"贴吧":["https://tieba.baidu.com/","https://tieba.baidu.com/f/search/res?ie=utf-8&qw=【】"],
+	"文件夹_酒仙":["打开","yucimao","blog/笔记/酒仙笔记/"],
+	"在线_酒仙":["https://limaoqiu.com/jiuxian"],
 	// "":["",""],
+
+	// 大写
+	// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
+	// "A":["选择","B","C_D"], //显示按钮 B、C（_后面不显示）
+	// "A":".B", //A同B
+	// "编辑本页":["html","yucimao","app/s.html"],
+	// "打开程序或文件夹":["打开","C:/mq/目录"],
 
 	//目录
 	"搜索":["选择","百度","必应","谷歌搜索"],
@@ -95,6 +98,7 @@ let d={//大写
 	"游戏":["选择",".<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
 	"STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
 	"直播":["选择","B站直播","斗鱼"],
+	"酒仙":["选择","文件夹_酒仙","在线_酒仙"],
 	// "":["选择",""],
 
 	//字母
@@ -177,7 +181,7 @@ function 开始(){
 	}else if(d[搜索]&&d[搜索][0]=="html"){//编辑html
 		编辑_html(d[搜索][1],d[搜索][2])
 	}else if(d[搜索]&&d[搜索][0]=="打开"){//打开文件夹
-		打开(d[搜索][1])
+		打开(d[搜索][1],d[搜索][2])
 	}else if(d[搜索]&&d[搜索][1]&&url.length>1){//搜索
 		跳转=d[搜索][1].replace(new RegExp('【】',"g"),url.slice(1).join(" "));
 	}else if(d[搜索]){//直接打开
@@ -200,14 +204,19 @@ if(url&&url[0]!="undefined"){开始()}
 
 function 编辑_html(a1,a2){
 	if(a2){
-		制=html_a1[a1]+a2;
+		制=代码[a1]+a2;
 	}else{
 		制=a1;
 	}
 	制='C:/mq/app/code.lnk '+制+' & exit';复();window.location.href='pvocmd://';
 }
-function 打开(o){
-	制=o.split(":")[0]+": & explorer \""+o.replace(/\//g, "\\")+"\" & exit";复();window.location.href='pvocmd://';
+function 打开(a1,a2){
+	if(a2){
+		制=代码[a1]+a2;
+	}else{
+		制=a1;
+	}
+	制=制.split(":")[0]+": & explorer \""+制.replace(/\//g, "\\")+"\" & exit";复();window.location.href='pvocmd://';
 }
 
 function 取消(){

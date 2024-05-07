@@ -15,7 +15,6 @@ pinglun: 1
 <br><br><br>
 <small><b>可以尝试以下操作：</b><br>
 <ol>
-<!-- <li>在<a href="/wangzhi">网址收藏</a>页面输入你想访问的内容，如“无聊按钮”，可能会显示出正确的地址。<sup style="color:#00bb3e;">推荐</sup></li> -->
 <li>在本页底部留言。<sup style="color:#00bb3e;">推荐</sup></li>
 <li>使用QQ:<a href="/qq" target="_blank">{{ site.mq_qq }}</a>向猫球反馈。</li>
 <li><a href="{{ site.mq_i }}">回到首页</a>找找看。</li>
@@ -23,57 +22,26 @@ pinglun: 1
 </ol></small>
 
 <script>
-let s_data=[ //网页名／地址／关键词
-	"猫球翻译器／/mqfyq／maoyiqi maoqiufanyiqi 猫球翻译器 猫译器",
-	"酒仙笔记／/jiuxian／jiuxianbiji 酒仙笔记",
-];
-
-let 当前url=window.location.href;
-let 跳转url="0";
-let 临时404;
- 
-
-let sorry=["","s","so","sor","sorr","sorry"]
-let url问号=["0"];
-if(当前url.indexOf("?") != -1){
-	url问号=当前url.split("?")[1].split("=");
-	当前url=当前url.split("?")[0];
-}
-if(url问号[1]){}else{url问号[1]="";}
-
-if(当前url.indexOf("%E2%80%8E")!=-1){ //删零宽空格
-	跳转url=当前url.replace(/%E2%80%8E/g,"");
-}else if(当前url.indexOf("gitee.io/")!=-1){ //gitee转主站
-	跳转url="{{ site.mq }}"+"/"+当前url.split("gitee.io/")[1];
-}else if(当前url[当前url.length-1]=="/"&&url问号[1].indexOf("A")==-1){ //删除最后的“/” A
-	跳转url=当前url.slice(0,当前url.length-1); url问号[1]+="A";
-}else if(当前url.split(".com/")[1].replace(/\//g,"")>0||当前url.split(".com/i/")[1].replace(/\//g,"")>0||当前url.split(".com/zk/")[1].replace(/\//g,"")>0){ //尝试跳转到zk
-	跳转url="/i/zk/"+当前url.split(".com/")[1].replace(new RegExp('i',"g"),"").replace(new RegExp('zk',"g"),"").replace(/\//g, "");
-}else if(当前url.replace(/[A-Z]/g, "A").indexOf("A") != -1){ //转为小写
-	跳转url=当前url.toLowerCase();
-}else{
-	跳转url="0";
-}
-
-if(url问号[0]=="sorry"){跳转url="0";}
-if(跳转url=="0"){
-	document.title = "这里什么都没有 - {{ site.title }}";
-	// document.getElementsByTagName("title")[0].innerText = "这里什么都没有 - {{ site.title }}";
-	let 猜测="";
-	临时404=decodeURI(当前url.split(".com/")[1]);
-	for(let i=0;s_data.length>i;i++){
-		let 临时=s_data[i].split("／");
-		if (临时[2].indexOf(临时404) != -1){
-			猜测+="<br><a href=\""+临时[1]+"\">"+临时[0]+"</a>";
-		}
+let 缓存=localStorage.getItem("404")||"";
+let url=window.location.href.split("limaoqiu.com/")[1];
+let 跳转="";
+if(url!=缓存){
+	if(url.indexOf("%E2%80%8E")!=-1){//零宽空格
+		跳转=url.replace(/%E2%80%8E/g,"");
+	}else if(url[url.length-1]=="/"){//最后的"/"
+		跳转=url.slice(0,-1);
+	}else if(url>0||url.indexOf("i/")!=-1&&url.split("i/")[1]>0||url.indexOf("zk/")!=-1&&url.split("zk/")[1]>0){//写错的zk码
+		跳转="i/zk/"+url.replace(/\D/g,'');
+	}else if(url.replace(/[A-Z]/g,"A").indexOf("A")!=-1){//大写转小写
+		跳转=url.toLowerCase();
 	}
-	if(猜测.length>0){
-		猜测="<b>您要找的是不是：</b>"+猜测+"<br>";
-		document.getElementById("猜测").innerHTML = 猜测;
-	}
-}else{
-	if(url问号[0]=="0" && url问号[0]!=sorry[url问号[0].length]){跳转url=跳转url+"?s";}else{跳转url=跳转url+"?"+sorry[url问号[0].length+1];}
-	if(url问号[1]!=""){跳转url+="="+url问号[1];}
-	window.location.href=跳转url;
 }
+
+if(跳转==""){
+	document.title="这里什么都没有 - {{ site.title }}";
+}else{
+	localStorage.setItem("404",跳转)
+	window.location.href="/"+跳转;
+}
+
 </script>
