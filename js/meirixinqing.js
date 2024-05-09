@@ -11,7 +11,7 @@ let 日=[];
 let 夜=[];
 
 dy+="<style>"+
-    ":root{--xq:#f0f0f0;--xq5:#2977db;--xq4:#7eb0f3;--xq3:#B8CDE6;--xq2:#FAD4D3;--xq1:#F77567;--xq0:#DF402A;}"+
+    ":root{--xq:#f0f0f0;--xq5:#2977db;--xq4:#7eb0f3;--xq3:#B8CDE6;--xq2:#FAD4D3;--xq1:#ff9387;--xq0:#DF402A;}"+
     ".xq{background-color:#f0f0f0;color:#ffffff;}"+
     ".xqc td,.xqc th{font-size:1.2em;text-align:center;}"+
     ".tsx{position: relative;display: inline-block;text-decoration: underline dotted;}.tsx .tsxt{border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt{color:var(--body-color);transform:translate(0,20px);transition:all 0.5s;visibility: visible;}.tsx{text-decoration:underline;}"+
