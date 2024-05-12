@@ -5,6 +5,209 @@ nav_text: 米家游戏评分记录
 nav_url: <a href="/yuanshenjiezou">米哈游节奏</a>
 permalink: i/zk/11431911
 ---
+<br>
+<a onclick='展开按钮(0)' id="全部展开">全部展开</a> . 
+<a onclick='展开按钮(1)'>按游戏分类</a> . 
+<a onclick='展开按钮(2)'>评分网站</a>
+
+<br><hr>
+
+<div id="dy"></div>
+<div id="dy2"></div>
+
+
+
+
+
+
+<script>
+let d=[//原神 星铁 绝区零
+["TapTap","10",
+    ["2019.12","7.1"],
+    ["2020.09","8.4"],
+    ["2021.06","8.3"],
+    ["2021.07","8.5"],
+    ["2021.10","8.2"],
+    ["2022.03","8.5"],
+    ["2022.12","8.7"],
+    ["2023.04","8.6"],
+    ["2023.12","8.5","8.5","9.1"],
+    ["2024.04","8","7.6","9"],
+    // [".","","",""],
+],
+["/PC","10",
+    ["2020.09","4.6"],
+    ["2022.12","4.8"],
+    ["2023.04","4.8"],
+    ["2023.12","4.8","6.8"],
+    ["2024.04","4.9","6.9"],
+    // [".","","",""],
+],
+["B站","10",
+    ["2019.06","6"],
+    ["2020.01","7.3"],
+    ["2020.09","5.3"],
+    ["2021.10","5.9"],
+    ["2022.12","6.4"],
+    ["2023.04","6.4"],
+    ["2023.12","6.5","8.2","8.8"],
+    ["2024.04","6.5","8.4","8.9"],
+    // [".","","",""],
+],
+["/PC","10",
+    ["2020.09","3.8"],
+    ["2022.12","5.7"],
+    ["2023.04","5.7"],
+    ["2023.12","5.9"],
+    ["2024.04","5.8","8.8"],
+    // [".","","",""],
+],
+["谷歌商店","5",
+    ["2020.09","4.7"],
+    ["2022.12","4.5"],
+    ["2023.04","4.5"],
+    ["2023.12","4.3","4.1"],
+    ["2024.04","3.6","4.3"],
+    // [".","","",""],
+],
+["Appstore","5",
+    ["2020.09","4.2"],
+    ["2023.04","4.4"],
+    ["2023.12","4.4","4.3"],
+    ["2024.04","4.3","4.3"],
+    // [".","","",""],
+],
+["知乎","100",
+    ["2019.06","19"],
+    ["2019.06","28"],
+    ["2019.08","25"],
+    ["2020.01","30"],
+    ["2020.09","35"],
+    ["2020.11","40"],
+    ["2021.02","45"],
+    ["2021.05","50"],
+    ["2022.12","59"],
+    ["2023.04","59"],
+    ["2023.12","58","73","82"],
+    ["2024.04","58","73","82"],
+    // [".","","",""],
+],
+["NGA","10",
+    ["2020.09","3.42"],
+    ["2022.12","3.5"],
+    ["2023.04","3.5"],
+    ["2023.12","3.5","6.4"],
+    ["2024.04","3.4","6.3"],
+    // [".","","",""],
+],
+["豆瓣","10",
+    ["2022.12","7.3"],
+    ["2023.04","7.3"],
+    ["2023.12","7.3","7.1"],
+    ["2024.04","7.3","7.3"],
+    // [".","","",""],
+],
+];
+let 日期=[],游戏=["原神　　","星穹铁道","绝区零　"],平台=[],e={};
+let dy="";
+let 游戏们="<table><tr><td></td><td>"+游戏.join("</td><td>")+"</td></tr>";
+for(let i=0;d.length>i;i++){
+    dy+="<a id='"+i+"a' onclick=\"展开("+i+")\">"+d[i][0]+"</a>";
+    dy+="<fieldset id='"+i+"b' style='display:none;'><legend>"+d[i][0]+"</legend>"+游戏们;
+    平台[i]=d[i][0];
+    for(let i2=2;d[i].length>i2;i2++){
+        dy+="<tr><td>"+d[i][i2][0]+"</td>";
+            if(日期.indexOf(d[i][i2][0])!=-1){}else{日期[日期.length]=d[i][i2][0];}
+
+        for(let i3=1;d[i][i2].length>i3;i3++){
+            let 临时=d[i][i2][i3];
+            dy+="<td class='";
+            if(临时&&临时!=""){
+                临时=(临时*100/d[i][1]+"").split(".")[0];
+                let 得分;
+                if(临时>=95){得分="S"}
+                else if(临时>=90){得分="A"}
+                else if(临时>=80){得分="B"}
+                else if(临时>=60){得分="C"}
+                else if(临时>=20){得分="D"}
+                else{得分="E"}
+                dy+=得分;
+                临时+="%";
+                if(!e[游戏[i3-1]]){e[游戏[i3-1]]={}}
+                if(!e[游戏[i3-1]][d[i][i2][0]]){e[游戏[i3-1]][d[i][i2][0]]=[]}
+                e[游戏[i3-1]][d[i][i2][0]][i]=临时+","+得分;
+            }else{临时="";}
+            dy+="'>"+临时+"</td>";
+        }
+        dy+="</tr>";
+    }
+    dy+="</table></fieldset><br><br>";
+}
+document.getElementById("dy").innerHTML=dy;
+
+function 展开(o){
+    document.getElementById(o+"a").style.display='none'
+    document.getElementById(o+"b").style.display='inline'
+}
+
+let 展开记录=[0,0];
+function 展开按钮(o){
+    document.getElementById("全部展开").innerHTML="按平台分类";
+
+    if(o==0){
+        document.getElementById("dy").style.display='';
+        document.getElementById("dy2").style.display='none';
+        document.getElementById("评分网站").style.display='none';
+
+        if(展开记录[0]==0){
+            for(let i=0;d.length>i;i++){
+                document.getElementById(i+"a").style.display='none'
+                document.getElementById(i+"b").style.display='inline'
+            }
+            展开记录[0]=1;
+        }
+    }else if(o==1){
+        document.getElementById("dy").style.display='none';
+        document.getElementById("dy2").style.display='';
+        document.getElementById("评分网站").style.display='none';
+
+        if(展开记录[1]==0){
+            console.log(e)
+            dy="";
+            日期.sort((a,b)=>a-b);//e
+            let 平台们="<table><tr><td></td><td>"+平台.join("</td><td>")+"</td></tr>";
+            for(let i=0;游戏.length>i;i++){
+                dy+="<fieldset><legend>"+游戏[i]+"</legend>"+平台们;
+                for(let i2=0;日期.length>i2;i2++){
+                    if(e[游戏[i]][日期[i2]]){
+                        dy+="<tr><td>"+日期[i2]+"</td>";
+                        for(let i3=0;平台.length>i3;i3++){
+                            if(e[游戏[i]][日期[i2]][i3]){
+                                let 临时=e[游戏[i]][日期[i2]][i3].split(",")
+                                dy+="<td class='"+临时[1]+"'>"+临时[0]+"</td>"
+                            }else{
+                                dy+="<td></td>"
+                            }
+                        }
+                        dy+="</tr>"
+                    }
+                }
+                dy+="</table></fieldset><br>"
+            }
+            document.getElementById("dy2").innerHTML=dy;
+            展开记录[1]=1;
+        }
+
+    }else if(o==2){
+        document.getElementById('dy').style.display='none';
+        document.getElementById('dy2').style.display='none';
+        document.getElementById('评分网站').style.display='';
+    }
+}
+
+
+</script>
+
 <link rel="stylesheet" href="/css/all2.css">
 <style>
     .S{color:#ffc800;font-weight:bold;}
@@ -14,149 +217,12 @@ permalink: i/zk/11431911
     .D{color:#ea4631}
     .E{color:#932213;font-weight:bold;}
     td:first-child{font-size:0.8em;color:#909090;}
+    tr:first-child{font-size:0.8em;font-weight:bold;position:sticky;top:0;}
 </style>
 
-<div id="dy"></div>
-
-
-
-
-
-
-<script>//原神 星铁 绝区零
-    let d=[
-        ["TapTap·手机","10",
-            ["2019年12月","7.1"],
-            ["2020年9月","8.4"],
-            ["2021年6月","8.3"],
-            ["2021年7月","8.5"],
-            ["2021年10月","8.2"],
-            ["2022年3月","8.5"],
-            ["2022年12月","8.7"],
-            ["2023年4月","8.6"],
-            ["2023年12月","8.5","8.5","9.1"],
-            ["2023年4月","8","7.6","9"],
-            // ["年月","","",""],
-        ],
-        ["TapTap·PC","10",
-            ["2020年9月","4.6"],
-            ["2022年12月","4.8"],
-            ["2023年4月","4.8"],
-            ["2023年12月","4.8","6.8"],
-            ["2023年4月","4.9","6.9"],
-            // ["年月","","",""],
-        ],
-        ["B站·手机","10",
-            ["2019年6月","6"],
-            ["2020年1月","7.3"],
-            ["2020年9月","5.3"],
-            ["2021年10月","5.9"],
-            ["2022年12月","6.4"],
-            ["2023年4月","6.4"],
-            ["2023年12月","6.5","8.2","8.8"],
-            ["2023年4月","6.5","8.4","8.9"],
-            // ["年月","","",""],
-        ],
-        ["B站·PC","10",
-            ["2020年9月","3.8"],
-            ["2022年12月","5.7"],
-            ["2023年4月","5.7"],
-            ["2023年12月","5.9"],
-            ["2023年4月","5.8","8.8"],
-            // ["年月","","",""],
-        ],
-        ["谷歌商店","5",
-            ["2020年9月","4.7"],
-            ["2022年12月","4.5"],
-            ["2023年4月","4.5"],
-            ["2023年12月","4.3","4.1"],
-            ["2023年4月","3.6","4.3"],
-            // ["年月","","",""],
-        ],
-        ["Appstore","5",
-            ["2020年9月","4.2"],
-            ["2023年4月","4.4"],
-            ["2023年12月","4.4","4.3"],
-            ["2023年4月","4.3","4.3"],
-            // ["年月","","",""],
-        ],
-        ["知乎","100",
-            ["2019年6月","19"],
-            ["2019年6月","28"],
-            ["2019年8月","25"],
-            ["2020年1月","30"],
-            ["2020年9月","35"],
-            ["2020年11月","40"],
-            ["2021年2月","45"],
-            ["2021年5月","50"],
-            ["2022年12月","59"],
-            ["2023年4月","59"],
-            ["2023年12月","58","73","82"],
-            ["2023年4月","58","73","82"],
-            // ["年月","","",""],
-        ],
-        ["NGA","10",
-            ["2020年9月","3.42"],
-            ["2022年12月","3.5"],
-            ["2023年4月","3.5"],
-            ["2023年12月","3.5","6.4"],
-            ["2023年4月","3.4","6.3"],
-            // ["年月","","",""],
-        ],
-        ["豆瓣","10",
-            ["2022年12月","7.3"],
-            ["2023年4月","7.3"],
-            ["2023年12月","7.3","7.1"],
-            ["2023年4月","7.3","7.3"],
-            // ["年月","","",""],
-        ],
-    ];
-    let dy="<a id='全部展开' onclick='全部展开()'>全部展开<br><br></a>";
-    let 游戏们="<table><tr><td></td><td>原神　　</td><td>星穹铁道</td><td>绝区零　</td></tr>";
-    for(let i=0;d.length>i;i++){
-        dy+="<a id='"+i+"a' onclick=\"展开("+i+")\">"+d[i][0]+"</a>";
-        dy+="<fieldset id='"+i+"b' style='display:none;'><legend>"+d[i][0]+"</legend>"+游戏们;
-        for(let i2=2;d[i].length>i2;i2++){
-            dy+="<tr><td>"+d[i][i2][0]+"</td>";
-            for(let i3=1;d[i][i2].length>i3;i3++){
-                let 临时=d[i][i2][i3];
-                dy+="<td class='";
-                if(临时&&临时!=""){
-                    临时=(临时*100/d[i][1]+"").split(".")[0];
-                    if(临时>=95){dy+="S"}
-                    else if(临时>=90){dy+="A"}
-                    else if(临时>=80){dy+="B"}
-                    else if(临时>=60){dy+="C"}
-                    else if(临时>=20){dy+="D"}
-                    else{dy+="E"}
-                    临时+="%";
-                }else{临时="";}
-                dy+="'>"+临时+"</td>";
-            }
-            dy+="</tr>";
-        }
-        dy+="</table></fieldset><br><br>";
-    }
-    document.getElementById("dy").innerHTML=dy;
-
-    function 展开(o){
-        document.getElementById(o+"a").style.display='none'
-        document.getElementById(o+"b").style.display='inline'
-    }
-
-    function 全部展开(){
-        for(let i=0;d.length>i;i++){
-            document.getElementById(i+"a").style.display='none'
-            document.getElementById(i+"b").style.display='inline'
-        }
-        document.getElementById("全部展开").style.display='none'
-    }
-</script>
-
-<a id="评分网站按钮" onclick="document.getElementById('评分网站').style.display='inline';document.getElementById('评分网站按钮').style.display='none'">评分网站</a>
 <div id="评分网站" style="display:none;">
-    <fieldset><legend>原神</legend>
-        <a href="https://www.taptap.cn/app/168332">TapTap（手机）</a><br>
+<fieldset><legend>原神</legend>
+    <a href="https://www.taptap.cn/app/168332">TapTap（手机）</a><br>
     <a href="https://www.taptap.cn/app/197826">TapTap（PC）</a><br>
     <a href="https://www.biligame.com/detail/?id=103496">B站（手机）</a><br>
     <a href="https://www.biligame.com/detail/?id=105667">B站（PC）</a><br>
@@ -165,11 +231,11 @@ permalink: i/zk/11431911
     <a href="https://www.zhihu.com/topic/20760895/hot">知乎</a><br>
     <a href="https://bbs.nga.cn/read.php?tid=23347410">NGA</a><br>
     <a href="https://www.douban.com/game/34441376/">豆瓣</a><br>
-    </fieldset>
-    
-    <br>
+</fieldset>
 
-    <fieldset><legend>星穹铁道</legend>
+<br>
+
+<fieldset><legend>星穹铁道</legend>
     <a href="https://www.taptap.cn/app/224267">TapTap（手机）</a><br>
     <a href="https://www.taptap.cn/app/305268">TapTap（PC）</a><br>
     <a href="https://www.biligame.com/detail/?id=107800">B站（手机）</a><br>
@@ -179,19 +245,19 @@ permalink: i/zk/11431911
     <a href="https://www.zhihu.com/topic/21874407/hot">知乎</a><br>
     <a href="https://bbs.nga.cn/read.php?tid=36121921">NGA</a><br>
     <a href="https://www.douban.com/game/35925645/">豆瓣</a><br>
-    </fieldset>
-    
-    <br>
+</fieldset>
 
-    <fieldset><legend>绝区零</legend>
-        <a href="https://www.taptap.cn/app/234493">TapTap</a><br>
-        <a href="https://www.biligame.com/detail/?id=108434">B站</a><br>
-        <!-- <a href="">谷歌商店</a><br> -->
-        <!-- <a href="">Appstore</a><br> -->
-        <a href="https://www.zhihu.com/topic/25521399/hot">知乎</a><br>
-        <!-- <a href="">NGA</a><br> -->
-        <a href="https://www.douban.com/game/35900589/">豆瓣</a><br>
-    </fieldset>
+<br>
+
+<fieldset><legend>绝区零</legend>
+    <a href="https://www.taptap.cn/app/234493">TapTap</a><br>
+    <a href="https://www.biligame.com/detail/?id=108434">B站</a><br>
+    <!-- <a href="">谷歌商店</a><br> -->
+    <!-- <a href="">Appstore</a><br> -->
+    <a href="https://www.zhihu.com/topic/25521399/hot">知乎</a><br>
+    <!-- <a href="">NGA</a><br> -->
+    <a href="https://www.douban.com/game/35900589/">豆瓣</a><br>
+</fieldset>
     
     
     <!--

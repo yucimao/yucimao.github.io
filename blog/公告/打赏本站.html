@@ -28,13 +28,14 @@ tpfd: 1
 </table>
 <br>
 
-注：<br>
+<small>
 <ol>
-    <li>未成年不要打赏</li>
-    <li>知乎打赏不显示来源</li>
-    <li>B站充电会被平台收走30%</li>
-    <li>“MQF基金会”是文学作品中虚构的组织，并不真实存在，可以支持创作，但请<b>不要为MQF基金会的项目捐款</b></li>
+    <li>未成年禁止打赏，无论是零花钱还是自己兼职赚的都不行，等成年再说。</li>
+    <li>不推荐使用<span class='提示' data-msg='知乎不显示打赏来源'>知乎</span>、<span class='提示' data-msg='B站抽成30%，如果是支持我的B站视频可以，毕竟B站提供了平台，如果支持网站或别的作品却给B站分成，总觉得怪怪的'>B站</span>等平台打赏。</li>
+    <li>大量刷1分钱、语言侮辱等不记录。</li>
+    <li>“MQF基金会”是文学作品中虚构的组织，并不真实存在，可以支持创作，但请<b>不要为MQF基金会的项目捐款。</b></li>
 </ol>
+</small>
 
 <br>
 <br>
@@ -266,7 +267,7 @@ let 排序_总金额="",排序_单次金额="",排序_时间="";
         if(临时3[i][0]!="隐藏"){排序_单次金额="<tr><td>"+临时3[i][0]+"</td><td>"+临时3[i][1]+"</td><td>"+临时3[i][2]+"</td></tr>"+排序_单次金额;}
     }
 
-    document.getElementById("时间").innerHTML="<b>名单</b> <small>时间排序</small><br>切换成：时间排序、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td><td><b>留言</b></td></tr>"+排序_时间+"</table>";
+    document.getElementById("时间").innerHTML="<b>名单</b> <small>时间排序</small><br>切换成：时间排序、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td style='width:2em'><b>金额</b></td><td><b>留言</b></td></tr>"+排序_时间+"</table>";
     document.getElementById("单次金额").innerHTML="<b>名单</b> <small>单次金额排序</small><br>切换成：<a onclick=\"document.getElementById('单次金额').style='display:none;';document.getElementById('时间').style='';\">时间排序</a>、单次金额排序、<a onclick=\"document.getElementById('单次金额').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td><td><b>留言</b></td></tr>"+排序_单次金额+"</table>";
     document.getElementById("总金额").innerHTML="<b>名单</b> <small>总金额排序</small><br>切换成：<a onclick=\"document.getElementById('总金额').style='display:none;';document.getElementById('时间').style='';\">时间排序</a>、<a onclick=\"document.getElementById('总金额').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、总金额排序<br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td></tr>"+排序_总金额+"</table>";
 </script>
