@@ -36,7 +36,9 @@ let d={
 "微信":["https://weixin.qq.com/","https://weixin.sogou.com/weixin?query=【】"],
 "GITHUB":["https://www.github.com/"],
 "EPIC":["https://www.epicgames.com/store/zh-CN",""],
-"路由器":["http://192.168.1.1",""],
+"默认路由器":["http://192.168.1.1"],
+"小米路由器":["http://192.168.31.1/"],
+"路由器":["选择","默认路由器","小米路由器"],
 "WIFI":".路由器",
 "奶牛关":["https://cowlevel.net/",""],
 "推特":["https://twitter.com/",""],
@@ -185,18 +187,12 @@ let 制;function 复(){document.getElementById('复制').value=制;let 复制=do
 let 首=0;
 
 function 开始(){
+	if(原=="。"||原=="，"){location.replace(默认+localStorage.getItem("s_html"));return;}else{localStorage.setItem("s_html",句号);}
 
 	// 原 原链接获取?后 大写
 	// url 分割成关键词 不大写
 	// 搜索 url[0].大写
 	// 句号 原链接获取?后 完全不变
-
-	if(原=="。"||原=="，"){
-		location.replace(默认+localStorage.getItem("s_html"));
-		return;
-	}else{
-		localStorage.setItem("s_html",句号);
-	}
 
 	let 搜索=url[0].toUpperCase();
 	if(url.length==1&&d[原]&&d[原][0]=="."){搜索=d[原].split(".")[1];原=搜索;}
@@ -205,11 +201,11 @@ function 开始(){
 
 	let 跳转=0;
 
-	if(url.length>1&&d[url.join("_")]){
-		搜索=url.join("_");
+	if(url.length>1&&d[url.join("_").toUpperCase()]){
+		搜索=url.join("_").toUpperCase();
 		url=[搜索];
-	}else if(url.length==2&&d[url[1]+"_"+url[0]]){
-		搜索=url[1]+"_"+url[0];
+	}else if(url.length==2&&d[(url[1]+"_"+url[0]).toUpperCase()]){
+		搜索=(url[1]+"_"+url[0]).toUpperCase();
 		url=[搜索];
 	}
 
