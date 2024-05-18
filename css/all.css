@@ -6,6 +6,7 @@
 }
 
 body{background-color:#ffffff;font-family:Helvetica,Arial,"Microsoft YaHei",sans-serif,"Droid Sans Fallback";line-height:1.8;font-size:16px;color:var(--body-color);overflow-x:hidden;}
+.emoji{font-family:'apple color emoji','segoe ui emoji','noto color emoji','android emoji','emojisymbols','emojione mozilla','twemoji mozilla','segoe ui symbol','Noto Color Emoji Compat','emoji','sans-serif';}
 p{margin:30px 0;}
 i{font-style:normal;}
 h1,h2,h3,h4,h5,h6{font-weight:800;cursor:default;margin:20px 0 10px;}

@@ -3,8 +3,9 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>​　</title>
-<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" type="image/x-icon" />
+<title>​猫球搜索</title>
+<link rel="shortcut icon" href="" id="icon" type="image/x-icon" />
+
 <style>
 	html{margin:30px;}
 	a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.3em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000;}
@@ -14,17 +15,13 @@
 </style>
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
-	let 原=decodeURI(location.href.split("?")[1]).replace(new RegExp('\\+',"g")," ");
-	let url=原.replace(new RegExp(' ',"g"),"+").split("+");
-	let 句号=原;
-	原=原.toUpperCase();
-
-	let 默认="https://www.baidu.com/s?wd=";
+let 默认="https://www.baidu.com/s?wd=";
 
 let 代码={//编辑html
 "":"",
 "yucimao":"C:/mq/博客/yucimao.github.io/",
 "异梦":"C:/mq/异梦笔记/biji/",
+"目录":"C:/mq/目录/",
 }
 let d={
 "萌娘百科":["https://zh.moegirl.org.cn/","https://zh.moegirl.org.cn/index.php?search=【】"],
@@ -49,8 +46,7 @@ let d={
 "知网":["https://www.cnki.net/"],
 "叔叔不约":["http://www.shushubuyue.net/"],
 "聊天室":["选择","蔷薇花园","叔叔不约"],
-"知乎 收藏":".知乎收藏",
-"知乎收藏":["https://www.zhihu.com/collections/mine"],
+"知乎_收藏":".知乎收藏","知乎收藏":["https://www.zhihu.com/collections/mine"],
 "李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
 "百度":["https://www.baidu.com/","https://www.baidu.com/s?wd=【】","广告多、流氓、结果全"],
 "必应":["https://cn.bing.com/","https://cn.bing.com/search?q=【】"],
@@ -75,6 +71,13 @@ let d={
 "UID":["https://space.bilibili.com/515330","https://space.bilibili.com/【】"],
 "NGA":["https://bbs.nga.cn/","https://bbs.nga.cn/thread.php?key=【】"],
 "贴吧":["https://tieba.baidu.com/","https://tieba.baidu.com/f/search/res?ie=utf-8&qw=【】"],
+"EMOJI":["https://www.emojiall.com/zh-hans"],
+"关注":["C:/mq/目录/关注.html"],
+"天工大模型":["https://www.tiangong.cn/"],
+"文心一言":["https://yiyan.baidu.com/"],
+"CHATGPT":["https://chat.openai.com/"],
+"B站_查成分":["https://laplace.live/user/515330"],
+"B站_弹幕":["https://tool.qianduange.cn/bili_danmu"],
 // "":["",""],
 
 // 大写
@@ -95,6 +98,7 @@ let d={
 "STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
 "直播":["选择","B站直播","斗鱼"],
 "酒仙":["选择","文件夹_酒仙","在线_酒仙"],
+"AI":["选择","天工大模型","文心一言","ChatGPT"],
 // "":["选择",""],
 
 //字母
@@ -105,8 +109,7 @@ let d={
 "S":".搜索",
 // "":["",""],
 
-// "":["",""],
-
+//编辑
 "编辑":["选择","编辑本页"],
 "编辑本页":["html","yucimao","app/s.html"],
 "测试":".编辑",
@@ -125,23 +128,7 @@ let d={
 "小工具":["https://limaoqiu.com/xiaogongju"],
 "在线_酒仙":["https://limaoqiu.com/jiuxian"],
 "博客_原神节奏":["https://limaoqiu.com/yuanshenjiezou"],
-"MBTI":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html"],
-"INFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INFP"],
-"INFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INFJ"],
-"ENFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENFP"],
-"ENFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENFJ"],
-"INTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INTP"],
-"INTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INTJ"],
-"ENTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENTP"],
-"ENTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENTJ"],
-"ISFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISFP"],
-"ISFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISFJ"],
-"ESFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESFP"],
-"ESFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESFJ"],
-"ISTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISTP"],
-"ISTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISTJ"],
-"ESTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESTP"],
-"ESTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESTJ"],
+// "":["",""],
 
 //米哈游
 "米游社":["https://www.miyoushe.com","https://www.miyoushe.com/dby/search?keyword=【】"],
@@ -164,30 +151,58 @@ let d={
 "B站_绝区零":["https://space.bilibili.com/1636034895/"],
 "微博_绝区零":["https://weibo.com/u/7632078520"],
 
-
-//不重要
-
 "B站":["选择","哔哩哔哩",
-	".<br><hr><h3>米哈游</h3>","原神_B站","星穹铁道_B站","绝区零_B站",".<br>","半魇Sana",
+	".<br><hr><h3>米哈游</h3>","原神_B站","星穹铁道_B站","绝区零_B站",".<br>","半魇Sana","亚食人",
 	".<br><hr><h3>政治</h3>","波士顿圆脸","小Q不是导盲犬",
 	".<br><hr><h3>其他</h3>","逍遥散人",
 ],
 
+//不重要
 "波士顿":".波士顿圆脸",
 "波士顿圆脸":["https://space.bilibili.com/346563107"],
 "半魇SANA":["https://space.bilibili.com/6771326"],
 "逍遥散人":["https://space.bilibili.com/168598/"],
 "小Q不是导盲犬":["https://space.bilibili.com/546189"],
+"亚食人":["https://space.bilibili.com/80304"],
+"MBTI":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html"],
+"INFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INFP"],
+"INFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INFJ"],
+"ENFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENFP"],
+"ENFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENFJ"],
+"INTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INTP"],
+"INTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INTJ"],
+"ENTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENTP"],
+"ENTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ENTJ"],
+"ISFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISFP"],
+"ISFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISFJ"],
+"ESFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESFP"],
+"ESFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESFJ"],
+"ISTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISTP"],
+"ISTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ISTJ"],
+"ESTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESTP"],
+"ESTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESTJ"],
 // "":["",""],
 
 }
+
+let 原,url,句号;
+function 首行(){
+	原=原.replace(new RegExp('\\+',"g")," ");
+	url=原.replace(new RegExp(' ',"g"),"+").split("+");
+	句号=原;
+	原=原.toUpperCase();
+}
+
+原=decodeURI(location.href.split("?")[1]);首行();
 
 let 制;function 复(){document.getElementById('复制').value=制;let 复制=document.querySelector('#复制');复制.select();document.execCommand("Copy");}
 
 let 首=0;
 
 function 开始(){
-	if(原=="。"||原=="，"){location.replace(默认+localStorage.getItem("s_html"));return;}else{localStorage.setItem("s_html",句号);}
+	if(原=="。"){location.replace(默认+localStorage.getItem("s_html"));return}
+	else if(原=="，"){原=localStorage.getItem("s_html");首行()}
+	else{localStorage.setItem("s_html",句号);}
 
 	// 原 原链接获取?后 大写
 	// url 分割成关键词 不大写
@@ -208,8 +223,6 @@ function 开始(){
 		搜索=(url[1]+"_"+url[0]).toUpperCase();
 		url=[搜索];
 	}
-
-	
 
 	if(d[搜索]&&d[搜索][0]=="选择"){//选择
 		let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
@@ -280,10 +293,6 @@ function 取消(){
 	document.getElementById("搜索").style="display:none;";
 }
 
-
-
-
-
 document.addEventListener('keydown',function(event){
     if(event.keyCode===13){
 		if(首!=0){
@@ -293,7 +302,6 @@ document.addEventListener('keydown',function(event){
     }
 });
 
-
-
+document.getElementById("icon").href="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAACMuAAAjLgAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/////wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/////wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A/////////////////////////////////////4AAAH+AAAB/gAAAf4AAAH+AAAB/gAAAf4AAH4GAAB+BgAAfgYAAH4GAAB+BgAAfgYH4H/+B+B//gfgf/4H4H/+B+B//gfgf//////////////////////////////////////8=";
 </script>
 </html>
