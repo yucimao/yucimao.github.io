@@ -12,6 +12,7 @@
 	#dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff;}
 	[搜]:before{content:" [搜]";}
 	.提示{position:relative;border-bottom:1.5px dashed #aaa;}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%);}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989;}
+	.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}
 </style>
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
@@ -24,9 +25,107 @@ let 代码={//编辑html
 "目录":"C:/mq/目录/",
 }
 let d={
+
+//目录
+"搜索":["选择","百度","必应","谷歌搜索"],
+"识图":["选择","百度识图","必应识图","Yandex图片","搜狗图片","谷歌识图","TinEye","／<br><h4>二次元</h4>","SauceNao","二次元画像詳細検索","搜图bot酱"],
+"翻译":["选择","小翻译器","／<br>","百度翻译","DeepL"],
+"找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
+"游戏":["选择","／<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
+"STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
+"直播":["选择","B站直播","斗鱼"],
+"AI":["选择","天工大模型","文心一言","ChatGPT","秘塔AI"],
+
+// "":["选择",""],
+
+//字母
+"B":"／B站",
+"哔哩哔哩":["https://www.bilibili.com","https://search.bilibili.com/all?keyword=【】"],
+"P":"／P站",
+"P站":["选择","pixiv","PornHub"],
+"S":"／搜索",
+// "":["",""],
+
+//编辑
+"编辑":["选择","编辑本页"],
+"编辑本页":["html","yucimao","app/s.html"],
+"测试":"／编辑",
+
+//博客
+"博客":["https://limaoqiu.com/i","https://limaoqiu.com/【】"],
+"limaoqiu":"／博客","鱼刺猫":"／李猫球","yucimao":"／李猫球",
+"李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
+"打赏":["选择","编辑|编辑打赏"],
+"编辑打赏":["html","yucimao","blog/公告/打赏本站.html"],
+"KTV":["https://limaoqiu.com/pingfen/ktv"],
+"二扯奶茶店":["https://limaoqiu.com/biji/erchenaichadian",""],
+"小工具":["https://limaoqiu.com/xiaogongju"],
+"博客原神节奏":["https://limaoqiu.com/yuanshenjiezou"],
+// "":["",""],
+
+//米哈游
+"米哈游":["选择","原神","星穹铁道","绝区零","／<br><hr><h3>米哈游</h3>","官网_米哈游","B站_米哈游","微博_米哈游",
+"／<br><hr><h3>博主</h3>","／<a href='https://space.bilibili.com/6771326'>半魇Sana</a>",
+],
+"米游社":["https://www.miyoushe.com","https://www.miyoushe.com/dby/search?keyword=【】"],
+"官网_米哈游":["https://www.mihoyo.com"],
+"B站_米哈游":["https://space.bilibili.com/318432901"],
+"微博_米哈游":["https://weibo.com/u/6415164493"],
+
+"原神":["选择","官网_原神","米游社_原神","B站_原神","微博_原神"],
+"B站_原神":["https://space.bilibili.com/401742377"],
+"米游社_原神":["https://www.miyoushe.com/ys/","https://www.miyoushe.com/ys/search?keyword=【】"],
+"微博_原神":["https://weibo.com/u/6593199887"],
+"官网_原神":["https://ys.mihoyo.com/main/"],
+
+"星穹铁道":["选择","官网_星穹铁道","米游社_星穹铁道","B站_星穹铁道","微博_星穹铁道","帕姆的收藏夹","星穹铁道小呜呜"],
+"星铁":"／星穹铁道","配队_星穹铁道":"／阵容_星穹铁道","配队_星铁":"／阵容_星穹铁道",
+"B站_星穹铁道":["https://space.bilibili.com/1340190821"],
+"米游社_星穹铁道":["https://www.miyoushe.com/sr/","https://www.miyoushe.com/sr/search?keyword=【】"],
+"微博_星穹铁道":["https://weibo.com/u/7643376782"],
+"官网_星穹铁道":["https://sr.mihoyo.com/"],
+"阵容_星穹铁道":["https://act.mihoyo.com/sr/event/cultivation-tool/index.html"],
+
+"绝区零":["选择","官网_绝区零","米游社_绝区零","B站_绝区零","微博_绝区零"],
+"米游社_绝区零":["https://www.miyoushe.com/zzz","https://www.miyoushe.com/zzz/search?keyword=【】"],
+"B站_绝区零":["https://space.bilibili.com/1636034895/"],
+"微博_绝区零":["https://weibo.com/u/7632078520"],
+"官网_绝区零":["https://zzz.mihoyo.com/"],
+
+"B站":["选择","哔哩哔哩",// class='提示' data-msg='内容'
+	"／<br><hr><h3>政治</h3>","波士顿圆脸","／<a href='https://space.bilibili.com/546189'>小Q不是导盲犬</a>",
+	"／<br><hr><h3>二游杂谈</h3>","／<a href='https://space.bilibili.com/80304'>亚食人</a>","／<a href='https://space.bilibili.com/9673834'>月飞大叔</a>","／<a class='提示' data-msg='考究节奏历史和真相，对米哈游比较中立' href='https://space.bilibili.com/3546642393335905'>蟹师傅</a>",
+	"／<br><hr><h3>其他</h3>","逍遥散人",
+],
+
+// 大写
+// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
+// "A":["选择","B","C_D","E|C_D"], //显示按钮 B、C、E（_和|后面不显示） // "A|B|C" 显示A 跳转到B 提示C // "／内容"直接显示
+// "A":"／B", //A同B
+// "编辑本页":["html","yucimao","app/s.html"],
+// "打开程序或文件夹":["打开","C:/mq/目录"],
+
+// 传给手机，用via打开一下就行了（名字s.html），它会自动跑到via的文件夹里
+
+// "":["",""],
+"搜图BOT酱":["https://soutubot.moe/","","搜本子，收录了NH、EH等网站的图片，老本子可搜"],
+"二次元画像詳細検索":["https://ascii2d.net/","","p站、推特等外网图片"],
+"SAUCENAO":["https://saucenao.com/","","识别大部分画师的原创和同人图，番剧截图可定位来源具体到分秒"],
+"TINEYE":["http://tineye.com","","被墙"],
+"谷歌识图":["http://images.google.com","","被墙"],
+"搜狗图片":["https://pic.sogou.com/"],
+"YANDEX图片":["https://yandex.com/images"],
+"必应识图":["https://cn.bing.com/visualsearch"],
+"酒仙":["选择","文件夹|文件夹酒仙","在线|在线酒仙"],
+"文件夹酒仙":["打开","yucimao","blog/笔记/酒仙笔记/"],
+"在线酒仙":["https://limaoqiu.com/jiuxian"],
+"点评":["选择","编辑|编辑点评猫球","在线|在线点评猫球","库|库点评猫球"],
+"编辑点评猫球":["html","yucimao","blog/公告/关于/其他_点评猫球2.html"],
+"在线点评猫球":["https://limaoqiu.com/dianping"],
+"库点评猫球":["https://console.leancloud.cn/apps/mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz/storage/data/df"],
+"百度识图":["https://graph.baidu.com/pcpage/index"],
 "萌娘百科":["https://zh.moegirl.org.cn/","https://zh.moegirl.org.cn/index.php?search=【】"],
-"识图":["https://graph.baidu.com/pcpage/index"],
-"SHITU":".识图",
+"SHITU":"／识图",
 "百科":["https://baike.baidu.com/","https://baike.baidu.com/item/【】"],
 "微博":["https://weibo.com/","https://s.weibo.com/weibo?q=【】"],
 "知乎":["https://www.zhihu.com/","https://www.zhihu.com/search?q=【】"],
@@ -36,7 +135,7 @@ let d={
 "默认路由器":["http://192.168.1.1"],
 "小米路由器":["http://192.168.31.1/"],
 "路由器":["选择","默认路由器","小米路由器"],
-"WIFI":".路由器",
+"WIFI":"／路由器",
 "奶牛关":["https://cowlevel.net/",""],
 "推特":["https://twitter.com/",""],
 "蔷薇花园":["https://iirose.com/#s=56b331ffaac6c",""],
@@ -46,12 +145,12 @@ let d={
 "知网":["https://www.cnki.net/"],
 "叔叔不约":["http://www.shushubuyue.net/"],
 "聊天室":["选择","蔷薇花园","叔叔不约"],
-"知乎_收藏":".知乎收藏","知乎收藏":["https://www.zhihu.com/collections/mine"],
+"知乎收藏":["https://www.zhihu.com/collections/mine"],
 "李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
 "百度":["https://www.baidu.com/","https://www.baidu.com/s?wd=【】","广告多、流氓、结果全"],
 "必应":["https://cn.bing.com/","https://cn.bing.com/search?q=【】"],
 "谷歌搜索":["https://www.google.com/","https://www.google.com/search?q=【】","需要科学上网"],
-"谷歌":".谷歌搜索","GOOGLE":".谷歌搜索",
+"谷歌":"／谷歌搜索","GOOGLE":"／谷歌搜索",
 "百度翻译":["https://fanyi.baidu.com/"],
 "DEEPL":["https://www.deepl.com/translator",,"更适合国人习惯的翻译网站"],
 "PIXIV":["https://pixiv.net/","https://www.pixiv.net/tags/【】","插画"],
@@ -60,7 +159,6 @@ let d={
 "图片文件夹_找灵感":["打开","C:/mq/异梦笔记/0/2/找灵感/"],
 "文字_找灵感":["C:/mq/异梦笔记/biji/找灵感（本地）.html"],
 "小翻译器":["C:/mq/目录/小翻译器.html","C:/mq/目录/小翻译器.html?【】"],
-"库_点评猫球":["https://console.leancloud.cn/apps/mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz/storage/data/df"],
 "官网_STEAM":["https://store.steampowered.com/","https://store.steampowered.com/search/?term=【】"],
 "软件_STEAM":["打开","C:/mq/app/game/steam/Steam.exe"],
 "文件夹_STEAM":["打开","C:/mq/app/game/steam/steamapps/common/"],
@@ -76,95 +174,19 @@ let d={
 "天工大模型":["https://www.tiangong.cn/"],
 "文心一言":["https://yiyan.baidu.com/"],
 "CHATGPT":["https://chat.openai.com/"],
-"B站_查成分":["https://laplace.live/user/515330"],
-"查弹幕":".B站_弹幕","B站_弹幕":["https://tool.qianduange.cn/bili_danmu"],
+"查成分":"／B站查成分","B站查成分":["https://laplace.live/user/515330"],
+"查弹幕":"／B站弹幕","B站弹幕":["https://tool.qianduange.cn/bili_danmu"],
 "表情":["C:/mq/目录/B站表情.html"],
-// "":["",""],
-
-// 大写
-// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
-// "A":["选择","B","C_D"], //显示按钮 B、C（_后面不显示）
-// "A":".B", //A同B
-// "编辑本页":["html","yucimao","app/s.html"],
-// "打开程序或文件夹":["打开","C:/mq/目录"],
-
-// 传给手机，用via打开一下就行了（名字s.html），它会自动跑到via的文件夹里
-
-//目录
-"搜索":["选择","百度","必应","谷歌搜索"],
-"翻译":["选择","小翻译器",".<br>","百度翻译","DeepL"],
-"找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
-"点评":["选择","编辑_点评猫球","在线_点评猫球","库_点评猫球"],
-"游戏":["选择",".<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
-"STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
-"直播":["选择","B站直播","斗鱼"],
-"酒仙":["选择","文件夹_酒仙","在线_酒仙"],
-"AI":["选择","天工大模型","文心一言","ChatGPT"],
-// "":["选择",""],
-
-//字母
-"B":".B站",
-"哔哩哔哩":["https://www.bilibili.com/","https://search.bilibili.com/all?keyword=【】"],
-"P":".P站",
-"P站":["选择","pixiv","PornHub"],
-"S":".搜索",
-// "":["",""],
-
-//编辑
-"编辑":["选择","编辑本页"],
-"编辑本页":["html","yucimao","app/s.html"],
-"测试":".编辑",
-
-//博客
-"博客":["https://limaoqiu.com/i","https://limaoqiu.com/【】"],
-"limaoqiu":".博客","鱼刺猫":".李猫球","yucimao":".李猫球",
-"李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
-"打赏":["选择","编辑_打赏"],
-"编辑_打赏":["html","yucimao","blog/公告/打赏本站.html"],
-"编辑_点评猫球":["html","yucimao","blog/公告/关于/其他_点评猫球2.html"],
-"在线_点评猫球":["https://limaoqiu.com/dianping"],
-"文件夹_酒仙":["打开","yucimao","blog/笔记/酒仙笔记/"],
-"KTV":["https://limaoqiu.com/pingfen/ktv"],
-"二扯奶茶店":["https://limaoqiu.com/biji/erchenaichadian",""],
-"小工具":["https://limaoqiu.com/xiaogongju"],
-"在线_酒仙":["https://limaoqiu.com/jiuxian"],
-"博客_原神节奏":["https://limaoqiu.com/yuanshenjiezou"],
-// "":["",""],
-
-//米哈游
-"米游社":["https://www.miyoushe.com","https://www.miyoushe.com/dby/search?keyword=【】"],
-
-"原神":["选择","米游社_原神","B站_原神","微博_原神"],
-"原神_B站":".B站_原神","原神_微博":".微博_原神","原神_米游社":"米游社_原神",
-"B站_原神":["https://space.bilibili.com/401742377"],
-"米游社_原神":["https://www.miyoushe.com/ys/","https://www.miyoushe.com/ys/search?keyword=【】"],
-"微博_原神":["https://weibo.com/u/6593199887"],
-
-"星穹铁道":["选择","米游社_星穹铁道","B站_星穹铁道","微博_星穹铁道"],
-"星铁":".星穹铁道","B站_星铁":".B站_星穹铁道","微博_星铁":".微博_星穹铁道","米游社_星铁":".米游社_星穹铁道","星铁_B站":".B站_星穹铁道","星铁_微博":".微博_星穹铁道","星铁_米游社":".米游社_星穹铁道",
-"B站_星穹铁道":["https://space.bilibili.com/1340190821"],
-"米游社_星穹铁道":["https://www.miyoushe.com/sr/","https://www.miyoushe.com/sr/search?keyword=【】"],
-"微博_星穹铁道":["https://weibo.com/u/7643376782"],
-
-"绝区零":["选择","米游社_绝区零","B站_绝区零","微博_绝区零"],
-"绝区零_B站":".B站_绝区零","绝区零_微博":".微博_绝区零","绝区零_米游社":".米游社_绝区零",
-"米游社_绝区零":["https://www.miyoushe.com/zzz","https://www.miyoushe.com/zzz/search?keyword=【】"],
-"B站_绝区零":["https://space.bilibili.com/1636034895/"],
-"微博_绝区零":["https://weibo.com/u/7632078520"],
-
-"B站":["选择","哔哩哔哩",
-	".<br><hr><h3>米哈游</h3>","原神_B站","星穹铁道_B站","绝区零_B站",".<br>","半魇Sana","亚食人",
-	".<br><hr><h3>政治</h3>","波士顿圆脸","小Q不是导盲犬",
-	".<br><hr><h3>其他</h3>","逍遥散人",
-],
-
-//不重要
-"波士顿":".波士顿圆脸",
+"秘塔AI":["https://metaso.cn","https://metaso.cn/?q=【】"],
+"坚果云":["https://www.jianguoyun.com/d/home#/"],
+"以撒":["选择","灰机Wiki_以撒","IcaCat"],
+"ICACAT":["https://issac-icecat.azurewebsites.net/"],
+"灰机WIKI_以撒":["https://isaac.huijiwiki.com/wiki/首页","https://isaac.huijiwiki.com/index.php?title=特殊:搜索&search=【】&profile=default&sort=just_match"],
+"以撒图鉴":"／以撒",
+"抖音":["https://www.douyin.com","https://www.douyin.com/search/【】"],
+"波士顿":"／波士顿圆脸",
 "波士顿圆脸":["https://space.bilibili.com/346563107"],
-"半魇SANA":["https://space.bilibili.com/6771326"],
 "逍遥散人":["https://space.bilibili.com/168598/"],
-"小Q不是导盲犬":["https://space.bilibili.com/546189"],
-"亚食人":["https://space.bilibili.com/80304"],
 "MBTI":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html"],
 "INFP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INFP"],
 "INFJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#INFJ"],
@@ -183,7 +205,8 @@ let d={
 "ESTP":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESTP"],
 "ESTJ":["file:///C:/mq/异梦笔记/biji/mbti（本地）.html#ESTJ"],
 "B站_木木":["https://space.bilibili.com/31572302"],
-// "":["",""],
+"帕姆的收藏夹":["https://space.bilibili.com/508103429/"],
+"星穹铁道小呜呜":["https://space.bilibili.com/3493120220071960"],
 
 }
 
@@ -193,13 +216,30 @@ function 首行(){
 	url=原.replace(new RegExp(' ',"g"),"+").split("+");
 	句号=原;
 	原=原.toUpperCase();
+	document.title=url[0]+" - 猫球搜索";
 }
 
+if(location.href.indexOf("?")!=-1){
 原=decodeURI(location.href.split("?")[1]);首行();
+}else{
+原=0;
+document.getElementById("dy").innerHTML="<input type='text' id='输入' autofocus style='font-size:2em;border-radius:5px;width:100%;height:2em;' placeholder='　猫球搜索' autocomplete='off'>";
+
+let input = document.getElementById('输入');
+document.addEventListener('click', function(event) {
+    let isClickInside = input.contains(event.target);
+ 
+    if (!isClickInside) {
+        input.focus();
+    }
+});
+}
+
+
 
 let 制;function 复(){document.getElementById('复制').value=制;let 复制=document.querySelector('#复制');复制.select();document.execCommand("Copy");}
 
-let 首=0;
+let 首=0;let 非常规=["选择","js","打开","html"];
 
 function 开始(){
 	if(原=="。"){location.replace(默认+localStorage.getItem("s_html"));return}
@@ -211,35 +251,63 @@ function 开始(){
 	// 搜索 url[0].大写
 	// 句号 原链接获取?后 完全不变
 
-	let 搜索=url[0].toUpperCase();
-	if(url.length==1&&d[原]&&d[原][0]=="."){搜索=d[原].split(".")[1];原=搜索;}
-	else if(url.length>1&&d[原.replace(new RegExp(' ',"g"),"_")]&&d[原.replace(new RegExp(' ',"g"),"_")][0]=="."){搜索=d[原.replace(new RegExp(' ',"g"),"_")].split(".")[1];url=搜索.split("_");}
-	else if(d[搜索]&&d[搜索][0]=="."){搜索=d[搜索].split(".")[1];}
-
 	let 跳转=0;
+	let 搜索=url[0].toUpperCase();
 
+	//.xx
+	if(url.length==1&&d[原]&&d[原][0]=="／"){跳转=d[原].split("／")[1];}
+	else if(url.length>1&&d[原.replace(new RegExp(' ',"g"),"_")]&&d[原.replace(new RegExp(' ',"g"),"_")][0]=="／"){跳转=d[原.replace(new RegExp(' ',"g"),"_")].split("／")[1];}
+	else if(url.length>1&&d[原.replace(new RegExp(' ',"g"),"")]&&d[原.replace(new RegExp(' ',"g"),"")][0]=="／"){跳转=d[原.replace(new RegExp(' ',"g"),"")].split("／")[1];}
+	else if(d[搜索]&&d[搜索][0]=="／"){跳转=d[搜索].split("／")[1];}
+
+	if(跳转!=0){
+		if(url.length>1){跳转+=" "+url.slice(1).join(" ")}
+		location.replace("?"+跳转);return;}
+
+	//x_x
 	if(url.length>1&&d[url.join("_").toUpperCase()]){
-		搜索=url.join("_").toUpperCase();
-		url=[搜索];
+		跳转=url.join("_").toUpperCase();
 	}else if(url.length==2&&d[(url[1]+"_"+url[0]).toUpperCase()]){
-		搜索=(url[1]+"_"+url[0]).toUpperCase();
-		url=[搜索];
+		跳转=(url[1]+"_"+url[0]).toUpperCase();
+	}else if(url.length>1&&d[原.replace(new RegExp(' ',"g"),"")]){
+		跳转=url.join("");
+	}else if(url.length==2&&d[原.split(" ")[1]+"_"+原.split(" ")[0]]){
+		跳转=原.split(" ")[1]+"_"+原.split(" ")[0];
 	}
 
+	if(跳转!=0){location.replace("?"+跳转);return;}
+
 	if(d[搜索]&&d[搜索][0]=="选择"){//选择
-		let dy="<small onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
+		let dy="<small class='链接' onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
 		if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>";}
+		dy+="<br>";
 		let 临时2="";
 		for(let i=1;d[搜索].length>i;i++){
-			if(d[搜索][i][0]=="."){
-				dy+=d[搜索][i].split(".")[1];
+			if(d[搜索][i][0]=="／"){
+				dy+=d[搜索][i].split("／")[1];
 			}else{
 				if(首==0){首=d[搜索][i]}
-				dy+="<a onclick=\"url[0]='"+d[搜索][i]+"';开始()\"";
-				let 临时=d[d[搜索][i].toUpperCase()];
-				if(临时&&typeof 临时=="object"&&临时[2]){dy+=" class='提示' data-msg='"+临时[2]+"'"}
-				dy+=">"+d[搜索][i].split("_")[0];
-				if(url[1]&&临时&&临时[1]&&临时[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>";if(临时2==""){临时2=i}else{临时2="x"}}
+				let 临时=d[搜索][i].split("|");
+				let 下一个=d[搜索][i].toUpperCase();
+				if(下一个.indexOf("|")!=-1){下一个=下一个.split("|")[1]}
+				下一个=d[下一个];
+
+				if(下一个&&下一个[0]=="html"||下一个&&下一个[0]=="打开"){
+					dy+="<a onclick=\"url[0]='";
+					if(临时[1]){dy+=临时[1]}else{dy+=d[搜索][i]}
+					dy+="';开始()\"";
+				}else{
+					dy+="<a href=\"?";
+					if(临时[1]){dy+=临时[1]}else{dy+=d[搜索][i]}
+					dy+="\"";
+				}
+
+
+				if(临时[2]){dy+=" class='提示' data-msg='"+临时[2]+"'"}else{
+					if(下一个&&typeof 下一个=="object"&&非常规.indexOf(下一个[0])==-1&&下一个[2]){dy+=" class='提示' data-msg='"+下一个[2]+"'"}
+				}
+				dy+=">"+d[搜索][i].split("_")[0].split("|")[0];
+				if(url[1]&&下一个&&下一个[1]&&下一个[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>";if(临时2==""){临时2=i}else{临时2="x"}}
 				dy+="</a>";
 			}
 		}
@@ -297,6 +365,9 @@ function 取消(){
 
 document.addEventListener('keydown',function(event){
     if(event.keyCode===13){
+		if(原==0){
+			location.replace("?"+document.getElementById("输入").value)
+		}
 		if(首!=0){
 			url[0]=首;
 			开始()
