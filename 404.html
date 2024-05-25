@@ -30,8 +30,8 @@ if(url!=缓存){
 		跳转=url.replace(/%E2%80%8E/g,"");
 	}else if(url[url.length-1]=="/"){//最后的"/"
 		跳转=url.slice(0,-1);
-	}else if(url>0||url.indexOf("i/")!=-1&&url.split("i/")[1]>0||url.indexOf("zk/")!=-1&&url.split("zk/")[1]>0){//写错的zk码
-		跳转="i/zk/"+url.replace(/\D/g,'');
+	}else if(url>0||url.indexOf("zk/")!=-1&&url.split("zk/")[1]>0){//写错的zk码
+		跳转="i/"+url.replace(/\D/g,'');
 	}else if(url.replace(/[A-Z]/g,"A").indexOf("A")!=-1){//大写转小写
 		跳转=url.toLowerCase();
 	}

@@ -64,7 +64,7 @@ permalink: oldnews
     let 年年=[];
 
     for(let i=datc.length-1;i>-1;i--){
-        if(datc[i][0]>0){datc[i][0]="/i/zk/"+datc[i][0];}
+        if(datc[i][0]>0){datc[i][0]="/i/"+datc[i][0];}
         let 当年=datc[i][1].split("年")[0];
         datc[i][3][datc[i][3].length]=当年+"年";
         if(datc[i][3].indexOf("等后续")!=-1){datc[i][1]+="(等后续)";}

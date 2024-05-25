@@ -51,7 +51,7 @@ else{
     //展开的子页面
     var bodyH = $(document).height()+{% if page.zk_height %}{{ page.zk_height }}{% else %}20{% endif %};
     var bodyHa = {% if page.zk_height_a %}{{ page.zk_height_a }}{% else %}0{% endif %};
-    var bodyJ = window.location.href.split('/i/zk/')[1].split("#")[0];
+    var bodyJ = window.location.href.split('/i/')[1].split("#")[0];
     var bodyK = "／／" + bodyJ;
     var bodyL = "／" + bodyJ + "／";
 

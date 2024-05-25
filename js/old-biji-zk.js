@@ -98,7 +98,7 @@ function zk() {
         }
 
     var yd = "／"+zka;
-    var dy = "<iframe src=\"/i/zk/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"50\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
+    var dy = "<iframe src=\"/i/" + zka + "\" frameborder=\"0\" width=\"100%\" height=\"50\" id=\"／／" +zka+ "\"></iframe><p id=\"／"+zka+"／\">加载中..</p>";
     document.getElementById(yd).innerHTML=dy;
-    console.log("/i/zk/"+zka);
+    console.log("/i/"+zka);
 }

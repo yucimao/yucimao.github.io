@@ -63,7 +63,7 @@ for (let i = 0; data.length > i; i++) {
             if (临时[1].indexOf(输入2[i2]) != -1 && 输入2[i2] != "") { 过程 = "1"; }
         }
         if(过程=="1"||输入==""){
-            结果+="<a href=\"/i/zk/"+临时[0]+"\" target=\"_blank\"><span";
+            结果+="<a href=\"/i/"+临时[0]+"\" target=\"_blank\"><span";
             if(localStorage.getItem(临时[0])){结果+=" class=\"yidu\"";}
             if(临时[2]=="long"){结果+=" style=\"width:96%;text-align:left;\""}
             结果+=">"+临时[1]+"</span></a>";
