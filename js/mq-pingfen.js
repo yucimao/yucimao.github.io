@@ -175,6 +175,8 @@ function 排名方式(){
 dw2(0);
 if(location.href.indexOf("?w=")!=-1){
     dw2(decodeURI(location.href.split("?w=")[1]));
+}else if(location.href.indexOf("?")!=-1){
+    dw2(decodeURI(location.href.split("?")[1]));
 }
 
 function 取消(o){

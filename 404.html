@@ -26,6 +26,9 @@ let 缓存=localStorage.getItem("404")||"";
 let url=window.location.href.split("limaoqiu.com/")[1];
 if(!url){window.location.href.split("李猫球.com/")[1];}
 let 跳转="";
+url=url.split("#");
+let 井=url[1]||0;
+url=url[0];
 if(url!=缓存){
 	if(url.indexOf("%E2%80%8E")!=-1){//零宽空格
 		跳转=url.replace(/%E2%80%8E/g,"");
@@ -41,7 +44,8 @@ if(url!=缓存){
 if(跳转==""){
 	document.title="这里什么都没有 - {{ site.title }}";
 }else{
-	localStorage.setItem("404",跳转)
+	localStorage.setItem("404",跳转);
+	if(井!=0){跳转+="#"+井;}
 	window.location.href="/"+跳转;
 }
 
