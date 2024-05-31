@@ -8,10 +8,10 @@ permalink: i/11504341
 （只记录有一定影响力的）<br>
 <link rel="stylesheet" href="/css/all2.css">
 <style>
-    .支持者和反米人士 tr:nth-child(1){position:sticky;top:0;}
-    .支持者和反米人士 td:nth-child(2),.支持者和反米人士 td:nth-child(4){float:right;font-weight:bold;}
-    .支持者和反米人士 td:nth-child(3),.支持者和反米人士 td:nth-child(5){font-size:0.8em;}
-    .支持者和反米人士 td[colspan='5']{font-size:1.8em;text-align:center;}
+    .t列表 tr:nth-child(1){position:sticky;top:0;}
+    .t列表 td:nth-child(2),.t列表 td:nth-child(4){float:right;font-weight:bold;}
+    .t列表 td:nth-child(3),.t列表 td:nth-child(5){font-size:0.8em;}
+    .t列表 td[colspan='5']{font-size:1.8em;text-align:center;}
 </style>
 <div id="dy"></div>
 <script>//["名字","简介","链接","更多"],
@@ -107,14 +107,7 @@ let d=[
 
 ];
 
-
-    // ["内容型创作者",[/*内容型创作者*/
-    //    //支持
-    //     ["奈须蘑菇","«月姬»、«Fate»系列","https://baike.baidu.com/item/奈须蘑菇/3761744"],
-    // ],[//反对
-
-    // ]],
-    let dy="<table class='支持者和反米人士'><tr><td></td><td>支持者</td><td>代表作、事迹、简介</td><td>反米人士</td><td>代表作、事迹、简介</td></tr>";
+    let dy="<table class='t列表'><tr><td></td><td>支持者</td><td>代表作、事迹、简介</td><td>反米人士</td><td>代表作、事迹、简介</td></tr>";
     for(let i=0;d.length>i;i++){
         if(i!=0){dy+="<tr><td colspan='5'>　</td></tr>"}
         dy+="<tr><td colspan='5'>"+d[i][0]+"</td></tr>";
