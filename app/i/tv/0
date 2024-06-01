@@ -4,8 +4,13 @@
 i-Fun动漫台,mitv://generationnexxxt.com:19806/91a0e3fa1a714dd7b7cf55343052cd4f
 日本男同台,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs05&isp=10&bind=0&uin=159413&playseek=0
 
-旅游,#genre#
-爱旅行,http://[2409:8087:7000:20:1000::22]:6060/000000001000/6000000006000250630/index.m3u8?channel-id=wasusyt&Contentid=6000000006000250630&livemode=1&stbId=3
+新闻、民生,#genre#
+台视,mitv://generationnexxxt.com:19806/9868c18e3c0940cd8aa003d9ae54f862
+中视,mitv://generationnexxxt.com:19806/27826c4ed7234c0d8759bc7fe6786a18
+华视,mitv://generationnexxxt.com:19806/761bc3c0662247d18b0db4da8070b7f4
+
+旅游、时尚,#genre#
+【旅游】,
 TLC旅游生活,mitv://generationnexxxt.com:19806/621ca70412034f5eb919c1ec03679804
 亚洲旅游台,mitv://generationnexxxt.com:19806/259c24cb79ce4b5db1fb1e1b894c517e
 EYE TV旅游台,mitv://generationnexxxt.com:19806/2d426994acef44deb401aa8a4cd5a92e
@@ -21,25 +26,17 @@ Love Nature 4K,https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
 Love Nature,p3p://fccsen.dyndns.tv:29706/5f5550330007d5fcd614522b5d6972f3#mitv://generationnexxxt.com:19806/574be1e2e0054216abe436413ea4221a
 
 少儿,#genre#
-CCTV-14少儿,http://150.138.40.183/liveali-tpgq.cctv.cn/live/cctv14.m3u8#http://36.156.208.131/liveali-tpgq.cctv.cn/live/cctv14.m3u8#http://61.170.81.240/liveali-tpgq.cctv.cn/live/cctv14.m3u8#http://222.92.7.170:3333/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
-卡酷少儿,http://zteres.sn.chinamobile.com:6060/000000001000/7851974109718180595/1.m3u8?channel-id=bestzb&Contentid=7851974109718180595&livemode=1&stbId=3
-黑龙江少儿,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225979/index.m3u8
+CCTV-14,http://59.44.102.18:8888/newlive/live/hls/16/live.m3u8
 韩·EBS少儿,http://ebsonairios.ebs.co.kr/ebsutablet500k/_definst_/tablet500k/chunklist_w1965791004.m3u8
-爱动漫,http://[2409:8087:7000:20:1000::22]:6060/000000001000/6000000006000280630/index.m3u8?channel-id=wasusyt&Contentid=6000000006000280630&livemode=1&stbId=3
 i-Fun动漫台,mitv://generationnexxxt.com:19806/91a0e3fa1a714dd7b7cf55343052cd4f
-嘉佳卡通,http://zteres.sn.chinamobile.com:6060/000000001000/1000000002000025964/1.m3u8?channel-id=ystenlive&Contentid=1000000002000025964&livemode=1&stbId=3#http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226227/index.m3u8
-金鹰卡通,http://zteres.sn.chinamobile.com:6060/000000001000/5000000006000040024/1.m3u8?channel-id=bestzb&Contentid=5000000006000040024&livemode=1&stbId=3#http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225744/index.m3u8
-优漫卡通,http://zteres.sn.chinamobile.com:6060/000000001000/1000000002000010063/1.m3u8?channel-id=ystenlive&Contentid=1000000002000010063&livemode=1&stbId=3#http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225795/index.m3u8
 CN卡通频道,mitv://generationnexxxt.com:19806/f4dd909eedc64e6b9736e248aedf6d61
 靖洋卡通Nice Bingo,mitv://generationnexxxt.com:19806/1279fb2d1ae14676a31b2e5b38a2cd57
 靖天卡通台,mitv://generationnexxxt.com:19806/0e27e5f319264b609ec810e126edf969
-Animax,mitv://generationnexxxt.com:19806/22f75ace87a545aab39a2e4cd244bbad
+日本Animax,mitv://generationnexxxt.com:19806/22f75ace87a545aab39a2e4cd244bbad
 Cartoon Network,p3p://fccsen.dyndns.tv:29706/5da7abac0005edf150608a4463c94ae2#p3p://fccsen.dyndns.tv:29706/615bcd6f000d0a9cbf6c228a724f214f
 BSアニマックス,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs15&isp=10&bind=0&uin=159413&playseek=0
 
 时尚,#genre#
-CCTV女性时尚,http://zteres.sn.chinamobile.com:6060/yinhe/2/ch00000090990000002475/index.m3u8?virtualDomain=yinhe.live_hls.zte.com#http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8#http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8#http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8
-爱时尚,http://[2409:8087:7000:20:1000::22]:6060/000000001000/6000000006000140630/index.m3u8?channel-id=wasusyt&Contentid=6000000006000140630&livemode=1&stbId=3
 法国时尚,http://lb.streaming.sk/fashiontv/stream/chunklist.m3u8
 FASHIONTV,http://lb.streaming.sk/fashiontv/stream/chunklist_w1906011378.m3u8
 FashionTV HD,p3p://108.181.20.159:71421/64577742000d1a6986e1aac95b701e8b
