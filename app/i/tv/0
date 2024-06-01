@@ -5,7 +5,7 @@ i-Fun动漫台,mitv://generationnexxxt.com:19806/91a0e3fa1a714dd7b7cf55343052cd4
 日本男同台,http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs05&isp=10&bind=0&uin=159413&playseek=0
 
 
-CCTV_olelive,#genre#
+CCTV-olelive,#genre#
 CCTV1,https://node1.olelive.com:6443/live/CCTV1HD/hls.m3u8
 CCTV2,https://node1.olelive.com:6443/live/CCTV2HD/hls.m3u8
 CCTV3,https://node1.olelive.com:6443/live/CCTV3HD/hls.m3u8
