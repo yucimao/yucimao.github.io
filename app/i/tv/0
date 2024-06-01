@@ -12,8 +12,14 @@ CCTV测试,https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL3.smil/play
 CCTV4,https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8
 CCTV11,https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8
 
-
-
+CCTV2,#genre#
+1,https://turkmedya-live.ercdn.net/tv4/tv4_720p.m3u8
+2,https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8
+3,http://59.44.102.18:8888/newlive/live/hls/5/live.m3u8
+4,http://39.145.2.203/hlslive-tx-cdn.ysp.cctv.cn/ysp/2022576403.m3u8
+5,http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225799/index.m3u8
+6,http://116.162.6.192/sxbuv52.live.bestvcdn.com.cn/live/cctv2hd8m/8000000/mnf.m3u8
+7,http://125.125.208.227:8889/rtp/233.50.201.198:5140
 
 
 
