@@ -29,7 +29,8 @@ for(let i=0;data.length>i;i++){
         }else{
             作品["."+data[i][o][0]]=[0,data[i][o]];
         }
-        dy+="　"+data[i][o][2]+"</td></tr>";
+        if(data[i][o][2]){dy+="　"+data[i][o][2]}
+        dy+="</td></tr>";
     }
 dy+="</table><br>";
 }
