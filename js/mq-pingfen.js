@@ -4,7 +4,7 @@
 
 dy="<div id=\"排行\"><style>td span.b{display:none}</style></div>"+
 "<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em}i[云]:after{content:'[云]';color:#258DF6}i[通]:after{content:'[通]';color:#19D02A}i[弃]:after{content:'[弃]';color:#FF4343}"+
-"td:first-child{cursor:default}td span.c{font-size: 0.8em;color:#999999}td small{color:#8c8b8b}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer}[onclick='排名方式()']{cursor:pointer}.ysa{color:#77C94B}.ysb{color:#DF402A}[onclick^=\"取消\"]:hover{text-decoration:line-through}</style>"+
+"td:first-child{cursor:default}td span.c{font-size: 0.8em;color:#999999}td:nth-child(5) small{color:#c1c1c1}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer}[onclick='排名方式()']{cursor:pointer}.ysa{color:#77C94B}.ysb{color:#DF402A}[onclick^=\"取消\"]:hover{text-decoration:line-through}</style>"+
 "<small>点作品名可以复制；点分数展开评分细则；点“排名”改为不并列模式；点标签显示同标签排行。</small>"+dy;
 let dy2=dy;
 
@@ -128,7 +128,7 @@ function dw2(o){
                     dy+="<a href=\""+临时2[1]+"\" target=\"_blank\">"+临时2[0]+"</a>";
                 }else if(datb[i][i2].indexOf("分类：")!=-1){
                     临时2=临时2.split("：")[1];
-                    if(关键词.indexOf(临时2)!=-1){}else{dy+="<a onclick=\"dw2('"+临时2+"')\"><small><b>"+临时2+"</b></small></a>"}
+                    if(关键词.indexOf(临时2)!=-1){}else{dy+="<a onclick=\"dw2('"+临时2+"')\"><small>"+临时2+"</small></a>"}
                 }else if(datb[i][i2].indexOf("：")!=-1){
                     临时2=临时2.split("：");
                     if(临时2[0]=="x"){

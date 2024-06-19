@@ -46,7 +46,7 @@ for(let i=0;e.length>i;i++){
         }
         临时+="</td><td>"+e[i][2];
         if(e[i][3]&&e[i][3]!=""){
-            临时+=" <a onclick=\"dw(dwb='"+e[i][0]+"',dwd='"+e[i][3]+"')\">详情</a>";
+            临时+=" <a onclick=\"dw(dwd='"+e[i][0]+"',dwb='"+e[i][3]+"')\">详情</a>";
         }
         d.push([e[i][0],临时]);
     }
