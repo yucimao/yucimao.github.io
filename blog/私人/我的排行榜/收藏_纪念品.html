@@ -35,5 +35,11 @@ redirect_from:
 let 说明={
     
 }
+for(let i=0;data.length>i;i++){
+    let 临时=data[i][1].split("／");
+    if(临时[1]&&临时[1]!=""){
+        data[i][1]=临时[0]+"／<small>«"+临时[1]+"»</small>";
+    }
+}
 </script>
 <script src="/js/mq-pingfen.js"></script>

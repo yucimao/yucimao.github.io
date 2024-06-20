@@ -6,6 +6,8 @@ nav_url: <a href="/pingfen">我的排行榜</a>
 permalink: pingfen/sc/jj
 redirect_from:
  - dafen/sc/jj
+ - dafen/jiujiao
+ - pingfen/jiujiao
 ---
 <a href="/jiuxian" class="anniu">酒仙笔记</a>
 <div id="结果"></div>
@@ -42,7 +44,7 @@ for(let i=0;e.length>i;i++){
     }else{
         let 临时="";
         if(e[i][1]&&e[i][1]!=""){
-            临时+="«"+e[i][1]+"»";
+            临时+="<small>«"+e[i][1]+"»</small>";
         }
         临时+="</td><td>"+e[i][2];
         if(e[i][3]&&e[i][3]!=""){
