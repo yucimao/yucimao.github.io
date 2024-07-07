@@ -18,7 +18,19 @@ permalink: i/11431911
 
 
 
+<!--每月最后一天记录当月评分-->
 
+<!--
+    原神节奏.html 评分记录：
+    TapTap（PC）：<b>4.6/10<small><span class="D">（46%）</span></small></b><br>
+
+    100 S
+    90-99 A
+    80-89 B
+    60-79 C
+    30-59 D
+    0-29 E
+-->
 
 <script>
 let d=[//原神 星铁 绝区零
@@ -44,12 +56,14 @@ let d=[//原神 星铁 绝区零
     ["2024.04","4.9","6.9"],
     ["2024.06","4.9","6.6"],
     // [".","","",""],
+    // [".","","",""],
 ],
 ["B站","10",
     ["2019.06","6"],
     ["2020.01","7.3"],
     ["2020.09","5.3"],
     ["2021.10","5.9"],
+    ["2022.05",,,"7.9"],
     ["2022.12","6.4"],
     ["2023.04","6.4"],
     ["2023.12","6.5","8.2","8.8"],
@@ -78,9 +92,7 @@ let d=[//原神 星铁 绝区零
 ["Appstore","5",
     ["2020.09","4.2"],
     ["2023.04","4.4"],
-    ["2023.12","4.4","4.3"],
-    ["2024.04","4.3","4.3"],
-    ["2024.06","4.3","4.4"],
+    ["2024.06","4.4","4.6"],
     // [".","","",""],
 ],
 ["知乎","100",
@@ -116,10 +128,14 @@ let d=[//原神 星铁 绝区零
     ["2024.06","7.3","7.4"],
     // [".","","",""],
 ],
+["Metacritic","100"
+    // [".","","",""],
+],
 ];
 let 日期=[],游戏=["原神　　","星穹铁道","绝区零　"],平台=[],e={};
 let dy="";
 let 游戏们="<table><tr><td></td><td>"+游戏.join("</td><td>")+"</td></tr>";
+
 for(let i=0;d.length>i;i++){
     dy+="<a id='"+i+"a' onclick=\"展开("+i+")\">"+d[i][0]+"</a>";
     dy+="<fieldset id='"+i+"b' style='display:none;'><legend>"+d[i][0]+"</legend>"+游戏们;
@@ -236,10 +252,11 @@ function 展开按钮(o){
     <a href="https://www.biligame.com/detail/?id=103496">B站（手机）</a><br>
     <a href="https://www.biligame.com/detail/?id=105667">B站（PC）</a><br>
     <a href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact">谷歌商店</a><br>
-    <a href="https://apps.apple.com/cn/app/id1467190251">Appstore</a><br>
+    <a href="https://apps.apple.com/us/app/genshin-impact/id1517783697">Appstore</a><br>
     <a href="https://www.zhihu.com/topic/20760895/hot">知乎</a><br>
     <a href="https://bbs.nga.cn/read.php?tid=23347410">NGA</a><br>
     <a href="https://www.douban.com/game/34441376/">豆瓣</a><br>
+    <a href="https://www.metacritic.com/game/genshin-impact/">Metacritic</a><br>
 </fieldset>
 
 <br>
@@ -250,22 +267,25 @@ function 展开按钮(o){
     <a href="https://www.biligame.com/detail/?id=107800">B站（手机）</a><br>
     <a href="https://www.biligame.com/detail/?id=108586">B站（PC）</a><br>
     <a href="https://play.google.com/store/apps/details?id=com.HoYoverse.hkrpgoversea">谷歌商店</a><br>
-    <a href="https://apps.apple.com/cn/app/%E5%B4%A9%E5%9D%8F-%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93/id1523037824">Appstore</a><br>
+    <a href="https://apps.apple.com/us/app/honkai-star-rail/id1599719154">Appstore</a><br>
     <a href="https://www.zhihu.com/topic/21874407/hot">知乎</a><br>
     <a href="https://bbs.nga.cn/read.php?tid=36121921">NGA</a><br>
     <a href="https://www.douban.com/game/35925645/">豆瓣</a><br>
+    <a href="https://www.metacritic.com/game/honkai-star-rail/">Metacritic</a><br>
 </fieldset>
 
 <br>
 
 <fieldset><legend>绝区零</legend>
     <a href="https://www.taptap.cn/app/234493">TapTap</a><br>
-    <a href="https://www.biligame.com/detail/?id=108434">B站</a><br>
+    <a href="https://www.biligame.com/detail/?id=108434">B站（手机）</a><br>
+    <a href="https://www.biligame.com/detail/?id=111210">B站（PC）</a><br>
     <a href="https://play.google.com/store/apps/details?id=com.HoYoverse.Nap">谷歌商店</a><br>
-    <a href="https://apps.apple.com/cn/app/%E7%BB%9D%E5%8C%BA%E9%9B%B6/id1606359076">Appstore</a><br>
+    <a href="https://apps.apple.com/us/app/zenless-zone-zero/id1606356401">Appstore</a><br>
     <a href="https://www.zhihu.com/topic/25521399/hot">知乎</a><br>
-    <!-- <a href="">NGA</a><br> -->
+    <a href="https://bbs.nga.cn/read.php?tid=40762409">NGA</a><br>
     <a href="https://www.douban.com/game/35900589/">豆瓣</a><br>
+    <a href="https://www.metacritic.com/game/zenless-zone-zero/">Metacritic</a><br>
 </fieldset>
     
     
