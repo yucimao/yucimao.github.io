@@ -29,7 +29,7 @@ let d={
 //目录
 "搜索":["选择","百度","必应","谷歌搜索"],
 "识图":["选择","百度识图","必应识图","Yandex图片","搜狗图片","谷歌识图","TinEye","／<br><h4>二次元</h4>","SauceNao","二次元画像詳細検索","搜图bot酱"],
-"翻译":["选择","小翻译器","／<br>","百度翻译","DeepL"],
+"翻译":["选择","百度翻译","DeepL","／<br><br>","小翻译器"],
 "找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
 "游戏":["选择","／<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
 "STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
@@ -131,6 +131,18 @@ let d={
 // 传给手机，用via打开一下就行了（名字s.html），它会自动跑到via的文件夹里
 
 // "":["",""],
+
+
+"查成分":["选择","／<h3>B站</h3>","视频弹幕_B站","／<br>",
+"UID","评论_B站","弹幕_B站","看直播和弹幕_B站","看直播和弹幕2_B站","用户名记录_B站"],
+"评论_B站":["https://www.aicu.cc","https://www.aicu.cc/reply.html?uid=【】"],
+"弹幕_B站":["https://www.aicu.cc/danmu-video.html?uid=515330","https://www.aicu.cc/danmu-video.html?uid=【】"],
+"用户名记录_B站":["https://danmakus.com/analyze/515330","https://danmakus.com/analyze/【】"],
+"看直播和弹幕_B站":["https://laplace.live/user/515330","https://laplace.live/user/【】"],
+"看直播和弹幕2_B站":["https://danmakus.com","https://danmakus.com/user/【】"],
+"查弹幕":"／视频弹幕_B站","视频弹幕_B站":["https://tool.qianduange.cn/bili_danmu"],
+
+
 "LOFTER":["https://www.lofter.com/"],
 "豆瓣":["https://www.douban.com","https://www.douban.com/search?source=suggest&q=【】"],
 "HENTAI_编辑":["打开","目录","子/关键词/"],
@@ -219,8 +231,6 @@ let d={
 "天工大模型":["https://www.tiangong.cn/"],
 "文心一言":["https://yiyan.baidu.com/"],
 "CHATGPT":["https://chat.openai.com/"],
-"查成分":"／B站查成分","B站查成分":["https://laplace.live/user/515330","https://laplace.live/user/【】"],
-"查弹幕":"／B站弹幕","B站弹幕":["https://tool.qianduange.cn/bili_danmu"],
 "表情":["C:/mq/目录/B站表情.html"],
 "秘塔AI":["https://metaso.cn","https://metaso.cn/?q=【】"],
 "坚果云":["https://www.jianguoyun.com/d/home#/"],
@@ -350,6 +360,7 @@ function 开始(){
 				}else{
 					dy+="<a href=\"?";
 					if(临时[1]){dy+=临时[1]}else{dy+=d[搜索][i]}
+					if(url[1]){dy+=" "+url[1]}
 					dy+="\"";
 				}
 
