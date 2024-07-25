@@ -17,11 +17,13 @@ dy+="<style>"+
     ".tsx{position: relative;display: inline-block;text-decoration: underline dotted;}.tsx .tsxt{border: 1px solid #c0c0c0;visibility: hidden;width: 400px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;top: 80%;left: 50%;margin-left: -200px;}.tsx:hover .tsxt{color:var(--body-color);transform:translate(0,20px);transition:all 0.5s;visibility: visible;}.tsx{text-decoration:underline;}"+
     "</style>";
 
-dy+="<table class='x_table xqc'><tr>";
-for(let i=5;i>-1;i--){
-    dy+="<td class='xq' style='background-color:var(--xq"+i+")'>"+评分[i][0]+"<br>"+评分[i][1]+"</td>";
+let 临表="<table class='x_table xqc'><tr>";
+for(let i=0;6>i;i++){
+// for(let i=5;i>-1;i--){
+    临表+="<td class='xq' style='background-color:var(--xq"+i+")'>"+评分[i][0]+"<br>"+评分[i][1]+"</td>";
 }
-dy+="</tr></table>";
+临表+="</tr></table>";
+dy+=临表;
 
 if(o!=2){dy+="<b>";}
 dy+="<a onclick='打印(1)'>日</a> ";
@@ -106,7 +108,7 @@ for(let i=1;13>i;i++){
     }
 }
 
-dy+="<br><hr><br><table class='x_table bukexuanzhong xqc'>";
+dy+="<br><hr><br>"+临表+"<table class='x_table bukexuanzhong xqc'>";
 天数[0]=0;for(let i=1;天数.length>i;i++){天数[0]+=天数[i];}
 
 for(let i=0;2>i;i++){
@@ -146,6 +148,8 @@ for(let i=0;2>i;i++){
         dy+="</td></tr>";
     }
 }
+
+dy+="</table>";
 
 document.getElementById("dy").innerHTML=dy;
 }

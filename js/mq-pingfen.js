@@ -4,7 +4,7 @@
 
 dy="<div id=\"排行\"><style>td span.b{display:none}</style></div>"+
 "<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em}i[云]:after{content:'[云]';color:#258DF6}i[通]:after{content:'[通]';color:#19D02A}i[弃]:after{content:'[弃]';color:#FF4343}"+
-"td:first-child{cursor:default}td span.c{font-size: 0.8em;color:#999999}td:nth-child(5) small{color:#c1c1c1}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer}[onclick='排名方式()']{cursor:pointer}.ysa{color:#77C94B}.ysb{color:#DF402A}[onclick^=\"取消\"]:hover{text-decoration:line-through}</style>"+
+"td:first-child{cursor:default}td span.c{font-size: 0.8em;color:#999999}td:last-child small{color:#c1c1c1}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer}[onclick='排名方式()']{cursor:pointer}.ysa{color:#77C94B}.ysb{color:#DF402A}[onclick^=\"取消\"]:hover{text-decoration:line-through}</style>"+
 "<small>点作品名可以复制；点分数展开评分细则；点“排名”改为不并列模式；点标签显示同标签排行。</small>"+dy;
 let dy2=dy;
 
@@ -64,7 +64,7 @@ function dw2(o){
             临时+="<a onclick=\"取消('"+关键词[i]+"')\">"+关键词[i]+"</a>";
             if(说明[关键词[i]]){临时+="<sup><a onclick=\"dw(dwb='"+说明[关键词[i]]+"',dwd='"+关键词[i]+"')\">[注]</a></sup>"}
         }
-        dy="<h2 style='display:inline;'>"+临时+"</h2> <a onclick=\"dw2('0')\">显示全部</a>"+dy;
+        dy="<h2 style='display:inline;'>"+临时+"</h2> <a onclick=\"dw2('0')\">显示全部</a>［平均分］"+dy;
         datb=[];
         for(let i=0;data.length>i;i++){
             谁复特=1;
@@ -79,6 +79,7 @@ function dw2(o){
     let 并列=[0,0];
     let 排名=1;
     let hr=1;
+    let 平均分=0;
     for(let i=0;datb.length>i;i++){
         let 临时2=排名;
         if(datb[i][0]==并列[1]){
@@ -113,6 +114,9 @@ function dw2(o){
             }
             临时=临时2*10;
             dy+="<tr><td>　</td><td></td><td></td></tr><tr><td>总计</td><td";
+
+            平均分+=临时;
+
             if(临时>=90){dy+=" class=［引号］ysa［引号］"}else if(临时<60){dy+=" class=［引号］ysb［引号］"}
             dy+=">"+临时+"</td><td></td></tr></table>')\">"+临时2+"</td><td>";
             for(let i2=3;datb[i].length>i2;i2++){
@@ -150,10 +154,12 @@ function dw2(o){
         }
         dy+="</td></tr>";
     }
+    平均分=(平均分/datb.length+"").split(".")[0]/10;
 dy+="</table>";
 
 dy=dy.replace(/／/g,"</td><td>").replace(/<td><small>\ \/\ <\/small>/g,"<td>").replace(new RegExp(' / </small><small> / ', "g")," / ").replace(new RegExp('<td><small> / </small>', "g"),"<td>").replace(new RegExp('<small> / </small></td>', "g"),"</td>");
 dy=dy.replace(/／/g,"</td><td>").replace(/<td><small>\ \/\ <\/small>/g,"<td>").replace(new RegExp(' / </small><small> / ', "g")," / ").replace(new RegExp('<td><small> / </small>', "g"),"<td>").replace(new RegExp('<small> / </small></td>', "g"),"</td>");
+dy=dy.replace(new RegExp('［平均分］',"g")," <small>平均:"+平均分+"分</small>")
 
 document.getElementById("结果").innerHTML=dy;
 
