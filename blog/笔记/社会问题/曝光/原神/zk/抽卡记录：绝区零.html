@@ -10,13 +10,14 @@ permalink: i/12007576
 
 <style>.限定{background-color:#ff8aef;color:#ffffff;}.常驻{background-color:#3e8fff;color:#ffffff;}.邦布{background-color:#59e477;color:#ffffff;}.up{color:#f9ac07}.emoji{font-size:1.6em;position:absolute;bottom:-5px;}.黑条{background-color:#000000;color:#000000;}
 #猫球二扯{position: fixed;top:20px;}
+.球{color:#c2c2c2;font-size:0.8em;font-weight:300}.布{color:#82e898;font-size:0.8em;}
 </style><br><br><br><br><br><br>
 <table><tr><td id="猫球1"></td><td id="二扯1"></td></tr><tr><td id="猫球2"></td><td id="二扯2"></td></tr></table><a name="抽卡"></a>
 <script>let dy,dy2;
 
 let 抽={ //已抽 【绝区零】
-    "猫球限定":20, "猫球常驻":13, "猫球邦布":51, //
-    "二扯限定":0, "二扯常驻":18, "二扯邦布":54, //
+    "猫球限定":30, "猫球常驻":0, "猫球邦布":63, //
+    "二扯限定":0, "二扯常驻":38, "二扯邦布":0, //
 
     "猫球":[
         "莱卡恩 常驻 48",
@@ -26,7 +27,9 @@ let 抽={ //已抽 【绝区零】
         "巴特勒 邦布 14",
         "11号 常驻 77",
         "艾莲 限定 75",
+        "球_嵌合编译器 常驻 25",
         // " 限定 ",
+        // "左轮布 邦布 ",
     ],
 
     "二扯":[
@@ -34,11 +37,13 @@ let 抽={ //已抽 【绝区零】
         "珂蕾妲 限定 39 歪",
         "艾莲 限定 5",
         "11号 限定 6 歪",
-        "金球 常驻 55",
+        "球_球 常驻 55",
         "艾莲 限定 13",
         "鲨鱼布 邦布 72",
-        // "朱鸢 限定 77",
+        "朱鸢 限定 77",
+        "管家布 邦布 70",
         // " 限定 ",
+        // "阿全 邦布 ",
         
     ],
 }
@@ -104,9 +109,13 @@ for(let i=0;猫球二扯.length>i;i++){
     // dy+="<tr><td><h4>"+猫球二扯[i]+"</h4></td></tr>";
     for(let i2=0;抽[猫球二扯[i]].length>i2;i2++){
         let 临时=抽[猫球二扯[i]][i2].split(" ");
-        dy+="<tr class='"+临时[1]+"a'><td><b";
-            if(临时[3]!="歪"&&临时[1]=="限定"){dy+=" class='up'";}
-        dy+=">"+临时[0]+"</b>"+"</td><td class='"+临时[1]+"'>"+临时[1]+"</td><td>"+临时[2]+"抽";
+        dy+="<tr class='"+临时[1]+"a'><td><b class='";
+            if(临时[0].indexOf("_")!=-1){
+                dy+=临时[0].split("_")[0]+" ";临时[0]=临时[0].split("_")[1];
+            }
+            if(临时[1]=="邦布"){dy+="布 "}
+            if(临时[3]!="歪"&&临时[1]=="限定"){dy+="up";}
+        dy+="'>"+临时[0]+"</b>"+"</td><td class='"+临时[1]+"'>"+临时[1]+"</td><td>"+临时[2]+"抽";
             if(临时[3]&&临时[3]=="歪"){dy+="<sup>歪</sup>"}else if(临时[1]=="限定"){dy+="<sup class='up'><b>up</b></sup>"}
         dy+="</td><td>";
             抽卡记录[猫球二扯[i]+临时[1]+"A"]+=临时[2]*1;
