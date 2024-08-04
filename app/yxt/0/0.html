@@ -1,5 +1,9 @@
 <div id="游戏厅">猫球游戏厅</div><script src="0.js"></script>
-<style>h3,h4{display:inline;line-height:2em;}</style>
+<style>h3,h4{display:inline;line-height:2em;}
+.anniu{margin:.4em 3px}
+.anniu:hover{transform:scale(1);}
+.提示{z-index:100000;}
+</style>
 
 <input id="搜索输入" onkeyup="搜索输入()" placeholder="搜索" autocomplete="off">
 <div id="游戏列表"></div>
@@ -43,7 +47,11 @@
         if(游戏列表[i][0]=="h3"||游戏列表[i][0]=="h4"){
             dy+="</div>";
             if(游戏列表[i][0]=="h3"){dy+="<hr>";}else{dy+="<br>";}
-            dy+="<"+游戏列表[i][0]+">"+游戏列表[i][1]+"</"+游戏列表[i][0]+"> <a onclick=\"document.getElementById('"+游戏列表[i][1]+"').style='';this.style='display:none;'\">展开</a><br><div id='"+游戏列表[i][1]+"' style='display:none;'>";
+            dy+="<"+游戏列表[i][0]+">"+游戏列表[i][1]+"</"+游戏列表[i][0]+">"; //点击展开
+            // dy+=" <a onclick=\"document.getElementById('"+游戏列表[i][1]+"').style='';this.style='display:none;'\">展开</a>";
+            dy+="<br><div id='"+游戏列表[i][1]+"' ";
+            // dy+="style='display:none;'";
+            dy+=">";
         }else if(游戏列表[i][0]=="h4"){
             dy+="<br><h4>"+游戏列表[i][1]+"</h4><br>";
         }else if(游戏列表[i][0]=="t"){
@@ -58,7 +66,12 @@
     document.getElementById("游戏列表").innerHTML=dy+"</div>";
 
     function 打印游戏(o){
-        临时dy="<a href='"+游戏列表[o][0]+".html'>"+游戏列表[o][0]+"</a>";
+
+
+        临时dy="<a class='anniu' href='"+游戏列表[o][0]+".html'>"+游戏列表[o][0]+"</a>";
+        if(游戏列表[o][1]&&游戏列表[o][1]!=""){临时dy+="<small class='提示' data-msg='"+游戏列表[o][1]+"'>[?]</small>";}
+
+        
         if(游戏列表[o].length>2){
             临时dy+="<small> ( ";
                 for(let i2=2;游戏列表[o].length>i2;i2++){
@@ -66,8 +79,9 @@
                 }
             临时dy+=")</small>";
         }
-        if(游戏列表[o][1]&&游戏列表[o][1]!=""){临时dy+="："+游戏列表[o][1];}
-        临时dy+="<br>";
+        // if(游戏列表[o][1]&&游戏列表[o][1]!=""){临时dy+="："+游戏列表[o][1];}
+        // 临时dy+="<br>";
+        临时dy+="　";
     }
 
     function 搜索输入(){
