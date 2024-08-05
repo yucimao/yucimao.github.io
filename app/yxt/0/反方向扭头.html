@@ -1,13 +1,25 @@
 <div id="游戏厅">反方向扭头</div><script src="0.js"></script>
 <small>
-    按任意键开始<small>(关机键之类的除外)</small>，屏幕上会显示一个箭头，玩家要立刻点击键盘上和箭头反方向的按键。根据速度可以获得2币或1币，错误扣5币。
+    按方向键开始游戏，屏幕上会显示一个箭头，玩家要立刻点击和箭头反方向的按键。根据速度可以获得2币或1币，错误扣5币。<br>
+    方向键：电脑键盘的方向键、WASD、画面上的箭头均可。
 </small><br><br>
 
 <style>
-    #屏幕{font-size:5em;}
+    #屏幕{font-size:4em;}
+    .屏幕,#对错{font-size:2em;}
 </style>
 
 <div id="屏幕">❓</div>
+
+<hr class="hr0">
+
+<table class="x_table">
+    <tr><td></td><td class="屏幕" onclick="按钮(38)">⬆️</td><td></td></tr>
+    <tr><td class="屏幕" onclick="按钮(37)">⬅️</td><td id="对错"></td><td class="屏幕" onclick="按钮(39)">➡️</td></tr>
+    <tr><td></td><td class="屏幕" onclick="按钮(40)">⬇️</td><td></td></tr>
+</table>
+
+
 <div id="记录"></div>
 
 <script>
@@ -15,26 +27,29 @@
     let 当前="0";
     let 计时;
     let 箭头=["⬆️","⬇️","⬅️","➡️"];
-    let 答案={"⬆️":"40","⬇️":"38","⬅️":"39","➡️":"37"}
+    let 表={"40":"⬆️","38":"⬇️","39":"⬅️","37":"➡️","83":"⬆️","87":"⬇️","68":"⬅️","65":"➡️"}
+    let 包含=["40","38","39","37","83","87","68","65"];
     function 下一个(){
         计时=new Date().getTime();
         当前=箭头[Math.floor(Math.random()*箭头.length)];
         document.getElementById("屏幕").innerHTML=当前;
     }
     let 统计=[0,0,0,0];
-    function keydown(event){
+    function 按钮(o){
         if(当前=="0"){
             try{notyf.confirm("开始")}catch(e){alert("开始");}
         }else{
-            if(event.keyCode==答案[当前]){
-                try{notyf.confirm("正确")}catch(e){alert("正确");}
+            if(表[o]==当前){
+                // try{notyf.confirm("正确")}catch(e){alert("正确");}
+                document.getElementById("对错").innerHTML="✅";
                 统计[0]+=1;
                 统计[3]+=1;
                 当前=new Date().getTime()-计时;
                 统计[2]+=当前;
                 if(当前<100){余额(5);}else if(当前<300){余额(3);}else if(当前<500){余额(2);}else if(当前<1000){余额(1);}
             }else{
-                try{notyf.alert("错误");}catch(e){alert("错误");}
+                // try{notyf.alert("错误");}catch(e){alert("错误");}
+                document.getElementById("对错").innerHTML="❌";
                 统计[1]+=1;
                 统计[3]+=1;
                 统计[2]+=10000;
@@ -45,6 +60,7 @@
         if(统计[3]!=0){
             document.getElementById("记录").innerHTML="正确："+统计[0]+"次（"+(统计[2]/统计[3]/1000)+"秒）<br>错误："+统计[1]+"次";
         }
-}
+    }
+    function keydown(event){if(包含.indexOf(event.keyCode+"")!=-1){event.preventDefault();按钮(event.keyCode)}}
 </script>
 

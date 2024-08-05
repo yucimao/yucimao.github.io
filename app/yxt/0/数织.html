@@ -1,0 +1,288 @@
+<div id="游戏厅">数织</div><script src="0.js"></script>
+<small>
+    数字显示这一行/列有几个黑块，根据提示猜测这些黑块的位置并点击，当整个棋盘都符合数字所示的情况，即为胜利。
+</small><br><br>
+
+<style>
+    .b0{background-color:#e4e4e4;}
+    .b1{background-color:#000000;}
+    .b0,.b1{width:26px;height:26px;}
+    .b0{color:#828282;}
+    .b,.b0,.b1,.fuhe{font-size:18px;text-align:center;vertical-align:middle;}
+    .fuhe{color:#04e813;}
+    .caidan{margin:30px;}
+    .caidan td{cursor:pointer;}
+    .shuzhi{cursor:default;}
+    .zixuan{width:3em}
+    .xuanguan{font-size:2em;text-align:center;padding:3px 10px;border:5px solid #e9e9e9;border-radius:50px;margin:10px;}
+</style>
+
+<div id="dy"></div>
+
+<div id="菜单0">
+    <a class="anniu" onclick="document.getElementById('菜单0').style='display:none;';document.getElementById('菜单01').style=''">闯关模式</a><br>
+    <a class="anniu" onclick="document.getElementById('菜单0').style='display:none;';document.getElementById('菜单02').style=''">随机关卡</a><br>
+    <a class="anniu" onclick="document.getElementById('菜单0').style='display:none;';document.getElementById('菜单03').style=''">导入</a>
+</div>
+
+<div id="菜单01" style="display:none;">
+<h3 style="display:inline;">闯关模式</h3> <a onclick="document.getElementById('菜单01').style='display:none;';document.getElementById('菜单0').style=''">取消</a><br>
+<a onclick="选关('教学关')">教学关</a><br>
+<br>
+
+</div>
+
+<div id="菜单选关" style="display:none;"></div>
+
+
+<div id="菜单02" style="display:none;">
+<h3 style="display:inline;">随机关卡</h3> <a onclick="document.getElementById('菜单02').style='display:none;';document.getElementById('菜单0').style=''">取消</a><br>
+
+<a class='anniu' onclick="打印(5,5,13)">5🗙5</a><br>
+<a class='anniu' onclick="打印(10,10,70)">10🗙10 简单</a><br>
+<a class='anniu' onclick="打印(10,10,50)">10🗙10 中等</a><br>
+<a class='anniu' onclick="打印(10,10,40)">10🗙10 困难</a><br>
+<a class='anniu' onclick="打印(15,15,113)">15🗙15</a><br>
+<a class='anniu' onclick="打印(20,20,200)">20🗙20</a><br>
+<br>
+<b>自选难度</b>：
+<input id="自选关卡1" class="zixuan">🗙<input id="自选关卡2" class="zixuan"> <small>黑格数量:</small><input id="自选关卡3" class="zixuan"> <a onclick="自选(document.getElementById('自选关卡1').value,document.getElementById('自选关卡2').value,document.getElementById('自选关卡3').value)">确定</a>
+</div>
+
+<div id="菜单03" style="display:none;">
+    <h3 style="display:inline;">导入</h3> <a onclick="document.getElementById('菜单03').style='display:none;';document.getElementById('菜单0').style=''">取消</a><br>
+    <input id="导入"> <a onclick="导入(document.getElementById('导入').value)">确定</a><br>
+    <a onclick="转换(document.getElementById('导入').value)">转换</a><br>
+    <br>
+
+    <small>设计一个关卡：输入“棋盘行数.棋盘列数.棋盘情况(空为0, 有为1)”，点击“转换”，将会转换成关卡代码，可以复制下来，发给朋友。<br>
+    使用关卡代码：输入关卡代码，点击“确定”。<br><br>
+        例，棋盘情况：<table class="x_table shuzhi"><tr><td id="a_1_1" class="b1"></td><td id="a_1_2" class="b0"></td></tr><tr><td id="a_2_1" class="b0"></td><td id="a_2_2" class="b1"></td></tr></table>
+        将黑色部分写为“1”，空白处写为“0”，就可以写作“1001”。<br>
+        加上棋盘的行和列就是“2.2.1001”。<br>
+        输入并转换后，得到代码“2.2.M”。
+</small>
+</div>
+
+
+
+<div id="菜单1" style="display:none;">
+    <table class="caidan x_table shuzhi"><tr>
+        <td class="b0" id="手0" onclick="手=2;document.getElementById('手0').style='color:#000000';document.getElementById('手1').style='background-color:#aaaaaa';" style="color:#aaaaaa">🗙</td>
+        <td class="b1" id="手1" onclick="手=1;document.getElementById('手0').style='color:#aaaaaa';document.getElementById('手1').style='background-color:#000000';" style="background-color:#000000"></td>
+    </tr></table>
+    <a onclick="重新开始()">重新开始</a>　<a onclick="选择关卡()">选择关卡</a>
+</div>
+
+<br>
+
+<small>当前关卡：</small><span id="当前关卡">无</span>
+
+
+<script>
+
+let 关卡={
+    "教学关":[
+        "玩玩就会了。",
+        [3,3,"000010000"],
+        [3,3,"000111000"],
+        [3,3,"001000100"],
+        [4,4,"1111111011001000"],
+        [4,4,"0110110110110110"],
+        [3,3,"101011110"],
+        [5,5,"1101110101011101010111011"],
+
+        
+
+    ]
+}
+
+let 棋盘,棋盘a,棋盘b,当前,答案,答案a,答案b,答案c,手=1,胜利,关卡模式,正确,答卷;
+
+function 打印(a,b,c){//a横 b竖 c模式(数字为黑色数量随机)("关卡名_关卡数字")
+    document.getElementById("菜单0").style="display:none;";
+    document.getElementById("菜单01").style="display:none;";
+    document.getElementById("菜单02").style="display:none;";
+    document.getElementById("菜单03").style="display:none;";
+    document.getElementById("菜单选关").style="display:none;";
+    document.getElementById("菜单1").style="";
+    答案={},答案a={},答案b={},答案c=0,棋盘=[],棋盘a=a,棋盘b=b,当前={},胜利=0,正确=0,答卷=0;
+    if(c>0){//黑色数量，随机出棋盘
+        for(let i=0;a*b>i;i++){
+            if(c*1>i){棋盘[棋盘.length]=1}else{棋盘[棋盘.length]=0}
+        }
+        arr=棋盘;
+        随机();
+        棋盘=arr;
+        关卡模式=c;
+        document.getElementById("当前关卡").innerHTML="随机"+a+"🗙"+b;
+    }else{//有图的棋盘
+        c=c.split("_");//0_地图xxx(重新开始) 1_地图xxx(导入) 关卡名_关卡数字
+        if(c[0]!="0"){关卡模式=c.join("_");}
+        if(c[0]=="0"||c[0]=="1"){棋盘=c[1].split("");}
+        else{棋盘=关卡[c[0]][c[1]][2].split("");}
+
+        if(c[0]=="1"){document.getElementById("当前关卡").innerHTML="自定义关卡";}
+        else if(c[0]!="0"){document.getElementById("当前关卡").innerHTML=c[0]+" 第"+c[1]+"关";}
+        
+    }
+    
+    let dy="<div id='恭喜胜利' style='display:none;'><h3>恭喜胜利</h3>";
+    if(关卡模式>0){dy+="<a onclick='打印("+a+","+b+","+c+")' class='anniu'>再来一局</a>"}
+    else if(关卡模式[0]=="1"){}
+    
+    else{
+        let 临时=关卡模式.split("_");
+        console.log(关卡[临时[0]].length,临时[1])
+        if(关卡[临时[0]].length-1>临时[1]){
+
+            临时[1]=临时[1]*1+1;
+            dy+="<a onclick=\"打印("+关卡[临时[0]][临时[1]][0]+","+关卡[临时[0]][临时[1]][1]+",'"+临时[0]+"_"+临时[1]+"')\" class='anniu'>下一关</a>"
+
+        }else{dy+="已通关　<a onclick='选择关卡()'>重新选择关卡</a>"}
+    }
+    dy+="<hr></div>";
+
+    dy+="<table class='x_table shuzhi'><tr>";
+    for(let i=0;b*1+1>i;i++){
+        dy+="<td id='a_0_"+i+"' class='b'></td>";
+    }
+
+    for(let i=0;a>i;i++){
+        dy+="<tr>";
+            答案[i+1]=[0];
+            当前[i+1]=[0];
+            for(let j=0;b>j;j++){
+                if(j==0){dy+="<td id='a_"+(i+1)+"_0' class='b'></td>";}
+                dy+="<td id='a_"+(i+1)+"_"+(j+1)+"' onclick=\"按("+(i+1)+","+(j+1)+")\" class='b0'></td>";
+
+                if(!答案a[i+1]){答案a[i+1]=[0]}if(棋盘[a*i+j]==0&&答案a[i+1][答案a[i+1].length-1]!=0){答案a[i+1][答案a[i+1].length]=0}else if(棋盘[a*i+j]==1){答案a[i+1][答案a[i+1].length-1]+=1;答案c+=1;}
+
+                if(!答案b[j+1]){答案b[j+1]=[0]}if(棋盘[a*i+j]==0&&答案b[j+1][答案b[j+1].length-1]!=0){答案b[j+1][答案b[j+1].length]=0}else if(棋盘[a*i+j]==1){答案b[j+1][答案b[j+1].length-1]+=1;}
+
+                答案[i+1][j+1]=棋盘[a*i+j];
+                当前[i+1][j+1]=0;
+            }
+        dy+="</tr>";
+    }
+    dy+="</table>";
+    document.getElementById("dy").innerHTML=dy;
+
+    for(let i=0;a>i;i++){
+        let 临时="";
+        for(let j=0;答案a[i+1].length>j;j++){
+            if(答案a[i+1][j]!=0){if(临时!=""){临时+=" "}临时+=答案a[i+1][j]}
+        }
+        答案[i+1][0]=临时;
+        if(临时==""){正确+=1;document.getElementById("a_"+(i+1)+"_0").className="fuhe"}
+        答卷+=1;
+        document.getElementById("a_"+(i+1)+"_0").innerHTML=临时;
+    }
+    答案[0]=[0];
+    for(let i=0;b>i;i++){
+        let 临时="";
+        for(let j=0;答案b[i+1].length>j;j++){
+            if(答案b[i+1][j]!=0){if(临时!=""){临时+=" "}临时+=答案b[i+1][j]}
+        }
+        答案[0][i+1]=临时;
+        if(临时==""){正确+=1;document.getElementById("a_0_"+(i+1)).className="fuhe"}
+        答卷+=1;
+        document.getElementById("a_0_"+(i+1)).innerHTML=临时.replace(new RegExp(' ',"g"),"<br>");
+    }
+}
+
+function 按(a,b){
+    if(胜利==0){
+    if(当前[a][b]==0){//当前为空
+        if(手==1){
+            当前[a][b]=1;document.getElementById("a_"+a+"_"+b).className="b1";
+        }else{当前[a][b]=2;document.getElementById("a_"+a+"_"+b).className="b0";document.getElementById("a_"+a+"_"+b).innerHTML="🗙";}
+    }else if(当前[a][b]==1){//当前有
+        if(手==1){当前[a][b]=0;document.getElementById("a_"+a+"_"+b).className="b0";
+        }else{当前[a][b]=2;document.getElementById("a_"+a+"_"+b).className="b0";document.getElementById("a_"+a+"_"+b).innerHTML="🗙";}
+    }else{//当前为×
+        if(手==1){
+            当前[a][b]=1;document.getElementById("a_"+a+"_"+b).className="b1";document.getElementById("a_"+a+"_"+b).innerHTML="";
+        }else{当前[a][b]=0;document.getElementById("a_"+a+"_"+b).innerHTML="";}
+    }
+
+    let 临时=[0];
+    for(let i=0;棋盘a>i;i++){
+        if(当前[a][i+1]==1){临时[临时.length-1]+=1}else if(临时[临时.length-1]!=0){临时[临时.length]=0;}
+    }
+    临时=临时.filter(item=>item!==0);
+
+    if(临时.join(" ")==答案[a][0]&&document.getElementById("a_"+a+"_0").className=="b"){
+        document.getElementById("a_"+a+"_0").className="fuhe";
+        正确+=1;
+    }else if(临时.join(" ")!=答案[a][0]&&document.getElementById("a_"+a+"_0").className=="fuhe"){document.getElementById("a_"+a+"_0").className="b";正确-=1;}
+
+    临时=[0];
+    for(let i=0;棋盘b>i;i++){
+        if(当前[i+1][b]==1){临时[临时.length-1]+=1}else if(临时[临时.length-1]!=0){临时[临时.length]=0;}
+    }
+    临时=临时.filter(item=>item!==0);
+
+    if(临时.join(" ")==答案[0][b]&&document.getElementById("a_0_"+b).className=="b"){
+        document.getElementById("a_0_"+b).className="fuhe";
+        正确+=1;
+    }else if(临时.join(" ")!=答案[0][b]&&document.getElementById("a_0_"+b).className=="fuhe"){document.getElementById("a_0_"+b).className="b";正确-=1;}
+
+    if(答卷==正确){
+        胜利=1;document.getElementById("恭喜胜利").style="";
+        notyf.confirm("恭喜胜利");
+        let 临时=棋盘a*棋盘b-答案c;
+        if(棋盘a+棋盘b>答案c){}//难度低
+        else{余额(临时)}
+    }
+
+}
+}
+
+function 重新开始(){
+    打印(棋盘a,棋盘b,"0_"+棋盘.join(''));
+}
+
+function 自选(a,b,c){
+    if(a>0&&a.indexOf(".")==-1&&b>0&&b.indexOf(".")==-1&&c>0&&c.indexOf(".")==-1){
+        打印(a,b,c);
+    }else{
+        notyf.alert("请输入正确的数字");
+    }
+}
+
+let 替换表=[["G","11111"],["p","11110"],["5","11101"],["6","11100"],["K","11011"],["W","11010"],["A","11001"],["J","11000"],["I","10111"],["h","10110"],["s","10101"],["t","10100"],["S","10011"],["q","10010"],["T","10001"],["L","10000"],["H","01111"],["j","01110"],["C","01101"],["Y","01100"],["m","01011"],["F","01010"],["B","01001"],["V","01000"],["r","00111"],["a","00110"],["i","00101"],["U","00100"],["w","00011"],["E","00010"],["2","00001"],["R","00000"],["4","1111"],["d","1110"],["f","1101"],["o","1100"],["3","1011"],["u","1010"],["M","1001"],["g","1000"],["z","0111"],["O","0110"],["y","0101"],["b","0100"],["P","0011"],["9","0010"],["8","0001"],["x","0000"],["Q","111"],["c","110"],["l","101"],["k","100"],["e","011"],["X","010"],["7","001"],["Z","000"],["N","11"],["D","10"],["n","01"],["v","00"],["-","1"],["1","0"],["0","-"]]
+
+
+function 导入(a){
+    a=a.split(".");
+    for(let i=替换表.length-1;i>0;i--){
+        a[2]=a[2].replace(new RegExp(替换表[i][0],"g"),替换表[i][1])
+    }
+    打印(a[0],a[1],"1_"+a[2]);
+}
+function 转换(a){
+    a=a.split(".");
+    for(let i=0;替换表.length>i;i++){
+        a[2]=a[2].replace(new RegExp(替换表[i][1],"g"),替换表[i][0])
+    }
+    document.getElementById("导入").value=a.join(".");
+}
+
+function 选关(a){
+    document.getElementById("菜单01").style="display:none;";
+    document.getElementById("菜单选关").style="";
+    let 临时="<h3 style='display:inline;'>"+a+"</h3> <a onclick=\"document.getElementById('菜单选关').style='display:none;';document.getElementById('菜单0').style=''\">取消</a><br>"+关卡[a][0]+"<br><br>";
+        for(let i=1;关卡[a].length>i;i++){
+            临时+="<span class='xuanguan' onclick=\"打印("+关卡[a][i][0]+","+关卡[a][i][1]+",'"+a+"_"+i+"')\">"+i+"</span>"
+            if(i%5==0){临时+="<br>"}
+        }
+    document.getElementById("菜单选关").innerHTML=临时;
+}
+
+function 选择关卡(){
+    document.getElementById('菜单1').style='display:none;';document.getElementById('菜单0').style='';document.getElementById('dy').innerHTML='';document.getElementById('当前关卡').innerHTML='无';
+}
+
+</script>
+
