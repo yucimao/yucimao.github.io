@@ -42,6 +42,7 @@
             if(表[o]==当前){
                 // try{notyf.confirm("正确")}catch(e){alert("正确");}
                 document.getElementById("对错").innerHTML="✅";
+                document.getElementById("对错").className="dui";
                 统计[0]+=1;
                 统计[3]+=1;
                 当前=new Date().getTime()-计时;
@@ -50,6 +51,7 @@
             }else{
                 // try{notyf.alert("错误");}catch(e){alert("错误");}
                 document.getElementById("对错").innerHTML="❌";
+                document.getElementById("对错").className="cuo";
                 统计[1]+=1;
                 统计[3]+=1;
                 统计[2]+=10000;
