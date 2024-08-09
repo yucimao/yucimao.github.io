@@ -14,6 +14,10 @@
 
 <button onclick="开始()" id="开始">开始游戏</button>
 
+<hr>
+
+本局战绩：<span id="本局记录">0</span>
+
 
 <script>
     预加载(0);
@@ -28,18 +32,22 @@
         }
     }
 
+    let 本局记录=0;
     function 选择(o){
         let 结果;
         if(o==0&&牌值[牌堆[0]]>牌值[牌堆[1]]||o==1&&牌值[牌堆[0]]<牌值[牌堆[1]]||o==2&&牌值[牌堆[0]]==牌值[牌堆[1]]){
             //猜对
+            本局记录+=5;
             余额(5);
             结果="<span class='dui'>恭喜，猜对了！</span>";
         }else{
             //猜错
+            本局记录-=10;
             余额(-10);
             结果="<span class='cuo'>猜错了。</span>";
         }
         document.getElementById("牌").innerHTML="<img src='img/"+牌堆[0]+".png' width='100px'> <img src='img/"+牌堆[1]+".png' width='100px' class='fanka'><br>"+结果;
         document.getElementById("桌子").style="display:none;";
+        document.getElementById("本局记录").innerHTML=本局记录;
     }
 </script>

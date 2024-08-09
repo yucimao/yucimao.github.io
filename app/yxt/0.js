@@ -11,8 +11,10 @@ if(页面[0]!="猫球游戏厅"){页面dy+=" <a href='0.html'>返回游戏厅</a
     ".ycql{opacity:0;animation:ycqlb 4s linear 1;-webkit-animation:ycqlb 4s linear 1;}@keyframes ycqlb{0%,40%{opacity:1;}100%{opacity:0;}}@-webkit-keyframes ycqlb{0%,40%{opacity:1;}100%{opacity:0;}}"+
     ".fanka{animation:fankab 0.3s linear 1;-webkit-animation:fankab 0.3s linear 1;}@keyframes fankab{from{transform:rotateY(90deg);}to{transform:rotateY(0deg);}}@-webkit-keyframes fankab{from{transform:rotateY(90deg);}to{transform:rotateY(0deg);}}"+
     "</style><div id='预加载' style='display:none;'></div>"+
-    "<span id='余额'></span><hr>";
+    "<span id='余额'></span><hr><textArea id='复制' style='position:absolute;top:-1000px'></textArea>";
 document.getElementById("游戏厅").innerHTML=页面dy;
+
+let 制;function 复(){制=制.replace(/［换行］/g,'\n');notyf.confirm('已复制');document.getElementById('复制').value=制;let 复制=document.querySelector('#复制');复制.select();document.execCommand('Copy');}
 
 let 钱=0;if(localStorage.getItem("猫球游戏厅")){钱=localStorage.getItem("猫球游戏厅")*1;}
 let 钱_页面变化=钱;

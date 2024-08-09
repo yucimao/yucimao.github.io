@@ -1,0 +1,79 @@
+<div id="游戏厅">绘制数织</div><script src="0.js"></script>
+<small>
+<a href="sz.html">返回游戏页面</a>
+<ol>
+    <li>调整棋盘的大小，点击“确认”，默认为10x10。</li>
+    <li>通过点击在棋盘上绘制。</li>
+    <li>点击“导出”。</li>
+</ol>
+</small>
+<style>
+.b{min-width:26px;min-height:26px;width:26px;height:26px;max-width:26px;max-height:26px;background-color:#e4e4e4;}
+td{text-align:center;vertical-align:middle;color:#e4e4e4;}
+</style>
+
+<input type="text" id="列" placeholder="横" autocomplete="off">
+<input type="text" id="行" placeholder="竖" autocomplete="off">
+<span id="二次1"><a onclick="document.getElementById('二次1').style='display:none;';document.getElementById('二次2').style=''">更新棋盘</a></span>
+<span id="二次2" style="display:none;"><a onclick="document.getElementById('二次1').style='';document.getElementById('二次2').style='display:none;';行列(document.getElementById('行').value,document.getElementById('列').value)">确认</a> <small>(此操作会清空棋盘，是否确认？)</small></span>
+<br>
+<a onclick="导出()">导出</a>　<a onclick="导出2()">.</a><br>
+<br>
+
+<div id="画布"></div>
+
+<script>
+
+let 替换表=[["G","11111"],["p","11110"],["5","11101"],["6","11100"],["K","11011"],["W","11010"],["A","11001"],["J","11000"],["I","10111"],["h","10110"],["s","10101"],["t","10100"],["S","10011"],["q","10010"],["T","10001"],["L","10000"],["H","01111"],["j","01110"],["C","01101"],["Y","01100"],["m","01011"],["F","01010"],["B","01001"],["V","01000"],["r","00111"],["a","00110"],["i","00101"],["U","00100"],["w","00011"],["E","00010"],["2","00001"],["R","00000"],["4","1111"],["d","1110"],["f","1101"],["o","1100"],["3","1011"],["u","1010"],["M","1001"],["g","1000"],["z","0111"],["O","0110"],["y","0101"],["b","0100"],["P","0011"],["9","0010"],["8","0001"],["x","0000"],["Q","111"],["c","110"],["l","101"],["k","100"],["e","011"],["X","010"],["7","001"],["Z","000"],["N","11"],["D","10"],["n","01"],["v","00"],["-","1"],["1","0"],["0","-"]]
+
+    let 列表=[]
+    let 行,列;
+    function 行列(a,b){
+        if(a>0){}else{a=10}if(b>0){}else{b=10}
+        行=a,列=b;
+        let dy=""
+            let s=0;
+            let xdy="<tr><td></td>";
+        for(let i=0;a>i;i++){
+            dy+="<tr>";
+                dy+="<td>"+(i+1)+"</td>"
+                for(let j=0;b>j;j++){
+                    if(i==0){xdy+="<td>"+(j+1)+"</td>"}
+                    dy+="<td class='b' id='a"+s+"' onclick='按钮("+s+")'></td>";
+                    列表[s]=0;
+                    s+=1;
+                }
+            dy+="</tr>"
+        }
+        dy="<table class='x_table'>"+xdy+"</tr>"+dy;
+        document.getElementById("画布").innerHTML=dy;
+    }
+    行列(10,10)
+    function 按钮(o){
+        if(列表[o]==0){
+            列表[o]=1;
+            document.getElementById("a"+o).style="background-color:#000000";
+        }else{
+            列表[o]=0;
+            document.getElementById("a"+o).style="";
+        }
+    }
+    function 导出(){
+        let a=列+"."+行+"."+列表.join('');
+        a=a.split(".");
+    for(let i=0;替换表.length>i;i++){
+        a[2]=a[2].replace(new RegExp(替换表[i][1],"g"),替换表[i][0])
+    }
+        复(制=a.join("."))
+    }
+
+    function 导出2(){
+        let a=列+"."+行+"."+列表.join('');
+        a=a.split(".");
+        for(let i=0;替换表.length>i;i++){
+            a[2]=a[2].replace(new RegExp(替换表[i][1],"g"),替换表[i][0])
+        }
+        a="["+a[0]+","+a[1]+",\""+a[2]+"\"],"
+        复(制=a)
+    }
+</script>
