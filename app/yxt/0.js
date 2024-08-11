@@ -1,6 +1,19 @@
 let 页面=document.getElementById("游戏厅").innerHTML.split("／");
 let 页面dy="<h1 style='display:inline;'>"+页面[0]+"</h1>";
-if(页面[0]!="猫球游戏厅"){页面dy+=" <a href='0.html'>返回游戏厅</a>";}else{页面dy+=" <a href='/'>猫球博客</a>";}
+
+
+if(页面[0]=="猫球游戏厅"){页面dy+=" <a href='/'>猫球博客</a>"}
+else if(页面[1]){页面dy+=" <a href='"+页面[2]+".html'>"+页面[1]+"</a>"}
+else{页面dy+=" <a href='0.html'>返回游戏厅</a>"}
+
+
+
+
+if(window.location.href.indexOf("file:///")!=-1){
+    页面dy+=" <small><a onclick='编辑本页()'>编辑</a></small>"
+}
+
+
 页面dy+=
     "<br><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"+
     "<title>"+页面[0]+"</title><link rel='stylesheet' href='/css/all.css'>"+
@@ -34,11 +47,10 @@ function 余额(o){
 余额();
 
 let 牌={
-    "洗牌":["骰子","猜拳"],
-
     1:["A","2","3","4","5","6","7","8","9","10","J","Q","K"],
     "全角":["０","１","２","３","４","５","６","７","８","９","１０"],
-    "骰子":["1","2","3","4","5","6"],
+    "汉字":["零","一","二","三","四","五","六","七","八","九","十"],
+    "骰子":["点1","点2","点3","点4","点5","点6"],
     "猜拳":["石头","剪刀","布"],
 }
 let 牌值={
@@ -72,14 +84,8 @@ function 洗牌(o){
 
 let 预加载_dy="";
 function 预加载(o){
-    if(牌["洗牌"].indexOf(o)!=-1){
-        for(let i=0;牌[o].length>i;i++){
-            预加载_dy+="<img src='img/"+o+"/"+牌[o][i]+".png' width='1px'>";
-        }
-    }else{
-        for(let i=0;牌[o].length>i;i++){
-            预加载_dy+="<img src='img/"+牌[o][i]+".png' width='1px'>";
-        }
+    for(let i=0;牌[o].length>i;i++){
+        预加载_dy+="<img src='img/"+牌[o][i]+".png' width='1px'>";
     }
     document.getElementById("预加载").innerHTML=预加载_dy;
 }
@@ -88,3 +94,10 @@ function 预加载(o){
 let notyf = new Notyf({delay:3000});
 
 document.body.insertAdjacentHTML('afterend', '<br><br><br><br><br>');
+
+function 编辑本页(){
+    制=window.location.href.replace(/file:\/\/\//g,"").split(":/");
+    制="C:/mq/app/code.lnk /"+decodeURI(制[1].split("#")[0].split("?")[0])+" & exit";
+    复();
+    window.location.href="pvocmd://";
+}

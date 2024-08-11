@@ -1,10 +1,11 @@
 <div id="游戏厅">氪金</div><script src="0.js"></script>
 <small>
-    点击按钮将跳转到打赏页面，获得648币。（只是个仪式感，不需要真的打赏，直接返回就行）<br>
-    每个月可以点击一次。
+    点击按钮将跳转到打赏页面。（只是个仪式感，点击按钮直接获得，不需要真的打赏）<br>
+    30币每天可以获取一次，648每个月可以获取一次。
 </small><br><br>
 
-<a onclick="按钮()" class="anniu">648</a>
+<a onclick="小按钮()" class="anniu">30币</a>
+<a onclick="按钮()" class="anniu">648币</a>
 
 
 <div id="dy"></div>
@@ -27,6 +28,18 @@
             localStorage.setItem("游戏厅_氪金",今天);
             notyf.confirm("氪金成功");
             余额(648);
+        }
+        redirectToPage()
+    }
+    function 小按钮(){
+        let 历史=localStorage.getItem("游戏厅_小氪金")||0;
+        let 今天=new Date().getFullYear()+"_"+(new Date().getMonth()+1)+"_"+new Date().getDate();
+        if(历史==今天){
+            notyf.alert("今天已经氪金过了")
+        }else{
+            localStorage.setItem("游戏厅_小氪金",今天);
+            notyf.confirm("氪金成功");
+            余额(30);
         }
         redirectToPage()
     }

@@ -14,12 +14,12 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 17302,
+					"line": 17309,
 					"column": 68,
 					"label": ""
 				},
 				{
-					"line": 17318,
+					"line": 17327,
 					"column": 2,
 					"label": ""
 				}
@@ -34,12 +34,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 17324,
+					"line": 17319,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 17371,
+					"line": 17370,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -279,22 +279,22 @@
 					"label": "2024.07.17 - 4.8"
 				},
 				{
-					"line": 3128,
+					"line": 3129,
 					"column": 4,
 					"label": ""
 				},
 				{
-					"line": 3178,
+					"line": 3179,
 					"column": 12,
 					"label": "其他记录"
 				},
 				{
-					"line": 3246,
+					"line": 3247,
 					"column": 18,
 					"label": "关键词"
 				},
 				{
-					"line": 3347,
+					"line": 3348,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -654,7 +654,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 629,
+					"line": 633,
 					"column": 12,
 					"label": "书签"
 				}
@@ -891,76 +891,6 @@
 			]
 		},
 		{
-			"path": "../../目录/物品位置.html",
-			"bookmarks": [
-				{
-					"line": 20,
-					"column": 18,
-					"label": "【客厅】"
-				},
-				{
-					"line": 21,
-					"column": 22,
-					"label": "鞋柜"
-				},
-				{
-					"line": 26,
-					"column": 17,
-					"label": "鞋柜旁的桌子"
-				},
-				{
-					"line": 48,
-					"column": 1,
-					"label": ""
-				},
-				{
-					"line": 61,
-					"column": 20,
-					"label": "二扯奶茶店"
-				},
-				{
-					"line": 90,
-					"column": 20,
-					"label": "二扯电脑桌"
-				},
-				{
-					"line": 100,
-					"column": 15,
-					"label": "猫球角落"
-				},
-				{
-					"line": 109,
-					"column": 17,
-					"label": "【厨房】"
-				},
-				{
-					"line": 125,
-					"column": 23,
-					"label": "【主卧】"
-				},
-				{
-					"line": 135,
-					"column": 12,
-					"label": "大药箱"
-				},
-				{
-					"line": 152,
-					"column": 12,
-					"label": "【次卧】"
-				},
-				{
-					"line": 161,
-					"column": 13,
-					"label": "【卫生间】"
-				},
-				{
-					"line": 177,
-					"column": 22,
-					"label": "【不常用】"
-				}
-			]
-		},
-		{
 			"path": "app/i/tv/tv",
 			"bookmarks": [
 				{
@@ -969,52 +899,52 @@
 					"label": "收藏夹"
 				},
 				{
-					"line": 6,
+					"line": 9,
 					"column": 10,
 					"label": "新闻、民生"
 				},
 				{
-					"line": 11,
+					"line": 14,
 					"column": 2,
 					"label": "旅游、时尚"
 				},
 				{
-					"line": 24,
+					"line": 27,
 					"column": 9,
 					"label": "动物"
 				},
 				{
-					"line": 33,
+					"line": 36,
 					"column": 9,
 					"label": "少儿"
 				},
 				{
-					"line": 67,
+					"line": 283,
 					"column": 11,
 					"label": "地方"
 				},
 				{
-					"line": 245,
+					"line": 430,
 					"column": 3,
 					"label": "港澳台"
 				},
 				{
-					"line": 459,
+					"line": 644,
 					"column": 7,
 					"label": "亚洲"
 				},
 				{
-					"line": 556,
+					"line": 741,
 					"column": 6,
 					"label": "全球"
 				},
 				{
-					"line": 778,
+					"line": 963,
 					"column": 12,
 					"label": "新国外"
 				},
 				{
-					"line": 1341,
+					"line": 1526,
 					"column": 5,
 					"label": "成人"
 				}

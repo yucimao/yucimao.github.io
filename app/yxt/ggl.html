@@ -1,0 +1,39 @@
+<div id="游戏厅">呱呱乐</div><script src="0.js"></script>
+
+<div id="dy" style="font-size:1.2em"></div>
+
+<script>
+let d=[//编号 名字 价格 简介
+    [1,"九宫格",20],
+    [2,"捕鱼网",10],
+    [3,"十层高楼",19],
+    // [,"",],
+
+
+
+];
+let dy="";
+for(let i=0;d.length>i;i++){
+    if(d[i][0]=="hr"){
+        dy+=d[i][1];
+    }else{
+        dy+="<p><sub>"+d[i][0]+".</sub> <b><a onclick='点("+i+")'>"+d[i][1]+"</a></b>　<small>价格:"+d[i][2]+"币</small>";
+        if(d[i][3]){dy+=" <small class='提示' data-msg='"+d[i][3]+"'>[?]</small>"}
+        dy+="</p>"
+    }
+}
+document.getElementById("dy").innerHTML=dy;
+
+function 点(o){
+    if(钱<d[o][2]){
+        notyf.alert("余额不足")
+    }else{
+        window.location.href="ggl_"+d[o][0]+".html";
+    }
+}
+</script>
+
+
+
+
+

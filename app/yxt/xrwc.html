@@ -1,0 +1,112 @@
+<div id="游戏厅">仙人微彩</div><script src="0.js"></script>
+<small>
+    来自<span class='提示' data-msg='出自«最终幻想14»'>金蝶游乐场</span>的竞猜游戏，九宫格里会随机分布1~9，可以点击翻开其中3个，然后选择其中一行结算，按照分值总和获得奖励。每局消耗70币。
+</small><br><br>
+
+<style>
+img{width:50px;}
+.yc{color:#00000000}
+</style>
+
+<a onclick="新一局()" class="anniu" id="按钮">开始</a>
+
+<table id="棋盘"></table>
+
+<br>
+
+<div id="结果"></div>
+
+
+
+
+<hr>
+
+<b>奖励表</b><br>
+<!--奖励比原版/10-->
+合计<b>6</b>作为特等奖的奖励是<b>+1000币</b>
+<table>
+    <tr style="font-weight:bold"><td>合计<small> + 奖励</small></td><td>合计<small> + 奖励</small></td><td>合计<small> + 奖励</small></td></tr>
+    <tr><td><span class="yc">0</span>7<small> + <span class="yc">0</span><span class="yc">0</span>3币</small></td><td><span class="yc">0</span>8<small> + <span class="yc">0</span>72币</small></td><td><span class="yc">0</span>9<small> + <span class="yc">0</span>36币</small></td></tr>
+    <tr><td>10<small> + <span class="yc">0</span><span class="yc">0</span>8币</small></td><td>11<small> + <span class="yc">0</span>25币</small></td><td>12<small> + 108币</small></td></tr>
+    <tr><td>13<small> + <span class="yc">0</span><span class="yc">0</span>7币</small></td><td>14<small> + <span class="yc">0</span><span class="yc">0</span>5币</small></td><td>15<small> + 180币</small></td></tr>
+    <tr><td>16<small> + <span class="yc">0</span><span class="yc">0</span>7币</small></td><td>17<small> + <span class="yc">0</span>18币</small></td><td>18<small> + 119币</small></td></tr>
+    <tr><td>19<small> + <span class="yc">0</span><span class="yc">0</span>3币</small></td><td>20<small> + <span class="yc">0</span>30币</small></td><td>21<small> + 108币</small></td></tr>
+    <tr><td>22<small> + <span class="yc">0</span>14币</small></td><td>23<small> + 180币</small></td><td>24<small> + 360币</small></td></tr>
+</table>
+
+
+
+
+
+<script>
+
+let 新棋盘="<tr><td onclick='A(0)'><img src='img/灰右下.png'></td><td onclick='A(1)'><img src='img/灰下.png'></td><td onclick='A(2)'><img src='img/灰下.png'></td><td onclick='A(3)'><img src='img/灰下.png'></td><td onclick='A(4)'><img src='img/灰左下.png'></td></tr><tr><td onclick='A(5)'><img src='img/灰右.png'></td><td id='B0' onclick='B(0)'><img src='img/a0b.png'></td><td id='B1' onclick='B(1)'><img src='img/a0b.png'></td><td id='B2' onclick='B(2)'><img src='img/a0b.png'></td><td></td></tr><tr><td onclick='A(6)'><img src='img/灰右.png'></td><td id='B3' onclick='B(3)'><img src='img/a0b.png'></td><td id='B4' onclick='B(4)'><img src='img/a0b.png'></td><td id='B5' onclick='B(5)'><img src='img/a0b.png'></td><td></td></tr><tr><td onclick='A(7)'><img src='img/灰右.png'></td><td id='B6' onclick='B(6)'><img src='img/a0b.png'></td><td id='B7' onclick='B(7)'><img src='img/a0b.png'></td><td id='B8' onclick='B(8)'><img src='img/a0b.png'></td><td></td></tr>";
+
+arr=[1,2,3,4,5,6,7,8,9];
+let 奖励={//2280
+    6:1000,
+    7:3,
+    8:71,
+    9:36,
+    10:8,
+    11:25,
+    12:108,
+    13:7,
+    14:5,
+    15:180,
+    16:7,
+    17:18,
+    18:119,
+    19:3,
+    20:30,
+    21:108,
+    22:14,
+    23:180,
+    24:360
+}
+let 手,已翻,结束;
+function 新一局(){
+if(钱>=70){
+    余额(-70)
+    手=3;已翻=[];结束=0;
+    document.getElementById("结果").innerHTML="";
+    document.getElementById("按钮").style="display:none;";
+    document.getElementById("棋盘").innerHTML=新棋盘;
+    随机();
+}else{
+    notyf.confirm("余额不足")
+}
+
+}
+let 结果=["048","036","147","258","246","012","345","678"];
+function A(o){
+    if(结束==0){
+        结束=1;
+        o=结果[o];
+        let 分值=arr[o[0]]+arr[o[1]]+arr[o[2]];
+        for(let i=0;arr.length>i;i++){
+            if(已翻.indexOf(i)!=-1){document.getElementById("B"+i).innerHTML="<img src='img/a"+arr[i]+".png'>";}
+            else{document.getElementById("B"+i).innerHTML="<img class='fanka' src='img/a"+arr[i]+".png'>";}
+            if(o.indexOf(i)!=-1){document.getElementById("B"+i).style="border:2px solid #04e813";}
+        }
+        手=奖励[分值];
+        document.getElementById("结果").innerHTML="<span class='dui'>合计<b>"+分值+"</b>，获得奖励"+手+"币，恭喜。</span>";
+        余额(手);
+        document.getElementById("按钮").innerHTML="重新开始";
+        document.getElementById("按钮").style="";
+    }
+}
+function B(o){
+if(结束==0){
+if(已翻.indexOf(o)!=-1){
+}else if(手>0){
+    手-=1;
+    已翻[已翻.length]=o;
+    document.getElementById("B"+o).innerHTML="<img class='fanka' src='img/a"+arr[o]+".png'>";
+}else{
+    notyf.alert("不能再翻牌了")
+}
+}
+}
+</script>
+

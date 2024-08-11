@@ -1,0 +1,77 @@
+<div id="游戏厅">九宫格／呱呱乐／ggl</div><script src="0.js"></script>
+<small>
+    每张20币。<br>
+    在九宫格里刮开任意格子，兑奖时根据刮开的最大数字获得奖金。<br>
+    如果最大的数字存在多个可以叠加。<br>
+    可能翻出的数字：0、1、2、5、8、10、15、20、100、500、999
+</small><br><br>
+
+<style>
+    td{text-align:center;min-width:1.2em;font-size:1.8em;font-weight:bold;}
+</style>
+
+
+<div id="dy"></div>
+
+<br>
+
+<a id="兑奖" onclick="兑奖()" class="anniu" style="display:none;">兑奖</a>
+<a id="买" onclick="买()" class="anniu">买一张</a>
+
+<script>
+    let 奖励=[
+        0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,
+        0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,5,5,5,5,
+        0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,5,5,5,5,8,8,8,8,
+        10,10,10,15,15,20
+    ];
+    let 奖金,最高;
+    function 买(){
+        if(钱<20){
+            notyf.alert("余额不足")
+        }else{
+            奖金=0,最高=0;
+            document.getElementById("兑奖").style="";
+            document.getElementById("买").innerHTML="再买一张";
+            document.getElementById("买").style="display:none;";
+            余额(-20)
+            arr=奖励;
+            随机();
+            let dy="<table><tr>"
+
+                let 幸运数字=Math.floor(Math.random()*9);
+                if(Math.floor(Math.random()*50)==45){arr[幸运数字]=100;
+                if(Math.floor(Math.random()*50)==45){arr[幸运数字]=500;
+                if(Math.floor(Math.random()*50)==45){arr[幸运数字]=999;}}}
+
+            for(let i=0;9>i;i++){
+                if(i%3==0&&i!=0){
+                    dy+="</tr><tr>"
+                }
+                dy+="<td class='hm' id='A"+i+"' onclick='刮开("+i+")'><span style='color:#aaaaaa;'>?</span></td>";
+            }
+            dy+="</tr></table>";
+            document.getElementById("dy").innerHTML=dy;
+        }
+    }
+
+    function 刮开(o){
+        if(奖金!=-1){
+            document.getElementById("A"+o).innerHTML=arr[o];
+            document.getElementById("A"+o).className="fanka";
+            document.getElementById("A"+o).onclick="";
+            if(arr[o]>最高){最高=arr[o];奖金=最高;}else if(arr[o]==最高){奖金+=最高;}
+        }
+    }
+
+    function 兑奖(){
+        余额(奖金);
+        奖金=-1;
+        document.getElementById("买").style="";
+        document.getElementById("兑奖").style="display:none;";
+        for(let i=0;9>i;i++){
+            document.getElementById("A"+i).innerHTML=arr[i];
+            document.getElementById("A"+i).className="fanka";
+        }
+    }
+</script>

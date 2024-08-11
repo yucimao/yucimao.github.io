@@ -1,0 +1,101 @@
+<div id="游戏厅">十层高楼／呱呱乐／ggl</div><script src="0.js"></script>
+<small>
+    每张19币。<br>
+    开局获得2把不同数字的钥匙，从一楼开始向上，翻开门牌号。<br>
+    如果和钥匙数字相同，视为打开了房门，可以选择直接“兑奖”，将获得右侧所示的奖金。<br>
+    也可以不选择“兑奖”，继续向上翻开门牌号，视为放弃旧的奖金。
+</small><br><br>
+<style>
+    img{height:1em}
+    .hm{font-size:1.8em;font-weight:bold;}
+    #钥匙 fieldset{display:inline;padding:0 10px}
+</style>
+
+<div id="dy"></div>
+
+<br>
+
+<a id="兑奖" onclick="兑奖()" class="anniu">买一张</a>
+
+
+<script>
+
+let 号码=["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"];
+let 钥匙,已有,当前楼层=-2;
+let 奖金=[0,5,10,15,20,30,50,90,120,180,500];
+
+function 买票(){
+    if(钱<19){
+        notyf.alert("余额不足");
+    }else{
+        余额(-19);
+        document.getElementById("兑奖").innerText="重买一张";
+        document.getElementById("兑奖").style="display:none;";
+        当前楼层=0;
+        arr=号码;
+        随机();
+        钥匙=arr;
+        已有=[钥匙[0],钥匙[1]];
+        // 已有=[钥匙[0],钥匙[1],钥匙[2]];
+        随机();
+        号码=arr;
+
+        let dy="<b>钥匙</b><div id='钥匙' class='hm'><fieldset id='钥匙"+已有[0]+"'>"+已有[0]+"</fieldset><fieldset id='钥匙"+已有[1]+"'>"+已有[1]+"</fieldset></div><br>";
+        // let dy="<b>钥匙</b><div id='钥匙' class='hm'><fieldset id='钥匙"+已有[0]+"'>"+已有[0]+"</fieldset><fieldset id='钥匙"+已有[1]+"'>"+已有[1]+"</fieldset><fieldset id='钥匙"+已有[2]+"'>"+已有[2]+"</fieldset></div><br>";
+
+        dy+="<table style='text-align:center;'><tr style='font-weight:bold'><td>楼层</td><td>门牌号</td><td>奖金</td></tr>";
+            for(let i=0;10>i;i++){
+                dy+="<tr id='楼"+(10-i)+"' onclick='刮开("+(10-i)+")'><td>"+牌['汉字'][10-i]+"楼</td><td id='号"+(10-i)+"' class='hm'><span style='color:#aaaaaa;'>?</span></td><td class='hm'>"+奖金[10-i]+"</td></tr>"
+            }
+        dy+="</table>"
+        document.getElementById("dy").innerHTML=dy;
+    }
+}
+
+
+function 刮开(o){
+    if(当前楼层==-1){
+    }else if(o==当前楼层+1){
+        当前楼层+=1;
+        document.getElementById("兑奖").style="";
+        if(已有.indexOf(号码[o])!=-1){
+            document.getElementById("钥匙"+号码[o]).style="color:#dddddd;";
+            document.getElementById("楼"+o).style="color:#ff9900;";
+            notyf.confirm("恭喜你打开了这扇门");
+            document.getElementById("兑奖").innerText="兑奖";
+            // let newElement = document.createElement('fieldset');
+            // newElement.setAttribute('id','钥匙'+钥匙[已有.length]);
+            // newElement.innerHTML=钥匙[已有.length];
+            // document.getElementById('钥匙').appendChild(newElement);
+            // 已有[已有.length]=钥匙[已有.length];
+        }else{
+            document.getElementById("兑奖").innerText="重买一张";
+        }
+        document.getElementById("号"+o).innerHTML=号码[o];
+    }else{
+        notyf.alert("请点击正确的楼层")
+    }
+}
+
+function 兑奖(){
+    if(当前楼层==-2){买票();}
+    else if(已有.indexOf(号码[当前楼层])!=-1){
+        余额(奖金[当前楼层]);
+        notyf.confirm("兑奖成功");
+        if(当前楼层<10){
+            for(let i=10;i>当前楼层;i--){
+                document.getElementById("号"+i).innerHTML=号码[i];
+                if(已有.indexOf(号码[i])!=-1){
+                    document.getElementById("号"+i).style="color:#ff0000;";
+                }
+            }
+        }
+        当前楼层=-1;
+        document.getElementById("兑奖").innerText="重买一张";
+    }else{
+        买票();
+    }
+}
+
+
+</script>

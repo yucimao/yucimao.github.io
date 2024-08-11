@@ -1,0 +1,98 @@
+<div id="游戏厅">捕鱼网／呱呱乐／ggl</div><script src="0.js"></script>
+<small>
+    每张10币。这里是一片大海，那些数字就是海里的鱼，可以点击一处海浪下网，将会把它周围的鱼一网打尽，获得奖励。
+</small><br><br>
+
+<style>
+    td{text-align:center;min-width:1.2em;font-size:1.8em;font-weight:bold;color:#b2d5ff;}
+</style>
+
+<div id="dy"></div>
+
+<a id="买" onclick="买()" class="anniu">买一张</a>
+
+
+
+<script>
+    let 奖励=[
+        2,2,2,2,2,2,2,2,2,2,
+        2,2,2,2,2,2,2,2,2,2,
+        2,2,2,2,2,2,2,2,2,2,
+        5,5,5,5,5,
+        5,5,5,5,5,
+        8,8,8,
+        10
+    ];
+
+    let 棋盘,结束;
+
+    function 买(){
+        if(钱>10){
+            余额(-10);
+            document.getElementById("买").style="display:none;";
+            棋盘={},结束=0;
+            let dy="<table>"
+            for(let i=0;10>i;i++){
+                棋盘[i]=[]
+                dy+="<tr>";
+                    for(let j=0;10>j;j++){
+                        let 随机=Math.floor(Math.random()*10);
+                        if(随机==0){棋盘[i][j]=奖励[Math.floor(Math.random()*奖励.length)];}
+                        else{棋盘[i][j]=0;}
+                        dy+="<td id='a"+i+"_"+j+"'>?</td>"
+                    }
+                dy+="</tr>"
+            }
+            dy+="</table><a onclick='全部刮开()' id='全部刮开' class='anniu'>全部刮开</a>"
+            document.getElementById("dy").innerHTML=dy;
+        }else{
+            notyf.alert("余额不足")
+        }
+        
+    }
+
+    function 全部刮开(){
+        document.getElementById("全部刮开").style="display:none;";
+        for(let i=0;10>i;i++){
+            for(let j=0;10>j;j++){
+                if(棋盘[i][j]==0){
+                    document.getElementById("a"+i+"_"+j).setAttribute("onclick","选择("+i+","+j+")");
+                    document.getElementById("a"+i+"_"+j).innerHTML="~";
+                }else{
+                    document.getElementById("a"+i+"_"+j).innerHTML=棋盘[i][j];
+                }
+            }
+        }
+    }
+
+    function 选择(a,b){
+        if(结束==0){
+            document.getElementById("买").innerHTML="再买一张";
+            document.getElementById("买").style="";
+            let 奖金=0;
+            结束=1;
+            let 九宫格=[
+                [a-1,b-1],[a-1,b],[a-1,b+1],
+                [a,b-1],[a,b],[a,b+1],
+                [a+1,b-1],[a+1,b],[a+1,b+1],
+            ];
+            for(let i=0;九宫格.length>i;i++){
+                if(九宫格[i][0]>-1&&九宫格[i][0]<10&&九宫格[i][1]>-1&&九宫格[i][1]<10){
+                    if(棋盘[九宫格[i][0]][九宫格[i][1]]!=0){奖金+=棋盘[九宫格[i][0]][九宫格[i][1]];}
+                    document.getElementById("a"+九宫格[i][0]+"_"+九宫格[i][1]).style="background-color:#19beff;color:#ffffff";
+                }
+            }
+            
+            if(奖金==0){
+                notyf.alert("没有捕到鱼")
+            }else{
+                余额(奖金);
+                notyf.confirm("获得"+奖金+"币")
+            }
+        }
+        
+    }
+</script>
+
+
+
