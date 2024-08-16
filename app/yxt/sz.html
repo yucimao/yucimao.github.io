@@ -36,13 +36,13 @@
 <h4>随机关卡</h4>
 <a class='anniu' onclick="打印(10,10,70)">10✖︎10 简单</a>
 <a class='anniu' onclick="打印(10,10,50)">中等</a>
-<a class='anniu' onclick="打印(10,10,40)">困难</a><br>
+<a class='anniu' onclick="打印(10,10,42)">困难</a><br>
 <a class='anniu' onclick="打印(5,5,13)">5✖︎5</a>
 <a class='anniu' onclick="打印(15,15,113)">15✖︎15</a> 
 <a class='anniu' onclick="打印(20,20,200)">20✖︎20</a><br>
 <br>
 <b>自选难度</b>：
-<input id="自选关卡1" class="zixuan">✖︎<input id="自选关卡2" class="zixuan"> <small>黑格数量:</small><input id="自选关卡3" class="zixuan"> <a onclick="自选(document.getElementById('自选关卡1').value,document.getElementById('自选关卡2').value,document.getElementById('自选关卡3').value)">确定</a><br>
+<input id="自选关卡1" class="zixuan">✖︎<input id="自选关卡2" class="zixuan">　<small>黑格数量:</small><input id="自选关卡3" class="zixuan"> <a onclick="自选(document.getElementById('自选关卡1').value,document.getElementById('自选关卡2').value,document.getElementById('自选关卡3').value)">确定</a><br>
 
 <hr>
 <h4>主题关卡</h4>
@@ -237,6 +237,11 @@ function 打印(a,b,c){//a横有多少格 b竖 c模式(数字为黑色数量随�
         随机();
         棋盘=arr;
         关卡模式=c;
+
+        // 棋盘=棋盘.join('');
+        // console.log(棋盘)
+        // 棋盘=棋盘.split('');
+
         document.getElementById("当前关卡").innerHTML="随机"+a+"✖︎"+b+" <small><a onclick='分享()'>分享</a></small>";
     }else{//有图的棋盘
         c=c.split("_");//0_地图xxx(重新开始) 1_地图xxx(导入) 关卡名_关卡数字

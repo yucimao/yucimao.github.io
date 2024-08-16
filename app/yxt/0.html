@@ -13,7 +13,11 @@
 <div id="账02" style="display:none;">
 <b>设置</b><br>
 <a onclick="余额(-钱)">余额清零</a>
-<!-- <a onclick="余额(100)">充值</a> -->
+
+
+<div id="测试菜单" style="display:none;">
+<a onclick="余额(100)">充值+100</a>
+</div>
 </div>
 
 
@@ -36,7 +40,7 @@
         ["反方向扭头","ffxnt"],// +1 / -5
 
         ["h3","赌场<small> / 酒桌</small>"],
-        ["t","<small>注意：本页为了游戏性降低了难度，与真实的赌博完全不是一回事，在游戏里随便玩玩就好，现实中千万千万不要碰赌博，一分钱都不要赌，赌博的结果只会是输光！</small>"],
+        ["t","<small>注意：本页为了游戏性降低了难度，与真实的赌博完全不是一回事，在游戏里随便玩玩就好，现实中千万千万不要碰赌博，赌博的本质其实是骗，你的每一次赢钱、输钱都在赌场的计算之内，不存在什么“小赌怡情”，一分钱都不要赌，赌博的结果只会是输光</small>"],
         ["二十一点","21d"],// 随意下注
         ["三公","sg",["骰子版","tz"]],// 随意下注
         ["br"],
@@ -99,5 +103,8 @@
         }
     }
     document.getElementById("游戏列表").innerHTML=dy+"</div>";
+
+    function 测试菜单(){localStorage.setItem("yxt_测试菜单",1)}
+    if(localStorage.getItem("yxt_测试菜单")){document.getElementById("测试菜单").style="";}
 </script>
 
