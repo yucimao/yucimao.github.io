@@ -50,11 +50,12 @@ let d=[
 ["4.6","阿蕾奇诺,♀","林尼","流浪者","白术"],
 ["4.7","克洛琳德,♀","艾尔海森","希格雯,♀","芙宁娜"],
 ["4.8","妮露","娜维娅","艾梅莉埃,♀","夜兰"],
+["5.0","玛拉妮,♀","枫原万叶","基尼奇,♂","雷电将军"],
+// ["","",""],
 // ["","",""],
 // ["","",""],
 
-//https://wiki.biligame.com/ys/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0
-//前瞻总结里有卡池记录
+//https://bbs.mihoyo.com/ys/obc/content/6001/detail
 ]
 let 表1={};
 let 表2={};
@@ -134,5 +135,5 @@ for(let i=2;dy2.length>i;i+=2){
 }
 dy+="</table>";
 
-document.getElementById("dy").innerHTML=dy;
+document.getElementById("dy").innerHTML=dy.replace(new RegExp('undefined',"g"),"0");
 </script>
