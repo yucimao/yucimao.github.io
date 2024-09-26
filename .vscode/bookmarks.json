@@ -64,162 +64,162 @@
 					"label": "注释"
 				},
 				{
-					"line": 258,
+					"line": 257,
 					"column": 1,
 					"label": "注释 ↑"
 				},
 				{
-					"line": 326,
+					"line": 325,
 					"column": 13,
 					"label": "目录"
 				},
 				{
-					"line": 360,
+					"line": 359,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 400,
+					"line": 399,
 					"column": 30,
 					"label": "原神之前"
 				},
 				{
-					"line": 424,
+					"line": 423,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 448,
+					"line": 447,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 492,
+					"line": 491,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 586,
+					"line": 585,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 607,
+					"line": 606,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
 				{
-					"line": 705,
+					"line": 704,
 					"column": 25,
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 860,
+					"line": 859,
 					"column": 8,
 					"label": "2020.11.11 - 1.1"
 				},
 				{
-					"line": 928,
+					"line": 927,
 					"column": 18,
 					"label": "2020.12.23 - 1.2"
 				},
 				{
-					"line": 955,
+					"line": 954,
 					"column": 11,
 					"label": "2021.02.03 - 1.3"
 				},
 				{
-					"line": 990,
+					"line": 989,
 					"column": 13,
 					"label": "2021.03.17 - 1.4"
 				},
 				{
-					"line": 1021,
+					"line": 1020,
 					"column": 23,
 					"label": "2021.04.28 - 1.5"
 				},
 				{
-					"line": 1058,
+					"line": 1057,
 					"column": 21,
 					"label": "2021.06.09 - 1.6"
 				},
 				{
-					"line": 1114,
+					"line": 1113,
 					"column": 15,
 					"label": "2021.07.21 - 2.0"
 				},
 				{
-					"line": 1155,
+					"line": 1154,
 					"column": 15,
 					"label": "2021.09.01 - 2.1"
 				},
 				{
-					"line": 1178,
+					"line": 1177,
 					"column": 18,
 					"label": "2021.10.13 - 2.2"
 				},
 				{
-					"line": 1202,
+					"line": 1201,
 					"column": 24,
 					"label": "2021.11.24 - 2.3"
 				},
 				{
-					"line": 1257,
+					"line": 1256,
 					"column": 34,
 					"label": "2022.01.05 - 2.4"
 				},
 				{
-					"line": 1306,
+					"line": 1305,
 					"column": 27,
 					"label": "2022.02.16 - 2.5"
 				},
 				{
-					"line": 1333,
+					"line": 1332,
 					"column": 25,
 					"label": "2022.03.31 - 2.6"
 				},
 				{
-					"line": 1377,
+					"line": 1376,
 					"column": 19,
 					"label": "2022.06.01 - 2.7"
 				},
 				{
-					"line": 1420,
+					"line": 1419,
 					"column": 10,
 					"label": "2022.07.13 - 2.8"
 				},
 				{
-					"line": 1481,
+					"line": 1480,
 					"column": 34,
 					"label": "2022.08.24 - 3.0"
 				},
 				{
-					"line": 1592,
+					"line": 1591,
 					"column": 21,
 					"label": "2022.09.28 - 3.1"
 				},
 				{
-					"line": 1654,
+					"line": 1653,
 					"column": 22,
 					"label": "2022.11.02 - 3.2"
 				},
 				{
-					"line": 1723,
+					"line": 1722,
 					"column": 20,
 					"label": "2022.12.07 - 3.3"
 				},
 				{
-					"line": 1780,
+					"line": 1779,
 					"column": 24,
 					"label": "2023.01.18 - 3.4"
 				},
 				{
-					"line": 1861,
+					"line": 1860,
 					"column": 19,
 					"label": "2023.03.01 - 3.5"
 				},
 				{
-					"line": 1929,
+					"line": 1928,
 					"column": 10,
 					"label": "2023.04.12 - 3.6"
 				},
@@ -284,22 +284,22 @@
 					"label": "2024.08.28 - 5.0"
 				},
 				{
-					"line": 3274,
+					"line": 3286,
 					"column": 4,
 					"label": ""
 				},
 				{
-					"line": 3329,
+					"line": 3337,
 					"column": 12,
 					"label": "其他记录"
 				},
 				{
-					"line": 3392,
+					"line": 3400,
 					"column": 18,
 					"label": "关键词"
 				},
 				{
-					"line": 3493,
+					"line": 3501,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -659,7 +659,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 708,
+					"line": 710,
 					"column": 12,
 					"label": "书签"
 				}
@@ -964,59 +964,94 @@
 			"path": "blog/笔记/酒仙笔记/魔兽世界_3.html",
 			"bookmarks": [
 				{
-					"line": 22,
+					"line": 29,
 					"column": 24,
 					"label": "★★★★★ S 顶级藏品"
 				},
 				{
-					"line": 44,
+					"line": 51,
 					"column": 24,
 					"label": "★★★★ A 非常喜欢"
 				},
 				{
-					"line": 271,
+					"line": 281,
 					"column": 17,
 					"label": "★★★ B 很喜欢"
 				},
 				{
-					"line": 342,
+					"line": 352,
 					"column": 24,
 					"label": "★★ C 喜欢"
 				},
 				{
-					"line": 406,
+					"line": 436,
 					"column": 17,
 					"label": "★ D 不评分"
 				},
 				{
-					"line": 518,
-					"column": 12,
-					"label": "酒"
-				},
-				{
-					"line": 538,
+					"line": 580,
 					"column": 11,
-					"label": "其他"
+					"label": "【其他】"
 				},
 				{
-					"line": 562,
+					"line": 582,
+					"column": 20,
+					"label": "旧大陆"
+				},
+				{
+					"line": 603,
+					"column": 19,
+					"label": "外域"
+				},
+				{
+					"line": 607,
+					"column": 24,
+					"label": "诺森德"
+				},
+				{
+					"line": 611,
+					"column": 23,
+					"label": "潘达利亚大陆"
+				},
+				{
+					"line": 620,
+					"column": 29,
+					"label": "诺森德"
+				},
+				{
+					"line": 625,
+					"column": 35,
+					"label": "破碎群岛"
+				},
+				{
+					"line": 629,
+					"column": 18,
+					"label": "库尔提拉斯和赞达拉"
+				},
+				{
+					"line": 633,
+					"column": 21,
+					"label": "巨龙群岛"
+				},
+				{
+					"line": 639,
+					"column": 34,
+					"label": "多恩岛"
+				},
+				{
+					"line": 652,
 					"column": 10,
-					"label": "表"
+					"label": "[\"酒\","
 				},
 				{
-					"line": 799,
+					"line": 915,
 					"column": 9,
 					"label": "本月美酒俱乐部"
 				},
 				{
-					"line": 914,
+					"line": 1030,
 					"column": 10,
 					"label": "代码"
-				},
-				{
-					"line": 927,
-					"column": 4,
-					"label": "-"
 				}
 			]
 		}
