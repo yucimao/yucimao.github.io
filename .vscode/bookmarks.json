@@ -964,92 +964,112 @@
 			"path": "blog/笔记/酒仙笔记/魔兽世界_3.html",
 			"bookmarks": [
 				{
-					"line": 29,
+					"line": 32,
 					"column": 24,
 					"label": "★★★★★ S 顶级藏品"
 				},
 				{
-					"line": 51,
+					"line": 54,
 					"column": 24,
 					"label": "★★★★ A 非常喜欢"
 				},
 				{
-					"line": 281,
+					"line": 308,
 					"column": 17,
 					"label": "★★★ B 很喜欢"
 				},
 				{
-					"line": 352,
+					"line": 399,
 					"column": 24,
 					"label": "★★ C 喜欢"
 				},
 				{
-					"line": 436,
+					"line": 489,
 					"column": 17,
 					"label": "★ D 不评分"
 				},
 				{
-					"line": 580,
+					"line": 491,
+					"column": 26,
+					"label": "各地常见酒"
+				},
+				{
+					"line": 543,
+					"column": 27,
+					"label": "烹饪"
+				},
+				{
+					"line": 571,
+					"column": 30,
+					"label": "考古"
+				},
+				{
+					"line": 577,
+					"column": 7,
+					"label": "其他不评分"
+				},
+				{
+					"line": 643,
 					"column": 11,
 					"label": "【其他】"
 				},
 				{
-					"line": 582,
+					"line": 645,
 					"column": 20,
 					"label": "旧大陆"
 				},
 				{
-					"line": 603,
+					"line": 667,
 					"column": 19,
 					"label": "外域"
 				},
 				{
-					"line": 607,
+					"line": 672,
 					"column": 24,
 					"label": "诺森德"
 				},
 				{
-					"line": 611,
+					"line": 676,
 					"column": 23,
 					"label": "潘达利亚大陆"
 				},
 				{
-					"line": 620,
+					"line": 685,
 					"column": 29,
 					"label": "诺森德"
 				},
 				{
-					"line": 625,
+					"line": 690,
 					"column": 35,
 					"label": "破碎群岛"
 				},
 				{
-					"line": 629,
+					"line": 694,
 					"column": 18,
 					"label": "库尔提拉斯和赞达拉"
 				},
 				{
-					"line": 633,
+					"line": 702,
 					"column": 21,
 					"label": "巨龙群岛"
 				},
 				{
-					"line": 639,
+					"line": 708,
 					"column": 34,
 					"label": "多恩岛"
 				},
 				{
-					"line": 652,
+					"line": 725,
 					"column": 10,
 					"label": "[\"酒\","
 				},
 				{
-					"line": 915,
+					"line": 1029,
 					"column": 9,
 					"label": "本月美酒俱乐部"
 				},
 				{
-					"line": 1030,
+					"line": 1142,
 					"column": 10,
 					"label": "代码"
 				}

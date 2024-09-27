@@ -14,9 +14,8 @@ let 表_代码={ //"按钮_跳转":"h4_按钮"
 <script src="/js/mq-jiuxian.js"></script>
 */
 
-document.getElementById("酒仙").innerHTML="<style>#弹窗{position: absolute;left:0;position:fixed;bottom:0;margin:0 0 15px 20px;line-height:18px;padding:7px;width:300px;border-style:solid;border-radius:5px;border:2pxsolid #535353;background-color:#060f27d3;color:#b6b6b6;font-size:12px;z-index:1000;}#弹窗 .标题{color:#e4e4e4;font-weight:bold;font-size:14px;}#弹窗 .绿{color:#07F602;}#弹窗 .白{color:#e4e4e4;}#弹窗 .黄{color:#EBBC06;}#弹窗 .酒{color:#23A8F2;}#弹窗 .水{color:#3ffcff}#弹窗 .人{color:#07F602;}#弹窗 .使用{color:#CCCCCC;}[onmousemove]{color:#006699;}[onmousemove].x{color:var(--body-color);border-bottom:1.6px solid #08f;}#right_anchor,#right_anchor2{display:none !important}[onmousemove^='进入(']{cursor:default}a[href]{cursor:pointer;}a[href]:after{font-size:0.6em;content:'⤴';color:#bbbbbb;}</style><div id=\"弹窗\" style=\"display:none;\"></div>";
+document.getElementById("酒仙").innerHTML="<style>#弹窗{position: absolute;left:0;position:fixed;bottom:0;margin:0 0 15px 20px;line-height:18px;padding:7px;width:300px;border-style:solid;border-radius:5px;border:2pxsolid #535353;background-color:#060f27d3;color:#b6b6b6;font-size:12px;z-index:1000;}#弹窗 .标题{color:#e4e4e4;font-weight:bold;font-size:14px;}#弹窗 .绿{color:#07F602;}#弹窗 .白{color:#e4e4e4;}#弹窗 .黄{color:#EBBC06;}#弹窗 .酒{color:#23A8F2;}#弹窗 .水{color:#3ffcff}#弹窗 .人{color:#07F602;}#弹窗 .使用{color:#CCCCCC;}[onmousemove]{color:#006699;}[onmousemove].x{color:var(--body-color);border-bottom:1.6px solid #08f;}#right_anchor,#right_anchor2{display:none !important}[onmousemove^='进入(']{cursor:default}a[href]{cursor:pointer;}a[href]:after{font-size:0.6em;content:'⤴';color:#bbbbbb;}i{font-size:0.8em;color:#bbbbbb}</style><div id=\"弹窗\" style=\"display:none;\"></div>";
 
-let o="";
 let oo="";
 
 let 跳转="";
@@ -24,7 +23,7 @@ let 跳转="";
 // window.onload=function(){
     let 正=document.getElementById("正文").innerHTML.split("〈");
     let 文=正[0];
-    let 遗漏="";
+    let 遗漏=[];
     for(let i=1;正.length>i;i++){
         let 临时=正[i].split("〉");
         if(临时[0][0]=="h"&&临时[0][1]>0&&临时[0][2]=="|"){
@@ -47,17 +46,24 @@ let 跳转="";
             let 临时3="";
             if(表_代码[实际+"_跳转"]){临时3=" href=\"#"+表_代码[实际+"_跳转"]+"\""}
             if(表[实际]){
-                if(表[实际][0]=="酒"||表[实际][0]=="水"){if(表[实际][0]=="酒"){文+="<b>"}文+="<a"+临时3+" onmousemove=\"进入(o='"+实际+"')\" onmouseout=\"离开()\">"+显示+"</a>";if(表[实际][0]=="酒"){文+="</b>"}文+=临时[1]}
-                else{文+="<a"+临时3+" class=\"x\" onmousemove=\"进入(o='"+实际+"')\" onmouseout=\"离开()\">"+显示+"</a>"+临时[1];}
-            }else{文+="<a"+临时3+" class=\"x\" onmousemove=\"进入(o='"+实际+"')\" onmouseout=\"离开()\">"+显示+"</a>"+临时[1];遗漏+="<br>"+实际;}
+                if(表[实际][0]=="酒"||表[实际][0]=="水"){if(表[实际][0]=="酒"){文+="<b>"}文+="<a"+临时3+" onmousemove=\"进入('"+实际+"')\" onmouseout=\"离开()\">"+显示+"</a>";if(表[实际][0]=="酒"){文+="</b>"}文+=临时[1]}
+                else{文+="<a"+临时3+" class=\"x\" onmousemove=\"进入('"+实际+"')\" onmouseout=\"离开()\">"+显示+"</a>"+临时[1];}
+            }else{文+="<a"+临时3+" class=\"x\" onmousemove=\"进入('"+实际+"')\" onmouseout=\"离开()\">"+显示+"</a>"+临时[1];遗漏[遗漏.length]=实际;}
         }
     }
-    if(遗漏!=""){文+="<br><br><small><b>出现遗漏：</b>"+遗漏+"</small>";alert("出现遗漏");}
+    if(遗漏.length!=0){
+        function removeDuplicates(array){
+            return [...new Set(array)];
+          }
+          遗漏=removeDuplicates(遗漏);
+        console.log("〈"+遗漏.join("〉〈")+"〉")
+    }
+    文=文.replace(new RegExp('\\[',"g"),"<i> [<\/i>").replace(new RegExp('\\]',"g"),"<i>] <\/i>");
     文=文.split("［跳转］")
     document.getElementById("正文").innerHTML = 文[0]+跳转+文[1];
 // }
 
-function 进入(){
+function 进入(o){
     if(表[o]){
         if(oo!=o){
         oo=表[o];
