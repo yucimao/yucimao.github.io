@@ -14,12 +14,12 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 17376,
+					"line": 17387,
 					"column": 68,
 					"label": ""
 				},
 				{
-					"line": 17403,
+					"line": 17400,
 					"column": 2,
 					"label": ""
 				}
@@ -34,12 +34,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 17386,
+					"line": 17397,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 17411,
+					"line": 17424,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -284,22 +284,22 @@
 					"label": "2024.08.28 - 5.0"
 				},
 				{
-					"line": 3286,
+					"line": 3288,
 					"column": 4,
 					"label": ""
 				},
 				{
-					"line": 3337,
+					"line": 3340,
 					"column": 12,
 					"label": "其他记录"
 				},
 				{
-					"line": 3400,
+					"line": 3403,
 					"column": 18,
 					"label": "关键词"
 				},
 				{
-					"line": 3501,
+					"line": 3504,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -659,7 +659,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 710,
+					"line": 716,
 					"column": 12,
 					"label": "书签"
 				}
@@ -779,27 +779,27 @@
 					"label": "【代码】"
 				},
 				{
-					"line": 644,
+					"line": 643,
 					"column": 12,
 					"label": "酒"
 				},
 				{
-					"line": 721,
+					"line": 652,
 					"column": 10,
 					"label": "人"
 				},
 				{
-					"line": 729,
+					"line": 658,
 					"column": 10,
 					"label": "场景"
 				},
 				{
-					"line": 745,
+					"line": 664,
 					"column": 12,
 					"label": "其他"
 				},
 				{
-					"line": 767,
+					"line": 686,
 					"column": 2,
 					"label": "跳转和额外代码"
 				}
@@ -964,114 +964,129 @@
 			"path": "blog/笔记/酒仙笔记/魔兽世界_3.html",
 			"bookmarks": [
 				{
-					"line": 32,
+					"line": 34,
 					"column": 24,
-					"label": "★★★★★ S 顶级藏品"
+					"label": "★★★★★ S 非常喜欢"
 				},
 				{
-					"line": 54,
+					"line": 56,
 					"column": 24,
-					"label": "★★★★ A 非常喜欢"
+					"label": "★★★★ A 很喜欢"
 				},
 				{
-					"line": 308,
+					"line": 315,
 					"column": 17,
-					"label": "★★★ B 很喜欢"
+					"label": "★★★ B 喜欢"
 				},
 				{
-					"line": 399,
-					"column": 24,
-					"label": "★★ C 喜欢"
-				},
-				{
-					"line": 489,
-					"column": 17,
-					"label": "★ D 不评分"
-				},
-				{
-					"line": 491,
-					"column": 26,
-					"label": "各地常见酒"
-				},
-				{
-					"line": 543,
-					"column": 27,
-					"label": "烹饪"
-				},
-				{
-					"line": 571,
-					"column": 30,
-					"label": "考古"
-				},
-				{
-					"line": 577,
-					"column": 7,
-					"label": "其他不评分"
-				},
-				{
-					"line": 643,
-					"column": 11,
-					"label": "【其他】"
-				},
-				{
-					"line": 645,
-					"column": 20,
+					"line": 496,
+					"column": 9,
 					"label": "旧大陆"
 				},
 				{
-					"line": 667,
-					"column": 19,
+					"line": 562,
+					"column": 11,
 					"label": "外域"
 				},
 				{
-					"line": 672,
-					"column": 24,
+					"line": 575,
+					"column": 11,
 					"label": "诺森德"
 				},
 				{
-					"line": 676,
-					"column": 23,
-					"label": "潘达利亚大陆"
+					"line": 581,
+					"column": 22,
+					"label": "达拉然"
 				},
 				{
-					"line": 685,
-					"column": 29,
-					"label": "诺森德"
+					"line": 588,
+					"column": 12,
+					"label": "大漩涡"
 				},
 				{
-					"line": 690,
-					"column": 35,
+					"line": 596,
+					"column": 12,
+					"label": "潘达利亚"
+				},
+				{
+					"line": 637,
+					"column": 12,
+					"label": "德拉诺"
+				},
+				{
+					"line": 650,
+					"column": 13,
 					"label": "破碎群岛"
 				},
 				{
-					"line": 694,
-					"column": 18,
-					"label": "库尔提拉斯和赞达拉"
+					"line": 722,
+					"column": 12,
+					"label": "库尔提拉斯"
 				},
 				{
-					"line": 702,
-					"column": 21,
+					"line": 742,
+					"column": 18,
+					"label": "赞达拉"
+				},
+				{
+					"line": 779,
+					"column": 8,
+					"label": "暗影界"
+				},
+				{
+					"line": 781,
+					"column": 7,
 					"label": "巨龙群岛"
 				},
 				{
-					"line": 708,
-					"column": 34,
-					"label": "多恩岛"
+					"line": 794,
+					"column": 8,
+					"label": "卡兹阿加"
 				},
 				{
-					"line": 725,
+					"line": 827,
+					"column": 20,
+					"label": "节日"
+				},
+				{
+					"line": 839,
+					"column": 15,
+					"label": "其他"
+				},
+				{
+					"line": 895,
 					"column": 10,
 					"label": "[\"酒\","
 				},
 				{
-					"line": 1029,
+					"line": 1255,
 					"column": 9,
 					"label": "本月美酒俱乐部"
 				},
 				{
-					"line": 1142,
+					"line": 1364,
 					"column": 10,
 					"label": "代码"
+				},
+				{
+					"line": 1412,
+					"column": 0,
+					"label": "-"
+				},
+				{
+					"line": 1413,
+					"column": 0,
+					"label": "-"
+				},
+				{
+					"line": 1414,
+					"column": 0,
+					"label": "-"
+				},
+				{
+					"line": 1415,
+					"column": 0,
+					"label": "-"
 				}
 			]
 		}
