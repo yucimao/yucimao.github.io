@@ -26,6 +26,7 @@ let 跳转="";
                 临时2[2]="?";
             }
             文+="<sup class='提示 灰' data-msg='"+临时2[1]+"'>〔"+临时2[2]+"〕</sup>"+临时[1];
+        }else if(临时[0]=="h0"){跳转+="<br>"
         }else{
             let 显示=临时[0];
             let 实际=显示;
@@ -63,8 +64,6 @@ let 跳转="";
                 文+="<li><a"+临时3+" onmousemove=\"进入('"+keys[i]+"')\" onmouseout=\"离开()\">"+keys[i].split("_")[0]+"</a></li>";
             }
         }
-
-        
 
         let dy="";
         for(let i2=0;表[keys[i]].length>i2;i2++){
