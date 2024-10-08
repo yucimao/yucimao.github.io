@@ -14,12 +14,12 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 17387,
+					"line": 17390,
 					"column": 68,
 					"label": ""
 				},
 				{
-					"line": 17400,
+					"line": 17405,
 					"column": 2,
 					"label": ""
 				}
@@ -34,12 +34,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 17397,
+					"line": 17401,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 17424,
+					"line": 17431,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -814,17 +814,17 @@
 					"label": "仙舟罗浮"
 				},
 				{
-					"line": 68,
+					"line": 75,
 					"column": 7,
 					"label": "匹诺康尼"
 				},
 				{
-					"line": 328,
+					"line": 337,
 					"column": 8,
 					"label": "模拟宇宙"
 				},
 				{
-					"line": 401,
+					"line": 410,
 					"column": 5,
 					"label": "let 表"
 				}
@@ -964,134 +964,114 @@
 			"path": "blog/笔记/酒仙笔记/魔兽世界_3.html",
 			"bookmarks": [
 				{
-					"line": 37,
-					"column": 24,
-					"label": "★★★★★ S 非常喜欢"
+					"line": 39,
+					"column": 23,
+					"label": "★★★★★"
 				},
 				{
-					"line": 147,
-					"column": 24,
-					"label": "★★★★ A 很喜欢"
+					"line": 150,
+					"column": 8,
+					"label": "★★★★"
 				},
 				{
-					"line": 318,
-					"column": 17,
-					"label": "★★★ B 喜欢"
+					"line": 321,
+					"column": 13,
+					"label": "★★★"
 				},
 				{
-					"line": 499,
+					"line": 507,
 					"column": 9,
+					"label": "按地区分类"
+				},
+				{
+					"line": 509,
+					"column": 14,
 					"label": "旧大陆"
 				},
 				{
-					"line": 565,
-					"column": 11,
+					"line": 579,
+					"column": 16,
 					"label": "外域"
 				},
 				{
-					"line": 578,
+					"line": 598,
 					"column": 11,
 					"label": "诺森德"
 				},
 				{
-					"line": 584,
-					"column": 22,
+					"line": 604,
+					"column": 15,
 					"label": "达拉然"
 				},
 				{
-					"line": 591,
-					"column": 12,
+					"line": 611,
+					"column": 17,
 					"label": "大漩涡"
 				},
 				{
-					"line": 599,
-					"column": 12,
+					"line": 619,
+					"column": 9,
 					"label": "潘达利亚"
 				},
 				{
-					"line": 640,
-					"column": 12,
+					"line": 663,
+					"column": 18,
 					"label": "德拉诺"
 				},
 				{
-					"line": 653,
-					"column": 13,
+					"line": 676,
+					"column": 20,
 					"label": "破碎群岛"
 				},
 				{
-					"line": 766,
-					"column": 12,
-					"label": "库尔提拉斯"
+					"line": 792,
+					"column": 16,
+					"label": "库尔提拉斯 赞达拉"
 				},
 				{
-					"line": 787,
-					"column": 18,
-					"label": "赞达拉"
-				},
-				{
-					"line": 824,
-					"column": 8,
+					"line": 855,
+					"column": 11,
 					"label": "暗影界"
 				},
 				{
-					"line": 826,
-					"column": 7,
+					"line": 857,
+					"column": 20,
 					"label": "巨龙群岛"
 				},
 				{
-					"line": 839,
-					"column": 8,
+					"line": 870,
+					"column": 13,
 					"label": "卡兹阿加"
 				},
 				{
-					"line": 872,
-					"column": 20,
+					"line": 898,
+					"column": 10,
 					"label": "节日"
 				},
 				{
-					"line": 884,
-					"column": 15,
+					"line": 910,
+					"column": 13,
 					"label": "其他"
 				},
 				{
-					"line": 949,
-					"column": 20,
-					"label": "我的其他收藏品"
+					"line": 964,
+					"column": 22,
+					"label": "其他藏品"
 				},
 				{
-					"line": 971,
-					"column": 10,
-					"label": "[\"酒\","
+					"line": 987,
+					"column": 7,
+					"label": "let 表"
 				},
 				{
-					"line": 1363,
-					"column": 9,
-					"label": "本月美酒俱乐部"
-				},
-				{
-					"line": 1472,
+					"line": 1530,
 					"column": 10,
 					"label": "代码"
 				},
 				{
-					"line": 1520,
-					"column": 0,
-					"label": "-"
-				},
-				{
-					"line": 1521,
-					"column": 0,
-					"label": "-"
-				},
-				{
-					"line": 1522,
-					"column": 0,
-					"label": "-"
-				},
-				{
-					"line": 1523,
-					"column": 0,
-					"label": "-"
+					"line": 1578,
+					"column": 7,
+					"label": "js"
 				}
 			]
 		}
