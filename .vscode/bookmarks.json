@@ -14,12 +14,12 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 17390,
+					"line": 17397,
 					"column": 68,
 					"label": ""
 				},
 				{
-					"line": 17405,
+					"line": 17413,
 					"column": 2,
 					"label": ""
 				}
@@ -34,12 +34,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 17401,
+					"line": 17407,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 17431,
+					"line": 17437,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -974,112 +974,122 @@
 					"label": "★★★★★"
 				},
 				{
-					"line": 154,
+					"line": 159,
 					"column": 8,
 					"label": "★★★★"
 				},
 				{
-					"line": 325,
+					"line": 330,
 					"column": 13,
 					"label": "★★★"
 				},
 				{
-					"line": 511,
+					"line": 523,
 					"column": 9,
 					"label": "按地区分类"
 				},
 				{
-					"line": 513,
+					"line": 525,
 					"column": 14,
 					"label": "旧大陆"
 				},
 				{
-					"line": 597,
+					"line": 610,
 					"column": 16,
 					"label": "外域"
 				},
 				{
-					"line": 617,
+					"line": 631,
 					"column": 11,
 					"label": "诺森德"
 				},
 				{
-					"line": 623,
+					"line": 637,
 					"column": 15,
 					"label": "达拉然"
 				},
 				{
-					"line": 631,
+					"line": 646,
 					"column": 17,
 					"label": "大漩涡"
 				},
 				{
-					"line": 639,
+					"line": 654,
 					"column": 9,
 					"label": "潘达利亚"
 				},
 				{
-					"line": 683,
+					"line": 705,
 					"column": 18,
 					"label": "德拉诺"
 				},
 				{
-					"line": 696,
+					"line": 719,
 					"column": 20,
 					"label": "破碎群岛"
 				},
 				{
-					"line": 813,
+					"line": 833,
 					"column": 16,
 					"label": "库尔提拉斯 赞达拉"
 				},
 				{
-					"line": 877,
+					"line": 859,
+					"column": 14,
+					"label": "库尔提拉斯"
+				},
+				{
+					"line": 868,
+					"column": 12,
+					"label": "赞达拉"
+				},
+				{
+					"line": 914,
 					"column": 11,
 					"label": "暗影界"
 				},
 				{
-					"line": 879,
+					"line": 916,
 					"column": 20,
 					"label": "巨龙群岛"
 				},
 				{
-					"line": 892,
+					"line": 929,
 					"column": 13,
 					"label": "卡兹阿加"
 				},
 				{
-					"line": 926,
+					"line": 963,
 					"column": 10,
 					"label": "节日"
 				},
 				{
-					"line": 938,
+					"line": 976,
 					"column": 13,
 					"label": "其他"
 				},
 				{
-					"line": 992,
+					"line": 1034,
 					"column": 15,
 					"label": "猫球的酒单"
 				},
 				{
-					"line": 1015,
+					"line": 1057,
 					"column": 22,
 					"label": "其他藏品"
 				},
 				{
-					"line": 1038,
+					"line": 1080,
 					"column": 7,
 					"label": "let 表"
 				},
 				{
-					"line": 1585,
+					"line": 1644,
 					"column": 10,
 					"label": "代码"
 				},
 				{
-					"line": 1634,
+					"line": 1694,
 					"column": 7,
 					"label": "js"
 				}
