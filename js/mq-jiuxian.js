@@ -76,7 +76,8 @@ for(let i=0;keys.length>i;i++){
     let dy="";
     for(let i2=0;表[keys[i]].length>i2;i2++){
         let 临时=表[keys[i]][i2].split("／");
-        // if(临时[0]=="酒" && 临时[1]){dy+="<div class='标题 "+临时[1]+"'>"+o+"</div>";}
+        
+        // if(临时[0]=="酒"&&临时[1]){dy+="<div class='标题 "+临时[1]+"'>"+o+"</div>";}
         if(临时[0]=="代码"){
             if(表_代码[临时[1]]){临时=表_代码[临时[1]].split("／");}
             else{console.log(临时[1])}
@@ -87,7 +88,10 @@ for(let i=0;keys.length>i;i++){
             if(临时[1]&&临时[1]!=""){dy+="<span class='标题 "+临时[0]+"'>"+临时[1]+"</span>"}
             else{dy+="<span class='标题 "+临时[0]+"'>"+keys[i].split("_")[0]+"</span>"}
 
-        }else{if(!临时[2]&&临时[2]!="x"){dy+="<br>"}dy+="<span class='"+临时[0]+"'>"+临时[1]+"</span>";}
+        }else{
+            if(临时.length<2){临时[1]=临时[0];临时[0]="";console.log(keys[i])}
+            if(!临时[2]&&临时[2]!="x"){dy+="<br>"}dy+="<span class='"+临时[0]+"'>"+临时[1]+"</span>";
+        }
     }
     表[keys[i]]=dy;
 }
