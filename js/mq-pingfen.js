@@ -3,7 +3,7 @@
 // td 或 ／ </td><td>
 
 dy="<div id=\"排行\"><style>td span.b{display:none}</style></div>"+
-"<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em}i[云]:after{content:'[云]';color:#258DF6}i[通]:after{content:'[通]';color:#19D02A}i[现场]:after{content:'[现场]';color:#19D02A}i[弃]:after{content:'[弃]';color:#FF4343}"+
+"<style>i{position:relative;font-size:75%;line-height:0;vertical-align:baseline;top:-.5em}i[云]{color:#258DF6}i[云]:before{content:'[云'}i[云]:after{content:']'}i[通],i[现场]{color:#19D02A}i[通]:before{content:'[通'}i[通]:after{content:']'}i[现场]:before{content:'[现场'}i[现场]:after{content:']'}i[弃]{color:#FF4343}i[弃]:before{content:'[弃'}i[弃]:after{content:']'}"+
 "td:first-child{cursor:default}td span.c{font-size: 0.8em;color:#999999}td:last-child small{color:#c1c1c1}td[onclick^=\"复(制=\"],td[onclick^=\"dw(dwd=\"]{cursor:pointer}[onclick='排名方式()']{cursor:pointer}.ysa{color:#77C94B}.ysb{color:#DF402A}[onclick^=\"取消\"]:hover{text-decoration:line-through}</style>"+
 "<small>点作品名可以复制；点分数展开评分细则；点“排名”改为不并列模式；点标签显示同标签排行。</small>"+dy;
 let dy2=dy;
@@ -96,8 +96,6 @@ function dw2(o){
             hr+=1;
         }
         dy+="<tr><td>"+临时2+"</td><td onclick=\"复(制='"+datb[i][1].split("／")[0].split("<")[0]+"')\">"+datb[i][1]+"</td>";
-        临时2=datb[i][0]/10;
-        if(临时2>10){临时2="10+"}if(临时2<0){临时2="0-"}
         dy+="<td onclick=\"dw(dwd='"+datb[i][1].split("／")[0]+"',dwb='<table>";
         let 临时=datb[i][2];
             for(let i2=0;临时.length>i2;i2++){
@@ -112,7 +110,10 @@ function dw2(o){
                     dy+=临时[i2]+"</td><td></td></tr>";
                 }
             }
+            临时2=datb[i][0]/10;
             临时=临时2*10;
+            if(临时2>10){临时2="10+"}if(临时2<0){临时2="0-"}
+
             dy+="<tr><td>　</td><td></td><td></td></tr><tr><td>总计</td><td";
 
             平均分+=临时;
