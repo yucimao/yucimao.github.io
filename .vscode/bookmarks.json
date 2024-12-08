@@ -244,72 +244,72 @@
 					"label": "2023.09.27 - 4.1"
 				},
 				{
-					"line": 2406,
+					"line": 2405,
 					"column": 5,
 					"label": "2023.11.08 - 4.2"
 				},
 				{
-					"line": 2513,
+					"line": 2512,
 					"column": 79,
 					"label": "2023.12.20 - 4.3"
 				},
 				{
-					"line": 2603,
+					"line": 2602,
 					"column": 13,
 					"label": "2024.01.31 - 4.4"
 				},
 				{
-					"line": 2656,
+					"line": 2655,
 					"column": 8,
 					"label": "2024.03.13 - 4.5"
 				},
 				{
-					"line": 2744,
+					"line": 2743,
 					"column": 10,
 					"label": "2024.04.24 - 4.6"
 				},
 				{
-					"line": 2889,
+					"line": 2888,
 					"column": 8,
 					"label": "2024.06.05 - 4.7"
 				},
 				{
-					"line": 3081,
+					"line": 3080,
 					"column": 27,
 					"label": "2024.07.17 - 4.8"
 				},
 				{
-					"line": 3246,
+					"line": 3245,
 					"column": 10,
 					"label": "2024.08.28 - 5.0"
 				},
 				{
-					"line": 3317,
+					"line": 3316,
 					"column": 13,
 					"label": "2024.10.09 - 5.1"
 				},
 				{
-					"line": 3368,
+					"line": 3367,
 					"column": 9,
 					"label": "2024.11.20 - 5.2"
 				},
 				{
-					"line": 3431,
+					"line": 3427,
 					"column": 4,
 					"label": ""
 				},
 				{
-					"line": 3477,
+					"line": 3473,
 					"column": 12,
 					"label": "其他记录"
 				},
 				{
-					"line": 3540,
+					"line": 3536,
 					"column": 18,
 					"label": "关键词"
 				},
 				{
-					"line": 3641,
+					"line": 3637,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -609,67 +609,67 @@
 					"label": "2012"
 				},
 				{
-					"line": 81,
+					"line": 82,
 					"column": 16,
 					"label": "2013"
 				},
 				{
-					"line": 84,
+					"line": 85,
 					"column": 18,
 					"label": "2014"
 				},
 				{
-					"line": 93,
+					"line": 94,
 					"column": 17,
 					"label": "2015"
 				},
 				{
-					"line": 99,
+					"line": 100,
 					"column": 13,
 					"label": "2016"
 				},
 				{
-					"line": 114,
+					"line": 115,
 					"column": 16,
 					"label": "2017"
 				},
 				{
-					"line": 120,
+					"line": 121,
 					"column": 18,
 					"label": "2018"
 				},
 				{
-					"line": 136,
+					"line": 137,
 					"column": 15,
 					"label": "2019"
 				},
 				{
-					"line": 167,
+					"line": 168,
 					"column": 16,
 					"label": "2020"
 				},
 				{
-					"line": 190,
+					"line": 191,
 					"column": 15,
 					"label": "2021"
 				},
 				{
-					"line": 246,
+					"line": 247,
 					"column": 14,
 					"label": "2022"
 				},
 				{
-					"line": 284,
+					"line": 285,
 					"column": 15,
 					"label": "2023"
 				},
 				{
-					"line": 411,
+					"line": 412,
 					"column": 18,
 					"label": "2024"
 				},
 				{
-					"line": 750,
+					"line": 751,
 					"column": 12,
 					"label": "书签"
 				}
@@ -1097,6 +1097,21 @@
 					"line": 2170,
 					"column": 7,
 					"label": "js"
+				}
+			]
+		},
+		{
+			"path": "../../目录/魔兽世界.html",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 42,
+					"column": 5,
+					"label": ""
 				}
 			]
 		}
