@@ -3,17 +3,28 @@ layout: page2
 title: 网词查询
 nav_text: 网词查询
 nav_url: <a href="/xiaogongju">小工具</a>
-permalink: wangcichaxun
+permalink: wangci
 ---
-<input type="text" placeholder="输入" autocomplete="off" id="输入" onkeyup="document.getElementById('结果').innerHTML='';" style="font-size:1.2em;"><a onclick="查询(document.getElementById('输入').value.toLowerCase())">查询</a><br>
-<div id="结果">
-
-</div>
+<input type="text" placeholder="输入" autocomplete="off" id="输入" onkeyup="document.getElementById('划词').innerHTML=document.getElementById('输入').value" style="font-size:1.6em;"> <a onclick="查询(document.getElementById('输入').value)">查询</a><br>
+<br>
+<fieldset id="划词" onmouseup="划词(event)">
+</fieldset>
+<fieldset id="结果">
+	刷微博啥的总能看到一些人说话夹杂各种缩写、圈内用语，搜索半天才弄明白什么意思，下次再遇到又忘了啥意思了，于是做了这个网页。<br>
+	输入要查询的词，点击“查询”。<br>
+	或者复制整段内容，在上方会显示你输入的内容，用鼠标选中其中想查询的词汇。
+</fieldset>
+<div id="结果2"></div>
 
 <script>
-function 查询(o){
+
+if(window.location.href.indexOf("?")!=-1){
+	查询(window.location.href.split("?")[1])
+}
+
+function 查询(o,l){
 try{
-	let 地址="/app/mqfyq/wc/"+o+".json";
+	let 地址="/app/mqfyq/wc/"+o.toLowerCase()+".json";
 	let GetJson=$.ajax({
 		url:地址,
 		type:"GET",
@@ -24,25 +35,51 @@ try{
 	});
 	地址=GetJson.responseText;
 
-	console.log(1)
-
 	if(地址[0]=="／"){
-		console.log(2)
 		查询(地址.split("／")[1]);
 	}else{
-		console.log(3)
-		document.getElementById("结果").innerHTML=地址;
+		let 结果;
+		if(地址.indexOf("［")!=-1){
+			地址=地址.split("［");
+			结果=地址[0];
+			for(let i=1;地址.length>i;i++){
+				let 临时=地址[i].split("］");
+				结果+="<a onclick=\"查询('"+临时[0]+"',1)\">"+临时[0]+"</a>"+临时[1]
+			}
+		}else{
+			结果=地址;
+		}
+		if(l){
+			document.getElementById("结果2").innerHTML="<fieldset>"+结果+"</fieldset>"+document.getElementById("结果2").innerHTML;
+		}else{
+			document.getElementById("结果").innerHTML="<legend>"+o+"</legend>"+结果;
+			document.getElementById("结果2").innerHTML="";
+		}
+		
 	}
 
 	}catch(e){
-	document.getElementById("结果").innerHTML="无相关数据，或网络异常。<br>可以尝试精简查询内容，或使用汉字的拼音首字母缩写。";
+	document.getElementById("结果").innerHTML="<legend>"+o+"</legend>无相关数据，或网络异常。<br>可以尝试精简查询内容，或使用汉字的拼音首字母缩写。";
 }
 }
 
 document.addEventListener('keydown',function(event){
     if(event.keyCode===13){
-		查询(document.getElementById('输入').value.toLowerCase());
+		查询(document.getElementById('输入').value);
     }
 });
 
+function 划词(e) {
+  var selectedText;
+  if (window.getSelection) { // 现代浏览器
+    selectedText = window.getSelection().toString();
+  } else if (document.selection && document.selection.type != "Control") { // IE < 9
+    selectedText = document.selection.createRange().text;
+  }
+ 
+  // 检查是否有文本被选中
+  if (selectedText) {
+	查询(selectedText)
+  }
+}
 </script>
