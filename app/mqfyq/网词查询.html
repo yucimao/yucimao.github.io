@@ -11,8 +11,12 @@ permalink: wangci
 </fieldset>
 <fieldset id="结果">
 	刷微博啥的总能看到一些人说话夹杂各种缩写、圈内用语，搜索半天才弄明白什么意思，下次再遇到又忘了啥意思了，于是做了这个网页。<br>
+	<br>
+	<b>使用方法</b>：<br>
 	输入要查询的词，点击“查询”。<br>
-	或者复制整段内容，在上方会显示你输入的内容，用鼠标选中其中想查询的词汇。
+	或者复制整段内容，在上方会显示你输入的内容，用鼠标选中其中想查询的词汇。<br>
+	如果查不到，可以尝试精简查询内容，或使用汉字的拼音首字母缩写。<br>
+	（大概率是查不到的，因为数据库内容很少，主要是我自用的 → →）
 </fieldset>
 <div id="结果2"></div>
 
@@ -31,13 +35,12 @@ try{
 		dataType:"json",
 		async:false,
 		success:function(data){
-			console.log("成功")
-		},
-		error:function(xhr,status,error){
-			console.log("失败")
 		}
 	});
 	地址=GetJson.responseText;
+	if(地址.indexOf("<title>尝试跳转中 - 猫球博客</title>")!=-1){
+		console.log()=1;
+}
 
 	if(地址[0]=="／"){
 		查询(地址.split("／")[1]);
@@ -63,7 +66,7 @@ try{
 	}
 
 	}catch(e){
-	document.getElementById("结果").innerHTML="<legend>"+o+"</legend>无相关数据，或网络异常。<br>可以尝试精简查询内容，或使用汉字的拼音首字母缩写。";
+		notyf.alert("无相关数据 或 网络异常");
 }
 }
 
