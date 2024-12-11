@@ -39,4 +39,10 @@ try{
 }
 }
 
+document.addEventListener('keydown',function(event){
+    if(event.keyCode===13){
+		查询(document.getElementById('输入').value.toLowerCase());
+    }
+});
+
 </script>
