@@ -1,0 +1,39 @@
+---
+layout: page2
+title: 网词查询
+nav_text: 网词查询
+nav_url: <a href="/xiaogongju">小工具</a>
+permalink: wangcichaxun
+---
+<input type="text" placeholder="输入" autocomplete="off" id="输入" oninput="查询(document.getElementById('输入').value)" style="font-size:1.2em;"><br>
+<div id="结果">
+
+</div>
+
+<script>
+function 查询(o){
+	o=o.toLowerCase();
+try{
+	let 地址="/app/mqfyq/wc/"+o+".json";
+	let GetJson=$.ajax({
+		url:地址,
+		type:"GET",
+		dataType:"json",
+		async:false,
+		success:function(data){
+		}
+	});
+	地址=GetJson.responseJSON;
+
+	if(地址["t"]){
+		查询(地址["t"]);
+	}else{
+		document.getElementById("结果").innerHTML=GetJson.responseText;
+	}
+
+	}catch(e){
+	document.getElementById("结果").innerHTML="无相关数据，或网络异常。<br>可以尝试精简查询内容，或使用汉字的拼音首字母缩写。";
+}
+}
+
+</script>
