@@ -31,6 +31,10 @@ try{
 		dataType:"json",
 		async:false,
 		success:function(data){
+			console.log("成功")
+		},
+		error:function(xhr,status,error){
+			console.log("失败")
 		}
 	});
 	地址=GetJson.responseText;
@@ -71,14 +75,12 @@ document.addEventListener('keydown',function(event){
 
 function 划词(e) {
   var selectedText;
-  if (window.getSelection) { // 现代浏览器
-    selectedText = window.getSelection().toString();
-  } else if (document.selection && document.selection.type != "Control") { // IE < 9
-    selectedText = document.selection.createRange().text;
+  if(window.getSelection){
+    selectedText=window.getSelection().toString();
+  }else if(document.selection && document.selection.type!="Control"){
+    selectedText=document.selection.createRange().text;
   }
- 
-  // 检查是否有文本被选中
-  if (selectedText) {
+  if(selectedText){
 	查询(selectedText)
   }
 }
