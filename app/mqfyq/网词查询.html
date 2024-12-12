@@ -1,10 +1,13 @@
 ---
-layout: page2
+layout: zk
 title: 网词查询
 nav_text: 网词查询
 nav_url: <a href="/xiaogongju">小工具</a>
 permalink: wangci
+redirect_from:
+ - i/13398953
 ---
+<div id="整页">
 <input type="text" placeholder="输入" autocomplete="off" id="输入" onkeyup="document.getElementById('划词').innerHTML=document.getElementById('输入').value" style="font-size:1.6em;"> <a onclick="查询(document.getElementById('输入').value)">查询</a><br>
 <br>
 <fieldset id="划词" onmouseup="划词(event)">
@@ -19,8 +22,24 @@ permalink: wangci
 	（大概率是查不到的，因为数据库内容很少，主要是我自用的 → →）
 </fieldset>
 <div id="结果2"></div>
+</div>
 
 <script>
+let url=window.location.href;
+if(url.indexOf("?")!=-1){
+	url=url.split("?")[1];
+	let 地址="/app/mqfyq/wc/"+url.toLowerCase()+".json";
+	let GetJson=$.ajax({
+		url:地址,
+		type:"GET",
+		dataType:"json",
+		async:false,
+		success:function(data){
+		}
+	});
+	地址=GetJson.responseText;
+	document.getElementById("整页").innerHTML=地址;
+}
 function 查询(o,l){
 try{
 	let 地址="/app/mqfyq/wc/"+o.toLowerCase()+".json";
