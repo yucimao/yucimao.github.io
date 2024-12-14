@@ -19,7 +19,7 @@
 					"label": ""
 				},
 				{
-					"line": 17493,
+					"line": 17502,
 					"column": 2,
 					"label": ""
 				}
@@ -34,12 +34,12 @@
 					"label": "时间"
 				},
 				{
-					"line": 17480,
+					"line": 17488,
 					"column": 5,
 					"label": "通过"
 				},
 				{
-					"line": 17526,
+					"line": 17501,
 					"column": 8,
 					"label": "未通过"
 				}
@@ -254,62 +254,62 @@
 					"label": "2023.12.20 - 4.3"
 				},
 				{
-					"line": 2604,
+					"line": 2605,
 					"column": 13,
 					"label": "2024.01.31 - 4.4"
 				},
 				{
-					"line": 2657,
+					"line": 2658,
 					"column": 8,
 					"label": "2024.03.13 - 4.5"
 				},
 				{
-					"line": 2745,
+					"line": 2746,
 					"column": 10,
 					"label": "2024.04.24 - 4.6"
 				},
 				{
-					"line": 2890,
+					"line": 2891,
 					"column": 8,
 					"label": "2024.06.05 - 4.7"
 				},
 				{
-					"line": 3082,
+					"line": 3083,
 					"column": 27,
 					"label": "2024.07.17 - 4.8"
 				},
 				{
-					"line": 3247,
+					"line": 3248,
 					"column": 10,
 					"label": "2024.08.28 - 5.0"
 				},
 				{
-					"line": 3318,
+					"line": 3319,
 					"column": 13,
 					"label": "2024.10.09 - 5.1"
 				},
 				{
-					"line": 3369,
+					"line": 3370,
 					"column": 9,
 					"label": "2024.11.20 - 5.2"
 				},
 				{
-					"line": 3440,
+					"line": 3445,
 					"column": 4,
 					"label": ""
 				},
 				{
-					"line": 3484,
+					"line": 3489,
 					"column": 12,
 					"label": "其他记录"
 				},
 				{
-					"line": 3547,
+					"line": 3552,
 					"column": 18,
 					"label": "关键词"
 				},
 				{
-					"line": 3648,
+					"line": 3653,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -669,7 +669,7 @@
 					"label": "2024"
 				},
 				{
-					"line": 753,
+					"line": 755,
 					"column": 12,
 					"label": "书签"
 				}
@@ -1119,122 +1119,122 @@
 			"path": "blog/笔记/酒仙笔记/最终幻想14.html",
 			"bookmarks": [
 				{
-					"line": 45,
+					"line": 52,
 					"column": 7,
 					"label": "★★★★★"
 				},
 				{
-					"line": 61,
+					"line": 68,
 					"column": 4,
 					"label": "★★★★"
 				},
 				{
-					"line": 63,
+					"line": 70,
 					"column": 7,
 					"label": "★★★"
 				},
 				{
-					"line": 95,
+					"line": 102,
 					"column": 7,
 					"label": "【地区】"
 				},
 				{
-					"line": 97,
+					"line": 104,
 					"column": 12,
 					"label": "拉诺西亚"
 				},
 				{
-					"line": 109,
+					"line": 116,
 					"column": 12,
 					"label": "黑衣森林"
 				},
 				{
-					"line": 116,
+					"line": 123,
 					"column": 11,
 					"label": "萨纳兰"
 				},
 				{
-					"line": 121,
+					"line": 128,
 					"column": 12,
 					"label": "库尔札斯"
 				},
 				{
-					"line": 127,
+					"line": 134,
 					"column": 11,
 					"label": "摩杜纳"
 				},
 				{
-					"line": 129,
+					"line": 136,
 					"column": 13,
 					"label": "阿巴拉提亚"
 				},
 				{
-					"line": 131,
+					"line": 138,
 					"column": 10,
 					"label": "龙堡"
 				},
 				{
-					"line": 133,
+					"line": 140,
 					"column": 13,
 					"label": "基拉巴尼亚"
 				},
 				{
-					"line": 137,
+					"line": 144,
 					"column": 12,
 					"label": "远东之国"
 				},
 				{
-					"line": 141,
+					"line": 148,
 					"column": 11,
 					"label": "奥萨德"
 				},
 				{
-					"line": 143,
+					"line": 150,
 					"column": 12,
 					"label": "诺弗兰特"
 				},
 				{
-					"line": 156,
+					"line": 163,
 					"column": 5,
 					"label": "【种族】"
 				},
 				{
-					"line": 158,
+					"line": 165,
 					"column": 9,
 					"label": "拉拉菲尔族"
 				},
 				{
-					"line": 172,
+					"line": 179,
 					"column": 11,
 					"label": "敖龙族"
 				},
 				{
-					"line": 176,
+					"line": 183,
 					"column": 9,
 					"label": "卢恩族"
 				},
 				{
-					"line": 186,
+					"line": 193,
 					"column": 10,
 					"label": "妖精族"
 				},
 				{
-					"line": 190,
+					"line": 197,
 					"column": 8,
 					"label": "鲶鱼精"
 				},
 				{
-					"line": 199,
+					"line": 206,
 					"column": 7,
 					"label": "【人物】"
 				},
 				{
-					"line": 225,
+					"line": 232,
 					"column": 8,
 					"label": "【其他】"
 				},
 				{
-					"line": 243,
+					"line": 250,
 					"column": 6,
 					"label": "let 表"
 				}
