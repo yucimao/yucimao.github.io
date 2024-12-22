@@ -28,7 +28,7 @@ for(let i=0;data.length>i;i++){
     for(let i2=3;临时3>i2;i2++){
         if(data[i][i2][0]=="："&&data[i][i2].indexOf("_")!=-1){
             临时=data[i][i2].split("：")[1].split("_");
-            data[i][i2]="x：<small><b><a onclick=\"dw2('"+临时[0]+"')\">"+临时[0]+"</a>（<a onclick=\"dw2('"+临时[0]+"_"+临时[1]+"')\">"+临时[1]+"</a>）</b></small>";
+            data[i][i2]="x：<small><a onclick=\"dw2('"+临时[0]+"')\">"+临时[0]+"</a>（<a onclick=\"dw2('"+临时[0]+"_"+临时[1]+"')\">"+临时[1]+"</a>）</small>";
             data[i][data[i].length]="_"+临时[0];
             data[i][data[i].length]="_"+临时[0]+"_"+临时[1];
         }
