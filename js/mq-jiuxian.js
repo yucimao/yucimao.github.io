@@ -3,6 +3,8 @@ document.getElementById("酒仙").innerHTML="<style>#弹窗{position:absolute;le
 let oo="";
 let 跳转="";
 
+if(表_代码["酒的列表"]){}else{表_代码["酒的列表"]="酒的列表"}
+
 let 正=document.getElementById("正文").innerHTML.split("〈");
 let 文=正[0];
 let 遗漏=[];
@@ -51,7 +53,7 @@ for(let i=1;正.length>i;i++){
 if(遗漏.length!=0){console.log("〈"+遗漏.join("〉〈")+"〉")}
 文=文.replace(new RegExp('\\[',"g"),"<i> [<\/i>").replace(new RegExp('\\]',"g"),"<i>] <\/i>").replace(new RegExp('〔',"g"),"[").replace(new RegExp('〕',"g"),"]");
 文=文.split("［跳转］");
-文=文[0]+跳转+"<br><a href='#酒的列表'>酒的列表</a>"+文[1]+"<hr><a name='酒的列表'></a><h3>酒的列表</h3><ol>"
+文=文[0]+跳转+"<br><a href='#"+表_代码["酒的列表"]+"'>"+表_代码["酒的列表"]+"</a>"+文[1]+"<hr><a name='"+表_代码["酒的列表"]+"'></a><h3>"+表_代码["酒的列表"]+"</h3><ol>"
 
 let keys=Object.keys(表);
 keys.sort((a,b)=>a.toLowerCase().localeCompare(b.toLowerCase()));
