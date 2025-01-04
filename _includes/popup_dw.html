@@ -5,9 +5,9 @@
 <script>
     document.getElementById('dw_zz').style.display="none";
     document.getElementById('dw_x').style.display="none";
-    let dwb = "";
-    let dwd = "0";
-    let dwe = "";
+    let dwb="";
+    let dwd="0";
+    let dwe="";
     function dw() {
         document.getElementById('dw_x').style.display="";
         document.getElementById('dw_zz').style.display="";
@@ -24,6 +24,7 @@
         }
         dwb=dwb.replace(/［引号］/g, "\"");
         document.getElementById("dwc").innerHTML=dwb;
+        dwe="";
     }
     function dw_x() {
         document.getElementById("dwc").innerHTML="";
