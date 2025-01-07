@@ -14,12 +14,12 @@
 			"path": "../../目录/小像素点.html",
 			"bookmarks": [
 				{
-					"line": 17781,
+					"line": 17913,
 					"column": 68,
 					"label": ""
 				},
 				{
-					"line": 17806,
+					"line": 17932,
 					"column": 2,
 					"label": ""
 				}
@@ -29,7 +29,7 @@
 			"path": "../xn-o1qx19eeqi.github.io/i/x/b.json",
 			"bookmarks": [
 				{
-					"line": 17735,
+					"line": 17861,
 					"column": 16,
 					"label": "通过"
 				}
@@ -64,57 +64,57 @@
 					"label": "注释"
 				},
 				{
-					"line": 261,
+					"line": 262,
 					"column": 1,
 					"label": "注释 ↑"
 				},
 				{
-					"line": 347,
+					"line": 348,
 					"column": 13,
 					"label": "目录"
 				},
 				{
-					"line": 383,
+					"line": 384,
 					"column": 7,
 					"label": "【相关事件】"
 				},
 				{
-					"line": 421,
+					"line": 422,
 					"column": 30,
 					"label": "原神之前"
 				},
 				{
-					"line": 446,
+					"line": 447,
 					"column": 19,
 					"label": "2017.01.20 - 研发阶段"
 				},
 				{
-					"line": 472,
+					"line": 473,
 					"column": 18,
 					"label": "2019.06.08 - 公布pv"
 				},
 				{
-					"line": 516,
+					"line": 517,
 					"column": 15,
 					"label": "2019.06.21 - 一测"
 				},
 				{
-					"line": 608,
+					"line": 609,
 					"column": 18,
 					"label": "2020.03.19 - 二测"
 				},
 				{
-					"line": 629,
+					"line": 630,
 					"column": 29,
 					"label": "2020.06.12 - 三测"
 				},
 				{
-					"line": 732,
+					"line": 731,
 					"column": 25,
 					"label": "2020.09.15 - 1.0"
 				},
 				{
-					"line": 887,
+					"line": 886,
 					"column": 8,
 					"label": "2020.11.11 - 1.1"
 				},
@@ -279,42 +279,42 @@
 					"label": "2024.07.17 - 4.8"
 				},
 				{
-					"line": 3227,
+					"line": 3228,
 					"column": 10,
 					"label": "2024.08.28 - 5.0"
 				},
 				{
-					"line": 3300,
+					"line": 3301,
 					"column": 13,
 					"label": "2024.10.09 - 5.1"
 				},
 				{
-					"line": 3345,
+					"line": 3346,
 					"column": 9,
 					"label": "2024.11.20 - 5.2"
 				},
 				{
-					"line": 3468,
+					"line": 3471,
 					"column": 15,
 					"label": "2025.01"
 				},
 				{
-					"line": 3473,
+					"line": 3480,
 					"column": 4,
 					"label": ""
 				},
 				{
-					"line": 3519,
+					"line": 3526,
 					"column": 12,
 					"label": "其他记录"
 				},
 				{
-					"line": 3583,
+					"line": 3590,
 					"column": 18,
 					"label": "关键词"
 				},
 				{
-					"line": 3668,
+					"line": 3675,
 					"column": 0,
 					"label": "底层代码"
 				}
@@ -664,17 +664,17 @@
 					"label": "2022"
 				},
 				{
-					"line": 285,
+					"line": 286,
 					"column": 15,
 					"label": "2023"
 				},
 				{
-					"line": 413,
+					"line": 415,
 					"column": 18,
 					"label": "2024"
 				},
 				{
-					"line": 764,
+					"line": 766,
 					"column": 12,
 					"label": "书签"
 				}
@@ -1252,6 +1252,36 @@
 					"line": 1526,
 					"column": 5,
 					"label": "成人"
+				}
+			]
+		},
+		{
+			"path": "blog/私人/我的排行榜/收藏_纪念品.html",
+			"bookmarks": [
+				{
+					"line": 18,
+					"column": 29,
+					"label": "★★★★★ 非常喜欢"
+				},
+				{
+					"line": 20,
+					"column": 13,
+					"label": "★★★★ 很喜欢"
+				},
+				{
+					"line": 38,
+					"column": 18,
+					"label": "★★★ 喜欢"
+				},
+				{
+					"line": 42,
+					"column": 10,
+					"label": "【记忆碎片】"
+				},
+				{
+					"line": 50,
+					"column": 13,
+					"label": "【仓库】"
 				}
 			]
 		}
