@@ -7,7 +7,7 @@ permalink: i/13398953
 redirect_from:
  - wangci
 ---
-<div id="整页">
+<div id="整页"><!--［按钮］-->
 <input type="text" placeholder="输入" autocomplete="off" id="输入" onkeyup="document.getElementById('划词').innerHTML=document.getElementById('输入').value" style="font-size:1.6em;"> <a onclick="查询(document.getElementById('输入').value)">查询</a><br>
 <br>
 <fieldset id="划词" onmouseup="划词(event)">
@@ -21,8 +21,8 @@ redirect_from:
 	如果查不到，可以尝试精简查询内容，或使用汉字的拼音首字母缩写。<br>
 	（大概率是查不到的，因为数据库内容很少，主要是我自用的 → →）
 </fieldset>
-<div id="结果2"></div>
 </div>
+<div id="结果2"></div>
 
 <script>
 let url=window.location.href;
@@ -37,8 +37,13 @@ if(url.indexOf("?")!=-1){
 		success:function(data){
 		}
 	});
-	地址=GetJson.responseText;
-	document.getElementById("整页").innerHTML=地址;
+	地址=GetJson.responseText.split("［");
+	let dy=地址[0];
+	for(let i=1;地址.length>i;i++){
+		let 临时=地址[i].split("］");
+		dy+="<a onclick=\"查询('"+临时[0]+"',1)\">"+临时[0]+"</a>"+临时[1];
+	}
+	document.getElementById("整页").innerHTML=dy;
 }
 function 查询(o,l){
 try{
