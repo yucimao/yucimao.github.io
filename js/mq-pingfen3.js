@@ -60,14 +60,14 @@ function 作品分类(){
     }
     for(let i=0;排序.length>i;i++){
         //<span class="提示" data-msg="内容">表面</span>
-        dy+="<h4>"+排序[i]+" <small class='提示' data-msg='平均"+(作品[排序[i]][0]/(作品[排序[i]].length-1)+"").split(".")[0]+"'>♥"+作品[排序[i]][0]+"</small></h4><ol>"
+        dy+="<h3>"+排序[i]+" <small class='提示' data-msg='平均"+(作品[排序[i]][0]/(作品[排序[i]].length-1)*10+"").split(".")[0]/10+"'>♥"+作品[排序[i]][0]+"</small></h3><ol>"
         for(let o=1;作品[排序[i]].length>o;o++){
             dy+="<li><b>"+作品[排序[i]][o][0]+"</b></li>";
             // dy+="<li><b>"+作品[排序[i]][o][0]+"</b> <small>"+作品[排序[i]][o][2]+"</small></li>";
         }
         dy+="</ol>"
     }
-    dy+="<h4>其他</h4><ol>";
+    dy+="<h3>其他</h3><ol>";
     for(let i=0;其他.length>i;i++){
         dy+="<li><b>"+其他[i][0]+"</b>";
         if(其他[i][1]&&其他[i][1]!=""){
