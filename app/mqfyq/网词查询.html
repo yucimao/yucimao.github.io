@@ -10,8 +10,7 @@ redirect_from:
 <div id="整页"><!--［按钮］-->
 <input type="text" placeholder="输入" autocomplete="off" id="输入" onkeyup="document.getElementById('划词').innerHTML=document.getElementById('输入').value" style="font-size:1.6em;"> <a onclick="查询(document.getElementById('输入').value)">查询</a><br>
 <br>
-<fieldset id="划词" onmouseup="划词(event)">
-</fieldset>
+<fieldset id="划词" onmouseup="划词(event)"></fieldset>
 <fieldset id="结果">
 	刷微博啥的总能看到一些人说话夹杂各种缩写、圈内用语，搜索半天才弄明白什么意思，下次再遇到又忘了啥意思了，于是做了这个网页。<br>
 	<br>
@@ -26,7 +25,11 @@ redirect_from:
 
 <script>
 let url=window.location.href;
-if(url.indexOf("?")!=-1){
+if(url.indexOf("?w=")!=-1){
+	url=url.split("?w=")[1];
+	document.getElementById("输入").value=url[1];
+	查询(url[1]);
+}else if(url.indexOf("?")!=-1){
 	url=url.split("?")[1];
 	let 地址="/app/mqfyq/wc/"+url.toLowerCase()+".json";
 	let GetJson=$.ajax({
