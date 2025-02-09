@@ -1,0 +1,77 @@
+---
+layout: page2
+title: 游戏<ruby><rb>圈</rb><rt>juàn</rt></ruby>往事
+nav_text: 游戏<ruby><rb>圈</rb><rt>juàn</rt></ruby>往事
+nav_url: <a href="/wanyouxi">玩游戏</a>
+permalink: youxijuan
+---
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+small.提示,.灰 a,.红,.灰{color:#bbbbbb;}
+.红 a{color:#ff0000}
+[onclick^="删除只看"]:hover{text-decoration:line-through}
+</style>
+<style id="只看">.条{display:block;}</style>
+<small id="删除只看"></small>
+
+<div id="dy"></div>
+<script>
+let d=[
+"<h4>厂商</h4>",
+[
+    [9,3,"事件简述","事件详情",["直接1相关","2"],["其他参与者"]],
+    [9,3,"事件简述","事件详情",["直接相关"],["其他参与者"]],
+    [91,9,"事件简述","事件详情",["直接相关"],["其他参与者"]],
+    [9,3,"事件简述","事件详情",["直接相关"],["其他参与者"]],
+    // [总分,评分人数,"事件简述","事件详情",["直接相关"],["其他参与者"]],
+],
+"<h4>玩家</h4>",[],
+"<h4>战斗力</h4>",[],
+"<h4>反对者</h4>",[],
+];
+
+let dy="";
+for(let i=0;d.length>i;i++){
+    if(typeof d[i]=="string"){
+        dy+=d[i];
+    }else{
+    let y=[];
+    d[i].sort((a,b)=>(b[0]/b[1])-(a[0]/a[1]));
+    for(let i2=0;d[i].length>i2;i2++){
+        //[总分,评分人数,"事件简述","事件详情",["直接相关"],["其他参与者"]],
+        dy+="<span class='条 "+d[i][i2][4].join( )+" "+d[i][i2][5].join( )+"'><small class='提示' data-msg='平均"+(d[i][i2][0]/d[i][i2][1]*10+"").split(".")[0]/10+"分 评分人数"+d[i][i2][1]+"人'>"+(i2+1)+".</small> "+d[i][i2][2];
+        if(d[i][i2][3]&&d[i][i2][3]!=""){dy+=" <a onclick=\"dw(dwb='"+d[i][i2][3]+"')\">详情</a>　"}
+        dy+="<small>(<span class='红'> "
+            +d[i][i2][4].map(item=>`<a onclick=\"只看('${item}')\">${item}</a>`).join(' ')
+            +"</span>";
+        if(d[i][i2][5].length>0){
+            dy+="<span class='灰'> "+d[i][i2][5].map(item=>`<a onclick=\"只看('${item}')\">${item}</a>`).join(' ')
+            +"</span>";
+        }
+        dy+=" )</small></span>";
+    }
+}
+}
+document.getElementById("dy").innerHTML=dy;
+
+let 看=[];
+function 只看更新(){
+    document.getElementById("删除只看").innerHTML="只看："+看.map(item=>`<a onclick=\"删除只看('${item}')\">${item}</a> `).join('');
+    document.getElementById("只看").innerHTML=".条{display:none;}."+看.join(",.")+"{display:block;}"+看.map(item=>`[onclick="只看('${item}')"]`).join(",")+"{font-weight:bold}";
+}
+function 只看(o){
+    if(看.indexOf(o)!=-1){}else{
+        看[看.length]=o;
+        只看更新();
+    };
+}
+function 删除只看(o){
+    看=看.filter(item=>item!==o);
+    if(看.length==0){
+        document.getElementById("删除只看").innerHTML="";
+        document.getElementById("只看").innerHTML=".条{display:block;}";
+    }else{
+        只看更新();
+    }
+}
+</script>
