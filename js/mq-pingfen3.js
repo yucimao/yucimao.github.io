@@ -2,7 +2,7 @@ let 作品={}
 
 let 排名=0;
 let dy头="<link rel='stylesheet' href='/css/all2.css'><style>.灰{color:#00000020}td:nth-child(2) sub,li sub{color:#00000060}</style>";
-let dy=dy头+"<a onclick='作品分类()'>按作品分类</a>　<a onclick='one()'>one</a><br><br>";
+let dy=dy头+"<div id='div头'><a onclick='作品分类()'>按作品分类</a>　<a onclick='one()'>one</a><br><br></div>";
 for(let i=0;data.length>i;i++){
     dy+="<table><tr><td colspan='2'><b>"+data[i][0]+"</b></td></tr>"
     for(let o=1;data[i].length>o;o++){
