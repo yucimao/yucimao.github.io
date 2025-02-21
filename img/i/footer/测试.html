@@ -1,0 +1,36 @@
+<script src="/js/jquery.min.js"></script><div class="sidebar_fz6m" id="footer_me_m"></div><div class="sidebar_fz6m" id="footer_me_e"></div><div id="sidebar_fz6m" class="bukexuanzhong"><br><br><div style="position: absolute;bottom:140px;left:30%;"></div><div id="footer_dy"></div></div><script>
+
+let footer_b="C:/mq/博客/yucimao.github.io/img/i/footer/"+"cs/lbxx";
+
+$('#footer_me_e').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 200);
+    return false;
+});
+
+document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+</script>
+<style>
+    @media (min-width: 730px) {
+    footer {position: relative;top: 300px;z-index: -1001;}
+    footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+    .sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
+    #footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+    #footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+    #footer_me_m:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
+    #footer_me_m{left:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
+    #sidebar_fz6m{display:none;}
+    .dn_inline{display:inline;}
+    .footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
+    }
+    @media screen and (max-width: 730px){
+    
+    #sidebar_fz6m {position: relative;top: 300px;z-index: 999;float: left;width: 100%;}
+    .sidebar_fz6m{display:none;}
+    .footer_me_m{position: absolute;bottom:0;left:0;}
+    .footer_me_e{position: absolute;bottom:0;right:0;}
+    }
+    </style>
