@@ -26,6 +26,20 @@ let 代码={//编辑html
 }
 let d={
 
+// 大写
+// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
+// "A":["选择","B","C_D","E|C_D"], //显示按钮 B、C、E（_和|后面不显示） // "A|B|C" 显示A 跳转到B 提示C // "／内容"直接显示
+// "A":"／B", //A同B
+// "编辑本页":["html","yucimao","app/s.html"],
+// "打开程序或文件夹":["打开","C:/mq/目录"],
+
+// 传给手机，用via打开一下就行了（名字s.html），它会自动跑到via的文件夹里
+
+// "":["选择",""],
+// "":["选择",""],
+// "":["选择",""],
+// "":["选择",""],
+
 //目录
 "清理":"／定期清理","定期清理":["选择","愿望单"],
 "搜索":["选择","百度","必应","谷歌搜索"],
@@ -36,25 +50,22 @@ let d={
 "目录/游戏":["C:/MQ/目录/游戏.html"],
 "STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
 "直播":["选择","B站直播","斗鱼"],
-"AI":["选择","文心一言","天工大.写作","DeepSeek","腾讯元宝","／<br>","360AI","天工大模型","ChatGPT","秘塔AI","KIMI","百度AI","／<br><h4>图片</h4>","RaphaelAI","免费DeepSeek导航","／<br><br><h4>AI检测</h4>","／朱雀大：","图片_朱雀大","文本_朱雀大"],
-"天工大.写作":["https://www.tiangong.cn/chat/speed_writing/002"],
-"DEEPSEEK":["https://chat.deepseek.com/"],
+"AI":["选择","腾讯元宝","文心一言","天工大.写作","DeepSeek","／<br>","360AI","天工大模型","ChatGPT","秘塔AI","KIMI","百度AI","／<br>","免费DeepSeek导航","／<br><h4>图片</h4>","RaphaelAI","／<br><br><h4>AI检测</h4>","／朱雀大：","图片_朱雀大","文本_朱雀大","／<br><a href='https://demo.exa.ai/hallucination-detector'>幻觉检测</a>"],
 
-// "":["选择",""],
+"资源":["选择","／<h2>免费可商用</h2>",
+"／<br>音乐","／<a href='https://mixkit.co/free-stock-music/'>Mixkit</a>",
+"／<br>音效","／<a href='https://www.ear0.com/pack'>耳聆网</a>"
+],
 
-//字母
 "B":"／B站",
 "哔哩哔哩":["https://www.bilibili.com","https://search.bilibili.com/all?keyword=【】"],
 "P":"／P站",
 "P站":["选择","pixiv","PornHub"],
 "S":"／搜索",
-// "":["",""],
 
-//编辑
 "编辑":["html","C:/js/s.html"],
 "测试":"／编辑",
 
-//博客
 "博客":["选择","打开博客","李猫球.com","／<br>",
 	"打赏","愿望单","／<br>",
 	"KTV","小工具","／<br>",
@@ -73,7 +84,6 @@ let d={
 "二扯奶茶店":["https://limaoqiu.com/biji/erchenaichadian",""],
 "小工具":["https://limaoqiu.com/xiaogongju"],
 "愿望单":["打开","C:/mq/博客/yucimao.github.io/blog/猫球日记/其他日记/愿望单"],
-// "":["",""],
 
 //米哈游
 "米哈游":["选择","官网_米哈游","B站_米哈游","微博_米哈游","／<br><hr><h3>作品</h3>","原神","星穹铁道","绝区零","鹿鸣","米游姬",
@@ -116,7 +126,6 @@ let d={
 
 "二游":["选择","／<br><hr><h3>尘白禁区</h3>","／<a href='https://space.bilibili.com/31572302'>木木</a>","／<a href='https://space.bilibili.com/241036'>冲冲</a>"],
 
-
 "看热闹":["选择",// class='提示' data-msg='内容'
 	"／<br><hr><h2>电子榨菜</h2>",
 	"／<b>时政：</b>","波士顿圆脸","／<a href='https://space.bilibili.com/546189/video'>小Q不是导盲犬</a>","／<a href='https://space.bilibili.com/703186600/video'>麻薯波比</a>",
@@ -135,20 +144,13 @@ let d={
 
 ],
 
-"收藏":["选择","知乎收藏","B站收藏","抖音收藏"],
+"收藏":["选择","知乎_收藏","B站_收藏","抖音_收藏","小红书_收藏"],
 "电视":["选择","／<a href='C:/mq/目录/电视.html'>获取软件、源</a>","tv源","／<a href='http://zqjy.info/tv/'>测试直播源</a>"],
 "TV源":["打开","yucimao","app/i/tv"],
 
-// 大写
-// "A":["https://A","https://A?w=【】"], //输入A直接打开 输入“A xx”用A搜索
-// "A":["选择","B","C_D","E|C_D"], //显示按钮 B、C、E（_和|后面不显示） // "A|B|C" 显示A 跳转到B 提示C // "／内容"直接显示
-// "A":"／B", //A同B
-// "编辑本页":["html","yucimao","app/s.html"],
-// "打开程序或文件夹":["打开","C:/mq/目录"],
-
-// 传给手机，用via打开一下就行了（名字s.html），它会自动跑到via的文件夹里
-
-// "":["",""],
+"天工大.写作":["https://www.tiangong.cn/chat/speed_writing/002"],
+"DEEPSEEK":["https://chat.deepseek.com/"],
+"异梦":["C:/mq/异梦笔记/biji/0.html","C:/mq/异梦笔记/biji/【】.html"],
 "免费DEEPSEEK导航":["https://freedeepseek.cn"],
 "腾讯元宝":["https://yuanbao.tencent.com"],
 "RAPHAELAI":["https://raphael.app/zh"],
@@ -221,7 +223,7 @@ let d={
 "小红书":["https://www.xiaohongshu.com/","https://www.xiaohongshu.com/search_result?keyword=【】"],
 "网易云音乐":["C:/mq/app/a/网易云音乐格式解码/index.html"],
 "吃啥外卖":["C:/mq/目录/吃啥外卖.html"],"吃啥":"／吃啥外卖",
-"抖音收藏":["https://www.douyin.com/user/self?showTab=favorite_collection"],
+"抖音收藏":["https://www.douyin.com/user/self?showTab=favorite_collection"],"抖音_收藏":"／抖音收藏",
 "TAPTAP":["https://www.taptap.cn","https://www.taptap.cn/search/【】"],
 "VPN":["选择","／奶茶：<a href='https://a.naichacloud.net/'>发布页</a><a href='https://x-go.gitbook.io/nc'>发布页2</a><a href='https://naichayun.net'>1</a><a href='https://cf.ieplcloud.net/#/login'>2</a>"],
 "B站充电记录_包月":["https://member.bilibili.com/platform/allowance/upower-manage/member-manage"],
@@ -270,7 +272,8 @@ let d={
 "知网":["https://www.cnki.net/"],
 "叔叔不约":["http://www.shushubuyue.net/"],
 "聊天室":["选择","蔷薇花园","叔叔不约"],
-"知乎收藏":["https://www.zhihu.com/collection/291266189"],
+"小红书收藏":["https://www.xiaohongshu.com/user/profile/6102a5d10000000001008315?tab=fav"],"小红书_收藏":"／小红书收藏",
+"知乎收藏":["https://www.zhihu.com/collection/291266189"],"知乎_收藏":"／知乎收藏",
 "李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
 "百度":["https://www.baidu.com/","https://www.baidu.com/s?wd=【】","广告多、流氓、结果全"],
 "必应":["https://cn.bing.com/","https://cn.bing.com/search?q=【】"],
@@ -293,7 +296,7 @@ let d={
 "文件夹_STEAM":["打开","C:/mq/app/game/steam/steamapps/common/"],
 "斗鱼":["https://www.douyu.com/","https://www.douyu.com/search?kw=【】"],
 "B站直播":["https://live.bilibili.com/","https://search.bilibili.com/live?keyword=【】"],
-"B站收藏":["https://space.bilibili.com/515330/favlist"],
+"B站收藏":["https://space.bilibili.com/515330/favlist"],"B站_收藏":"／B站收藏",
 "百度指数":["https://index.baidu.com/v2/index.html#/"],
 "UID":["https://space.bilibili.com/515330","https://space.bilibili.com/【】"],
 "NGA":["https://bbs.nga.cn/","https://bbs.nga.cn/thread.php?key=【】"],
