@@ -7,12 +7,12 @@
 <link rel="shortcut icon" href="" id="icon" type="image/x-icon" />
 
 <style>
-	html{margin:30px;}
-	a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.3em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000;}
-	#dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff;}
-	[搜]:before{content:" [搜]";}
-	.提示{position:relative;border-bottom:1.5px dashed #aaa;}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%);}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989;}
-	.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}
+html{margin:30px;}
+a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.3em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000;}
+#dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff;}
+[搜]:before{content:" [搜]";}
+.提示{position:relative;border-bottom:1.5px dashed #aaa;}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%);}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989;}
+.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}
 </style>
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
@@ -36,9 +36,10 @@ let d={
 // 传给手机，用via打开一下就行了（名字s.html），它会自动跑到via的文件夹里
 
 // "":["选择",""],
-// "":["选择",""],
-// "":["选择",""],
-// "":["选择",""],
+// "":["",""],
+"调酒":["https://cocktailnotes.cn/","https://cocktailnotes.cn/search?query=【】"],
+"GROK":["https://grok.com/"],
+"豆包AI":["https://www.doubao.com/chat/"],
 
 //目录
 "清理":"／定期清理","定期清理":["选择","愿望单"],
@@ -50,7 +51,7 @@ let d={
 "目录/游戏":["C:/MQ/目录/游戏.html"],
 "STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
 "直播":["选择","B站直播","斗鱼"],
-"AI":["选择","腾讯元宝","文心一言","天工大.写作","DeepSeek","／<br>","360AI","天工大模型","ChatGPT","秘塔AI","KIMI","百度AI","／<br>","免费DeepSeek导航","／<br><h4>图片</h4>","RaphaelAI","／<br><br><h4>AI检测</h4>","／朱雀大：","图片_朱雀大","文本_朱雀大","／<br><a href='https://demo.exa.ai/hallucination-detector'>幻觉检测</a>"],
+"AI":["选择","腾讯元宝","文心一言","豆包AI","／<br>","天工大.写作","DeepSeek","／<br>","360AI","天工大模型","ChatGPT","KIMI","百度AI","Grok","／<br><b>搜索资料：</b>","秘塔AI","／<br>","免费DeepSeek导航","／<br><h4>图片</h4>","RaphaelAI","／<br><br><h4>AI检测</h4>","／朱雀大：","图片_朱雀大","文本_朱雀大","／<br><a href='https://demo.exa.ai/hallucination-detector'>幻觉检测</a>"],
 
 "资源":["选择","／<h2>免费可商用</h2>",
 "／<br>音乐","／<a href='https://mixkit.co/free-stock-music/'>Mixkit</a>",
