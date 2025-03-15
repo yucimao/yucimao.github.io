@@ -27,13 +27,13 @@ html,body {margin: 0;padding: 0;}
 
 {{ content }}
 
-{% if page.pinglun %}{% include Valine.html %}{% endif %}
-
 {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
 {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 
 </div>
 
 {% include nav.html %}
+
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
 
 </body>

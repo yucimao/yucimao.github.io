@@ -31,7 +31,6 @@ layout: default
 
 <div id="nav_zk" style="display: none;">
 <div id="nav_zk2">
-{% if page.pinglun %}{% include Valine.html %}{% endif %}
 {% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
 {% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
 </div>
@@ -71,5 +70,7 @@ localStorage.setItem(p_link[2], "1");
 }
 </script>
 {% if page.anchor == 0 %}{% else %}{% include anchor.html %}{% endif %}
+
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
 
 </body>
