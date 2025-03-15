@@ -1,10 +1,17 @@
 ---
-layout: cn_db
+layout: page2
 title: 性别互换
 nav_text: 性别互换
 nav_url: <a href="/nvquan">反女权</a>
 permalink: nvquan/xingbiehuhuan
 ---
+<style>
+    *{cursor:default;}
+    p.b{margin-top:-12px;border: 1px solid #c0c0c0;padding:8px;border-radius: 12px;}
+    p.br{margin-top:-12px;padding:8px;border-radius: 12px;}
+    </style>
+    
+    <div id="dy"></div>
 <!--
 "性转版本／"+
 "原版",
@@ -151,3 +158,31 @@ let datb=[
 ];
 
 </script>
+<script>
+    // let p = Array.from(data), i, a = [];
+    // while (p.length > 0) {
+    //     i = parseInt(Math.random() * p.length);
+    //     a.push(p[i]);
+    //     p.splice(i, 1);
+    // }
+    
+    // data = a;
+    
+    let dy="";
+    
+    data=datb.concat(data);
+    
+    for (let i=0;data.length>i;i++){
+        if(data[i].indexOf("／") != -1){
+            let 临时=data[i].split("／");
+            dy += "<p class=\"b\" onmouseover=\"javascript:this.innerHTML='" + 临时[1] + "'\" onmouseout=\"javascript:this.innerHTML='" + 临时[0] + "'\">" + 临时[0] + "</p>";
+        }else if(data[i]=="br"){
+            dy+="<p class=\"br\"><br></p>";
+        }else{
+            dy+="<p class=\"b\">"+data[i]+"</p>";
+        }
+    }
+    
+    document.getElementById("dy").innerHTML = dy;
+    
+    </script>
