@@ -286,7 +286,11 @@ const 名单=[// 新的在上
 
 ];
 
-
+function formatAmount(num){
+    const str = num.toFixed(2);
+    const number = Number(str);
+    return number.toString();
+}
 
 const sumMap={};
 名单.forEach(item=>{
@@ -297,23 +301,27 @@ const sumMap={};
 
 //总
 const totalArray=Object.entries(sumMap).map(([name,cents])=>[
-  name,
-  (cents/100).toFixed(2)
+name,
+formatAmount(cents/100)
 ]).sort((a,b)=>parseFloat(b[1]) - parseFloat(a[1]))
 .slice(0, 100);
 
 //单次
 const sortedSingle=名单.slice().sort((a,b)=>{
   return Math.round(b[1]*100) - Math.round(a[1]*100);
-}).map(item=>[item[0],item[1].toFixed(2)])
+}).map(item=>[item[0], formatAmount(item[1])])
 .slice(0, 100);
-;
 
-const originalDisplay=名单.map(item=>[item[0],item[1].toFixed(2)]);
+const originalDisplay=名单.map(item=>[
+  item[0], 
+formatAmount(item[1]),
+  item[2]
+]);
+
 
 function generateTable(data,elementId) {
   const html=`<table>${data.map(item=>
-    `<tr><td>${item[0]}</td><td>${item[1]}</td></tr>`
+    `<tr>${item.map(cell=>`<td>${cell}</td>`).join('')}</tr>`
   ).join('')}</table>`;
   document.getElementById(elementId).innerHTML=html;
 }
