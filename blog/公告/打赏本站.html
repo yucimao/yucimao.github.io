@@ -20,7 +20,15 @@ tpfd: 1
 </ul>
 （可以在备注里留下你的<b>名字</b>和<b>留言</b>）</p>
 
-<style>.dds td{padding:30px;}</style>
+<style>
+.dds td{padding:30px;}
+.active {
+            background-color: #ccc;
+            color: white !important;
+            text-decoration: none;
+            cursor: default;
+        }
+</style>
 <table class="dds">
     <tr><td><img src="{{ site.mq_d }}/img/i/qita/ewm_wx.jpg" class="tpfd" onerror="this.src='/img/i/qita/ewm_wx.jpg';this.onerror=null;" width="300px" alt="微信打赏"></td>
         <td><img src="{{ site.mq_d }}/img/i/qita/ewm_qq.jpg" class="tpfd" onerror="this.src='/img/i/qita/ewm_qq.jpg';this.onerror=null;" width="300px" alt="QQ打赏"></td></tr>
@@ -41,15 +49,18 @@ tpfd: 1
 <br>
 <br>
 
-<a name="名单"></a>
-<div id="时间"></div>
-<div id="单次金额" style="display:none;"></div>
-<div id="总金额" style="display:none;"></div>
+<a name="名单"></a><b>名单</b><br>
+<a class="打赏按钮 active" onclick="ds按钮('时间排序')">时间排序</a> . 
+<a class="打赏按钮" onclick="ds按钮('单次金额')">单次金额排序</a> . 
+<a class="打赏按钮" onclick="ds按钮('总金额')">总金额排序</a><br>
+
+<div class="打赏记录" id="时间排序"></div>
+<div class="打赏记录" id="单次金额" style="display:none;"></div>
+<div class="打赏记录" id="总金额" style="display:none;"></div>
 
 <script>
-let 名单=[// 新的在上
+const 名单=[// 新的在上
 // 39
-["隐藏",0,""],
 // ["",,""],
 ["*使",33,"谢谢，网站做的真的很棒"],//微信
 ["*长",2,"又想了一下，加两块喝个大瓶冰可乐吧"],
@@ -275,51 +286,52 @@ let 名单=[// 新的在上
 
 ];
 
-let 排序_总金额="",排序_单次金额="",排序_时间="";
-    let 临时={},临时2=[],临时3=[],临时4;
 
-    for(let i=0;名单.length>i;i++){
-        if(名单[i][0]!="隐藏"&&100>i){
-            排序_时间+="<tr><td>"+名单[i][0]+"</td><td>"+名单[i][1]+"</td><td>"+名单[i][2]+"</td></tr>";
-        }
-        if(临时2.indexOf(名单[i][0])!=-1){临时[名单[i][0]]+=名单[i][1];}else{临时[名单[i][0]]=名单[i][1];临时2[临时2.length]=名单[i][0];}
-    }
 
-    临时3=[临时2[0]];
-    for(let i=1;临时2.length>i;i++){
-        临时4=0;
-        for(let i2=1;临时3.length>i2;i2++){
-            if(临时[临时3[i2]]>临时[临时2[i]]){
-                临时3.splice(i2,0,临时2[i]);
-                临时4=1;
-                break;
-            }
-        }
-        if(临时4==0){临时3[临时3.length]=临时2[i];}
-    }
-    for(let i=0;临时3.length>i;i++){
-        if(临时3[i]!="隐藏"){排序_总金额="<tr><td>"+临时3[i]+"</td><td>"+(临时[临时3[i]]*100+"").split(".")[0]/100+"</td></tr>"+排序_总金额;}
-    }
+const sumMap={};
+名单.forEach(item=>{
+  const name=item[0];
+  const cents=Math.round(item[1]*100);
+  sumMap[name]=(sumMap[name] || 0) + cents;
+});
 
-    临时3=[名单[0]];
-    for(let i=1;名单.length>i;i++){
-        临时4=0;
-        for(let i2=1;临时3.length>i2;i2++){
-            if(临时3[i2][1]>名单[i][1]){
-                临时3.splice(i2,0,名单[i]);
-                临时4=1;
-                break;
-            }
-        }
-        if(临时4==0){临时3[临时3.length]=名单[i];}
-    }
-    for(let i=0;临时3.length>i&&100;i++){
-        if(临时3[i][0]!="隐藏"){排序_单次金额="<tr><td>"+临时3[i][0]+"</td><td>"+临时3[i][1]+"</td><td>"+临时3[i][2]+"</td></tr>"+排序_单次金额;}
-    }
+//总
+const totalArray=Object.entries(sumMap).map(([name,cents])=>[
+  name,
+  (cents/100).toFixed(2)
+]).sort((a,b)=>parseFloat(b[1]) - parseFloat(a[1]))
+.slice(0, 100);
 
-    document.getElementById("时间").innerHTML="<b>名单</b> <small>时间排序</small><br>切换成：时间排序、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、<a onclick=\"document.getElementById('时间').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td style='width:2em'><b>金额</b></td><td><b>留言</b></td></tr>"+排序_时间+"</table>";
-    document.getElementById("单次金额").innerHTML="<b>名单</b> <small>单次金额排序</small><br>切换成：<a onclick=\"document.getElementById('单次金额').style='display:none;';document.getElementById('时间').style='';\">时间排序</a>、单次金额排序、<a onclick=\"document.getElementById('单次金额').style='display:none;';document.getElementById('总金额').style='';\">总金额排序</a><br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td><td><b>留言</b></td></tr>"+排序_单次金额+"</table>";
-    document.getElementById("总金额").innerHTML="<b>名单</b> <small>总金额排序</small><br>切换成：<a onclick=\"document.getElementById('总金额').style='display:none;';document.getElementById('时间').style='';\">时间排序</a>、<a onclick=\"document.getElementById('总金额').style='display:none;';document.getElementById('单次金额').style='';\">单次金额排序</a>、总金额排序<br><table><tr><td><b>捐助者</b></td><td><b>金额</b></td></tr>"+排序_总金额+"</table>";
+//单次
+const sortedSingle=名单.slice().sort((a,b)=>{
+  return Math.round(b[1]*100) - Math.round(a[1]*100);
+}).map(item=>[item[0],item[1].toFixed(2)])
+.slice(0, 100);
+;
 
-    function 总值(){console.log(名单.reduce((a,b)=>a+b[1],0))}
+const originalDisplay=名单.map(item=>[item[0],item[1].toFixed(2)]);
+
+function generateTable(data,elementId) {
+  const html=`<table>${data.map(item=>
+    `<tr><td>${item[0]}</td><td>${item[1]}</td></tr>`
+  ).join('')}</table>`;
+  document.getElementById(elementId).innerHTML=html;
+}
+
+generateTable(originalDisplay,'时间排序');
+generateTable(totalArray,'总金额');
+generateTable(sortedSingle,'单次金额');
+
+function ds按钮(o){
+    document.querySelectorAll('.打赏按钮').forEach(link => {
+        link.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    document.querySelectorAll('.打赏记录').forEach(el => {
+        el.style.display='none';
+    });
+    document.getElementById(o).style.display='';
+}
+
+function 总值(){console.log(名单.reduce((a,b)=>a+b[1],0))}
 </script>
