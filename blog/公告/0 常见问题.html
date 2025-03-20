@@ -1,86 +1,42 @@
 ---
 layout: page
-title: 公告和常见问题
-nav_text: 公告和常见问题
+title: 常见问题
+nav_text: 常见问题
 permalink: notice
 nav_color: ffffff
 redirect_from:
  - gonggao
  - 公告
 ---
-<style>
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    #questionInput {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    #suggestions {
-        list-style: none;
-        padding: 0;
-        border: 1px solid var(--a-color);
-        display: none;
-        color: var(--a-color);
-    }
-    #suggestions li {
-        padding: 10px;
-        cursor: pointer;
-        border-bottom: 1px solid #eee;
-    }
-    #suggestions li:hover {
-        background-color: #f5f5f5;
-    }
-    .answer-box {
-        margin-top: 20px;
-        padding: 15px;
-        border: 1px solid #b5ff9c;
-        border-radius: 4px;
-        /* display: none; */
-    }
-    .highlight {
-        font-weight: bold;
-    }
-    .at:before{content:"@";}
-</style>
-
-<div class="container">
-    <input type="text" id="questionInput" placeholder="请输入您的问题...">
-    <ul id="suggestions"></ul>
-    <div id="answer" class="answer-box"></div>
-</div>
-
+<style>.container{max-width:800px;margin:0 auto;padding:20px}#questionInput{width:100%;padding:12px;font-size:16px;margin-bottom:10px}#suggestions{list-style:none;padding:0;border:1px solid var(--a-color);display:none;color:var(--a-color)}#suggestions li{padding:10px;cursor:pointer;border-bottom:1px solid #eee}#suggestions li:hover{background-color:#f5f5f5}.answer-box{margin-top:20px;padding:15px;border:1px solid #b5ff9c;border-radius:4px;/* display:none; */}.highlight{font-weight:bold}.at:before{content:"@"}</style>
+<div class="container"><input type="text" id="questionInput" placeholder="请输入您的问题……"><ul id="suggestions"></ul><div id="answer" class="answer-box"></div></div>
 <script>
-const qaData = [
+const qaData=[
 {
-    question: "交换友情链接",
-    keywords: ["友情链接","友联"],
-    answer: `本站暂时不交换友情链接。<br>
+    question:"交换友情链接",
+    keywords:["友情链接","友联"],
+    answer:`本站暂时不交换友情链接。<br>
     可以把你的网站分享给我，如果我觉得喜欢，会添加到友情链接。<br>
     注意：本站在搜索引擎几乎没有权重，如果是这个目的就不要发链接了。<br>
     如有打扰请<a href="/contactus">联系</a>，会及时撤下。`
 },
 {
-    question: "发现违规/侵权内容",
-    keywords: ["违规","侵权","投诉"],
-    answer: `如果在本站发现违规/侵权内容，请<a href="/contactus">联系我</a>。`
+    question:"发现违规/侵权内容",
+    keywords:["违规","侵权","投诉"],
+    answer:`如果在本站发现违规/侵权内容，请<a href="/contactus">联系我</a>。`
 },
 {
-    question: "发现BUG/错字",
-    keywords: ["BUG","错字","错别字","漏洞","错误"],
-    answer: `发现错字/BUG的页面如果有评论区，可以直接留言。<br>
+    question:"发现BUG/错字",
+    keywords:["BUG","错字","错别字","漏洞","错误"],
+    answer:`发现错字/BUG的页面如果有评论区，可以直接留言。<br>
     或者可以<a href="/contactus">联系我</a>。<br>
     如果问题严重、公开会导致恶劣后果，建议使用QQ或邮箱反馈。<br>
     非常感谢你的帮助。`
 },
 {
-    question: "为什么不回复？",
-    keywords: ["不回","评论","私信","留言"],
-    answer: `建议加QQ：<a onclick="复(制='{{ site.mq_qq }}')">{{ site.mq_qq }}</a><br>
+    question:"为什么不回复？",
+    keywords:["不回","评论","私信","留言"],
+    answer:`建议加QQ：<a onclick="复(制='{{ site.mq_qq }}')">{{ site.mq_qq }}</a><br>
     <br>
     <hr>
     <b>私信</b><br>
@@ -100,9 +56,9 @@ const qaData = [
     </ol>`
 },
 {
-    question: "什么情况下会进入黑名单？",
-    keywords: ["黑名单","拉黑"],
-    answer: `欢迎正常交流，可以接受反驳，但不接受：<ol>
+    question:"什么情况下会进入黑名单？",
+    keywords:["黑名单","拉黑"],
+    answer:`欢迎正常交流，可以接受反驳，但不接受：<ol>
     <li>发广告、骚扰、人身攻击、违反法律或社区规定。</li>
     <li>经常发表低质量内容（比如知乎的盐选推荐、大量重复内容），影响正常浏览网站。</li>
     <li>通过关闭评论、禁言、拉黑等方式，单方面输出观点而禁止他人反驳的账号。</li>
@@ -110,9 +66,9 @@ const qaData = [
     </ol>`
 },
 {
-    question: "什么情况会被删评论？",
-    keywords: ["删评","控评"],
-    answer: `我很提倡能够充分交流，即使意见不同也不能剥夺别人反驳的权利。<br>
+    question:"什么情况会被删评论？",
+    keywords:["删评","控评"],
+    answer:`我很提倡能够充分交流，即使意见不同也不能剥夺别人反驳的权利。<br>
     但不包括：<br>
     <ol>
         <li>发布广告。</li>
@@ -122,23 +78,19 @@ const qaData = [
     </ol>
     另外，评论被删除也可能是平台自动拦截功能或者被他人举报。`
 },
-// {
-//     question: "",
-//     keywords: ["",""],
-//     answer: ``
+//{
+//     question:"",
+//     keywords:["",""],
+//     answer:``
 // },
 {
-    question: "我还有其他问题",
-    keywords: [""],
-    answer: `可以通过以下方式联系我：<br>
+    question:"我还有其他问题",
+    keywords:[""],
+    answer:`可以通过以下方式联系我：<br>
     电子邮箱：limaoqiu<span class="at"></span>qq.com <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=limaoqiu@qq.com" target="_blank"><small>发送邮件</small></a> <a onclick="复(制='limaoqiu@qq.com')"><small>复制</small></a><br>
     QQ：<a onclick="复(制='{{ site.mq_qq }}')">{{ site.mq_qq }}</a><sup style="color:#74b8e5;"> 推荐</sup>`
 }
 ];
-
-/*
-
-*/
 
 const 默认=`
 <a href="/contactus" class="anniu">联系我</a>
@@ -147,51 +99,51 @@ const 默认=`
 <a href="/banquan" class="anniu">版权声明</a>
 `;
 
-const input = document.getElementById('questionInput');
-const suggestions = document.getElementById('suggestions');
-const answerBox = document.getElementById('answer');
-answerBox.innerHTML = 默认;
+const input=document.getElementById('questionInput');
+const suggestions=document.getElementById('suggestions');
+const answerBox=document.getElementById('answer');
+answerBox.innerHTML=默认;
 
-input.addEventListener('input', function(e) {
-    const inputText = e.target.value.toLowerCase();
-    suggestions.innerHTML = '';
-    answerBox.style.display = 'none';
+input.addEventListener('input', function(e){
+    const inputText=e.target.value.toLowerCase();
+    suggestions.innerHTML='';
+    answerBox.style.display='none';
 
-    if (!inputText) {
-        suggestions.style.display = 'none';
-        answerBox.innerHTML = 默认;
-        answerBox.style.display = 'block';
+    if (!inputText){
+        suggestions.style.display='none';
+        answerBox.innerHTML=默认;
+        answerBox.style.display='block';
         return;
     }
 
-    const matchedQuestions = qaData.filter(item => 
+    const matchedQuestions=qaData.filter(item => 
         item.keywords.some(keyword => 
             inputText.includes(keyword.toLowerCase())
         )
     );
 
-    if (matchedQuestions.length > 0) {
-        matchedQuestions.forEach(question => {
-            const li = document.createElement('li');
-            li.innerHTML = highlightKeywords(question.question, inputText);
+    if (matchedQuestions.length > 0){
+        matchedQuestions.forEach(question =>{
+            const li=document.createElement('li');
+            li.innerHTML=highlightKeywords(question.question, inputText);
             li.addEventListener('click', () => showAnswer(question.answer));
             suggestions.appendChild(li);
         });
-        suggestions.style.display = 'block';
-    } else {
-        suggestions.style.display = 'none';
+        suggestions.style.display='block';
+    } else{
+        suggestions.style.display='none';
     }
 });
 
-function highlightKeywords(question, inputText) {
-    const regex = new RegExp(`(${inputText})`, 'gi');
+function highlightKeywords(question, inputText){
+    const regex=new RegExp(`(${inputText})`, 'gi');
     return question.replace(regex, '<span class="highlight">$1</span>');
 }
 
-function showAnswer(answer) {
-    answerBox.innerHTML = answer;
-    answerBox.style.display = 'block';
-    suggestions.style.display = 'none';
-    input.value = '';
+function showAnswer(answer){
+    answerBox.innerHTML=answer;
+    answerBox.style.display='block';
+    suggestions.style.display='none';
+    input.value='';
 }
 </script>
