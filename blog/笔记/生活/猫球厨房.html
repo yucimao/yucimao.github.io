@@ -14,12 +14,15 @@ permalink: biji/maoqiuchufang
 span[onclick^="清单d("]:hover{text-decoration:line-through;}
 del[onclick^="清单d("]:hover{text-decoration:none;}
 del{color:#00000070}
+#存图{padding:10px;background-color:#ffffff}
 </style>
 
 <style id='分类s'></style>
 
 <input type="radio" name="选择" id="查看菜谱" onclick="状态=0" checked><label for="查看菜谱">查看菜谱</label>　
 <input type="radio" name="选择" id="采购计划" onclick="状态=1"><label for="采购计划">采购计划</label><br>
+
+<a href="/biji/maoqiuchufang2">缓存的清单</a><br>
 
 <br>
 
@@ -109,40 +112,39 @@ del{color:#00000070}
     }
 
     function 点击(o){
-        if(状态==0){
+        if(状态==1&&o){
+            if(data[o][4]&&data[o][4]==1){
+                for(let i=0;data[o][3].length>i;i++){
+                    清单记录[data[o][3][i]]=清单记录[data[o][3][i]].filter(item=>item!==o);
+                    if(清单记录[data[o][3][i]].length==0){
+                        if(清单.indexOf(data[o][3][i])!=-1){清单=清单.filter(item=>item!==data[o][3][i]);}
+                        else{清单del=清单del.filter(item=>item!==data[o][3][i]);}
+                        delete 清单记录[data[o][3][i]];
+                    }
+                }
+                data[o][4]=0;
+                document.getElementById("x"+o).style="";
+            }else{
+                for(let i=0;data[o][3].length>i;i++){
+                    if(清单记录[data[o][3][i]]){
+                        清单记录[data[o][3][i]].push(o);
+                    }else{
+                        清单.push(data[o][3][i]);
+                        清单记录[data[o][3][i]]=[o];
+                    }
+                }
+                data[o][4]=1;
+                document.getElementById("x"+o).style="font-weight:bold;";
+            }
+        }
+        if(状态==0&&o){
             dw(dwb=data[o][1],dwd=data[o][0]);
         }else{
-            if(o){
-                if(data[o][4]&&data[o][4]==1){
-                    for(let i=0;data[o][3].length>i;i++){
-                        清单记录[data[o][3][i]]=清单记录[data[o][3][i]].filter(item=>item!==o);
-                        if(清单记录[data[o][3][i]].length==0){
-                            if(清单.indexOf(data[o][3][i])!=-1){清单=清单.filter(item=>item!==data[o][3][i]);}
-                            else{清单del=清单del.filter(item=>item!==data[o][3][i]);}
-                            delete 清单记录[data[o][3][i]];
-                        }
-                    }
-                    data[o][4]=0;
-                    document.getElementById("x"+o).style="";
-                }else{
-                    for(let i=0;data[o][3].length>i;i++){
-                        if(清单记录[data[o][3][i]]){
-                            清单记录[data[o][3][i]].push(o);
-                        }else{
-                            清单.push(data[o][3][i]);
-                            清单记录[data[o][3][i]]=[o];
-                        }
-                    }
-                    data[o][4]=1;
-                    document.getElementById("x"+o).style="font-weight:bold;";
-                }
-            }
-
             if(清单.length==0&&清单del.length==0){
                 document.getElementById("清单").style="display:none;";
             }else{
                 document.getElementById("清单").style="display:block;";
-                document.getElementById("清单").innerHTML=`<legend><b>清单</b>&nbsp;&nbsp;<small><a onclick="截图()">保存图片</a></small></legend>`+清单.map(x=>`<span onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></span><br>`).join('')+"<br>"+清单del.map(x=>`<del onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></del><br>`).join('');
+                document.getElementById("清单").innerHTML=`<legend><b>清单</b>&nbsp;&nbsp;<small><a onclick="截图()">保存图片</a>&nbsp;&nbsp;<a onclick="缓存()">缓存</a></small></legend><div id="存图">`+清单.map(x=>`<span onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></span><br>`).join('')+"<br>"+清单del.map(x=>`<del onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></del><br>`).join('')+"</div>";
             }
         }
     }
@@ -157,9 +159,13 @@ del{color:#00000070}
         }
         点击();
     }
+function 缓存(){
+    localStorage.setItem("猫球厨房",清单.join(",")+"／"+清单del.join(","));
+    try{notyf.confirm("已保存")}catch(e){alert("已保存");}
+}
 
 function 截图(){
-const element=document.getElementById('清单');
+const element=document.getElementById('存图');
 const devicePixelRatio=window.devicePixelRatio||1;
 const scale=Math.min(2,devicePixelRatio);
 

@@ -1,0 +1,81 @@
+---
+layout: page2
+title: 猫球厨房 - 清单
+nav_text: 猫球厨房 - 清单
+nav_url: <a href="/biji/maoqiuchufang">猫球厨房</a>
+permalink: biji/maoqiuchufang2
+---
+<link rel="stylesheet" href="/css/all2.css">
+
+<style>
+    td.del,td.b{font-size:1.2em;line-height:2em;font-weight:bold;cursor:pointer;}
+    td.del{color:#00000070;text-decoration:line-through;}
+    td.b:hover{text-decoration:line-through;}
+    td.del:hover{text-decoration:none;}
+</style>
+
+<input type="text" placeholder="食材" id="新增" autocomplete="off"><button onclick="新增()">增加</button><br>
+<br>
+<table id="dy"></table>
+<br>
+<button onclick="清空()">清空</button>
+<script>
+let d=localStorage.getItem("猫球厨房");
+
+function 点击(o){
+    if(o){
+        if(d[0].indexOf(o)!=-1){
+            d[0]=d[0].filter(item=>item!==o);
+            d[1].push(o);
+        }else{
+            d[1]=d[1].filter(item=>item!==o);
+            d[0].push(o);
+        }
+    }
+
+    let dy="";
+    if(d[0].length!=0){dy+=d[0].map(x=>`<tr><td class='b' onclick="点击('${x}')">${x}</td><td>　</td><td onclick="删除('${x}')"><a><small>[删]</small></a></td></tr>`).join('');}
+    if(d[0].length!=0&&d[1].length!=0){dy+="<tr><td colspan='3'>　</td></tr>";}
+    if(d[1].length!=0){dy+=d[1].map(x=>`<tr><td class='del' onclick="点击('${x}')">${x}</td><td>　</td><td onclick="删除('${x}')"><a><small>[删]</small></a></td></tr>`).join('');}
+    document.getElementById("dy").innerHTML=dy;
+
+    localStorage.setItem("猫球厨房",d[0].join(",")+"／"+d[1].join(","));
+}
+
+if(d){
+    d=d.split("／");
+    if(d[0]==""){d[0]=[]}else{d[0]=d[0].split(",")}
+    if(d[1]==""){d[1]=[]}else{d[1]=d[1].split(",")}
+
+    点击();
+}else{
+    document.getElementById("dy").innerHTML="没有缓存";
+}
+
+function 删除(o){
+    if(d[0].indexOf(o)!=-1){
+        d[0]=d[0].filter(item=>item!==o);
+    }
+    if(d[1].indexOf(o)!=-1){
+        d[1]=d[1].filter(item=>item!==o);
+    }
+    点击();
+}
+
+function 新增(){
+    let 增=document.getElementById("新增").value;
+    if(d[1].indexOf(增)!=-1){
+        d[1]=d[1].filter(item=>item!==增);
+    }
+    if(d[0].indexOf(增)!=-1){}else{
+        d[0].push(增);
+        点击();
+    }
+}
+
+function 清空(){
+    localStorage.removeItem("猫球厨房");
+    location.replace(location.href);
+}
+
+</script>
