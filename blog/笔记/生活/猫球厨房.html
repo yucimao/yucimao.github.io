@@ -1,0 +1,77 @@
+---
+layout: page2
+title: 猫球厨房
+nav_text: 猫球厨房
+nav_url: <a href="/zatan">笔记</a>
+permalink: biji/maoqiuchufang
+---
+<link rel="stylesheet" href="/css/all2.css">
+
+<style>
+#dy span,#dy a{margin:auto 8px;line-height:46px;}
+#dy a{border:2px solid #ff9d00;border-radius:20px;padding:10px;}
+</style>
+
+<style id='分类s'></style>
+
+<input type="radio" name="选择" id="查看菜谱" onclick="状态=0" checked><label for="查看菜谱">查看菜谱</label>　
+<input type="radio" name="选择" id="采购计划" onclick="状态=1"><label for="采购计划">采购计划</label><br>
+
+<br>
+
+<a name="分类"></a>
+<fieldset id="分类">
+</fieldset>
+
+<br>
+
+<a name="选项"></a>
+<div id="dy"></div>
+
+<br>
+
+<a name="清单"></a>
+
+<script>
+    let 状态=0;
+    let data=[
+        "文字",["菜名","菜谱","分类 测试1","食材1","食材2"],
+        ["菜名","分类 测试2","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+        "文字",["菜名","分类","食材1","食材2"],
+    ];
+    let fl=["全部","测试1","测试2"];
+    document.getElementById("分类").innerHTML="<legend>分类</legend>"+fl.map(x=>`<a onclick="分类('${x}')">${x}</a>　`).join('');;
+    let dy="";
+    for(let i=0;data.length>i;i++){
+        if(Array.isArray(data[i])){
+            dy+=`<a class="${data[i][2]}" onclick="点击(${i})">${data[i][0]}</a>`;
+        }else{
+            dy+=`<span>${data[i]}</span>`;
+        }
+    }
+    document.getElementById("dy").innerHTML=dy;
+
+    function 分类(o){
+        document.getElementById("分类s").innerHTML=`[onclick="分类('${o}')"]{font-weight:bold}`;
+        if(o!="全部"){document.getElementById("分类s").insertAdjacentHTML('beforeend',`#dy span,#dy a{display:none;}.${o}{display:inline !important;}`);}
+    }
+
+    function 点击(o){
+        if(状态==0){
+            dw(dwb=data[o][1],dwd=data[o][0]);
+        }else{
+
+        }
+    }
+</script>
