@@ -16,13 +16,13 @@ let 月=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","D
 
 function 输入(){
     let 内容=document.getElementById("输入").value.split('\"');
-    let 标题=内容[1],说明=内容[3],zk码=内容[5].split("zk/")[1],日期=内容[7].split(".").join("-");
+    let 标题=内容[1],说明=内容[3],zk码=内容[5].split("i/")[1],日期=内容[7].split(".").join("-");
     let 星期 = weekArray[new Date(日期).getDay()];
     日期=日期.split("-");
     日期[1]=日期[1]*1;
     let 时=new Date().getHours();
     if(时<10){时="0"+时;}
-    let 分=new Date().getMinutes()+10;
+    let 分=new Date().getMinutes()+1;
     if(分>59){分="59";}
     
     let dy="<item>／"+

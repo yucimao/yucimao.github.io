@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>要不要写萝莉角色？</title>
+            <description>最近打算neta“萌文化”，但开始纠结要不要写萝莉角色……</description>
+            <pubDate>Sun, 30 Mar 2025 14:05:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/11343503</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/11343503</guid>
+        </item>
+
+        <item>
             <title>网页小说</title>
             <description>关于最近试着创作的小说，和探索新的小说类型。</description>
             <pubDate>Thu, 18 Apr 2024 23:37:00 +0800</pubDate>
