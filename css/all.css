@@ -40,7 +40,7 @@ table.tm tr td,table.tm tr{background-color:transparent !important}
 .x_table{border-spacing:2px;border-collapse:separate;box-shadow:initial;line-height:initial}.x_table tr{background:initial}.x_table td,th{padding:1px 1px}
 
 .bukexuanzhong,button,.anniu,#right_anchor,#right_anchor2,.nav_drop,#nav,.qbt,.biaotib,br{user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none}
-[target="_blank"].dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline}
+[target="_blank"].dk:after{content:" ◥";top:-.5em;position:relative;font-size:75%;line-height:0;vertical-align:baseline}/*↷ ◥*/
 .yincang{display:none}
 .cursor_pointer{cursor:pointer}
 .blog_img{text-align:center;color:#888;font-size:0.9em}

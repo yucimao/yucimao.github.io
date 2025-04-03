@@ -5,38 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>​猫球搜索</title>
 <link rel="shortcut icon" href="" id="icon" type="image/x-icon" />
-
-<style>
-html{margin:30px;}
+<style>html{margin:30px;}
 a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.3em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000;}
 #dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff;}
 [搜]:before{content:" [搜]";}
 .提示{position:relative;border-bottom:1.5px dashed #aaa;}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%);}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989;}
-.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}
-</style>
+.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}</style>
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
 let 默认="https://www.baidu.com/s?wd=";
-
+let 本地=1;if(location.protocol!="file:"){本地=0;}
 let p={//编辑html
 "":"",
 "博客":"https://limaoqiu.com/",
 "yucimao":"C:/mq/博客/yucimao.github.io/",
-"异梦":"C:/mq/异梦笔记/biji/",
+"异梦":(本地=1)?"C:/mq/异梦笔记/biji/":"https://猫.cafe/biji/",
 "目录":"C:/mq/目录/",
-}
-
-
+};
 
 let d={
 
 // 大写
-// "A":["https://A","https://A?w=【】"], //输入“A”直接打开 输入“A xx”是搜索
-// "A":["选择","B","C_D","E|C_D"], //显示按钮 B、C、E（_和|后面不显示） // "A|B|C" 显示A 跳转到B 提示C
-// "／内容" 直接显示 // "／1／2" <a href='2'>1</a> // "／1／2／3" <a href='2'>1<small> (3)</small></a>
-// "A":"／B", //A同B
+// "":["https://A","https://A?w=【】"], //输入“A”直接打开 输入“A xx”是搜索
+// "":["选择","B","C_D","E|C_D"], //显示按钮 B、C、E（_和|后面不显示） // "A|B|C" 显示A 跳转到B 提示C
+// "／内容" 直接显示
+// "／1／2" <a href='2'>1</a> // "／1／2／3" <a href='2'>1<small> (3)</small></a>
+// "／复制／按钮／内容"
+// "":"／B", //A同B
 // "打开程序或文件夹":["打开","C:/mq/目录"],
 // "编辑html":["html","地址"],
+// "本地和在线不同地址":["本地",["本地地址","搜索"],["在线地址","搜索"]],
 
 // "":["选择",""],
 // "":["",""],
@@ -44,6 +42,13 @@ let d={
 
 // "":["选择",""],
 // "":["",""],
+"JS":[p.异梦+"代码／JS.html"],
+"CSS动画":[p.异梦+"代码／css动画.html"],
+"CSS":[p.异梦+"代码／css.html"],
+"鼠标":[p.异梦+"代码／鼠标.html"],
+"跳转":[p.异梦+"代码／跳转.html"],
+"代码":[p.异梦+"代码.html"],
+"WC":"／网词",
 "网词":[p.博客+"wangci",p.博客+"wangci?w=【】"],
 "云游戏":["选择","／云游戏大全／https://www.yyxdh.com","／<br>","网易|网易云游戏","／腾讯／https://start.qq.com","／4399／https://y.4399.com"],
 "网易云游戏":["https://cg.163.com"],
@@ -424,12 +429,14 @@ document.addEventListener('click', function(event) {
 });
 }
 
-
+!function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
+let notyf = new Notyf({delay:3000});
 
 function 复(o){document.getElementById('复制').value=o;let 复制=document.querySelector('#复制');复制.select();
 try{
 	let successful=document.execCommand("Copy");
 	let msg=successful?'successful':'unsuccessful';
+	try{notyf.confirm("已复制 "+o)}catch(e){alert("已复制 "+o);}
 	return successful;
 }
 catch(e){return false}}
@@ -472,6 +479,10 @@ function 开始(){
 
 	if(跳转!=0){location.replace("?"+跳转);return;}
 
+	if(d[搜索]&&d[搜索][0]=="本地"){//本地
+		if(本地==1){d[搜索]=d[搜索][1]}else{d[搜索]=d[搜索][2]}
+	}
+
 	if(d[搜索]&&d[搜索][0]=="js"){
 		eval(d[搜索][1])
 	}else if(d[搜索]&&d[搜索][0]=="选择"){//选择
@@ -483,9 +494,13 @@ function 开始(){
 			if(d[搜索][i][0]=="／"){
 				let 临时3=d[搜索][i].split("／");
 				if(临时3.length>2){
-					if(临时3[4]){临时3[4]=" class='提示' data-msg='"+临时3[4]+"'"}else{临时3[4]=""}
-					if(临时3[3]&&临时3[3]!=""){dy+="<a href='"+临时3[2]+"'"+临时3[4]+">"+临时3[1]+"<small> ("+临时3[3]+")</small></a>"}
-					else{dy+="<a href='"+临时3[2]+"'"+临时3[4]+">"+临时3[1]+"</a>"}
+					if(临时3[1]=="复制"){
+						dy+=`<a onclick="复('${临时3[3]}')">${临时3[2]}</a>`;
+					}else{
+						if(临时3[4]){临时3[4]=" class='提示' data-msg='"+临时3[4]+"'"}else{临时3[4]=""}
+						if(临时3[3]&&临时3[3]!=""){dy+="<a href='"+临时3[2]+"'"+临时3[4]+">"+临时3[1]+"<small> ("+临时3[3]+")</small></a>"}
+						else{dy+="<a href='"+临时3[2]+"'"+临时3[4]+">"+临时3[1]+"</a>"}
+					}
 				}else{dy+=临时3[1]}
 			}else{
 				if(首==0){首=d[搜索][i]}
@@ -575,4 +590,8 @@ document.addEventListener('keydown',function(event){
 
 document.getElementById("icon").href="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAACMuAAAjLgAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/////wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/////wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A/////////////////////////////////////4AAAH+AAAB/gAAAf4AAAH+AAAB/gAAAf4AAH4GAAB+BgAAfgYAAH4GAAB+BgAAfgYH4H/+B+B//gfgf/4H4H/+B+B//gfgf//////////////////////////////////////8=";
 </script>
+<style>
+.zhushi{color:#6A9955}span.zhushi:before{content:"//"}div.zhushi:before{content:"/* "}div.zhushi:after{content:" */"}
+/*右下角弹窗*/@-webkit-keyframes a{0%{opacity:0;bottom:-15px;max-height:0;max-width:0;margin-top:0}30%{opacity:.8;bottom:-3px}to{opacity:1;bottom:0;max-height:200px;margin-top:12px;max-width:400px}}@keyframes a{0%{opacity:0;bottom:-15px;max-height:0;max-width:0;margin-top:0}30%{opacity:.8;bottom:-3px}to{opacity:1;bottom:0;max-height:200px;margin-top:12px;max-width:400px}}@-webkit-keyframes b{0%{opacity:1;bottom:0}30%{opacity:.2;bottom:-3px}to{opacity:0;bottom:-15px}}@keyframes b{0%{opacity:1;bottom:0}30%{opacity:.2;bottom:-3px}to{opacity:0;bottom:-15px}}@-webkit-keyframes c{0%{opacity:0}30%{opacity:.5}to{opacity:.6}}@keyframes c{0%{opacity:0}30%{opacity:.5}to{opacity:.6}}@-webkit-keyframes d{0%{opacity:.6}30%{opacity:.1}to{opacity:0}}@keyframes d{0%{opacity:.6}30%{opacity:.1}to{opacity:0}}.notyf-container{position:fixed;bottom:20px;right:30px;width:20%;color:#fff;z-index:2001}.notyf-container .notyf-alert-icon,.notyf-container .notyf-confirm-icon{height:21px;width:21px;background:#fff;border-radius:50%;display:block;margin:0 auto;position:relative}.notyf-container .notyf-alert-icon:after,.notyf-container .notyf-alert-icon:before{content:"";background:#ed3d3d;display:block;position:absolute;width:3px;border-radius:3px;left:9px}.notyf-container .notyf-alert-icon:after{height:3px;top:14px}.notyf-container .notyf-alert-icon:before{height:8px;top:4px}.notyf-container .notyf-confirm-icon:after,.notyf-container .notyf-confirm-icon:before{content:"";background:#3dc763;display:block;position:absolute;width:3px;border-radius:3px}.notyf-container .notyf-confirm-icon:after{height:6px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);top:9px;left:6px}.notyf-container .notyf-confirm-icon:before{height:11px;-webkit-transform:rotate(45deg);transform:rotate(45deg);top:5px;left:10px}.notyf-container .notyf{display:block;overflow:hidden;-webkit-animation:a .3s forwards;animation:a .3s forwards;box-shadow:0 1px 3px 0 rgba(0,0,0,.45);position:relative;padding-right:13px}.notyf-container .notyf.alert{background:#ed3d3d}.notyf-container .notyf.confirm{background:#3dc763}.notyf-container .notyf.disappear{-webkit-animation:b .3s 1 forwards;animation:b .3s 1 forwards;-webkit-animation-delay:.25s;animation-delay:.25s}.notyf-container .notyf.disappear .notyf-message{opacity:1;-webkit-animation:b .3s 1 forwards;animation:b .3s 1 forwards;-webkit-animation-delay:.1s;animation-delay:.1s}.notyf-container .notyf.disappear .notyf-icon{opacity:1;-webkit-animation:d .3s 1 forwards;animation:d .3s 1 forwards}.notyf-container .notyf-wrapper{display:table;width:100%;padding-top:20px;padding-bottom:20px;padding-right:15px;border-radius:3px}.notyf-container .notyf-icon{display:table-cell;width:20%;text-align:center;vertical-align:middle;font-size:1.3em;opacity:0;-webkit-animation:c .5s forwards;animation:c .5s forwards;-webkit-animation-delay:.25s;animation-delay:.25s}.notyf-container .notyf-message{display:table-cell;width:80%;vertical-align:middle;position:relative;opacity:0;-webkit-animation:a .3s forwards;animation:a .3s forwards;-webkit-animation-delay:.15s;animation-delay:.15s}@media only screen and (max-width:736px){.notyf-container{width:90%;margin:0 auto;display:block;right:0;left:0}}
+</style>
 </html>

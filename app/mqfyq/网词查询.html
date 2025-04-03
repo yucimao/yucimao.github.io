@@ -22,30 +22,31 @@ permalink: wangci
 <div id="结果2"></div>
 
 <script>
-let url=window.location.href;
-if(url.indexOf("?w=")!=-1){
-	url=url.split("?w=")[1];
-	document.getElementById("输入").value=url[1];
-	查询(url[1]);
-}else if(url.indexOf("?")!=-1){
+let url=decodeURI(location.href);
+if(url.indexOf("?")!=-1){
 	url=url.split("?")[1];
-	let 地址="/app/mqfyq/wc/"+url.toLowerCase()+".json";
-	let GetJson=$.ajax({
-		url:地址,
-		type:"GET",
-		dataType:"json",
-		async:false,
-		success:function(data){
-		}
-	});
-	地址=GetJson.responseText.split("［");
-	let dy=地址[0];
-	for(let i=1;地址.length>i;i++){
-		let 临时=地址[i].split("］");
-		dy+="<a onclick=\"查询('"+临时[0]+"',1)\">"+临时[0]+"</a>"+临时[1];
-	}
-	document.getElementById("整页").innerHTML=dy;
+	document.getElementById("输入").value=url;
+	查询(url);
 }
+// else if(url.indexOf("?")!=-1){
+// 	url=url.split("?")[1];
+// 	let 地址="/app/mqfyq/wc/"+url.toLowerCase()+".json";
+// 	let GetJson=$.ajax({
+// 		url:地址,
+// 		type:"GET",
+// 		dataType:"json",
+// 		async:false,
+// 		success:function(data){
+// 		}
+// 	});
+// 	地址=GetJson.responseText.split("［");
+// 	let dy=地址[0];
+// 	for(let i=1;地址.length>i;i++){
+// 		let 临时=地址[i].split("］");
+// 		dy+="<a onclick=\"查询('"+临时[0]+"',1)\">"+临时[0]+"</a>"+临时[1];
+// 	}
+// 	document.getElementById("整页").innerHTML=dy;
+// }
 function 查询(o,l){
 try{
 	let 地址="/app/mqfyq/wc/"+o.toLowerCase()+".json";
