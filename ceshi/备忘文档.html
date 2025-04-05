@@ -475,40 +475,6 @@ nav_url: &lt;a href="/notice"&gt;公告&lt;/a&gt;<br>
 <br><hr>
 
 <a name="小工具用法"></a><h2>小工具用法</h2>
-
-<br>
-
-<a name="相册2"></a><h3>相册2 <small>（放大镜效果）</small></h3>
-玩法1：鼠标移动时局部放大。<br>
-玩法2：鼠标移动时部分内容改变（比如抄袭对比）。<br>
-<b>图片文件</b>：分为两份，先展示的图片在/xiangce/2/0/（文件以.jpg为扩展名）。<br>
-放大镜显示的图片在/xiangce/2/3/（文件没有扩展名）。<span class="zhushi">两个文件名字和尺寸需要相同</span><br>
-<b>效果测试</b>：<a href="https://yucimao.github.io/xiangce/fdj" target="_blank">/xiangce/fdj</a>
-输入文件名显示图片，多个文件名用“,”分隔。<span class="zhushi">分隔符是小写逗号</span><br>
-<b>显示方法</b>：<a href="https://yucimao.github.io/xiangce/fdjxg/?t=文件名&s=200" target="_blank">/xiangce/fdjxg/?t=文件名&s=200</a> <span class="zhushi">200是尺寸，可留空，默认200px</span><br>
-或者：<br>
-&lt;iframe src="/xiangce/fdjxg/?t=文件名&s=200" width="100%" height="550px"&gt;&lt;/iframe&gt;<br>
-
-<br>
-
-<a name="相册3"></a><h3>相册3 <small>（BASE64加密）</small></h3>
-<b>加密</b><br>
-1.在<a href="https://yucimao.github.io/i/363433" target="_blank">/i/363433</a>将图片转成BASE64代码。<br>
-2.在<a href="https://yucimao.github.io/xiangce3/jiami" target="_blank">/xiangce3/jiami</a>将代码加密。<br>
-3.将代码存成.json文件，放在/xiangce/3/o/（或其他位置）。<br>
-<br>
-<b>查看</b><br>
-/xiangce3?u=地址&c=密码<br>
-如果是/xiangce/3/o/内的文件，地址不需要写.json<br>
-<br>
-<b>使用</b><br>
-可以在其他网页用这种方法展示图片，需要以下变量和js：<br>
-let xiangce3_m = 密码;<br>
-let xiangce3_wz = 地址;<br>
-let xiangce3 = 1; <span class="zhushi">加这句会将本页&lt;img id="img" src="" />的src替换为图片的base64编码</span><br>
-&lt;script src="/xiangce/3/i.js">&lt;/script><br>
-<span class="zhushi">变量xiangce3_sr是图片的base64编码</span>
-
 <br>
 
 <a name="随机题库"></a><h3>随机题库</h3>
