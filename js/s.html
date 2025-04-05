@@ -17,10 +17,10 @@ let 默认="https://www.baidu.com/s?wd=";
 let 本地=1;if(location.protocol!="file:"){本地=0;}
 let p={//编辑html
 "":"",
-"博客":"https://limaoqiu.com/",
-"yucimao":"C:/mq/博客/yucimao.github.io/",
+"博客":(本地=1)?"https://limaoqiu.com/":"/",
+"yucimao":(本地=1)?"C:/mq/博客/yucimao.github.io/":"/404?",
 "异梦":(本地=1)?"C:/mq/异梦笔记/biji/":"https://猫.cafe/biji/",
-"目录":"C:/mq/目录/",
+"目录":(本地=1)?"C:/mq/目录/":"/404?",
 };
 
 let d={
@@ -42,6 +42,10 @@ let d={
 
 // "":["选择",""],
 // "":["",""],
+"游戏笔记":["选择","／大多是为了方便自己记的，可能不适用于其他玩家，或是已经过时了，推荐使用更专业的攻略网站。","／<br>节奏记录：","／米哈游／"+p.博客+"yuanshenjiezou","／其他游戏／"+p.博客+"i/7599677","／<br>还在玩：","／我的世界／"+p.博客+"i/1192345","／饥荒 联机版／"+p.博客+"i/4722951","／以撒的结合：忏悔／"+p.博客+"i/5467777","／<br>可能会玩：","／龙拳2：神兵之战（真人快打）／"+p.博客+"i/1016173","／霓虹深渊／"+p.博客+"i/6982379","／最终幻想14／"+p.博客+"i/1743585","／小马镇／"+p.博客+"i/4044582","／<br>不玩了：","／巫师3／"+p.博客+"i/1079567","／摩尔庄园／"+p.博客+"i/2260916","／边境之旅／"+p.博客+"i/661641","／晚安森林／"+p.博客+"i/5138065",],
+"变量":[p.异梦+"代码／变量.html"],
+"批处理":[p.异梦+"代码／批处理.html"],
+"拼音":[p.异梦+"代码／拼音.html"],
 "JS":[p.异梦+"代码／JS.html"],
 "CSS动画":[p.异梦+"代码／css动画.html"],
 "CSS":[p.异梦+"代码／css.html"],
@@ -49,10 +53,10 @@ let d={
 "跳转":[p.异梦+"代码／跳转.html"],
 "代码":[p.异梦+"代码.html"],
 "WC":"／网词",
-"网词":[p.博客+"wangci",p.博客+"wangci?w=【】"],
+"网词":[p.博客+"wangci",p.博客+"wangci?【】"],
 "云游戏":["选择","／云游戏大全／https://www.yyxdh.com","／<br>","网易|网易云游戏","／腾讯／https://start.qq.com","／4399／https://y.4399.com"],
 "网易云游戏":["https://cg.163.com"],
-"转换":["选择","Convertio"],
+"转换":["选择","Convertio","／每天有免费额度","／<br>","／ACONVERT／https://www.aconvert.com","／png转ico文件较大"],
 "CONVERTIO":["https://convertio.co/zh"],
 "随机图片API":["选择","／调用方式：https://地址/图片宽度/图片高度（也可能是 图片宽度x图片高度）<br>","／高清图片／https://source.unsplash.com/random/800x600","／高清图片／https://picsum.photos/800/600","／小猫／https://placekitten.com/800/600","／熊／https://placebear.com/800/600","／Flickr／https://loremflickr.com/800/600"],
 "日记":[p.目录+"子/日记/0.html",p.目录+"子/日记/【】.html"],
@@ -112,11 +116,11 @@ let d={
 "识图":["选择","百度识图","必应识图","Yandex图片","搜狗图片","谷歌识图","TinEye","／<br><h4>二次元</h4>","SauceNao","二次元画像詳細検索","搜图bot酱"],
 "翻译":["选择","百度翻译","中译英_百度翻译","英译中_百度翻译","日译中_百度翻译","韩译中_百度翻译","／<br>","DeepL","／<br><br>","小翻译器"],
 "找灵感":["选择","文字_找灵感","图片_找灵感","图片文件夹_找灵感"],
-"游戏":["选择","目录/游戏","云游戏","／<hr>","／<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
+"游戏":["选择","目录/游戏","游戏笔记","云游戏","／<hr>","／<b>Steam：</b>","官网_Steam","软件_Steam","文件夹_Steam"],
 "目录/游戏":[p.目录+"游戏.html"],
 "STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
 "直播":["选择","B站直播","斗鱼"],
-"AI":["选择","腾讯元宝","文心一言","豆包AI","／<br>","／天工大.写作／https://www.tiangong.cn/chat/speed_writing/002","DeepSeek","／<br>","360AI","天工大模型","ChatGPT","KIMI","百度AI","Grok","／<br><b>搜索资料：</b>","秘塔AI","／<br><h4>图片</h4>","RaphaelAI","／<br><h4>修图</h4>","百度AI图片助手","／<br><br><h4>AI检测</h4>","／朱雀大：","图片_朱雀大","文本_朱雀大","／<br>","／幻觉检测／https://demo.exa.ai/hallucination-detector","／<br><br><h4>其他</h4>","／AI库：","／AI神器大全／https://aishenqi.net/","／免费DeepSeek导航／https://freedeepseek.cn"],
+"AI":["选择","腾讯元宝","文心一言","豆包AI","秘塔AI","／<br>","／天工大.写作／https://www.tiangong.cn/chat/speed_writing/002","DeepSeek","ChatGPT","／<br>","360AI","天工大模型","KIMI","百度AI","Grok","／RaphaelAI／https://raphael.app/zh／无限图片","／即梦／https://jimeng.jianying.com/ai-tool/home/／图片、音乐、视频","／<br><h4>修图</h4>","百度AI图片助手","／<br><br><h4>AI检测</h4>","／朱雀大：","图片_朱雀大","文本_朱雀大","／<br>","／幻觉检测／https://demo.exa.ai/hallucination-detector","／<br><br><h4>其他</h4>","／AI库：","／AI神器大全／https://aishenqi.net/","／免费DeepSeek导航／https://freedeepseek.cn"],
 
 "资源":["选择","／<h2>免费可商用</h2>",
 "／<br>音乐","／Mixkit／https://mixkit.co/free-stock-music",
@@ -174,7 +178,7 @@ let d={
 "官网_星穹铁道":["https://sr.mihoyo.com/"],
 "阵容_星穹铁道":["https://act.mihoyo.com/sr/event/cultivation-tool/index.html"],
 
-"绝区零":["选择","官网_绝区零","米游社_绝区零","B站_绝区零","微博_绝区零"],
+"绝区零":["选择","官网_绝区零","米游社_绝区零","B站_绝区零","微博_绝区零","／<br>","阵容_绝区零"],
 "配队_绝区零":"／阵容_绝区零","配队_绝区零":"／阵容_绝区零","绝区零阵容":"／阵容_绝区零","绝区零配队":"／阵容_绝区零",
 "米游社_绝区零":["https://www.miyoushe.com/zzz","https://www.miyoushe.com/zzz/search?keyword=【】"],
 "B站_绝区零":["https://space.bilibili.com/1636034895/video"],
@@ -185,7 +189,7 @@ let d={
 "鹿鸣":["https://space.bilibili.com/488836173/video"],
 "米游姬":["https://space.bilibili.com/510189715/video"],
 
-"B站":["选择","哔哩哔哩","／<br><hr><h3>做视频</h3>","OBS","直播姬","／<br>","缓存_B站",
+"B站":["选择","哔哩哔哩","／<hr>","／小黑屋／https://www.bilibili.com/blackroom/ban","／<br><hr><h3>做视频</h3>","OBS","直播姬","／<br>","缓存_B站",
 ],
 
 "二游":["选择","／<br><hr><h3>尘白禁区</h3>","／木木／https://space.bilibili.com/31572302","／冲冲／https://space.bilibili.com/241036"],
@@ -215,7 +219,6 @@ let d={
 "DEEPSEEK":["https://chat.deepseek.com/"],
 "异梦":[p.异梦+"0.html",p.异梦+"【】.html"],
 "腾讯元宝":["https://yuanbao.tencent.com"],
-"RAPHAELAI":["https://raphael.app/zh"],
 "B_小黑屋":["https://www.bilibili.com/blackroom/ban"],
 "菜鸟教程":["https://www.runoob.com/","https://www.runoob.com/?s=【】"],
 "YOUCOMPRESS":["https://www.youcompress.com/zh-cn/"],
