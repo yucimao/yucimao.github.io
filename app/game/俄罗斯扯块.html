@@ -362,15 +362,38 @@ Tetris.prototype = {
             var keycode = e.which;
             var i, j;
             
-            switch( keycode ) {
-                case 37: // <-
-                    this.transFigure( -1, 1 ); break;
-                case 39: // ->
-                    this.transFigure( 1, 1 ); break;
-                case 40: // v
-                    this.transFigure( 1, 0 ); break;
-                case 38: // ^
-                    this.d.figure.changeFigure(); this.v.refresh(); break;
+            // switch( keycode ) {
+            //     case 37: // <-
+            //         this.transFigure( -1, 1 ); break;
+            //     case 39: // ->
+            //         this.transFigure( 1, 1 ); break;
+            //     case 40: // v
+            //         this.transFigure( 1, 0 ); break;
+            //     case 38: // ^
+            //         this.d.figure.changeFigure(); this.v.refresh(); break;
+            // }
+            switch(keycode) {
+                case 37: // 左箭头
+                case 65: // A
+                    this.transFigure(-1, 1);
+                    event.preventDefault();
+                    break;
+                case 39: // 右箭头
+                case 68: // D
+                    this.transFigure(1, 1);
+                    event.preventDefault();
+                    break;
+                case 40: // 下箭头
+                case 83: // S
+                    this.transFigure(1, 0);
+                    event.preventDefault();
+                    break;
+                case 38: // 上箭头
+                case 87: // W
+                    this.d.figure.changeFigure();
+                    this.v.refresh();
+                    event.preventDefault();
+                    break;
             }
         },
 
