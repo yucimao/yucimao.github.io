@@ -54,7 +54,7 @@ span.auth {margin: 0px 20px 0px 20px;}
 <script>
     {% if page.book_item %}localStorage.setItem("{{ page.book_item }}", "{{ page.nav_text }}／/{{ page.permalink }}");{% else %}{% endif %}
     let p_link = "{{ page.permalink }}".split("/");
-    localStorage.setItem(p_link[2], "1");
+    localStorage.setItem(p_link[1], "1");
 </script>
 <div id="屏幕宽度"></div>
 

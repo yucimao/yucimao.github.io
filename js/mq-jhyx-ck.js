@@ -7,8 +7,8 @@ document.write("<span>每局时间（秒）：<\/span><br\/><input type=\"text\"
 document.write("<button type=\"button\" onclick=\"标签D()\" style=\"font-size:1em;\">开始计时<\/button>");
 document.write("<button type=\"button\" onclick=\"标签E()\" style=\"font-size:1em;\">停止<\/button>");
 document.write("<\/center>");
-document.write("<audio id=\"m1\"><source = src=\"\/i\/0\/2025\/jhyx-ciku-m1.wav\" type=\"audio\/wav\"><\/audio>");
-document.write("<audio id=\"m2\"><source = src=\"\/i\/0\/2025\/jhyx-ciku-m2.wav\" type=\"audio\/wav\"><\/audio>");
+document.write("<audio id=\"m1\"><source = src=\"\/i\/0\/jhyx-ciku-m1.wav\" type=\"audio\/wav\"><\/audio>");
+document.write("<audio id=\"m2\"><source = src=\"\/i\/0\/jhyx-ciku-m2.wav\" type=\"audio\/wav\"><\/audio>");
 
 var p = Array.from(ciku), i, a = [];
 while (p.length > 0) {
