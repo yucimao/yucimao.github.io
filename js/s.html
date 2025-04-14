@@ -14,13 +14,15 @@ a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duratio
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
 let 默认="https://www.baidu.com/s?wd=";
-let 本地=1;if(location.protocol!="file:"){本地=0;}
+let 本地=(location.protocol=="file:")?1:null;
+
 let p={//编辑html
 "":"",
-"博客":(本地=1)?"https://limaoqiu.com/":"/",
-"yucimao":(本地=1)?"C:/mq/博客/yucimao.github.io/":"/404?",
-"异梦":(本地=1)?"C:/mq/异梦笔记/biji/":"https://猫.cafe/biji/",
-"目录":(本地=1)?"C:/mq/目录/":"/404?",
+"博客":(本地)?"https://limaoqiu.com/":"/",
+"yucimao":(本地)?"C:/mq/博客/yucimao.github.io/":"/404?",
+"异梦":(本地)?"C:/mq/异梦笔记/biji/":"https://猫.cafe/biji/",
+"目录":(本地)?"C:/mq/目录/":"/404?",
+"本地":(本地)?"C:/mq/目录/本地搜索.html?":默认,
 };
 
 let d={
@@ -42,6 +44,7 @@ let d={
 
 // "":["选择",""],
 // "":["",""],
+"付费墙":["https://paywallbuster.com"],
 "魔兽":"／魔兽世界",
 "魔兽世界":[p.异梦+"博客／魔兽世界.html"],
 "FF14":"／最终幻想14",
@@ -80,25 +83,25 @@ let d={
 "随机图片API":["选择","／调用方式：https://地址/图片宽度/图片高度（也可能是 图片宽度x图片高度）<br>","／高清图片／https://source.unsplash.com/random/800x600","／高清图片／https://picsum.photos/800/600","／小猫／https://placekitten.com/800/600","／熊／https://placebear.com/800/600","／Flickr／https://loremflickr.com/800/600"],
 "日记":[p.目录+"子/日记/0.html",p.目录+"子/日记/【】.html"],
 "HTML":["js",`打开("html",decodeURIComponent(decodeURIComponent(window.location.href.split("?html+")[1])).split("///")[1])`],
-"漫迷_小工具":["选择","／动画巡礼地图／https://anitabi.cn/map","／截图找番／https://trace.moe",],
+"漫迷":["选择","／动画巡礼地图／https://anitabi.cn/map","／截图找番／https://trace.moe",],
 "谷歌趋势":["https://trends.google.com/trends/?geo=HK"],
-"小工具":["选择","／注意：链接可能打开外部网站，不保证安全，请注意辨别和保护自身财产安全，不要付款、输入密码、点击可疑广告。<br><br>","生活_小工具","解闷_小工具","生成器_小工具",
-"／<br>","设计师_小工具","程序员_小工具","漫迷_小工具",
+"小工具":["选择","／注意：链接可能打开外部网站，不保证安全，请注意辨别和保护自身财产安全，不要付款、输入密码、点击可疑广告。<br><br>","生活","解闷","生成器",
+"／<br>","设计师","程序员","漫迷",
 "／<br>翻译器、转换器：","猫球翻译器","阿巴阿巴翻译器",
 "／<br>百科：","二次元<small> (萌娘百科)</small>|萌娘百科","妖怪<small> (纪妖)</small>|纪妖","／克苏鲁／http://zuoyoo.com","／正史、传说、奇幻／http://qiluo.net／古国天使","／古汉字和字源／https://hanziyuan.net/#home",
 "／<br>其他：","／文本转语音／https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/／Azure","／临时邮箱／https://linshiyouxiang.net","／临时记事本／https://getnote.cf","／今日热搜榜／https://tophub.today","／查重名／https://zwfw.mps.gov.cn","／智能法律意见／https://ai.12348.gov.cn",
 ],
 "随机骰子":[p.博客+"suijitouzi"],
-"生活_小工具":["选择","随机骰子","／生活经验／https://yyjingyan.com",
+"生活":["选择","随机骰子","／生活经验／https://yyjingyan.com",
 "／<br>吃喝：","／猫球厨房／"+p.博客+"biji/maoqiuchufang","／挑水果／"+p.博客+"biji/tiaoshuiguo","／涮火锅时间／"+p.博客+"biji/shuanhuoguo","／一会吃点啥／"+p.博客+"biji/chidiansha",
 "／<br>玩乐：","／聚会游戏／"+p.博客+"juhuiyouxi","／出门玩点啥／"+p.博客+"biji/wandiansha",
 ],
-"生成器_小工具":["选择",
+"生成器":["选择",
 "／随机密码／"+p.博客+"app/5124000","／表情包搜索、生成／https://www.52doutu.cn／我爱斗图","／艺术字／http://www.diyiziti.com","／双层图（幻影坦克图）／https://nugine.github.io/mirage-tank-wasm-app","／海报／https://www.arkie.cn／ARKie","／让图片小人动起来／https://sketch.metademolab.com/canvas","／歌曲／https://app.songr.ai","／诗／https://jiuge.thunlp.org",
 "／<br>转换器：","／将一张图片渲染成另一张的风格／https://www.ostagram.me/?locale=cn","／图片转emoji填充图片／http://ericandrewlewis.github.io/emoji-mosaic","／生成水墨画／http://shan-shui-inf.lingdong.works","／字母转换为文字画／http://patorjk.com/software/taag","／图片转换为文字画／https://www.degraeve.com/img2txt.php","／图片转像素头像／https://pixel-me.tokyo","／图片转线条画／https://javier.xyz/pintr","／电子包浆／https://magiconch.com/patina","／蒸汽波风格化／https://magiconch.com/vaporwave","／图片生成视频／https://lumalabs.ai/dream-machine/creations",
 "／<br>不存在的东西：","／二次元老婆头像／https://waifulabs.com","／二次元老婆头像／https://make.girls.moe","／猫／https://thiscatdoesnotexist.com","／中世纪小镇地图／http://fantasycities.watabou.ru","／音乐电台／https://generative.fm","／一张人像／https://thispersondoesnotexist.com","／一个二次元女生头像／https://www.thiswaifudoesnotexist.net","／一个新的宝可梦／https://pokemon.alexonsager.net",
 ],
-"设计师_小工具":["选择",
+"设计师":["选择",
 "／在线识别字体／https://www.likefont.com","／搜索姿势参考／https://x6ud.github.io/pose-search／Pose Search","／姿势参考／http://reference.sketchdaily.net/zh",
 "／<br>文件处理：",//未测试：https://zhuanlan.zhihu.com/p/528100892
 "／图片微损压缩／https://tinify.cn／TinyPNG","／免费微损压缩／https://free.tinypng.site／FREE TinyPNG","／图片转码、压缩／https://squoosh.app／Squoosh","／批量剪裁图片／https://www.smartresize.com/zh-cn／SmartResize","／图片放大／https://bigjpg.com","／动漫图片降噪、放大／http://waifu2x.udp.jp／waifu2x","／图片转矢量图／https://vectorizer.ai","／mp4转gif／https://cloudconvert.com/mp4-to-gif／MP4 to GIF",
@@ -110,9 +113,9 @@ let d={
 "／<br>练习小游戏：","／布尔运算／https://boolean.method.ac","／字母排版／https://type.method.ac","／钢笔工具／https://bezier.method.ac","／在色轮上找到匹配的颜色／https://color.method.ac",
 ],
 
-"解闷_小工具":"／无聊",
+"解闷":"／无聊",
 
-"程序员_小工具":["选择","随机图片api","／WEB在线编辑／https://c.runoob.com/front-end/61","／进制转换／https://c.runoob.com/front-end/58","／转换文件／https://convertio.co/zh／Convertio","／二维码／https://cli.im／草料二维码","／二维码／http://tool.mkblog.cn/qrbtf／艺术二维码","／rss格式校验／https://validator.w3.org/feed","／js转颜文字／https://utf-8.jp/public/aaencode.html","／零宽度短链接／https://zws.im","／快照／https://archive.org",],
+"程序员":["选择","随机图片api","／WEB在线编辑／https://c.runoob.com/front-end/61","／进制转换／https://c.runoob.com/front-end/58","／转换文件／https://convertio.co/zh／Convertio","／二维码／https://cli.im／草料二维码","／二维码／http://tool.mkblog.cn/qrbtf／艺术二维码","／rss格式校验／https://validator.w3.org/feed","／js转颜文字／https://utf-8.jp/public/aaencode.html","／零宽度短链接／https://zws.im","／快照／https://archive.org",],
 
 "REMOVEPHOTOS":["https://remove.photos/zh-cn/"],
 "工具":["选择","AI","／<br>","removephotos","／自动抠图、一键上色、去除前景、图片放大、去除字幕等"],
@@ -123,6 +126,7 @@ let d={
 "／视频、音乐：","／cobalt／https://cobalt.tools","／iiilab／https://weibo.iiilab.com",
 "／<br>视频：","／硕鼠／https://www.flvcd.com",
 "／<br>音频：","／外链转换工具／https://link.hhtjim.com",
+"／<br>","付费墙",
 ],
 "百度AI图片助手":["https://image.baidu.com/search/index"],
 "调酒":["https://cocktailnotes.cn/","https://cocktailnotes.cn/search?query=【】"],
@@ -154,6 +158,7 @@ let d={
 
 "编辑":["html","C:/js/s.html"],
 "测试":"／编辑",
+"本地搜索":[p.目录+"本地搜索.html",p.本地+"【】"],
 
 "博客":["选择","打开博客","李猫球","／<br><br>",
 	"打赏","愿望单","／<br>",
@@ -255,11 +260,13 @@ let d={
 
 "缓存_B站":["打开","C:/mq/app/a/bilibili/xiazai"],
 
-"无聊":["选择","看热闹","无聊可玩","定期清理","／<br>","聊天室","虫洞","无聊按钮",
-"／<br><br>玩的：","／推荐相似影片／https://leisidianying.com","／自动对对联／https://ai.binwang.me/couplet","／在线弹钢琴／https://www.autopiano.cn","／随机生成迷宫／http://www.mazegenerator.net","／抉择按钮／http://willyoupressthebutton.com","／假装自己是黑客／http://www.geektyper.com/mobile","／无上下文电台／https://neave.tv",
+"无聊":["选择","看热闹","无聊可玩","／<br>","聊天室","虫洞","无聊按钮",
+"／<br>","／推荐相似影片／https://leisidianying.com",
+"／<br>玩的：","／自动对对联／https://ai.binwang.me/couplet","／在线弹钢琴／https://www.autopiano.cn","／随机生成迷宫／http://www.mazegenerator.net","／抉择按钮／http://willyoupressthebutton.com","／假装自己是黑客／http://www.geektyper.com/mobile","／无上下文电台／https://neave.tv","／画圆挑战／https://matrix67.itch.io/pi-day-challenge",
 "／<br>小游戏：","／游戏机、街机／https://www.yikm.net","／H5游戏／https://www.crazygames.com／CrazyGames","／H5游戏／https://zh.y8.com／Y8／玩游戏前需要看广告","／DOS游戏／https://dos.zczc.cz","／国产掌机／http://www.famicn.com","／网页红警2／http://ra2web.com","／老游戏机／https://www.retrogames.onl",
 "／<br>观景：","／全景金字塔／https://mused.org/zh-hans","／全球摄像头／https://www.skylinewebcams.com/zh/webcam.html","／熊猫频道／https://www.ipanda.com",
 "／<br>其他：","／月薪赚多久／"+p.博客+"app/yxyzdj","／网络冥币／"+p.博客+"app/wangluomingbi",
+"／<hr>私人内容：","定期清理",
 ],
 
 "无聊可玩":[p.目录+"无聊可玩.html"],
@@ -302,7 +309,7 @@ let d={
 "吃啥外卖":[p.目录+"吃啥外卖.html"],"吃啥":"／吃啥外卖",
 "抖音收藏":["https://www.douyin.com/user/self?showTab=favorite_collection"],"抖音_收藏":"／抖音收藏",
 "TAPTAP":["https://www.taptap.cn","https://www.taptap.cn/search/【】"],
-"VPN":["选择","／奶茶：","／发布页／https://a.naichacloud.net","／发布页2／https://x-go.gitbook.io/nc","／1／https://naichayun.net","／2／https://cf.ieplcloud.net/#/login"],
+"VPN":["选择","／奶茶：","／发布页／"+p.本地+"奶茶发布页","／发布页2／"+p.本地+"奶茶发布页2","／1／"+p.本地+"奶茶vpn1","／2／"+p.本地+"奶茶vpn2"],
 "B站充电记录_包月":["https://member.bilibili.com/platform/allowance/upower-manage/member-manage"],
 "B站充电记录":["https://member.bilibili.com/platform/allowance/charge"],
 "物品位置":[p.目录+"物品位置.html"],"过期":"／物品位置","保质期":"／物品位置",
@@ -438,7 +445,7 @@ document.addEventListener('click', function(event) {
 }
 
 !function(){function n(n,t){for(property in t)t.hasOwnProperty(property)&&(n[property]=t[property]);return n}function t(n,t){var i=document.createElement("div");i.className="notyf";var e=document.createElement("div");e.className="notyf-wrapper";var o=document.createElement("div");o.className="notyf-icon";var a=document.createElement("i");a.className=t;var r=document.createElement("div");r.className="notyf-message",r.innerHTML=n,o.appendChild(a),e.appendChild(o),e.appendChild(r),i.appendChild(e);var c=this;return setTimeout(function(){i.className+=" disappear",i.addEventListener(c.animationEnd,function(n){n.target==i&&c.container.removeChild(i)});var n=c.notifications.indexOf(i);c.notifications.splice(n,1)},c.options.delay),i}function i(){var n,t=document.createElement("fake"),i={transition:"animationend",OTransition:"oAnimationEnd",MozTransition:"animationend",WebkitTransition:"webkitAnimationEnd"};for(n in i)if(void 0!==t.style[n])return i[n]}this.Notyf=function(){this.notifications=[];var t={delay:2e3,alertIcon:"notyf-alert-icon",confirmIcon:"notyf-confirm-icon"};arguments[0]&&"object"==typeof arguments[0]?this.options=n(t,arguments[0]):this.options=t;var e=document.createDocumentFragment(),o=document.createElement("div");o.className="notyf-container",e.appendChild(o),document.body.appendChild(e),this.container=o,this.animationEnd=i()},this.Notyf.prototype.alert=function(n){var i=t.call(this,n,this.options.alertIcon);i.className+=" alert",this.container.appendChild(i),this.notifications.push(i)},this.Notyf.prototype.confirm=function(n){var i=t.call(this,n,this.options.confirmIcon);i.className+=" confirm",this.container.appendChild(i),this.notifications.push(i)}}();
-let notyf = new Notyf({delay:3000});
+let notyf=new Notyf({delay:3000});
 
 function 复(o){document.getElementById('复制').value=o;let 复制=document.querySelector('#复制');复制.select();
 try{
@@ -582,18 +589,16 @@ function 取消(){
 
 function 确定搜索(){
 	if(原==0){
-			location.replace("?"+document.getElementById("输入").value)
-		}
-		if(首!=0){
-			url[0]=首;
-			开始()
-		}
+		location.replace("?"+document.getElementById("输入").value)
+	}
+	if(首!=0){
+		url[0]=首;
+		开始()
+	}
 }
 
 document.addEventListener('keydown',function(event){
-    if(event.keyCode===13){
-		确定搜索();
-    }
+    if(event.keyCode===13){确定搜索();}
 });
 
 document.getElementById("icon").href="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAACMuAAAjLgAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/////wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/////wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8AAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A/////////////////////////////////////4AAAH+AAAB/gAAAf4AAAH+AAAB/gAAAf4AAH4GAAB+BgAAfgYAAH4GAAB+BgAAfgYH4H/+B+B//gfgf/4H4H/+B+B//gfgf//////////////////////////////////////8=";

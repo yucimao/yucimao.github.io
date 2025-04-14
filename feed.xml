@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>关于何同学和司机要好评</title>
+            <description>内耗者的自我反思，居然会让不内耗的人如此愤怒。</description>
+            <pubDate>Sun, 13 Apr 2025 16:44:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/14451697</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/14451697</guid>
+        </item>
+
+        <item>
             <title>要不要写萝莉角色？</title>
             <description>最近打算neta“萌文化”，但开始纠结要不要写萝莉角色……</description>
             <pubDate>Sun, 30 Mar 2025 14:05:00 +0800</pubDate>
