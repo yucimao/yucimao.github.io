@@ -66,10 +66,12 @@ let d={
 "饥荒联机版":[p.异梦+"博客/饥荒联机版.html"],
 "游戏笔记":["选择","／大多是为了方便自己记的，可能不适用于其他玩家，或是已经过时了，推荐使用更专业的攻略网站。",
 "／<br>通用工具：","排列组合",
-"／<br>节奏记录：","／米哈游／"+p.博客+"yuanshenjiezou","／其他游戏／"+p.博客+"i/7599677",
+"／<hr>",
 "／<br>还在玩：","我的世界","饥荒联机版","以撒的结合","魔兽世界",
 "／<br>可能会玩：","龙拳2：神兵之战（真人快打）","霓虹深渊","／最终幻想14／"+p.博客+"i/1743585","小马镇",
 "／<br>不玩了：","／巫师3／"+p.博客+"i/1079567","／摩尔庄园／"+p.博客+"i/2260916","／边境之旅／"+p.博客+"i/661641",
+"／<hr>",
+"／<br>节奏记录：","／米哈游／"+p.博客+"yuanshenjiezou","／其他游戏／"+p.博客+"i/7599677",
 ],
 "INPUT":[p.异梦+"博客/input.html"],
 "计算器":[p.异梦+"博客/计算器.html"],
@@ -190,8 +192,14 @@ let d={
 //米哈游
 "米哈游":["选择","官网_米哈游","B站_米哈游","微博_米哈游",
 "／<hr><h3>作品</h3>","原神","星穹铁道","绝区零","／<br>","未定事件簿","鹿鸣","米游姬",
-"／<hr><h3>博主</h3>","／半魇Sana／https://space.bilibili.com/6771326/video",
-"／<hr>","／本地页／"+p.目录+"游戏_米哈游.html",
+"／<hr><h3>私人内容</h3>","／本地页／"+p.目录+"游戏_米哈游.html","／打开／文件夹／"+p.目录+"子/游戏/米哈游",
+"／<br>抽卡记录：",
+
+
+...["原神","星穹铁道","绝区零"].flatMap(a=>[
+    `／<b>${a}</b>／${p.yucimao}blog/笔记/社会问题/曝光/原神/zk/抽卡记录：${a}.html`,
+    `／html／编辑／${p.yucimao}blog/笔记/社会问题/曝光/原神/zk/抽卡记录：${a}.html`,"／ / "
+  ]),
 ],
 "米游社":["https://www.miyoushe.com","https://www.miyoushe.com/dby/search?keyword=【】"],
 "官网_米哈游":["https://www.mihoyo.com"],
@@ -377,8 +385,7 @@ let d={
 "SCP基金会":["http://www.scp-wiki.net"],
 "中国站_SCP基金会":["http://scp-wiki-cn.wikidot.com"],
 "知网":["https://www.cnki.net/"],
-"叔叔不约":["http://www.shushubuyue.net/"],
-"聊天室":["选择","蔷薇花园","叔叔不约"],
+"聊天室":["选择","蔷薇花园","／叔叔不约／http://www.shushubuyue.net/","／小马镇／https://pony.town/character"],
 "小红书收藏":["https://www.xiaohongshu.com/user/profile/6102a5d10000000001008315?tab=fav"],"小红书_收藏":"／小红书收藏",
 "知乎收藏":["https://www.zhihu.com/collection/291266189"],"知乎_收藏":"／知乎收藏",
 "李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
@@ -459,9 +466,9 @@ if(location.href.indexOf("?")!=-1){
 document.getElementById("dy").innerHTML="<input type='text' id='输入' autofocus style='font-size:2em;border-radius:5px;width:100%;height:2em;' placeholder='　猫球搜索' autocomplete='off'><a class='anniu' onclick='确定搜索()'>确定</a>";
 
 let input=document.getElementById('输入');
-document.addEventListener('click', function(event) {
-    let isClickInside = input.contains(event.target);
-    if (!isClickInside) {
+document.addEventListener('click',function(event){
+    let isClickInside=input.contains(event.target);
+    if(!isClickInside){
         input.focus();
     }
 });
@@ -536,6 +543,8 @@ if(d[搜索]&&d[搜索][0]=="js"){
 					dy+=`<a onclick="复('${临时3[3]}')">${临时3[2]}</a>`;
 				}else if(临时3[1]=="打开"){
 					dy+=`<a onclick="打开('打开','${临时3[3]}')">${临时3[2]}</a>`;
+				}else if(临时3[1]=="html"){
+					dy+=`<a onclick="打开('html','${临时3[3]}')">${临时3[2]}</a>`;
 				}else{
 					if(临时3[4]){临时3[4]=" class='提示' data-msg='"+临时3[4]+"'"}else{临时3[4]=""}
 					if(临时3[3]&&临时3[3]!=""){dy+="<a href='"+临时3[2]+"'"+临时3[4]+">"+临时3[1]+"<small> ("+临时3[3]+")</small></a>"}
