@@ -10,7 +10,9 @@ a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duratio
 #dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff;}
 [搜]:before{content:" [搜]";}
 .提示{position:relative;border-bottom:1.5px dashed #aaa;}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%);}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989;}
-.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}</style>
+.链接{text-decoration:none;color:#006699;cursor:pointer;}.链接:hover,.链接:focus{color:#0085a1;}
+.灰 a{color:#939393;text-decoration:line-through}
+</style>
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
 let 默认="https://www.baidu.com/s?wd=";
@@ -38,13 +40,30 @@ let d={
 // "打开程序或文件夹":["打开","C:/mq/目录"],
 // "编辑html":["html","地址"],
 // "本地和在线不同地址":["本地",["本地地址","搜索"],["在线地址","搜索"]],
+// ＼+原本的内容 会提示仅限本地查看
 
-// "":["选择",""],
 // "":["",""],
+"猫球厨房":["选择","／在线／"+p.博客+"biji/maoqiuchufang","／html／编辑／"+p.yucimao+"blog/笔记/生活/猫球厨房.html"],
+"打开":["js",`打开("打开",decodeURIComponent(window.location.search).substring(4))`],
+"HTML":["js",`打开("html",decodeURIComponent(window.location.search).substring(6))`],
+"国王游戏":[p.异梦+"博客/国王游戏.html"],
+"像素风":["选择",
+"／<hr>绘制：","／Pixilart／https://www.pixilart.com/","／PixAPT／https://pixapt.com/",
+"／<hr>教程：","／教你画像素画／https://32comic.com/category/像素画教程/",
+"／<hr>生成：","／像素星球／https://deep-fold.itch.io/pixel-planet-generator","／像素星空／https://deep-fold.itch.io/space-background-generator",
+"／<hr>素材：","／前田高志／https://dotown.maeda-design-room.net/",
+"／<hr>转像素：","／pixel-me／https://pixel-me.tokyo","／lizibuluo／http://www.lizibuluo.com/xs",],
+"电影":["选择","／推荐相似影片／https://leisidianying.com","／找台词出处／https://getyarn.io/"],
+"在线游戏":["选择",
+"／猫球游戏厅／"+p.博客+"yxt","／oldswf／https://oldswf.com/／无需安装的Flash游戏",
+"／<hr>H5游戏<small>(电脑、手机都可以玩)</small><br>","／CrazyGames／https://www.crazygames.com","／Y8／https://zh.y8.com","／poki／https://poki.com/zh","／ioGAMES／https://iogames.space/",
+"／<hr>游戏机<br>","／游戏机、街机／https://www.yikm.net／yikm","／DOS游戏／https://dos.zczc.cz","／国产掌机／http://www.famicn.com／中文家用游戏博物馆","／老游戏机／https://www.retrogames.onl／Play Online","／老游戏／https://ddyx.me/／低端游戏",
+"／<hr>在线游戏<br>","／在线音游／https://www.beatstage.com/／BeatStage",
+"／<hr>在线单机<br>","／网页红警2／http://ra2web.com",
+"／<hr>小挑战<br>","／猜敏感词／"+p.博客+"game/caiminganci","／抉择按钮／http://willyoupressthebutton.com／／一个按钮，如果会发生某件好事，但会有某件坏事，你会按么？可以看看别人的选择","／画圆挑战／https://matrix67.itch.io/pi-day-challenge","／摆个圆／https://matrix67.itch.io/pi-day-challenge-2","／无尽驾驶／https://www.slowroadsxio.com/main/index.html",
 
 
-// "":["选择",""],
-// "":["",""],
+],
 "我的世界文件夹":["选择","／打开／文件夹／C:/mq/app/game/youxi/mc","／打开／官方启动器／C:/XboxGames/Minecraft Launcher/Content/Minecraft.exe",
 "／<br>二扯整合包：","／打开／启动器／C:/mq/app/game/youxi/mc/HMCL-3.5.3.exe","／打开／存档／C:/mq/app/game/youxi/mc/1.16.5二扯整合包/.minecraft/saves","／打开／截图／C:/mq/app/game/youxi/mc/1.16.5二扯整合包/.minecraft/screenshots"],
 "电子产品说明书":["https://www.manualslib.com/"],
@@ -91,7 +110,6 @@ let d={
 "转换":["选择","／<h3>全能型</h3>图片、音频、视频、文档等<br>","／Convertio／https://convertio.co/zh","／每天有免费额度","／<br>","／ACONVERT／https://www.aconvert.com","／png转ico文件较大","／<hr>","／mp4转gif／https://cloudconvert.com/mp4-to-gif"],
 "随机图片API":["选择","／调用方式：https://地址/图片宽度/图片高度（也可能是 图片宽度x图片高度）<br>","／高清图片／https://source.unsplash.com/random/800x600","／高清图片／https://picsum.photos/800/600","／小猫／https://placekitten.com/800/600","／熊／https://placebear.com/800/600","／Flickr／https://loremflickr.com/800/600"],
 "日记":[p.目录+"子/日记/0.html",p.目录+"子/日记/【】.html"],
-"HTML":["js",`打开("html",decodeURIComponent(decodeURIComponent(window.location.href.split("?html+")[1])).split("///")[1])`],
 "漫迷":["选择","／动画巡礼地图／https://anitabi.cn/map","／截图找番／https://trace.moe",],
 "谷歌趋势":["https://trends.google.com/trends/?geo=HK"],
 "小工具":["选择","／注意：链接可能打开外部网站，不保证安全，请注意辨别和保护自身财产安全，不要付款、输入密码、点击可疑广告。<br><br>","生活","解闷","生成器",
@@ -107,12 +125,12 @@ let d={
 ],
 "聚会游戏":[p.博客+"juhuiyouxi"],
 "生成器":["选择",
-"／随机密码／"+p.博客+"app/5124000","／表情包搜索、生成／https://www.52doutu.cn／我爱斗图","／艺术字／http://www.diyiziti.com","／双层图（幻影坦克图）／https://nugine.github.io/mirage-tank-wasm-app","／海报／https://www.arkie.cn／ARKie","／让图片小人动起来／https://sketch.metademolab.com/canvas","／歌曲／https://app.songr.ai","／诗／https://jiuge.thunlp.org","／生成水墨画／http://shan-shui-inf.lingdong.works","／像素星球／https://deep-fold.itch.io/pixel-planet-generator","／像素星空／https://deep-fold.itch.io/space-background-generator",
+"／随机密码／"+p.博客+"app/5124000","／表情包搜索、生成／https://www.52doutu.cn／我爱斗图","／艺术字／http://www.diyiziti.com","／双层图（幻影坦克图）／https://nugine.github.io/mirage-tank-wasm-app","／海报／https://www.arkie.cn／ARKie","／让图片小人动起来／https://sketch.metademolab.com/canvas","／歌曲／https://app.songr.ai","／诗／https://jiuge.thunlp.org","／生成水墨画／http://shan-shui-inf.lingdong.works",
 "／<br>转换器：","／图片转emoji填充图片／http://ericandrewlewis.github.io/emoji-mosaic","／字母转换为文字画／http://patorjk.com/software/taag","／图片转换为文字画／https://www.degraeve.com/img2txt.php","／图片生成视频／https://lumalabs.ai/dream-machine/creations",
 "／<br>不存在的东西：","／二次元老婆头像／https://waifulabs.com","／二次元老婆头像／https://make.girls.moe","／猫／https://thiscatdoesnotexist.com","／中世纪小镇地图／http://fantasycities.watabou.ru","／音乐电台／https://generative.fm","／一张人像／https://thispersondoesnotexist.com","／一个二次元女生头像／https://www.thiswaifudoesnotexist.net","／一个新的宝可梦／https://pokemon.alexonsager.net",
 ],
 "设计师":["选择",
-"字体",
+"字体","像素风",
 "／<hr>",
 "／图片处理：","／REMOVEPHOTOS／https://remove.photos/zh-cn/／／自动抠图、一键上色、去除前景、图片放大、去除字幕等","／批量剪裁图片／https://www.smartresize.com/zh-cn／SmartResize",
 "／<br>文件处理：",/*未测试：https://zhuanlan.zhihu.com/p/528100892*/ "转换","／<br>","／图片微损压缩／https://tinify.cn／TinyPNG","／免费微损压缩／https://free.tinypng.site／FREE TinyPNG","／图片转码、压缩／https://squoosh.app／Squoosh","／<br>","／图片放大／https://bigjpg.com","／动漫图片降噪、放大／http://waifu2x.udp.jp／waifu2x","／图片转矢量图／https://vectorizer.ai",
@@ -122,7 +140,7 @@ let d={
 "／<hr>配色：","／自动搭配颜色／https://www.palettable.io","／推荐配色／https://colorhunt.co","／前后景配色推荐／https://pigment.shapefactory.co","／渐变色推荐／https://gradient.shapefactory.co","／色轮生成／https://color.adobe.com/zh/create/color-wheel","／中国色／http://zhongguose.com","／颜色代码表／https://encycolorpedia.cn",
 "／<hr>PPT：","／模板／https://ypppt.com／优品PPT","／模板／http://www.1ppt.com",
 "／<hr>音频素材：","／音效素材／https://www.ear0.com／耳聆网","／8 bit音效生成器／https://sfxr.me／Jsfxr／",
-"／<hr>风格化：","／电子包浆／https://magiconch.com/patina","／虚拟信号、蒸汽波风格／https://magiconch.com/vaporwave","／液态金属／https://liquid.paper.design/","／像素头像／https://pixel-me.tokyo","／直线条画／https://javier.xyz/pintr","／将一张图片渲染成另一张的风格／https://www.ostagram.me/?locale=cn","／图片转像素／http://www.lizibuluo.com/xs",
+"／<hr>风格化：","／电子包浆／https://magiconch.com/patina","／虚拟信号、蒸汽波风格／https://magiconch.com/vaporwave","／液态金属／https://liquid.paper.design/","／直线条画／https://javier.xyz/pintr","／将一张图片渲染成另一张的风格／https://www.ostagram.me/?locale=cn",
 "／<hr>练习小游戏：","／布尔运算／https://boolean.method.ac","／字母排版／https://type.method.ac","／钢笔工具／https://bezier.method.ac","／在色轮上找到匹配的颜色／https://color.method.ac",
 ],
 
@@ -173,12 +191,11 @@ let d={
 "本地搜索":[p.目录+"本地搜索.html",p.本地+"【】"],
 
 "博客":["选择","打开博客","李猫球","／<br><br>",
-	"打赏","愿望单","／<br>",
+	"打赏","愿望单","／打开／酒仙笔记／C:/MQ/博客/不上传/酒仙笔记","／<br>",
 	"KTV","／<br>",
 	"二扯奶茶店"],
 "打开博客":[p.博客+"i","/js/s.html?跳转博客 【】"],
 "跳转博客":["js","if(!url[1]){window.location.href='https://limaoqiu.com/i'}else{url[1]=url[1].replace(new RegExp('%2F','g'),'/');if(url[1][0]!='/'){url[1]='/'+url[1]}window.location.href='https://limaoqiu.com'+url[1]}"],
-// "打开博客":["js","if(!url[1]){window.location.href='https://limaoqiu.com/i'}else{url[1]=url[1].replace(new RegExp('%2F','g'),'/');if(url[1][0]!='/'){url[1]='/'+url[1]}window.location.href='https://limaoqiu.com'+url[1]}"],
 "LIMAOQIU":"／博客","鱼刺猫":"／李猫球","YUCIMAO":"／李猫球",
 "李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
 "打赏":["选择","编辑|编辑打赏","预览|预览打赏","B站充电记录","包月|B站充电记录_包月"],
@@ -238,7 +255,7 @@ let d={
 "鹿鸣":["https://space.bilibili.com/488836173/video"],
 "米游姬":["https://space.bilibili.com/510189715/video"],
 
-"B站":["选择","哔哩哔哩","／<hr>","／小黑屋／https://www.bilibili.com/blackroom/ban","／<br><hr><h3>做视频</h3>","OBS","直播姬","／<br>","缓存_B站",
+"B站":["选择","哔哩哔哩","／<hr>","／小黑屋／https://www.bilibili.com/blackroom/ban","／<br><hr><h3>做视频</h3>","OBS","直播姬","／<br>","＼缓存_B站",
 ],
 
 "二游":["选择","／<br><hr><h3>尘白禁区</h3>","／木木／https://space.bilibili.com/31572302","／冲冲／https://space.bilibili.com/241036"],
@@ -263,7 +280,7 @@ let d={
 
 "收藏":["选择","知乎_收藏","B站_收藏","抖音_收藏","小红书_收藏"],
 "电视":["选择","／获取软件、源／C:/mq/目录/电视.html","tv源","／测试直播源／http://zqjy.info/tv/"],
-"TV源":["打开","yucimao","app/i/tv"],
+"TV源":["打开",p.yucimao+"app/i/tv"],
 
 "DEEPSEEK":["https://chat.deepseek.com/"],
 "异梦":[p.异梦+"0.html",p.异梦+"【】.html"],
@@ -280,24 +297,17 @@ let d={
 "M站":["https://www.metacritic.com/","https://www.metacritic.com/search/【】/"],
 "好日记":[p.目录+"子/日记/好日记.html"],
 "红迪":["https://www.reddit.com","https://www.reddit.com/search/?q=【】"],
-"MPV":[p.目录+"mpv.html"],
+"MPV":[p.异梦+"博客/mpv.html"],
 
 "缓存_B站":["打开","C:/mq/app/a/bilibili/xiazai"],
 
-"无聊":["选择","看热闹","无聊可玩","／<br>","聊天室","虫洞","看热闹","无聊按钮",
-"／<br>","／推荐相似影片／https://leisidianying.com","／梦日记／http://yume.ly/",
-"／<hr>",
-"聚会游戏","／海龟汤／"+p.博客+"haiguitang","／猫球游戏厅／"+p.博客+"yxt","／<br>",
-"／自动对对联／https://ai.binwang.me/couplet","／在线弹钢琴／https://www.autopiano.cn","／随机生成迷宫／http://www.mazegenerator.net","／假装自己是黑客／http://www.geektyper.com/mobile",
-"／<br>网页小游戏：","／CrazyGames／https://www.crazygames.com","／Y8／https://zh.y8.com／／玩游戏前需要看广告","／oldswf／https://oldswf.com/","／poki／https://poki.com/zh","／ioGAMES／https://iogames.space/",
-"／<br>","／在线音游／https://www.beatstage.com/／BeatStage",
-"／<br>游戏机：","／游戏机、街机／https://www.yikm.net／yikm","／DOS游戏／https://dos.zczc.cz","／国产掌机／http://www.famicn.com／中文家用游戏博物馆","／老游戏机／https://www.retrogames.onl／Play Online","／老游戏／https://ddyx.me/／低端游戏",
-"／<br>在线单机：","／网页红警2／http://ra2web.com",
-"／<br>小挑战：","／猜敏感词／"+p.博客+"game/caiminganci","／抉择按钮／http://willyoupressthebutton.com／／一个按钮，如果会发生某件好事，但会有某件坏事，你会按么？可以看看别人的选择","／画圆挑战／https://matrix67.itch.io/pi-day-challenge","／摆个圆／https://matrix67.itch.io/pi-day-challenge-2","／无尽驾驶／https://www.slowroadsxio.com/main/index.html",
+"无聊":["选择","看热闹","电影","＼无聊可玩","在线游戏","／<br>","聊天室","虫洞","无聊按钮","＼定期清理",
+"／<hr>","／梦日记／http://yume.ly/",
+"／<br>","／自动对对联／https://ai.binwang.me/couplet","／在线弹钢琴／https://www.autopiano.cn","／随机生成迷宫／http://www.mazegenerator.net","／假装自己是黑客／http://www.geektyper.com/mobile",
 "／<hr>",
 "／<br>观景：","／全景金字塔／https://mused.org/zh-hans","／全球摄像头／https://www.skylinewebcams.com/zh/webcam.html","／熊猫频道／https://www.ipanda.com","／全球动物直播／https://explore.org/livecams",
 "／<br>其他：","／无上下文电台／https://neave.tv／／好像失效了","／月薪赚多久／"+p.博客+"app/yxyzdj","／网络冥币／"+p.博客+"app/wangluomingbi","／模仿核弹威力／https://nuclearsecrecy.com/nukemap/",
-"／<hr>私人内容：","定期清理","无聊可玩",
+"／<br>线下：","聚会游戏","／海龟汤／"+p.博客+"haiguitang",
 ],
 
 "无聊可玩":[p.目录+"无聊可玩.html"],
@@ -305,7 +315,7 @@ let d={
 "虫洞":[p.博客+"虫洞"],
 
 "360AI":["https://bot.360.com/"],
-"查成分":["选择","／<h3>B站</h3>","视频弹幕_B站","／<br>",
+"查成分":["选择","／<h3>B站</h3>","查弹幕","／<br>",
 "UID","评论_B站","弹幕_B站","看直播和弹幕_B站","看直播和弹幕2_B站","用户名记录_B站",
 "／<br><br><hr><h3>贴吧</h3>","发言_贴吧","关注的贴吧_贴吧","查资料_贴吧","／<br>","查贴吧资料_贴吧","查贴吧吧务_贴吧",
 "／<br><br><hr><h3>微博</h3>","发言_微博",
@@ -321,20 +331,19 @@ let d={
 "用户名记录_B站":["https://danmakus.com/analyze/515330","https://danmakus.com/analyze/【】"],
 "看直播和弹幕_B站":["https://laplace.live/user/515330","https://laplace.live/user/【】"],
 "看直播和弹幕2_B站":["https://danmakus.com","https://danmakus.com/user/【】"],
-"查弹幕":"／视频弹幕_B站",
-"视频弹幕_B站":["http://tools.jie-you.cn/bili_danmu"],
-// "视频弹幕_B站":["https://tool.qianduange.cn/bili_danmu"],
+"查弹幕":["选择","／解忧／http://tools.jie-you.cn/bili_danmu","／前端哥／https://tool.qianduange.cn/bili_danmu／／广告多，体验不好"],
 
 
 "KIMI":["https://kimi.moonshot.cn/"],
 "LOFTER":["https://www.lofter.com/"],
 "豆瓣":["https://www.douban.com","https://www.douban.com/search?source=suggest&q=【】"],
-"HENTAI_编辑":["打开",p.目录+"子/关键词/"],
-"HENTAI":[p.异梦+"博客/11971293.html?ShenshiHentai"],
+"HENTAI":["选择","关键词_HENTAI","＼／目录/hentai／"+p.目录+"hentai.html"],
+"HENTAI关键词_编辑":["打开",p.目录+"子/关键词/"],
+"关键词_HENTAI":[p.异梦+"博客/11971293.html?ShenshiHentai"],
 "打分":"／点评",
 "二维码":["https://cli.im"],
 "名画":["https://artsandculture.google.com","https://artsandculture.google.com/search?q=【】"],
-"扩列须知":["打开","yucimao","blog/公告/关于/扩列须知"],
+"扩列须知":["打开",p.yucimao+"blog/公告/关于/扩列须知"],
 "小红书":["https://www.xiaohongshu.com/","https://www.xiaohongshu.com/search_result?keyword=【】"],
 "网易云音乐":["C:/mq/app/a/网易云音乐格式解码/index.html"],
 "吃啥外卖":[p.目录+"吃啥外卖.html"],"吃啥":"／吃啥外卖",
@@ -344,7 +353,7 @@ let d={
 "B站充电记录_包月":["https://member.bilibili.com/platform/allowance/upower-manage/member-manage"],
 "B站充电记录":["https://member.bilibili.com/platform/allowance/charge"],
 "物品位置":[p.目录+"物品位置.html"],"过期":"／物品位置","保质期":"／物品位置",
-"备忘":[p.目录+"备忘.html"],
+"备忘":[p.异梦+"博客/备忘.html"],
 "直播姬":["打开","C:/mq/app/a/bilibili/livehime/livehime.exe"],
 "OBS":["打开","C:/ProgramData/Microsoft/Windows/Start Menu/Programs/OBS Studio/OBS Studio.lnk"],
 "油管":"／YOUTUBE","YOTUBE":"／YOUTUBE",
@@ -536,6 +545,11 @@ if(d[搜索]&&d[搜索][0]=="js"){
 	dy+="<br>";
 	let 临时2="";
 	for(let i=1;d[搜索].length>i;i++){
+		let 临时3="";
+		if(d[搜索][i][0]=="＼"){
+			d[搜索][i]=d[搜索][i].slice(1);
+			if(!本地){dy+="<span class='提示 灰' data-msg='仅限本地查看'>";临时3="</span>";}
+		}
 		if(d[搜索][i][0]=="／"){
 			let 临时3=d[搜索][i].split("／");
 			if(临时3.length>2){
@@ -576,6 +590,7 @@ if(d[搜索]&&d[搜索][0]=="js"){
 			if(url[1]&&下一个&&下一个[1]&&下一个[1].indexOf("【】")!=-1){dy+="<sub 搜> </sub>";if(临时2==""){临时2=i}else{临时2="x"}}
 			dy+="</a>";
 		}
+		dy+=临时3;
 	}
 	document.getElementById("dy").innerHTML=dy;
 	if(临时2!="x"&&临时2!=""){url[0]=d[搜索][临时2];开始()}
@@ -607,7 +622,7 @@ if(跳转!=0){
 if(url&&url[0]!="undefined"){开始()}
 
 function 打开(a0,a1){
-	if(a0=="html"){a1='C:/mq/app/code.lnk '+a1+' & exit'}
+	if(a0=="html"){a1='C:/mq/app/code.lnk '+a1.replace(/^file:\/\/\//,'')+' & exit'}
 	else if(a0=="打开"){a1=a1.split(":")[0]+": & explorer \""+a1.replace(/\//g, "\\")+"\" & exit"}
 	let copySuccess=复(a1);
 	if(copySuccess){window.location.href='pvocmd://'}else{
