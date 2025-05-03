@@ -2,16 +2,16 @@
 layout: default
 ---
 <style>
-html,body {margin: 0;padding: 0;}
+html,body{margin:0;padding:0;}
 
-@media screen and (min-width: 768px){ /*电脑*/
-    .biaotib {text-align: center;position: relative;font-size: 3.5em;color: #0bb1f5;font-weight: bold;cursor: default;}
-    div.body {position: relative;top: 50px;width: 65%;margin: auto;}
+@media screen and (min-width:768px){ /*电脑*/
+    .biaotib{text-align:center;position:relative;font-size:3.5em;color:#0bb1f5;font-weight:bold;cursor:default;}
+    div.body{position:relative;top:50px;width:65%;margin:auto;}
 } /*电脑*/
 
-@media screen and (max-width: 768px){ /*手机*/
-    .biaotib {text-align: center;position: relative;font-size: 2.3em;color: #0bb1f5;font-weight: bold;cursor: default;}
-    div.body {position: relative;top: 50px;width: 96%;margin: auto;}
+@media screen and (max-width:768px){ /*手机*/
+    .biaotib{text-align:center;position:relative;font-size:2.3em;color:#0bb1f5;font-weight:bold;cursor:default;}
+    div.body{position:relative;top:50px;width:96%;margin:auto;}
 } /*手机*/
 </style>
 
@@ -20,30 +20,30 @@ html,body {margin: 0;padding: 0;}
 
 <style>
 #right_anchor2 a{display:block;}
-.cj {background-color: #fff;float: left;margin: 12px;padding: 12px;line-height: 20px;border-width: 2px;border-color: #33669940;border-style: solid;width: 130px;height: 175px;opacity: 0.8;filter: alpha(opacity=80);transition: all 0.3s;position: relative;font-size: 90%;}
-.cj:hover {opacity: 1.0;filter: alpha(opacity=100);transform: scale(1.2);z-index: 10;}
-.cj img {width: 130px;}
-.tsxt {border: 1px solid #c0c0c0;visibility: hidden;width: 157px;background-color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;font-size: 85%;position: absolute;z-index: 1;top: 170px;left: -2px;margin-left: 0px;}
-.cj:hover .tsxt {visibility: visible;transform: translate(0, 20px);transition: all 0.5s;}
-#back-top {display: none;}
-footer {float: left;width: 100%;}
+.cj{background-color:#fff;float:left;margin:12px;padding:12px;line-height:20px;border-width:2px;border-color:#33669940;border-style:solid;width:130px;height:175px;opacity:0.9;filter:alpha(opacity=90);transition:all 0.3s;position:relative;font-size:90%;}
+.cj:hover{opacity:1.0;filter:alpha(opacity=100);transform:scale(1.2);z-index:10;}
+.cj img{width:130px;}
+.tsxt{border:1px solid #c0c0c0;visibility:hidden;width:157px;background-color:#fff;text-align:center;border-radius:6px;padding:5px 0;font-size:85%;position:absolute;z-index:1;top:170px;left:-2px;margin-left:0px;}
+.cj:hover .tsxt{visibility:visible;transform:translate(0, 20px);transition:all 0.5s;}
+#back-top{display:none;}
+footer{float:left;width:100%;}
 hr{width:100%;}
 .hs{color:#404040;}
-hr.co0{border-top: 1px solid #00000000}
-@media screen and (min-width: 768px){
-    div.body {width: 70%;}
-#right_anchor2{position: fixed;bottom:0%;width:14%;height: 40%;overflow:auto;margin: 0 auto 0 67%;}#right_anchor2 table{width:100%;}
+hr.co0{border-top:1px solid #00000000}
+@media screen and (min-width:768px){
+    div.body{width:70%;}
+#right_anchor2{position:fixed;bottom:0%;width:14%;height:40%;overflow:auto;margin:0 auto 0 67%;}#right_anchor2 table{width:100%;}
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width:767px){
     #right_anchor2{position:relative;}#right_anchor2 table{width:60%;}
-    .cj {margin: 6px;padding: 6px;}
+    .cj{margin:6px;padding:6px;}
 }
 </style>
 <div class="biaotib" id="anniu_b"></div>
 <div id="anniu_a"></div>
 <br>
 
-<div id="right_anchor2" style="z-index: 102;"></div>
+<div id="right_anchor2" style="z-index:102;"></div>
 
 <div id="dy"></div>
 <a onclick="加载()"><div id="loadink" class="cj"><img class="loading" src="{{ site.mq_d }}/i/cj/loading.jpg" onerror="this.src='/i/cj/loading.jpg';this.onerror=null;"/><b>加载更多</b><br></div></a>
