@@ -21,7 +21,7 @@ display:block;
 width:100px;
 height:100px;
 border-radius:50%;
-background:#ff4444;
+background:#ff0909;
 box-shadow:0 8px 0 #cc0000,0 15px 20px #00000059;
 cursor:pointer;
 transition:all 0.1s ease;
@@ -30,22 +30,22 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 }
-#btn:hover{background:#ff0e0e;box-shadow:0 8px 0 #cc0000,0 15px 25px #00000073;}
+/* #btn:hover{background:#ff0e0e;box-shadow:0 8px 0 #cc0000,0 15px 25px #00000073;} */
 #btn:active{box-shadow:0 3px 0 #cc0000;transform:translate(-50%,-45%);}
 
 .提示{position:relative}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%)}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989}
-.提示{position:absolute;right:0;color:#9e9e9e;}
+.提示{position:absolute;right:0;color:#9e9e9e;cursor:default}
 </style>
 
-<a id="btn"></a>
+<a id="btn" onclick="左键()" onmousedown="中键(event)"></a>
 
 <script>
-  const data=[
+const data=[
 // [""],
 // [""],
 ["网站设计博物馆","https://www.webdesignmuseum.org"],
 ["扫一个雷","https://onesquareminesweeper.com/"],
-["中指","https://zelihole.github.io/say/middle-finger.html"],
+["国际友好手势","https://zelihole.github.io/say/middle-finger.html"],
 ["N轮车辆（展示不同轮子数量的车）","http://www.douglas-self.com/MUSEUM/TRANSPORT/nwheelcar/nwheelcar.htm"],
 ["古生物3D标本","https://www.vertebres3d.fr/"],
 ["颜文字生成器","https://www.fontspace.com/lenny-face"],
@@ -124,7 +124,6 @@ transform:translate(-50%,-50%);
 ["让色块摇摆","https://neave.com/wobble"],
 ["把你的简笔画变成傻吊","http://seoi.net/penint"],
 ["画一张gif图","http://flipanim.com"],
-["玩扫雷","https://m.saolei.org.cn"],
 ["练习心算","http://jisuanti.com"],
 ["Miku双马尾的角度","https://aidn.jp/twintail"],
 ["彩虹猫点击游戏","https://aidn.jp/nyancat"],
@@ -224,10 +223,39 @@ transform:translate(-50%,-50%);
 ["恶意版俄罗斯方块（永远不给需要的方块）","https://qntm.org/files/hatetris/hatetris.html"],
 ["蛇棋（纯靠运气的游戏）","http://www.wesane.com/game/791"],
 
-  ];
-  let 当前=data[Math.floor(Math.random()*data.length)]
-  document.getElementById("btn").innerHTML=`<span class='提示' data-msg='${当前[0]}'>?</span>`;
-  document.getElementById("btn").href=当前[1];
+];
+const btn=document.getElementById("btn");
+let 模式=window.location.href;
+if(模式.indexOf("?wz")!=-1){模式="直接跳转"}
+else if(模式.indexOf("?sx")!=-1){模式="顺序"}
+else{模式="默认"}
+let 顺序=0;
+let 链接;
+
+function 左键(){
+  window.location.href=链接;
+}
+
+function 中键(event) {
+    if(event.button===1){
+        event.preventDefault();
+        window.open(链接,'_blank');
+        换();
+    }
+}
+
+function 换(){
+  let 数字;
+  if(模式=="顺序"){数字=顺序;顺序+=1;if(顺序>=data.length){顺序=0;}}
+  else{数字=Math.floor(Math.random()*data.length)}
+  let 当前=data[数字];
+  btn.innerHTML=`<span class='提示' data-msg='${当前[0]}'>?</span>`;
+  链接=当前[1];
+  if(模式=="直接跳转"){左键()}
+}
+换();
+
+
 </script>
 </body>
 </html>
