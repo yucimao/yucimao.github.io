@@ -24,6 +24,7 @@ function 输入(){
     if(时<10){时="0"+时;}
     let 分=new Date().getMinutes()+1;
     if(分>59){分="59";}
+    if(分<10){分="0"+分;}
     
     let dy="<item>／"+
         "<title>"+标题+"</title>／"+

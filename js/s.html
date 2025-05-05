@@ -44,6 +44,7 @@ let d={
 // ＼+原本的内容 会提示仅限本地查看
 
 // "":["",""],
+"图片转文字":["https://app.xunjiepdf.com/ja/ocr/"],
 "原神节奏":[p.博客+"yuanshenjiezou",p.博客+"yuanshenjiezou?【】"],
 "闲鱼":["https://www.goofish.com","https://www.goofish.com/search?q=【】"],
 "淘宝":["https://taobao.com","https://s.taobao.com/search?q=【】"],
@@ -426,11 +427,13 @@ function 首行(){
 }
 
 if(location.href.indexOf("?")!=-1){
-原=decodeURI(location.href.split("?")[1]);首行();
+原=(decodeURI(location.href.split("?")[1])+"")
+.replace(new RegExp('%20',"g")," ")
+.replace(new RegExp('%2F',"g"),"/");
+首行();
 }else{
 原=0;
 document.getElementById("dy").innerHTML="<form id='输入f'><input type='search' id='输入' autofocus style='font-size:2em;border-radius:5px;width:100%;height:2em;' placeholder='　猫球搜索' autocomplete='off'></form><a class='anniu' onclick='确定搜索()'>确定</a>";
-// document.getElementById("dy").innerHTML="<input type='text' id='输入' autofocus style='font-size:2em;border-radius:5px;width:100%;height:2em;' placeholder='　猫球搜索' autocomplete='off'><a class='anniu' onclick='确定搜索()'>确定</a>";
 
 let input=document.getElementById('输入');
 document.addEventListener('click',function(event){

@@ -10,6 +10,14 @@ layout: null
         <atom:link href="{{ site.mq }}/feed.xml" rel="self" type="application/rss+xml" />
 
         <item>
+            <title>星铁演唱会（线上）观后感</title>
+            <description>一场后劲很足的游戏演唱会，属于我的二次元之魂回归。</description>
+            <pubDate>Mon, 5 May 2025 01:04:00 +0800</pubDate>
+            <link>{{ site.mq }}/i/14646079</link>
+            <guid isPermaLink="true">{{ site.mq }}/i/14646079</guid>
+        </item>
+
+        <item>
             <title>关于何同学和司机要好评</title>
             <description>内耗者的自我反思，居然会让不内耗的人如此愤怒。</description>
             <pubDate>Sun, 13 Apr 2025 16:44:00 +0800</pubDate>
