@@ -1,0 +1,132 @@
+---
+layout: page2
+title: 材料仓库
+nav_text: 材料仓库
+nav_url: <a href="/jiuxian">酒仙笔记</a><a>/</a><a href="/jiujiao">猫球的酒窖</a>
+permalink: jiujiao/cangku
+---
+<style id="选择">.全部{font-weight:bold}</style>
+<style id="选择2">.品级{font-weight:bold}</style>
+<div id="弹窗" style="display:none;"></div>
+<fieldset id="dy0"><small>排序方式：</small> <a onclick="排序('首字母')" class='首字母'>首字母</a>　<a onclick="排序('品级')" class='品级'>品级</a>　<a onclick="排序('随机')" class='随机'>随机</a></fieldset>
+
+<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">筛选</a>
+<fieldset id="dy1" style="display:none;"></fieldset><br><br><div id="dy2"></div>
+<script>
+let 选择=["br", // "【","】"
+    "植物","水果","蔬菜","花","蘑菇","br",
+    "液体","水","药剂","乳","br",
+    "生物","怪物","br",
+    "／<small>口味：</small>","甜","辣","香","br",
+    "／<small>属性：</small>","冰","火","能量","br",
+    "／<small>功效：</small>","安神","精神","好运","治愈","强身健体","br",
+    "／<small>颜色：</small>","白","黄","橙","红","蓝","br",
+    "／<small>按作品：</small>","«原神»","【","«星穹铁道»","«我的世界»","】",
+],S={
+    0:"S",//传说
+    1:"A",//极品
+    2:"B",//珍贵
+    3:"C",//稀有
+    4:"D",//常见
+    5:"E",//垃圾
+},data=[// ["绝云椒椒",["简单介绍","展开讲讲"],["JYJJ",4,"«原神»","蔬菜"]],
+    // ["",["",""],["",4,"«»"]],
+    ["上古水果",["千万年来冬眠中的水果。",""],["SGSG",3,"«星露谷物语»","植物","水果","蓝"]],
+    ["霜瓜",["因表面结一层白霜而得名，瓜肉鲜脆清甜。",""],["SG",4,"«星露谷物语»","植物","水果","甜","白","蓝"]],
+    ["附魔金苹果",["用大量黄金给一颗苹果附魔，很珍贵。<br>有治愈效果，还会让人更加强壮。",""],["FMJPG",3,"«我的世界»","植物","水果","治愈","强身健体","黄"]],
+    ["骨粉",["用骨头磨成的粉，可以帮助植物快速生长。",""],["GF",5,"«我的世界»","白"]],
+    ["恶魂之泪",["[恶魂]死亡时掉落。",""],["",3,"«我的世界»","怪物"]],
+    ["发酵蛛眼",["用蜘蛛眼、糖、棕色蘑菇发酵获得。","FJZY"],["",4,"«我的世界»","生物","怪物","紫"]],
+    ["下界疣",["生长在[灵魂沙]上的奇怪植物，在«我的世界»是酿造几乎所有药水的基础。",""],["XJY",4,"«我的世界»","植物","红"]],
+    ["鳞渊冰泉",["产自[鳞渊境]的天然饮用水，但热量极高。",""],["LYBQ",4,"«星穹铁道»","液体","水"]],
+    ["热浮羊奶",["仙舟联盟的特产浮羊奶，也叫‘晴柔奶’，难以保存，所以很难在域外品尝到。<br>加热后不用加糖也很甜，但放凉后会发苦，必须趁热喝。",""],["RFYN",4,"«星穹铁道»","甜","液体","乳"]],
+    ["“幸运祝福”",["[丽莎]为我炼制的奇特药剂，呈现出黄金般的美丽色泽。能为使用者带来好运，在药效消失之前将会事事顺心。<br>由于所需原料相当稀有，调配过程极其复杂，只有极少数人能够炼制成功。",""],["XYZF",2,"«原神»","液体","药剂","好运","黄"]],
+    ["墩墩桃",["林中灌木结出的果实。肉质敦实，味道香甜可口。据说食用后还有宁心安神的功效。",""],["DDT",4,"«原神»","植物","水果","甜","安神","粉"]],
+    ["堇瓜",["有着色泽艳丽的外皮的果实，其中的果肉可以在烹饪后转化为口感独特的食物。",""],["JG",4,"«原神»","植物","水果","紫"]],
+    ["松茸",["与松树伴生的珍稀菌类，散发的淡雅鲜香暴露了它的位置。",""],["SR",4,"«原神»","植物","蘑菇"]],
+    ["甜甜花",["香气浓郁的植株，即便在黑暗中，也能循着芬芳的气息找到的花朵。",""],["TTH",4,"«原神»","植物","花","甜","香","白","黄"]],
+    ["烈焰花花蕊",["火辣辣的花芯，熊熊燃烧的炙热花朵，即使被水浇熄了也隐隐地放出热量。",""],["LYHHR",4,"«原神»","植物","花","火","橙"]],
+    ["冰雾花花朵",["封闭在坚冰当中的花蕊。即使离开了植株也持续散发寒气的冰凉植物。",""],["BWHHD",4,"«原神»","植物","花","冰","蓝"]],
+    ["清心",["只生长在孤高石峰的通透百花。不愿接受平原的温暖与湿润，宁可在清冷的尖峰眺望远方。",""],["QX",3,"«原神»","植物","花","白"]],
+    ["琉璃百合",["极为古老的花卉，据说能将大地的记忆积攒成花期时的芬芳。",""],["LLBH",4,"«原神»","植物","花","香","蓝"]],
+    ["史莱姆凝胶",["覆于‘史莱姆’体表的浓稠流体。",""],["SLMNJ",4,"«原神»","生物","怪物"]],
+    ["骗骗花蜜",["从‘骗骗花’的花蕊中提取出的花蜜，含有少量元素。<br>尝起来和‘甜甜花’的味道有些微妙的相似。",""],["PPHM",4,"«原神»","植物","怪物","甜","能量"]],
+    ["日落果",["“如夕阳般靓丽美好的饱满果实。”<br>有着奇异的香甜气味，能让人精神百倍。",""],["RLG",4,"«原神»","植物","水果","甜","精神","橙"]],
+    ["泡泡桔",["生长在温暖、湿润、光照充足之处的果实，圆圆的外表下，偷偷藏着甜甜的甘鲜。",""],["PPJ",4,"«原神»","植物","水果","甜","橙"]],
+    ["绝云椒椒",["辛辣植物，只要闻到它的味道，身体就会变得炽热，渴求水分。",""],["JYJJ",4,"«原神»","植物","蔬菜","辣","火","红"]],
+];
+
+let dy="";
+for(let i=0;选择.length>i;i++){
+    if(选择[i]=="br"){dy+="<br>"}
+    else if(选择[i]=="【"){dy+=`<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">更多</a><div style="display:none;">`}
+    else if(选择[i]=="】"){dy+="</div>"}
+    else if(选择[i][0]=="／"){dy+=选择[i].split("／")[1]}
+    else{dy+=`<a onclick="选('${选择[i]}')" class='选择 ${选择[i]}'>${选择[i]}</a>　`}
+}
+document.getElementById("dy1").innerHTML=`<a onclick="选(0)" class='选择 全部'>全部</a>　`+dy;
+for(let i=0;data.length>i;i++){
+    if(data[i][1][1]!=""){
+        if(data[i][1][0]!=""){data[i][1][0]+="<br>";}
+        data[i][1][0]+="<small>点击展开说明</small>";
+    }
+    if(data[i][1][0]!=""){data[i][1][0]=`<span class=／标题 ${S[data[i][2][1]]}／>${data[i][0]}</span>`+((data[i][2][2]!='')?" —— "+data[i][2][2]:'')+`<br>${data[i][1][0]}`;}
+    data[i][1]="<a class='"+S[data[i][2][1]]+"' "+((data[i][1][1]!="")?`onclick="dw(dwb='${data[i][1][1]}',dwd='${data[i][0]}')"`:'')+" "+((data[i][1][0]!="")?` onmousemove="进入('${data[i][1][0]}')" onmouseout="离开()"`:'')+">"+data[i][0]+"</a>";
+}
+
+let 选项=[];
+
+function 打印(){
+    let 结果=data.filter(a=>选项.every(b=>a[2].includes(b)));
+    document.getElementById("dy2").innerHTML=结果.map(a=>a[1]).join("");
+}
+
+function 选(o){
+    if(o==0){
+        选项=[];
+    }else if(选项.indexOf(o)!=-1){
+        选项=选项.filter(a=>a!==o);
+    }else{
+        选项.push(o);
+    }
+    if(选项.length==0){document.getElementById("选择").innerHTML=".全部{font-weight:bold}"}
+    else{document.getElementById("选择").innerHTML='.'+选项.join(',.')+"{font-weight:bold}"}
+    打印();
+}
+
+function 排序(o){
+    if(o=='首字母'){
+        data.sort((a,b)=>a[2][0].localeCompare(b[2][0]));
+    }else if(o=='品级'){
+        data.sort((a,b)=>a[2][1]-b[2][1]);
+    }else if(o=='随机'){
+        for(let i=data.length-1;i>0;i--){
+            const j=Math.floor(Math.random()*(i+1));
+            [data[i],data[j]]=[data[j],data[i]];
+        }
+    }
+    document.getElementById("选择2").innerHTML="."+o+"{font-weight:bold}";
+    打印();
+}
+排序('品级');
+
+function 进入(o){
+    document.getElementById("弹窗").innerHTML=o.replace(new RegExp('／',"g"),"'");
+    document.getElementById("弹窗").style="";
+}
+function 离开(){document.getElementById("弹窗").style="display:none"}
+</script>
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+#弹窗{position:absolute;left:0;position:fixed;bottom:0;margin:0 0 15px 20px;line-height:18px;padding:7px;width:300px;border-style:solid;border-radius:5px;border:2px solid #535353;background-color:#060f27d3;color:#c4c4c4;font-size:12px;z-index:1000;}
+#弹窗 .标题{color:#e4e4e4;font-weight:bold;font-size:14px}
+#弹窗 small{color:#b6b6b6}
+#弹窗 .S{color:#FF8000}#弹窗 .A{color:#b649ff}#弹窗 .B{color:#0080ff}#弹窗 .C{color:#1EFF00}#弹窗 .D{color:#e5e5e5}#弹窗 .E{color:#9D9D9D}
+a.S{border:1px solid #FF8000}a.A{border:1px solid #b649ff}a.B{border:1px solid #0080ff}a.C{border:1px solid #1EFF00}a.D{border:1px solid #9D9D9D}a.E{border:1px solid #e5e5e5}
+#dy2 a{border-radius:13px;padding:0px 4px;margin:6px 10px;cursor:default;display:inline-block;white-space:nowrap;}
+#dy0,#dy1{border-radius:10px}
+[onmousemove]:hover{color:#0256b1}
+#right_anchor,#right_anchor2{display:none !important}
+[onmousemove^='进入(']{cursor:default}
+#dy2 a[onclick]{cursor:pointer}
+</style>
