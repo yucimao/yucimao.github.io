@@ -8,6 +8,7 @@ permalink: jiujiao/cangku
 <style id="选择">.全部{font-weight:bold}</style>
 <style id="选择2">.品级{font-weight:bold}</style>
 <div id="弹窗" style="display:none;"></div>
+<input type="text" placeholder="搜索" id="搜索" autocomplete="off" onkeyup="搜索(this.value)">
 <fieldset id="dy0"><small>排序方式：</small> <a onclick="排序('首字母')" class='首字母'>首字母</a>　<a onclick="排序('品级')" class='品级'>品级</a>　<a onclick="排序('随机')" class='随机'>随机</a></fieldset>
 
 <a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">筛选</a>
@@ -79,6 +80,7 @@ let 选项=[];
 function 打印(){
     let 结果=data.filter(a=>选项.every(b=>a[2].includes(b)));
     document.getElementById("dy2").innerHTML=结果.map(a=>a[1]).join("");
+    document.getElementById("搜索").value="";
 }
 
 function 选(o){
@@ -115,6 +117,12 @@ function 进入(o){
     document.getElementById("弹窗").style="";
 }
 function 离开(){document.getElementById("弹窗").style="display:none"}
+
+function 搜索(o){
+    let 匹配=new Set();data.forEach((a,b)=>{if(a[0].includes(o)){匹配.add(b)}});
+    document.getElementById("dy2").innerHTML=data.filter((_,b)=>匹配.has(b)).map(a=>a[1]).join("")+"<hr>"+data.filter((a,b)=>!匹配.has(b)&&a[1].includes(o)).map(a=>a[1]).join("");
+}
+
 </script>
 <link rel="stylesheet" href="/css/all2.css">
 <style>

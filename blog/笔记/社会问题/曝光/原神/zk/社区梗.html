@@ -1,0 +1,139 @@
+---
+layout: page2
+title: 社区梗
+nav_text: 社区梗
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: biji/game/geng
+---
+<style id="选择">.全部{font-weight:bold}</style>
+<style id="选择2">.热度{font-weight:bold}</style>
+<div id="弹窗" style="display:none;"></div>
+<input type="text" placeholder="搜索" id="搜索" autocomplete="off" onkeyup="搜索(this.value)">
+<fieldset id="dy0"><small>排序方式：</small> <a onclick="排序('首字母')" class='首字母'>首字母</a>　<a onclick="排序('热度')" class='热度'>热度</a>　<a onclick="排序('随机')" class='随机'>随机</a></fieldset>
+
+<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">筛选</a>
+<fieldset id="dy1" style="display:none;"></fieldset><br><br><div id="dy2"></div>
+<script>
+let 选择=["br", // "【","】"
+    "玩家梗","谐音、缩写","黑称","br",
+    "米哈游","鹰角","明日方舟","库洛",
+    "br","单机","游戏科学","br",
+    
+],S={
+    0:"S",// 出圈热梗，如“谷子”
+    1:"A",// 圈外人也知道，如“原神启动”
+    2:"B",// 圈内人基本都知道
+    3:"C",// 很多人知道
+    4:"D",// 部分人知道
+    5:"E",// 冷门梗
+},data=[// ["绝云椒椒",["简单介绍","展开讲讲"],["JYJJ",4,"蔬菜"]],
+// ["",["",""],["",,""]],
+// ["",["",""],["",,""]],
+// ["",["",""],["",,""]],
+["脚臭",["«明日方舟»的足控玩家对女角色的脚、尤其是臭的脚情有独钟。",""],["JC",1,"鹰角","明日方舟"]],
+["米池",["二游圈：米哈游使用的一种卡池规则，贬义。他们认为米哈游的卡池规则很烂，且带坏了其他二游厂商。","12630595"],["MC",2,"米哈游","黑梗"]],
+["可莉石块/尸块/鸡块",["«原神»角色可莉被分尸的血腥图片，“石块”是“尸块”的谐音，“鸡块”是在此基础上辱骂角色是“妓女”。",""],["KLSK",2,"米哈游","原神","黑梗"]],
+["鬼图",["吓人的图片，可能血腥或恐怖。",""],["GT",1]],
+["椅子能坐",["意为「«原神»玩家没见识，连‘游戏里椅子可以坐’都拿出来吹嘘。」（实际是反米势力搞的反串）",""],["YZNZ",1,"米哈游","原神","黑梗"]],
+["第四神器",["“米哈游三神器”之后的又一“神器”——许愿机。<br>一开始反米，在米哈游成功后，又责怪米哈游不按照他们喜好做游戏，就像把米哈游当许愿机一样。",""],["DSSQ",5,"米哈游","玩家梗"]],
+["米哈游三神器",["时光机：米哈游出什么新东西都要被说抄袭，有时会发现米哈游其实比对方更早出，玩笑讽刺道「米哈游有时光机，提前抄袭。」<br>照妖镜：一些媒体、博主为了反米露出丑陋嘴脸。<br>回旋镖：为了反米制造的负面节奏，不一定伤害到米哈游，但经常伤到反米群体自己或友军。",""],["MHYSSQ",3,"米哈游","玩家梗"]],
+["猴",["对反米势力的黑称。",""],["H",3,"米哈游","黑称","黑梗"]],
+["法国公关",["米哈游的公关部，遇事直接投降，就像二战的法国一样。",""],["FGGG",4,"米哈游","玩家梗"]],
+["王小美",["«原神»角色甘雨，游戏里的梗。",""],["WXM",3,"米哈游","原神","玩家梗"]],
+["那个女人",["«原神»角色闲云，游戏里的梗。",""],["NGNR",3,"米哈游","原神","玩家梗"]],
+["跳过人生",["原本是«原神»博主对反米群体的怒斥：「这么想要跳过键，你怎么不跳过自己的人生」，被带节奏曲解成了「不玩«原神»等同于跳过自己的人生」。",""],["TGRS",4,"米哈游","原神","黑梗"]],
+["**夫人",["ML群体的一种羞辱女角色的方式：女角色和男角色有接触，就说明他们有一腿，说明玩家被绿了，就要被叫“（男角色）夫人”。",""],["FR",2,"黑称","黑梗"]],
+["文输菩萨",["«原神»角色云堇的黑称。","云堇的过场动画向外国玩家展示了中国戏曲文化，被官媒称赞文化输出，但一些网友认为文化输出必须严肃，不认可二次元游戏算文化输出，造梗嘲笑，“文输”是“文化输出”的简称，“菩萨”是当时网络热梗，指用性感照片取悦男性的女博主。"],["WSPS",4,"米哈游","原神","黑称","黑梗"]],
+["国标3A",["曾经国产游戏质量普遍不高，一直没能出现一款国产3A大作，直到«原神»出现，但一些单机圈玩家不肯承认«原神»是3A游戏，故意设定新的标准用于论证«原神»不是3A游戏，就仿佛国内有一个独特的不同于全球的3A标准。",""],["GB3A",,"米哈游","原神","单机"]],
+["*批",["对特定游戏玩家的黑称，第一个字是游戏的简称。",""],["P",1,"黑称","黑梗"]],
+["越看越红",["原本是玩家在米哈游的游戏里，发现二次元表象之下暗藏着中国人的价值观，但被反米势力嘲笑，这句话常被拿来讽刺米哈游。",""],["YKYH",4,"米哈游","黑梗"]],
+["OP",["“原批”，对«原神»玩家的黑称。",""],["OP",1,"黑称","米哈游","原神","黑梗"]],
+["酷狗/库狗",["对库洛游戏的玩家的黑称。",""],["KG",3,"黑称","库洛","黑梗"]],
+["3A游戏",["«绝区零»开服时的节奏，说这个游戏只要切换三个角色一直平A就能过关。",""],["3AYX",4,"米哈游","绝区零","黑梗"]],
+["金袈裟奖",["金摇杆奖，指«黑神话悟空»玩家过于在意这个奖项，以至于成了执念。","“袈裟”在«西游记»里是金池长老的执念，«黑神话悟空»发售后，它的玩家就对各种奖项充满了类似的执念，在以为不能得奖时骂它是“野鸡奖”，说它只是一件我们不需要的“袈裟”，在得奖后有吹嘘这个奖的含金量、说“天冷了需要袈裟”。"],["JJSJ",4,"单机","游戏科学","黑神话悟空","黑梗"]],
+["后背建模/剑魔",["«鸣潮»高价付费皮肤的后背不是建模而是贴图，被嘲笑。",""],["HBJM",4,"谐音、缩写","黑梗"]],
+["棉花游",["米哈游，像棉花一样柔弱好欺负。",""],["MHY",4,"米哈游","谐音、缩写","玩家梗"]],
+["鸡厂",["对米哈游的黑称，“鸡”是“妓女”的意思，意为「米哈游是妓院，女角色是妓女」。","14745139"],["JC",3,"黑称","米哈游","黑梗"]],
+];
+
+let dy="";
+for(let i=0;选择.length>i;i++){
+    if(选择[i]=="br"){dy+="<br>"}
+    else if(选择[i]=="【"){dy+=`<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">更多</a><div style="display:none;">`}
+    else if(选择[i]=="】"){dy+="</div>"}
+    else if(选择[i][0]=="／"){dy+=选择[i].split("／")[1]}
+    else{dy+=`<a onclick="选('${选择[i]}')" class='选择 ${选择[i]}'>${选择[i]}</a>　`}
+}
+document.getElementById("dy1").innerHTML=`<a onclick="选(0)" class='选择 全部'>全部</a>　`+dy;
+for(let i=0;data.length>i;i++){
+    if(data[i][1][1]!=""){
+        if(data[i][1][0]!=""){data[i][1][0]+="<br>";}
+        data[i][1][0]+="<small>点击展开说明</small>";
+    }
+    if(data[i][1][0]!=""){data[i][1][0]=`<span class=／标题 ${S[data[i][2][1]]}／>${data[i][0]}</span>`+((data[i][2][2]!='')?" —— "+data[i][2][2]:'')+`<br>${data[i][1][0]}`;}
+    data[i][1]="<a class='"+S[data[i][2][1]]+"' "+((data[i][1][1]!="")?`onclick="dw(dwb='${data[i][1][1]}',dwd='${data[i][0]}')"`:'')+" "+((data[i][1][0]!="")?` onmousemove="进入('${data[i][1][0]}')" onmouseout="离开()"`:'')+">"+data[i][0]+"</a>";
+}
+
+let 选项=[];
+
+function 打印(){
+    let 结果=data.filter(a=>选项.every(b=>a[2].includes(b)));
+    document.getElementById("dy2").innerHTML=结果.map(a=>a[1]).join("");
+    document.getElementById("搜索").value="";
+}
+
+function 选(o){
+    if(o==0){
+        选项=[];
+    }else if(选项.indexOf(o)!=-1){
+        选项=选项.filter(a=>a!==o);
+    }else{
+        选项.push(o);
+    }
+    if(选项.length==0){document.getElementById("选择").innerHTML=".全部{font-weight:bold}"}
+    else{document.getElementById("选择").innerHTML='.'+选项.join(',.')+"{font-weight:bold}"}
+    打印();
+}
+
+function 排序(o){
+    if(o=='首字母'){
+        data.sort((a,b)=>a[2][0].localeCompare(b[2][0]));
+    }else if(o=='热度'){
+        data.sort((a,b)=>a[2][1]-b[2][1]);
+    }else if(o=='随机'){
+        for(let i=data.length-1;i>0;i--){
+            const j=Math.floor(Math.random()*(i+1));
+            [data[i],data[j]]=[data[j],data[i]];
+        }
+    }
+    document.getElementById("选择2").innerHTML="."+o+"{font-weight:bold}";
+    打印();
+}
+排序('热度');
+
+function 进入(o){
+    document.getElementById("弹窗").innerHTML=o.replace(new RegExp('／',"g"),"'");
+    document.getElementById("弹窗").style="";
+}
+function 离开(){document.getElementById("弹窗").style="display:none"}
+
+function 搜索(o){
+    let 匹配=new Set();data.forEach((a,b)=>{if(a[0].includes(o)){匹配.add(b)}});
+    document.getElementById("dy2").innerHTML=data.filter((_,b)=>匹配.has(b)).map(a=>a[1]).join("")+"<hr>"+data.filter((a,b)=>!匹配.has(b)&&a[1].includes(o)).map(a=>a[1]).join("");
+}
+
+</script>
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+#弹窗{position:absolute;left:0;position:fixed;bottom:0;margin:0 0 15px 20px;line-height:18px;padding:7px;width:300px;border-style:solid;border-radius:5px;border:2px solid #535353;background-color:#060f27d3;color:#c4c4c4;font-size:12px;z-index:1000;}
+#弹窗 .标题{color:#e4e4e4;font-weight:bold;font-size:14px}
+#弹窗 small{color:#b6b6b6}
+#弹窗 .S{color:#FF8000}#弹窗 .A{color:#b649ff}#弹窗 .B{color:#0080ff}#弹窗 .C{color:#1EFF00}#弹窗 .D{color:#e5e5e5}#弹窗 .E{color:#9D9D9D}
+a.S{border:1px solid #FF8000}a.A{border:1px solid #b649ff}a.B{border:1px solid #0080ff}a.C{border:1px solid #1EFF00}a.D{border:1px solid #9D9D9D}a.E{border:1px solid #e5e5e5}
+#dy2 a{border-radius:13px;padding:0px 4px;margin:6px 10px;cursor:default;display:inline-block;white-space:nowrap;color:var(--body-color)}
+#dy0,#dy1{border-radius:10px}
+[onmousemove]:hover{color:#0256b1}
+#right_anchor,#right_anchor2{display:none !important}
+[onmousemove^='进入(']{cursor:default}
+#dy2 a[onclick]{cursor:pointer;color:var(--a-color)}
+</style>
