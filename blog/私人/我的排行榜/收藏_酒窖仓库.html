@@ -81,7 +81,7 @@ data.forEach(b=>{
 let dy="";
 for(let i=0;选择.length>i;i++){
     if(选择[i]=="br"){dy+="<br>"}
-    else if(选择[i]=="【"){dy+=`<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">更多</a><div style="display:none;">`}
+    else if(选择[i]=="【"){dy+=`<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'" class='更多'>更多　</a><div style="display:none;">`}
     else if(选择[i]=="】"){dy+="</div>"}
     else if(选择[i][0]=="／"){dy+=选择[i].split("／")[1]}
     else{dy+=`<a onclick="选('${选择[i]}')" class='选择 ${选择[i]}'>${选择[i]}</a>　`}
@@ -158,4 +158,5 @@ a.S{border:1px solid #FF8000}a.A{border:1px solid #b649ff}a.B{border:1px solid #
 #right_anchor,#right_anchor2{display:none !important}
 [onmousemove^='进入(']{cursor:default}
 #dy2 a[onclick]{cursor:pointer;color:var(--a-color)}
+.更多{font-size:0.9em;color:#828282;}
 </style>
