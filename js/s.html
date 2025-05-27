@@ -231,12 +231,12 @@ let d={
 //米哈游
 "米哈游":["选择","官网_米哈游","B站_米哈游","微博_米哈游",
 "／<hr><h3>作品</h3>","原神","星穹铁道","绝区零","／<br>","未定事件簿","鹿鸣","米游姬",
-"／<hr>","／节奏记录／"+p.博客+"yuanshenjiezou","＼／本地／"+p.yucimao+"blog/笔记/社会问题/曝光/原神/原神节奏.html","／其他游戏／"+p.博客+"i/7599677",
+"／<hr>","／节奏记录／"+p.博客+"yuanshenjiezou","＼／本地／"+p.yucimao+"blog/笔记/社会问题/曝光/米游/原神节奏.html","／其他游戏／"+p.博客+"i/7599677",
 "／<hr><h3>私人内容</h3>","＼／本地页／"+p.目录+"游戏_米哈游.html","＼／打开／文件夹／"+p.目录+"子/游戏/米哈游",
 "／<br>抽卡记录：",
 ...["原神","星穹铁道","绝区零"].flatMap(a=>[
-    `／<b>${a}</b>／${p.yucimao}blog/笔记/社会问题/曝光/原神/zk/抽卡记录：${a}.html`,
-    `／html／编辑／${p.yucimao}blog/笔记/社会问题/曝光/原神/zk/抽卡记录：${a}.html`,"／ / "
+    `／<b>${a}</b>／${p.yucimao}blog/笔记/社会问题/曝光/米游/zk/抽卡记录：${a}.html`,
+    `／html／编辑／${p.yucimao}blog/笔记/社会问题/曝光/米游/zk/抽卡记录：${a}.html`,"／ / "
   ]),
 ],
 "米游社":["https://www.miyoushe.com","https://www.miyoushe.com/dby/search?keyword=【】"],
@@ -506,7 +506,7 @@ if(d[搜索]&&d[搜索][0]=="本地"){//本地
 if(d[搜索]&&d[搜索][0]=="js"){
 	eval(d[搜索][1])
 }else if(d[搜索]&&d[搜索][0]=="选择"){//选择
-	let dy="<small class='链接' onclick=\"location.replace('"+默认+搜索+"')\">搜索</small><br>";
+	let dy="<small class='链接 提示' data-msg='快捷键：句号键' onclick=\"location.replace('"+默认+localStorage.getItem("s_html")+"')\">搜索</small><br>";
 	if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>"}
 	dy+="<br>";
 	let 临时2="";
@@ -614,6 +614,7 @@ function 确定搜索(){
 
 document.addEventListener('keydown',function(event){
     if(event.keyCode===13){确定搜索()}
+    if(event.keyCode===229||event.keyCode===190){location.replace(默认+localStorage.getItem("s_html"))}
 });
 
 let 输入F=document.getElementById('输入f');
