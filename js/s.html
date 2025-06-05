@@ -45,7 +45,8 @@ let d={
 // ＼+原本的内容 会提示仅限本地查看
 
 // "":["",""],
-// "米游节奏":["选择",""],
+"吃啥":["选择","／外卖点啥／"+p.异梦+"博客/外卖点啥.html","猫球厨房"],
+"猫球搜索":["选择","／使用指南／"+p.异梦+"博客/猫球搜索使用指南.html"],
 "像素点":["选择","／像素点.cn／"+p.xsd,"／复制／查询／"+p.xsd+"b#申请进度"],
 "YANDEX":["https://yandex.ee","https://yandex.ee/search/?text=【】"],
 "二扯":["选择","／B站／https://space.bilibili.com/3388993","／微博／https://weibo.com/u/6883588147","／小红书／https://www.xiaohongshu.com/user/profile/6160724c0000000002021bd1","／<br>二扯作品：","／B站／https://space.bilibili.com/515330/favlist?fid=2866014530"],
@@ -135,7 +136,7 @@ let d={
 ],
 "随机骰子":[p.博客+"suijitouzi"],
 "生活":["选择","随机骰子","／生活经验／https://yyjingyan.com","电子产品说明书",
-"／<br>吃喝：","／猫球厨房／"+p.博客+"biji/maoqiuchufang","／挑水果／"+p.博客+"biji/tiaoshuiguo","／涮火锅时间／"+p.博客+"biji/shuanhuoguo","／一会吃点啥／"+p.博客+"biji/chidiansha",
+"／<br>吃喝：","猫球厨房","／挑水果／"+p.博客+"biji/tiaoshuiguo","／涮火锅时间／"+p.博客+"biji/shuanhuoguo","吃啥",
 "／<br>玩乐：","聚会游戏","／出门玩点啥／"+p.博客+"biji/wandiansha",
 ],
 "聚会游戏":[p.博客+"juhuiyouxi"],
@@ -617,6 +618,12 @@ function 确定搜索(){
 document.addEventListener('keyup',function(event){
     if(event.keyCode===13){确定搜索()}
     if(event.keyCode===190){location.replace(默认+localStorage.getItem("s_html"))}
+
+	if (/^[1-9]$/.test(event.key)){
+		const index=parseInt(event.key)-1;
+		const links=document.querySelectorAll('a');
+		if(index<links.length){links[index].click()}
+	}
 });
 
 let 输入F=document.getElementById('输入f');
