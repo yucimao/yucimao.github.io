@@ -1,0 +1,83 @@
+<div id="游戏厅">女巫毒药（双人版）</div><script src="0.js"></script>
+<small>
+    两名玩家轮流操作，在不让对方看到的情况下，偷偷选择一个苹果藏毒药。<br>
+    两人都藏好毒药后，游戏开始，轮流选择一个苹果并吃掉，直到其中一方吃到有毒的苹果。
+</small><br><br>
+
+<style>
+    #棋盘 td:hover{background-color:#e2fadd}
+    #棋盘.玩家2 td:hover{background-color:#fadddd}
+</style>
+
+<div id="提示"></div>
+
+<button id="开始按钮" onclick="开始()">开始游戏</button>
+
+<div id="棋盘"></div>
+
+<script>
+let dy,毒药1,毒药2,剩余,回合;
+    function 开始(){
+        剩余=[];
+        dy="<table style='font-size:1.4em'>";
+        for(let i=0;5>i;i++){
+            dy+="<tr>";
+                for(let j=0;5>j;j++){
+                    dy+=`<td id="a${i}_${j}" onclick="按下('a${i}_${j}')">🍏</td>`;
+                    剩余[剩余.length]=`a${i}_${j}`;
+                }
+                dy+="</tr>"
+        }
+        dy+="</table>";
+        毒药1=0;
+        毒药2=0;
+        arr=剩余;随机();剩余=arr;
+        document.getElementById("开始按钮").style.display='none';
+        document.getElementById("棋盘").innerHTML=dy;
+        document.getElementById("提示").innerHTML="现在是<b>玩家1</b>藏毒药的时间，请玩家2背过身去。";
+        document.getElementById("棋盘").className="";
+    }
+
+    function 按下(o){
+        if(毒药1==0){
+            毒药1=o;
+            document.getElementById("提示").innerHTML="现在是<b>玩家2</b>藏毒药的时间，请玩家1背过身去。";
+            document.getElementById("棋盘").className="玩家2";
+        }else if(毒药2==0){
+            毒药2=o;
+            回合=1;
+            document.getElementById("提示").innerHTML="毒药已经藏好，请<b>玩家1</b>吃下一个苹果。";
+            document.getElementById("棋盘").className="";
+        }else{
+            if(剩余.indexOf(o)!=-1){
+                if(毒药1==o||毒药2==o){
+                    document.getElementById(o).innerHTML="☠️";
+                    document.getElementById(o).className="cuo fanka";
+                    if(回合==1){
+                        document.getElementById("提示").innerHTML="玩家1吃到了毒药，恭喜<b>玩家2</b>获胜。";
+                    }else{
+                        document.getElementById("提示").innerHTML="玩家2吃到了毒药，恭喜<b>玩家1</b>获胜。";
+                    }
+                    document.getElementById("开始按钮").style.display='inline';
+                    document.getElementById("开始按钮").innerHTML="重新开始";
+                    document.getElementById(毒药1).style="background-color:#fadddd";
+                    document.getElementById(毒药2).style="background-color:#fadddd";
+                }else{
+                    document.getElementById(o).innerHTML="〇";
+                    document.getElementById(o).className="dui fanka";
+                    剩余.splice(剩余.indexOf(o),1);
+                    if(回合==1){
+                        document.getElementById("提示").innerHTML="请<b>玩家2</b>吃下一个苹果。";
+                        document.getElementById("棋盘").className="玩家2";
+                        回合=2;
+                    }else{
+                        document.getElementById("提示").innerHTML="请<b>玩家1</b>吃下一个苹果。";
+                        document.getElementById("棋盘").className="";
+                        回合=1;
+                    }
+                }
+            }
+
+        }
+    }
+</script>
