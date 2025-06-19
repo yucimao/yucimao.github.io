@@ -64,6 +64,8 @@ else{
     if(bodyH<bodyHa){bodyH=bodyHa;}
     window.parent.document.getElementById(bodyK).height=bodyH+20;
     }
+
+    document.addEventListener('DOMContentLoaded',function(){const hash=window.location.hash;if(hash){const targetName=decodeURIComponent(hash.substring(1));const anchor = document.querySelector(`a[name="${CSS.escape(targetName)}"]`);if(anchor){anchor.scrollIntoView({behavior:'smooth'})}}});
 }
 let p_link="{{ page.permalink }}".split("/");
 localStorage.setItem(p_link[1],"1");
