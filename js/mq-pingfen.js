@@ -142,7 +142,11 @@ function dw2(o){
                         dy+="<a href=\"https://www.bilibili.com/video/BV"+临时2[1]+"\" target=\"_blank\">视频</a>";
                     
                     }else{
-                        dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
+                        if(临时2[1].indexOf("#")!=-1){
+                            dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1].split("#")[0]+"',dwe='#"+临时2[1].split("#")[1]+"')\">"+临时2[0]+"</a>";
+                        }else{
+                            dy+="<a onclick=\"dw(dwd='"+datb[i][1]+" "+临时2[0]+"',dwb='"+临时2[1]+"')\">"+临时2[0]+"</a>";
+                        }
                         if(临时2[2]){dy+="<small>("+临时2[2]+")</small>"}
                     }
                 }else if(datb[i][i2][0]=="_"){

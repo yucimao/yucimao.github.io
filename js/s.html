@@ -6,7 +6,7 @@
 <title>​猫球搜索</title>
 <link rel="shortcut icon" href="" id="icon" type="image/x-icon"/>
 <style>html{margin:30px}
-a{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.4em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000}
+a,.anniu{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:8px 16px;margin:.4em;cursor:pointer;border-radius:120px;border:2px solid #aaa;transform:translateZ(0);box-shadow:0 0 1px #000}
 #dy0,#搜索{margin:20px;padding:10px;border-radius:10px;font-size:2em;background-color:#e4fcff}
 [搜]:before{content:" [搜]"}
 .提示{position:relative;border-bottom:1.5px dashed #aaa}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%)}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989}
@@ -442,7 +442,7 @@ if(location.href.indexOf("?")!=-1){
 首行();
 }else{
 原=0;
-document.getElementById("dy").innerHTML="<form id='输入f'><input type='search' id='输入' autofocus style='font-size:2em;border-radius:5px;width:100%;height:2em;' placeholder='　猫球搜索' autocomplete='off'></form><a class='anniu' onclick='确定搜索()'>确定</a>";
+document.getElementById("dy").innerHTML="<form id='输入f'><input type='search' id='输入' autofocus style='font-size:2em;border-radius:5px;width:100%;height:2em;' placeholder='　猫球搜索' autocomplete='off'></form><button class='anniu' onclick='确定搜索()'>确定</button>";
 
 let input=document.getElementById('输入');
 document.addEventListener('click',function(event){
@@ -621,7 +621,7 @@ document.addEventListener('keyup',function(event){
     if(event.keyCode===13){确定搜索()}
     if(event.keyCode===190){location.replace(默认+localStorage.getItem("s_html"))}
 
-	if (/^[1-9]$/.test(event.key)){
+	if(/^[1-9]$/.test(event.key)){
 		const index=parseInt(event.key)-1;
 		const links=document.querySelectorAll('a');
 		if(index<links.length){links[index].click()}
@@ -632,7 +632,6 @@ let 输入F=document.getElementById('输入f');
 if(输入F){
 	输入F.addEventListener('submit',function(e){
 		e.preventDefault();
-		确定搜索();
 	});
 }
 
