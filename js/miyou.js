@@ -49,8 +49,6 @@ let 注={
 "整活":"以破坏秩序的方式取乐、吸引眼球",
 "COS":"角色扮演",
 "COSER":"扮演成角色的人",
-"钟离":"原神角色，在游戏里是璃月地区的神失去神力后在人间的化身",
-"可莉":"原神角色，游戏里设定是天真无邪的小女孩，深受原神玩家喜爱",
 "蒙德":"以西欧为原型的城市",
 "璃月":"以中国为原型的城市",
 "稻妻":"以日本为原型的城市",
@@ -268,6 +266,9 @@ let 注={
 "跳过人生":["","/i/14891948"],
 "鬼联盟":["以“鬼叔黍”为首的一些反米up主组成的小团体","/i/14720526"],
 "石老怪":["游戏行业从业者，B站up主","/i/13613068"],
+"拼接式鉴抄":"从多个不同的地方各找来一处相似点，拼凑在一起说是抄袭",
+"派蒙修车":["一些新游戏优化做的不好，在后台开一个«原神»就能正常运行，因为«原神»会帮整个电脑优化，玩家做了张派蒙修车的梗图"],
+"漂泊者杀穿米哈游":["«鸣潮»玩家嘲笑米哈游的剧情不够爽文，觉得«鸣潮»主角可以秒杀所有强敌","/i/15132441"],
 // "":["",""],
 
 // "A":"／b", //使用b的解释
@@ -280,14 +281,13 @@ let 代码={
 "灰字":["存疑","黑料","米哈游","崩坏学园","崩坏学园2","崩坏3","人工桌面","原神","未定事件簿","星穹铁道","绝区零","星布谷地","米游社",],
 }
 let 事件_只看=[
-["黑暗","<b>黑暗降临</b>"],
+["黑暗","<b>黑暗降临</b>","原神上线时被称作“黑暗降临”，后来这个梗被用来指米哈游取得的成就"],
 ["趣闻","小趣闻"],
 ["br"],
 ["黑料","疑似和实锤的<b>黑料</b>"],
 ["br"],
 ["抄袭","<b>抄袭</b>指控"],
 ["反米线下行动","反米线下行动"],
-["团建","线上团建"],
 ["br"],
 ["外网","<b>外网</b>的节奏和事件"],
 ["友商","<b>友商</b>相关"],
@@ -334,9 +334,8 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 "zk":(o,i)=>{if(!临时0[2]){临时0[2]="详情"}if(!临时0[3]){临时0[3]=临时0[2]}if(在线==0){dy+="<a onclick=\"dw(dwb='')\" href='zk/"+临时0[1].split("#")[0]+".html";if(临时0[1].indexOf("#")!=-1){dy+="#"+临时0[1].split("#")[1]}dy+="'>"+临时0[2]+"</a>"}else{dy+="<a onclick=\"dw(dwb='"+临时0[1].split("#")[0]+"',dwd='"+临时0[3]+"'";if(临时0[1].indexOf("#")!=-1){dy+=",dwe='#"+临时0[1].split("#")[1]+"'"}dy+=")\">"+临时0[2]+"</a>"}},
 "展开更多":(o,i)=>{let 临时3="";let 临时4="";for(let i2=1;临时0.length>i2;i2++){if(临时0[i2].indexOf("／")!=-1){临时0[i2]=临时0[i2].split("／");if(临时0[i2][0]!=""){if(i2!=1){临时3+=" "}临时3+=临时0[i2][0]}临时4+="〈li|"+临时0[i2][0]+"〉<small class='灰'>";临时4+="</small> "+临时0[i2][1]+"</li>"}}dy+="<li class='"+临时3+"' id='原其他"+o+i+"'><a onclick=\"展开其他('"+o+i+"')\">"+临时0[0]+"</a> 〈注|影响力或知名度并不高的事件|?〉</li><div style='display:none;' id='其他"+o+i+"'>"+临时4+"</div>"},
 // "dy_热搜":(o,i)=>{dy+="<h4>热搜记录</h4><small>1.上热搜过于频繁，低于10个国家/地区就不记录了。<br>2.由于某些原因我无法亲自统计外国热搜信息，这里的数据都来源于其他网友总结，可能不全或有误，请自行辨别。<br>3.我有时候可能会忘了还有这个记录……</small><table><tr><td><small>时间</small></td><td></td><td><small>国家/地区</small></td><td><small>上热搜原因</small></td></tr>";for(let i2=0;热搜.length>i2;i2++){dy+="<tr><td><small>"+热搜[i2][0]+"</small></td><td><small>"+热搜[i2][3]+"</small></td><td>"+热搜[i2][1]+"</td><td>"+热搜[i2][2]+"</td></tr>"}dy+="</table>"},
-"dy_事件":(o,i)=>{dy+="<h4>事件数量</h4>";for(let i2=0;事件_只看.length>i2;i2++){if(事件_只看[i2][0]!="br"){dy+=事件_只看[i2][1]+"："+事件[事件_只看[i2][0]]+"条<small>（"+(事件[事件_只看[i2][0]]/事件["全部"]*100+"").split(".")[0]+"%）</small><br>"}}},
-"dy_只看":(o,i)=>{for(let i2=0;事件_只看.length-1>i2;i2++){if(事件_只看[i2][0]=="br"){dy+="<br>"}else{dy+="<a onclick=\"只看('"+事件_只看[i2][0]+"')\">"+事件_只看[i2][1]+"</a>　"}}},
-"dy_css":(o,i)=>{if(在线==0){dy+="<link rel=\"stylesheet\" href=\"/css/all.css\">"}},
+// "dy_事件":(o,i)=>{dy+="<h4>事件数量</h4>";for(let i2=0;事件_只看.length>i2;i2++){if(事件_只看[i2][0]!="br"){dy+=事件_只看[i2][1]+"："+事件[事件_只看[i2][0]]+"条<small>（"+(事件[事件_只看[i2][0]]/事件["全部"]*100+"").split(".")[0]+"%）</small><br>"}}},
+"dy_只看":(o,i)=>{for(let i2=0;事件_只看.length-1>i2;i2++){if(事件_只看[i2][0]=="br"){dy+="<br>"}else{dy+=`<a onclick="只看('${事件_只看[i2][0]}')"`+((事件_只看[i2][2])?" class='提示' data-msg='"+事件_只看[i2][2]+"'":"")+`>${事件_只看[i2][1]}</a>　`}}},
 
 "dy_头":()=>{dy+=`<a name="相关事件"></a><h2>相关事件</h2><ol>
 <li>事件顺序不一定按时间排序，因为我也不清楚这些事件的具体时间。<br>
@@ -404,7 +403,8 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 <br>
 
 <h4>留档</h4>
-<a href="/i/8584394">古战场记录与考古</a><br>
+<a href="/i/11388369">岁月史书</a><br>
+<a href="/i/8584394">古战场考古</a><br>
 <a href="/i/14618416">反米势力传播的“合集”</a><br>
 <a href="/i/8317226">一些截图</a><br>
 <a href="/i/7638302">反米圣经</a>〈?|圣经|?〉<br>
@@ -484,14 +484,14 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 <b>〈时光机〉</b>〈只看|时光机〉<br>
 <b>“内幕”</b>〈只看|内幕〉<br>
 <b>〈内斗论〉</b>〈只看|内斗论〉<br>
-<b>商战</b>〈只看|商战〉<br>
+<b>商战</b>〈只看|商战〉<small>：指控米哈游搞商战。</small><br>
 <b>〈社管〉</b>〈只看|社管〉<br>
 
 <a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">更多</a><fieldset style="display:none;"><legend>更多</legend>
 <b>〈鬼图〉</b>〈只看|鬼图〉<br>
 <b>〈开盒〉</b>〈只看|开盒〉<br>
 <b>〈第一定律〉</b>〈只看|第一定律〉<br>
-<b>〈英配〉</b>〈只看|英配〉<br>
+<b>英配</b>〈只看|英配〉<br>
 </fieldset>
 
 <hr>
@@ -537,7 +537,7 @@ dy+=临时[1];
 dy=dy.replace(new RegExp('＼',"g"),"|").replace(new RegExp('［',"g"),"〈").replace(new RegExp('］',"g"),"〉");
 if(o!=""){document.getElementById("内容").innerHTML=dy}
 
-if(o=='c'){document.getElementById("加载中").innerHTML=`<style>
+if(o=='c'){document.getElementById("加载中").innerHTML=((在线==0)?'<link rel="stylesheet" href="/css/all.css">':'')+`<style>
 :root{--灰:#a1a1a1}
 body{cursor:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAMAAAC6CgRnAAACSVBMVEUAAADkvT3///7uy0j////39+3duTv+/vr+/vvryEH+/v/xy0L4+O3xzUPfsDjxzEP9/fr9/fv////+/vzzz0T////xzUPv793wzEL////xzUPXrTf19ej////lszrerDf09OT////////jsjv////drDj09OfTnQ7isw3gsTrdrDf6+vLx8eD39+zxzUPxzEP////drTfxzEP////////mxT7////z8+T19en////t7dbivDvJoSXbujfxzkP4+O7pwEX3003////juTz////8/Pjy8uTYrzjz8+T+/vz////w58fx6L/atDv////SpTT5+fDftQ/Nngz////////29uvZsjrQpjby8uTcszjz8+r////6+vT////orTj09OXprTjy8uD29urqrzn4+PDx8eLv79vrtjrwxED39+z19efwwD7tsjrorDjssDrrsTnjoBD3//71+/f6+vPz+PLr69Lq6tD0v1DuuUvzy0LutkC8hhrIhgL7+/n1+PD3+O7y9Ojx697z7Nfz7dPr687q4cvp3sfUu4fLqGH3xV/kvVDvu0TutULutD3otzvqrjjrrzfCkx/VlBbYlgvDgwT6/f37+vX39O/z8+Ls7tfs7NXs5NTu5c3lzJHmzIb803fkx3XOr3HkxWnjwF7ywlr1wljHoVP2z0vyxUjwukjyuETxuULCl0LvxkHstjvirjnprTXMmS7CjyvYpyrjpCbXsSXanCXHmSLpqh/PoxzboxfYnBfFlBbSkRTBixTgrRHenA/WmA6/gAWCjjfcAAAAXXRSTlMAE3MY4IAmJA4E/vvx58rHtZ+OjYBoXVg9NSgbEQf++/n38fDs6ufb29fU09LR0dDLy8jHxcO/u7qurq6uqainpqWShoSAf3lzbm1paWRgW1pUTktFRUI9OC0dFwoA/9kJAAABz0lEQVQoz3XPZUMqQRQGYJZQrGt71dvd3d3dfY3ZYgFhaVBEsLu7u7u745c5LDu278d55p0zRyARSgX75SB9N9h9P3xIA/HL30f2LtalAOB563XYHnb4ciwBYE5fD/i16/G3FEQuJ8R+AV/DoqSbA/4fV8RBRDkpvv3AP1AY/PGTE+/JEW5N+mOnvSfkioyd2LDw02mRZynYVG+jrKVzIm7ifQJi7NZmpn31uYCLRC2nKEUtlZZanVjp6WzZy/JfueyPNyGnFKaMUvtAV05Oa3b2WFlf0Rd+/StqiCZqvHzR4XBUrFVMFWiO/uVXfEarCcqSkjdjzbX2FpaM6Ej9qQjeJCqaqLFY8gydzbnW/kIdiesuHOLtOwOLSaZ2Q3xHfIKGxHFSfwDjzd0bFpOMbYYCSMU4NNmGSS8xKlplbDFoEvQynLMbyKL9mGQ62di0UiLDtS67iOYJ/M2MigGN5cVaLTQttDNuyALNDAMyRyd08JTkesf+IXtTZQb1pfP5SqVySAmj1wx/QyZMBKnTcz0sG8OFZdmid8g+gLTZ5W6bl8/Vm76+13y8bLbBRx6olz55/kVQSGi4CMMwUXhoSNDTO+gzn5/8ELnuoXi4Yev66rPXJeePIwAAAABJRU5ErkJggg=='),auto}
 .注{font-weight:normal;color:var(--a-color);}
@@ -570,9 +570,9 @@ li.标题{position:relative;left:-1.2em;font-size:0.9em;color:#9d9d9d;margin:0.9
 .标题::marker{color:#c3c3c3;font-size:0.8em;}
 li.标题 span{font-size:1.1em;color:#8d0000}
 
-@media screen and (min-width: 768px) { /*电脑*/
+@media screen and (min-width: 768px){
 body{background-color:#F4F8FB;}
-div.body{box-shadow: 2px 4px 8px #ddd;padding:20px;background-color:#fff;border-radius: 25px}
+div.body{box-shadow: 2px 4px 8px #ddd;padding:20px;background-color:#fff;border-radius:25px}
 }
 </style>`;}
 }

@@ -30,7 +30,11 @@ for(let i=0;y.length>i;i++){
     let 数字=3;
     for(let i2=0;d[y[i][1]].length>i2;i2++){
         for(let i3=1;d[y[i][1]][i2].length>i3;i3++){
-            dy+="<li><b>"+d[y[i][1]][i2][i3].split("／")[0]+"</b></li>";
+            if(d[y[i][1]][i2][i3].indexOf("／")!=-1){
+                dy+="<li><b><span class='提示' data-msg='"+d[y[i][1]][i2][i3].split("／")[1]+"'>"+d[y[i][1]][i2][i3].split("／")[0]+"</span></b></li>";
+            }else{
+                dy+="<li><b>"+d[y[i][1]][i2][i3].split("／")[0]+"</b></li>";
+            }
             数字-=1;
             if(数字==0){break;}
         }

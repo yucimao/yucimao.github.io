@@ -27,6 +27,7 @@ let p={//编辑html
 "目录":(本地)?"C:/mq/目录/":"/404?",
 "本地":(本地)?"C:/mq/目录/本地搜索.html?":默认,
 "xsd":"https://像素点.cn/",
+"k":"C:/快捷方式/",
 };
 
 let d={
@@ -71,7 +72,7 @@ let d={
 "／<hr>生成：","／像素星球／https://deep-fold.itch.io/pixel-planet-generator","／像素星空／https://deep-fold.itch.io/space-background-generator",
 "／<hr>素材：","／前田高志／https://dotown.maeda-design-room.net",
 "／<hr>转像素：","／pixel-me／https://pixel-me.tokyo","／lizibuluo／http://www.lizibuluo.com/xs",],
-"电影":["选择","／推荐相似影片／https://leisidianying.com","／找台词出处／https://getyarn.io/"],
+"电影":["选择","／推荐相似影片／https://leisidianying.com","／找台词出处／https://getyarn.io/","／电影截图／https://screenmusings.org"],
 "在线游戏":["选择",
 "／猫球游戏厅／"+p.博客+"yxt","／oldswf／https://oldswf.com／无需安装的Flash游戏",
 "／<hr>H5游戏<small>(电脑、手机都可以玩)</small><br>","／CrazyGames／https://www.crazygames.com","／Y8／https://zh.y8.com","／poki／https://poki.com/zh","／ioGAMES／https://iogames.space/",
@@ -159,7 +160,7 @@ let d={
 "／<hr>配色：","／自动搭配颜色／https://www.palettable.io","／推荐配色／https://colorhunt.co","／前后景配色推荐／https://pigment.shapefactory.co","／渐变色推荐／https://gradient.shapefactory.co","／色轮生成／https://color.adobe.com/zh/create/color-wheel","／中国色／http://zhongguose.com","／颜色代码表／https://encycolorpedia.cn",
 "／<hr>PPT：","／模板／https://ypppt.com／优品PPT","／模板／http://www.1ppt.com",
 "／<hr>音频素材：","／音效素材／https://www.ear0.com／耳聆网","／8 bit音效生成器／https://sfxr.me／Jsfxr／",
-"／<hr>风格化：","／电子包浆／https://magiconch.com/patina","／虚拟信号、蒸汽波风格／https://magiconch.com/vaporwave","／液态金属／https://liquid.paper.design/","／直线条画／https://javier.xyz/pintr","／将一张图片渲染成另一张的风格／https://www.ostagram.me/?locale=cn",
+"／<hr>风格化：","／电子包浆／https://magiconch.com/patina","／虚拟信号、蒸汽波风格／https://magiconch.com/vaporwave","／液态金属／https://liquid.paper.design/","／直线条画／https://javier.xyz/pintr","／将一张图片渲染成另一张的风格／https://www.ostagram.me/?locale=cn","／用直线生成图片／http://linify.me",
 "／<hr>练习小游戏：","／布尔运算／https://boolean.method.ac","／字母排版／https://type.method.ac","／钢笔工具／https://bezier.method.ac","／在色轮上找到匹配的颜色／https://color.method.ac",
 ],
 "调酒":["https://cocktailnotes.cn","https://cocktailnotes.cn/search?query=【】"],
@@ -168,6 +169,7 @@ let d={
 "解闷":"／无聊",
 "程序员":["选择","随机图片api","转换","／WEB在线编辑／https://c.runoob.com/front-end/61","／进制转换／https://c.runoob.com/front-end/58","／二维码／https://cli.im／草料二维码","／二维码／http://tool.mkblog.cn/qrbtf／艺术二维码","／rss格式校验／https://validator.w3.org/feed","／js转颜文字／https://utf-8.jp/public/aaencode.html","／零宽度短链接／https://zws.im","／快照／https://archive.org",],
 "看书":["选择","／ZLiB／https://zh.z-lib.hk/"],
+"花瓣":"／花瓣网",
 "花瓣网":["https://huaban.com","https://huaban.com/search?q=【】"],
 "下载":["选择",
 "／视频、音乐：","／cobalt／https://cobalt.tools","／iiilab／https://weibo.iiilab.com","／SnapAny／https://snapany.com/zh",
@@ -184,7 +186,7 @@ let d={
 
 "游戏":["选择","＼目录/游戏","游戏笔记","云游戏","／速通记录／https://www.speedrun.com/zh-CN","／<hr>","／<b>Steam：</b>","官网_Steam","＼软件_Steam","＼文件夹_Steam"],
 "目录/游戏":[p.目录+"游戏.html"],
-"STEAM":["选择","官网_Steam","软件_Steam","文件夹_Steam"],
+"STEAM":["选择","官网_Steam","＼软件_Steam","＼文件夹_Steam"],
 "官网_STEAM":["https://store.steampowered.com","https://store.steampowered.com/search/?term=【】"],
 "软件_STEAM":["打开","C:/mq/app/game/steam/Steam.exe"],
 "文件夹_STEAM":["打开","C:/mq/app/game/steam/steamapps/common/"],
@@ -197,12 +199,16 @@ let d={
 "／<br>","／DeepSeek／https://chat.deepseek.com","／360AI／https://bot.360.com","／天工大模型／https://www.tiangong.cn","／KIMI／https://kimi.moonshot.cn","百度AI","／Grok／https://grok.com","／文心一言／https://yiyan.baidu.com",
 "／<br>","／RaphaelAI／https://raphael.app/zh／无限图片","／即梦／https://jimeng.jianying.com/ai-tool/home/／图片、音乐、视频",
 "／<hr><h4>AI检测</h4>","／朱雀大：","／图片／https://matrix.tencent.com/ai-detect/ai_gen","／文本／https://matrix.tencent.com/ai-detect/ai_gen_txt","／<br>","／幻觉检测／https://demo.exa.ai/hallucination-detector",
-"／<hr><h4>其他</h4>",
-"／AI库：","／AI神器大全／https://aishenqi.net","／免费DeepSeek导航／https://freedeepseek.cn","／菜鸟AI导航／https://www.jyshare.com/ai/"],
+"／<hr><h4>工具","／工作拆解成流程／https://goblin.tools",
+"／<hr>",
+"／AI库：","／AI神器大全／https://aishenqi.net","／免费DeepSeek导航／https://freedeepseek.cn","／菜鸟AI导航／https://www.jyshare.com/ai/",
+],
 
 "资源":["选择","／<h2>免费可商用</h2>",
 "／<br>音乐","／Mixkit／https://mixkit.co/free-stock-music",
-"／<br>音效","／耳聆网／https://www.ear0.com/pack"
+"／<br>音效","／耳聆网／https://www.ear0.com/pack",
+"／<h2>其他</h2>",
+"／旧物品／https://atimebook.com／时光图书馆"
 ],
 "B":"／B站",
 "哔哩哔哩":["https://www.bilibili.com","https://search.bilibili.com/all?keyword=【】"],
@@ -212,7 +218,7 @@ let d={
 "测试":"／编辑",
 "本地搜索":[p.目录+"本地搜索.html",p.本地+"【】"],
 
-"打赏":["选择","／html／编辑／"+p.yucimao+"blog/公告/打赏本站.html","／预览／"+p.yucimao+"blog/公告/打赏本站.html","／B站充电记录／https://member.bilibili.com/platform/allowance/charge","／包月／https://member.bilibili.com/platform/allowance/upower-manage/member-manage"],
+"打赏":["选择","／在线／"+p.博客+"/donate","＼／html／编辑／"+p.yucimao+"blog/公告/打赏本站.html","＼／预览／"+p.yucimao+"blog/公告/打赏本站.html","／B站充电记录／https://member.bilibili.com/platform/allowance/charge","／包月／https://member.bilibili.com/platform/allowance/upower-manage/member-manage"],
 "KTV":[p.博客+"pingfen/ktv"],
 "KTV_编辑":["html",p.yucimao+"blog/私人/我的排行榜/其他_KTV歌单.html"],
 "二扯奶茶店":[p.博客+"biji/erchenaichadian"],
@@ -248,10 +254,12 @@ let d={
 "B站_米哈游":["https://space.bilibili.com/318432901/video"],
 "微博_米哈游":["https://weibo.com/u/6415164493"],
 
-"原神":["选择","／官网／https://ys.mihoyo.com/main/","米游社_原神","B站_原神","微博_原神","／<br>","／派蒙的工作笔记／https://space.bilibili.com/1669328690/video","／派蒙的素材笔记本／https://space.bilibili.com/602533983/video"],
+"原神":["选择","／官网／https://ys.mihoyo.com/main/","米游社_原神","B站_原神","微博_原神","／<br>","阵容_原神","／<br>","／派蒙的工作笔记／https://space.bilibili.com/1669328690/video","／派蒙的素材笔记本／https://space.bilibili.com/602533983/video"],
 "B站_原神":["https://space.bilibili.com/401742377/video"],
 "米游社_原神":["https://www.miyoushe.com/ys/","https://www.miyoushe.com/ys/search?keyword=【】"],
 "微博_原神":["https://weibo.com/u/6593199887"],
+"阵容_原神":["https://webstatic.mihoyo.com/ys/event/lineup-fe/index.html"],
+"原神阵容":"／阵容_原神","原神配队":"／阵容_原神",
 
 "星穹铁道":["选择","米游社_星穹铁道","B站_星穹铁道","微博_星穹铁道","／<br>","阵容_星穹铁道","／<br><br>",
 "／帕姆的收藏夹／https://space.bilibili.com/508103429/video","／星穹铁道小呜呜／https://space.bilibili.com/3493120220071960/video",
@@ -311,7 +319,7 @@ let d={
 "／<hr>","／梦日记／http://yume.ly/","／今日热榜／https://tophub.today／／注意：涉及商品的可能是广告","无聊按钮",
 "／<br>","／自动对对联／https://ai.binwang.me/couplet","／在线弹钢琴／https://www.autopiano.cn","／随机生成迷宫／http://www.mazegenerator.net","／假装自己是黑客／http://www.geektyper.com/mobile",
 "／<hr>",
-"／<br>观景：","／全景金字塔／https://mused.org/zh-hans","／全球摄像头／https://www.skylinewebcams.com/zh/webcam.html","／熊猫频道／https://www.ipanda.com","／全球动物直播／https://explore.org/livecams",
+"／<br>观景：","／全景金字塔／https://mused.org/zh-hans","／全球摄像头／https://www.skylinewebcams.com/zh/webcam.html","／熊猫频道／https://www.ipanda.com","／全球动物直播／https://explore.org/livecams","／开车漫游全世界／https://drivenlisten.com／还能听当地广播",
 "／<br>其他：","／无上下文电台／https://neave.tv／／好像失效了","／月薪赚多久／"+p.博客+"app/yxyzdj","／网络冥币／"+p.博客+"app/wangluomingbi","／模仿核弹威力／https://nuclearsecrecy.com/nukemap/",
 "／<br>线下：","聚会游戏","／海龟汤／"+p.博客+"haiguitang",
 ],
@@ -323,6 +331,7 @@ let d={
 "UID","评论_B站","弹幕_B站","看直播和弹幕_B站","看直播和弹幕2_B站","用户名记录_B站",
 "／<br><br><hr><h3>贴吧</h3>","发言_贴吧","关注的贴吧_贴吧","查资料_贴吧","／<br>","查贴吧资料_贴吧","查贴吧吧务_贴吧",
 "／<br><br><hr><h3>微博</h3>","发言_微博",
+"／<br><br><hr>","／查用户名的互联网足迹／https://whatsmyname.me"
 ],
 "发言_微博":["https://peachring.com","https://peachring.com/n/【】","用户名：灰白"],
 "发言_贴吧":["https://tieba.82cat.com/tieba/reply/","https://tieba.82cat.com/tieba/reply/【】/1"],
@@ -406,23 +415,26 @@ let d={
 "灰机WIKI_以撒":["https://isaac.huijiwiki.com/wiki/首页","https://isaac.huijiwiki.com/index.php?title=特殊:搜索&search=【】&profile=default&sort=just_match"],
 "以撒图鉴":"／以撒",
 "抖音":["https://www.douyin.com","https://www.douyin.com/search/【】"],
-"MBTI":[p.异梦+"参考/mbti.html"],
-"INFP":[p.异梦+"参考/mbti.html#INFP"],
-"INFJ":[p.异梦+"参考/mbti.html#INFJ"],
-"ENFP":[p.异梦+"参考/mbti.html#ENFP"],
-"ENFJ":[p.异梦+"参考/mbti.html#ENFJ"],
-"INTP":[p.异梦+"参考/mbti.html#INTP"],
-"INTJ":[p.异梦+"参考/mbti.html#INTJ"],
-"ENTP":[p.异梦+"参考/mbti.html#ENTP"],
-"ENTJ":[p.异梦+"参考/mbti.html#ENTJ"],
-"ISFP":[p.异梦+"参考/mbti.html#ISFP"],
-"ISFJ":[p.异梦+"参考/mbti.html#ISFJ"],
-"ESFP":[p.异梦+"参考/mbti.html#ESFP"],
-"ESFJ":[p.异梦+"参考/mbti.html#ESFJ"],
-"ISTP":[p.异梦+"参考/mbti.html#ISTP"],
-"ISTJ":[p.异梦+"参考/mbti.html#ISTJ"],
-"ESTP":[p.异梦+"参考/mbti.html#ESTP"],
-"ESTJ":[p.异梦+"参考/mbti.html#ESTJ"],
+"MBTI":["选择","＼／本地／"+p.异梦+"参考/mbti.html","／给角色投票／https://www.personality-database.com/zh-CN/",
+"／<hr><h3>测试</h3>","／16personalities／https://www.16personalities.com/ch/人格测试","／简单测试／https://www.wenjuan.com/s/UZBZJvPG4u/",
+"／<br>荣格八维：","／才储／https://www.apesk.com/mbti2/rongge/",
+"／<br>九型人格：","／apesk／https://www.apesk.com/ninehouse/","／九型人格测试／https://www.enneagram.cc/csjg.php","／基于三元组／https://jingzhe25112347.github.io/socio/enne-test.htm"],
+"INFP":["选择","／<h3>小蝴蝶</h3>Fi Ne Si Te<br>Fe Ni Se Ti<br>","＼／本地／"+p.异梦+"参考/mbti.html#INFP"],
+"INFJ":["选择","／<h3>绿老头</h3>Ni Fe Ti Se<br>Ne Fi Te Si<br>","＼／本地／"+p.异梦+"参考/mbti.html#INFJ"],
+"ENFP":["选择","／<h3>竞选者</h3>Ne Fi Te Si<br>Ni Fe Ti Se<br>","＼／本地／"+p.异梦+"参考/mbti.html#ENFP"],
+"ENFJ":["选择","／<h3>主人公</h3>Fe Ni Se Ti<br>Fi Ne Si Te<br>","＼／本地／"+p.异梦+"参考/mbti.html#ENFJ"],
+"INTP":["选择","／<h3>逻辑学家</h3>Ti Ne Si Fe<br>Te Ni Se Fi<br>","＼／本地／"+p.异梦+"参考/mbti.html#INTP"],
+"INTJ":["选择","／<h3>建筑师</h3>Ni Te Fi Se<br>Ne Ti Fe Si<br>","＼／本地／"+p.异梦+"参考/mbti.html#INTJ"],
+"ENTP":["选择","／<h3>辩论家</h3>Ne Ti Fe Si<br>Ni Te Fi Se<br>","＼／本地／"+p.异梦+"参考/mbti.html#ENTP"],
+"ENTJ":["选择","／<h3>指挥官</h3>Te Ni Se Fi<br>Ti Ne Si Fe<br>","＼／本地／"+p.异梦+"参考/mbti.html#ENTJ"],
+"ISFP":["选择","／<h3>小画家</h3>Fi Se Ni Te<br>Fe Si Ne Ti<br>","＼／本地／"+p.异梦+"参考/mbti.html#ISFP"],
+"ISFJ":["选择","／<h3>护士</h3>Si Fe Ti Ne<br>Se Fi Te Ni<br>","＼／本地／"+p.异梦+"参考/mbti.html#ISFJ"],
+"ESFP":["选择","／<h3>表演者</h3>Se Fi Te Ni<br>Si Fe Ti Ne<br>","＼／本地／"+p.异梦+"参考/mbti.html#ESFP"],
+"ESFJ":["选择","／<h3>执政官</h3>Fe Si Ne Ti<br>Fi Se Ni Te<br>","＼／本地／"+p.异梦+"参考/mbti.html#ESFJ"],
+"ISTP":["选择","／<h3>手艺人</h3>Ti Se Ni Fe<br>Te Si Ne Fi<br>","＼／本地／"+p.异梦+"参考/mbti.html#ISTP"],
+"ISTJ":["选择","／<h3>物流师</h3>Si Te Fi Ne<br>Se Ti Fe Ni<br>","＼／本地／"+p.异梦+"参考/mbti.html#ISTJ"],
+"ESTP":["选择","／<h3>企业家</h3>Se Ti Fe Ni<br>Si Te Fi Ne<br>","＼／本地／"+p.异梦+"参考/mbti.html#ESTP"],
+"ESTJ":["选择","／<h3>总经理</h3>Te Si Ne Fi<br>Ti Se Ni Fe<br>","＼／本地／"+p.异梦+"参考/mbti.html#ESTJ"],
 
 }
 
@@ -511,7 +523,7 @@ if(d[搜索]&&d[搜索][0]=="js"){
 	eval(d[搜索][1])
 }else if(d[搜索]&&d[搜索][0]=="选择"){//选择
 	let dy="<small class='链接 提示' data-msg='快捷键：句号键' onclick=\"location.replace('"+默认+localStorage.getItem("s_html")+"')\">搜索</small><br>";
-	if(url[1]){dy+="<div id='搜索'>"+url[1]+" <sub><button onclick='取消()'>取消</button></sub></div>"}
+	if(url[1]){dy+="<div id='搜索'>"+url.slice(1).join(" ")+" <sub><button onclick='取消()'>取消</button></sub></div>"}
 	dy+="<br>";
 	let 临时2="";
 	for(let i=1;d[搜索].length>i;i++){
