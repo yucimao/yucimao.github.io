@@ -17,7 +17,7 @@ a,.anniu{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
 <script>
 let 默认="https://www.baidu.com/s?wd=";
-let 本地=(location.protocol=="file:")?1:null;
+let 本地=(location.href.indexOf("file:///C:/js/s.html")!=-1)?1:null;
 
 let p={//编辑html
 "":"",
@@ -199,7 +199,7 @@ let d={
 "／<br>","／DeepSeek／https://chat.deepseek.com","／360AI／https://bot.360.com","／天工大模型／https://www.tiangong.cn","／KIMI／https://kimi.moonshot.cn","百度AI","／Grok／https://grok.com","／文心一言／https://yiyan.baidu.com",
 "／<br>","／RaphaelAI／https://raphael.app/zh／无限图片","／即梦／https://jimeng.jianying.com/ai-tool/home/／图片、音乐、视频",
 "／<hr><h4>AI检测</h4>","／朱雀大：","／图片／https://matrix.tencent.com/ai-detect/ai_gen","／文本／https://matrix.tencent.com/ai-detect/ai_gen_txt","／<br>","／幻觉检测／https://demo.exa.ai/hallucination-detector",
-"／<hr><h4>工具","／工作拆解成流程／https://goblin.tools",
+"／<hr><h4>工具</h4>","／工作拆解成流程／https://goblin.tools",
 "／<hr>",
 "／AI库：","／AI神器大全／https://aishenqi.net","／免费DeepSeek导航／https://freedeepseek.cn","／菜鸟AI导航／https://www.jyshare.com/ai/",
 ],
@@ -353,7 +353,7 @@ let d={
 "小红书":["https://www.xiaohongshu.com","https://www.xiaohongshu.com/search_result?keyword=【】"],
 "抖音收藏":["https://www.douyin.com/user/self?showTab=favorite_collection"],"抖音_收藏":"／抖音收藏",
 "TAPTAP":["https://www.taptap.cn","https://www.taptap.cn/search/【】"],
-"VPN":(本地)?["选择","／hiddify／https://hiddify.com","／下载／https://github.com/hiddify/hiddify-app/releases","／<hr>","／奶茶：","／发布页／"+p.本地+"奶茶发布页","／发布页2／"+p.本地+"奶茶发布页2","／1／"+p.本地+"奶茶vpn1","／2／"+p.本地+"奶茶vpn2"]:null,
+"VPN":(本地)?["选择","／hiddify／https://hiddify.com","／下载／https://github.com/hiddify/hiddify-app/releases","／<hr>","／奶茶／"+p.异梦+"日记/奶茶vpn.html"]:null,
 "物品位置":[p.目录+"物品位置.html"],"过期":"／物品位置","保质期":"／物品位置",
 "备忘":[p.异梦+"博客/备忘.html"],
 "油管":"／YOUTUBE","YOTUBE":"／YOUTUBE",
