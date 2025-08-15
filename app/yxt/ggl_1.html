@@ -9,6 +9,7 @@
 <style>
     td{text-align:center;min-width:1.2em;font-size:1.8em;font-weight:bold;}
 </style>
+<style id="sty_dy"></style>
 
 
 <div id="dy"></div>
@@ -30,6 +31,7 @@
         if(钱<20){
             notyf.alert("余额不足")
         }else{
+        document.getElementById("sty_dy").innerHTML="";
             奖金=0,最高=0;
             document.getElementById("兑奖").style="";
             document.getElementById("买").innerHTML="再买一张";
@@ -66,9 +68,11 @@
 
     function 兑奖(){
         余额(奖金);
+        notyf.confirm("+"+奖金)
         奖金=-1;
         document.getElementById("买").style="";
         document.getElementById("兑奖").style="display:none;";
+        document.getElementById("sty_dy").innerHTML="#dy table td{color:#aaaaaa}";
         for(let i=0;9>i;i++){
             document.getElementById("A"+i).innerHTML=arr[i];
             document.getElementById("A"+i).className="fanka";
