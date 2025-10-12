@@ -71,7 +71,7 @@ blockquote{color:var(--huise-color);border-left:.4em solid #c0c0c0;padding:0.5em
 .jinshouji{display:none}
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:768px){
 blockquote{color:var(--huise-color);border-left:.4em solid #c0c0c0;padding:0 0.3em;margin:0.5em}
 .jindiannao{display:none}
 }
