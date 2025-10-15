@@ -1,0 +1,406 @@
+---
+permalink: app/tphx
+---
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>图片混淆 - 猫球博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<style>
+    a{text-decoration:none;color:#006699;cursor:pointer}
+    
+    body {
+        background-color: #f5f5f5;
+        color: #333;
+        /* line-height: 1.6; */
+        /* padding: 20px; */
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #444;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #eee;
+    }
+    
+    .upload-section {
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        padding: 40px 20px;
+        text-align: center;
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .upload-section:hover {
+        border-color: #666;
+        background-color: #fafafa;
+    }
+    
+    .upload-section p {
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    #file-input {
+        display: none;
+    }
+    
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+    
+    .seed-container {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .seed-container label {
+        color: #555;
+    }
+    
+    #seed-input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 120px;
+        font-size: 16px;
+    }
+    
+    .preview-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .preview-box {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .preview-box h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #555;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    canvas {
+        width: 100%;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    
+    .status {
+        margin-top: 10px;
+        color: #777;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+        .controls {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        .seed-container {
+            margin-left: 0;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .preview-section {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1 style="display:inline;">图片混淆</h1> <a href="/i">猫球博客</a>
+    
+    <div class="upload-section" id="upload-area">
+        <p>点击或拖拽图片到此处上传<br>
+            （图片处理均在本地进行，不会上传到服务器）</p>
+        <input type="file" id="file-input" accept="image/*">
+    </div>
+    
+    <div class="controls">
+        <button id="obfuscate-btn" disabled>混淆图片</button>
+        <button id="restore-btn" disabled>还原图片</button>
+        <button id="save-btn" disabled>保存图片</button>
+        
+        <div class="seed-container">
+            <label for="seed-input">种子:</label>
+            <input type="number" id="seed-input" value="12345" min="0">
+        </div>
+    </div>
+    
+    <div class="preview-section">
+        <div class="preview-box">
+            <h2>原始图片</h2>
+            <canvas id="original-canvas"></canvas>
+            <div class="status" id="original-status">未上传图片</div>
+        </div>
+        
+        <div class="preview-box">
+            <h2>处理结果</h2>
+            <canvas id="result-canvas"></canvas>
+            <div class="status" id="result-status">等待处理</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 获取DOM元素
+    const uploadArea = document.getElementById('upload-area');
+    const fileInput = document.getElementById('file-input');
+    const obfuscateBtn = document.getElementById('obfuscate-btn');
+    const restoreBtn = document.getElementById('restore-btn');
+    const saveBtn = document.getElementById('save-btn');
+    const seedInput = document.getElementById('seed-input');
+    const originalCanvas = document.getElementById('original-canvas');
+    const resultCanvas = document.getElementById('result-canvas');
+    const originalStatus = document.getElementById('original-status');
+    const resultStatus = document.getElementById('result-status');
+    
+    // 获取Canvas上下文
+    const originalCtx = originalCanvas.getContext('2d');
+    const resultCtx = resultCanvas.getContext('2d');
+    
+    // 存储原始图像数据
+    let originalImageData = null;
+    
+    // 上传区域点击事件
+    uploadArea.addEventListener('click', () => {
+        fileInput.click();
+    });
+    
+    // 拖放功能实现
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.style.borderColor = '#4CAF50';
+        uploadArea.style.backgroundColor = '#f0fff0';
+    });
+    
+    uploadArea.addEventListener('dragleave', () => {
+        uploadArea.style.borderColor = '#ccc';
+        uploadArea.style.backgroundColor = 'transparent';
+    });
+    
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.style.borderColor = '#ccc';
+        uploadArea.style.backgroundColor = 'transparent';
+        
+        if (e.dataTransfer.files.length) {
+            handleImageUpload(e.dataTransfer.files[0]);
+        }
+    });
+    
+    // 文件选择事件
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length) {
+            handleImageUpload(e.target.files[0]);
+        }
+    });
+    
+    // 按钮点击事件
+    obfuscateBtn.addEventListener('click', () => {
+        if (originalImageData) {
+            processImage('obfuscate');
+        }
+    });
+    
+    restoreBtn.addEventListener('click', () => {
+        if (originalImageData) {
+            processImage('restore');
+        }
+    });
+    
+    saveBtn.addEventListener('click', saveProcessedImage);
+    
+    // 处理图片上传
+    function handleImageUpload(file) {
+        const reader = new FileReader();
+        
+        reader.onload = (e) => {
+            const img = new Image();
+            
+            img.onload = () => {
+                // 设置Canvas尺寸
+                originalCanvas.width = img.width;
+                originalCanvas.height = img.height;
+                resultCanvas.width = img.width;
+                resultCanvas.height = img.height;
+                
+                // 绘制原始图像
+                originalCtx.drawImage(img, 0, 0);
+                originalImageData = originalCtx.getImageData(0, 0, img.width, img.height);
+                
+                // 清空结果画布
+                resultCtx.clearRect(0, 0, img.width, img.height);
+                
+                // 更新状态和按钮
+                originalStatus.textContent = `已上传 (${img.width} × ${img.height})`;
+                resultStatus.textContent = '等待处理';
+                obfuscateBtn.disabled = false;
+                restoreBtn.disabled = false;
+                saveBtn.disabled = true;
+            };
+            
+            img.src = e.target.result;
+        };
+        
+        reader.readAsDataURL(file);
+    }
+    
+    // 伪随机数生成器 - 确保相同种子产生相同序列
+    class PRNG {
+        constructor(seed) {
+            // 使用线性同余生成器(LCG)算法
+            this.seed = seed % 2147483647;
+            if (this.seed <= 0) this.seed += 2147483646;
+        }
+        
+        // 生成下一个随机数
+        next() {
+            return this.seed = this.seed * 16807 % 2147483647;
+        }
+        
+        // 生成0到max-1之间的随机整数
+        randomInt(max) {
+            return this.next() % max;
+        }
+    }
+    
+    // 处理图片（混淆或还原）
+    function processImage(action) {
+        const seed = parseInt(seedInput.value) || 12345;
+        const prng = new PRNG(seed);
+        
+        // 获取源图像数据（混淆时使用原图，还原时使用结果图）
+        const sourceCanvas = action === 'obfuscate' ? originalCanvas : resultCanvas;
+        const sourceImageData = sourceCtx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
+        const sourceData = new Uint8ClampedArray(sourceImageData.data);
+        
+        const width = sourceImageData.width;
+        const height = sourceImageData.height;
+        const pixelCount = width * height;
+        
+        // 生成像素交换映射表
+        const swapMap = createSwapMap(pixelCount, prng);
+        
+        // 创建处理后的像素数据
+        const processedData = new Uint8ClampedArray(pixelCount * 4);
+        
+        for (let i = 0; i < pixelCount; i++) {
+            // 混淆时使用映射表，还原时使用反向映射
+            const sourceIndex = action === 'obfuscate' ? swapMap[i] : i;
+            const targetIndex = action === 'obfuscate' ? i : swapMap[i];
+            
+            // 复制像素的RGBA值
+            processedData[targetIndex * 4] = sourceData[sourceIndex * 4];         // R
+            processedData[targetIndex * 4 + 1] = sourceData[sourceIndex * 4 + 1]; // G
+            processedData[targetIndex * 4 + 2] = sourceData[sourceIndex * 4 + 2]; // B
+            processedData[targetIndex * 4 + 3] = sourceData[sourceIndex * 4 + 3]; // A
+        }
+        
+        // 创建ImageData对象并绘制到结果画布
+        const imageData = new ImageData(processedData, width, height);
+        resultCtx.putImageData(imageData, 0, 0);
+        
+        // 更新状态
+        const actionText = action === 'obfuscate' ? '混淆' : '还原';
+        resultStatus.textContent = `已${actionText} (种子: ${seed})`;
+        saveBtn.disabled = false;
+    }
+    
+    // 创建像素交换映射表
+    function createSwapMap(pixelCount, prng) {
+        // 初始化映射表
+        const swapMap = new Array(pixelCount);
+        for (let i = 0; i < pixelCount; i++) {
+            swapMap[i] = i;
+        }
+        
+        // 使用Fisher-Yates洗牌算法生成随机映射
+        for (let i = pixelCount - 1; i > 0; i--) {
+            const j = prng.randomInt(i + 1);
+            // 交换元素
+            [swapMap[i], swapMap[j]] = [swapMap[j], swapMap[i]];
+        }
+        
+        return swapMap;
+    }
+    
+    // 保存处理后的图片
+    function saveProcessedImage() {
+        try {
+            // 创建下载链接
+            const link = document.createElement('a');
+            link.download = 'processed-image.png';
+            link.href = resultCanvas.toDataURL('image/png');
+            link.click();
+            
+            // 显示保存成功信息
+            console.log("图片保存成功")
+        } catch (error) {
+            console.log("失败"+error.message)
+        }
+    }
+    
+    // 获取当前操作的上下文（用于混淆和还原的不同源）
+    Object.defineProperty(window, 'sourceCtx', {
+        get: function() {
+            // 这里只是为了代码简洁而使用的动态获取方式
+            // 在实际处理时会根据操作类型确定源
+            return originalCtx;
+        }
+    });
+</script>
+</body>
+</html>
