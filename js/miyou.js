@@ -148,8 +148,6 @@ let 注={
 "CP":"将两个角色说成是情侣关系",
 "狂欢":"一种网络现象，群体会对某个事件或某个人的讨论热情高涨，甚至陷入疯狂",
 "ML人":["认为游戏里女角色必须都喜欢主角（玩家）的群体","/i/11411748",1],
-"终末地":"鹰角的游戏，«明日方舟»的续作",
-"来自星尘":"鹰角的游戏",
 "刘宝杰":"台湾主持人，“一定是米哈游干的”的梗图上就是他",
 "吧友":"原意是“贴吧网友”，有时特指在贴吧的反米势力",
 "鹰角":"游戏公司，代表作«明日方舟»",
@@ -158,6 +156,8 @@ let 注={
 "陈雨欣":["一个反米人士","/i/10158706"],
 "MEGALIA手势":["“一点点”手势，会被韩国网友认为是支持极端女权","/i/2475219"],
 "利刃":"在暗区支持鹰角、明日方舟的群体",
+"快雪":"在暗区支持鹰角、明日方舟的群体",
+"北洛野":"在暗区支持库洛、鸣潮的群体",
 "卡车示威":"韩国网友常用的抗议手段，租一辆卡车，在车上写抗议语，在现场绕场",
 "世界树WIKI":["反米势力建立的百科网站，用于收录反米话题、歪曲事实等","/i/9889636"],
 "ZARD":"游戏主播，本名郑翔，网传因骂米哈游被做成NPC放进游戏里“看大门”",
@@ -277,6 +277,8 @@ let 注={
 "肝":"花费大量时间精力，伤害身体",
 "张书乐":["游戏媒体人","/i/15694730"],
 "古神之名":"如同克苏鲁古神一样，不可提起祂的名字。",
+"鸣式双厨狂喜":["一类疑似«鸣潮»商单的二创作品，总是米游角色挨打之类的剧情，让米游玩家不爽、让«鸣潮»玩家高兴","/i/11656013#双厨狂喜"],
+"同位体":"由一个角色衍生出的与其相似又有所不同的新角色",
 // "":"",
 // "":["",""],
 
@@ -287,7 +289,7 @@ let 注={
 let 代码={
 // "真":"<span 真></span>","假":"<span 假></span>",
 // "真":"🎯","假":"🎭",
-"灰字":["存疑","黑料","米哈游","崩坏学园","崩坏学园2","崩坏3","人工桌面","原神","未定事件簿","星穹铁道","绝区零","星布谷地","米游社","因缘精灵",],
+"灰字":["存疑","黑料","米哈游","崩坏学园","崩坏学园2","崩坏3","人工桌面","原神","未定事件簿","星穹铁道","绝区零","星布谷地","米游社","因缘精灵","千星奇域"],
 }
 let 事件_只看=[
 ["黑暗","<b>黑暗降临</b>","原神上线时被称作“黑暗降临”，后来这个梗被用来指米哈游取得的成就"],
@@ -331,7 +333,7 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 "官方":(o,i)=>{dy+="<span class='lantie'>「"+临时0[1]+"」</span>"},
 "li":(o,i)=>{if(!临时0[1]){临时0[1]="li"}let 临时3=临时0[1].split(" ");for(let i2=0;临时3.length>i2;i2++){if(事件[临时3[i2]]){事件[临时3[i2]]+=1}else{事件[临时3[i2]]=1}}事件["全部"]+=1;dy+="<li class='"+临时0[1]+"'>";if(临时0[1]){let 临时3=临时0[1].split(" ");if(临时3.indexOf("?")!=-1){dy+="<small class='灰'>存疑</small> "}for(let i3=0;代码["灰字"].length>i3;i3++){if(临时3.indexOf(代码["灰字"][i3])!=-1){dy+="<small class='灰'>"+代码["灰字"][i3]+"</small> "}}}},
 "粉丝":(o,i)=>{if(丝.indexOf(临时0[4]+临时0[1])!=-1){粉[临时0[4]+临时0[1]]=临时0[2].split("万")[0]}else{丝[丝.length]=临时0[4]+临时0[1];粉[临时0[4]+临时0[1]]=临时0[2].split("万")[0]}粉丝[粉丝.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"在"+临时0[1]+"粉丝数达到"+临时0[2]+"。"},
-"dy_粉丝":(o,i)=>{dy+="<span id=\"粉丝_style\"></span><table class='粉丝 首小1'><tr><td colspan='3'><b>粉丝数</b> <small>点击高亮同作品</small></td></tr>";for(let i2=0;粉丝.length>i2;i2++){dy+="<tr><td>"+粉丝[i2][2]+"</td><td onclick=\"排行高亮('粉丝_"+粉丝[i2][3]+"')\" class='粉丝_"+粉丝[i2][3]+"'><small>"+粉丝[i2][3]+" </small>";if(粉[粉丝[i2][3]+粉丝[i2][0]]+"万"==粉丝[i2][1]&&官号[粉丝[i2][3]+粉丝[i2][0]]){dy+="<a href='"+官号[粉丝[i2][3]+粉丝[i2][0]]+"' target='_blank'>"+粉丝[i2][0]+"</a>"}else{dy+=粉丝[i2][0]}dy+="</td><td onclick=\"排行高亮('粉丝_"+粉丝[i2][3]+"')\" class='粉丝_"+粉丝[i2][3]+"'>";if(粉[粉丝[i2][3]+粉丝[i2][0]]+"万"==粉丝[i2][1]){dy+="<b>"+粉丝[i2][1]+"</b>"}else{dy+=粉丝[i2][1]}dy+="</td></tr>"}粉["粉丝数"]=0;for(let i2=1;丝.length>i2;i2++){粉["粉丝数"]+=粉[丝[i2]]*1}dy+="<tr><td colspan='3' style='text-align:right'><small>各平台 共</small> <b>"+粉["粉丝数"]+"万</b></td></tr></table>"},
+"dy_粉丝":(o,i)=>{dy+="<span id=\"粉丝_style\"></span><table class='粉丝 首小1'><tr><td colspan='3'><b>粉丝数</b> <small>点击高亮同作品</small></td></tr>";for(let i2=0;粉丝.length>i2;i2++){dy+="<tr><td>"+粉丝[i2][2]+"</td><td onclick=\"排行高亮('粉丝_"+粉丝[i2][3]+"')\" class='粉丝_"+粉丝[i2][3]+"'><small>"+粉丝[i2][3]+" </small>";if(粉[粉丝[i2][3]+粉丝[i2][0]]+"万"==粉丝[i2][1]&&官号[粉丝[i2][3]+粉丝[i2][0]]){dy+="<a href='"+官号[粉丝[i2][3]+粉丝[i2][0]]+"' target='_blank'>"+粉丝[i2][0]+"</a>"}else{dy+=粉丝[i2][0]}dy+="</td><td onclick=\"排行高亮('粉丝_"+粉丝[i2][3]+"')\" class='粉丝_"+粉丝[i2][3]+"'>";if(粉[粉丝[i2][3]+粉丝[i2][0]]+"万"==粉丝[i2][1]){dy+="<b>"+粉丝[i2][1]+"</b>"}else{dy+=粉丝[i2][1]}dy+="</td></tr>"}粉["粉丝数"]=0;for(let i2=1;丝.length>i2;i2++){粉["粉丝数"]+=粉[丝[i2]]*1}dy+="<tr style='display:none;'><td colspan='3' style='text-align:right'><small>各平台 共</small> <b>"+粉["粉丝数"]+"万</b></td></tr></table>"},
 "获奖":(o,i)=>{获奖[获奖.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"荣获"+临时0[1]+"：<b>"+临时0[2]+"</b>。"},
 "dy_获奖":(o,i)=>{dy+="<table class='获奖 首小1 首小2'><tr><td><b>获奖</b></td><td></td><td>活动</td><td>奖项</td></tr>";for(let i2=0;获奖.length>i2;i2++){dy+="<tr><td>"+获奖[i2][2]+"</td><td>"+获奖[i2][3]+"</td><td>"+获奖[i2][0]+"</td><td>"+获奖[i2][1]+"</td></tr>"}dy+="</table>"},
 "排行":(o,i)=>{排行[排行.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"登上"+临时0[1]+"：<b>"+临时0[2]+"</b>。"},
@@ -450,7 +452,7 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 <b>«崩坏学园2»</b>〈只看|崩坏学园2〉、
 <b>«崩坏3»</b>〈只看|崩坏3〉<br>
 <b>«未定事件簿»</b>〈只看|未定事件簿〉<br>
-<b>«原神»</b>〈只看|原神〉、
+<b>«原神»</b>〈只看|原神〉（千星奇域〈只看|千星奇域〉）、
 <b>«星穹铁道»</b>〈只看|星穹铁道〉、
 <b>«绝区零»</b>〈只看|绝区零〉<br>
 <b>«因缘精灵»</b>〈只看|因缘精灵〉<br>
@@ -496,6 +498,7 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 <b>〈内斗论〉</b>〈只看|内斗论〉<br>
 <b>商战</b>〈只看|商战〉<small>：指控米哈游搞商战。</small><br>
 <b>〈社管〉</b>〈只看|社管〉<br>
+<b>法务部</b>〈只看|法务部〉<br>
 
 <a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">更多</a><fieldset style="display:none;"><legend>更多</legend>
 <b>〈鬼图〉</b>〈只看|鬼图〉<br>
@@ -549,7 +552,7 @@ if(o!=""){document.getElementById("内容").innerHTML=dy}
 
 if(o=='c'){document.getElementById("加载中").innerHTML=((在线==0)?'<link rel="stylesheet" href="/css/all.css">':'')+`<style>
 :root{--灰:#a1a1a1}
-body{cursor:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAMAAAC6CgRnAAACSVBMVEUAAADkvT3///7uy0j////39+3duTv+/vr+/vvryEH+/v/xy0L4+O3xzUPfsDjxzEP9/fr9/fv////+/vzzz0T////xzUPv793wzEL////xzUPXrTf19ej////lszrerDf09OT////////jsjv////drDj09OfTnQ7isw3gsTrdrDf6+vLx8eD39+zxzUPxzEP////drTfxzEP////////mxT7////z8+T19en////t7dbivDvJoSXbujfxzkP4+O7pwEX3003////juTz////8/Pjy8uTYrzjz8+T+/vz////w58fx6L/atDv////SpTT5+fDftQ/Nngz////////29uvZsjrQpjby8uTcszjz8+r////6+vT////orTj09OXprTjy8uD29urqrzn4+PDx8eLv79vrtjrwxED39+z19efwwD7tsjrorDjssDrrsTnjoBD3//71+/f6+vPz+PLr69Lq6tD0v1DuuUvzy0LutkC8hhrIhgL7+/n1+PD3+O7y9Ojx697z7Nfz7dPr687q4cvp3sfUu4fLqGH3xV/kvVDvu0TutULutD3otzvqrjjrrzfCkx/VlBbYlgvDgwT6/f37+vX39O/z8+Ls7tfs7NXs5NTu5c3lzJHmzIb803fkx3XOr3HkxWnjwF7ywlr1wljHoVP2z0vyxUjwukjyuETxuULCl0LvxkHstjvirjnprTXMmS7CjyvYpyrjpCbXsSXanCXHmSLpqh/PoxzboxfYnBfFlBbSkRTBixTgrRHenA/WmA6/gAWCjjfcAAAAXXRSTlMAE3MY4IAmJA4E/vvx58rHtZ+OjYBoXVg9NSgbEQf++/n38fDs6ufb29fU09LR0dDLy8jHxcO/u7qurq6uqainpqWShoSAf3lzbm1paWRgW1pUTktFRUI9OC0dFwoA/9kJAAABz0lEQVQoz3XPZUMqQRQGYJZQrGt71dvd3d3dfY3ZYgFhaVBEsLu7u7u745c5LDu278d55p0zRyARSgX75SB9N9h9P3xIA/HL30f2LtalAOB563XYHnb4ciwBYE5fD/i16/G3FEQuJ8R+AV/DoqSbA/4fV8RBRDkpvv3AP1AY/PGTE+/JEW5N+mOnvSfkioyd2LDw02mRZynYVG+jrKVzIm7ifQJi7NZmpn31uYCLRC2nKEUtlZZanVjp6WzZy/JfueyPNyGnFKaMUvtAV05Oa3b2WFlf0Rd+/StqiCZqvHzR4XBUrFVMFWiO/uVXfEarCcqSkjdjzbX2FpaM6Ej9qQjeJCqaqLFY8gydzbnW/kIdiesuHOLtOwOLSaZ2Q3xHfIKGxHFSfwDjzd0bFpOMbYYCSMU4NNmGSS8xKlplbDFoEvQynLMbyKL9mGQ62di0UiLDtS67iOYJ/M2MigGN5cVaLTQttDNuyALNDAMyRyd08JTkesf+IXtTZQb1pfP5SqVySAmj1wx/QyZMBKnTcz0sG8OFZdmid8g+gLTZ5W6bl8/Vm76+13y8bLbBRx6olz55/kVQSGi4CMMwUXhoSNDTO+gzn5/8ELnuoXi4Yev66rPXJeePIwAAAABJRU5ErkJggg=='),auto}
+body{cursor:url('/i/o/ys/c${Math.floor(Math.random()*2)+1}.png'),auto}
 .注{font-weight:normal;color:var(--a-color);}
 .注,a,a b{cursor:pointer}
 #right_anchor,#right_anchor2{display:none !important}
