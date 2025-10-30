@@ -1,10 +1,10 @@
 <!-- do not set the version number -->
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
 <!-- or set latest -->
 <!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
 <!-- or Default value -->
 <!-- <script src="//unpkg.com/valine"></script> -->
-<!-- <script src="/js/valine1.js"></script> -->
+<script src="/js/valine1.js"></script>
 <script>
 let v_pl_a=["a"];
 let v_pl_b={
@@ -34,7 +34,7 @@ new Valine({
     visitor: true,
     placeholder: "随便喵两句？(暂时没有邮件通知功能……)",
 
-    emojiCDN: '/img/i/em/',
+    emojiCDN: '{{ site.mq }}/img/i/em/',
     emojiMaps: {
         "k02": "kmj/02.jpg",
         "k07": "kmj/07.jpg",
