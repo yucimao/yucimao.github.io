@@ -42,123 +42,131 @@ del{color:#00000070}
 <script src="/5/new/new_html2canvas.js"></script>
 
 <script>
-    let 状态=0,清单=[],清单记录={},清单del=[];
-    let data=[ // "文字",["菜名","菜谱zk","分类 测试1",["食材1","食材2"]],
-        ["炒鸡心","448923","",["鸡心","青椒"]],
-        ["红烧肉","448935","",["五花肉","白糖"]],
-        ["鸡肉汤","448942","",["鸡肉","蘑菇"]],
-        ["酱香五花肉","448960","",["五花肉","豆瓣酱","酱油"]],
-        ["可乐鸡翅","448963","",["鸡翅","可乐"]],
-        ["辣椒炒肉","448969","",["五花肉","干红辣椒","白菜"]],
-        ["土豆焖五花肉","448977","",["五花肉","土豆"]],
-        ["香煎猪肉片","448977","",["猪肉","烧烤料"]],
-        ["蒸五花肉","448988","",["五花肉"]],
-        ["柿子炒鸡蛋","","",["西红柿","鸡蛋"]],
-        ["豆角炒肉","","",["豆角","猪肉"]],
-        ["冬瓜汤","448895","素食",["冬瓜","粉丝"]],
-        ["麻辣鸡丝","448901","",["鸡胸肉","胡萝卜","花椒"]],
-        // ["","","",[""]],
-        // ["","","",[""]],
+let 状态=0,清单=[],清单记录={},清单del=[];
+let data=[ // "文字",["菜名","菜谱zk","分类 测试1",["食材1","食材2"]],
+    // ["","","",[""]],
+    // ["","","",[""]],
 
-        "<h3>主食</h3>",
-        ["蛋包饭","449005","",["米饭","鸡蛋","番茄酱"]],
-        ["饭包","449030","",["生菜","米饭","大酱","葱"]],
-        "<br>炒饭：",
-        ["蛋炒饭","449011","",["鸡蛋","米饭"]],
-        ["酱油炒饭","449062","",["鸡蛋","米","酱油"]],
-        "<br>粥：",
-        ["地瓜粥","449023","",["地瓜","米","糖"]],
-        ["黑米粥","449047","",["黑米","糖"]],
-        ["胡萝卜瘦肉粥","449052","",["胡萝卜","瘦肉","米"]],
-        ["皮蛋瘦肉粥","449080","",["皮蛋","瘦肉","米"]],
-        "<br>饼：",
-        ["鸡蛋饼","449056","",["鸡蛋","面粉"]],
-        ["烙饼","","",["面粉"]],
-        ["糖饼","","",["面粉"]],
-        "<br>打卤面：",
-        ["韭菜鸡蛋打卤面","449068","",["韭菜","鸡蛋","挂面"]],
-        ["茄子打卤面","449085","",["肉馅","茄子","挂面"]],
-        ["西红柿鸡蛋面","449092","",["西红柿","鸡蛋","挂面"]],
-        ["炸酱面","449095","",["香其酱","鸡蛋","挂面"]],
-        
-        // ["","","",[""]],
+    "<h3>主食</h3>",
+    ["蛋包饭","449005","",["米饭","鸡蛋","番茄酱"]],
+    ["饭包","449030","",["生菜","米饭","大酱","葱"]],
+    "<br>炒饭：",
+    ["蛋炒饭","449011","",["鸡蛋","米饭"]],
+    ["酱油炒饭","449062","",["鸡蛋","米","酱油"]],
+    "<br>粥：",
+    ["地瓜粥","449023","",["地瓜","米","糖"]],
+    ["黑米粥","449047","",["黑米","糖"]],
+    ["胡萝卜瘦肉粥","449052","",["胡萝卜","瘦肉","米"]],
+    ["皮蛋瘦肉粥","449080","",["皮蛋","瘦肉","米"]],
+    "<br>饼：",
+    ["鸡蛋饼","449056","",["鸡蛋","面粉"]],
+    ["烙饼","","",["面粉"]],
+    ["糖饼","","",["面粉"]],
+    "<br>打卤面：",
+    ["韭菜鸡蛋打卤面","449068","",["韭菜","鸡蛋","挂面"]],
+    ["茄子打卤面","449085","",["肉馅","茄子","挂面"]],
+    ["西红柿鸡蛋面","449092","",["西红柿","鸡蛋","挂面"]],
+    ["炸酱面","449095","",["香其酱","鸡蛋","挂面"]],
+    
+    "<h3>主菜</h3>",
+    ["小鸡炖榛蘑","16346097","",["鸡肉","榛蘑","粉条"]],
+    // ["","","",[""]],
 
-        "<h3>零食</h3>",
-        ["拔丝地瓜","448843","零食",["地瓜","糖"]],
-        ["土豆泥","448879","零食",["土豆"]],
-        ["土豆条","448883","零食",["土豆"]],
-        "<br>卤蛋：",
-        ["茶叶卤蛋","448849","零食",["鸡蛋","茶叶"]],
-        ["可乐卤蛋","448861","零食",["鸡蛋","可乐"]],
-        ["辣酱卤蛋","448867","零食",["鸡蛋","辣酱酱"]],
-        ["啤酒卤蛋","448873","零食",["鸡蛋","啤酒"]],
-        // ["","","",[""]],
-    ];
-    let fl=["全部","零食","挂面","鸡蛋"];
-    document.getElementById("分类").innerHTML="<legend><b>分类</b></legend>"+fl.map(x=>`<a onclick="分类('${x}')">${x}</a>　`).join('');
-    let dy="";
-    for(let i=0;data.length>i;i++){
-        if(Array.isArray(data[i])){
-            dy+=`<a class="提示 ${data[i][2]} ${data[i][3].join(" ")}" data-msg="${data[i][3].join(" ")}" id="x${i}" onclick="点击(${i})">${data[i][0]}</a>`;
-        }else{
-            dy+=`<span>${data[i]}</span>`;
-        }
+    "<h3>配菜</h3>",
+    ["冬瓜汤","448895","素食",["冬瓜","粉丝"]],
+    // ["","","",[""]],
+
+    "<h3>简单菜</h3>",
+    ["红烧肉","448935","",["五花肉","白糖"]],
+    ["炒鸡心","448923","",["鸡心","青椒"]],
+    ["鸡肉汤","448942","",["鸡肉","蘑菇"]],
+    ["酱香五花肉","448960","",["五花肉","豆瓣酱","酱油"]],
+    ["可乐鸡翅","448963","",["鸡翅","可乐"]],
+    ["辣椒炒肉","448969","",["五花肉","干红辣椒","白菜"]],
+    ["土豆焖五花肉","448977","",["五花肉","土豆"]],
+    ["香煎猪肉片","448977","",["猪肉","烧烤料"]],
+    ["蒸五花肉","448988","",["五花肉"]],
+    ["柿子炒鸡蛋","","",["西红柿","鸡蛋"]],
+    ["豆角炒肉","","",["豆角","猪肉"]],
+    ["麻辣鸡丝","448901","",["鸡胸肉","胡萝卜","花椒"]],
+    // ["","","",[""]],
+
+    "<h3>零食</h3>",
+    ["拔丝地瓜","448843","零食",["地瓜","糖"]],
+    ["土豆泥","448879","零食",["土豆"]],
+    ["土豆条","448883","零食",["土豆"]],
+    "<br>卤蛋：",
+    ["茶叶卤蛋","448849","零食",["鸡蛋","茶叶"]],
+    ["可乐卤蛋","448861","零食",["鸡蛋","可乐"]],
+    ["辣酱卤蛋","448867","零食",["鸡蛋","辣酱酱"]],
+    ["啤酒卤蛋","448873","零食",["鸡蛋","啤酒"]],
+    // ["","","",[""]],
+];
+let fl=["全部","零食","挂面","鸡蛋"];
+document.getElementById("分类").innerHTML="<legend><b>分类</b></legend>"+fl.map(x=>`<a onclick="分类('${x}')">${x}</a>　`).join('');
+let dy="";
+for(let i=0;data.length>i;i++){
+    if(Array.isArray(data[i])){
+        dy+=`<a class="提示 ${data[i][2]} ${data[i][3].join(" ")}" data-msg="${data[i][3].join(" ")}" id="x${i}" onclick="点击('${i}')">${data[i][0]}</a>`;
+    }else{
+        dy+=`<span>${data[i]}</span>`;
     }
-    document.getElementById("dy").innerHTML=dy;
+}
+document.getElementById("dy").innerHTML=dy;
 
-    function 分类(o){
-        document.getElementById("分类s").innerHTML=`[onclick="分类('${o}')"]{font-weight:bold}`;
-        if(o!="全部"){document.getElementById("分类s").insertAdjacentHTML('beforeend',`#dy span,#dy a{display:none;}.${o}{display:inline !important;}`);}
-    }
+function 分类(o){
+    document.getElementById("分类s").innerHTML=`[onclick="分类('${o}')"]{font-weight:bold}`;
+    if(o!="全部"){document.getElementById("分类s").insertAdjacentHTML('beforeend',`#dy span,#dy a{display:none;}.${o}{display:inline !important;}`);}
+}
 
-    function 点击(o){
-        if(状态==1&&o){
-            if(data[o][4]&&data[o][4]==1){
-                for(let i=0;data[o][3].length>i;i++){
-                    清单记录[data[o][3][i]]=清单记录[data[o][3][i]].filter(item=>item!==o);
-                    if(清单记录[data[o][3][i]].length==0){
-                        if(清单.indexOf(data[o][3][i])!=-1){清单=清单.filter(item=>item!==data[o][3][i]);}
-                        else{清单del=清单del.filter(item=>item!==data[o][3][i]);}
-                        delete 清单记录[data[o][3][i]];
-                    }
+function 点击(o){
+    if(状态==1&&o){
+        if(data[o][4]&&data[o][4]==1){
+            for(let i=0;data[o][3].length>i;i++){
+                清单记录[data[o][3][i]]=清单记录[data[o][3][i]].filter(item=>item!==o);
+                if(清单记录[data[o][3][i]].length==0){
+                    if(清单.indexOf(data[o][3][i])!=-1){清单=清单.filter(item=>item!==data[o][3][i]);}
+                    else{清单del=清单del.filter(item=>item!==data[o][3][i]);}
+                    delete 清单记录[data[o][3][i]];
                 }
-                data[o][4]=0;
-                document.getElementById("x"+o).style="";
-            }else{
-                for(let i=0;data[o][3].length>i;i++){
-                    if(清单记录[data[o][3][i]]){
-                        清单记录[data[o][3][i]].push(o);
-                    }else{
-                        清单.push(data[o][3][i]);
-                        清单记录[data[o][3][i]]=[o];
-                    }
+            }
+            data[o][4]=0;
+            document.getElementById("x"+o).style="";
+        }else{
+            for(let i=0;data[o][3].length>i;i++){
+                if(清单记录[data[o][3][i]]){
+                    清单记录[data[o][3][i]].push(o);
+                }else{
+                    清单.push(data[o][3][i]);
+                    清单记录[data[o][3][i]]=[o];
                 }
-                data[o][4]=1;
-                document.getElementById("x"+o).style="font-weight:bold;";
             }
-        }
-        if(状态==0&&o){
-            dw(dwb=data[o][1],dwd=data[o][0]);
-        }else{
-            if(清单.length==0&&清单del.length==0){
-                document.getElementById("清单").style="display:none;";
-            }else{
-                document.getElementById("清单").style="display:block;";
-                document.getElementById("清单").innerHTML=`<legend><b>清单</b>&nbsp;&nbsp;<small><a onclick="截图()">保存图片</a>&nbsp;&nbsp;<a onclick="缓存()">缓存</a></small></legend><div id="存图">`+清单.map(x=>`<span onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></span><br>`).join('')+"<br>"+清单del.map(x=>`<del onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></del><br>`).join('')+"</div>";
-            }
+            data[o][4]=1;
+            document.getElementById("x"+o).style="font-weight:bold;";
         }
     }
+    if(状态==0&&o){
+        dw(dwb=data[o][1],dwd=data[o][0]);
+    }else{
+        if(清单.length==0&&清单del.length==0){
+            document.getElementById("清单").style="display:none;";
+        }else{
+            document.getElementById("清单").style="display:block;";
+            document.getElementById("清单").innerHTML=`<legend><b>清单</b>&nbsp;&nbsp;<small><a onclick="截图()">保存图片</a>&nbsp;&nbsp;<a onclick="缓存()">缓存</a></small></legend><div id="存图">`+清单.map(x=>`<span onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></span><br>`).join('')+"<br>"+清单del.map(x=>`<del onclick="清单d('${x}')"><b>${x}</b><small>：`+清单记录[x].map(y=>`${data[y][0]} `).join('')+`</small></del><br>`).join('')+"</div>";
+        }
+    }
+}
 
-    function 清单d(o){
-        if(清单.indexOf(o)!=-1){
-            清单=清单.filter(item=>item!==o);
-            清单del.push(o);
-        }else{
-            清单del=清单del.filter(item=>item!==o);
-            清单.push(o);
-        }
-        点击();
+function 清单d(o){
+    if(清单.indexOf(o)!=-1){
+        清单=清单.filter(item=>item!==o);
+        清单del.push(o);
+    }else{
+        清单del=清单del.filter(item=>item!==o);
+        清单.push(o);
     }
+    点击();
+}
 function 缓存(){
     localStorage.setItem("猫球厨房",清单.join(",")+"／"+清单del.join(","));
     try{notyf.confirm("已保存")}catch(e){alert("已保存");}
