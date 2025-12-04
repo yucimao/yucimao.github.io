@@ -1,0 +1,250 @@
+---
+layout: zk
+title: 批量处理工具
+nav_text: 批量处理工具
+nav_url: <a href="/dafen">我的排行榜</a>
+permalink: i/16414261
+---
+<!--
+做一个html页面
+有三个输入框，这里为了方便讲述，输入的内容分别为a、b、c
+a会输入进去几行文字，每行的格式都是“汉字 数字1 数字2 ……”（数字的数量不一定） 后面还可能有非数字的内容，则这个内容记录为d（注意这里每个内容之间都是空格相隔的，有可能一个内容里包含数字和非数字，这种情况也算作非数字）
+b是文字
+c也是文字
+点击确定
+处理这些文字，变成每行都是：
+["数字1 + 数字2 + 数字3 ……" , "a的汉字+b" ,, c , d（如果有）],
+
+不要引用外部的东西，纯本地。
+
+比如输入：
+a：66号公路 60 1 1 0 1
+b：（街道）
+c："a","b"
+结果是：["60 + 1 + 1 + 0 + 1", "66号公路（街道）" ,, "a","b"],
+-->
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .input-group {
+        margin-bottom: 25px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+    textarea, input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        resize: vertical;
+    }
+    textarea {
+        min-height: 120px;
+    }
+    .button-group {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border: none;
+    }
+    .process-btn {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .process-btn:hover {
+        background-color: #45a049;
+    }
+    .copy-btn {
+        background-color: #2196F3;
+        color: white;
+    }
+    .copy-btn:hover {
+        background-color: #0b7dda;
+    }
+    .result-group {
+        margin-top: 30px;
+    }
+    #result {
+        min-height: 150px;
+        background-color: #f9f9f9;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    .example {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+    }
+    .copy-toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-size: 16px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+    .copy-toast.show {
+        opacity: 1;
+    }
+</style>
+
+<div class="container">
+ 
+    <div class="input-group">
+        <label for="input-a">输入a（多行，格式：词条 分数1 分数2 ... 评价）</label>
+        <textarea id="input-a" 
+placeholder="苹果 90 3 3 4
+香蕉 90 2 3 2 1 很方便吃
+火龙果 70 2 3 1 -1"></textarea>
+    </div>
+
+    <div class="input-group">
+        <label for="input-b">输入b（文字）</label>
+        <input type="text" id="input-b" placeholder="／水果／2025">
+    </div>
+
+    <div class="input-group">
+        <label for="input-c">输入c（文字）</label>
+        <input type="text" id="input-c" placeholder="&quot;：分类1&quot;,&quot;：分类2&quot;">
+    </div>
+
+    <div class="button-group">
+        <button class="process-btn" onclick="processText()">确定</button>
+        <button class="copy-btn" onclick="copyResult()">复制结果</button>
+    </div>
+
+    <div class="result-group">
+        <label for="result">处理结果</label>
+        <textarea id="result" readonly placeholder=""></textarea>
+    </div>
+</div>
+
+<!-- 复制成功提示 -->
+<div class="copy-toast" id="copyToast">复制成功！</div>
+
+<script>
+    function processText() {
+        // 获取输入值
+        const inputA = document.getElementById('input-a').value.trim();
+        const inputB = document.getElementById('input-b').value.trim();
+        const inputC = document.getElementById('input-c').value.trim();
+        
+        // 验证输入
+        // if (!inputA) {
+        //     alert('请输入a的内容');
+        //     return;
+        // }
+        // if (!inputB) {
+        //     alert('请输入b的内容');
+        //     return;
+        // }
+        // if (!inputC) {
+        //     alert('请输入c的内容');
+        //     return;
+        // }
+
+        // 按行处理inputA
+        const lines = inputA.split('\n').filter(line => line.trim() !== '');
+        const results = [];
+
+        lines.forEach(line => {
+            const parts = line.split(' ').filter(part => part !== ''); // 分割并去除空字符串
+            let chinesePart = '';
+            const numbers = [];
+            const nonNumbers = [];
+
+            // 分类处理每个部分
+            parts.forEach(part => {
+                // 判断是否为纯数字（整数或小数）
+                if (/^-?\d+(\.\d+)?$/.test(part)) {
+                    numbers.push(part);
+                } else {
+                    // 判断是否为汉字部分（第一个非数字部分作为汉字部分）
+                    if (chinesePart === '') {
+                        chinesePart = part;
+                    } else {
+                        nonNumbers.push(part);
+                    }
+                }
+            });
+
+            // 处理数字部分：拼接成 "数字1 + 数字2 + ..."
+            const numberStr = numbers.length > 0 ? numbers.join(' + ') : '';
+
+            // 处理汉字+b部分
+            const chineseWithB = chinesePart + inputB;
+
+            // 处理非数字部分：拼接成d（空格分隔）
+            const dStr = nonNumbers.length > 0 ? nonNumbers.join(' ') : '';
+
+            // 构建结果行：["数字拼接", "汉字+b" ,, "c" , d（如果有）],
+            let resultLine = `["${numberStr}", "${chineseWithB}" ,, ${inputC}`;
+            if (dStr) {
+                resultLine += ` , "${dStr}"`;
+            }
+            resultLine += '],';
+
+            results.push(resultLine);
+        });
+
+        // 显示结果
+        document.getElementById('result').value = results.join('\n');
+    }
+
+    function copyResult() {
+        const resultTextarea = document.getElementById('result');
+        const result = resultTextarea.value.trim();
+        
+        if (!result) {
+            alert('没有可复制的结果，请先点击"确定"处理文本');
+            return;
+        }
+
+        // 复制到剪贴板
+        resultTextarea.select();
+        document.execCommand('copy');
+
+        // 显示复制成功提示
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        
+        // 3秒后隐藏提示
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+</script>

@@ -1,7 +1,7 @@
 ---
 layout: page2
 title: 超神
-nav_text: 超神 <small>v0.7</small>
+nav_text: 超神 <small>v0.8</small>
 permalink: game/chaoshen
 nav_url: <a href="/youxiji">游戏机</a>
 footer_mb: 打赏
@@ -22,7 +22,7 @@ footer_mb: 打赏
 <div id="游戏" class="bukexuanzhong">
 <div id="剧情">加载中……<br>如果一直没能加载完成，请尝试<a onclick="location.replace(location.href)">刷新</a>页面，或<a onclick="卸载()">清除缓存</a></div>
 <hr>
-<a onclick="抽卡(1)">抽一发</a> <a onclick="抽卡(10)">十连</a> <small>剩余抽卡次数:<span id="剩余抽卡">加载中</span></small>
+<a onclick="抽卡(1)">抽一发</a> <a onclick="抽卡(10)">十连</a> <small>剩余抽卡次数: <sub style="font-size:2em;font-weight:bold">∞</sub><span id="剩余抽卡"></span></small>
 <div id="抽卡"></div>
 </div>
 
@@ -217,6 +217,7 @@ footer_mb: 打赏
         "«原神»新年版本只送3抽太抠了／所有玩家免费赠送10000抽",
         "我们要ML游戏／新增ML模式",
         "不要主角当摄像头，我们要主角是龙傲天、创世神／新增漂泊之神模式",
+        "«终末地»是二游最良心卡池／卡池规则改为永久免费无限抽卡",
         // "／",
     ];
 
@@ -347,6 +348,7 @@ footer_mb: 打赏
     ];
 
     function 抽卡(o){
+        if(抽卡次数<100){抽卡次数=10000}
         if(抽卡次数>=o){
             抽卡次数-=o;
             dy="恭喜获得：";
@@ -363,7 +365,7 @@ footer_mb: 打赏
     }
 
     function 抽卡打印(){
-        document.getElementById("剩余抽卡").innerHTML=抽卡次数+" / <span class='抽卡5'>五星:"+抽卡5+"</span> / <span class='抽卡4'>四星:"+抽卡4+"</span> / 武器:0";
+        document.getElementById("剩余抽卡").innerHTML=" / <span class='抽卡5'>五星:"+抽卡5+"</span> / <span class='抽卡4'>四星:"+抽卡4+"</span> / 武器:0";
         localStorage.setItem("超神",抽卡次数+"／"+抽卡4*1+"／"+抽卡5*1+"／"+关卡+"／"+回合);
         let 临时="／";
         for (let i in 数值){
