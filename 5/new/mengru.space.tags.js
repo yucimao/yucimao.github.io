@@ -8,7 +8,7 @@ const oe=function(){const e=document.createElement("link").relList;if(e&&e.suppo
       padding: .2em .3em;
       display: inline-block;
       border-radius: .5em;
-      margin: .15em .1em;
+      margin: .15em .15em;
       opacity: .8;
       transition: opacity .2s;
       cursor:default;
