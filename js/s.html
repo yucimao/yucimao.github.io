@@ -251,7 +251,7 @@ let d={
 "跳转博客":["js","if(!url[1]){window.location.href='https://limaoqiu.com/i'}else{url[1]=url[1].replace(new RegExp('%2F','g'),'/');if(url[1][0]!='/'){url[1]='/'+url[1]}window.location.href='https://limaoqiu.com'+url[1]}"],
 "LIMAOQIU":"／博客","鱼刺猫":"／李猫球","YUCIMAO":"／李猫球",
 "李猫球":["https://李猫球.com/i","https://李猫球.com/【】"],
-"B站":["选择","哔哩哔哩","B站直播","uid","cv号_B站","／<hr>","／猫球的B站／https://space.bilibili.com/515330","小黑屋|B_小黑屋","／大会员领B币／https://account.bilibili.com/account/big/myPackage／不知道投给谁可以投给我嘿嘿","／<br><hr><h3>做视频</h3>","＼／打开／OBS／C:/ProgramData/Microsoft/Windows/Start Menu/Programs/OBS Studio/OBS Studio.lnk","＼／打开／直播姬／C:/mq/app/a/bilibili/livehime/livehime.exe","／<br>","＼／打开／缓存／C:/mq/app/a/bilibili/xiazai"],
+"B站":["选择","哔哩哔哩","B站直播","uid","cv号_B站","／<hr>","／猫球的B站／https://space.bilibili.com/515330","小黑屋|B_小黑屋","／大会员领B币／https://account.bilibili.com/account/big/myPackage／不知道投给谁可以投给我嘿嘿","／<br><hr><h3>做视频</h3>","＼／打开／OBS／C:/ProgramData/Microsoft/Windows/Start Menu/Programs/OBS Studio/OBS Studio.lnk","＼／打开／直播姬／C:/mq/app/a/bilibili/livehime/livehime.exe","＼／打开／小丸工具箱／C:/mq/app/a/bilibili/xiaowan/xiaowan.exe","／<br>","＼／打开／缓存／C:/mq/app/a/bilibili/xiazai"],
 "CV号_B站":["https://www.bilibili.com/read/cv25748003","https://www.bilibili.com/read/cv【】"],
 
 //米哈游
@@ -351,7 +351,7 @@ let d={
 "无聊按钮_编辑":["html",p.yucimao+"app/无聊按钮.html"],
 "虫洞":[p.博客+"虫洞"],
 "查成分":["选择","／<h3>B站</h3>","查弹幕","／<br>",
-"UID","评论_B站","弹幕_B站","看直播和弹幕_B站","看直播和弹幕2_B站","用户名记录_B站",
+"UID","评论_B站","新_B站评论","弹幕_B站","看直播和弹幕_B站","看直播和弹幕2_B站","用户名记录_B站",
 "／<br><br><hr><h3>贴吧</h3>","发言_贴吧","关注的贴吧_贴吧","查资料_贴吧","／<br>","查贴吧资料_贴吧","查贴吧吧务_贴吧",
 "／<br><br><hr><h3>微博</h3>","发言_微博",
 "／<br><br><hr>","／查用户名的互联网足迹／https://whatsmyname.me"
@@ -363,6 +363,7 @@ let d={
 "查贴吧资料_贴吧":["https://tieba.82cat.com/tieba/forum-search/","https://tieba.82cat.com/tieba/forum-search/【】"],
 "查贴吧吧务_贴吧":["https://tieba.82cat.com/tieba/forum-manager/","https://tieba.82cat.com/tieba/forum-manager/【】"],
 "评论_B站":["https://www.aicu.cc","https://www.aicu.cc/reply.html?uid=【】"],
+"新_B站评论":["http://frp-fan.com:64952","http://frp-fan.com:64952/uid=【】"],
 "弹幕_B站":["https://www.aicu.cc/videodanmu.html?uid=515330","https://www.aicu.cc/videodanmu.html?uid=【】"],
 "用户名记录_B站":["https://danmakus.com/analyze/515330","https://danmakus.com/analyze/【】"],
 "看直播和弹幕_B站":["https://laplace.live/user/515330","https://laplace.live/user/【】"],
@@ -584,7 +585,7 @@ if(d[搜索]&&d[搜索][0]=="js"){
 			}else{
 				dy+="<a href=\"?";
 				if(临时[1]){dy+=临时[1]}else{dy+=d[搜索][i]}
-				if(url[1]){dy+=" "+url[1]}
+				if(url[1]){dy+=" "+url.slice(1).join(" ")}
 				dy+="\"";
 			}
 
