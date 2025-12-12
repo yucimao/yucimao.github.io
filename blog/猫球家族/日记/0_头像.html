@@ -1,0 +1,114 @@
+---
+layout: page2
+title: 头像
+nav_text: 头像
+permalink: touxiang
+anchor: 1
+nav_url: <a href="/maoqiujiazu/riji">猫球家族日记本</a>
+---
+<link rel="stylesheet" href="/css/avatar_chat.css">
+<style>
+    .avatar_chat{
+        /* border: 1px solid #a1a1a1; */
+	    border-radius: 15px;
+    }
+    .avatar_chat .s{margin-top:0px;}
+</style>
+
+<div id="dy"></div>
+
+<script>
+    let data=new Array( //a或d 字 背景 / a或d 数字 /猫球色 e二扯色 n1灰 n2蓝
+
+    "hr／2025年",
+
+    // "hr／",
+    "s／2025年12月12日 圣诞节",
+    "a e／<img src='{{ site.mq_d }}/img/i/avatar/20251212e.jpg' style='width:300px'>",
+    "d m／<img src='{{ site.mq_d }}/img/i/avatar/20251212m.jpg' style='width:300px'>",
+    
+    "hr／2024年",
+
+    "hr／",
+    "s／2024年08月03日 绳网",
+    "a e／<img src='{{ site.mq_d }}/img/i/avatar/20240803e.jpg' style='width:300px'>",
+    "d m／<img src='{{ site.mq_d }}/img/i/avatar/20240803m.jpg' style='width:300px'>",
+    
+    "hr／2023年",
+
+    "hr／",
+    "s／2023年11月20日 百变怪",
+    "a e／<img src='{{ site.mq_d }}/img/i/avatar/20231120e.jpg' style='width:300px'>",
+    "d m／<img src='{{ site.mq_d }}/img/i/avatar/20231120m.jpg' style='width:300px'>",
+
+    "hr／",
+    "s／2023年08月27日 飞天小女警",
+    "a e／<img src='{{ site.mq_d }}/img/i/avatar/20230827e.jpg' style='width:300px'>",
+    "d m／<img src='{{ site.mq_d }}/img/i/avatar/20230827m.jpg' style='width:300px'>",
+
+    "hr／",
+    "s／2023年08月27日",
+    "a e／<img src='{{ site.mq_d }}/img/i/avatar/20230822e.jpg' style='width:300px'>",
+    "d m／<img src='{{ site.mq_d }}/img/i/avatar/20230822m.jpg' style='width:300px'>",
+
+    "hr／",
+    "s／2023年07月01日 蜡笔小新",
+    "a e／<img src='{{ site.mq_d }}/img/i/avatar/20230701e.jpg' style='width:300px'>",
+    "d m／<img src='{{ site.mq_d }}/img/i/avatar/20230701m.jpg' style='width:300px'>",
+
+
+
+    );
+    
+    let dy="";
+    let ps=[//字 背景
+        "#ffffff #F99F29",
+        "#ffffff #5EACE3",
+        "#ffffff #91C34E",
+        "#ffffff #22C5B6",
+        "#ffffff #F0696D",
+        "#ffffff #80C4D3",
+    ];
+
+    let _arr=ps.slice();
+    for(let i=0;i<_arr.length;i++){
+        let j=getRandomInt(0,i);
+        let t=_arr[i];
+        _arr[i]=_arr[j];
+        _arr[j]=t;
+    }
+    function getRandomInt(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+    }
+    ps=_arr;
+
+    let pss=-1;
+    for(let i=0;data.length>i;i++){
+        let 临时=data[i].split("／");
+        if(临时[0]=="hr"){
+            dy+="</div><br>";
+            if(临时[1]!=""){dy+="<a name=\""+临时[1]+"\"></a><h4>"+临时[1]+"</h4>";}
+            dy+="<div class=\"avatar_chat\">";
+            pss+=1;
+            if(pss==ps.length){pss=0;}
+        }else if(临时[0]=="s"){
+            dy+="<div><span class=\""+临时[0]+"\">"+临时[1]+"</span></div>";
+        }else{
+            临时[0]=临时[0].split(" ");
+            if(临时[0][1]){
+                if(临时[0][2]){
+                    dy+="<div><span class=\""+临时[0][0]+"\" style=\"color:"+临时[0][1]+";background-color:"+临时[0][2]+"\">"+临时[1]+"</span></div>"; 
+                }else if(临时[0][1]>-1){
+                    临时[0][1]=ps[临时[0][1]].split(" ");
+                    dy+="<div><span class=\""+临时[0][0]+"\" style=\"color:"+临时[0][1][0]+";background-color:"+临时[0][1][1]+"\">"+临时[1]+"</span></div>"; 
+                }else{
+                    dy+="<div><span class=\""+临时[0][0]+" "+临时[0][1]+"\">"+临时[1]+"</span></div>"; 
+                }
+            }else{
+                临时[0][1]=ps[pss].split(" ");
+                dy+="<div><span class=\""+临时[0][0]+"\" style=\"color:"+临时[0][1][0]+";background-color:"+临时[0][1][1]+"\">"+临时[1]+"</span></div>"; 
+            }
+        }
+    }
+    document.getElementById("dy").innerHTML = dy;
+</script>
