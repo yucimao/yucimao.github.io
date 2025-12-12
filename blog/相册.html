@@ -1,40 +1,337 @@
 ---
-layout: page
+layout: page2
 title: 相册
 nav_text: 相册
-nav_img: mqec_190404b.png
-nav_color: ffffff
-permalink: xiangce/旧
-redirect_from:
- - 相册/旧
+permalink: xiangce
+nav_url: <a href="/richang">猫球和二扯的日常</a>
 ---
+<link rel="stylesheet" href="/css/avatar_chat.css">
 <style>
+.avatar_chat{
+    /* border: 1px solid #a1a1a1; */
+    border-radius: 15px;
+}
+.avatar_chat .s{margin-top:0px;}
 @media screen and (min-width: 450px){ /*电脑*/
 .sy50{width:49%;}
-.sy25{width:24.5%;}
 }
 @media screen and (max-width: 449px){ /*手机*/
 .sy50{width:99%}
-.sy25{width:49%;}
 }
 </style>
 
 <a href="https://limaoqiu.lofter.com">
-<img class="tubiao sy50" src="{{ site.mq_d }}/img/index/xiangce-maoqiuerche.jpg" 
-onerror="this.src='/img/index/xiangce-maoqiuerche.jpg';this.onerror=null;" 
-alt="猫球和二扯的照片" /></a> <!--图片已删-->
+    <img class="tubiao sy50" id="xiangce" src="/img/index/lofter.jpg" 
+    alt="三次元相册" /></a><small>（三次元相册）</small>
 
-<a href="https://pvopvo.lofter.com">
-<img class="tubiao sy25" src="{{ site.mq_d }}/img/index/xiangce-pvo.jpg" 
-onerror="this.src='/img/index/xiangce-pvo.jpg';this.onerror=null;" 
-alt="pvo相册" /></a> <!--图片已删-->
+<div id="dy"></div>
+<div id="loading" style="text-align: center; padding: 20px; display: none;">加载中...</div>
 
-<br>
+<script>
+let data = new Array(//a或d 字 背景 / a或d 数字 /猫球色 e二扯色 n1灰 n2蓝
+"hr／2025年",
+"s／2025年12月12日 圣诞节",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20251212e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20251212m.jpg' style='width:300px'>",
 
-<h3>绘画</h3>
-<a href="https://h.bilibili.com/1326006" target="_blank" class="dk">《山海经》</a>：常羲、九尾狐、女娲、羽蒙<br/>
-<a href="https://h.bilibili.com/9283566" target="_blank" class="dk">《一张白纸的梦》</a>：梦里有七只猫球，五彩缤纷。<br/>
-<a href="https://www.bilibili.com/video/av35974527" target="_blank" class="dk">解读《一张白纸的梦》</a><br/>
-<br>
-<h3>照片</h3>
-《一小坨星光》(被lofter和谐了)
+"hr／2024年",
+"s／2024年08月03日 绳网",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20240803e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20240803m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2024年06月16日 结婚证",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20240616.jpg' style='width:80%'>",
+
+"hr／",
+"s／2024年02月24日 元宵节",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20240224.jpg' style='width:300px'>",
+
+"hr／2023年",
+"s／2023年11月20日 百变怪",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20231120e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20231120m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2023年08月27日 飞天小女警",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20230827e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20230827m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2023年08月27日",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20230822e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20230822m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2023年07月01日 蜡笔小新",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20230701e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20230701m.jpg' style='width:300px'>",
+
+"hr／2022年",
+"s／2022年10月15日 万圣节",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20221015e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20221015m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2022年05月29日 UFO",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20220529.gif' style='width:300px'>",
+
+"hr／",
+"s／2022年05月23日",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20220523a.jpg' style='width:80%'>",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20220523b.jpg' style='width:80%'>",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20220523c.jpg' style='width:80%'>",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20220523d.jpg' style='width:80%'>",
+
+"hr／",
+"s／2022年03月26日",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20220326.jpg' style='width:80%'>",
+
+"hr／2021年",
+"s／2021年12月17日 斗地主",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20211217a.jpg' style='width:80%'>",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20211217b.jpg' style='width:80%'>",
+
+"hr／",
+"s／2021年11月22日 僵尸",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20211122e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20211122m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2021年08月30日 日常",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20210830e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20210830m.jpg' style='width:300px'>",
+"d m／最上川",
+
+"hr／2020年",
+"s／2020年06月25日 端午节",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20200625e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20200625m.jpg' style='width:300px'>",
+"d m／端午节快乐",
+
+"hr／",
+"s／2020年06月01日 儿童节",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20200601.jpg' style='width:80%'>",
+
+"hr／",
+"s／2020年03月21日 玩烟花",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20200321.jpg' style='width:80%'>",
+
+"hr／",
+"s／2020年03月16日 猫球生日",
+"d e／小猫球生日快乐",
+"a m／嘿嘿",
+"a m／<img src='{{ site.mq_d }}/img/i/avatar/20200316m.jpg' style='width:300px'>",
+"d e／<img src='{{ site.mq_d }}/img/i/avatar/20200316e.jpg' style='width:300px'>",
+
+"hr／",
+"s／2020年02月20日 比心",
+"a m／<img src='{{ site.mq_d }}/img/i/avatar/20200220m.jpg' style='width:300px'>",
+"d e／<img src='{{ site.mq_d }}/img/i/avatar/20200220e.jpg' style='width:300px'>",
+
+"hr／",
+"s／2020年01月27日",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20200127.jpg' style='width:80%'>",
+
+"hr／",
+"s／2020年01月18日 新年窗花",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20200118e.jpg' style='width:300px'>",
+"a e／新年快乐",
+"d m／新年快乐",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20200118m.jpg' style='width:300px'>",
+
+"hr／2019年",
+"s／2019年12月24日 圣诞节合影",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20191224.jpg' style='width:80%'>",
+
+"hr／",
+"s／2019年11月19日 宝可梦",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20191119e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20191119m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2019年10月29日 合影",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20191029.jpg' style='width:80%'>",
+
+"hr／",
+"s／2019年10月01日 新中国成立70周年",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20191001e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20191001m.jpg' style='width:300px'>",
+"a n1／祖国母亲生日快乐",
+
+"hr／",
+"s／2019年05月20日 夏天",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20190520e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20190520m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2019年01月18日 有吃有喝",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20190118e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20190118m.jpg' style='width:300px'>",
+
+"hr／2018年",
+"s／2018年11月01日 万圣节",
+"d n2／<img src='{{ site.mq_d }}/img/i/illus/20181101.jpg' style='width:80%'>",
+
+"hr／",
+"s／2018年06月01日 儿童节",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20180601m.jpg' style='width:300px'>",
+"d m／儿童节快乐",
+"a e／儿童节快乐",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20180601e.jpg' style='width:300px'>",
+
+"hr／",
+"s／2018年03月21日 呸-接",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20180321a.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20180321d.jpg' style='width:300px'>",
+
+"hr／",
+"s／2018年03月21日 汤圆",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20180302e.jpg' style='width:300px'>",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20180302m.jpg' style='width:300px'>",
+"a e／元宵节快乐",
+"d m／汤圆节快乐",
+
+"hr／",
+"s／2018年01月26日 生气了么",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20180126a.jpg' style='width:300px'>",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20180126d.jpg' style='width:300px'>",
+"a e／生气了么？",
+"d m／没有哦",
+"a n1／（梗出自《pop子和pipi美》）",
+
+"hr／2017年",
+"s／2017年09月13日 呆傻",
+"a m／<img src='{{ site.mq_d }}/img/i/avatar/20170913m.jpg' style='width:300px'>",
+"d e／<img src='{{ site.mq_d }}/img/i/avatar/20170913e.jpg' style='width:300px'>",
+
+"hr／",
+"s／2017年06月26日 举高高",
+"a e／举高高~",
+"d m／好",
+"d m／<img src='{{ site.mq_d }}/img/i/avatar/20170626e.jpg' style='width:300px'>",
+"a e／<img src='{{ site.mq_d }}/img/i/avatar/20170626m.jpg' style='width:300px'>",
+
+"hr／",
+"s／2017年04月17日",
+"a m／<img src='{{ site.mq_d }}/img/i/avatar/20170417m.jpg' style='width:300px'>",
+"d e／<img src='{{ site.mq_d }}/img/i/avatar/20170417e.jpg' style='width:300px'>",
+);
+
+let ps = [//字 背景
+    "#ffffff #F99F29",
+    "#ffffff #5EACE3",
+    "#ffffff #91C34E",
+    "#ffffff #22C5B6",
+    "#ffffff #F0696D",
+    "#ffffff #80C4D3",
+];
+
+let _arr = ps.slice();
+for (let i = 0; i < _arr.length; i++) {
+    let j = getRandomInt(0, i);
+    let t = _arr[i];
+    _arr[i] = _arr[j];
+    _arr[j] = t;
+}
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+ps = _arr;
+
+let seriesList = [];
+let currentSeries = [];
+
+for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+    if (item.startsWith("hr／")) {
+        if (currentSeries.length > 0) {
+            seriesList.push(currentSeries);
+        }
+        currentSeries = [item];
+    } else {
+        currentSeries.push(item);
+    }
+}
+if (currentSeries.length > 0) {
+    seriesList.push(currentSeries);
+}
+
+const pageSize = 9;
+let currentPage = 0;
+let isLoading = false;
+
+function renderSeries(startIndex, endIndex) {
+    let dy = "";
+    let pss = -1;
+
+    for (let s = startIndex; s < endIndex && s < seriesList.length; s++) {
+        const series = seriesList[s];
+        for (let i = 0; i < series.length; i++) {
+            let 临时 = series[i].split("／");
+            if (临时[0] === "hr") {
+                dy += "</div><br>";
+                if (临时[1] !== "") {
+                    dy += `<a name="${临时[1]}"></a><h4>${临时[1]}</h4>`;
+                }
+                dy += "<div class=\"avatar_chat\">";
+                pss += 1;
+                if (pss === ps.length) {
+                    pss = 0;
+                }
+            } else if (临时[0] === "s") {
+                dy += `<div><span class="${临时[0]}">${临时[1]}</span></div>`;
+            } else {
+                临时[0] = 临时[0].split(" ");
+                if (临时[0][1]) {
+                    if (临时[0][2]) {
+                        dy += `<div><span class="${临时[0][0]}" style="color:${临时[0][1]};background-color:${临时[0][2]}">${临时[1]}</span></div>`;
+                    } else if (临时[0][1] > -1) {
+                        临时[0][1] = ps[临时[0][1]].split(" ");
+                        dy += `<div><span class="${临时[0][0]}" style="color:${临时[0][1][0]};background-color:${临时[0][1][1]}">${临时[1]}</span></div>`;
+                    } else {
+                        dy += `<div><span class="${临时[0][0]} ${临时[0][1]}">${临时[1]}</span></div>`;
+                    }
+                } else {
+                    临时[0][1] = ps[pss].split(" ");
+                    dy += `<div><span class="${临时[0][0]}" style="color:${临时[0][1][0]};background-color:${临时[0][1][1]}">${临时[1]}</span></div>`;
+                }
+            }
+        }
+    }
+
+    document.getElementById("dy").innerHTML += dy;
+}
+
+function loadNextPage() {
+    if (isLoading || currentPage * pageSize >= seriesList.length) {
+        document.getElementById("loading").style.display = "none";
+        return;
+    }
+
+    isLoading = true;
+    document.getElementById("loading").style.display = "block";
+
+    const start = currentPage * pageSize;
+    const end = start + pageSize;
+
+    setTimeout(() => {
+        renderSeries(start, end);
+        currentPage++;
+        isLoading = false;
+        document.getElementById("loading").style.display = "none";
+    }, 300);
+}
+
+window.addEventListener("scroll", function() {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight || window.innerHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight - 200) {
+        loadNextPage();
+    }
+});
+
+loadNextPage();
+</script>
