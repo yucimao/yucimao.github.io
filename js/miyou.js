@@ -362,7 +362,7 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
     如有错漏欢迎指正和补充，QQ:<a onclick="复(制='123719932')">123719932</a>。</li>
 <li>不记录〈暗区〉的小规模争斗，太多太杂，而且很无聊，只记录影响较大或波及到普通玩家的。</li>
 <li>从2025年开始，一些几乎每次都会有的“例行节奏”就不一一记录了，只在年初统一记录整理，除非影响太大或有什么特别之处。</li>
-<li>不用怀疑我的身份，本网页纯个人兴趣，本人没有官方背景，无恰饭，只有网友自发打赏，收益完全赶不上我耗费的时间和精力。</li>
+<li>不用怀疑我的身份，本网页纯个人兴趣，本人与米哈游无关，无恰饭，只有网友自发打赏，收益完全赶不上我耗费的时间和精力。</li>
 <li>辟谣和个人看法会用绿色文字标注：<span class='zhushi'>就像这样</span>（<a onclick="document.getElementById('隐藏标注').innerHTML='<style>.zhushi{display:none}</style>'">隐藏</a> / <a onclick="document.getElementById('隐藏标注').innerHTML=''">显示</a>）</li>
 </ol>
 
@@ -390,6 +390,8 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 <small><a href="#关键词">更多关键词</a></small><br>`},
 
 "dy_尾":()=>{dy+=`
+<a href="/miyou1">2024年及以前</a> . <a href="/miyou2">2025年</a> . <a href="/miyou0">精选</a>
+<hr>
 <a name="最新"></a>
 <a name="其他记录"></a><h2>其他记录</h2>
 <a href="/i/12610579">本页的修改记录</a><br>
