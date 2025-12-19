@@ -1,0 +1,80 @@
+---
+layout: zk
+title: 点点数据：二次元移动游戏分析报告
+nav_text: 点点数据：二次元移动游戏分析报告
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/16606730
+---
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+.trb{display:none;}
+</style>
+<a id="toggleBtn" onclick="toggleRows()">展开参考</a><br>
+<br>
+
+<b>综合评分对比：</b>
+<table>
+    <tr><td>排名</td><td>游戏</td><td>综合评分</td></tr>
+    <tr><td>1</td><td><b>星穹铁道</b></td><td>87.8</td></tr>
+    <tr><td>2</td><td><b>原神</b></td><td>87.1</td></tr>
+    <tr class="trb"><td>3</td><td>明日方舟</td><td>86.8</td></tr>
+    <tr><td>4</td><td><b>绝区零</b></td><td>86.6</td></tr>
+    <tr class="trb"><td>5</td><td>蔚蓝档案</td><td>86.2</td></tr>
+    <tr class="trb"><td>6</td><td>胜利女神</td><td>85.5</td></tr>
+    <tr class="trb"><td>7</td><td>恋与深空</td><td>85.1</td></tr>
+    <tr class="trb"><td>8</td><td>阴阳师</td><td>84.9</td></tr>
+    <tr class="trb"><td>9</td><td>鸣潮</td><td>84.6</td></tr>
+    <tr class="trb"><td>10</td><td>碧蓝航线</td><td>84.2</td></tr>
+</table>
+<br>
+
+
+<b>2025Q1-Q3用户留存：</b>（其中“月活跃”是iOS端，以“万人”为单位，原报告里这部分是图表，我这里根据目测记录个大概位置）
+<table>
+    <tr><td></td><td>月活跃</td><td>平均次留</td><td>平均月留</td><td>男生占比</td></tr>
+    <tr><td><b>星穹铁道</b></td><td>200</td><td>约48.9%</td><td>约17.6%</td><td>约67.9%</td></tr>
+    <tr><td><b>原神</b></td><td>490</td><td>约56.5%</td><td>约21.4%</td><td>约68.5%</td></tr>
+    <tr><td><b>绝区零</b></td><td>35</td><td>约24.4%</td><td>约3.4%</td><td>约68.1%</td></tr>
+    <tr class="trb"><td>明日方舟</td><td>140</td><td>约50.6%</td><td>约15.3%</td><td>约79.6%</td></tr>
+    <tr class="trb"><td>蔚蓝档案</td><td>4</td><td>约63.2%</td><td>约18.6%</td><td>约69.1%</td></tr>
+    <tr class="trb"><td>胜利女神</td><td>22</td><td>约23.3%</td><td>约3.6%</td><td>约81.7%</td></tr>
+    <tr class="trb"><td>阴阳师</td><td>60</td><td>约22.1%</td><td>约4.8%</td><td>约74.8%</td></tr>
+    <tr class="trb"><td>鸣潮</td><td>45</td><td>约31.9%</td><td>约4.9%</td><td>约83.1%</td></tr>
+    <tr class="trb"><td>碧蓝航线</td><td>170</td><td>约21.8%</td><td>约3.9%</td><td>约79.9%</td></tr>
+    <!-- <tr class="trb"><td></td><td></td><td>约%</td><td>约%</td><td>约%</td></tr> -->
+
+</table>
+<br>
+
+<b>测评分析：</b>（上限100）
+<table>
+    <tr><td></td><td>画面<br>音效表现</td><td>核心战斗<br>玩法体验</td><td>游戏内容<br>系统</td><td>性能<br>设备适配</td><td>运营、商业化<br>社区</td><td>综合评分</td></tr>
+    <tr><td><b>星穹铁道</b></td><td>92</td><td>85</td><td>86</td><td>87</td><td>90</td><td>87.8</td></tr>
+    <tr><td><b>原神</b></td><td>93</td><td>85</td><td>83</td><td>86</td><td>88</td><td>87.1</td></tr>
+    <tr><td><b>绝区零</b></td><td>92</td><td>84</td><td>85</td><td>84</td><td>88</td><td>86.6</td></tr>
+    <tr class="trb"><td>明日方舟</td><td>88</td><td>90</td><td>85</td><td>82</td><td>85</td><td>86.8</td></tr>
+    <tr class="trb"><td>蔚蓝档案</td><td>90</td><td>83</td><td>86</td><td>85</td><td>88</td><td>86.2</td></tr>
+    <tr class="trb"><td>胜利女神</td><td>90</td><td>83</td><td>86</td><td>85</td><td>88</td><td>85.5</td></tr>
+    <tr class="trb"><td>阴阳师</td><td>90</td><td>83</td><td>84</td><td>82</td><td>84</td><td>84.9</td></tr>
+    <tr class="trb"><td>鸣潮</td><td>85</td><td>90</td><td>80</td><td>82</td><td>80</td><td>84.6</td></tr>
+    <tr class="trb"><td>碧蓝航线</td><td>88</td><td>80</td><td>84</td><td>86</td><td>85</td><td>84.2</td></tr>
+    <!-- <tr class="trb"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr> -->
+</table>
+
+<script>
+let showAll = false;
+function toggleRows(){
+  const btns=document.getElementById("toggleBtn");
+  const bRows=document.getElementsByClassName("trb");
+  showAll=!showAll;
+  for(let i=0;i<bRows.length;i++){
+    bRows[i].style.display=showAll?"table-row":"none";
+  }
+  btns.textContent=showAll?"只看米游":"展开参考";
+}
+</script>
+
+
+
+
+
