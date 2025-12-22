@@ -12,9 +12,9 @@ permalink: xp
 let cj_data={
 "普通XP":[
 
-"/i/cj/653366.st／测试／／",
-"/i/cj/16555524.png／测试／／",
-// "0／贫乳／／",
+// "/i/cj/653366.st／测试／／",
+// "/i/cj/16555524.png／测试／／",
+"/i/cj/16641274.jpg／贫乳／／",
 // "0／萝莉／／",
 // "0／御姐／／",
 
@@ -24,36 +24,21 @@ let cj_data={
 ]
 };
 
-
-// restore-image.js
 (function () {
-    // 定义3x3分块的换位顺序（与处理时的顺序相反，用于还原）
-    // 处理时的顺序：blockOrder = [4, 0, 2, 7, 1, 3, 5, 8, 6]
-    // 还原顺序：需要根据原顺序生成反向映射，例如原顺序中索引0对应4，那么还原时索引4对应0
-    const processBlockOrder = [4, 0, 2, 7, 1, 3, 5, 8, 6]; // 与处理页面的blockOrder一致
+    const processBlockOrder = [8,6,2,0,4,7,1,3,5];
     const restoreBlockOrder = new Array(9);
-    // 生成反向换位顺序
     processBlockOrder.forEach((sourceIdx, targetIdx) => {
         restoreBlockOrder[sourceIdx] = targetIdx;
     });
 
-    // 获取监控的区域
     const dyContainer = document.getElementById('dy');
-    if (!dyContainer) {
-        console.warn('未找到id为"dy"的区域');
-        return;
-    }
 
-    // 创建MutationObserver实例，监控子节点变化
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-            // 遍历新增的节点
             mutation.addedNodes.forEach((node) => {
-                // 处理直接新增的img节点
                 if (node.tagName === 'IMG') {
                     restoreImage(node);
                 } else {
-                    // 处理节点内的img子节点（例如新增的div里包含img）
                     const imgElements = node.querySelectorAll('img');
                     imgElements.forEach((img) => {
                         restoreImage(img);
@@ -63,7 +48,6 @@ let cj_data={
         });
     });
 
-    // 配置监控选项：监控子节点的添加和子树的变化
     observer.observe(dyContainer, {
         childList: true,
         subtree: true
@@ -74,41 +58,30 @@ let cj_data={
      * @param {HTMLImageElement} img - 需要还原的图片元素
      */
     function restoreImage(img) {
-        // 避免重复处理
         if (img.dataset.restored === 'true') return;
 
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         const tempImage = new Image();
-        // 解决跨域问题（如果图片来自不同域名，需要服务器配置CORS）
         tempImage.crossOrigin = 'anonymous';
 
         tempImage.onload = function () {
-            // 设置Canvas尺寸
             canvas.width = tempImage.width;
             canvas.height = tempImage.height;
 
-            // 步骤1：绘制混淆后的图片到Canvas
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(tempImage, 0, 0);
             let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-            // 步骤2：还原3x3分块换位（反向顺序）
             imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, restoreBlockOrder);
-
-            // 步骤3：还原上下翻转（再次上下翻转即可）
             imageData = flipVertical(imageData, canvas.width, canvas.height);
-
-            // 步骤4：还原反色（再次反色即可）
             imageData = invertColor(imageData);
-
-            // 将还原后的图片替换到原img标签
             ctx.putImageData(imageData, 0, 0);
-            img.src = canvas.toDataURL();
-            // 标记为已还原，避免重复处理
+            img.src = canvas.toDataURL('image/jpeg', 1.0);
             img.dataset.restored = 'true';
         };
 
-        // 加载图片（如果是base64或同域图片，直接加载；跨域需配置CORS）
         tempImage.src = img.src;
     }
 
