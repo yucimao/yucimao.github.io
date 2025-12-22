@@ -136,7 +136,7 @@
             // 遍历处理后的图片，添加到ZIP中
             processedImages.forEach((img) => {
                 // 命名规则：processed-原文件名
-                const fileName = `processed-${img.name}`;
+                const fileName = `${img.name}`;
                 zip.file(fileName, img.blob);
             });
 
