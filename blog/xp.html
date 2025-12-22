@@ -24,10 +24,13 @@ let cj_data={
 ]
 };
 
-    // ========== 新增：全局种子变量（可根据需要修改初始值） ==========
+
+
+
+    // ========== 全局种子变量（可根据需要修改初始值） ==========
     let globalSeed = 12345; // 这个变量作为统一的种子，可在外部修改
 
-    // 获取DOM元素（原有部分，保留）
+    // 获取DOM元素（添加空值判断，避免null报错）
     const uploadArea = document.getElementById('upload-area');
     const fileInput = document.getElementById('file-input');
     const obfuscateBtn = document.getElementById('obfuscate-btn');
@@ -38,22 +41,22 @@ let cj_data={
     const resultCanvas = document.getElementById('result-canvas');
     const originalStatus = document.getElementById('original-status');
     const resultStatus = document.getElementById('result-status');
-    // ========== 新增：获取dy容器 ==========
+    // 获取dy容器（核心功能，必须存在）
     const dyContainer = document.getElementById('dy');
     
-    // 获取Canvas上下文（原有部分，保留）
-    const originalCtx = originalCanvas.getContext('2d');
-    const resultCtx = resultCanvas.getContext('2d');
+    // 获取Canvas上下文（添加空值判断）
+    const originalCtx = originalCanvas?.getContext('2d');
+    const resultCtx = resultCanvas?.getContext('2d');
     
-    // 存储原始图像数据（原有部分，保留）
+    // 存储原始图像数据
     let originalImageData = null;
     
-    // 上传区域点击事件（原有部分，保留）
+    // 上传区域点击事件（添加空值判断）
     uploadArea?.addEventListener('click', () => {
-        fileInput.click();
+        fileInput?.click();
     });
     
-    // 拖放功能实现（原有部分，保留）
+    // 拖放功能实现（添加空值判断）
     uploadArea?.addEventListener('dragover', (e) => {
         e.preventDefault();
         uploadArea.style.borderColor = '#4CAF50';
@@ -75,33 +78,37 @@ let cj_data={
         }
     });
     
-    // 文件选择事件（原有部分，保留）
+    // 文件选择事件（添加空值判断）
     fileInput?.addEventListener('change', (e) => {
         if (e.target.files.length) {
             handleImageUpload(e.target.files[0]);
         }
     });
     
-    // 按钮点击事件（原有部分，保留，修改种子为全局种子）
+    // 按钮点击事件（添加空值判断，修改种子为全局种子）
     obfuscateBtn?.addEventListener('click', () => {
-        if (originalImageData) {
+        if (originalImageData && originalCtx && resultCtx) {
             // 同步输入框的种子到全局种子（可选，也可直接用全局种子）
-            globalSeed = parseInt(seedInput.value) || globalSeed;
+            globalSeed = seedInput ? (parseInt(seedInput.value) || globalSeed) : globalSeed;
             processImage('obfuscate');
         }
     });
     
     restoreBtn?.addEventListener('click', () => {
-        if (originalImageData) {
-            globalSeed = parseInt(seedInput.value) || globalSeed;
+        if (originalImageData && originalCtx && resultCtx) {
+            globalSeed = seedInput ? (parseInt(seedInput.value) || globalSeed) : globalSeed;
             processImage('restore');
         }
     });
     
     saveBtn?.addEventListener('click', saveProcessedImage);
     
-    // 处理图片上传（原有部分，保留）
+    // 处理图片上传（添加空值判断）
     function handleImageUpload(file) {
+        if (!originalCtx || !resultCtx || !originalStatus || !resultStatus) {
+            console.warn('缺少图片处理所需的DOM元素');
+            return;
+        }
         const reader = new FileReader();
         
         reader.onload = (e) => {
@@ -126,9 +133,9 @@ let cj_data={
                 // 更新状态和按钮
                 originalStatus.textContent = `已上传 (${img.width} × ${img.height})`;
                 resultStatus.textContent = '等待处理';
-                obfuscateBtn.disabled = false;
-                restoreBtn.disabled = false;
-                saveBtn.disabled = true;
+                if (obfuscateBtn) obfuscateBtn.disabled = false;
+                if (restoreBtn) restoreBtn.disabled = false;
+                if (saveBtn) saveBtn.disabled = true;
             };
             
             img.src = e.target.result;
@@ -137,7 +144,7 @@ let cj_data={
         reader.readAsDataURL(file);
     }
     
-    // 伪随机数生成器 - 确保相同种子产生相同序列（原有部分，保留）
+    // 伪随机数生成器 - 确保相同种子产生相同序列
     class PRNG {
         constructor(seed) {
             // 使用线性同余生成器(LCG)算法
@@ -156,14 +163,18 @@ let cj_data={
         }
     }
     
-    // 处理图片（混淆或还原）（原有部分，修改种子为全局种子）
+    // 处理图片（混淆或还原）（添加空值判断）
     function processImage(action) {
+        if (!originalCtx || !resultCtx || !originalCanvas || !resultCanvas) {
+            console.warn('缺少Canvas上下文，无法处理图片');
+            return;
+        }
         const seed = globalSeed; // 使用全局种子
         const prng = new PRNG(seed);
         
         // 获取源图像数据（混淆时使用原图，还原时使用结果图）
         const sourceCanvas = action === 'obfuscate' ? originalCanvas : resultCanvas;
-        const sourceCtx = sourceCanvas.getContext('2d'); // 修复原有动态获取的问题，直接获取上下文
+        const sourceCtx = sourceCanvas.getContext('2d'); // 此时sourceCanvas必然存在，无需空值判断
         const sourceImageData = sourceCtx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
         const sourceData = new Uint8ClampedArray(sourceImageData.data);
         
@@ -194,12 +205,14 @@ let cj_data={
         resultCtx.putImageData(imageData, 0, 0);
         
         // 更新状态
-        const actionText = action === 'obfuscate' ? '混淆' : '还原';
-        resultStatus.textContent = `已${actionText} (种子: ${seed})`;
-        saveBtn.disabled = false;
+        if (resultStatus) {
+            const actionText = action === 'obfuscate' ? '混淆' : '还原';
+            resultStatus.textContent = `已${actionText} (种子: ${seed})`;
+        }
+        if (saveBtn) saveBtn.disabled = false;
     }
     
-    // 创建像素交换映射表（原有部分，保留）
+    // 创建像素交换映射表
     function createSwapMap(pixelCount, prng) {
         // 初始化映射表
         const swapMap = new Array(pixelCount);
@@ -217,8 +230,12 @@ let cj_data={
         return swapMap;
     }
     
-    // 保存处理后的图片（原有部分，保留）
+    // 保存处理后的图片（添加空值判断）
     function saveProcessedImage() {
+        if (!resultCanvas) {
+            console.warn('缺少结果Canvas，无法保存图片');
+            return;
+        }
         try {
             // 创建下载链接
             const link = document.createElement('a');
@@ -233,7 +250,7 @@ let cj_data={
         }
     }
 
-    // ========== 新增：核心功能 - 还原动态加载的混淆图片 ==========
+    // ========== 核心功能 - 还原动态加载的混淆图片 ==========
     /**
      * 还原混淆的图片
      * @param {HTMLImageElement} img - 需要还原的混淆图片元素
@@ -241,7 +258,7 @@ let cj_data={
      */
     async function restoreObfuscatedImage(img) {
         return new Promise((resolve) => {
-            // 创建临时canvas用于处理图片
+            // 创建临时canvas用于处理图片（这里是动态创建的，不会为null）
             const tempCanvas = document.createElement('canvas');
             const tempCtx = tempCanvas.getContext('2d');
             
@@ -294,7 +311,7 @@ let cj_data={
      */
     function monitorDyContainer() {
         if (!dyContainer) {
-            console.warn('未找到id为dy的容器');
+            console.warn('未找到id为dy的容器，请确保页面中有<div id="dy"></div>');
             return;
         }
 
