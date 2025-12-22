@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片处理工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .upload-area {
+            margin-bottom: 20px;
+        }
+        .btn-group {
+            margin: 20px 0;
+        }
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            font-size: 14px;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #image-container {
+            width: 100%;
+            min-height: 300px;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        #preview-img {
+            max-width: 100%;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!--豆包AI生成-->
+    <div class="container">
+        <div class="upload-area">
+            <input type="file" id="file-upload" accept="image/*">
+        </div>
+        <div class="btn-group">
+            <button id="process-btn" disabled>处理图片</button>
+            <button id="restore-btn" disabled>还原图片</button>
+            <button id="save-btn" disabled>保存图片</button>
+        </div>
+        <div id="image-container">
+            <img id="preview-img" src="" alt="预览图片">
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let originalImage = null; // 上传的原始图片对象
+        let processedImageData = null; // 处理后的图片像素数据
+        let currentImageIsProcessed = false; // 标记当前显示的是处理后的图还是原始图
+        let processedImageUrl = null; // 存储本页面处理后的图片URL
+        let canvas = document.createElement('canvas');
+        let ctx = canvas.getContext('2d');
+        const previewImg = document.getElementById('preview-img');
+        const fileUpload = document.getElementById('file-upload');
+        const processBtn = document.getElementById('process-btn');
+        const restoreBtn = document.getElementById('restore-btn');
+        const saveBtn = document.getElementById('save-btn');
+
+        // 定义3x3分块的换位顺序（索引从0开始，0-8对应9个块）
+        const blockOrder = [8,6,2,0,4,7,1,3,5];
+
+        // 1. 监听文件上传
+        fileUpload.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                originalImage = new Image();
+                originalImage.onload = function () {
+                    // 初始化Canvas尺寸
+                    canvas.width = originalImage.width;
+                    canvas.height = originalImage.height;
+                    // 显示原始图片
+                    previewImg.src = originalImage.src;
+                    // 启用按钮：处理和还原按钮都直接启用
+                    processBtn.disabled = false;
+                    restoreBtn.disabled = false;
+                    saveBtn.disabled = true;
+                    // 重置状态
+                    currentImageIsProcessed = false;
+                    processedImageUrl = null;
+                    processedImageData = null;
+                };
+                originalImage.src = event.target.result;
+                // 解决跨域问题（如果图片来自外部链接，本地测试可能需要）
+                originalImage.crossOrigin = 'anonymous';
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // 2. 处理图片按钮点击事件
+        processBtn.addEventListener('click', function () {
+            if (!originalImage) return;
+
+            // 步骤1：绘制原始图片到Canvas（添加白色背景，解决JPG透明问题）
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(originalImage, 0, 0);
+            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+            // 步骤2：图片反色处理
+            imageData = invertColor(imageData);
+
+            // 步骤3：图片上下翻转处理
+            imageData = flipVertical(imageData, canvas.width, canvas.height);
+
+            // 步骤4：3x3分块并换位
+            imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, blockOrder);
+
+            // 存储处理后的图片数据和URL，更新状态
+            processedImageData = imageData;
+            ctx.putImageData(processedImageData, 0, 0);
+            processedImageUrl = canvas.toDataURL('image/jpeg', 1.0);
+            previewImg.src = processedImageUrl;
+            currentImageIsProcessed = true;
+
+            // 更新按钮状态
+            saveBtn.disabled = false;
+        });
+
+        // 3. 还原图片按钮点击事件（支持直接还原上传的处理图）
+        restoreBtn.addEventListener('click', function () {
+            if (!originalImage) return;
+
+            // 情况1：如果是本页面处理后的图，直接显示原始图
+            if (currentImageIsProcessed) {
+                previewImg.src = originalImage.src;
+                currentImageIsProcessed = false;
+                saveBtn.disabled = true;
+            } 
+            // 情况2：如果是上传的已经处理过的图，执行反向处理还原
+            else {
+                restoreUploadedProcessedImage();
+                saveBtn.disabled = false; // 还原后可保存还原后的图
+            }
+        });
+
+        // 4. 保存图片按钮点击事件（支持保存处理/还原后的图）
+        saveBtn.addEventListener('click', function () {
+            const jpgDataUrl = canvas.toDataURL('image/jpeg', 1.0);
+            const link = document.createElement('a');
+            link.href = jpgDataUrl;
+            // 根据状态命名文件
+            link.download = currentImageIsProcessed ? 'processed-image.jpg' : 'restored-image.jpg';
+            link.click();
+        });
+
+        // ---------------------- 核心处理函数 ----------------------
+        /**
+         * 图片反色处理
+         * @param {ImageData} imageData - 图片像素数据
+         * @returns {ImageData} 反色后的图片数据
+         */
+        function invertColor(imageData) {
+            const data = imageData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 255 - data[i]; // 红通道
+                data[i + 1] = 255 - data[i + 1]; // 绿通道
+                data[i + 2] = 255 - data[i + 2]; // 蓝通道
+            }
+            return imageData;
+        }
+
+        /**
+         * 图片上下翻转
+         * @param {ImageData} imageData - 图片像素数据
+         * @param {number} width - 图片宽度
+         * @param {number} height - 图片高度
+         * @returns {ImageData} 翻转后的图片数据
+         */
+        function flipVertical(imageData, width, height) {
+            const newData = new Uint8ClampedArray(imageData.data.length);
+            const data = imageData.data;
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const originalIndex = (y * width + x) * 4;
+                    const newIndex = ((height - 1 - y) * width + x) * 4;
+                    newData[newIndex] = data[originalIndex];
+                    newData[newIndex + 1] = data[originalIndex + 1];
+                    newData[newIndex + 2] = data[originalIndex + 2];
+                    newData[newIndex + 3] = data[originalIndex + 3];
+                }
+            }
+            return new ImageData(newData, width, height);
+        }
+
+        /**
+         * 3x3分块并按指定顺序换位
+         * @param {ImageData} imageData - 图片像素数据
+         * @param {number} width - 图片宽度
+         * @param {number} height - 图片高度
+         * @param {array} order - 分块顺序
+         * @returns {ImageData} 换位后的图片数据
+         */
+        function rearrangeBlocks(imageData, width, height, order) {
+            const blockWidth = Math.floor(width / 3);
+            const blockHeight = Math.floor(height / 3);
+            const newData = new Uint8ClampedArray(imageData.data.length);
+            const data = imageData.data;
+
+            for (let targetIdx = 0; targetIdx < 9; targetIdx++) {
+                const sourceIdx = order[targetIdx];
+                const [sourceX, sourceY] = getBlockPosition(sourceIdx, blockWidth, blockHeight);
+                const [targetX, targetY] = getBlockPosition(targetIdx, blockWidth, blockHeight);
+
+                for (let y = 0; y < blockHeight; y++) {
+                    for (let x = 0; x < blockWidth; x++) {
+                        const sourcePixelIndex = ((sourceY + y) * width + (sourceX + x)) * 4;
+                        const targetPixelIndex = ((targetY + y) * width + (targetX + x)) * 4;
+
+                        if (sourcePixelIndex < data.length && targetPixelIndex < newData.length) {
+                            newData[targetPixelIndex] = data[sourcePixelIndex];
+                            newData[targetPixelIndex + 1] = data[sourcePixelIndex + 1];
+                            newData[targetPixelIndex + 2] = data[sourcePixelIndex + 2];
+                            newData[targetPixelIndex + 3] = data[sourcePixelIndex + 3];
+                        }
+                    }
+                }
+            }
+
+            return new ImageData(newData, width, height);
+        }
+
+        /**
+         * 根据块索引获取起始坐标
+         * @param {number} index - 块索引（0-8）
+         * @param {number} blockWidth - 块宽度
+         * @param {number} blockHeight - 块高度
+         * @returns {array} [x, y]
+         */
+        function getBlockPosition(index, blockWidth, blockHeight) {
+            const row = Math.floor(index / 3);
+            const col = index % 3;
+            return [col * blockWidth, row * blockHeight];
+        }
+
+        /**
+         * 还原上传的已处理图片（执行反向处理步骤）
+         */
+        function restoreUploadedProcessedImage() {
+            if (!originalImage) return;
+
+            // 步骤1：绘制上传的处理图到Canvas（添加白色背景）
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(originalImage, 0, 0);
+            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+            // 生成反向分块顺序（还原分块）
+            const restoreBlockOrder = new Array(9);
+            blockOrder.forEach((sourceIdx, targetIdx) => {
+                restoreBlockOrder[sourceIdx] = targetIdx;
+            });
+
+            // 步骤1：还原3x3分块换位
+            imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, restoreBlockOrder);
+            // 步骤2：还原上下翻转（再次翻转）
+            imageData = flipVertical(imageData, canvas.width, canvas.height);
+            // 步骤3：还原反色（再次反色）
+            imageData = invertColor(imageData);
+
+            // 显示还原后的图片
+            ctx.putImageData(imageData, 0, 0);
+            previewImg.src = canvas.toDataURL('image/jpeg', 1.0);
+            currentImageIsProcessed = false; // 标记为还原后的状态
+        }
+    </script>
+</body>
+</html>
