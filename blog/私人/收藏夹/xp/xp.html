@@ -191,37 +191,30 @@ let cj_data={
 };
 
 (function () {
-    // 混淆/还原的块顺序映射
+    // 区块混淆/还原的顺序映射
     const processBlockOrder = [8,6,2,0,4,7,1,3,5];
     const restoreBlockOrder = new Array(9);
     processBlockOrder.forEach((sourceIdx, targetIdx) => {
         restoreBlockOrder[sourceIdx] = targetIdx;
     });
 
-    // 目标容器
     const dyContainer = document.getElementById('dy');
-    if (!dyContainer) {
-        console.warn('未找到id为dy的容器，图片还原功能无法生效');
-        return;
-    }
+    if (!dyContainer) return; // 容器不存在时直接退出
 
-    // 初始化：先处理已存在的图片（页面初始加载的20张）
-    const initExistingImages = () => {
-        const existingImgs = dyContainer.querySelectorAll('img');
-        existingImgs.forEach(img => {
-            // 异步处理，避免阻塞初始渲染
-            setTimeout(() => restoreImage(img), 0);
-        });
-    };
+    // 初始化：先处理容器内已存在的图片
+    const existingImgs = dyContainer.querySelectorAll('img');
+    existingImgs.forEach(img => restoreImage(img));
 
-    // 监听新增图片（滚动加载的20张）
+    // 监听DOM变化，处理新增的图片
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             mutation.addedNodes.forEach((node) => {
+                // 新增节点是图片直接处理
                 if (node.tagName === 'IMG') {
-                    // 新增图片立即处理
                     restoreImage(node);
-                } else if (node.nodeType === 1) { // 元素节点
+                } 
+                // 新增节点是容器，遍历内部图片
+                else if (node.nodeType === Node.ELEMENT_NODE) {
                     const imgElements = node.querySelectorAll('img');
                     imgElements.forEach((img) => {
                         restoreImage(img);
@@ -231,65 +224,58 @@ let cj_data={
         });
     });
 
-    // 启动监听（子节点变化 + 子树变化）
+    // 启动监听（监听子节点变化，包含子树）
     observer.observe(dyContainer, {
         childList: true,
-        subtree: true,
-        attributes: false,
-        characterData: false
+        subtree: true
     });
 
-    // 初始化已有图片
-    initExistingImages();
-
     /**
-     * 还原单张图片（核心：加载完成立即处理，完全异步）
+     * 还原单张图片（核心：图片加载完成后立即处理）
      * @param {HTMLImageElement} img - 需要还原的图片元素
      */
     function restoreImage(img) {
-        // 跳过已处理/处理中的图片
+        // 跳过已处理/处理中的图片，避免重复操作
         if (img.dataset.restored) return;
-        // 标记为处理中，防止重复触发
         img.dataset.restored = 'processing';
 
         // 图片处理核心逻辑
         const processImage = () => {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
-            if (!ctx) {
-                console.error('Canvas上下文创建失败', img);
+            if (!ctx) { // 兼容不支持canvas的环境
                 img.dataset.restored = 'failed';
+                console.error('Canvas上下文创建失败', img);
                 return;
             }
 
             const tempImage = new Image();
-            // 跨域处理（根据实际场景调整）
-            tempImage.crossOrigin = 'anonymous';
+            tempImage.crossOrigin = 'anonymous'; // 处理跨域图片
 
-            // 临时图片加载完成后处理像素
+            // 临时图片加载完成后处理
             tempImage.onload = function () {
                 try {
                     // 设置canvas尺寸与图片一致
                     canvas.width = tempImage.naturalWidth;
                     canvas.height = tempImage.naturalHeight;
 
-                    // 清空canvas并绘制原始图片
+                    // 绘制原始图片到canvas
                     ctx.fillStyle = '#ffffff';
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(tempImage, 0, 0);
-                    let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-                    // 执行还原操作（顺序：重排块 → 垂直翻转 → 颜色反转）
+                    // 获取像素数据并执行还原操作
+                    let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
                     imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, restoreBlockOrder);
                     imageData = flipVertical(imageData, canvas.width, canvas.height);
                     imageData = invertColor(imageData);
 
-                    // 绘制还原后的图片并替换src
+                    // 将还原后的像素数据放回canvas并替换图片src
                     ctx.putImageData(imageData, 0, 0);
                     img.src = canvas.toDataURL('image/jpeg', 1.0);
                     img.dataset.restored = 'true';
 
-                    // 释放内存
+                    // 释放canvas内存（可选）
                     canvas.width = 0;
                     canvas.height = 0;
                 } catch (e) {
@@ -304,41 +290,39 @@ let cj_data={
                 img.dataset.restored = 'failed';
             };
 
-            // 加载原始图片（触发onload/onerror）
+            // 加载原始图片（触发处理流程）
             tempImage.src = img.src;
         };
 
         // 图片已加载完成：立即处理
         if (img.complete && img.naturalWidth > 0) {
-            // 异步执行，不阻塞当前线程
-            setTimeout(processImage, 0);
+            // 使用requestAnimationFrame避免阻塞UI
+            requestAnimationFrame(processImage);
         } 
-        // 图片未加载完成：监听load/error事件，加载完成后处理
+        // 图片未加载完成：绑定加载/错误事件（确保只执行一次）
         else {
-            const handleLoad = () => {
-                // 移除事件监听（避免内存泄漏）
-                img.removeEventListener('load', handleLoad);
-                img.removeEventListener('error', handleError);
-                // 异步处理
-                setTimeout(processImage, 0);
+            const onLoad = () => {
+                img.removeEventListener('load', onLoad);
+                img.removeEventListener('error', onError);
+                requestAnimationFrame(processImage);
             };
 
-            const handleError = () => {
-                img.removeEventListener('load', handleLoad);
-                img.removeEventListener('error', handleError);
+            const onError = () => {
+                img.removeEventListener('load', onLoad);
+                img.removeEventListener('error', onError);
                 console.error('图片加载失败:', img.src);
                 img.dataset.restored = 'failed';
             };
 
             // 绑定一次性事件（once: true 确保只触发一次）
-            img.addEventListener('load', handleLoad, { once: true, passive: true });
-            img.addEventListener('error', handleError, { once: true, passive: true });
+            img.addEventListener('load', onLoad, { once: true, passive: true });
+            img.addEventListener('error', onError, { once: true, passive: true });
         }
     }
 
     /**
-     * 颜色反转
-     * @param {ImageData} imageData - 图片像素数据
+     * 反色处理
+     * @param {ImageData} imageData - 像素数据
      * @returns {ImageData} 处理后的像素数据
      */
     function invertColor(imageData) {
@@ -347,14 +331,14 @@ let cj_data={
             data[i] = 255 - data[i];     // R
             data[i + 1] = 255 - data[i + 1]; // G
             data[i + 2] = 255 - data[i + 2]; // B
-            // A通道保持不变
+            // Alpha通道保持不变
         }
         return imageData;
     }
 
     /**
      * 垂直翻转图片
-     * @param {ImageData} imageData - 图片像素数据
+     * @param {ImageData} imageData - 像素数据
      * @param {number} width - 图片宽度
      * @param {number} height - 图片高度
      * @returns {ImageData} 处理后的像素数据
@@ -377,11 +361,11 @@ let cj_data={
     }
 
     /**
-     * 重排图片9宫格块
-     * @param {ImageData} imageData - 图片像素数据
+     * 重组图片区块（还原混淆的9个区块）
+     * @param {ImageData} imageData - 像素数据
      * @param {number} width - 图片宽度
      * @param {number} height - 图片高度
-     * @param {number[]} order - 还原顺序
+     * @param {Array} order - 区块还原顺序
      * @returns {ImageData} 处理后的像素数据
      */
     function rearrangeBlocks(imageData, width, height, order) {
@@ -395,7 +379,7 @@ let cj_data={
             const [sourceX, sourceY] = getBlockPosition(sourceIdx, blockWidth, blockHeight);
             const [targetX, targetY] = getBlockPosition(targetIdx, blockWidth, blockHeight);
 
-            // 逐像素复制块数据
+            // 遍历区块内的每个像素
             for (let y = 0; y < blockHeight; y++) {
                 for (let x = 0; x < blockWidth; x++) {
                     const sourcePixelIndex = ((sourceY + y) * width + (sourceX + x)) * 4;
@@ -403,10 +387,10 @@ let cj_data={
 
                     // 边界检查：避免越界
                     if (sourcePixelIndex < data.length && targetPixelIndex < newData.length) {
-                        newData[targetPixelIndex] = data[sourcePixelIndex];     // R
-                        newData[targetPixelIndex + 1] = data[sourcePixelIndex + 1]; // G
-                        newData[targetPixelIndex + 2] = data[sourcePixelIndex + 2]; // B
-                        newData[targetPixelIndex + 3] = data[sourcePixelIndex + 3]; // A
+                        newData[targetPixelIndex] = data[sourcePixelIndex];
+                        newData[targetPixelIndex + 1] = data[sourcePixelIndex + 1];
+                        newData[targetPixelIndex + 2] = data[sourcePixelIndex + 2];
+                        newData[targetPixelIndex + 3] = data[sourcePixelIndex + 3];
                     }
                 }
             }
@@ -416,11 +400,11 @@ let cj_data={
     }
 
     /**
-     * 获取9宫格块的起始坐标
-     * @param {number} index - 块索引（0-8）
-     * @param {number} blockWidth - 单块宽度
-     * @param {number} blockHeight - 单块高度
-     * @returns {[number, number]} [x, y] 起始坐标
+     * 获取区块的起始坐标
+     * @param {number} index - 区块索引（0-8）
+     * @param {number} blockWidth - 单个区块宽度
+     * @param {number} blockHeight - 单个区块高度
+     * @returns {[number, number]} 区块起始X、Y坐标
      */
     function getBlockPosition(index, blockWidth, blockHeight) {
         const row = Math.floor(index / 3);
