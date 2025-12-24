@@ -1,0 +1,270 @@
+---
+layout: default
+---
+<style>
+html,body{margin:0;padding:0;}
+
+@media screen and (min-width:768px){ /*电脑*/
+    .biaotib{text-align:center;position:relative;font-size:3.5em;color:#0bb1f5;font-weight:bold;cursor:default;}
+    div.body{position:relative;top:50px;width:65%;margin:auto;}
+} /*电脑*/
+
+@media screen and (max-width:768px){ /*手机*/
+    .biaotib{text-align:center;position:relative;font-size:2.3em;color:#0bb1f5;font-weight:bold;cursor:default;}
+    div.body{position:relative;top:50px;width:96%;margin:auto;}
+} /*手机*/
+
+#right_anchor2 a{display:block;}
+.cj{background-color:#fff;float:left;margin:12px;padding:12px;line-height:20px;border-width:2px;border-color:#33669940;border-style:solid;width:130px;height:175px;opacity:0.9;filter:alpha(opacity=90);transition:all 0.3s;position:relative;font-size:90%;}
+.cj:hover{opacity:1.0;filter:alpha(opacity=100);transform:scale(1.2);z-index:10;}
+.cj img{width:130px;}
+.tsxt{border:1px solid #c0c0c0;visibility:hidden;width:157px;background-color:#fff;text-align:center;border-radius:6px;padding:5px 0;font-size:85%;position:absolute;z-index:1;top:170px;left:-2px;margin-left:0px;}
+.cj:hover .tsxt{visibility:visible;transform:translate(0, 20px);transition:all 0.5s;}
+#back-top{display:none;}
+footer{float:left;width:100%;}
+hr{width:100%;}
+.hs{color:#404040;}
+hr.co0{border-top:1px solid #00000000}
+@media screen and (min-width:768px){
+    div.body{width:70%;}
+#right_anchor2{position:fixed;bottom:0%;width:14%;height:40%;overflow:auto;margin:0 auto 0 67%;}#right_anchor2 table{width:100%;}
+}
+@media screen and (max-width:768px){
+    #right_anchor2{position:relative;}#right_anchor2 table{width:60%;}
+    .cj{margin:6px;padding:6px;}
+}
+</style>
+
+</head><body>
+<div class="body">
+
+<div class="biaotib" id="anniu_b"></div>
+<div id="anniu_a"></div>
+<br>
+
+<div id="right_anchor2" style="z-index:102;"></div>
+
+<div id="buttonContainer"></div>
+<div id="dy"></div>
+<a onclick="加载()"><div id="loadink" class="cj"><img class="loading" src="{{ site.mq_d }}/i/cj/loading.jpg" onerror="this.src='/i/cj/loading.jpg';this.onerror=null;"/><b>加载更多</b><br></div></a>
+
+{{ content }}
+
+<script>
+
+// 保存原始数据副本（避免修改原数据）
+const cj_data_origin = JSON.parse(JSON.stringify(cj_data));
+
+// 分类列表
+const categoryList = Object.keys(cj_data);
+// 当前选中的分类
+let currentCategory = categoryList[0];
+// 每个分类的加载状态
+const loadState = {
+    // 已加载的HTML内容
+    content: {},
+    // 右侧导航HTML
+    nav: {},
+    // 剩余数据索引
+    remainingIndex: {},
+    // 是否已加载完毕
+    isLoaded: {}
+};
+
+// 初始化加载状态
+categoryList.forEach(category => {
+    loadState.content[category] = "";
+    loadState.nav[category] = "";
+    loadState.remainingIndex[category] = 0;
+    loadState.isLoaded[category] = false;
+});
+
+// 获取DOM元素
+const btnContainer = document.getElementById("buttonContainer"); // 按钮容器（需要在HTML中添加）
+const contentContainer = document.getElementById("dy");
+const navContainer = document.getElementById("right_anchor2");
+const loadTrigger = document.querySelector('.loading');
+const loadButton = document.getElementById("loadink");
+
+// 生成分类按钮
+function generateCategoryButtons() {
+    let btnHtml = "";
+    categoryList.forEach(category => {
+        const isActive = category === currentCategory ? "active" : "";
+        btnHtml += `<a class="anniu ${isActive}" onclick="switchCategory('${category}')">${category}</a>`;
+    });
+    btnContainer.innerHTML = btnHtml;
+}
+
+// 切换分类
+function switchCategory(category) {
+    // 更新当前分类
+    currentCategory = category;
+    
+    // 更新按钮激活状态
+    document.querySelectorAll('.anniu').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent === category) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // 显示当前分类的已加载内容
+    contentContainer.innerHTML = loadState.content[category];
+    navContainer.innerHTML = `<table>${loadState.nav[category]}</table>`;
+    
+    // 显示/隐藏加载按钮
+    updateLoadButtonStatus();
+    
+    // 重新观察加载触发元素
+    if (loadTrigger) {
+        observer.observe(loadTrigger);
+    }
+}
+
+// 加载更多内容（增量加载，只加载新内容）
+function loadMore() {
+    const category = currentCategory;
+    // 如果已加载完毕，直接返回
+    if (loadState.isLoaded[category]) {
+        loadButton.style.display = "none";
+        return;
+    }
+
+    const data = cj_data_origin[category];
+    let loadCount = 20; // 每次加载20条
+    let newContent = "";
+    let newNav = "";
+    let index = loadState.remainingIndex[category];
+
+    // 加载指定数量的内容
+    while (loadCount > 0 && index < data.length) {
+        const item = data[index];
+        const parts = item.split("／");
+        
+        if (parts[0] === "hr") {
+            // 标题分隔符
+            const title = parts[1] || "";
+            const desc = parts[2] || "";
+            newContent += `<hr><a name="${title}"></a><h3>${title}</h3>`;
+            if (desc) newContent += `<p>${desc}</p>`;
+            newNav += `<tr><td><a href="#${title}">${title}</a></td></tr>`;
+        } else if (parts[0] === "br") {
+            // 水平线
+            newContent += `<hr class='co0'>`;
+        } else {
+            // 成就内容项
+            newContent += `<div class="cj">`;
+            
+            // 链接处理
+            if (parts[4] === "u") {
+                newContent += `<a href="${parts[5] || ''}">`;
+            } else if (parts[4] === "o") {
+                newContent += `<a onclick="${parts[5] || ''}">`;
+            }
+            
+            // 图片处理
+            if (isNaN(parts[0])) {
+                newContent += `<img referrerpolicy='no-referrer' src='${parts[0]}' onerror="this.src='/i/cj/1.jpg';this.onerror=null;" />`;
+            } else {
+                newContent += `<img src='{{ site.mq_d }}/i/cj/${parts[0]}.jpg' onerror="this.src='/i/cj/${parts[0]}.jpg';this.onerror=null;" />`;
+            }
+            
+            // 内容文本
+            newContent += `<b>${parts[1] || ''}</b><br>`;
+            newContent += `<span class='hs'>${parts[2] || ''}</span>`;
+            
+            // 关闭链接
+            if (parts[4] === "u" || parts[4] === "o") {
+                newContent += `</a>`;
+            }
+            
+            // 额外说明
+            if (parts[3]) {
+                newContent += `<span class='tsxt hs'>${parts[3]}</span>`;
+            }
+            
+            newContent += `</div>`;
+            loadCount--;
+        }
+        
+        index++;
+    }
+
+    // 更新加载状态
+    loadState.remainingIndex[category] = index;
+    // 追加新内容（而不是覆盖）
+    loadState.content[category] += newContent;
+    loadState.nav[category] += newNav;
+
+    // 检查是否加载完毕
+    if (index >= data.length) {
+        loadState.isLoaded[category] = true;
+        loadButton.style.display = "none";
+    }
+
+    // 只更新新增内容（优化性能）
+    contentContainer.insertAdjacentHTML('beforeend', newContent);
+    // 如果是首次加载导航，直接替换；否则追加
+    if (loadState.nav[category] === newNav) {
+        navContainer.innerHTML = `<table>${loadState.nav[category]}</table>`;
+    } else {
+        const navTable = navContainer.querySelector('table');
+        navTable.insertAdjacentHTML('beforeend', newNav);
+    }
+
+    // 更新加载按钮状态
+    updateLoadButtonStatus();
+}
+
+// 更新加载按钮显示状态
+function updateLoadButtonStatus() {
+    if (loadButton) {
+        loadButton.style.display = loadState.isLoaded[currentCategory] ? "none" : "";
+    }
+}
+
+// 滚动加载观察器
+const observer = new IntersectionObserver(
+    function(entries) {
+        if (entries[0].isIntersecting && !loadState.isLoaded[currentCategory]) {
+            loadMore();
+        }
+    },
+    { thresholds: 0.5 }
+);
+
+// 初始化
+function init() {
+    // 生成分类按钮
+    generateCategoryButtons();
+    // 首次加载当前分类内容
+    loadMore();
+    // 观察加载触发元素
+    if (loadTrigger) {
+        observer.observe(loadTrigger);
+    }
+}
+
+// 绑定加载按钮点击事件
+if (loadButton) {
+    loadButton.addEventListener('click', loadMore);
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', init);
+
+</script>
+
+{% if page.pinglun %}{% include Valine.html %}{% endif %}
+
+{% if page.footer_me %}{% else %}{% include footer_mqec.html %}{% endif %}
+{% if page.footer_me == 1 %}{% include footer.html %}{% endif %}
+
+</div>
+
+{% include nav.html %}
+
+{% if page.pinglun %}{% include Valine2.html %}{% endif %}
+
+</body>
