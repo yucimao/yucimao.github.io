@@ -191,138 +191,105 @@ let cj_data={
 };
 
 (function () {
+    // 混淆/还原的块顺序映射
     const processBlockOrder = [8,6,2,0,4,7,1,3,5];
     const restoreBlockOrder = new Array(9);
     processBlockOrder.forEach((sourceIdx, targetIdx) => {
         restoreBlockOrder[sourceIdx] = targetIdx;
     });
 
+    // 目标容器
     const dyContainer = document.getElementById('dy');
-    const processedImages = new WeakSet();
+    if (!dyContainer) {
+        console.warn('未找到id为dy的容器，图片还原功能无法生效');
+        return;
+    }
 
-    // 核心修复：立即处理已存在的图片 + 监听新增图片
-    // 1. 先处理容器内已有的图片
-    const existingImgs = dyContainer.querySelectorAll('img');
-    existingImgs.forEach(img => {
-        if (!processedImages.has(img)) {
-            processedImages.add(img);
-            restoreImageImmediately(img);
-        }
-    });
+    // 初始化：先处理已存在的图片（页面初始加载的20张）
+    const initExistingImages = () => {
+        const existingImgs = dyContainer.querySelectorAll('img');
+        existingImgs.forEach(img => {
+            // 异步处理，避免阻塞初始渲染
+            setTimeout(() => restoreImage(img), 0);
+        });
+    };
 
-    // 2. 监听新增图片（优化观察者配置，减少延迟）
+    // 监听新增图片（滚动加载的20张）
     const observer = new MutationObserver((mutations) => {
-        // 同步处理，不使用forEach的异步延迟
-        for (let i = 0; i < mutations.length; i++) {
-            const mutation = mutations[i];
-            for (let j = 0; j < mutation.addedNodes.length; j++) {
-                const node = mutation.addedNodes[j];
-                if (node.tagName === 'IMG' && !processedImages.has(node)) {
-                    processedImages.add(node);
-                    // 立即处理，不延迟
-                    restoreImageImmediately(node);
-                } else if (node.nodeType === Node.ELEMENT_NODE) {
-                    const imgs = node.querySelectorAll('img');
-                    // 同步遍历，避免异步批量
-                    for (let k = 0; k < imgs.length; k++) {
-                        const img = imgs[k];
-                        if (!processedImages.has(img)) {
-                            processedImages.add(img);
-                            restoreImageImmediately(img);
-                        }
-                    }
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+                if (node.tagName === 'IMG') {
+                    // 新增图片立即处理
+                    restoreImage(node);
+                } else if (node.nodeType === 1) { // 元素节点
+                    const imgElements = node.querySelectorAll('img');
+                    imgElements.forEach((img) => {
+                        restoreImage(img);
+                    });
                 }
-            }
-        }
+            });
+        });
     });
 
-    // 观察者配置：降低延迟（subtree改为false，减少监听范围，提升响应速度）
-    // 如果图片是多级嵌套，再改回true，优先保证响应速度
+    // 启动监听（子节点变化 + 子树变化）
     observer.observe(dyContainer, {
         childList: true,
-        subtree: false,
+        subtree: true,
         attributes: false,
         characterData: false
     });
 
+    // 初始化已有图片
+    initExistingImages();
+
     /**
-     * 立即处理单张图片（核心修复：同步处理，无延迟）
-     * @param {HTMLImageElement} img
+     * 还原单张图片（核心：加载完成立即处理，完全异步）
+     * @param {HTMLImageElement} img - 需要还原的图片元素
      */
-    function restoreImageImmediately(img) {
+    function restoreImage(img) {
+        // 跳过已处理/处理中的图片
         if (img.dataset.restored) return;
+        // 标记为处理中，防止重复触发
         img.dataset.restored = 'processing';
 
-        // 强制检测图片加载状态（解决缓存图片不触发load的问题）
-        const checkImageLoaded = () => {
-            // 图片已加载完成：同步处理（不使用requestAnimationFrame，避免延迟）
-            if (img.complete && img.naturalWidth > 0) {
-                processImageSync(img);
-                return true;
-            }
-            return false;
-        };
-
-        // 首次检测：如果已加载，立即处理
-        if (checkImageLoaded()) return;
-
-        // 未加载：绑定同步load事件（取消passive，避免延迟）
-        const handleLoad = () => {
-            img.removeEventListener('load', handleLoad);
-            img.removeEventListener('error', handleError);
-            // 同步处理，不延迟
-            processImageSync(img);
-        };
-
-        const handleError = () => {
-            img.removeEventListener('load', handleLoad);
-            img.removeEventListener('error', handleError);
-            console.error('图片加载失败:', img.src);
-            img.dataset.restored = 'failed';
-        };
-
-        // 绑定同步事件（取消once，手动移除，避免浏览器事件队列延迟）
-        img.addEventListener('load', handleLoad);
-        img.addEventListener('error', handleError);
-
-        // 兜底：强制触发图片重新检查（解决浏览器懒加载/缓存导致的load事件丢失）
-        if (img.src && !img.complete) {
-            // 重新设置src（不改变地址），强制触发加载检测
-            img.src = img.src;
-        }
-    }
-
-    /**
-     * 同步处理图片（无异步延迟，加载完成立即执行）
-     * @param {HTMLImageElement} img
-     */
-    function processImageSync(img) {
-        try {
+        // 图片处理核心逻辑
+        const processImage = () => {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
+            if (!ctx) {
+                console.error('Canvas上下文创建失败', img);
+                img.dataset.restored = 'failed';
+                return;
+            }
+
             const tempImage = new Image();
+            // 跨域处理（根据实际场景调整）
             tempImage.crossOrigin = 'anonymous';
 
-            // 临时图片加载完成后同步处理
+            // 临时图片加载完成后处理像素
             tempImage.onload = function () {
                 try {
+                    // 设置canvas尺寸与图片一致
                     canvas.width = tempImage.naturalWidth;
                     canvas.height = tempImage.naturalHeight;
+
+                    // 清空canvas并绘制原始图片
                     ctx.fillStyle = '#ffffff';
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(tempImage, 0, 0);
-
                     let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+                    // 执行还原操作（顺序：重排块 → 垂直翻转 → 颜色反转）
                     imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, restoreBlockOrder);
                     imageData = flipVertical(imageData, canvas.width, canvas.height);
                     imageData = invertColor(imageData);
 
+                    // 绘制还原后的图片并替换src
                     ctx.putImageData(imageData, 0, 0);
-                    // 同步替换src，无延迟
                     img.src = canvas.toDataURL('image/jpeg', 1.0);
                     img.dataset.restored = 'true';
 
-                    // 清理资源
+                    // 释放内存
                     canvas.width = 0;
                     canvas.height = 0;
                 } catch (e) {
@@ -331,43 +298,92 @@ let cj_data={
                 }
             };
 
+            // 临时图片加载失败处理
             tempImage.onerror = function () {
                 console.error('加载图片失败:', img.src);
                 img.dataset.restored = 'failed';
             };
 
-            // 同步加载临时图片
-            tempImage.src = img.currentSrc || img.src;
-        } catch (e) {
-            console.error('处理图片异常:', e, img);
-            img.dataset.restored = 'failed';
+            // 加载原始图片（触发onload/onerror）
+            tempImage.src = img.src;
+        };
+
+        // 图片已加载完成：立即处理
+        if (img.complete && img.naturalWidth > 0) {
+            // 异步执行，不阻塞当前线程
+            setTimeout(processImage, 0);
+        } 
+        // 图片未加载完成：监听load/error事件，加载完成后处理
+        else {
+            const handleLoad = () => {
+                // 移除事件监听（避免内存泄漏）
+                img.removeEventListener('load', handleLoad);
+                img.removeEventListener('error', handleError);
+                // 异步处理
+                setTimeout(processImage, 0);
+            };
+
+            const handleError = () => {
+                img.removeEventListener('load', handleLoad);
+                img.removeEventListener('error', handleError);
+                console.error('图片加载失败:', img.src);
+                img.dataset.restored = 'failed';
+            };
+
+            // 绑定一次性事件（once: true 确保只触发一次）
+            img.addEventListener('load', handleLoad, { once: true, passive: true });
+            img.addEventListener('error', handleError, { once: true, passive: true });
         }
     }
 
-    // 以下方法保持不变（仅优化性能）
+    /**
+     * 颜色反转
+     * @param {ImageData} imageData - 图片像素数据
+     * @returns {ImageData} 处理后的像素数据
+     */
     function invertColor(imageData) {
         const data = imageData.data;
         for (let i = 0; i < data.length; i += 4) {
-            data[i] = 255 - data[i];
-            data[i + 1] = 255 - data[i + 1];
-            data[i + 2] = 255 - data[i + 2];
+            data[i] = 255 - data[i];     // R
+            data[i + 1] = 255 - data[i + 1]; // G
+            data[i + 2] = 255 - data[i + 2]; // B
+            // A通道保持不变
         }
         return imageData;
     }
 
+    /**
+     * 垂直翻转图片
+     * @param {ImageData} imageData - 图片像素数据
+     * @param {number} width - 图片宽度
+     * @param {number} height - 图片高度
+     * @returns {ImageData} 处理后的像素数据
+     */
     function flipVertical(imageData, width, height) {
         const newData = new Uint8ClampedArray(imageData.data.length);
         const data = imageData.data;
 
         for (let y = 0; y < height; y++) {
-            const originalRowStart = y * width * 4;
-            const newRowStart = (height - 1 - y) * width * 4;
-            // 批量复制行数据，提升性能
-            newData.set(data.subarray(originalRowStart, originalRowStart + width * 4), newRowStart);
+            for (let x = 0; x < width; x++) {
+                const originalIndex = (y * width + x) * 4;
+                const newIndex = ((height - 1 - y) * width + x) * 4;
+                newData[newIndex] = data[originalIndex];
+                newData[newIndex + 1] = data[originalIndex + 1];
+                newData[newIndex + 2] = data[originalIndex + 2];
+                newData[newIndex + 3] = data[originalIndex + 3];
+            }
         }
         return new ImageData(newData, width, height);
     }
 
+    /**
+     * 重排图片9宫格块
+     * @param {ImageData} imageData - 图片像素数据
+     * @param {number} width - 图片宽度
+     * @param {number} height - 图片高度
+     * @param {number[]} order - 还原顺序
+     * @returns {ImageData} 处理后的像素数据
+     */
     function rearrangeBlocks(imageData, width, height, order) {
         const blockWidth = Math.floor(width / 3);
         const blockHeight = Math.floor(height / 3);
@@ -379,29 +395,37 @@ let cj_data={
             const [sourceX, sourceY] = getBlockPosition(sourceIdx, blockWidth, blockHeight);
             const [targetX, targetY] = getBlockPosition(targetIdx, blockWidth, blockHeight);
 
-            // 按行批量复制，减少循环次数
+            // 逐像素复制块数据
             for (let y = 0; y < blockHeight; y++) {
-                const sourceRow = (sourceY + y) * width;
-                const targetRow = (targetY + y) * width;
-                const sourceStart = (sourceRow + sourceX) * 4;
-                const targetStart = (targetRow + targetX) * 4;
-                // 批量复制一行的块数据
-                newData.set(data.subarray(sourceStart, sourceStart + blockWidth * 4), targetStart);
+                for (let x = 0; x < blockWidth; x++) {
+                    const sourcePixelIndex = ((sourceY + y) * width + (sourceX + x)) * 4;
+                    const targetPixelIndex = ((targetY + y) * width + (targetX + x)) * 4;
+
+                    // 边界检查：避免越界
+                    if (sourcePixelIndex < data.length && targetPixelIndex < newData.length) {
+                        newData[targetPixelIndex] = data[sourcePixelIndex];     // R
+                        newData[targetPixelIndex + 1] = data[sourcePixelIndex + 1]; // G
+                        newData[targetPixelIndex + 2] = data[sourcePixelIndex + 2]; // B
+                        newData[targetPixelIndex + 3] = data[sourcePixelIndex + 3]; // A
+                    }
+                }
             }
         }
 
         return new ImageData(newData, width, height);
     }
 
+    /**
+     * 获取9宫格块的起始坐标
+     * @param {number} index - 块索引（0-8）
+     * @param {number} blockWidth - 单块宽度
+     * @param {number} blockHeight - 单块高度
+     * @returns {[number, number]} [x, y] 起始坐标
+     */
     function getBlockPosition(index, blockWidth, blockHeight) {
         const row = Math.floor(index / 3);
         const col = index % 3;
         return [col * blockWidth, row * blockHeight];
     }
-
-    // 页面卸载清理
-    window.addEventListener('beforeunload', () => {
-        observer.disconnect();
-    });
 })();
 </script>
