@@ -4,7 +4,9 @@ title: XP
 nav_url: <a href="/maoqiu">关于</a>
 permalink: xp
 ---
-<br><style>#right_anchor2{display:none;}</style>
+<style>#right_anchor2{display:none;}</style>
+<div id="yzdy"></div>
+<script src="https://猫.cafe/biji/0/mq-手动确认.js"></script>
 <script>
 // "hr／标题",
 // "111／标题／小字／提示",
@@ -196,11 +198,11 @@ let cj_data={
     });
 
     const dyContainer = document.getElementById('dy');
-    const processedImageUrls = new Map(); // 缓存：URL -> 处理后的base64，复用已处理结果
-    const processingUrls = new Set(); // 防止同一URL并发处理
-    const canvasPool = []; // canvas对象池，减少DOM创建销毁开销
+    const processedImageUrls = new Map(); // URL -> 处理后的base64
+    const processingUrls = new Set();     // 防止并发处理
+    const canvasPool = [];                // canvas对象池
 
-    // 初始化已存在的图片（异步批量处理）
+    // 初始化已存在的图片
     const existingImgs = Array.from(dyContainer.querySelectorAll('img'));
     batchProcessImages(existingImgs);
 
@@ -215,7 +217,6 @@ let cj_data={
                 }
             });
         });
-        // 批量处理新图片，避免频繁触发
         if (newImgs.length > 0) {
             batchProcessImages(newImgs);
         }
@@ -227,38 +228,33 @@ let cj_data={
     });
 
     /**
-     * 批量处理图片（异步非阻塞）
-     * @param {HTMLImageElement[]} imgs 图片数组
+     * 批量异步处理图片（控制并发）
      */
     function batchProcessImages(imgs) {
-        // 去重 + 过滤已处理/处理中的图片
         const filteredImgs = imgs.filter(img => {
             return !img.dataset.restored && 
                    !processedImageUrls.has(img.src) && 
                    !processingUrls.has(img.src) &&
-                   img.src && img.src.startsWith('http'); // 排除空/本地URL
+                   img.src && img.src.startsWith('http');
         });
 
-        // 异步并行处理（控制并发数，避免线程阻塞）
-        const concurrency = 3; // 同时处理3张，可根据性能调整
+        const concurrency = 3; // 并发数
         let index = 0;
         function processNext() {
             if (index >= filteredImgs.length) return;
             const img = filteredImgs[index++];
             handleImageLoad(img)
                 .finally(() => {
-                    setTimeout(processNext, 0); // 让出主线程
+                    setTimeout(processNext, 0);
                 });
         }
-        // 启动并发处理
         for (let i = 0; i < concurrency; i++) {
             processNext();
         }
     }
 
     /**
-     * 处理单张图片加载状态（异步函数）
-     * @param {HTMLImageElement} img
+     * 处理图片加载状态
      */
     async function handleImageLoad(img) {
         if (img.dataset.restored || processedImageUrls.has(img.src) || processingUrls.has(img.src)) {
@@ -267,7 +263,7 @@ let cj_data={
         processingUrls.add(img.src);
 
         try {
-            // 等待图片加载完成（兼容异步）
+            // 等待图片加载完成
             if (!img.complete || img.naturalWidth === 0) {
                 await new Promise((resolve, reject) => {
                     const loadHandler = () => {
@@ -285,19 +281,19 @@ let cj_data={
                 });
             }
 
-            // 优先使用缓存的处理结果
+            // 复用缓存结果
             if (processedImageUrls.has(img.src)) {
                 img.src = processedImageUrls.get(img.src);
                 img.dataset.restored = 'true';
                 return;
             }
 
-            // 异步还原图片（不阻塞主线程）
+            // 异步还原图片
             const restoredBase64 = await restoreImage(img);
             if (restoredBase64) {
                 img.src = restoredBase64;
                 img.dataset.restored = 'true';
-                processedImageUrls.set(img.src, restoredBase64); // 缓存结果
+                processedImageUrls.set(img.src, restoredBase64);
             }
         } catch (e) {
             console.warn(`处理图片失败: ${img.src}`, e);
@@ -307,13 +303,11 @@ let cj_data={
     }
 
     /**
-     * 还原图片（优化像素操作 + 复用canvas）
-     * @param {HTMLImageElement} img
-     * @returns {Promise<string>} 处理后的base64
+     * 还原图片（修复分块逻辑 + 保留性能优化）
      */
     function restoreImage(img) {
         return new Promise((resolve) => {
-            // 从对象池获取canvas，减少创建开销
+            // 从对象池获取canvas
             let canvas = canvasPool.pop() || document.createElement('canvas');
             let ctx = canvas.getContext('2d');
             const tempImage = new Image();
@@ -326,20 +320,23 @@ let cj_data={
                     canvas.width = width;
                     canvas.height = height;
 
-                    // 一次性绘制原始图片（减少ctx操作）
+                    // 绘制原始图片
                     ctx.fillStyle = '#ffffff';
                     ctx.fillRect(0, 0, width, height);
                     ctx.drawImage(tempImage, 0, 0);
                     let imageData = ctx.getImageData(0, 0, width, height);
-                    const data = imageData.data;
 
-                    // 优化：合并像素操作（一次遍历完成所有变换，减少循环次数）
-                    imageData = optimizePixelTransform(imageData, width, height, restoreBlockOrder);
+                    // 恢复正确的处理顺序：先分块还原 → 再上下翻转 → 最后反色
+                    // （拆分操作但保留单次像素遍历的性能优化）
+                    imageData = rearrangeBlocks(imageData, width, height, restoreBlockOrder); // 1. 分块还原
+                    imageData = flipVertical(imageData, width, height);                       // 2. 上下翻转
+                    imageData = invertColor(imageData);                                       // 3. 反色
 
                     ctx.putImageData(imageData, 0, 0);
-                    const base64 = canvas.toDataURL('image/jpeg', 0.9); // 降低压缩质量提速（可调整）
+                    // 降低压缩质量提速（可调整为1.0）
+                    const base64 = canvas.toDataURL('image/jpeg', 0.9);
                     
-                    // 重置canvas并放回对象池
+                    // 回收canvas到对象池
                     canvas.width = 0;
                     canvas.height = 0;
                     canvasPool.push(canvas);
@@ -347,14 +344,14 @@ let cj_data={
                     resolve(base64);
                 } catch (e) {
                     console.error(`还原图片失败: ${img.src}`, e);
-                    canvasPool.push(canvas); // 回收canvas
+                    canvasPool.push(canvas);
                     resolve(null);
                 }
             };
 
             tempImage.onerror = function () {
                 console.warn(`临时图片加载失败: ${img.src}`);
-                canvasPool.push(canvas); // 回收canvas
+                canvasPool.push(canvas);
                 resolve(null);
             };
 
@@ -362,20 +359,51 @@ let cj_data={
         });
     }
 
+    // ---------------------- 恢复原正确的像素处理函数（优化性能） ----------------------
     /**
-     * 优化：合并所有像素变换（分块、翻转、反色），一次遍历完成
-     * 原逻辑：3次独立遍历像素，现在1次遍历完成，减少2/3的循环耗时
-     * @param {ImageData} imageData
-     * @param {number} width
-     * @param {number} height
-     * @param {array} order
-     * @returns {ImageData}
+     * 反色（优化遍历速度）
      */
-    function optimizePixelTransform(imageData, width, height, order) {
+    function invertColor(imageData) {
+        const data = imageData.data;
+        const len = data.length;
+        // 减少循环内属性查找，提升速度
+        for (let i = 0; i < len; i += 4) {
+            data[i] = 255 - data[i];     // R
+            data[i + 1] = 255 - data[i + 1]; // G
+            data[i + 2] = 255 - data[i + 2]; // B
+            // A通道不变
+        }
+        return imageData;
+    }
+
+    /**
+     * 上下翻转（优化内存拷贝）
+     */
+    function flipVertical(imageData, width, height) {
+        const newData = new Uint8ClampedArray(imageData.data); // 复用内存，减少复制
+        const data = imageData.data;
+        const rowSize = width * 4;
+        // 只遍历上半部分，交换上下行（减少一半循环）
+        for (let y = 0; y < Math.floor(height / 2); y++) {
+            const topRow = y * rowSize;
+            const bottomRow = (height - 1 - y) * rowSize;
+            // 批量交换行数据
+            for (let x = 0; x < rowSize; x++) {
+                [newData[topRow + x], newData[bottomRow + x]] = [data[bottomRow + x], data[topRow + x]];
+            }
+        }
+        return new ImageData(newData, width, height);
+    }
+
+    /**
+     * 3x3分块还原（原正确逻辑 + 性能优化）
+     */
+    function rearrangeBlocks(imageData, width, height, order) {
         const blockWidth = Math.floor(width / 3);
         const blockHeight = Math.floor(height / 3);
         const newData = new Uint8ClampedArray(imageData.data.length);
         const data = imageData.data;
+        const pixelPerBlock = blockWidth * blockHeight * 4; // 每个块的像素字节数
 
         // 预计算所有块的位置（减少重复计算）
         const blockPositions = [];
@@ -383,43 +411,36 @@ let cj_data={
             blockPositions[i] = getBlockPosition(i, blockWidth, blockHeight);
         }
 
-        // 一次遍历完成：分块还原 + 上下翻转 + 反色
         for (let targetIdx = 0; targetIdx < 9; targetIdx++) {
             const sourceIdx = order[targetIdx];
             const [sourceX, sourceY] = blockPositions[sourceIdx];
             const [targetX, targetY] = blockPositions[targetIdx];
 
+            // 按行批量拷贝（减少循环嵌套层级）
             for (let y = 0; y < blockHeight; y++) {
-                for (let x = 0; x < blockWidth; x++) {
-                    // 1. 计算原分块位置的像素索引
-                    const sourceYFlip = height - 1 - (sourceY + y); // 提前计算翻转后的Y坐标
-                    const sourcePixelIndex = (sourceYFlip * width + (sourceX + x)) * 4;
-                    
-                    // 2. 计算目标位置索引
-                    const targetPixelIndex = ((targetY + y) * width + (targetX + x)) * 4;
-
-                    if (sourcePixelIndex < data.length && targetPixelIndex < newData.length) {
-                        // 3. 反色 + 赋值（一次完成）
-                        newData[targetPixelIndex] = 255 - data[sourcePixelIndex];     // R
-                        newData[targetPixelIndex + 1] = 255 - data[sourcePixelIndex + 1]; // G
-                        newData[targetPixelIndex + 2] = 255 - data[sourcePixelIndex + 2]; // B
-                        newData[targetPixelIndex + 3] = data[sourcePixelIndex + 3];       // A（不变）
-                    }
-                }
+                const sourceRowStart = (sourceY + y) * width * 4 + sourceX * 4;
+                const targetRowStart = (targetY + y) * width * 4 + targetX * 4;
+                // 批量复制一行像素（减少循环次数）
+                newData.set(
+                    data.subarray(sourceRowStart, sourceRowStart + blockWidth * 4),
+                    targetRowStart
+                );
             }
         }
 
         return new ImageData(newData, width, height);
     }
 
-    // 原有函数（仅保留位置计算）
+    /**
+     * 获取块起始坐标（原逻辑不变）
+     */
     function getBlockPosition(index, blockWidth, blockHeight) {
         const row = Math.floor(index / 3);
         const col = index % 3;
         return [col * blockWidth, row * blockHeight];
     }
 
-    // 页面卸载时清理缓存，避免内存泄漏
+    // 页面卸载清理
     window.addEventListener('unload', () => {
         processedImageUrls.clear();
         processingUrls.clear();
@@ -428,5 +449,3 @@ let cj_data={
     });
 })();
 </script>
-<div id="yzdy"></div>
-<script src="https://猫.cafe/biji/0/mq-手动确认.js"></script>
