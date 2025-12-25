@@ -34,11 +34,9 @@ hr.co0{border-top:1px solid #00000000}
     .cj{margin:6px;padding:6px;}
 }
 
-/* 选中的分类按钮灰色背景样式 */
-.category-active {
-    background-color: #cccccc !important; /* 浅灰色，可根据需求调整色值 */
-    color: #333333; /* 文字颜色搭配，可选 */
-    border: none; /* 可选，去掉边框 */
+.anniu.active {
+    background-color:#cccccc;
+    color:#333333;
 }
 </style>
 
@@ -81,35 +79,21 @@ const navContainer=document.getElementById("right_anchor2");
 const loadTrigger=document.querySelector('.loading');
 const loadButton=document.getElementById("loadink");
 
-// function generateCategoryButtons(){
-//     let btnHtml="";
-//     categoryList.forEach(category => {
-//         const isActive=category===currentCategory?"active":"";
-//         btnHtml+=`<a class="anniu ${isActive}" onclick="switchCategory('${category}')">${category}</a>`;
-//     });
-//     btnContainer.innerHTML=btnHtml;
-// }
-function generateCategoryButtons() {
-    let btnHtml = "";
-    // 1. 首先判断分类列表长度，如果只有1个，直接清空容器内容并返回
-    if (categoryList.length <= 1) {
-        btnContainer.innerHTML = "";
-        return;
+function generateCategoryButtons(){
+    let btnHtml="";
+    if (categoryList.length>1){
+        categoryList.forEach(category=>{
+            const isActive = category===currentCategory?"active":"";
+            btnHtml+=`<a class="anniu ${isActive}" onclick="switchCategory('${category}')">${category}</a>`;
+        });
     }
-    
-    // 2. 分类数量大于1时，生成按钮并给当前选中的按钮加灰色背景样式
-    categoryList.forEach(category => {
-        // 给当前选中的按钮添加自定义的active类（用于设置灰色背景）
-        const isActive = category === currentCategory ? "active category-active" : "";
-        btnHtml += `<a class="anniu ${isActive}" onclick="switchCategory('${category}')">${category}</a>`;
-    });
-    btnContainer.innerHTML = btnHtml;
+    btnContainer.innerHTML=btnHtml;
 }
 
 function switchCategory(category){
     currentCategory=category;
     document.getElementById("anniu_b").textContent=category;
-    document.querySelectorAll('.anniu').forEach(btn => {
+    document.querySelectorAll('.anniu').forEach(btn=>{
         btn.classList.remove('active');
         if(btn.textContent===category){
             btn.classList.add('active');
