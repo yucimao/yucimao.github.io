@@ -74,130 +74,128 @@ footer_fxx: dianping
 <div id="dy"></div>
 
 <script>
-	let data=[ //分 日期 评价 名字
-		[5,"2024.04.15","也就那么地吧"],
-		[5,"2024.04.15",""],
-		[5,"2024.04.16",""],
-		[5,"2024.04.16","猫球，猫球科生物，长相圆润，与猫科生物有几分相似，通常都是身体颜色比耳朵颜色浅，眼下有一条标志的竖杠，异常好分辨该生物生性温和。只不过数量稀少，还请各位多加保护。"],
-		[5,"2024.04.18",""],
-		[5,"2024.04.19","这是什么，猫球？我吃！"],
-		[5,"2024.04.20","我爱猫球像素点好猫球好吃www"],
-		[5,"2024.06.12","这是什么?猫球，rua一下!(〜￣▽￣)〜"],
-		[5,"2024.06.22","猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！"],
-		[5,"2024.07.27","猫球可以rua吗"],
-		[5,"2024.08.26",""],
-		[5,"2024.10.04","好有特色的博客！"],
-		[5,"2024.11.04","愿风指引你的道路。"],
-		[5,"2024.11.09",""],
-		[5,"2025.04.08",""],
-		[5,"2025.06.02",""],
-		[5,"2025.06.29","猫球也是个很有趣的灵魂呢|•'-'•)و✧"],
-		[5,"2025.10.27","善哉善哉"],
-		// [,"",""],
-	];
-	let 星={
-		"5":"★★★★★",
-		"4":"★★★★",
-		"3":"★★★",
-		"2":"★★",
-		"1":"★",
-		"-4":"★★★★",
-		"-3":"★★★",
-		"-2":"★★",
-		"-1":"★",
-		"-0":"",
-		"--1":"　　　　",
-		"--2":"　　　",
-		"--3":"　　",
-		"--4":"　",
-		"--5":"",
+let data=[ //分 日期 评价 名字
+	[5,"2024.04.15","也就那么地吧"],
+	[5,"2024.04.15",""],
+	[5,"2024.04.16",""],
+	[5,"2024.04.16","猫球，猫球科生物，长相圆润，与猫科生物有几分相似，通常都是身体颜色比耳朵颜色浅，眼下有一条标志的竖杠，异常好分辨该生物生性温和。只不过数量稀少，还请各位多加保护。"],
+	[5,"2024.04.18",""],
+	[5,"2024.04.19","这是什么，猫球？我吃！"],
+	[5,"2024.04.20","我爱猫球像素点好猫球好吃www"],
+	[5,"2024.06.12","这是什么?猫球，rua一下!(〜￣▽￣)〜"],
+	[5,"2024.06.22","猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！猫球！"],
+	[5,"2024.07.27","猫球可以rua吗"],
+	[5,"2024.08.26",""],
+	[5,"2024.10.04","好有特色的博客！"],
+	[5,"2024.11.04","愿风指引你的道路。"],
+	[5,"2024.11.09",""],
+	[5,"2025.04.08",""],
+	[5,"2025.06.02",""],
+	[5,"2025.06.29","猫球也是个很有趣的灵魂呢|•'-'•)و✧"],
+	[5,"2025.10.27","善哉善哉"],
+	[5,"2025.12.27","好可爱啊啊啊啊啊啊啊啊啊啊"],
+	// [,"",""],
+];
+let 星={
+	"5":"★★★★★",
+	"4":"★★★★",
+	"3":"★★★",
+	"2":"★★",
+	"1":"★",
+	"-4":"★★★★",
+	"-3":"★★★",
+	"-2":"★★",
+	"-1":"★",
+	"-0":"",
+	"--1":"　　　　",
+	"--2":"　　　",
+	"--3":"　　",
+	"--4":"　",
+	"--5":"",
+}
+
+let 总分=0;
+let 人数=0;
+let 分={
+	"5":0,
+	"4":0,
+	"3":0,
+	"2":0,
+	"1":0,
+}
+let dy="";
+for(let i=data.length-1;i>-1;i--){
+	总分+=data[i][0]*1;
+	人数+=1;
+	分[data[i][0]]+=1;
+	dy+="<fieldset><legend>";
+		if(data[i][3]){dy+=data[i][3];}else{dy+="匿名";}
+	dy+=" <small>"+data[i][1]+"</small></legend><span class='分a'>"+星[data[i][0]]+"</span><span class='分b'>"+星["-"+(5-data[i][0])]+"</span>";
+		if(data[i][2]&&data[i][2]!=""){dy+="<br>"+data[i][2];}
+	dy+="</fieldset><br>";
+}
+
+let dy2="<table><tr style='background-color:#ffffff;'><td style='text-align:center;width:30%'><br><br><span class='总分'>★"+(总分/人数*10+"").split(".")[0]/10+"</span><br><span class='个评价'>"+人数+"个评价</span></td><td>　</td><td>";
+for(let i=5;i>0;i--){
+	dy2+="<br><span class='分c'>"+星["-"+(5-i)]+"</span><span class='分b'>"+星[i]+"</span>";
+	let 临时=分[i]/人数*10+"".split(".")[0]-1;
+	if(临时<0){临时=0;}
+	dy2+="　<span class='分条'>";
+	for(let i2=临时;i2>0;i2--){
+		dy2+="——";
 	}
+	dy2+="</span>";
+}
+dy2+="<br><br></td></tr></table>";
 
-	let 总分=0;
-	let 人数=0;
-	let 分={
-		"5":0,
-		"4":0,
-		"3":0,
-		"2":0,
-		"1":0,
-	}
-	let dy="";
-	for(let i=data.length-1;i>-1;i--){
-		总分+=data[i][0]*1;
-		人数+=1;
-		分[data[i][0]]+=1;
-		dy+="<fieldset><legend>";
-			if(data[i][3]){dy+=data[i][3];}else{dy+="匿名";}
-		dy+=" <small>"+data[i][1]+"</small></legend><span class='分a'>"+星[data[i][0]]+"</span><span class='分b'>"+星["-"+(5-data[i][0])]+"</span>";
-			if(data[i][2]&&data[i][2]!=""){dy+="<br>"+data[i][2];}
-		dy+="</fieldset><br>";
-	}
+document.getElementById("dy").innerHTML=dy2+"<br><br>"+dy;
 
-	let dy2="<table><tr style='background-color:#ffffff;'><td style='text-align:center;width:30%'><br><br><span class='总分'>★"+(总分/人数*10+"").split(".")[0]/10+"</span><br><span class='个评价'>"+人数+"个评价</span></td><td>　</td><td>";
-	for(let i=5;i>0;i--){
-		dy2+="<br><span class='分c'>"+星["-"+(5-i)]+"</span><span class='分b'>"+星[i]+"</span>";
-		let 临时=分[i]/人数*10+"".split(".")[0]-1;
-		if(临时<0){临时=0;}
-		dy2+="　<span class='分条'>";
-		for(let i2=临时;i2>0;i2--){
-			dy2+="——";
-		}
-		dy2+="</span>";
-	}
-	dy2+="<br><br></td></tr></table>";
+let 分数=0;function 打分(o){分数=o;document.getElementById("输入评价").style="";}
+let 重试=0;
 
-	document.getElementById("dy").innerHTML=dy2+"<br><br>"+dy;
-
-	let 分数=0;function 打分(o){分数=o;document.getElementById("输入评价").style="";}
-	let 重试=0;
-
-	function 提交(o){
-		try{
-			AV.init({
-				appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
-				appKey: "YCCregxILHitovzescjVs4X1",
-				serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
-			});
-			const TestObject = AV.Object.extend('df');
-			const testObject = new TestObject();
-			testObject.set('pingjia', document.getElementById("输入").value.replace(new RegExp('\n',"g"),"【换行】"));
-			testObject.set('fenshu', 分数);
-			testObject.save().then((testObject) => {
-				if(分数==-1){
-					try{notyf.alert("未打分");}catch(e){alert("未打分");}
-				}else{
-					try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
-					resetRadio();
-					// 分数=0;
-					分数=-1;
-					document.getElementById("输入").value="";
-					location.replace(location.href)
-				}
-			})
-		}
-		catch(e){
-			if(重试>1){
-				try{notyf.alert("提交失败，请刷新页面");}catch(e){alert("提交失败，请刷新页面");}
-			}else{
-				try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
-				重试+=1;
-			}
-		}
-	}
-
-	window.onload=function(){
-		document.getElementById("打分").style="";
-		document.getElementById("打分前").style="display:none;";
-	}
-
-	function resetRadio() {
-		// 获取所有单选按钮
-		var radios = document.getElementsByName('a');
-		
-		// 遍历并取消选中
-		radios.forEach(function(radio) {
-			radio.checked = false;
+function 提交(o){
+	try{
+		AV.init({
+			appId: "mCBnOpmsOyb6hrMiiKQ3kuRu-gzGzoHsz",
+			appKey: "YCCregxILHitovzescjVs4X1",
+			serverURL: "https://mcbnopms.lc-cn-n1-shared.com"
 		});
+		const TestObject = AV.Object.extend('df');
+		const testObject = new TestObject();
+		testObject.set('pingjia', document.getElementById("输入").value.replace(new RegExp('\n',"g"),"【换行】"));
+		testObject.set('fenshu', 分数);
+		testObject.save().then((testObject) => {
+			if(分数==-1){
+				try{notyf.alert("未打分");}catch(e){alert("未打分");}
+			}else{
+				try{notyf.confirm("提交成功")}catch(e){alert("提交成功");}
+				resetRadio();
+				// 分数=0;
+				分数=-1;
+				document.getElementById("输入").value="";
+				location.replace(location.href)
+			}
+		})
 	}
+	catch(e){
+		if(重试>1){
+			try{notyf.alert("提交失败，请刷新页面");}catch(e){alert("提交失败，请刷新页面");}
+		}else{
+			try{notyf.alert("提交失败，请重试");}catch(e){alert("提交失败，请重试");}
+			重试+=1;
+		}
+	}
+}
+
+window.onload=function(){
+	document.getElementById("打分").style="";
+	document.getElementById("打分前").style="display:none;";
+}
+
+function resetRadio(){
+	var radios=document.getElementsByName('a');
+	radios.forEach(function(radio){
+		radio.checked=false;
+	});
+}
 </script>

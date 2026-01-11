@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>批量图片处理工具</title>
+    <title>批量图片还原工具</title>
     <style>
         * {
             margin: 0;
@@ -66,22 +66,21 @@
         }
     </style>
     <!-- 引入jszip和file-saver库，用于打包下载 -->
-    <script src="0/jszip.min.js"></script>
-    <script src="0/FileSaver.min.js"></script>
+    <script src="jszip.min.js"></script>
+    <script src="FileSaver.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="upload-area">
-            <!-- 修改为支持多选文件 -->
+            <!-- 支持多选已处理的图片文件 -->
             <input type="file" id="file-upload" accept="image/*" multiple>
         </div>
         <div class="btn-group">
-            <!-- 移除原有的处理、还原按钮，保留全部下载按钮 -->
             <button id="download-all-btn" disabled>全部下载</button>
             <button id="clear-btn">清空列表</button>
         </div>
         <div id="image-container">
-            <!-- 批量图片预览将动态生成 -->
+            <!-- 批量还原后的图片预览将动态生成 -->
         </div>
     </div>
 
@@ -93,33 +92,35 @@
         const downloadAllBtn = document.getElementById('download-all-btn');
         const clearBtn = document.getElementById('clear-btn');
         const imageContainer = document.getElementById('image-container');
-        // 存储所有处理后的图片数据：{ name: 文件名, blob: 图片Blob数据, url: 预览URL }
-        let processedImages = [];
+        // 存储所有还原后的图片数据：{ name: 文件名, blob: 图片Blob数据, url: 预览URL }
+        let restoredImages = [];
 
-        // 定义3x3分块的换位顺序（索引从0开始，0-8对应9个块）
-        const blockOrder = [8,6,2,0,4,7,1,3,5];
+        // 原处理逻辑的3x3分块换位顺序（索引从0开始，0-8对应9个块）
+        const processBlockOrder = [8,6,2,0,4,7,1,3,5];
+        // 还原用的反向分块顺序（根据原顺序推导）
+        const restoreBlockOrder = getReverseOrder(processBlockOrder);
 
         // 1. 监听文件上传（支持批量）
         fileUpload.addEventListener('change', async function (e) {
             const files = e.target.files;
             if (!files || files.length === 0) return;
 
-            // 遍历所有上传的文件
+            // 遍历所有上传的已处理图片
             for (let i = 0; i < files.length; i++) {
                 const file = files[i];
                 if (!file.type.startsWith('image/')) continue;
 
                 try {
-                    // 处理单张图片
-                    await processSingleImage(file);
+                    // 还原单张已处理的图片
+                    await restoreSingleImage(file);
                 } catch (error) {
-                    console.error(`处理图片${file.name}失败：`, error);
-                    alert(`处理图片${file.name}失败，请检查图片格式！`);
+                    console.error(`还原图片${file.name}失败：`, error);
+                    alert(`还原图片${file.name}失败，请检查图片格式！`);
                 }
             }
 
             // 启用全部下载按钮
-            if (processedImages.length > 0) {
+            if (restoredImages.length > 0) {
                 downloadAllBtn.disabled = false;
             }
 
@@ -129,13 +130,12 @@
 
         // 2. 全部下载按钮点击事件
         downloadAllBtn.addEventListener('click', async function () {
-            if (processedImages.length === 0) return;
+            if (restoredImages.length === 0) return;
 
             // 创建ZIP对象
             const zip = new JSZip();
-            // 遍历处理后的图片，添加到ZIP中
-            processedImages.forEach((img) => {
-                // 命名规则：processed-原文件名
+            // 遍历还原后的图片，添加到ZIP中
+            restoredImages.forEach((img) => {
                 const fileName = `${img.name}`;
                 zip.file(fileName, img.blob);
             });
@@ -143,7 +143,7 @@
             // 生成ZIP文件并下载
             try {
                 const zipContent = await zip.generateAsync({ type: 'blob' });
-                saveAs(zipContent, 'processed-images.zip'); // 使用file-saver库下载
+                saveAs(zipContent, 'restored-images.zip'); // 使用file-saver库下载
             } catch (error) {
                 console.error('打包图片失败：', error);
                 alert('打包图片失败，请重试！');
@@ -152,53 +152,53 @@
 
         // 3. 清空列表按钮点击事件
         clearBtn.addEventListener('click', function () {
-            processedImages = [];
+            restoredImages = [];
             imageContainer.innerHTML = '';
             downloadAllBtn.disabled = true;
         });
 
-        // ---------------------- 核心函数 ----------------------
+        // ---------------------- 核心还原函数 ----------------------
         /**
-         * 处理单张图片（上传后自动处理）
-         * @param {File} file - 上传的图片文件
+         * 还原单张已处理的图片
+         * @param {File} file - 上传的已处理图片文件
          * @returns {Promise}
          */
-        function processSingleImage(file) {
+        function restoreSingleImage(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onload = function (event) {
-                    const originalImage = new Image();
+                    const processedImage = new Image();
                     // 解决跨域问题
-                    originalImage.crossOrigin = 'anonymous';
-                    originalImage.onload = function () {
+                    processedImage.crossOrigin = 'anonymous';
+                    processedImage.onload = function () {
                         try {
                             // 初始化Canvas尺寸
-                            canvas.width = originalImage.width;
-                            canvas.height = originalImage.height;
+                            canvas.width = processedImage.width;
+                            canvas.height = processedImage.height;
 
-                            // 步骤1：绘制原始图片到Canvas（添加白色背景，解决JPG透明问题）
+                            // 步骤1：绘制已处理图片到Canvas（添加白色背景）
                             ctx.fillStyle = '#ffffff';
                             ctx.fillRect(0, 0, canvas.width, canvas.height);
-                            ctx.drawImage(originalImage, 0, 0);
+                            ctx.drawImage(processedImage, 0, 0);
                             let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-                            // 步骤2：图片反色处理
-                            imageData = invertColor(imageData);
+                            // 步骤1：反向3x3分块换位（还原分块）
+                            imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, restoreBlockOrder);
 
-                            // 步骤3：图片上下翻转处理
+                            // 步骤2：反向上下翻转（再次上下翻转即可还原）
                             imageData = flipVertical(imageData, canvas.width, canvas.height);
 
-                            // 步骤4：3x3分块并换位
-                            imageData = rearrangeBlocks(imageData, canvas.width, canvas.height, blockOrder);
+                            // 步骤3：反向反色（再次反色即可还原）
+                            imageData = invertColor(imageData);
 
-                            // 将处理后的图片数据绘制到Canvas
+                            // 将还原后的图片数据绘制到Canvas
                             ctx.putImageData(imageData, 0, 0);
 
                             // 将Canvas内容转换为Blob和预览URL
                             canvas.toBlob((blob) => {
                                 const imageUrl = URL.createObjectURL(blob);
-                                // 存储处理后的图片数据
-                                processedImages.push({
+                                // 存储还原后的图片数据
+                                restoredImages.push({
                                     name: file.name,
                                     blob: blob,
                                     url: imageUrl
@@ -213,9 +213,9 @@
                             reject(error);
                         }
                     };
-                    originalImage.src = event.target.result;
+                    processedImage.src = event.target.result;
                     // 处理图片加载失败的情况
-                    originalImage.onerror = reject;
+                    processedImage.onerror = reject;
                 };
                 reader.onerror = reject;
                 reader.readAsDataURL(file);
@@ -241,9 +241,9 @@
         }
 
         /**
-         * 图片反色处理
+         * 反色处理（再次调用即可还原）
          * @param {ImageData} imageData - 图片像素数据
-         * @returns {ImageData} 反色后的图片数据
+         * @returns {ImageData} 处理后的图片数据
          */
         function invertColor(imageData) {
             const data = imageData.data;
@@ -256,7 +256,7 @@
         }
 
         /**
-         * 图片上下翻转
+         * 上下翻转（再次调用即可还原）
          * @param {ImageData} imageData - 图片像素数据
          * @param {number} width - 图片宽度
          * @param {number} height - 图片高度
@@ -280,11 +280,11 @@
         }
 
         /**
-         * 3x3分块并按指定顺序换位
+         * 3x3分块换位（用于还原）
          * @param {ImageData} imageData - 图片像素数据
          * @param {number} width - 图片宽度
          * @param {number} height - 图片高度
-         * @param {array} order - 分块顺序
+         * @param {array} order - 还原用的分块顺序
          * @returns {ImageData} 换位后的图片数据
          */
         function rearrangeBlocks(imageData, width, height, order) {
@@ -327,6 +327,19 @@
             const row = Math.floor(index / 3);
             const col = index % 3;
             return [col * blockWidth, row * blockHeight];
+        }
+
+        /**
+         * 根据原处理顺序推导反向还原顺序
+         * @param {array} originalOrder - 原处理用的分块顺序
+         * @returns {array} 还原用的反向顺序
+         */
+        function getReverseOrder(originalOrder) {
+            const reverseOrder = new Array(9);
+            for (let i = 0; i < originalOrder.length; i++) {
+                reverseOrder[originalOrder[i]] = i;
+            }
+            return reverseOrder;
         }
     </script>
 </body>

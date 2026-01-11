@@ -390,7 +390,7 @@ if(typeof 注[临时0[1]]=="object"){dy+="<span class='提示' data-msg='"+注[�
 <small><a href="#关键词">更多关键词</a></small><br>`},
 
 "dy_尾":()=>{dy+=`
-<a href="/miyou1">2024年及以前</a> . <a href="/miyou2">2025年</a> . <a href="/miyou0">精选</a>
+<a href="/miyou1">2024年及以前</a> . <a href="/miyou2">2025年</a> . <a href="/miyou3">2026年</a> . <a href="/miyou0">精选</a>
 <hr>
 <a name="最新"></a>
 <a name="其他记录"></a><h2>其他记录</h2>

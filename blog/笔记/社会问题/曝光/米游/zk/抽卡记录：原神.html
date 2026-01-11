@@ -8,6 +8,9 @@ permalink: i/7677616
 <link rel="stylesheet" href="/css/all2.css">
 
 <style>.限定{background-color:#ff8aef;color:#ffffff;}.常驻{background-color:#3e8fff;color:#ffffff;}.up{color:#f9ac07}.emoji{font-size:1.6em;position:absolute;bottom:-5px;}.黑条{background-color:#000000;color:#000000;}
+.绿条{background-color:#09ff00;color:#09ff00;}
+.黄条{background-color:#ffee00;color:#ffee00;}
+.红条{background-color:#d20000;color:#d20000;}
 #猫球二扯{position: fixed;top:20px;}
 </style><br><br><br><br><br><br>
 <table><tr><td id="猫球1"></td><td id="二扯1"></td></tr><tr><td id="猫球2"></td><td id="二扯2"></td></tr></table><a name="抽卡"></a>
@@ -197,7 +200,7 @@ for(let i=0;猫球二扯.length>i;i++){
                 if(临时[3]&&临时[3]=="歪"){抽卡记录[猫球二扯[i]+"歪"]+=1;抽卡记录[猫球二扯[i]+"保底"]="<b class='up ssfd'>大保底</b>";}
             }
         临时[1]=(临时[2]/5+"").split(".")[0];
-        dy+="<span class='黑条'>"
+        dy+="<span class='";if(临时[2]<30){dy+="绿"}else if(临时[2]<70){dy+="黄"}else{dy+="红"}dy+="条'>";
         for(let i3=0;临时[1]>i3;i3++){
             dy+="...";
         }

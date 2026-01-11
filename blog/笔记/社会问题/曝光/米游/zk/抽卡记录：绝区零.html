@@ -9,6 +9,9 @@ permalink: i/12007576
 <style id="隐藏邦布"></style>
 
 <style>.限定{background-color:#ff8aef;color:#ffffff;}.常驻{background-color:#3e8fff;color:#ffffff;}.邦布{background-color:#59e477;color:#ffffff;}.up{color:#f9ac07}.emoji{font-size:1.6em;position:absolute;bottom:-5px;}.黑条{background-color:#000000;color:#000000;}
+.绿条{background-color:#09ff00;color:#09ff00;}
+.黄条{background-color:#ffee00;color:#ffee00;}
+.红条{background-color:#d20000;color:#d20000;}
 #猫球二扯{position: fixed;top:20px;}
 .球{color:#c2c2c2;font-size:0.8em;font-weight:300}.布{color:#82e898;font-size:0.8em;}
 </style><br><br><br><br><br><br>
@@ -16,7 +19,7 @@ permalink: i/12007576
 <script>let dy,dy2;
 
 let 抽={ //已抽 【绝区零】
-"猫球限定":4, "猫球常驻":70, "猫球邦布":2, //
+"猫球限定":5, "猫球常驻":4, "猫球邦布":0, //
 "二扯限定":0, "二扯常驻":4, "二扯邦布":63, //
 
 "猫球":[
@@ -53,8 +56,11 @@ let 抽={ //已抽 【绝区零】
     "薇薇安 限定 78",
     "咔嚓仔 邦布 59",
     "比克布利克 邦布 66",
-    // " 常驻 ",
     "般岳 限定 78",
+    "叶瞬光 限定 79",
+    "牙牙 邦布 72",
+    "球_啜泣摇篮 常驻 76",
+    // " 常驻 ",
     // " 限定 ",
     // " 邦布 ",
 ],
@@ -125,6 +131,8 @@ let 需=[
     ["伊德海莉",5],
     ["琉音",5],
     ["般岳",5,"有"],
+    ["叶瞬光",5,"有"],
+    ["照",5,"有"],
     // ["",],
 
     //图鉴：https://baike.mihoyo.com/zzz/wiki/channel/map/2/43
@@ -165,7 +173,7 @@ for(let i=0;猫球二扯.length>i;i++){
                 if(临时[3]&&临时[3]=="歪"){抽卡记录[猫球二扯[i]+"歪"]+=1;抽卡记录[猫球二扯[i]+"保底"]="<b class='up ssfd'>大保底</b>";}
             }
         临时[1]=(临时[2]/5+"").split(".")[0];
-        dy+="<span class='黑条'>"
+        dy+="<span class='";if(临时[2]<30){dy+="绿"}else if(临时[2]<70){dy+="黄"}else{dy+="红"}dy+="条'>";
         for(let i3=0;临时[1]>i3;i3++){
             dy+="...";
         }
