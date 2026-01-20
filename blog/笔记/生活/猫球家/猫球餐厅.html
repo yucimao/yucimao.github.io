@@ -1,0 +1,388 @@
+---
+permalink: biji/maoqiucanting
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫球餐厅</title>
+</head>
+<body>
+<script>
+let data=[
+["【主食】","大米饭","蛋包饭","饭包"],
+["炒饭","蛋炒饭","酱油炒饭"],
+["粥","地瓜粥","黑米粥","胡萝卜瘦肉粥","皮蛋瘦肉粥"],
+["饼","鸡蛋饼","烙饼","糖饼"],
+["打卤面","韭菜鸡蛋打卤面","茄子打卤面","西红柿打卤面","炸酱面"],
+
+["【简单一顿】","番茄牛腩","炒鸡心","鸡汤","可乐鸡翅","柿子炒鸡蛋","麻辣鸡丝"],
+["猪肉","红烧肉","酱香五花肉","辣椒炒肉","土豆焖五花肉","香煎猪肉片","蒸五花肉","豆角炒肉"],
+
+["【主菜】","小鸡炖榛蘑"],
+
+["【配菜】","冬瓜汤"],
+
+["【零食】","拔丝地瓜","土豆泥","土豆条"],
+["卤蛋","茶叶卤蛋","可乐卤蛋","辣酱卤蛋","啤酒卤蛋"],
+];
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            padding-bottom: 80px;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            margin: 10px auto;
+            gap: 10px;
+            padding: 0 8px;
+            height: calc(100vh - 90px);
+        }
+        .category-nav {
+            width: 100px;
+            min-width: 100px;
+            flex-shrink: 0;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 8px;
+        }
+        .category-item {
+            padding: 10px 8px;
+            margin-bottom: 6px;
+            background-color: #f9fafb;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            text-align: center;
+        }
+        .category-item:hover {
+            background-color: #e5e7eb;
+        }
+        .category-item.active {
+            background-color: #3b82f6;
+            color: #fff;
+        }
+        .content-wrap {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 15px;
+        }
+        .content-category {
+            margin-bottom: 25px;
+            scroll-margin-top: 15px;
+        }
+        .content-category h3 {
+            font-size: 17px;
+            color: #111827;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #3b82f6;
+        }
+        .content-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 12px;
+            margin-bottom: 8px;
+            background-color: #f9fafb;
+            border-radius: 4px;
+        }
+        .content-text {
+            font-size: 15px;
+            color: #374151;
+        }
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .btn-box {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 15px;
+            background-color: #fff;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+        #finishBtn {
+            padding: 12px 40px;
+            font-size: 16px;
+            background-color: #165dff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+        #finishBtn:hover {
+            background-color: #0d47a1;
+        }
+        .tips {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            z-index: 9999;
+            display: none;
+        }
+        .success {
+            background-color: #10b981;
+        }
+        .error {
+            background-color: #ef4444;
+        }
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 10000;
+            display: none;
+        }
+        .preview-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 10001;
+            display: none;
+        }
+        .preview-modal h4 {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        .preview-content {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9fafb;
+            border-radius: 6px;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #374151;
+        }
+        .preview-btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        .preview-btn-group button {
+            flex: 1;
+            padding: 10px 0;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #copyBtn {
+            background-color: #165dff;
+            color: #fff;
+        }
+        #copyBtn:hover {
+            background-color: #0d47a1;
+        }
+        #cancelBtn {
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        #cancelBtn:hover {
+            background-color: #e5e7eb;
+        }
+        @media (max-width: 767px) {
+            .container {
+                gap: 6px;
+                padding: 0 5px;
+            }
+            .category-nav {
+                width: 85px;
+                min-width: 85px;
+                padding: 5px;
+            }
+            .category-item {
+                padding: 8px 5px;
+                font-size: 13px;
+            }
+            .content-wrap {
+                padding: 10px;
+            }
+            .content-text {
+                font-size: 14px;
+            }
+            .preview-modal {
+                width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
+    <div class="tips" id="tips"></div>
+    <div class="mask" id="mask"></div>
+    <div class="preview-modal" id="previewModal">
+        <h4>已选：</h4>
+        <div class="preview-content" id="previewContent"></div>
+        <div class="preview-btn-group">
+            <button id="copyBtn">复制</button>
+            <button id="cancelBtn">取消</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="category-nav" id="categoryNav"></div>
+        <div class="content-wrap" id="contentWrap"></div>
+    </div>
+    <div class="btn-box">
+        <button id="finishBtn">结算</button>
+    </div>
+
+    <script>
+        const categoryNav = document.getElementById('categoryNav');
+        const contentWrap = document.getElementById('contentWrap');
+        const finishBtn = document.getElementById('finishBtn');
+        const tips = document.getElementById('tips');
+        const mask = document.getElementById('mask');
+        const previewModal = document.getElementById('previewModal');
+        const previewContent = document.getElementById('previewContent');
+        const copyBtn = document.getElementById('copyBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        initRender();
+
+        function initRender() {
+            let navHtml = '';
+            let contentHtml = '';
+            
+            data.forEach((item, index) => {
+                const cateName = item[0];
+                const contentList = item.slice(1);
+                
+                navHtml += `<div class="category-item" data-index="${index}" onclick="scrollToContent(${index})">${cateName}</div>`;
+                
+                contentHtml += `
+                    <div class="content-category" id="content_${index}">
+                        <h3>${cateName}</h3>
+                `;
+                contentList.forEach(content => {
+                    contentHtml += `
+                        <div class="content-item">
+                            <span class="content-text">${content}</span>
+                            <input type="checkbox" class="content-checkbox" value="${content}">
+                        </div>
+                    `;
+                });
+                contentHtml += `</div>`;
+            });
+            categoryNav.innerHTML = navHtml;
+            contentWrap.innerHTML = contentHtml;
+        }
+
+        function scrollToContent(index) {
+            document.querySelectorAll('.category-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector(`.category-item[data-index="${index}"]`).classList.add('active');
+            document.getElementById(`content_${index}`).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        finishBtn.addEventListener('click', function() {
+            const checkedBoxes = document.querySelectorAll('.content-checkbox:checked');
+            const selectedContent = [];
+            
+            checkedBoxes.forEach(box => {
+                selectedContent.push(box.value);
+            });
+
+            if (selectedContent.length === 0) {
+                showTips('你还没有点餐', 'error');
+                return;
+            }
+
+            const showText = selectedContent.join('\n');
+            previewContent.innerText = showText;
+            mask.style.display = 'block';
+            previewModal.style.display = 'block';
+            window.selectedCopyText = showText;
+        });
+
+        cancelBtn.addEventListener('click', function() {
+            mask.style.display = 'none';
+            previewModal.style.display = 'none';
+        });
+        mask.addEventListener('click', function() {
+            mask.style.display = 'none';
+            previewModal.style.display = 'none';
+        });
+
+        copyBtn.addEventListener('click', function() {
+            navigator.clipboard.writeText(window.selectedCopyText).then(() => {
+                showTips('复制成功！内容已复制到剪贴板', 'success');
+            }).catch(err => {
+                showTips('复制失败，请手动复制', 'error');
+                console.error('复制失败:', err);
+            });
+        });
+
+        function showTips(text, type) {
+            tips.textContent = text;
+            tips.className = `tips ${type}`;
+            tips.style.display = 'block';
+            setTimeout(() => {
+                tips.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
