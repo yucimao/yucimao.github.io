@@ -337,13 +337,18 @@ let data=[
             });
         }
 
+        function filterBracketContent(text) {
+            return text.replace(/（[^)]*）/g, '').trim();
+        }
+
         finishBtn.addEventListener('click', function() {
             const checkedBoxes = document.querySelectorAll('.content-checkbox:checked');
             const selectedContent = [];
             
             checkedBoxes.forEach(box => {
-                selectedContent.push(box.value);
-            });
+            const filteredText = filterBracketContent(box.value);
+            selectedContent.push(filteredText);
+        });
 
             if (selectedContent.length === 0) {
                 showTips('你还没有点餐', 'error');

@@ -29,7 +29,12 @@ function dw(){
         dwb=`<iframe src="/i/${dwe}" frameborder="0" width="100%" height="90%" id="／／${dwb}"></iframe><p id="／${dwb}／">..</p>`;
     }
     if(dwd!="0"){
-        document.getElementById("dwd").innerHTML="<h3"+((dwe>0)?` onclick="window.location.href='/i/${dwe}'"`:"")+">"+dwd+"</h3>";
+        if(dwe>0){
+            document.getElementById("dwd").innerHTML=`<h3 onclick="window.location.href='/i/${dwe}'">${dwd} <small>⤴︎</small></h3>`;
+        }else{
+            document.getElementById("dwd").innerHTML="<h3>"+dwd+"</h3>";
+        }
+        
         dwd="0";
     }else{
         document.getElementById("dwd").innerHTML="";

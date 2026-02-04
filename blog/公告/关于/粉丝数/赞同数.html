@@ -12,12 +12,12 @@ const svg2 = document.querySelector('.bar-chart');
 const barChart = new chartXkcd.Bar(svg2, {
     title: '赞同数',
     data: {
-        labels: ['bilibili','zhihu','weibo'],
+        labels: ['bilibili','zhihu','xhs'],
         datasets: [{
             data: [
                 148006 + 903, //哔哩哔哩 https://member.bilibili.com/platform/home
                 444405 + 31186, //知乎 https://www.zhihu.com/people/limaoqiu
-                98, //微博
+                329, //小红书
             ],
         }],
     },
