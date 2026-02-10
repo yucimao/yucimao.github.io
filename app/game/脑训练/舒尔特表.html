@@ -1,0 +1,355 @@
+---
+layout: page2
+title: 舒尔特表
+nav_text: 舒尔特表
+permalink: game/nao1
+nav_url: <a href="/youxiji">游戏机</a>
+---
+<style>
+	body {
+		background-color: #f0f2f5;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		min-height: 100vh;
+	}
+
+	.container {
+		max-width: 600px;
+		width: 100%;
+		background: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		padding: 30px;
+		margin-bottom: 20px;
+	}
+
+	h1 {
+		text-align: center;
+		color: #333;
+		margin-bottom: 20px;
+	}
+
+	.settings {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		gap: 15px;
+		flex-wrap: wrap;
+	}
+
+	.settings button {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 6px;
+		background-color: #4285f4;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	.settings button:hover {
+		background-color: #3367d6;
+	}
+
+	.settings button.active {
+		background-color: #1a73e8;
+		box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.5);
+	}
+
+	.settings button.color-mode {
+		background-color: #d93025;
+	}
+
+	.settings button.color-mode:hover {
+		background-color: #b4261e;
+	}
+
+	.settings button.color-mode.active {
+		background-color: #9a1f18;
+		box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.5);
+	}
+
+	.timer {
+		text-align: center;
+		font-size: 24px;
+		font-weight: bold;
+		color: #d93025;
+		margin-bottom: 20px;
+	}
+
+	.schulte-grid {
+		display: grid;
+		gap: 8px;
+		margin: 0 auto;
+		max-width: 500px;
+	}
+
+	.grid-cell {
+		background-color: #e8eaed;
+		border-radius: 6px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* 数字整体放大 */
+		font-size: 28px;
+		font-weight: bold;
+		color: #202124;
+		cursor: pointer;
+		transition: all 0.2s;
+		aspect-ratio: 1/1;
+	}
+
+	.grid-cell:hover {
+		background-color: #d1d5db;
+	}
+
+	.grid-cell.correct {
+		background-color: #188038;
+		color: white !important;
+	}
+
+	.message {
+		text-align: center;
+		font-size: 18px;
+		color: #202124;
+		margin-top: 20px;
+		min-height: 24px;
+	}
+
+	.history {
+		width: 100%;
+		max-width: 600px;
+		background: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+	}
+
+	.history h2 {
+		font-size: 18px;
+		color: #333;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.history-list {
+		list-style: none;
+		padding: 0;
+		max-height: 200px;
+		overflow-y: auto;
+	}
+
+	.history-item {
+		padding: 8px 12px;
+		border-bottom: 1px solid #eee;
+		display: flex;
+		justify-content: space-between;
+		font-size: 14px;
+	}
+
+	.history-item:last-child {
+		border-bottom: none;
+	}
+
+	/* 手机上再稍微小一点，避免挤爆 */
+	@media (max-width: 500px) {
+		.grid-cell {
+			font-size: 24px;
+		}
+		.container {
+			padding: 20px;
+		}
+	}
+</style>
+<div class="container">
+	<div class="settings">
+		<button class="difficulty-btn active" data-size="3">3x3</button>
+		<button class="difficulty-btn" data-size="4">4x4</button>
+		<button class="difficulty-btn" data-size="5">5x5</button>
+		<button class="difficulty-btn" data-size="6">6x6</button>
+		<button class="difficulty-btn color-mode" data-size="5" data-color="true">5x5 彩色数字</button>
+	</div>
+
+	<div class="timer" id="timer">00:00.00</div>
+	
+	<div class="schulte-grid" id="schulteGrid"></div>
+	
+	<div class="message" id="message">请选择难度开始训练</div>
+</div>
+
+<div class="history">
+	<h2>训练记录</h2>
+	<ul class="history-list" id="historyList"></ul>
+</div>
+
+<script>
+	let gridSize = 3;
+	let isColorMode = false;
+	let totalCells = gridSize * gridSize;
+	let currentNumber = 1;
+	let startTime = 0;
+	let timerInterval = null;
+	let historyRecords = [];
+
+	const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+	const timerEl = document.getElementById('timer');
+	const gridEl = document.getElementById('schulteGrid');
+	const messageEl = document.getElementById('message');
+	const historyListEl = document.getElementById('historyList');
+	const containerEl = document.querySelector('.container');
+
+	difficultyBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			difficultyBtns.forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			
+			gridSize = parseInt(btn.dataset.size);
+			isColorMode = btn.dataset.color === 'true';
+			totalCells = gridSize * gridSize;
+			
+			startGame();
+			scrollToGameArea();
+		});
+	});
+
+	function scrollToGameArea() {
+		containerEl.scrollIntoView({
+			behavior: 'smooth',
+			block: 'center',
+			inline: 'center'
+		});
+	}
+
+	function getRandomColor() {
+		const colors = [
+			'#d93025', '#4285f4', '#f4b400', '#188038', '#9c27b0', 
+			'#00acc1', '#ff7043', '#7b1fa2', '#558b2f', '#e64a19'
+		];
+		return colors[Math.floor(Math.random() * colors.length)];
+	}
+
+	function startGame() {
+		currentNumber = 1;
+		clearInterval(timerInterval);
+		timerEl.textContent = '00:00.00';
+		
+		if (isColorMode) {
+			messageEl.textContent = `开始${gridSize}x${gridSize}彩色数字训练！请按顺序点击数字 1, 2, 3...`;
+		} else {
+			messageEl.textContent = `开始${gridSize}x${gridSize}训练！请按顺序点击数字 1, 2, 3...`;
+		}
+		
+		gridEl.innerHTML = '';
+		gridEl.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
+		const numbers = Array.from({ length: totalCells }, (_, i) => i + 1);
+		shuffleArray(numbers);
+
+		numbers.forEach(num => {
+			const cell = document.createElement('div');
+			cell.className = 'grid-cell';
+			cell.textContent = num;
+			cell.dataset.number = num;
+			
+			if (isColorMode) {
+				cell.style.color = getRandomColor();
+			}
+			
+			cell.addEventListener('click', () => cellClickHandler(num));
+			gridEl.appendChild(cell);
+		});
+
+		startTime = Date.now();
+		timerInterval = setInterval(updateTimer, 10);
+	}
+
+	function cellClickHandler(number) {
+		if (!startTime || number !== currentNumber) return;
+
+		const cell = document.querySelector(`.grid-cell[data-number="${number}"]`);
+		cell.classList.add('correct');
+		currentNumber++;
+
+		if (currentNumber > totalCells) {
+			finishGame();
+		}
+	}
+
+	function finishGame() {
+		clearInterval(timerInterval);
+		const endTime = Date.now();
+		const totalTime = (endTime - startTime) / 1000;
+		const formattedTime = formatTime(totalTime);
+		
+		if (isColorMode) {
+			messageEl.textContent = `恭喜完成${gridSize}x${gridSize}彩色数字训练！总用时: ${formattedTime}`;
+		} else {
+			messageEl.textContent = `恭喜完成${gridSize}x${gridSize}训练！总用时: ${formattedTime}`;
+		}
+
+		const difficultyLabel = isColorMode ? `${gridSize}x${gridSize} 彩色数字` : `${gridSize}x${gridSize}`;
+		const record = {
+			difficulty: difficultyLabel,
+			time: formattedTime,
+			rawTime: totalTime,
+			date: new Date().toLocaleString()
+		};
+		historyRecords.unshift(record);
+		updateHistoryList();
+		saveHistoryToLocalStorage();
+	}
+
+	function updateTimer() {
+		const elapsedTime = (Date.now() - startTime) / 1000;
+		timerEl.textContent = formatTime(elapsedTime);
+	}
+
+	function formatTime(seconds) {
+		const mins = Math.floor(seconds / 60);
+		const secs = Math.floor(seconds % 60);
+		const ms = Math.floor((seconds % 1) * 100);
+		return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${ms.toString().padStart(2, '0')}`;
+	}
+
+	function shuffleArray(array) {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+	}
+
+	function updateHistoryList() {
+		historyListEl.innerHTML = '';
+		historyRecords.forEach(record => {
+			const li = document.createElement('li');
+			li.className = 'history-item';
+			li.innerHTML = `
+				<span>${record.date}</span>
+				<span>${record.difficulty}</span>
+				<span>${record.time}</span>
+			`;
+			historyListEl.appendChild(li);
+		});
+	}
+
+	function saveHistoryToLocalStorage() {
+		localStorage.setItem('schulteHistory', JSON.stringify(historyRecords));
+	}
+
+	function loadHistoryFromLocalStorage() {
+		const saved = localStorage.getItem('schulteHistory');
+		if (saved) {
+			historyRecords = JSON.parse(saved);
+			updateHistoryList();
+		}
+	}
+
+	window.addEventListener('DOMContentLoaded', () => {
+		loadHistoryFromLocalStorage();
+		gridEl.style.gridTemplateColumns = `repeat(3, 1fr)`;
+	});
+</script>
