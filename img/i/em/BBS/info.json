@@ -1,6 +1,6 @@
 {
     "name": "BBS",
-    "prefix": "BBS_",
+    "prefix": "",
     "type": "gif",
     "icon": "lol",
     "items": ["lol", "loveliness", "titter", "huffy"]
