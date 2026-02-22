@@ -1,0 +1,7 @@
+{
+    "name": "表情包",
+    "prefix": "",
+    "type": "",
+    "icon": "b01.jpg",
+    "items": ["b01.jpg", "b02.jpg", "b03.gif", "b04.gif","b05.jpg","b06.jpg","b07.gif"]
+  }
