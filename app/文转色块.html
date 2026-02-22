@@ -100,6 +100,8 @@ button:hover {
     <button onclick="downloadImage()" id="downloadBtn" disabled>下载图片</button>
     <div class="tip"></div>
     <img id="outputImage" alt="生成的图片">
+    <br>
+    <div id="颜色记录"></div>
 </div>
 
 <!-- 图片转文字区域 -->
@@ -139,6 +141,7 @@ function textToImage() {
     canvas.width = width;
     canvas.height = height;
     ctx.clearRect(0, 0, width, height);
+    let 颜色记录="";
 
     // 逐个字符处理
     for (let i = 0; i < charCount; i++) {
@@ -150,6 +153,7 @@ function textToImage() {
         // 确保是6位（超过则取后6位）
         if (hex.length > 6) hex = hex.slice(-6);
         const color = `#${hex}`;
+        颜色记录+="#"+hex;
 
         // 3. 计算像素位置
         const col = i % charsPerRow;
@@ -167,14 +171,37 @@ function textToImage() {
     const outputImage = document.getElementById('outputImage');
     outputImage.src = generatedImageDataUrl;
     outputImage.style.display = 'block';
+
+    const colorRecordEl = document.getElementById("颜色记录");
+
+    function formatText(text) {
+        if (text.length > 10) {
+            return text.substring(0, 10) + "...";
+        }
+        return text;
+    }
     
+    colorRecordEl.innerHTML = formatText(颜色记录)+"<small>(点击复制)</small>";
+    
+    colorRecordEl.addEventListener('click', async function() {
+        try {
+            await navigator.clipboard.writeText(颜色记录);
+            // alert("完整颜色代码已复制：" + 颜色记录);
+        } catch (err) {
+            const textArea = document.createElement('textarea');
+            textArea.value = 颜色记录;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            // alert("完整颜色代码已复制：" + 颜色记录);
+        }
+    });
+
     // 启用下载按钮
     document.getElementById('downloadBtn').disabled = false;
 }
 
-/**
- * 下载生成的图片
- */
 function downloadImage() {
     if (!generatedImageDataUrl) return;
     
