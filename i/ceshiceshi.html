@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Waline 自动留言示例</title>
+    <!-- 引入 Waline 官方脚本（如果你的页面已引入，可忽略） -->
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+    <!-- 简单的按钮样式（可选） -->
+    <style>
+        #autoCommentBtn {
+            padding: 8px 16px;
+            background: #409eff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        #autoCommentBtn:hover {
+            background: #66b1ff;
+        }
+        #commentResult {
+            margin-top: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- 自动留言按钮 -->
+    <button id="autoCommentBtn">点击自动发送"你好"留言</button>
+    <div id="commentResult"></div>
+
+    <!-- Waline 留言容器（你的原有配置） -->
+    <div id="waline"></div>
+
+    <script>
+        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        // ========== 请替换为你自己的配置 ==========
+        const WALINE_SERVER_URL = 'https://example.limaoqiu.com'; // 你的 Waline 服务端地址
+        const WALINE_PAGE_PATH = '/ceshiceshi1'; // 留言对应的页面路径（比如当前页面是 /post/1，则填 /post/1）
+        // =========================================
+
+        // 初始化 Waline（如果你的页面已初始化，可忽略这部分）
+        Waline.init({
+            el: '#waline',
+            serverURL: WALINE_SERVER_URL,
+            path: WALINE_PAGE_PATH,
+        });
+
+        // 自动发送留言的函数
+        async function sendAutoComment() {
+            const btn = document.getElementById('autoCommentBtn');
+            const result = document.getElementById('commentResult');
+            
+            // 防止重复点击
+            btn.disabled = true;
+            btn.textContent = '发送中...';
+            result.textContent = '';
+
+            try {
+                // 构造留言数据
+                const commentData = {
+                    author: '自动留言', // 留言者昵称（可自定义）
+                    email: 'auto@example.com', // 邮箱（Waline 要求，可填虚拟邮箱）
+                    url: '', // 网址（可选）
+                    content: '你好', // 留言内容
+                    path: WALINE_PAGE_PATH, // 对应页面路径
+                    // 以下字段根据 Waline 版本可能需要调整
+                    agent: navigator.userAgent,
+                    ip: '0.0.0.0', // 本地测试可填任意值
+                };
+
+                // 调用 Waline REST API 提交留言
+                const response = await fetch(`${WALINE_SERVER_URL}/api/v1/comment`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(commentData),
+                });
+
+                const resData = await response.json();
+
+                if (response.ok) {
+                    result.textContent = '留言发送成功！';
+                    result.style.color = '#67c23a';
+                    // 刷新留言列表
+                    Waline.instance.refresh();
+                } else {
+                    result.textContent = `发送失败：${resData.message || '未知错误'}`;
+                    result.style.color = '#f56c6c';
+                }
+            } catch (error) {
+                result.textContent = `发送出错：${error.message}`;
+                result.style.color = '#f56c6c';
+            } finally {
+                // 恢复按钮状态
+                btn.disabled = false;
+                btn.textContent = '点击自动发送"你好"留言';
+            }
+        }
+
+        // 绑定按钮点击事件
+        document.getElementById('autoCommentBtn').addEventListener('click', sendAutoComment);
+    </script>
+</body>
+</html>
