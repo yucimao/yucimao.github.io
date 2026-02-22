@@ -1,0 +1,138 @@
+permalink: app/xfyq
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小翻译器</title>
+<script>
+    const slangDict = {
+        // "":"",
+        "阿b":"哔哩哔哩",
+        "cmg":"臭母狗：对女性的贬称",
+        "xxn":"小仙女：田园女权（贬义）",
+        "hn":"黄牛",
+        "zng":"宅男哥（贬义）",
+    };
+
+    const slangDict2 = {
+        // "cmg": "12345",
+    };
+</script>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei", sans-serif;
+  }
+  body {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  #result {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    min-height: 80px;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .hl {
+    position: relative;
+    cursor: help;
+    text-decoration: underline dotted #409eff;
+  }
+
+  .hl:hover::before {
+    content: attr(data-tip);
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* .hl:nth-of-type(1):hover::before { top: -30px; }
+  .hl:nth-of-type(2):hover::before { top: -60px; }
+  .hl:nth-of-type(3):hover::before { top: -90px; } */
+  .hl:hover::before { top: -40px; }
+
+  .hl[onclick] {
+    cursor: pointer;
+    text-decoration: underline solid #409eff;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>小翻译器</h2>
+  <textarea id="input" placeholder="把文字粘贴到这里"></textarea>
+  <div id="result"></div>
+</div>
+
+<script>
+  const input = document.getElementById('input');
+  const result = document.getElementById('result');
+
+  function initInputFromUrl() {
+    const currentUrl = window.location.href;
+    const questionMarkIndex = currentUrl.indexOf('?');
+    
+    if (questionMarkIndex !== -1 && questionMarkIndex < currentUrl.length - 1) {
+      const textAfterQuestion = currentUrl.substring(questionMarkIndex + 1);
+      const decodedText = decodeURIComponent(textAfterQuestion);
+      input.value = decodedText;
+    }
+  }
+
+  initInputFromUrl();
+
+  const sorted = Object.entries(slangDict).sort((a, b) => b[0].length - a[0].length);
+
+  function render() {
+    let text = input.value || '请输入内容';
+
+    sorted.forEach(([word, tip]) => {
+      const w = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const reg = new RegExp(`(${w})`, 'gi');
+      
+      text = text.replace(reg, (m) => {
+        const lowerWord = m.toLowerCase();
+        const hasClickEvent = slangDict2.hasOwnProperty(lowerWord);
+        const onclickAttr = hasClickEvent ? `onclick="dw(dwb='${slangDict2[lowerWord]}',dwd='${lowerWord}')"` : '';
+        return `<span class="hl" ${onclickAttr} data-tip="${tip}">${m}</span>`;
+      });
+    });
+
+    result.innerHTML = text;
+  }
+
+  input.addEventListener('input', render);
+  render();
+</script>
+
+</body>
+</html>
