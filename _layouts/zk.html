@@ -21,7 +21,6 @@ layout: default
 <div id="上级"></div>
 
 <div id="wen_body">
-<div id="right_anchor"></div>
 
 {{ content }}
 
@@ -70,7 +69,6 @@ localStorage.setItem(p_link[1],"1");
 
 }
 </script>
-{% if page.anchor !="x" %}{% include anchor.html %}{% endif %}
 
 {% if page.pinglun %}{% include Valine2.html %}{% endif %}
 
