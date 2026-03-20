@@ -1,15 +1,16 @@
-<div id="游戏厅">反方向扭头</div><script src="0.js"></script>
+<div id="游戏厅">方向箭头</div><script src="0.js"></script>
 <small>
-    按方向键开始游戏，屏幕上会显示一个箭头，玩家要立刻点击和箭头反方向的按键。根据速度可以获得2币或1币，错误扣5币。<br>
-    方向键：电脑键盘的方向键、WASD、画面上的箭头均可。
+    以下是用多个小箭头组成的一个大箭头，不要理会小箭头，按照大箭头指的方向，电脑键盘的方向键、WASD、画面上的箭头均可。<br>
+    根据速度可以获得2币或1币，错误扣5币。
 </small><br><br>
 
 <style>
-    #屏幕{font-size:4em;}
+    #屏幕{font-size:2em;margin:0;padding:0;}
     .屏幕,#对错{font-size:2em;}
+    .隐藏{color:#00000000;}
 </style>
 
-<div id="屏幕"><small><small><small>随便按一个方向开始游戏。</small></small></small></div>
+<div id="屏幕">随便按一个方向开始游戏。</div>
 
 <hr class="hr0">
 
@@ -19,7 +20,6 @@
     <tr><td></td><td class="屏幕" onclick="按钮(40)">⬇️</td><td></td></tr>
 </table>
 
-
 <div id="记录"></div>
 
 <script>
@@ -27,12 +27,33 @@
     let 当前="0";
     let 计时;
     let 箭头=["⬆️","⬇️","⬅️","➡️"];
-    let 表={"40":"⬆️","38":"⬇️","39":"⬅️","37":"➡️","83":"⬆️","87":"⬇️","68":"⬅️","65":"➡️"}
+    let 表={"40":"⬇️","38":"⬆️","39":"➡️","37":"⬅️","83":"⬇️","87":"⬆️","68":"➡️","65":"⬅️"}
     let 包含=["40","38","39","37","83","87","68","65"];
+    let d1=[
+        ["00100","01110","11111","00100","00100"],//上
+        ["00100","00100","11111","01110","00100"],//下
+        ["00100","01100","11111","01100","00100"],//左
+        ["00100","00110","11111","00110","00100"],//右
+    ];
     function 下一个(){
         计时=new Date().getTime();
-        当前=箭头[Math.floor(Math.random()*箭头.length)];
+        let 临时=Math.floor(Math.random()*箭头.length);
+        let 临时2=Math.floor(Math.random()*箭头.length);
+        当前="";
+        for(let i=0;d1[临时].length>i;i++){
+            当前+="";
+                for(let j=0;d1[临时][i].length>j;j++){
+                    if(d1[临时][i][j]=="1"){
+                        当前+=箭头[临时2];
+                    }else{
+                        当前+="<span class='隐藏'>"+箭头[临时2]+"</span>";
+                    }
+                }
+            当前+="<br>";
+        }
+        当前+="</table>";
         document.getElementById("屏幕").innerHTML=当前;
+        当前=箭头[临时];
     }
     let 统计=[0,0,0,0];
     function 按钮(o){
@@ -65,4 +86,3 @@
     }
     function keydown(event){if(包含.indexOf(event.keyCode+"")!=-1){event.preventDefault();按钮(event.keyCode)}}
 </script>
-
