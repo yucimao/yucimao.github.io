@@ -136,6 +136,8 @@ function loadMore(){
         }else if(parts[0]==="br"){
             newContent+=`<hr class='co0'>`;
             if(parts[1]){newContent+=`<p>${parts[1]}</p>`}
+        }else if(parts[0]==="o"){
+            if(parts[1]){newContent+=`<p>${parts[1]}</p>`}
         }else{
             newContent+=`<div class="cj">`;
 
