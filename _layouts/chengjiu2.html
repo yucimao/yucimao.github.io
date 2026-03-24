@@ -149,8 +149,6 @@ function loadMore(){
 
             if(isNaN(parts[0])){
                 newContent+=`<img referrerpolicy='no-referrer' src='${parts[0]}' onerror="this.src='/i/cj/1.jpg';this.onerror=null;" />`;
-            }else if(parts[0]=="2"){
-
             }else{
                 newContent+=`<img src='{{ site.mq_d }}/i/cj/${parts[0]}.jpg' onerror="this.src='/i/cj/${parts[0]}.jpg';this.onerror=null;" />`;
             }
