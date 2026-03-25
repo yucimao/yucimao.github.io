@@ -5,16 +5,21 @@ nav_text: VA-11 HALL-A
 nav_url: <a href="/jiuxian">酒仙笔记</a>
 permalink: i/407130
 ---
-{% include b/jiuxian.html %}
+<link rel="stylesheet" href="/css/all2.css">
 <style>
 body,.body{
-    background-color: #000000;
-    color:#dddddd;
+    background-color:#121212;
+    color:#c4c4c4;
+    /* color:#dddddd; */
 }
 
-div.body{box-shadow: 0 0 0 #fff;}
+a,summary{color:#ffffff;}
+h5{display:inline;font-size:1.05em;}
 
-.biaotib{font-size:3em;
+div.body{box-shadow: 0 0 0 #ffffff;}
+
+.biaotib{
+    font-size:3em;
     text-shadow: 1px 0px 3px #A21748,-1px 0px 3px #A21748,0px 1px 3px #A21748,0px -1px 3px #A21748;
     color:#A21748;
     font-style: italic;
@@ -31,9 +36,22 @@ div.body{box-shadow: 0 0 0 #fff;}
 .gyz{color:#76D969;}
 .gyh{color:#FFA043;}
 
+.酒{margin:auto auto 2em;}
+
+details details{position:relative;left:1em}
+summary{cursor:pointer;}
+summary:hover{color:#0085A1;}
+fieldset{border: 3px solid #A9A9A9;}
+hr{ border:none;height:3px;background-color:#A9A9A9;}
+
+.Gillian{color:#8017CA;}
+.Jill{color:#617EE8;}
+.Dana{color:#d42a30;}
+.Alma{color:#F8BD66;}
+.Jamie{color:#8E873F;}
+.Sei{color:#609693;}
+.Stella{color:#E75F9D;}
 /*
-Gillian的颜色#8017CA
-Jill的颜色#617EE8
 https://va11halla.fandom.com/zh/wiki
 */
 </style>
@@ -41,12 +59,49 @@ https://va11halla.fandom.com/zh/wiki
 <div style="text-align:center;">赛博朋克酒保行动</div>
 <br>
 
+「调制饮料，改变人生。」<br>
+在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉）。<br>
+<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">开场</a><fieldset style="display:none;"><legend>开场</legend>
+    Glitch City, 207X A.D.<br>
+    <br>
+    这是不应存在的城市。<br>
+    由企业和黑帮主宰一切的避税天堂。<br>
+    ……<br>
+    <br>
+    对很多人而言，这是难以承担的重负。<br>
+    有些人选择投入自己的工作，家庭，或是研究之中。<br>
+    另一些人正在寻求逃离的方式。<br>
+    还有一些人……选择了放弃。<br>
+    <br>
+    但也有人认为自己的答案就沉在酒杯的底部。<br>
+    <br>
+    在距离城市主干道只有几步之遥的小路上，<br>
+    贫民区附近的某个地方，<br>
+    你可以找到这家BTC认证编号VA-11的酒吧的Hall A<br>
+    ……<br>
+    <br>
+    ……但是全称过于拗口，因此我们称之为Valhalla。<br>
+    <br>
+    这是钢筋混凝土荒漠中的小小绿洲。<br>
+    为疲惫不堪的灵魂带来慰藉的精神之泉。<br>
+    <br>
+    我们的故事就将在这里展开。
+</fieldset><br>
+
+<ul>
+    <li>酒吧会提供薄荷糖，帮助客人掩盖嘴里的酒精味。</li>
+    <li><span class="Jill">Jill</span>会收藏陈年老酒，并感到自豪。从爷爷的藏酒库存起步，慢慢发展起来。由于债务缠身，藏酒事业举步维艰，但总在设法一点点增加收藏。</li>
+    <li><span class="Jill">Jill</span>喜欢酒，但不是一般意义上的喜欢，除了罐装啤酒外，她喝的酒并不多。她更喜欢酒的颜色、背景故事、保存方法、还有设计理念。<span class='zhushi'>和我一样诶</span></li>
+</ul>
+
+<hr>
+
 原料：<br>
 <span class="yla">Adelhyde</span><sup>阿德海德</sup>：甜味。<br>
 <span class="ylb">Bronson Extract</span><sup>布朗森提取物(<span class="ylb">Bronson Ex</span>)</sup>：苦味，原料来源于Bronson的根部。<br>
 <span class="ylp">Powdered Delta</span><sup>德尔塔粉末(<span class="ylp">Pwd Delta</span>)</sup>：酸味。<br>
 <span class="ylf">Flanergide</span><sup>弗拉基德</sup>：辣味。<br>
-<span class="ylk">Karmotrine</span><sup>卡尔莫丁</sup>：酒精的替代品，如果摄入过多能引发醉意。<br>
+<span class="ylk">Karmotrine</span><sup>卡尔莫丁</sup>：酒精的替代品，它不会改变味道，但摄入过多能引发醉意。<br>
 
 <br>
 
@@ -60,274 +115,353 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 
 <br>
 
-<fieldset><legend><h5>Bad Touch</h5> 危险触碰 - $250</legend>
+<fieldset style="display:inline;"><legend><b>B.T.C 调酒指南</b> <small>欢迎回来，Jill</small></legend>
+    <details><summary>按名称</summary>
+        　<a onclick="分类('C')">C　　　</a><br>
+        　<a onclick="分类('S')">S　　　</a><br>
+        　<a onclick="分类('F')">F　　　</a><br>
+        　<a onclick="分类('M')">M　　　</a><br>
+        　<a onclick="分类('G')">G　　　</a><br>
+        　<a onclick="分类('Z')">Z　　　</a><br>
+        　<a onclick="分类('B')">B　　　</a><br>
+        　<a onclick="分类('P')">P　　　</a>
+    </details>
+    <details><summary>按口味</summary>
+        　<a onclick="分类('甜味')">甜味饮品</a><br>
+        　<a onclick="分类('苦味')">苦味饮品</a><br>
+        　<a onclick="分类('酸味')">酸味饮品</a><br>
+        　<a onclick="分类('辛辣')">辛辣饮品</a><br>
+        　<a onclick="分类('发泡')">发泡饮品</a>
+    </details>
+    <details><summary>按种类</summary>
+        　<a onclick="分类('女性化')">女性化饮品</a><br>
+        　<a onclick="分类('男性化')">男性化饮品</a><br>
+        　<a onclick="分类('经典')">经典饮品</a><br>
+        　<a onclick="分类('时尚')">时尚饮品</a><br>
+        　<a onclick="分类('宣传')">宣传饮品</a>
+    </details>
+    <a onclick="分类('瓶装')">瓶装饮品</a><br>
+    <small>（<a onclick="分类('其他')">其他</a>）</small><br>
+    <small>（<a onclick="分类('0')">显示全部</a>）</small>
+</fieldset><br>
+<br>
+
+<style id="BTC分类"></style>
+
+<a name="酒单"></a>
+
+<fieldset class="酒 B 酸味 时尚 复古"><legend><h5>Bad Touch</h5> 危险触碰 - $250</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/BadTouch.png" onerror="this.src='/i/0/2021/va11/BadTouch.png';this.onerror=null;" alt="Bad Touch"><br>
     <span class="ylb">2 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">4 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “我们毕竟不过是群哺乳动物。”<br>
     酸味，时尚，复古。<br>
+    <br>
     柯林杯，<span style="color:#1FB561">酒</span><span style="color:#1DB560">的</span><span style="color:#AFEB67">颜</span><span style="color:#B9E970">色</span>。<br>
-    <span class="zhushi">名字来源于Bloodhound Gang乐队的《The Bad Touch》。</span><br>
-    客人点这杯酒的时候会逗笑Jill，因为“give me a Bad Touch”（给我一杯Bad Touch），也可以理解为“来摸我”。<br>
+    <span class="zhushi">名字来源于Bloodhound Gang乐队的«The Bad Touch»。</span><br>
+    客人点这杯酒的时候会逗笑<span class="Jill">Jill</span>，因为“Bad Touch”也是“咸猪手”的意思，「give me a Bad Touch」（给我一杯Bad Touch），也可以理解为「来摸我」。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Beer</h5> 啤酒 - $200</legend>
+<fieldset class="酒 B 发泡 复古 经典"><legend><h5>Beer</h5> 啤酒 - $200</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Beer.png" onerror="this.src='/i/0/2021/va11/Beer.png';this.onerror=null;" alt="Beer"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">2 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">4 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     “以传统手法酿造的啤酒已经成为了奢侈品，但这种酒和真货的味道相当接近……”<br>
     发泡，时尚，复古。<br>
+    <br>
     扎啤杯，<span style="color:#D9C5C3">泡沫</span><span style="color:#DE6B1F">啤酒</span>。<br>
+    商店里会卖更便宜的散装货。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Bleeding Jane</h5> 血腥的简 - $200</legend>
+<fieldset class="酒 B 辛辣 经典 解酒"><legend><h5>Bleeding Jane</h5> 血腥的简 - $200</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/BleedingJane.png" onerror="this.src='/i/0/2021/va11/BleedingJane.png';this.onerror=null;" alt="Bleeding Jane"><br>
     <span class="ylb">1 Bronson Extract</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylf">3 Flanergide</span>，<span class="gyh">调和</span>而成。<br>
     “对着镜子重复三次这杯饮料的名字，就会让你看上去像个傻瓜。”<br>
     辛辣，经典，解酒。<br>
+    <br>
     玛格丽特杯，<span style="color:#DE3D24">颜色</span>。<br>
     <span class="zhushi">原型是血腥玛丽，都市传说中对着镜子念三遍“血腥玛丽”能够看到女鬼。</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Bloom Light</h5> 花灯 - $230</legend>
+<fieldset class="酒 B 辛辣 宣传 清淡"><legend><h5>Bloom Light</h5> 花灯 - $230</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/BloomLight.png" onerror="this.src='/i/0/2021/va11/BloomLight.png';this.onerror=null;" alt="Bloom Light"><br>
     <span class="yla">4 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “这杯酒泛着完全多余的灰褐色……”<br>
     辛辣，宣传，清淡。<br>
+    <br>
     鸡尾酒杯，<span style="color:#E13D2A">颜</span><span style="color:#8E1538">色</span>。<br>
-    Jill解释这种酒的来历：「这玩意儿最早好像是在某个游戏展上搞出来的。创作者说，他想让到场的人体会到自家玩家的感受。而到场的这些人，显然都是某家大型游戏公司的员工。那家公司好像总爱把泛光（bloom）特效开得巨夸张，于是调酒师就直接让他们把这些‘泛光’全喝进肚子里了。」<br>
-    （原文：Seems it was first developed at some video games event. The creator said something about making the attendees feel like their customers do. Said attendees were, of course, part of some big games company. Seems that company always used too much bloom lighting, so the bartender there literally made them drink all the bloom.）<br>
+    <span class="Jill">Jill</span>解释这种酒的来历：「这玩意儿最早好像是在某个游戏展上搞出来的。创作者说，他想让到场的人体会到自家玩家的感受。而到场的这些人，显然都是某家大型游戏公司的员工。那家公司好像总爱把泛光（bloom）特效开得巨夸张，于是调酒师就直接让他们把这些‘泛光’全喝进肚子里了。」<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Blue Fairy</h5> 蓝精灵 - $170</legend>
+<fieldset class="酒 B 甜味 女性化 温和"><legend><h5>Blue Fairy</h5> 蓝精灵 - $170</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/BlueFairy.png" onerror="this.src='/i/0/2021/va11/BlueFairy.png';this.onerror=null;" alt="Blue Fairy"><br>
     <span class="yla">4 Adelhyde</span>、<span class="ylf">1 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “只喝一口就能让你的牙齿变蓝。希望你喝完之后能好好刷牙。”<br>
     甜味，女性化，温和。<br>
+    <br>
     柯林杯，<span style="color:#0B89FF">颜</span><span style="color:#0F89F8">色</span><span style="color:#57A8FE">渐</span><span style="color:#9ADCFD">变</span>。<br>
-    <span class="zhushi">名字来源于苦艾酒的别名“绿仙子”，而这款饮料是蓝色的，因此被改为“蓝仙子”。</span><br>
+    <span class="zhushi">名字来源于苦艾酒的别名“绿精灵”，而这款饮料是蓝色的，因此被改为“蓝精灵”。</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Brandtini</h5> 白兰提尼 - $250</legend>
+<fieldset class="酒 B 甜味 时尚 惬意"><legend><h5>Brandtini</h5> 白兰提尼 - $250</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Brandtini.png" onerror="this.src='/i/0/2021/va11/Brandtini.png';this.onerror=null;" alt="Brandtini"><br>
     <span class="yla">6 Adelhyde</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylk">1 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “每10个自命不凡的混球里就会有8个推荐这种酒，但他们沉溺于自命不凡没空为人推荐什么。”<br>
     甜味，时尚，惬意。<br>
+    <br>
     鸡尾酒杯，<span style="color:#E13D2A">颜</span><span style="color:#8E1538">色</span>。<br>
+    为了重现马提尼（Martini）而设计的酒。顾客如果要点马提尼，<span class="Jill">Jill</span>会纠正说那是Brandtini。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Cobalt Velvet</h5> 钴蓝天鹅绒 - $280</legend>
+<fieldset class="酒 C 发泡 时尚 火辣"><legend><h5>Cobalt Velvet</h5> 钴蓝天鹅绒 - $280</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/CobaltVelvet.png" onerror="this.src='/i/0/2021/va11/CobaltVelvet.png';this.onerror=null;" alt="Cobalt Velvet"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">5 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “就如同把香槟倒在还剩一点可乐的杯子里。”<br>
     发泡，时尚，火辣。<br>
+    <br>
     无柄杯，<span style="color:#2FE0C3">颜</span><span style="color:#CDFBB8">色</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Crevice Spike</h5> 缝隙钉 - $140</legend>
+<fieldset class="酒 C 酸味 男性化 解酒"><legend><h5>Crevice Spike</h5> 缝隙钉 - $140</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/CreviceSpike.png" onerror="this.src='/i/0/2021/va11/CreviceSpike.png';this.onerror=null;" alt="Crevice Spike"><br>
     <span class="ylp">2 Powdered Delta</span>、<span class="ylf">4 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “它既能把你的醉意驱除，也能够把你的意识驱除。”<br>
     酸味，男性化，解酒。<br>
+    <br>
     古典杯，<span style="color:#58D330">颜</span><span style="color:#21B65E">色</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Fluffy Dream</h5> 轻幻 - $170</legend>
+<fieldset class="酒 F 酸味 女性化 温和"><legend><h5>Fluffy Dream</h5> 轻幻 - $170</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/FluffyDream.png" onerror="this.src='/i/0/2021/va11/FluffyDream.png';this.onerror=null;" alt="Fluffy Dream"><br>
     <span class="yla">3 Adelhyde</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “一两口就足以取悦你的舌头，再喝多就可能会导致睡过头。”<br>
     酸味，女性化，温和。<br>
+    <br>
     飓风杯，<span style="color:#A0DFA0">绿色饮料</span>，配<span style="color:#58AA6A">绿色</span>切片水果。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Fringe Weaver</h5> 流苏编织者 - $260</legend>
+<fieldset class="酒 F 发泡 时尚 强烈"><legend><h5>Fringe Weaver</h5> 流苏编织者 - $260</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/FringeWeaver.png" onerror="this.src='/i/0/2021/va11/FringeWeaver.png';this.onerror=null;" alt="Fringe Weaver"><br>
     <span class="yla">1 Adelhyde</span>和<span class="ylk">9 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “如同就着一勺糖喝下无水酒精。”<br>
     发泡，时尚，强烈。<br>
+    <br>
     鸡尾酒杯，<span style="color:#FEE8C9">颜</span><span style="color:#DA858D">色</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Frothy Water</h5> 起泡水 - $150</legend>
+<fieldset class="酒 F 发泡 经典 清淡"><legend><h5>Frothy Water</h5> 起泡水 - $150</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Beer.png" onerror="this.src='/i/0/2021/va11/Beer.png';this.onerror=null;" alt="Frothy Water"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylf">1 Flanergide</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “自2040年以来，家长指导级节目里最爱用的啤酒代用品。”<br>
     发泡，经典，清淡。<br>
+    <br>
     应该是不含酒精的气泡水，虽然看起来和啤酒一模一样。<br>
     啤酒杯，<span style="color:#D9C5C3">泡沫</span><span style="color:#DE6B1F">啤酒</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Grizzly Temple</h5> 灰熊神殿 - $220</legend>
+<fieldset class="酒 G 苦味 宣传 清淡"><legend><h5>Grizzly Temple</h5> 灰熊神殿 - $220</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/GrizzlyTemple.png" onerror="this.src='/i/0/2021/va11/GrizzlyTemple.png';this.onerror=null;" alt="Grizzly Temple"><br>
     <span class="yla">3 Adelhyde</span>、<span class="ylb">3 Bronson Extract</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylk">1 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “这种酒的味道几乎令人难以忍受。基本上只有它所宣传的那部电影的爱好者会点它。”<br>
     苦味，宣传，清淡。<br>
+    <br>
     鸡尾酒杯，<span style="color:#1FB663">颜</span><span style="color:#065E49">色</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Gut Punch</h5> 腹部重击 - $80</legend>
+<fieldset class="酒 G 苦味 男性化 强烈"><legend><h5>Gut Punch</h5> 腹部重击 - $80</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/GutPunch.png" onerror="this.src='/i/0/2021/va11/GutPunch.png';this.onerror=null;" alt="Gut Punch"><br>
     <span class="ylb">5 Bronson Extract</span>、<span class="ylf">1 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “这个名字的意思是‘由内脏（Gut）制成的混合饮料（Punch）’，但是同时也描述了饮用时的感受（重击腹部）。”<br>
     苦味，男性化，强烈。<br>
+    <br>
     传统古典杯，<span style="color:#FFC985">颜色</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Marsblast</h5> 火星爆炸 - $170</legend>
+<fieldset class="酒 M 辛辣 男性化 强烈"><legend><h5>Marsblast</h5> 火星爆破 - $170</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Marsblast.png" onerror="this.src='/i/0/2021/va11/Marsblast.png';this.onerror=null;" alt="Marsblast"><br>
     <span class="ylb">6 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">4 Flanergide</span>和<span class="ylk">2 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “只要喝上一口就足以让你的脸和火星一样红。”<br>
     辛辣，男性化，强烈。<br>
+    <br>
     柯林杯，<span style="color:#F49039">颜</span><span style="color:#F69037">色</span><span style="color:#FDBF30">渐</span><span style="color:#FEE833">变</span>。<br>
+    <span class="Jamie">Jamie</span>：「味道苦涩又令人头脑麻木。就如同战争一般。」<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Mercury Blast</h5> 水星爆炸 - $250</legend>
+<fieldset class="酒 M 酸味 时尚 火辣"><legend><h5>Mercury Blast</h5> 水星爆破 - $250</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/MercuryBlast.png" onerror="this.src='/i/0/2021/va11/MercuryBlast.png';this.onerror=null;" alt="Mercury Blast"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">3 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">2 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
     “在这种酒的研发过程中，没有温度计遭到伤害。”<br>
     酸味，时尚，火辣。<br>
+    <br>
     子弹杯，<span style="color:#2094D5">颜色</span>，有小气泡。<br>
+    <span class='zhushi'>“Mercury”翻译是“水星”或者“水银”。</span>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Moonblast</h5> 月球爆炸 - $180</legend>
+<fieldset class="酒 M 甜味 女性化 惬意"><legend><h5>Moonblast</h5> 月球爆破 - $180</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Moonblast.png" onerror="this.src='/i/0/2021/va11/Moonblast.png';this.onerror=null;" alt="Moonblast"><br>
     <span class="yla">6 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">1 Flanergide</span>和<span class="ylk">2 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
     “与你每个月都有一周时间能看到的那座月球强子大炮没有任何关系。”<br>
     甜味，女性化，惬意。<br>
+    <br>
     柯林杯，<span style="color:#D03D71">酒</span><span style="color:#D03D71">的</span><span style="color:#FC83C8">颜</span><span style="color:#FFC9EB">色</span>。<br>
+    <span class="Jill">Jill</span>：「它尝起来就像是把糖浸泡在纯酒精里。」<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Piano Man</h5> 男钢琴师 - $320</legend>
+<fieldset class="酒 P 宣传 强烈"><legend><h5>Piano Man</h5> 男钢琴师 - $320</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/PianoMan.png" onerror="this.src='/i/0/2021/va11/PianoMan.png';this.onerror=null;" alt="Piano Man"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylb">3 Bronson Extract</span>、<span class="ylp">5 Powdered Delta</span>、<span class="ylf">5 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “该饮品不代表酒吧钢琴师协会及其相关组织的意见。”<br>
     酸味，宣传，强烈。<br>
+    <br>
     白兰地杯，杯柄上横着一个钥匙？<span style="color:#0A98AE">颜</span><span style="color:#079CAA">色</span><span style="color:#26E2CE">渐</span><span style="color:#BDFFCB">变</span>。<br>
+    <span class="Jill">Jill</span>：「起初，它是由一位调酒师为纪念自己刚离世的钢琴师朋友而创造的。就配方来看，它混合了那位朋友最喜欢的全部味道。」<br>
+    酒的名字曾被很多女性抗议。<br>
+    <span class='zhushi'>名字源自歌曲。</span>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Piano Woman</h5> 女钢琴师 - $320</legend>
+<fieldset class="酒 P 甜味 宣传 惬意"><legend><h5>Piano Woman</h5> 女钢琴师 - $320</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/PianoWoman.png" onerror="this.src='/i/0/2021/va11/PianoWoman.png';this.onerror=null;" alt="Piano Woman"><br>
     <span class="yla">5 Adelhyde</span>、<span class="ylb">5 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “它的本名是Pretty Woman，但有很多人投诉如果有种酒叫Piano Man（男钢琴师），就该有另一种被命名为Piano Woman（女钢琴师）。”<br>
     甜味，宣传，惬意。<br>
+    <br>
     尼克诺拉杯，<span style="color:#2CDEC8">颜</span><span style="color:#BDFFCB">色</span>，上面有一个心形装饰。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Pile Driver</h5> 打桩机 - $160</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/PileDriver.png" onerror="this.src='/i/0/2021/va11/PileDriver.png';this.onerror=null;" alt="Pile Driver"><br>
+<fieldset class="酒 P 苦味 男性化 火辣"><legend><h5>Piledriver</h5> 打桩机 - $160</legend>
+    <img src="{{ site.mq_d }}/i/0/2021/va11/PileDriver.png" onerror="this.src='/i/0/2021/va11/PileDriver.png';this.onerror=null;" alt="Piledriver"><br>
     <span class="ylb">3 Bronson Extract</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">4 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     “你的舌头可能察觉不到它的火辣程度，但喝的时候请小心不要烧到嗓子。”<br>
     苦味，男性化，火辣。<br>
+    <br>
     古典杯，<span style="color:#FFBB31">颜</span><span style="color:#F79135">色</span>。<br>
+    <span class='zhushi'>Piledriver，职业摔角比赛的经典招式。</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Sparkle Star</h5> 闪光星球 - $150</legend>
+<fieldset class="酒 S 甜味 女性化 惬意"><legend><h5>Sparkle Star</h5> 闪光星球 - $150</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/SparkleStar.png" onerror="this.src='/i/0/2021/va11/SparkleStar.png';this.onerror=null;" alt="Sparkle Star"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “这种饮料曾经真的能够迸出（Sparkle）杯子，但这导致过多顾客投诉皮肤问题，于是他们被迫重新设计了不会迸射出任何东西的版本。”<br>
     甜味，女性化，惬意。<br>
+    <br>
     飓风杯，<span style="color:#FFD0BD">颜</span><span style="color:#FF6C40">色</span><span style="color:#9F201D">渐</span><span style="color:#79262D">变</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Sugar Rush</h5> 甜蜜冲刺 - $150</legend>
+<fieldset class="酒 S 甜味 女性化 惬意"><legend><h5>Sugar Rush</h5> 甜蜜冲刺 - $150</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/SugarRush.png" onerror="this.src='/i/0/2021/va11/SugarRush.png';this.onerror=null;" alt="Sugar Rush"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     “甘甜，清淡，水果风味，不能更加女性化的饮品。”<br>
     甜味，女性化，惬意。<br>
+    <br>
     子弹杯，<span style="color:#D01F5A">颜色</span>。<br>
-    <span class="zhushi">“Sugar Rush”一词指糖分进食过多而导致的一种病症，摄入过量的糖会使大脑释放多巴胺和内啡肽，引发轻度的兴奋和欣快感，随着大量糖分涌入血液，通常会连带造成精力的异常充沛，通常持续一到两个小时，随着血糖水平的下降，而感到空虚乏力或者不自然的疲倦。</span><br>
+    <span class="zhushi">名字源自歌曲«Sugar Rush»，这个词指一种糖分进食过多而导致的病症，摄入过量的糖会使大脑释放多巴胺和内啡肽，引发轻度的兴奋和欣快感。不过作者在访谈时提到，自己以前不知道这是个词组，只知道这是A*Teens乐队的歌。</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Sunshine Cloud</h5> 阳光云 - $150</legend>
+<fieldset class="酒 S 苦味 女性化 温和"><legend><h5>Sunshine Cloud</h5> 阳光云 - $150</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/SunshineCloud.png" onerror="this.src='/i/0/2021/va11/SunshineCloud.png';this.onerror=null;" alt="Sunshine Cloud"><br>
-    <span class="yla">2 Adelhyde</span>、<span class="ylb">2 Bronson Extract</span>}和<span class="ylk">任选 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
+    <span class="yla">2 Adelhyde</span>、<span class="ylb">2 Bronson Extract</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
     “味道就像昔日的巧克力牛奶，甚至还保留着那份香气。也有人说它有些焦糖的味道……”<br>
     苦味，女性化，温和。<br>
+    <br>
     无柄杯，<span style="color:#CB6F37">颜色</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Suplex</h5> 过肩摔 - $160</legend>
+<fieldset class="酒 S 苦味 男性化 火辣"><legend><h5>Suplex</h5> 过肩摔 - $160</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Suplex.png" onerror="this.src='/i/0/2021/va11/Suplex.png';this.onerror=null;" alt="Suplex"><br>
     <span class="ylb">4 Bronson Extract</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
-    “对Pile Driver进行微妙调整之后，将火辣的感觉从喉咙转移到了舌头上。”<br>
+    “对Piledriver进行微妙调整之后，将火辣的感觉从喉咙转移到了舌头上。”<br>
     苦味，男性化，火辣。<br>
+    <br>
     古典杯，<span style="color:#F49035">颜色</span>。<br>
-    Gillian创造的饮料。<br>
+    本店特饮，<span class="Gillian">Gillian</span>发明的饮料，BTC的官方调酒指南有收录。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Zen Star</h5> 禅意之星 - $210</legend>
+<fieldset class="酒 Z 酸味 宣传 清淡"><legend><h5>Zen Star</h5> 禅意之星 - $210</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/ZenStar.png" onerror="this.src='/i/0/2021/va11/ZenStar.png';this.onerror=null;" alt="Zen Star"><br>
     每种原料各4份，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “你可能会认为如此均衡的配方能够令这杯酒变得美味……那你就大错特错了。”<br>
     酸味，宣传，清淡。<br>
+    <br>
     无柄杯，<span style="color:#3359CC">颜色</span>。<br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Flaming Moai</h5> 火焰摩艾 - $150</legend>
+<fieldset class="酒 其他"><legend><h5>Flaming Moai</h5> 火焰摩艾 - $150</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/FlamingMoai.png" onerror="this.src='/i/0/2021/va11/FlamingMoai.png';this.onerror=null;" alt="Flaming Moai"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">5 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     酸味，经典，时尚。<br>
+    <br>
     复活节岛石像风格的提基马克杯。<br>
-    指南文档中不存在这杯酒，可以在第三章开始前给任意客人提供这杯酒来完成一个成就。<br>
+    <span class='zhushi'>指南文档中不存在这杯酒，可以在第三章开始前给任意客人提供这杯酒来完成一个成就。</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>A Fedora</h5> 软呢帽 - $500</legend>
+<fieldset class="酒 瓶装"><legend><h5>A Fedora</h5> 软呢帽 - $500</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/AFedora.png" onerror="this.src='/i/0/2021/va11/AFedora.png';this.onerror=null;" alt="A Fedora"><br>
+    “内含香水和李子。”<br>
+    <br>
     把梅子和香水装在软呢帽里做成的饮品。<br>
-    Virgilio第一次来酒吧会点一杯，但是Jill没法做出来。<br>
-    <span class="zhushi">A Fedora 来源于《辛普森一家》的 "Homer's Barbershop Quartet"一集。在这一集里，Yoko Ono 在 Moe's Tavern 里要一杯饮料，“一颗梅子，飘在香水上，装在男人的帽子里”。</span><br>
+    <span class="zhushi">«辛普森一家»的“Homer's Barbershop Quartet”一集里，Yoko Ono在Moe's Tavern里要一杯饮料，「一颗梅子，飘在香水上，装在男人的帽子里」。</span><br>
 </fieldset>
-<br>
 
-<fieldset><legend><h5>Absinthe</h5> 苦艾酒 - $500</legend>
-    苦艾酒，是Jill从家里带到酒吧的饮料。<br>
-    如果Jill在第一天给Stella错误的饮料，这杯酒才会出现。<br>
-</fieldset>
-<br>
-
-<fieldset><legend><h5>Mulan Tea</h5> 木兰茶 - $500</legend>
-    “一种以茶为基础的酒，味道像绿茶，度数像威士忌。”<br>
-    需要从JC Elton's购买。<br>
-    褐色酒瓶，白色标签上画着一条中国龙。<br>
-</fieldset>
-<br>
-
-<fieldset><legend><h5>Rum</h5> 朗姆 - $500</legend>
-    “爷爷酒鬼。”<br>
-    Stella送给Jill的礼物。<br>
-</fieldset>
-<br>
-
-<fieldset><legend><h5>##20%!!</h5> 乱码饮料</legend>
+<fieldset class="酒 其他"><legend><h5>##20%!!</h5> 乱码饮料</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/bug.png" onerror="this.src='/i/0/2021/va11/bug.png';this.onerror=null;" alt="##20%!!"><br>
     胡乱调配，会做出一杯名字乱码的饮料。<br>
     出现过的名字：“##20%!!”、“#y#bb=”、“#u??!!”、“n#@##*”、“gt??!#”、“f@###”。<br>
     破碎的鸡尾酒杯，<span style="color:#FF3200">颜色</span>。<br>
 </fieldset>
-<br>
 
-<h4>其他</h4>
-2019年与游戏《少女前线》有联动活动，具体见<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF:2019%E5%B9%B4%E8%81%94%E5%8A%A8%E6%B4%BB%E5%8A%A8%E2%80%9C%E7%93%A6%E5%B0%94%E5%93%88%E6%8B%89%E2%80%9D" target="_blank">萌娘百科</a>。<br>
+<fieldset class="酒 其他"><legend><h5>Absinthe</h5> 苦艾酒 - $500</legend>
+    苦艾酒，是<span class="Jill">Jill</span>从家里带到酒吧的饮料。<br>
+    如果<span class="Jill">Jill</span>在第一天给<span class="Stella">Stella</span>错误的饮料，这杯酒才会出现。<br>
+</fieldset>
+
+<fieldset class="酒 瓶装"><legend><h5>Mulan Tea</h5> 木兰茶 - $500</legend>
+    “一壶令人垂涎的茶酿烈酒，味道像是绿茶，但酒劲儿堪比威士忌。”<br>
+    <br>
+    需要在JC Elton's购买，价值$900。<br>
+    褐色酒瓶，白色标签上画着一条中国龙。<br>
+</fieldset>
+
+<fieldset class="酒 其他"><legend><h5>Rum</h5> 朗姆 - $500</legend>
+    “爷爷酒鬼。”<br>
+    <br>
+    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<br>
+</fieldset>
+
+<fieldset class="酒 其他"><legend><h5>Beer on Discount</h5> 打折啤酒</legend>
+    “卖家正在努力戒酒，因此他在以特别便宜的价格甩卖这些。”<br>
+    <br>
+    JC Elton's有卖，价值$1000。<br>
+    <span class='zhushi'>这个价格……卖家真的想把它卖出去么……</span><br>
+</fieldset>
+
+<fieldset class="酒 其他"><legend><h5>Tea Cocktails</h5> 茶调鸡尾酒</legend>
+    <span style="color:#20669D">Miki</span>在博客提到的酒：「哦，如果缺了这个，我简直会活不下去。」<br>
+    制作方法：将茶与伏特加、朗姆酒、杜松子酒、青柠汁混在一起。<span class='zhushi'>游戏里没有这些材料，没法做，现实中可以试试。</span><br>
+</fieldset>
+
+<fieldset class="酒 其他"><legend><h5>Brandford</h5></legend>
+    一种充分调和而成的Brandtini。<br>
+    <span class='zhushi'>似乎是废案的酒，目前游戏里已经没有了。</span>
+</fieldset>
+
+<hr>
+
+<h4>其他</h4><ul>
+    <li>作者Kiri以前从没喝过酒，还是游戏发售之后去日本才第一次喝酒。</li>
+    <li>2019年与游戏«少女前线»有联动活动，具体见<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF:2019%E5%B9%B4%E8%81%94%E5%8A%A8%E6%B4%BB%E5%8A%A8%E2%80%9C%E7%93%A6%E5%B0%94%E5%93%88%E6%8B%89%E2%80%9D" target="_blank">萌娘百科</a>。</li>
+</ul>
+
+<script>
+    function 分类(o){
+        if(o=="0"){
+            document.getElementById("BTC分类").innerHTML="";
+        }else{
+            document.getElementById("BTC分类").innerHTML=".酒{display:none;}."+o+"{display:block;}";
+        }
+        document.querySelector('[name="酒单"]').scrollIntoView({behavior:"smooth"});
+    }
+
+    document.querySelectorAll('details').forEach(d=>{
+        d.onclick=()=>setTimeout(()=>{
+            document.querySelectorAll('details[open]').forEach(o=>o!=d&&(o.open=false))
+        },0)
+    })
+</script>
