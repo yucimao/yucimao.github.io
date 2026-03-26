@@ -52,8 +52,10 @@ summary{cursor:pointer;}
 summary:hover{color:#0085A1;}
 fieldset{border: 3px solid var(--vc);}
 hr{border:none;height:3px;background-color:var(--vc);}
-#nav,.nav_drop_down{background-color:#1F1B2C !important;}
+#nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important;}
 #nav a{color:#E1E1E1 !important;}
+.tjs{margin:1em auto auto;display:inline;}
+a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after{content:" ⛛";font-size:0.5em}
 
 .Gillian{color:#8017CA;}
 .Jill{color:#617EE8;}
@@ -62,10 +64,12 @@ hr{border:none;height:3px;background-color:var(--vc);}
 .Jamie{color:#8E873F;}
 .Sei{color:#609693;}
 .Stella{color:#E75F9D;}
-.tjs{margin:1em auto auto;display:inline;}
+.Betty{color:#58C23A;}
+.Brian{color:#F3CB6C;}
 </style>
 <style id="BTC分类"></style>
 <style id="官方调酒书"></style>
+<style id="改字体"></style>
 
 <div style="text-align:center;">赛博朋克酒保行动</div>
 <br>
@@ -80,6 +84,7 @@ hr{border:none;height:3px;background-color:var(--vc);}
     <li><a href="https://www.gcores.com/articles/194881">子旋</a>（官方调酒书的翻译版本）</li>
 </ul></fieldset><br>
 <span class='zhushi'>以下记录了«Karmotrine Dream»（官方调酒书）的内容，点击<a onclick="tjs(1)">显示</a> / <a onclick="tjs(0)">隐藏</a>。</span><br>
+点击<a onclick="改字体()">加载像素字体</a>。<br>
 
 <hr>
 
@@ -111,10 +116,12 @@ hr{border:none;height:3px;background-color:var(--vc);}
 </fieldset><br>
 
 <ul>
-    <li>在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉）。<br></li>
+    <li>位于故障城（Glitch City），在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉）。<br></li>
     <li>酒吧会提供薄荷糖，帮助客人掩盖嘴里的酒精味。</li>
     <li><span class="Jill">Jill</span>会收藏陈年老酒，并感到自豪。从爷爷的藏酒库存起步，慢慢发展起来。由于债务缠身，藏酒事业举步维艰，但总在设法一点点增加收藏。</li>
     <li><span class="Jill">Jill</span>喜欢酒，但不是一般意义上的喜欢，除了罐装啤酒外，她喝的酒并不多。她更喜欢酒的颜色、背景故事、保存方法、还有设计理念。<span class='zhushi'>和我一样诶！</span></li>
+    <li><span class="Dana">Dana</span>的朋友在巴拿马经营一家BTC酒吧，名为Nl-RV Ann-A。</li>
+    <li><span class="Brian">Brian</span>说，故障城大部分酒吧都是些“麻烦鬼”，总是收到有关化学性损伤或者在饮料里下药的投诉，而Valhalla是极少数几乎从未收到投诉的地方。</li>
 </ul>
 
 <br>
@@ -179,6 +186,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     酸味，时尚，复古。<br>
     <br>
     “Bad Touch”也可以理解为“咸猪手”，当客人点这种酒，说「give me a Bad Touch」（给我一杯Bad Touch），也可以理解为「来摸我」……这种冷笑话总会逗笑<span class="Jill">Jill</span>。<br>
+    <span class="Stella">Stella</span>曾在派对上见过为这酒命名的人，人们纷纷编造借口排着队抽打他。<br>
     <span class="zhushi">名字来源于Bloodhound Gang乐队的«The Bad Touch»。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         金酒 1oz + 潘诺酒 0.5oz + 蓝橙利口酒 少许 + 单一糖浆 0.25oz + 青柠汁 0.5oz + 橙汁 0.75oz + 汤力水 1.5oz<ol>
@@ -196,7 +204,8 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “以传统手法酿造的啤酒已经成为了奢侈品，但这种酒和真货的味道相当接近……”<br>
     发泡，时尚，复古。<br>
     <br>
-    商店里会卖更便宜的散装货。<br>
+    <span class="Betty">Betty</span>：「下班后的啤酒永远是最好的啤酒」。<br>
+    商店里会卖更便宜的散装货。酒吧的啤酒更容易上瘾，味道更好，酒劲更足。<br>
     <fieldset class="tjs"><legend>调酒书</legend>
         啤酒花风味威士忌 1oz + 普罗塞科起泡酒 4oz + 麦芽苏打水 2oz<ol>
             <li>将所有配料放入装满冰块的玻璃杯中。</li>
@@ -213,7 +222,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “对着镜子重复三次这杯饮料的名字，就会让你看上去像个傻瓜。”<br>
     辛辣，经典，解酒。<br>
     <br>
-    <span class="zhushi">原型是血腥玛丽，都市传说中对着镜子念三遍“血腥玛丽”能够看到女鬼。</span><br>
+    <span class="zhushi">原型是鸡尾酒“血腥玛丽”，都市传说中对着镜子念三遍“血腥玛丽”能够看到女鬼。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         蔬菜汁 6oz + 辣根 0.5茶匙 + 番茄酱 1茶匙 + 辣酱 少许 + 柠檬汁 1茶匙 + 酸泡菜汁 1oz + 椒盐 适量<ol>
             <li>将所有配料放入装满冰块的摇壶中。</li>
@@ -298,6 +307,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <span class="ylp">2 Powdered Delta</span>、<span class="ylf">4 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “它既能把你的醉意驱除，也能够把你的意识驱除。”<br>
     酸味，男性化，解酒。<br>
+    <span class='zhushi'>游戏里没人点这杯酒，给客人上一杯，会获得成就“被忽视的饮品”。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         白朗姆酒 1oz + 蜜瓜利口酒 2oz + 柠檬汁 1oz + 青柠汁 1oz + 姜汁啤酒 1oz + 辣酱 少许<ol>
             <li>将前四种配料放入装满冰块的摇壶中；盖上摇壶用力摇和。</li>
@@ -342,13 +352,14 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 </fieldset>
 
 <fieldset class="酒 F 发泡 经典 清淡"><legend style="background-image:linear-gradient(to right,#D9C5C3,#DE6B1F,#DE6B1F);">
-<h5>Frothy Water</h5> 起泡水 - $150</legend>
+<h5>Frothy Water</h5> 泡沫水 - $150</legend>
     <img src="{{ site.mq_d }}/i/0/2021/va11/Beer.png" onerror="this.src='/i/0/2021/va11/Beer.png';this.onerror=null;" alt="Frothy Water"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylf">1 Flanergide</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “自2040年以来，家长指导级节目里最爱用的啤酒代用品。”<br>
     发泡，经典，清淡。<br>
     <br>
-    不含酒精的气泡水，虽然看起来和啤酒一模一样。<br>
+    “绝对不是”啤酒的泡沫水，虽然看起来和啤酒一模一样。<br>
+    <span class='zhushi'>一些作品为了通过“家长指导级”审查，会刻意不让作品里出现酒精饮料，如果有酒也要嘴硬说那是看起来很像酒的不含酒精饮料。</span><br>
 </fieldset>
 
 <fieldset class="酒 G 苦味 宣传 清淡"><legend style="background-image:linear-gradient(to right,#1FB663,#065E49);">
@@ -389,6 +400,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “只要喝上一口就足以让你的脸和火星一样红。”<br>
     辛辣，男性化，强烈。<br>
     <br>
+    名字叫“火星爆破”，外号也是“红色星球”，但不是红色而是黄色的。<br>
     <span class="Jamie">Jamie</span>：「味道苦涩又令人头脑麻木。就如同战争一般。」<br>
     <fieldset class="tjs"><legend>调酒书</legend>
         龙舌兰 2oz + 柠檬汁 1oz + 橙汁 3oz + 苦精 2dash + 辣酱 1/4茶匙 + 汤力水 1oz<ol>
@@ -441,7 +453,6 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     酸味，宣传，强烈。<br>
     <br>
     <span class="Jill">Jill</span>：「起初，它是由一位调酒师为纪念自己刚离世的钢琴师朋友而创造的。就配方来看，它混合了那位朋友最喜欢的全部味道。」<br>
-    酒的名字曾被很多女性抗议。<br>
     <span class='zhushi'>名字源自歌曲。</span>
     <fieldset class="tjs"><legend>调酒书</legend>
         龙舌兰 1.25oz + 蓝橙利口酒 0.25oz + 紫罗兰利口酒 1oz + 单一糖浆 0.5oz + 青柠汁 1oz + 水 0.5oz<ol>
@@ -459,6 +470,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <span class="yla">5 Adelhyde</span>、<span class="ylb">5 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “它的本名是Pretty Woman，但有很多人投诉如果有种酒叫Piano Man（男钢琴师），就该有另一种被命名为Piano Woman（女钢琴师）。”<br>
     甜味，宣传，惬意。<br>
+    <br>
     <fieldset class="tjs"><legend>调酒书</legend>
         黑朗姆酒 0.75oz + 蓝橙利口酒 0.5oz + 紫罗兰利口酒 0.5oz + 单一糖浆 0.75oz + 青柠汁 0.5oz + 汤力水 1oz<ol>
             <li>将除汤力水外的所有配料放入装满冰块的摇壶中。</li>
@@ -510,6 +522,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “甘甜，清淡，水果风味，不能更加女性化的饮品。”<br>
     甜味，女性化，惬意。<br>
     <br>
+    非常简单的调酒，简单到只需要遵循指示就可以了，<span class="Brian">Brian</span>形容为「如同调酒世界中的煎鸡蛋」，因此经常作为对调酒师最基本的考验。<br>
     <span class="zhushi">名字源自歌曲«Sugar Rush»，这个词指一种糖分进食过多而导致的病症，摄入过量的糖会使大脑释放多巴胺和内啡肽，引发轻度的兴奋和欣快感。不过作者在访谈时提到，自己以前不知道这是个词组，只知道这是A*Teens乐队的歌。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         伏特加 1.5oz + 单一糖浆 1oz + 石榴汁 0.5oz + 菠萝汁 0.5oz<ol>
@@ -543,7 +556,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “对Piledriver进行微妙调整之后，将火辣的感觉从喉咙转移到了舌头上。”<br>
     苦味，男性化，火辣。<br>
     <br>
-    本店特饮，<span class="Gillian">Gillian</span>发明的饮料，BTC的官方调酒指南有收录。<br>
+    本店特饮，<span class="Gillian">Gillian</span>在调Piledriver时意外发明的饮料。BTC的官方调酒指南有收录。<br>
     <fieldset class="tjs"><legend>调酒书</legend>
         伏特加 1.5oz + 阿佩罗利口酒 0.5oz + 橙汁 2oz + 苦精 8dash<ol>
             <li>将所有配料放入装满冰块的摇壶中。</li>
@@ -590,7 +603,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <img src="{{ site.mq_d }}/i/0/2021/va11/AFedora.png" onerror="this.src='/i/0/2021/va11/AFedora.png';this.onerror=null;" alt="A Fedora"><br>
     “内含香水和李子。”<br>
     <br>
-    <span class="zhushi">«辛普森一家»的“Homer's Barbershop Quartet”一集里，Yoko Ono在Moe's Tavern里要一杯饮料，「一颗梅子，飘在香水上，装在男人的帽子里」。</span><br>
+    <span class="zhushi">«辛普森一家»的彩蛋：“Homer's Barbershop Quartet”一集里，Yoko Ono在Moe's Tavern里要一杯饮料，「一颗梅子，飘在香水上，装在男人的帽子里」。</span><br>
 </fieldset>
 
 <fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
@@ -598,12 +611,6 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <img src="{{ site.mq_d }}/i/0/2021/va11/bug.png" onerror="this.src='/i/0/2021/va11/bug.png';this.onerror=null;" alt="##20%!!"><br>
     胡乱调配，会做出一杯名字乱码的饮料。<br>
     出现过的名字：“##20%!!”、“#y#bb=”、“#u??!!”、“n#@##*”、“gt??!#”、“f@###”。<br>
-</fieldset>
-
-<fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
-<h5>Absinthe</h5> 苦艾酒 - $500</legend>
-    苦艾酒，是<span class="Jill">Jill</span>从家里带到酒吧的饮料。<br>
-    如果<span class="Jill">Jill</span>在第一天给<span class="Stella">Stella</span>错误的饮料，这杯酒才会出现。<br>
 </fieldset>
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
@@ -614,11 +621,20 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     褐色酒瓶，白色标签上画着一条中国龙。<br>
 </fieldset>
 
-<fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
-<h5>Rum</h5> 朗姆 - $500</legend>
-    “爷爷酒鬼。”<br>
+<fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
+<h5>Cacique Rum</h5> 酋长朗姆酒 - $500</legend>
+    （物品名“Rum”）<br>
+    “祖父级的酒。”<br>
     <br>
-    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<br>
+    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<span class='zhushi'>需要给Stella调出正确的酒。</span><br>
+</fieldset>
+
+<fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
+<h5>Absinthe</h5> 苦艾酒 - $500</legend>
+    “像呕吐物一样绿的精灵。”<br>
+    <br>
+    <span class="Jill">Jill</span>从家里带来的，没有标签，并不值钱，但酒还是不错的。<br>
+    <span class='zhushi'>给Stella错误的酒，才会出现。</span><br>
 </fieldset>
 
 <fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
@@ -636,17 +652,40 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 </fieldset>
 
 <fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
+<h5>Jaeger Bombs</h5> 烈性鸡尾酒</legend>
+    <span class="Alma">Alma</span>提到大学时喝的酒。<br>
+</fieldset>
+
+<fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
 <h5>Brandford</h5></legend>
     一种充分调和而成的Brandtini。<br>
-    <span class='zhushi'>似乎是废案的酒，目前游戏里已经没有了。</span>
+    <span class='zhushi'>似乎是废案的酒，目前游戏里已经没有了。剧情有提到，Brandtini原本是为了精确重现马提尼（Martini），但是BTC持有的一种味美思商标是以某个汽车公司命名的，因此，出于某种奇思妙想，他们改掉了酒的名字。我怀疑这里说的“以某个汽车公司命名”的酒就是Brandford。</span>
 </fieldset>
 
 <hr>
 
 <h4>其他</h4><ul>
     <li>作者Kiri以前从没喝过酒，还是游戏发售之后去日本才第一次喝酒。</li>
-    <li>2019年与游戏«少女前线»有联动活动，具体见<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF:2019%E5%B9%B4%E8%81%94%E5%8A%A8%E6%B4%BB%E5%8A%A8%E2%80%9C%E7%93%A6%E5%B0%94%E5%93%88%E6%8B%89%E2%80%9D" target="_blank">萌娘百科</a>。</li>
 </ul>
+
+<hr>
+
+<h4>联动相关</h4>
+注：可以把联动看作是平行世界，不影响原作的世界观和设定。<br>
+<!-- 和少女前线的联动没什么值得记录的。 -->
+<br>
+
+<fieldset><legend><b>«赛博朋克RED»</b></legend>
+    <b>烂醉工业</b>（Hammered Industries）”，隶属于BTC，主要生产酒和相关工业。<br>
+    产品包括“调酒大师3000”和“调酒大师5000”，装入多种液体原料，可调配出超过3000种不同饮品，包含酒吧里的各种酒，还有Smash。<br>
+    <br>
+
+    <fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
+        <h5>Smash</h5> 粉碎 - 10EB</legend>
+            <span class="yla">2 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>和<span class="ylk">5 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
+            <span class='zhushi'>原作游戏里调不出来。</span><br>
+        </fieldset>
+</fieldset><br>
 
 <script>
     function 分类(o){
@@ -671,4 +710,8 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
             document.getElementById("官方调酒书").innerHTML=".tjs{display:none;}";
         }
     }
+
+    function 改字体(){
+            document.getElementById("改字体").innerHTML="@font-face{font-family:俐方体11号;src:url('/i/0/2026/俐方体11号.ttf')}body{font-family:'俐方体11号'}";
+        }
 </script>
