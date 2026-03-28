@@ -29,7 +29,7 @@ function dw(){
             dwb=dwb.split("＼");
             if(dwb[0]=="图片"){
                 // dwb="<img src='"+dwb[1]+"'>";
-                dwb=dwb.slice(1).map(s=>`<img src='${s}'>`).join("<br>");
+                dwb=dwb.slice(1).map(s=>`<img style='max-width:100%' src='${s}'>`).join("<br>");
             }
         }
     }else{
