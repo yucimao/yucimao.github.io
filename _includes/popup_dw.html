@@ -28,7 +28,8 @@ function dw(){
         if(dwb.indexOf("＼")!=-1){
             dwb=dwb.split("＼");
             if(dwb[0]=="图片"){
-                dwb="<img src='"+dwb[1]+"'>";
+                // dwb="<img src='"+dwb[1]+"'>";
+                dwb=dwb.split("＼").slice(1).map(s=>`<img src='${s}'>`).join("<br>");
             }
         }
     }else{
