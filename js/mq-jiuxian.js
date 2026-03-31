@@ -7,6 +7,7 @@ a[href]{cursor:pointer;}a[href]:after{font-size:0.6em;content:'⤴';color:#bbbbb
 a[onclick^="this.style.display='none';document.getElementById('隐藏_"]:after,a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after{content:" ⛛";font-size:0.5em}
 legend{font-weight:bold}ul{margin:10px}
 h4{font-size:24px}
+a[onclick^="dw("]{font-size:0.85em;border: 1px solid #cfcfcf;padding:3px;border-radius:10px}
 </style><div id=\"弹窗\" style=\"display:none;\"></div>`;
 
 let oo="";

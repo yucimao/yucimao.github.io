@@ -1,0 +1,376 @@
+---
+layout: page2
+title: 猫球仓买
+nav_text: 猫球仓买
+nav_url: <a href="/jiuxian">酒仙笔记</a>
+permalink: i/2264624
+---
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+:root{
+    --va:#c4c4c4;
+    --vb:#f6f6f6;
+    --vc:#A9A9A9;
+    --vd:#121212;
+}
+body,.body,td{
+    background-color:var(--vd);
+    color:var(--va);
+}
+.biaotib{color:#0085A1;}
+a{color:var(--vb);}
+table{border:2px solid var(--va);box-shadow:none;border-spacing:2px;border-collapse:separate;line-height:initial;}
+
+#弹窗{position:fixed;left:0px;top:0px;background:#00000070;width:100%;height:100%;z-index:1001}
+.弹窗_0{width:100%;height:100%;position:absolute}
+.弹窗_1{position:relative;background:var(--vd);top:20px;width:60%;height:65%;margin:5% auto;padding:14px 50px 40px;font-size:1.2em;line-height:33px;font-weight:bold;border:2px solid var(--va);
+word-wrap:break-word;overflow:auto;
+}
+
+#nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important;}
+#nav a{color:#E1E1E1 !important;}
+
+#酒单 fieldset{transition:all 0.2s ease;transform-origin:center;cursor:pointer;margin:auto auto 1.3em;
+display:inline;padding:10px 15px 15px;}
+#酒单 fieldset:hover{transform:translateY(-2px) scale(1.01);}
+
+a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after{content:" ⛛";font-size:0.5em;}
+a.zhushi:after{content:"";}
+small.zhushi{font-weight:normal;}
+
+summary{cursor:pointer;}
+summary:hover{color:#0085A1;}
+
+i[i]{font-size:0.8em;color:#5e5e5e;font-weight:normal;letter-spacing:2px;}
+.酒 legend{color:var(--vb);font-size:1.1em;font-weight:bold;}
+#对话 img{width:300px;background-color:#232323;}
+</style>
+<style id="分类"></style>
+
+<div id="弹窗" style="display:none;"><div onclick="关闭()" class="弹窗_0"></div><div class="弹窗_1"><h3 id="对话标题"></h3><div id="对话"></div></div></div>
+
+<div id="开场白"></div>
+
+<hr>
+
+
+<h2>酒单</h2>
+
+<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">分类</a><fieldset style="display:none;"><legend>分类（还没做好）</legend>
+    <details><summary>口味</summary>
+        　<a onclick="分类('甜味')">甜味饮品</a><br>
+        　<a onclick="分类('苦味')">苦味饮品</a><br>
+        　<a onclick="分类('酸味')">酸味饮品</a><br>
+        　<a onclick="分类('辛辣')">辛辣饮品</a><br>
+        　<a onclick="分类('发泡')">发泡饮品</a>
+    </details>
+    <details><summary>烈度</summary>
+    </details>
+    <a onclick="分类('0')">显示全部</a>
+</fieldset><br>
+
+<br>
+
+<div id="酒单"></div>
+
+<script>
+let 今日=((d=new Date())=>d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate())();
+let 时=new Date().getHours();
+
+function 按钮(a,b){
+    return `{<a onclick="输入(通用['${a}'],'开场白',this)"> - ${b}</a>}`;
+}
+function 特殊(a,b){
+    return `{<a onclick="输入(通用['${a}'](),'开场白',this)"> - ${b}</a>}`;
+}
+let br="{<br class='del'>}";
+
+let 道具={
+    "星历":"艾欧泽亚的纪年方法。",
+    "芬芳的芯材":"“和普通木材不同，这种木材十分柔韧且散发着甜香。”",
+    "飞掠之尘":"“几乎无法握住——差点就从你手中跳出去了。”",
+    "一大块固化琥珀":"“一块美丽的琥珀。似乎不怎么适宜饮用。”",
+    // "":"",
+}
+
+let 通用={
+    "开篇":
+    特殊('打招呼','你好')+br+
+    按钮('问题','我有个问题')+br+
+    按钮('隐藏酒单','我要酒单上没有的'),
+
+    "问题":按钮('问题1','怎么点单？')+br+按钮('问题2','你是谁？')+br+按钮('问题3','这是哪里？'),
+    "问题1":`下面有“酒单”，看看有没有感兴趣的，点击即可。{<br><br>}`+按钮('开篇','对话'),
+    "问题2":`我是李猫球，这家“猫球仓买”的老板。{<br><br>}`+按钮('开篇','对话'),
+    "问题3":`这里是“猫球仓买”。不过和别的“仓买”不太一样，我这里只卖饮品。{<br><br>}`+按钮('开篇','对话'),
+
+    "隐藏酒单_输入":`{<br><br><input type="text" id="隐藏酒单" autocomplete="off" class='del'><a onclick="隐藏酒单()" class='del'> 发送</a>}${br}`+按钮('开篇','算了'),
+
+    "算了":br+`{<a onclick='关闭()'> - 算了</a>}`,
+    "关闭":br+`{<a onclick='关闭()'> - 关闭</a>}`,
+}
+// 通用["你好"]=["你好啊。"+`{<br><br>}`+通用['开篇'],":D"+`{<br><br>}`+通用['开篇']];
+通用["隐藏酒单"]=`你想要什么？`+通用["隐藏酒单_输入"];
+
+let 打招呼次数=0;
+通用["打招呼"]=()=>{
+    let a=["你好啊。",":D"];
+    if(时>=5&&时<9){a.push("早上好。");}
+    if(时>=14&&时<18){a.push("下午好。");}
+    if(时>=18||时<3){a.push("晚上好。");}
+    if(打招呼次数==0){a=["你好啊。"];}
+    if(打招呼次数==10){a=["我很好，谢谢。"];}
+    if(打招呼次数>99){a=["……你还好么？"];}
+    打招呼次数+=1;
+    return a[Math.floor(Math.random()*a.length)]+"{<br><br>}"+通用["开篇"];
+};
+
+let 缓存=localStorage.getItem("猫球仓买")||0;
+localStorage.setItem("猫球仓买",今日);
+let 寒暄="";
+if(缓存==0){
+    寒暄="{<br>}你好啊，新来的朋友。:D";
+}else if(缓存==今日){
+    寒暄="";
+}else{
+    let 相差=Math.abs(new Date(...缓存.split('.').map((x,i)=>i==1?x-1:x))-new Date(...今日.split('.').map((x,i)=>i==1?x-1:x)))/86400000;
+    if(相差>30){
+        寒暄="{<br>}哇，好久不见，最近还好么？";
+    }else if(相差>7){
+        寒暄="{<br>}好久不见。";
+    }
+}
+
+let 开场白={
+    "0":[[`欢迎来到‘猫球仓买’。${寒暄}{<br><br>}`+按钮('开篇','对话')]],
+    // "3.30":[["开场白1","开场白2"],["红酒","绿酒"]],
+    // "1.1":[],
+}
+
+let 酒单=[
+    "开拓者特调",
+
+    "“北极光”",
+    "扑鼻佳日苹果酒",
+
+    "星座酒滴",
+    "旅途的终点",
+
+    "黑铁啤酒",
+
+    ["h4","珍藏"],
+    "四德酒",
+    "一杯窖藏达拉然红葡萄酒",
+    "炎诛的烧酒",
+
+    ["h4","谨慎选择"],
+    "锈湖鸡尾酒",
+    "谋杀烈酒",
+    
+    ["h3","仅展示（非卖品）"],
+    "科尔戈的黄金",
+    "酒神之酒",
+    "一杯恐惧老酒",
+];
+
+let 酒={
+
+"锈湖鸡尾酒":["","从最基础的四元素开始，全程使用"+名('锈湖')+"的炼金术制造而成。",{
+    0:图('锈湖鸡尾酒.png')+`使用${名('锈湖',1)}神秘的炼金术制造而成，材料包含仙人掌果和伏特加。{<br><br>}因为这地方太过邪门，我总是对这酒敬而远之。${注释('出自«锈湖：根源»')}  {<br>}你确定要喝么？{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]+br+br+`{<a onclick="选择(2,this)"> - 我想要它的配方</a>}`,
+    1:`酸涩的果味，配合伏特加的酒味……没什么特别的。      {<br>}至少暂时如此。{<br>}`+通用["关闭"],
+    2:`为什么？……算了，给你吧。     {
+    <table>
+    <tr><td></td><td>火 + 土 = 岩浆</td><td></td><td>空气 + 水 = 云</td><td></td></tr>
+    <tr><td></td><td>岩浆 + 空气 = 石头</td><td>石头 + 火 = 金属</td><td>云 + 土 = 植物</td><td></td></tr>
+    <tr><td></td><td>石头 + 空气 = 沙子</td><td>金属 + 火 = 电</td><td>植物 + 空气 = 树</td><td>金属 + 石头 = 刀片</td></tr>
+    <tr><td></td><td>沙子 + 火 = 玻璃瓶</td><td>电 + 玻璃瓶 = 灯泡</td><td>树 + 刀片 = 木头</td><td>刀片 + 木头 = 刀</td></tr>
+    <tr><td>植物 + 沙子 = 谷类</td><td>玻璃瓶 + 水 = 一瓶水</td><td>植物 + 灯泡 = 水果</td><td></td><td>电 + 刀 = 榨汁机</td></tr>
+    <tr><td></td><td>谷类 + 一瓶水 = 伏特加</td><td>水果 + 榨汁机 = 果汁</td><td></td><td></td></tr>
+    <tr><td></td><td style="text-align:right">伏特加</td><td> + 果汁 = <b>锈湖鸡尾酒</b></td><td></td><td></td></tr>
+    </table>
+    }其中的“水果”是仙人掌果。{<br>}`+通用["关闭"]}],
+"谋杀烈酒":["苦","原名"+名('大黑店黑桃J烈酒')+"，因其过于猛烈，喝下后仿佛受到持续伤害，像是要被谋杀一般，而有了"+名('谋杀烈酒')+"这个别名。",{
+    0:图('谋杀烈酒.png')+`对身体健康可能有害，不要喝太多……最好一点也别喝。${注释('出自«我的世界»荒川镇')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]+br+br+`{<a onclick="选择(3,this)"> - 我想要它的配方</a>}`,
+    1:`你拔出瓶塞，仿佛封印已久的硫磺味冲了出来。{<br>}真的要喝么？{<br><br><a onclick="选择(2,this)"> - 喝</a>}`+通用["算了"],
+    2:`你喝了一口，尝到了一股腥臭味，但幸好只是一瞬间，很快你的舌头就失去了味觉，只感觉到发麻，喉咙像是被火灼烧。{<br>}你感觉到天旋地转，但你不确定是喝醉了还是中毒了。{<br>}你甚至开始怀疑这东西是酒还是毒药。{<br>}`+通用["关闭"],
+    3:`这是我在${名('荒川镇',1)}最喜欢的酒，每天晚上都会去喝上一杯。可惜如今${名('荒川镇',1)}已经成了空城，幸好我得到了这酒的配方。{<br>}请帮我保密哦。{<br>}先把${名('烈焰粉',1)}作为燃料放进酿造台，放上水瓶，加入${名('地狱疣',1)}，酿造成${名('粗制的药水',1)}，放入${名('蜘蛛眼',1)}酿制成${名('剧毒药水',1)}……不对，是${名('谋杀烈酒',1)}。{<br>}还可以加入${名('荧石粉',1)}增强效果。{<br>}`+通用["关闭"]}],
+"四德酒":["","熊猫人酒仙"+名('云壬')+"常年游历与试验最终研制出的酒，可以令人的四种感官分别感到满意。",{
+    0:图('四德酒.png')+`传说这酒已经失传了，不过我在游历${名('潘达利亚大陆',1)}时，在${名('不息山',1)}最高的山顶找到了${名('云壬',1)}的雕像，在雕像旁的石板上发现了配方。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
+    1:`你的视觉受到阻碍，但其他四感变得异常敏感。{<br>}`+通用["关闭"]}],
+"酒神之酒":["","非卖品。<br>来自"+名('艾欧泽亚')+"，由于原料"+名('酒神葡萄')+"被毁，这种酒已经很难得一见了。",{
+    0:图('酒神之酒.png')+`这瓶酒原本是一位酒厂老板的珍藏，比其他${名('酒神之酒',1)}还要更加难得。{<br>}酿制于${名('星历',1)}1547年，被誉为“最高级古典葡萄酒”，并被冠以“梦幻”之名，是比稀有更稀有、比珍贵更珍贵的酒。${注释('出自«最终幻想14»')}{<br><br><a onclick="选择(1,this)"> - 你是怎么获得它的？</a>}`+通用["关闭"],
+    1:`我在${名('艾欧泽亚',1)}游历时接到委托，去寻找“三大美食”和“最上等的葡萄酒”，于是我决定去寻找${名('酒神之酒',1)}。但一通寻找无果，且酿造${名('酒神之酒',1)}所需的${名('酒神葡萄',1)}全部被毁。{<br>}正打算放弃，意外发现了${名('酒神葡萄',1)}的叶子，顺着线索找到${名('酒神葡萄',1)}的枝条，借此就有了重新培育出${名('酒神葡萄',1)}的希望。{<br>}我把枝条给了酒厂老板${名('比格莱恩特',1)}，他为表达感谢，将自己私藏的一瓶${名('酒神之酒',1)}给了我。{<br>}交付委托后发现这场宴会其实是为我准备的，在宴会上我吃光了三大美食，这瓶${名('酒神之酒',1)}我没舍得喝，留了下来。${注释('游戏可能出于分级制度，不让玩家喝酒，剧情里这宴会明明是给我准备的，可到了宴会上却没人再提到这酒了，那我就当作是被我偷偷收起来了吧。')}{<br>}`+通用["关闭"]
+}],
+"开拓者特调":["甜","超级甜，气泡充足。<br>“你或许会离开，但你的故事永远不会被遗忘。”",{
+    0:图('开拓者特调.png')+`我在${名('惊梦酒吧',1)}调出的酒，以我的名字留在了${名('惊梦酒吧',1)}的酒单里。{<br>}使用了${名('星空香槟',1)}、${名('激梦果酱',1)}、${名('极致糖浆',1)}、${名('冰点苏乐达',1)}。${注释('出自«星穹铁道»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
+    1:`你感觉自己在喝一杯糖浆——一杯气泡糖浆。{<br>}`+通用["关闭"]
+}],
+"科尔戈的黄金":["","非卖品。<br>从"+名('天涯海滩')+"挖掘出的宝藏。",{0:图('科尔戈的黄金.png')+`很久之前我曾听过一个传说，在${名('天涯海滩',1)}有一处海盗的宝藏，当寻宝者历经千辛万苦凑齐藏宝图，踏遍险峰恶水，在死斗中斩杀其他寻宝的竞争者，终于打开宝箱——然而名为“黄金”的宝藏，只是一瓶酒而已。{<br>}我不知道那名寻宝者会是怎样的心情，也许是寻获宝藏的喜悦，也许是发财美梦破碎的失望？{<br>}但我很喜欢这个故事，在我看来这瓶酒具有令我着迷的传奇色彩。{<br>}经过多年的探寻，我终于得到了这瓶${名('科尔戈的黄金',1)}。${注释('出自«魔兽世界»')}{<br>}`+通用["关闭"]}],
+"“北极光”":["","“在这种时间？在这个地方？全在这个瓶子里？完全没错！”",{
+    0:图('北极光.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
+    1:"你喝下"+名('“北极光”',1)+"之后有点醉醺醺的。{<br>}"+通用["关闭"]
+}],
+"扑鼻佳日苹果酒":["甜 烈酒","“温热，甜美，让你整个人都激动起来……每天都是美好的日子！”",{
+    0:图('扑鼻佳日苹果酒.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
+    1:"你喝下"+名('扑鼻佳日苹果酒',1)+"之后酩酊大醉。{<br>}"+通用["关闭"]
+}],
+"星座酒滴":["","“穿越星际。发酵最终比重：1.016”",{
+    0:图('星座酒滴.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
+    1:"你喝下"+名('星座酒滴',1)+"之后有点醉醺醺的。{<br>}"+通用["关闭"]}],
+"旅途的终点":["烈酒","“小酌一口，怀想着一段旅途，不知道终点在何方。”",{
+    0:图('旅途的终点.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
+    1:"你喝下"+名('旅途的终点',1)+"之后酩酊大醉。{<br>}"+通用["关闭"]}],
+"一杯恐惧老酒":["","非卖品。<br>根据"+名('预言之卷')+"破译出的配方，被评价为「太可怕了」，因而得名"+名('恐惧老酒')+"。",{
+    0:图('一杯恐惧老酒.png')+`材料包括木头、兽牙、甚至是煞魔精华。{<br>}有一次我看到有人被困在琥珀里，我把${名('恐惧老酒',1)}倒在上面，琥珀居然融化了。{<br>}关于我们破译配方的过程，说来话长，你想听么？${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 想听</a>}`+通用["算了"],
+    1:`我捡到了${名('预言之卷',1)}，拿去找${名('落日酒坊',1)}帮忙破译。{<br>}
+    {<blockquote>
+        当恐惧升腾，天空中战云密布，我们伟大的救世方舟，必会支离破碎。<br>
+        造物者的撕裂之匕，融入林木与暗影，若日落之王的火焰之翼，得以永存不灭。<br>
+        咒法妖精，千金之诺，熄灭远古的血与火。<br>
+        理解这一神圣配方，照我所书执行，从远古之血中成果乍现，恐惧之战定将终结。
+    </blockquote>}
+    我和${名('丽亚·十歌',1)}都觉得这是打造神器的配方，但${名('落日酒坊',1)}的其他几个熊猫人坚持认为这是酿酒秘方——虽然起因有点离谱，但既然是酿酒，我肯定要帮忙了。{<br>}
+    我们根据“造物者的撕裂之匕”这句，找来${名('巨型穆山兽牙',1)}，${名('吴龙',1)}：「我在想我们怎么把这些东西跟酒浆混合起来？不能直接碾碎它们，那样酒里会有很多沙子。或许我可以把它们泡一会儿。」{<br>}
+    配方中提到“暗影”，${名('树脂大师吴暮',1)}说他一直在考虑用一些这个地区残余的煞魔精华做为酿酒材料，我找来了一些，${名('树脂大师吴暮',1)}：「非常好，添加这种材料可以让我们的酒更加香醇。最危险的材料通常都是最美味的。」{<br>}
+    “融入林木”，我找来了些${名('芬芳的芯材',1)}，${名('树脂大师吴暮',1)}：「我们从不用木头酿酒，木头会让酒变得辛辣而寡淡，跟葡萄酒一样，我得对这些东西进行一下处理。」{<br>}
+    “火焰之翼”，轻轻拍打精灵龙，从它们身上收集了许多${名('飞掠之尘',1)}，将它们丢入锅内，${名('吴龙',1)}评价：「这酒变得……很奇怪，而且很难闻。我开始怀疑${名('丽亚',1)}或许是对的了。」{<br>}
+    帮了${名('里基屯',1)}的树精一些忙，作为回报，它们帮着做了些仪式。{<br>}
+    最后是“远古之血”，${名('树脂大师吴暮',1)}：「${名('丽亚',1)}和我都认同一件事：‘远古之血’几乎可以肯定，就是当地的大树流出的树脂。我早该想到这一点的——我整天用那玩意儿酿酒。」{<br>}
+    我找到了这里最古老的被称作“恐惧之心”的树，弄下${名('一大块固化琥珀',1)}。{<br>}
+    终于，我们的酒完成了。{<br>}
+    ${名('树脂大师吴暮',1)}尝了一口，都惊呼道：「这太可怕了！」{<br>}
+    他给酒取名“恐惧老酒”。{<br>}
+    ${名('丽亚·十歌',1)}坚持认为「我想我们已经证明了这并不是一个啤酒配方。」{<br>}
+    ${名('吴龙',1)}则依然兴奋：「耶！啤酒！！」{<br>}
+    ${名('树脂大师吴暮',1)}：「谢谢你的帮助。我们也许没有酿出最好的啤酒，不过我们倒是经历了一场惊心动魄的冒险。」{<br>}
+    没错，过程也是酒重要的组成部分。{<br>}`+通用["关闭"],
+    2:``
+}],
+"一杯窖藏达拉然红葡萄酒":["","“多年窖藏的极品。”",{0:图('一杯窖藏达拉然红葡萄酒.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"你喝下"+名('一杯窖藏达拉然红葡萄酒',1)+"之后有点醉醺醺的。{<br>}"+通用["关闭"]}],
+"炎诛的烧酒":["烈酒","“"+名('高老伯')+"的‘终极美酒’，极其辛辣，十分易燃。”",{0:图('炎诛的烧酒.png')+`${名('风暴烈酒酿造厂',1)}的掌权人${名('高老伯',1)}为了研制出他心目中的终极麦酒，沉迷于做实验，导致失去管理的酿酒厂被一群猢狲和兔妖侵占，在他的实验中还催生出了一种暴躁的酒灵生物${名('炎诛',1)}。{<br>}以这一切为代价，${名('高老伯',1)}终于完成了他的“完美之酒”。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"你喝下"+名('炎诛的烧酒',1)+"之后酩酊大醉。{<br>}"+通用["关闭"]}],
+"黑铁啤酒":["",名('黑铁矮人')+"最有名的酒。<br>“永恒的经典。”",{0:图('黑铁啤酒.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"你喝下"+名('黑铁啤酒',1)+"之后有点醉醺醺的。{<br>}"+通用["关闭"]}],
+// "":["关键词","介绍",{0:图('.png')+`介绍。${注释('出自«»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]}],
+}
+
+开场白=开场白[(new Date().getMonth()+1)+"."+new Date().getDate()]||开场白["0"];
+if(开场白[1]){
+    for(let i=开场白[1].length-1;i>=0;i--){
+    if(!酒单.includes(开场白[1][i])){酒单.unshift(开场白[1][i]);}
+}
+}
+开场白=开场白[0][Math.floor(Math.random()*开场白[0].length)];
+
+let dy="";
+for(let i=0;酒单.length>i;i++){
+    if(酒单[i][0]=="br"){
+        dy+=酒单[i][1];
+    }else if(酒单[i][0].length==2&&酒单[i][0][0]=="h"&&酒单[i][0][1]>0){
+        dy+="<"+酒单[i][0]+">"+酒单[i][1]+"</"+酒单[i][0]+">";
+    }else{
+        dy+=`<fieldset class="酒 ${酒[酒单[i]][0]}" onclick="选择('${酒单[i]}')"><legend>${酒单[i]}</legend>${酒[酒单[i]][1]}</fieldset><br>`;
+    }
+}
+document.getElementById("酒单").innerHTML=dy;
+
+let stopTyping = false;
+async function 输入(content,id,e){
+    stopTyping = false;
+    if(Array.isArray(content)){
+        content=content[Math.floor(Math.random()*content.length)];
+    }
+    if(e){
+        if(e.innerHTML==" - 对话"){
+            e.outerHTML="";
+        }
+        else{
+            e.outerHTML="<b>"+e.innerHTML+"</b><br><br>";
+            document.querySelectorAll('#'+id+' a[onclick*="输入"],#'+id+' .del,#'+id+' a[onclick*="关闭"],#'+id+' a[onclick*="选择"]').forEach(el=>el.remove());
+        }
+    }
+    
+    const output=document.getElementById(id);
+    // output.innerHTML='';
+    const parts=content.split(/(\{[^}]+\})/).filter(part=>part!=='');
+
+    for(const part of parts){
+        if(stopTyping){output.innerHTML='';break;}
+        if(part.startsWith('{')&&part.endsWith('}')){
+        output.insertAdjacentHTML('beforeend',part.slice(1,-1));
+        }else{await typeCharacters(part,output);}}
+    }
+    async function typeCharacters(text,element){
+    const textNode=document.createTextNode('');
+    element.appendChild(textNode);
+
+    for(const char of text){
+        if(stopTyping){return;}
+        await new Promise(resolve=>setTimeout(resolve,70));
+        textNode.data+=char;
+    }
+}
+输入(开场白,"开场白");
+
+let 当前="x";
+function 选择(o,e){
+    if(当前=="x"){
+        当前=o;
+        document.getElementById("对话标题").innerHTML=当前;
+        o=0;
+        document.getElementById("弹窗").style="";
+    }
+    if(Array.isArray(酒[当前][2][o])){输入(酒[当前][2][o][Math.floor(Math.random()*酒[当前][2][o].length)],"对话",e);}
+    else{输入(酒[当前][2][o],"对话",e);}
+}
+function 关闭(){
+    stopTyping = true;
+    当前="x";
+    document.getElementById("对话").innerHTML="";
+    document.getElementById('弹窗').style='display:none;';
+}
+document.querySelectorAll('details').forEach(d=>{
+    d.onclick=()=>setTimeout(()=>{
+        document.querySelectorAll('details[open]').forEach(o=>o!=d&&(o.open=false))
+    },0)
+})
+function 分类(o){
+    if(o=="0"){
+        document.getElementById("分类").innerHTML="";
+    }else{
+        document.getElementById("分类").innerHTML=".酒{display:none;}."+o+"{display:block;}";
+    }
+}
+
+function 隐藏酒单(){
+    let o=document.getElementById("隐藏酒单").value;
+    document.querySelectorAll('#开场白 a[onclick*="输入"],#开场白 .del').forEach(el=>el.remove());
+    document.getElementById("开场白").insertAdjacentHTML('beforeend',"<b> - "+o+"</b>");
+    if(酒单.indexOf(o)!=-1){
+        输入("{<br><br>}你说的这个，酒单里已经有了。{<br><br>}"+按钮('开篇','对话'),"开场白");
+    }else if(酒[o]){
+        dy=`<fieldset class="酒 ${酒[o][0]}" onclick="选择(${o})"><legend>${o}</legend>${酒[o][1]}</fieldset><br>`+dy;
+        document.getElementById("酒单").innerHTML=dy;
+        酒单.push(o);
+        输入("{<br><br>}好的，已经添加进酒单了。{<br><br>}"+按钮('开篇','对话'),"开场白");
+    }else{
+        输入("{<br><br>}抱歉，这里没有叫这个名字的酒。"+通用["隐藏酒单_输入"],"开场白");
+    }
+}
+
+function 名(o,k){
+    if(道具[o]){
+        o="<span class='提示' data-msg='"+道具[o]+"'>"+o+"</span>";
+    }
+    if(k){o="{<i i> [</i>"+o+"<i i>] </i>}";}
+    else{o="<i i> [</i>"+o+"<i i>] </i>";}
+    return o;
+}
+
+function 注释(o){
+    return `{<a class='zhushi' onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">//</a><small class='zhushi' style='display:none;'>//${o}</small>}`;
+}
+
+function 图(o){
+    return `{<img src='/i/2264624/${o}'><br><br>}`;
+}
+</script>
+
