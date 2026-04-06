@@ -773,13 +773,16 @@ function 分类(o){
         document.getElementById("当前分类").style="display:none;";
         document.getElementById("当前分类").innerHTML="";
     }else{
+        notyf.confirm(o);
         document.getElementById("当前分类").style="";
         document.getElementById("当前分类").innerHTML=o;
     }
     if(o=="随机"){
+        notyf.confirm('随机');
         o=酒单.filter(x=>!Array.isArray(x))[Math.floor(Math.random()*酒单.filter(x=>!Array.isArray(x)).length)];
     }
     if(o=="0"){
+        notyf.confirm("显示全部");
         document.getElementById("分类").innerHTML="";
     }else{
         document.getElementById("分类").innerHTML=`.酒,#酒单 span,#酒单 hr,#酒单 a,#酒单 small,#酒单 ul,#酒单 ol,#酒单 h1,#酒单 h2,#酒单 h3,#酒单 h4,#酒单 h5,#跳转{display:none;}.${o}{display:block;}`;
@@ -820,6 +823,17 @@ function 注释(o){
 
 function 图(o){
     return `{<img src='/i/2264624/${o}'><br><br>}`;
+}
+
+if (!window.notyf) {
+  window.notyf = {
+    confirm: function(msg) {
+      console.log(msg);
+    },
+    alert: function(msg) {
+      console.log(msg);
+    }
+  };
 }
 </script>
 
