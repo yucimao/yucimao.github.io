@@ -83,38 +83,13 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
     <li><a href="https://www.bilibili.com/opus/983248679880097793">道心融解</a>（官方调酒书的原图）</li>
     <li><a href="https://www.gcores.com/articles/194881">子旋</a>（官方调酒书的翻译版本）</li>
 </ul></fieldset><br>
-<span class='zhushi'>以下记录了«Karmotrine Dream»（官方调酒书）的内容，点击<a onclick="tjs(1)">显示</a> / <a onclick="tjs(0)">隐藏</a>。</span><br>
+<span class='zhushi'>以下记录了«Karmotrine Dream»（现实中的官方调酒书）的内容，点击<a onclick="tjs(1)">显示</a> / <a onclick="tjs(0)">隐藏</a>。</span><br>
 <small>点击<a onclick="改字体()">加载像素字体</a>。（可能会有点慢）</small><br>
 
 <hr>
 
 <ul>
-    <li><a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">开场</a><fieldset style="display:none;"><legend>开场</legend>
-        Glitch City, 207X A.D.<br>
-        <br>
-        这是不应存在的城市。<br>
-        由企业和黑帮主宰一切的避税天堂。<br>
-        ……<br>
-        <br>
-        对很多人而言，这是难以承担的重负。<br>
-        有些人选择投入自己的工作，家庭，或是研究之中。<br>
-        另一些人正在寻求逃离的方式。<br>
-        还有一些人……选择了放弃。<br>
-        <br>
-        但也有人认为自己的答案就沉在酒杯的底部。<br>
-        <br>
-        在距离城市主干道只有几步之遥的小路上，<br>
-        贫民区附近的某个地方，<br>
-        你可以找到这家BTC认证编号VA-11的酒吧的Hall A<br>
-        ……<br>
-        <br>
-        ……但是全称过于拗口，因此我们称之为Valhalla。<br>
-        <br>
-        这是钢筋混凝土荒漠中的小小绿洲。<br>
-        为疲惫不堪的灵魂带来慰藉的精神之泉。<br>
-        <br>
-        我们的故事就将在这里展开。
-    </fieldset></li>
+    <li><a onclick="开场();this.style='display:none;'">开场</a><fieldset style="display:none;" id="开场"></fieldset></li>
     <li>位于故障城（Glitch City），在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉）。<br></li>
     <li>酒吧会提供薄荷糖，帮助客人掩盖嘴里的酒精味。</li>
     <li><span class="Jill">Jill</span>会收藏陈年老酒，并感到自豪。从爷爷的藏酒库存起步，慢慢发展起来。由于债务缠身，藏酒事业举步维艰，但总在设法一点点增加收藏。</li>
@@ -236,7 +211,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 
 <fieldset class="酒 B 辛辣 宣传 清淡"><legend style="background-image:linear-gradient(to right,#E13D2A,#E13D2A,#8E1538);">
 <h5>Bloom Light</h5> 泛光 - $230</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/BloomLight.png" onerror="this.src='/i/0/2021/va11/BloomLight.png';this.onerror=null;" alt="Bloom Light"><br>
+    <img src="{{ site.mq_d }}/i/0/2021/va11/Brandtini.png" onerror="this.src='/i/0/2021/va11/Brandtini.png';this.onerror=null;" alt="Bloom Light"><br>
     <span class="yla">4 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “这杯酒泛着完全多余的灰褐色……”<br>
     辛辣，宣传，清淡。<br>
@@ -260,7 +235,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “只喝一口就能让你的牙齿变蓝。希望你喝完之后能好好刷牙。”<br>
     甜味，女性化，温和。<br>
     <br>
-    <span class="zhushi">名字来源于苦艾酒的别名“绿精灵”，而这款饮料是蓝色的，因此被改为“蓝精灵”。</span><br>
+    名字源自苦艾酒的别名“绿精灵”，大家本来只是把它叫作“稍甜的苦艾酒”，不过后来有人喝了酒之后皮肤变绿了（蓝绿色），酒吧只能把配方改掉了。<br>
     <fieldset class="tjs"><legend>调酒书</legend>
         潘诺酒 1oz + 蓝橙利口酒 1oz + 柠檬汁 1oz + 水 2oz<ol>
             <li>将所有配料放入装满冰块的摇壶中。</li>
@@ -720,4 +695,50 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     function 改字体(){
         document.getElementById("改字体").innerHTML="@font-face{font-family:俐方体11号;src:url('/i/0/2026/俐方体11号.ttf')}body{font-family:'俐方体11号';font-size:1.05em;}";
     }
+
+async function 开场(){
+    const output=document.getElementById("开场");
+    output.style="";
+let content=`{<legend>开场</legend>}
+Glitch City, 207X A.D.{<br>}
+{<br>}
+这是不应存在的城市。{<br>}
+由企业和黑帮主宰一切的避税天堂。{<br>}
+……{<br>}
+{<br>}
+对很多人而言，这是难以承担的重负。{<br>}
+有些人选择投入自己的工作，家庭，或是研究之中。{<br>}
+另一些人正在寻求逃离的方式。{<br>}
+还有一些人……选择了放弃。{<br>}
+{<br>}
+但也有人认为自己的答案就沉在酒杯的底部。{<br>}
+{<br>}
+在距离城市主干道只有几步之遥的小路上，{<br>}
+贫民区附近的某个地方，{<br>}
+你可以找到这家BTC认证编号VA-11的酒吧的Hall A{<br>}
+……{<br>}
+{<br>}
+……但是全称过于拗口，因此我们称之为Valhalla。{<br>}
+{<br>}
+这是钢筋混凝土荒漠中的小小绿洲。{<br>}
+为疲惫不堪的灵魂带来慰藉的精神之泉。{<br>}
+{<br>}
+我们的故事就将在这里展开。`;
+    // output.innerHTML='';
+    const parts=content.split(/(\{[^}]+\})/).filter(part=>part!=='');
+
+    for(const part of parts){
+        if(part.startsWith('{')&&part.endsWith('}')){
+        output.insertAdjacentHTML('beforeend',part.slice(1,-1));
+        }else{await typeCharacters(part,output);}}
+    }
+    async function typeCharacters(text,element){
+    const textNode=document.createTextNode('');
+    element.appendChild(textNode);
+
+    for(const char of text){
+        await new Promise(resolve=>setTimeout(resolve,70));
+        textNode.data+=char;
+    }
+}
 </script>
