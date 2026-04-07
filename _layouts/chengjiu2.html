@@ -149,10 +149,10 @@ function loadMore(){
                 newContent+=`<a onclick="${parts[5]||''}">`;
             }
 
-            if(isNaN(parts[0])){
-                newContent+=`<img referrerpolicy='no-referrer' src='${parts[0]}' onerror="this.src='/i/cj/1.jpg';this.onerror=null;" />`;
-            }else if(parts[0].length==1){
+            if(isNaN(parts[0])&&parts[0].length==1){
                 newContent+=`<div class='img'><span>${parts[0]}</span></div>`;
+            }else if(isNaN(parts[0])){
+                newContent+=`<img referrerpolicy='no-referrer' src='${parts[0]}' onerror="this.src='/i/cj/1.jpg';this.onerror=null;" />`;
             }else{
                 newContent+=`<img src='{{ site.mq_d }}/i/cj/${parts[0]}.jpg' onerror="this.src='/i/cj/${parts[0]}.jpg';this.onerror=null;" />`;
             }
