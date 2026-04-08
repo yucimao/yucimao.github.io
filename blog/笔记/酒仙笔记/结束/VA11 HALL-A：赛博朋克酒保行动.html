@@ -1,10 +1,11 @@
 ---
 layout: page2
 title: VA11 HALL-A：赛博朋克酒保行动
-nav_text: VA-11 HALL-A
+nav_text: <br>VA-11 HALL-A
 nav_url: <a href="/jiuxian">酒仙笔记</a>
 permalink: i/407130
 footer_img: xsds
+footer_mb: cd/va11.gif
 ---
 <link rel="stylesheet" href="/css/all2.css">
 <style>
@@ -18,13 +19,11 @@ footer_img: xsds
 body,.body{
     background-color:#121212;
     color:var(--va);
-    /* color:#dddddd; */
     font-family:'俐方体11号';font-size:1.05em;
 }
 
 a,summary{color:var(--vb);}
 h5{display:inline;font-size:1.05em;}
-/* .酒 legend{color:#5d7cea;} */
 .酒 legend{background-clip:text;-webkit-background-clip:text;color:transparent;}
 .酒 img{width:140px}
 .tjs legend{background-image:linear-gradient(to right,var(--vb),var(--vb));}
@@ -32,8 +31,7 @@ h5{display:inline;font-size:1.05em;}
 div.body{box-shadow: 0 0 0 var(--vb);}
 
 .biaotib{
-    /* text-shadow: 1px 0px 3px #A21748,-1px 0px 3px #A21748,0px 1px 3px #A21748,0px -1px 3px #A21748; */
-    /* color:#A21748; */
+    line-height:40px;
     font-size:3em;
     font-style: italic;
     background-clip:text;-webkit-background-clip:text;color:transparent;
@@ -116,15 +114,11 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
 .b4a,.b4b{box-shadow:0 0 0 3px #000000,0 0 0 6px #A5F1F3;}
 .b4b{background:linear-gradient(#A5F1F3,#72DCF2,#A5F1F3);}
 #floatingImg{
-    /* position:absolute;
-    width:60px;
-    pointer-events:none;
-    display:none;
-    z-index:9999; */
     position:fixed;
     width:60px;
     pointer-events:none;
     z-index:9999;
+    user-select:none;
 }
 #c2按钮,#c4按钮{
     color:#000000;
@@ -216,7 +210,7 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
     <li><a href="https://www.bilibili.com/opus/983248679880097793">道心融解</a>（官方调酒书的原图）</li>
     <li><a href="https://www.gcores.com/articles/194881">子旋</a>（官方调酒书的翻译版本）</li>
 </ul></fieldset><br>
-<span class='zhushi'>以下记录了«Karmotrine Dream»（现实中的官方调酒书）的内容，点击<a onclick="tjs(1)">显示</a> / <a onclick="tjs(0)">隐藏</a>。</span><br>
+<span class='zhushi'>以下记录了«Karmotrine Dream»（现实中的官方调酒书）的内容，点击<a id="tjs1" style="display:none;" onclick="tjs(1)">显示</a><a id="tjs2" onclick="tjs(0)">隐藏</a>。</span><br>
 
 <hr>
 
@@ -804,10 +798,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
 <h5>Cacique Rum</h5> 酋长朗姆酒 - $500</legend>
-    （物品名“Rum”）<br>
     “祖父级的酒。”<br>
     <br>
-    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<span class='zhushi'>需要给Stella调出正确的酒。</span><br>
+    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<span class='zhushi'>需要在第3天给Stella调出正确的酒。</span><br>
 </fieldset>
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
@@ -815,7 +808,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     “像呕吐物一样绿的精灵。”<br>
     <br>
     <span class="Jill">Jill</span>从家里带来的，没有标签，并不值钱，但酒还是不错的。<br>
-    <span class='zhushi'>给Stella错误的酒，才会出现。</span><br>
+    <span class='zhushi'>在第3天给Stella错误的酒，才会出现。</span><br>
 </fieldset>
 
 <fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
@@ -888,8 +881,12 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     function tjs(o){
         if(o==1){
             document.getElementById("官方调酒书").innerHTML="";
+            document.getElementById("tjs1").style="display:none;";
+            document.getElementById("tjs2").style="";
         }else{
             document.getElementById("官方调酒书").innerHTML=".tjs{display:none;}";
+            document.getElementById("tjs1").style="";
+            document.getElementById("tjs2").style="display:none;";
         }
     }
 
@@ -983,7 +980,6 @@ let currentDragImage=null;
 let isInsideTarget=false;
 
 let canDrag=1;//1可以拖动 0不可以拖动
-
 let 情况={}
 let 进度=0;
 
@@ -1007,7 +1003,7 @@ function isMatch(item,aArr,double=false){
 }
 
 function 工艺(o){
-    if(canDrag==1){
+    if(进度==0||进度==1){
         if(情况[o]==0){
             情况[o]=1;
             document.getElementById(o+"1图").style="opacity:1;";
@@ -1052,7 +1048,8 @@ function 重做(){
 function 调制(){
     if(情况["all"]==0){//没有材料
 
-    }else if(canDrag==1){//调制
+    }else if(进度==0){//调制
+        进度=1;
         canDrag=0;
         情况["调和"]=1;
         document.getElementById("c4按钮").innerHTML="停止";
@@ -1064,7 +1061,7 @@ function 调制(){
             情况["调和"]=2;
             document.getElementById("b3图").style="animation: swing 0.2s linear infinite alternate;";
         },5000);
-    }else if(进度==0){//停止
+    }else if(进度==1){//停止
         clearTimeout(timer);
         document.getElementById("b3图").style="";
         document.getElementById("c4按钮").innerHTML="上酒";
@@ -1079,11 +1076,12 @@ function 调制(){
                 进度="乱码饮料";
             }
         }
-        if(进度==0){进度=result[1]}
+        if(进度==1){进度=result[1]}
         document.getElementById("b3图").src="/i/2264624/"+result[0]+".png";
         document.getElementById("c3内容").style="";
         document.getElementById("c3内容").innerHTML=result[1].replace(new RegExp('_',"g")," ");
     }else{//上酒
+        分类('0');
         window.location.hash=进度;
         重做();
     }
