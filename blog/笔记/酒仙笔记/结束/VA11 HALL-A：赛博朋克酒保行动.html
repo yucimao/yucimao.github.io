@@ -113,10 +113,14 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
 .b4a,.b4b{box-shadow:0 0 0 3px #000000,0 0 0 6px #A5F1F3;}
 .b4b{background:linear-gradient(#A5F1F3,#72DCF2,#A5F1F3);}
 #floatingImg{
-    position:absolute;
+    /* position:absolute;
     width:60px;
     pointer-events:none;
     display:none;
+    z-index:9999; */
+    position:fixed;
+    width:60px;
+    pointer-events:none;
     z-index:9999;
 }
 #c2按钮,#c4按钮{
@@ -1064,13 +1068,15 @@ document.querySelectorAll('.dragDiv').forEach(div=>{
     currentDragImage.style.visibility='hidden';
     floatingImg.src=currentDragImage.src;
     floatingImg.style.display='block';
-    moveFloatingImg(e.pageX,e.pageY);
+    // moveFloatingImg(e.pageX,e.pageY);
+    moveFloatingImg(e.clientX,e.clientY);
   });
 });
 
 document.addEventListener('mousemove',(e)=>{
   if(!isDragging) return;
-  moveFloatingImg(e.pageX,e.pageY);
+//   moveFloatingImg(e.pageX,e.pageY);
+moveFloatingImg(e.clientX,e.clientY);
 
   const nowInTarget=isMouseInsideElement(e,targetArea);
   if(nowInTarget&&!isInsideTarget){
@@ -1099,9 +1105,14 @@ document.addEventListener('mouseup',(e)=>{
   }
 });
 
+// function moveFloatingImg(x,y){
+//   floatingImg.style.left=x-50+'px';
+//   floatingImg.style.top=y-50+'px';
+// }
+
 function moveFloatingImg(x,y){
-  floatingImg.style.left=x-50+'px';
-  floatingImg.style.top=y-50+'px';
+  floatingImg.style.left=(x-floatingImg.offsetWidth/2)+'px';
+  floatingImg.style.top=(y-floatingImg.offsetHeight/2)+'px';
 }
 
 function isMouseInsideElement(e,element){
