@@ -33,9 +33,12 @@ div.body{box-shadow: 0 0 0 var(--vb);}
 
 .biaotib{
     font-size:3em;
-    text-shadow: 1px 0px 3px #A21748,-1px 0px 3px #A21748,0px 1px 3px #A21748,0px -1px 3px #A21748;
-    color:#A21748;
+    /* text-shadow: 1px 0px 3px #A21748,-1px 0px 3px #A21748,0px 1px 3px #A21748,0px -1px 3px #A21748; */
+    /* color:#A21748; */
     font-style: italic;
+
+    background-clip:text;-webkit-background-clip:text;color:transparent;
+    background-image:linear-gradient(to bottom,#FF3461,#EE325D,#E96A73,#F2325F);
 }
 
 .yla{color:#FF2E38;}
@@ -1015,9 +1018,11 @@ function 工艺(o){
     }
 }
 
+let timer;
 let 调料=["a2","a3","a4","b2","b4"];
 
 function 重做(){
+    clearTimeout(timer);
     进度=0;
     情况={
         "a":0,//加冰
@@ -1028,6 +1033,7 @@ function 重做(){
     document.getElementById("a1图").src="/i/2264624/a/va11_a1.png";
     document.getElementById("b1图").src="/i/2264624/a/va11_b1.png";
     document.getElementById("b3图").src="/i/2264624/a/va11_b3.png";
+    document.getElementById("b3图").style="";
     document.getElementById("a1图").style="opacity:0.35;";
     document.getElementById("b1图").style="opacity:0.35;";
     for(let i=0;调料.length>i;i++){
@@ -1043,7 +1049,6 @@ function 重做(){
 
 重做();
 
-let timer;
 function 调制(){
     if(情况["all"]==0){//没有材料
 
