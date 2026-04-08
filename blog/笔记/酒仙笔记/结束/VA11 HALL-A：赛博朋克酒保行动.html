@@ -13,16 +13,20 @@ footer_img: xsds
     --vb:#f6f6f6;
     --vc:#A9A9A9;
 }
+
+@font-face{font-family:俐方体11号;src:url('/i/0/2026/俐方体11号.ttf')}
 body,.body{
     background-color:#121212;
     color:var(--va);
     /* color:#dddddd; */
+    font-family:'俐方体11号';font-size:1.05em;
 }
 
 a,summary{color:var(--vb);}
 h5{display:inline;font-size:1.05em;}
 /* .酒 legend{color:#5d7cea;} */
 .酒 legend{background-clip:text;-webkit-background-clip:text;color:transparent;}
+.酒 img{width:140px}
 .tjs legend{background-image:linear-gradient(to right,var(--vb),var(--vb));}
 
 div.body{box-shadow: 0 0 0 var(--vb);}
@@ -66,10 +70,132 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
 .Stella{color:#E75F9D;}
 .Betty{color:#58C23A;}
 .Brian{color:#F3CB6C;}
+
+:root{
+    --bc:#1F1A2D;
+}
+.调酒台{background-color:var(--bc);font-family:'俐方体11号';user-select:none}
+.调酒台{
+    display:grid;
+    grid-template-rows:170px 170px 74px;
+    grid-template-columns:100px 216px 216px 216px;
+    gap:10px;
+    padding:20px;
+}
+.格子{
+    padding:10px 0 0 10px;
+    background-color:#000000;
+    color:#ffffff;
+    font-size:28px;
+    border-radius:3px;
+    line-height:33px
+}
+#a1图,#b1图{
+    margin:20px 0;
+}
+#a2,#a3,#a4,#b2,#b4{vertical-align:top;float:left;}
+#b3格{height:220px;text-align:center;}
+#c3格{height:40px;align-self:end;}
+#c1格{background-color:var(--bc)}
+.调料{margin:7px}
+.调料 div{
+    display:inline-block;width:10px;height:38px;
+    margin:3px 8px;
+}
+.a2a,.a2b{box-shadow:0 0 0 3px #000000,0 0 0 6px #ff6b6b;}
+.a2b{background:linear-gradient(#ff6b6b,#E51D30,#ff6b6b);}
+.a3a,.a3b{box-shadow:0 0 0 3px #000000,0 0 0 6px #F0BE8D;}
+.a3b{background:linear-gradient(#E5B27F,#EFB54D,#E5B27F);}
+.a4a,.a4b{box-shadow:0 0 0 3px #000000,0 0 0 6px #8DA9F0;}
+.a4b{background:linear-gradient(#8DA9F0,#4D64EF,#8DA9F0);}
+.b2a,.b2b{box-shadow:0 0 0 3px #000000,0 0 0 6px #BADEA0;}
+.b2b{background:linear-gradient(#BADEA0,#7DD564,#BADEA0);}
+.b4a,.b4b{box-shadow:0 0 0 3px #000000,0 0 0 6px #A5F1F3;}
+.b4b{background:linear-gradient(#A5F1F3,#72DCF2,#A5F1F3);}
+#floatingImg{
+    position:absolute;
+    width:60px;
+    pointer-events:none;
+    display:none;
+    z-index:9999;
+}
+#c2按钮,#c4按钮{
+    color:#000000;
+    width:180px;
+    margin:10px;
+    display:block;
+    text-align:center;
+}
+#c2按钮:active,#c4按钮:active{
+    position:relative;
+    top:5px;
+}
+#c2按钮{
+    --c2:#FFA043;
+    background-color:var(--c2);
+    box-shadow: 0 0 0 3px var(--c2), 0 0 0 6px #000000, 0 0 0 9px var(--c2),0 0 0 15px #000000,0 0 0 18px var(--c2);
+}
+#c2按钮:active{
+    --c2b:#F8FF42;
+    background-color:var(--c2b);
+    box-shadow: 0 0 0 3px var(--c2b), 0 0 0 6px #000000, 0 0 0 9px var(--c2b),0 0 0 15px #000000,0 0 0 18px var(--c2b);
+}
+.c4{
+    --c4:#FF4363;
+    background-color:var(--c4);
+    box-shadow: 0 0 0 3px var(--c4), 0 0 0 6px #000000, 0 0 0 9px var(--c4),0 0 0 15px #000000,0 0 0 18px var(--c4);
+}
+.c4:active{
+    --c4b:#FF4289;
+    background-color:var(--c4b);
+    box-shadow: 0 0 0 3px var(--c4b), 0 0 0 6px #000000, 0 0 0 9px var(--c4b),0 0 0 15px #000000,0 0 0 18px var(--c4b);
+}
+.c4b{
+    --c4:#76D969;
+    background-color:var(--c4);
+    box-shadow: 0 0 0 3px var(--c4), 0 0 0 6px #000000, 0 0 0 9px var(--c4),0 0 0 15px #000000,0 0 0 18px var(--c4);
+}
+.c4b:active{
+    --c4b:#ABD969;
+    background-color:var(--c4b);
+    box-shadow: 0 0 0 3px var(--c4b), 0 0 0 6px #000000, 0 0 0 9px var(--c4b),0 0 0 15px #000000,0 0 0 18px var(--c4b);
+}
+#c3内容{
+    --c3:#ffffff;
+    position:relative;top:-16px;
+    display:block;
+    width:168px;
+    padding:2px 10px;
+    border-width:3px 4px;
+    border-style: solid;
+    border-color:#ffffff;
+    text-align:center;
+}
+#c3内容 span{
+    display:inline-block;
+    width:12px;height:3px;
+    margin:9px;
+}
+.c3a,.c3b{box-shadow: 0 0 0 4px #000000, 0 0 0 7px #ffffff;}
+.c3b{background-color:#ffffff;}
+
+#b3图{
+    position:relative;
+    transform-origin:center;
+    max-width:180px;
+}
+@keyframes swing{
+    from { transform: rotate(-24deg); }
+    to   { transform: rotate(24deg); }
+}
+
+.手机{display:none;}
+@media screen and (max-width:768px){
+    .手机{display:inline;}
+}
 </style>
 <style id="BTC分类"></style>
 <style id="官方调酒书"></style>
-<style id="改字体"></style>
 
 <div style="text-align:center;">赛博朋克酒保行动</div>
 <br>
@@ -84,13 +210,13 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
     <li><a href="https://www.gcores.com/articles/194881">子旋</a>（官方调酒书的翻译版本）</li>
 </ul></fieldset><br>
 <span class='zhushi'>以下记录了«Karmotrine Dream»（现实中的官方调酒书）的内容，点击<a onclick="tjs(1)">显示</a> / <a onclick="tjs(0)">隐藏</a>。</span><br>
-<small>点击<a onclick="改字体()">加载像素字体</a>。（可能会有点慢）</small><br>
 
 <hr>
 
 <ul>
     <li><a onclick="开场();this.style='display:none;'">开场</a><fieldset style="display:none;" id="开场"></fieldset></li>
-    <li>位于故障城（Glitch City），在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉）。<br></li>
+    <li>位于故障城（Glitch City），在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉，北欧神话里的“英灵殿”）。<br>
+        为了让酒吧名字像是“Valhalla”，<span class="Dana">Dana</span>原本看中的编号是“VA1”，但被人耍手段抢走了，<span class="Dana">Dana</span>为了获得“VA11”这个编号，让酒吧延迟了5个月开业。</li>
     <li>酒吧会提供薄荷糖，帮助客人掩盖嘴里的酒精味。</li>
     <li><span class="Jill">Jill</span>会收藏陈年老酒，并感到自豪。从爷爷的藏酒库存起步，慢慢发展起来。由于债务缠身，藏酒事业举步维艰，但总在设法一点点增加收藏。</li>
     <li><span class="Jill">Jill</span>喜欢酒，但不是一般意义上的喜欢，除了罐装啤酒外，她喝的酒并不多。她更喜欢酒的颜色、背景故事、保存方法、还有设计理念。<span class='zhushi'>和我一样诶！</span></li>
@@ -153,11 +279,53 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 </fieldset><br>
 <br>
 
+<span class='zhushi 手机'>（调酒功能请用电脑操作）</span>
+<fieldset class="调酒台">
+    <div id="a1格" class="格子" style="cursor:pointer" onclick="工艺('a')">加冰<br><img id="a1图"></div>
+    <div id="a2格" class="格子 dragDiv" style="cursor:move">Adelhyde<br><img id="a2" class='dragImg'>
+        <div id="a2调料" class="调料">
+             <div></div><div></div><div></div><div></div><div></div> <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div id="a3格" class="格子 dragDiv" style="cursor:move">Bronson Ext<br><img id="a3" class='dragImg'>
+        <div id="a3调料" class="调料">
+             <div></div><div></div><div></div><div></div><div></div> <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div id="a4格" class="格子 dragDiv" style="cursor:move">Pwd Delta<br><img id="a4" class='dragImg'>
+        <div id="a4调料" class="调料">
+             <div></div><div></div><div></div><div></div><div></div> <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <div id="b1格" class="格子" style="cursor:pointer" onclick="工艺('b')">陈化<br><img id="b1图"></div>
+    <div id="b2格" class="格子 dragDiv" style="cursor:move">Flanergide<br><img id="b2" class='dragImg'>
+        <div id="b2调料" class="调料">
+             <div></div><div></div><div></div><div></div><div></div> <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    <div id="b3格" class="格子"><img id="b3图"></div>
+    <div id="b4格" class="格子 dragDiv" style="cursor:move">Karmotrine<br><img id="b4" class='dragImg'>
+        <div id="b4调料" class="调料">
+             <div></div><div></div><div></div><div></div><div></div> <div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <div id="c1格" class="格子"></div>
+    <div id="c2格" class="格子" onclick="重做()"><span id="c2按钮">重做</span></div>
+    <div id="c3格" class="格子"><span id="c3内容"></span></div>
+    <div id="c4格" class="格子" onclick="调制()"><span id="c4按钮"></span></div>
+</fieldset>
+
+<img id="floatingImg" src="">
+
+<br>
+
 <a name="酒单"></a>
 
-<fieldset class="酒 B 酸味 时尚 复古"><legend style="background-image:linear-gradient(to right,#1FB561,#B9E970);">
+<fieldset class="酒 B 酸味 时尚 复古 Bad_Touch"><legend style="background-image:linear-gradient(to right,#1FB561,#B9E970);">
 <h5>Bad Touch</h5> 危险触碰 - $250</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/BadTouch.png" onerror="this.src='/i/0/2021/va11/BadTouch.png';this.onerror=null;" alt="Bad Touch"><br>
+    <img src="/i/2264624/BadTouch.png" alt="Bad Touch"><br>
     <span class="ylb">2 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">4 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “我们毕竟不过是群哺乳动物。”<br>
     酸味，时尚，复古。<br>
@@ -174,9 +342,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 B 发泡 复古 经典"><legend style="background-image:linear-gradient(to right,#D9C5C3,#DE6B1F,#DE6B1F);">
+<fieldset class="酒 B 发泡 复古 经典 Beer"><legend style="background-image:linear-gradient(to right,#D9C5C3,#DE6B1F,#DE6B1F);">
 <h5>Beer</h5> 啤酒 - $200</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Beer.png" onerror="this.src='/i/0/2021/va11/Beer.png';this.onerror=null;" alt="Beer"><br>
+    <img src="/i/2264624/Beer.png" alt="Beer"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">2 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">4 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     “以传统手法酿造的啤酒已经成为了奢侈品，但这种酒和真货的味道相当接近……”<br>
     发泡，时尚，复古。<br>
@@ -192,9 +360,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 B 辛辣 经典 解酒"><legend style="background-image:linear-gradient(to right,#DE3D24,#DE3D24);">
+<fieldset class="酒 B 辛辣 经典 解酒 Bleed_Jane"><legend style="background-image:linear-gradient(to right,#DE3D24,#DE3D24);">
 <h5>Bleeding Jane</h5> 流血珍妮 - $200</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/BleedingJane.png" onerror="this.src='/i/0/2021/va11/BleedingJane.png';this.onerror=null;" alt="Bleeding Jane"><br>
+    <img src="/i/2264624/BleedingJane.png" alt="Bleed Jane"><br>
     <span class="ylb">1 Bronson Extract</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylf">3 Flanergide</span>，<span class="gyh">调和</span>而成。<br>
     “对着镜子重复三次这杯饮料的名字，就会让你看上去像个傻瓜。”<br>
     辛辣，经典，解酒。<br>
@@ -209,9 +377,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 B 辛辣 宣传 清淡"><legend style="background-image:linear-gradient(to right,#E13D2A,#E13D2A,#8E1538);">
+<fieldset class="酒 B 辛辣 宣传 清淡 Bloom_Lght"><legend style="background-image:linear-gradient(to right,#E13D2A,#E13D2A,#8E1538);">
 <h5>Bloom Light</h5> 泛光 - $230</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Brandtini.png" onerror="this.src='/i/0/2021/va11/Brandtini.png';this.onerror=null;" alt="Bloom Light"><br>
+    <img src="/i/2264624/Brandtini.png" alt="Bloom Lght"><br>
     <span class="yla">4 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">2 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “这杯酒泛着完全多余的灰褐色……”<br>
     辛辣，宣传，清淡。<br>
@@ -228,9 +396,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 B 甜味 女性化 温和"><legend style="background-image:linear-gradient(to right,#0B89FF,#9ADCFD);">
+<fieldset class="酒 B 甜味 女性化 温和 Blue_Fairy"><legend style="background-image:linear-gradient(to right,#0B89FF,#9ADCFD);">
 <h5>Blue Fairy</h5> 蓝精灵 - $170</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/BlueFairy.png" onerror="this.src='/i/0/2021/va11/BlueFairy.png';this.onerror=null;" alt="Blue Fairy"><br>
+    <img src="/i/2264624/BlueFairy.png" alt="Blue Fairy"><br>
     <span class="yla">4 Adelhyde</span>、<span class="ylf">1 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “只喝一口就能让你的牙齿变蓝。希望你喝完之后能好好刷牙。”<br>
     甜味，女性化，温和。<br>
@@ -247,9 +415,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 B 甜味 时尚 惬意"><legend style="background-image:linear-gradient(to right,#E13D2A,#E13D2A,#8E1538);">
+<fieldset class="酒 B 甜味 时尚 惬意 Brandtini"><legend style="background-image:linear-gradient(to right,#E13D2A,#E13D2A,#8E1538);">
 <h5>Brandtini</h5> 白兰提尼 - $250</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Brandtini.png" onerror="this.src='/i/0/2021/va11/Brandtini.png';this.onerror=null;" alt="Brandtini"><br>
+    <img src="/i/2264624/Brandtini.png" alt="Brandtini"><br>
     <span class="yla">6 Adelhyde</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylk">1 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “每10个自命不凡的混球里就会有8个推荐这种酒，但他们沉溺于自命不凡没空为人推荐什么。”<br>
     甜味，时尚，惬意。<br>
@@ -264,9 +432,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 C 发泡 时尚 火辣"><legend style="background-image:linear-gradient(to right,#2FE0C3,#CDFBB8,#CDFBB8);">
+<fieldset class="酒 C 发泡 时尚 火辣 Coblt_Vlvt"><legend style="background-image:linear-gradient(to right,#2FE0C3,#CDFBB8,#CDFBB8);">
 <h5>Cobalt Velvet</h5> 钴蓝天鹅绒 - $280</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/CobaltVelvet.png" onerror="this.src='/i/0/2021/va11/CobaltVelvet.png';this.onerror=null;" alt="Cobalt Velvet"><br>
+    <img src="/i/2264624/CobaltVelvet.png" alt="Coblt Vlvt"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">5 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “就如同把香槟倒在还剩一点可乐的杯子里。”<br>
     发泡，时尚，火辣。<br>
@@ -280,9 +448,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 C 酸味 男性化 解酒"><legend style="background-image:linear-gradient(to right,#58D330,#21B65E);">
+<fieldset class="酒 C 酸味 男性化 解酒 Crv_Spike"><legend style="background-image:linear-gradient(to right,#58D330,#21B65E);">
 <h5>Crevice Spike</h5> 缝隙钉 - $140</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/CreviceSpike.png" onerror="this.src='/i/0/2021/va11/CreviceSpike.png';this.onerror=null;" alt="Crevice Spike"><br>
+    <img src="/i/2264624/CreviceSpike.png" alt="Crv Spike"><br>
     <span class="ylp">2 Powdered Delta</span>、<span class="ylf">4 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “它既能把你的醉意驱除，也能够把你的意识驱除。”<br>
     酸味，男性化，解酒。<br>
@@ -298,9 +466,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 F 酸味 女性化 温和"><legend style="background-image:linear-gradient(to right,#A0DFA0,#A0DFA0);">
+<fieldset class="酒 F 酸味 女性化 温和 Flff_Dream"><legend style="background-image:linear-gradient(to right,#A0DFA0,#A0DFA0);">
 <h5>Fluffy Dream</h5> 轻幻 - $170</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/FluffyDream.png" onerror="this.src='/i/0/2021/va11/FluffyDream.png';this.onerror=null;" alt="Fluffy Dream"><br>
+    <img src="/i/2264624/FluffyDream.png" alt="Flff Dream"><br>
     <span class="yla">3 Adelhyde</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “一两口就足以取悦你的舌头，再喝多就可能会导致睡过头。”<br>
     酸味，女性化，温和。<br>
@@ -314,9 +482,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 F 发泡 时尚 强烈"><legend style="background-image:linear-gradient(to right,#FEE8C9,#FEE8C9,#DA858D);">
+<fieldset class="酒 F 发泡 时尚 强烈 Frng_Weavr"><legend style="background-image:linear-gradient(to right,#FEE8C9,#FEE8C9,#DA858D);">
 <h5>Fringe Weaver</h5> 流苏编织者 - $260</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/FringeWeaver.png" onerror="this.src='/i/0/2021/va11/FringeWeaver.png';this.onerror=null;" alt="Fringe Weaver"><br>
+    <img src="/i/2264624/FringeWeaver.png" alt="Frng Weavr"><br>
     <span class="yla">1 Adelhyde</span>和<span class="ylk">9 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “如同就着一勺糖喝下无水酒精。”<br>
     发泡，时尚，强烈。<br>
@@ -330,9 +498,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 F 发泡 经典 清淡"><legend style="background-image:linear-gradient(to right,#D9C5C3,#DE6B1F,#DE6B1F);">
+<fieldset class="酒 F 发泡 经典 清淡 Frothy_Wtr"><legend style="background-image:linear-gradient(to right,#D9C5C3,#DE6B1F,#DE6B1F);">
 <h5>Frothy Water</h5> 泡沫水 - $150</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Beer.png" onerror="this.src='/i/0/2021/va11/Beer.png';this.onerror=null;" alt="Frothy Water"><br>
+    <img src="/i/2264624/Beer.png" alt="Frothy Wtr"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylf">1 Flanergide</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “自2040年以来，家长指导级节目里最爱用的啤酒代用品。”<br>
     发泡，经典，清淡。<br>
@@ -341,9 +509,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <span class='zhushi'>一些作品为了通过“家长指导级”审查，会刻意不让作品里出现酒精饮料，如果有酒也要嘴硬说那是看起来很像酒的不含酒精饮料。</span><br>
 </fieldset>
 
-<fieldset class="酒 G 苦味 宣传 清淡"><legend style="background-image:linear-gradient(to right,#1FB663,#065E49);">
+<fieldset class="酒 G 苦味 宣传 清淡 Grizz_Tmpl"><legend style="background-image:linear-gradient(to right,#1FB663,#065E49);">
 <h5>Grizzly Temple</h5> 灰熊神殿 - $220</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/GrizzlyTemple.png" onerror="this.src='/i/0/2021/va11/GrizzlyTemple.png';this.onerror=null;" alt="Grizzly Temple"><br>
+    <img src="/i/2264624/GrizzlyTemple.png" alt="Grizz Tmpl"><br>
     <span class="yla">3 Adelhyde</span>、<span class="ylb">3 Bronson Extract</span>、<span class="ylp">3 Powdered Delta</span>和<span class="ylk">1 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “这种酒的味道几乎令人难以忍受。基本上只有它所宣传的那部电影的爱好者会点它。”<br>
     苦味，宣传，清淡。<br>
@@ -356,9 +524,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 G 苦味 男性化 强烈"><legend style="background-image:linear-gradient(to right,#FFC985,#FFC985);">
+<fieldset class="酒 G 苦味 男性化 强烈 Gut_Punch"><legend style="background-image:linear-gradient(to right,#FFC985,#FFC985);">
 <h5>Gut Punch</h5> 腹部重击 - $80</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/GutPunch.png" onerror="this.src='/i/0/2021/va11/GutPunch.png';this.onerror=null;" alt="Gut Punch"><br>
+    <img src="/i/2264624/GutPunch.png" alt="Gut Punch"><br>
     <span class="ylb">5 Bronson Extract</span>、<span class="ylf">1 Flanergide</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “这个名字的意思是‘由内脏（Gut）制成的混合饮料（Punch）’，但是同时也描述了饮用时的感受（重击腹部）。”<br>
     苦味，男性化，强烈。<br>
@@ -372,9 +540,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 M 辛辣 男性化 强烈"><legend style="background-image:linear-gradient(to right,#F49039,#FEE833);">
+<fieldset class="酒 M 辛辣 男性化 强烈 Marsblast"><legend style="background-image:linear-gradient(to right,#F49039,#FEE833);">
 <h5>Marsblast</h5> 火星爆破 - $170</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Marsblast.png" onerror="this.src='/i/0/2021/va11/Marsblast.png';this.onerror=null;" alt="Marsblast"><br>
+    <img src="/i/2264624/Marsblast.png" alt="Marsblast"><br>
     <span class="ylb">6 Bronson Extract</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">4 Flanergide</span>和<span class="ylk">2 Karmotrine</span>，<span class="gyh">调和</span>而成。<br>
     “只要喝上一口就足以让你的脸和火星一样红。”<br>
     辛辣，男性化，强烈。<br>
@@ -390,9 +558,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 M 酸味 时尚 火辣"><legend style="background-image:linear-gradient(to right,#2094D5,#2094D5);">
+<fieldset class="酒 M 酸味 时尚 火辣 Mercryblst"><legend style="background-image:linear-gradient(to right,#2094D5,#2094D5);">
 <h5>Mercury Blast</h5> 水星爆破 - $250</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/MercuryBlast.png" onerror="this.src='/i/0/2021/va11/MercuryBlast.png';this.onerror=null;" alt="Mercury Blast"><br>
+    <img src="/i/2264624/MercuryBlast.png" alt="Mercryblst"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">3 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">2 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
     “在这种酒的研发过程中，没有温度计遭到伤害。”<br>
     酸味，时尚，火辣。<br>
@@ -407,9 +575,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 M 甜味 女性化 惬意"><legend style="background-image:linear-gradient(to right,#D03D71,#FC83C8);">
+<fieldset class="酒 M 甜味 女性化 惬意 Moonblast"><legend style="background-image:linear-gradient(to right,#D03D71,#FC83C8);">
 <h5>Moonblast</h5> 月球爆破 - $180</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Moonblast.png" onerror="this.src='/i/0/2021/va11/Moonblast.png';this.onerror=null;" alt="Moonblast"><br>
+    <img src="/i/2264624/Moonblast.png" alt="Moonblast"><br>
     <span class="yla">6 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>、<span class="ylf">1 Flanergide</span>和<span class="ylk">2 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
     “与你每个月都有一周时间能看到的那座月球强子大炮没有任何关系。”<br>
     甜味，女性化，惬意。<br>
@@ -424,15 +592,15 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 P 宣传 强烈"><legend style="background-image:linear-gradient(to right,#0A98AE,#BDFFCB);">
+<fieldset class="酒 P 宣传 强烈 Piano_Man"><legend style="background-image:linear-gradient(to right,#0A98AE,#BDFFCB);">
 <h5>Piano Man</h5> 男钢琴师 - $320</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/PianoMan.png" onerror="this.src='/i/0/2021/va11/PianoMan.png';this.onerror=null;" alt="Piano Man"><br>
+    <img src="/i/2264624/PianoMan.png" alt="Piano Man"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylb">3 Bronson Extract</span>、<span class="ylp">5 Powdered Delta</span>、<span class="ylf">5 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “该饮品不代表酒吧钢琴师协会及其相关组织的意见。”<br>
     酸味，宣传，强烈。<br>
     <br>
     <span class="Jill">Jill</span>：「起初，它是由一位调酒师为纪念自己刚离世的钢琴师朋友而创造的。就配方来看，它混合了那位朋友最喜欢的全部味道。」<br>
-    <span class='zhushi'>名字源自歌曲。</span>
+    <span class='zhushi'>名字源自歌曲。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         龙舌兰 1.25oz + 蓝橙利口酒 0.25oz + 紫罗兰利口酒 1oz + 单一糖浆 0.5oz + 青柠汁 1oz + 水 0.5oz<ol>
             <li>将所有配料放入装满冰块的摇壶中。</li>
@@ -443,9 +611,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 P 甜味 宣传 惬意"><legend style="background-image:linear-gradient(to right,#2CDEC8,#BDFFCB);">
+<fieldset class="酒 P 甜味 宣传 惬意 P.Woman"><legend style="background-image:linear-gradient(to right,#2CDEC8,#BDFFCB);">
 <h5>Piano Woman</h5> 女钢琴师 - $320</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/PianoWoman.png" onerror="this.src='/i/0/2021/va11/PianoWoman.png';this.onerror=null;" alt="Piano Woman"><br>
+    <img src="/i/2264624/PianoWoman.png" alt="P.Woman"><br>
     <span class="yla">5 Adelhyde</span>、<span class="ylb">5 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “它的本名是Pretty Woman，但有很多人投诉如果有种酒叫Piano Man（男钢琴师），就该有另一种被命名为Piano Woman（女钢琴师）。”<br>
     甜味，宣传，惬意。<br>
@@ -459,9 +627,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 P 苦味 男性化 火辣"><legend style="background-image:linear-gradient(to right,#FFBB31,#F79135);">
+<fieldset class="酒 P 苦味 男性化 火辣 Piledriver"><legend style="background-image:linear-gradient(to right,#FFBB31,#F79135);">
 <h5>Piledriver</h5> 打桩机 - $160</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/PileDriver.png" onerror="this.src='/i/0/2021/va11/PileDriver.png';this.onerror=null;" alt="Piledriver"><br>
+    <img src="/i/2264624/PileDriver.png" alt="Piledriver"><br>
     <span class="ylb">3 Bronson Extract</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">4 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     “你的舌头可能察觉不到它的火辣程度，但喝的时候请小心不要烧到嗓子。”<br>
     苦味，男性化，火辣。<br>
@@ -477,9 +645,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 S 甜味 女性化 惬意"><legend style="background-image:linear-gradient(to right,#FFD0BD,#79262D);">
+<fieldset class="酒 S 甜味 女性化 惬意 Spark_Star"><legend style="background-image:linear-gradient(to right,#FFD0BD,#79262D);">
 <h5>Sparkle Star</h5> 闪光星球 - $150</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/SparkleStar.png" onerror="this.src='/i/0/2021/va11/SparkleStar.png';this.onerror=null;" alt="Sparkle Star"><br>
+    <img src="/i/2264624/SparkleStar.png" alt="Spark Star"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyc">陈化</span>，<span class="gyz">调制</span>而成。<br>
     “这种饮料曾经真的能够迸出（Sparkle）杯子，但这导致过多顾客投诉皮肤问题，于是他们被迫重新设计了不会迸射出任何东西的版本。”<br>
     甜味，女性化，惬意。<br>
@@ -494,9 +662,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 S 甜味 女性化 惬意"><legend style="background-image:linear-gradient(to right,#D01F5A,#D01F5A);">
+<fieldset class="酒 S 甜味 女性化 惬意 Sugar_Rush"><legend style="background-image:linear-gradient(to right,#D01F5A,#D01F5A);">
 <h5>Sugar Rush</h5> 甜蜜冲刺 - $150</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/SugarRush.png" onerror="this.src='/i/0/2021/va11/SugarRush.png';this.onerror=null;" alt="Sugar Rush"><br>
+    <img src="/i/2264624/SugarRush.png" alt="Sugar Rush"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylp">1 Powdered Delta</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     “甘甜，清淡，水果风味，不能更加女性化的饮品。”<br>
     甜味，女性化，惬意。<br>
@@ -514,9 +682,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 S 苦味 女性化 温和"><legend style="background-image:linear-gradient(to right,#CB6F37,#CB6F37);">
+<fieldset class="酒 S 苦味 女性化 温和 Sun_Cloud"><legend style="background-image:linear-gradient(to right,#CB6F37,#CB6F37);">
 <h5>Sunshine Cloud</h5> 阳光云 - $150</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/SunshineCloud.png" onerror="this.src='/i/0/2021/va11/SunshineCloud.png';this.onerror=null;" alt="Sunshine Cloud"><br>
+    <img src="/i/2264624/SunshineCloud.png" alt="Sun Cloud"><br>
     <span class="yla">2 Adelhyde</span>、<span class="ylb">2 Bronson Extract</span>和<span class="ylk">任选 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyh">调和</span>而成。<br>
     “味道就像昔日的巧克力牛奶，甚至还保留着那份香气。也有人说它有些焦糖的味道……”<br>
     苦味，女性化，温和。<br>
@@ -529,9 +697,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 S 苦味 男性化 火辣"><legend style="background-image:linear-gradient(to right,#F49035,#F49035);">
+<fieldset class="酒 S 苦味 男性化 火辣 Suplex"><legend style="background-image:linear-gradient(to right,#F49035,#F49035);">
 <h5>Suplex</h5> 过肩摔 - $160</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/Suplex.png" onerror="this.src='/i/0/2021/va11/Suplex.png';this.onerror=null;" alt="Suplex"><br>
+    <img src="/i/2264624/Suplex.png" alt="Suplex"><br>
     <span class="ylb">4 Bronson Extract</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">3 Karmotrine</span>，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “对Piledriver进行微妙调整之后，将火辣的感觉从喉咙转移到了舌头上。”<br>
     苦味，男性化，火辣。<br>
@@ -546,9 +714,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 Z 酸味 宣传 清淡"><legend style="background-image:linear-gradient(to right,#3359CC,#3359CC);">
+<fieldset class="酒 Z 酸味 宣传 清淡 Zen_Star"><legend style="background-image:linear-gradient(to right,#3359CC,#3359CC);">
 <h5>Zen Star</h5> 禅意之星 - $210</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/ZenStar.png" onerror="this.src='/i/0/2021/va11/ZenStar.png';this.onerror=null;" alt="Zen Star"><br>
+    <img src="/i/2264624/ZenStar.png" alt="Zen Star"><br>
     每种原料各4份，<span class="gyb">加冰</span>，<span class="gyz">调制</span>而成。<br>
     “你可能会认为如此均衡的配方能够令这杯酒变得美味……那你就大错特错了。”<br>
     酸味，宣传，清淡。<br>
@@ -561,9 +729,9 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     </fieldset>
 </fieldset>
 
-<fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,#71A6A1,#71A6A1);">
+<fieldset class="酒 其他 Flmng_Moa"><legend style="background-image:linear-gradient(to right,#71A6A1,#71A6A1);">
 <h5>Flaming Moai</h5> 火焰摩艾 - $150</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/FlamingMoai.png" onerror="this.src='/i/0/2021/va11/FlamingMoai.png';this.onerror=null;" alt="Flaming Moai"><br>
+    <img src="/i/2264624/FlamingMoai.png" alt="Flmng Moa"><br>
     <span class="yla">1 Adelhyde</span>、<span class="ylb">1 Bronson Extract</span>、<span class="ylp">2 Powdered Delta</span>、<span class="ylf">3 Flanergide</span>和<span class="ylk">5 Karmotrine</span>，<span class="gyz">调制</span>而成。<br>
     酸味，经典，时尚。<br>
     <br>
@@ -580,15 +748,15 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,#CF9553,#CF9553);">
 <h5>A Fedora</h5> 软呢帽 - $500</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/AFedora.png" onerror="this.src='/i/0/2021/va11/AFedora.png';this.onerror=null;" alt="A Fedora"><br>
+    <img src="/i/2264624/AFedora.png" alt="A Fedora"><br>
     “内含香水和李子。”<br>
     <br>
     <span class="zhushi">«辛普森一家»的彩蛋：“Homer's Barbershop Quartet”一集里，Yoko Ono在Moe's Tavern里要一杯饮料，「一颗梅子，飘在香水上，装在男人的帽子里」。</span><br>
 </fieldset>
 
-<fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
+<fieldset class="酒 其他 乱码饮料"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
 <h5>##20%!!</h5> 乱码饮料</legend>
-    <img src="{{ site.mq_d }}/i/0/2021/va11/bug.png" onerror="this.src='/i/0/2021/va11/bug.png';this.onerror=null;" alt="##20%!!"><br>
+    <img src="/i/2264624/乱码饮料.png" alt="乱码饮料"><br>
     胡乱调配，会做出一杯名字乱码的饮料。<br>
     出现过的名字：“##20%!!”、“#y#bb=”、“#u??!!”、“n#@##*”、“gt??!#”、“f@###”。<br>
 </fieldset>
@@ -692,10 +860,6 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
         }
     }
 
-    function 改字体(){
-        document.getElementById("改字体").innerHTML="@font-face{font-family:俐方体11号;src:url('/i/0/2026/俐方体11号.ttf')}body{font-family:'俐方体11号';font-size:1.05em;}";
-    }
-
 async function 开场(){
     const output=document.getElementById("开场");
     output.style="";
@@ -740,5 +904,251 @@ Glitch City, 207X A.D.{<br>}
         await new Promise(resolve=>setTimeout(resolve,70));
         textNode.data+=char;
     }
+}
+
+document.querySelectorAll('img').forEach(img=>{
+  img.addEventListener('dragstart',e=>{
+    e.preventDefault();
+  });
+});
+
+let 酒=[
+    ["BadTouch","Bad_Touch",0,2,2,2,4,1,0,1],
+    ["Beer","Beer",1,2,1,2,4,0,0,1],
+    ["BleedingJane","Bleed_Jane",0,1,3,3,0,0,0,1],
+    ["Brandtini","Bloom_Lght",4,0,1,2,3,1,1,1],
+    ["BlueFairy","Blue_Fairy",4,0,0,1,"X",0,1,1],
+    ["Brandtini","Brandtini",6,0,3,0,1,0,1,1],
+    ["CobaltVelvet","Coblt_Vlvt",2,0,0,3,5,1,0,1],
+    ["CreviceSpike","Crv_Spike",0,0,2,4,"X",0,0,2],
+    ["FluffyDream","Flff_Dream",3,0,3,0,"X",0,1,1],
+    ["FringeWeaver","Frng_Weavr",1,0,0,0,9,0,1,1],
+    ["Beer","Frothy_Wtr",1,1,1,1,0,0,1,1],
+    ["GrizzlyTemple","Grizz_Tmpl",3,3,3,0,1,0,0,2],
+    ["GutPunch","Gut_Punch",0,5,0,1,"X",0,1,1],
+    ["Marsblast","Marsblast",0,6,1,4,2,0,0,2],
+    ["MercuryBlast","Mercryblst",1,1,3,3,2,1,0,2],
+    ["Moonblast","Moonblast",6,0,1,1,2,1,0,2],
+    ["PianoMan","Piano_Man",2,3,5,5,3,1,0,1],
+    ["PianoWoman","P.Woman",5,5,2,3,3,0,1,1],
+    ["PileDriver","Piledriver",0,3,0,3,4,0,0,1],
+    ["SparkleStar","Spark_Star",2,0,1,0,"X",0,1,1],
+    ["SugarRush","Sugar_Rush",2,0,1,0,"X",0,0,1],
+    ["SunshineCloud","Sun_Cloud",,2,2,0,0,"X",1,0,2],
+    ["Suplex","Suplex",0,4,0,3,4,1,0,1],
+    ["ZenStar","Zen_Star",4,4,4,4,4,1,0,1],
+    ["FlamingMoai","Flmng_Moa",1,1,2,3,5,0,0,1],
+];
+let 乱码饮料=["##20%!!","#y#bb=","#u??!!","n#@##*","gt??!#","f@###"];
+    // ["文件名","酒名",a,b,p,f,k,冰,陈化,调和],
+
+const floatingImg=document.getElementById('floatingImg');
+const targetArea=document.getElementById('b3格');
+
+let isDragging=false;
+let currentDragImage=null;
+let isInsideTarget=false;
+
+let canDrag=1;//1可以拖动 0不可以拖动
+
+let 情况={}
+let 进度=0;
+
+function isMatch(item,aArr,double=false){
+    const bNums=item.slice(2,10);
+    for(let i=0;i<8;i++){
+        const bVal=bNums[i];
+        const aVal=aArr[i];
+        if(bVal==="X") continue;
+        if(bVal===undefined) return false;
+        let realB;
+        if(i<5){
+            realB=double?bVal*2:bVal;
+        }
+        else{
+            realB=bVal;
+        }
+        if(realB!==aVal) return false;
+    }
+    return true;
+}
+
+function 工艺(o){
+    if(canDrag==1){
+        if(情况[o]==0){
+            情况[o]=1;
+            document.getElementById(o+"1图").style="opacity:1;";
+        }else{
+            情况[o]=0;
+            document.getElementById(o+"1图").style="opacity:0.35;";
+        }
+    }
+}
+
+let 调料=["a2","a3","a4","b2","b4"];
+
+function 重做(){
+    进度=0;
+    情况={
+        "a":0,//加冰
+        "b":0,//陈化
+        "a2":0,"a3":0,"a4":0,"b2":0,"b4":0,
+        "all":0,"调和":0}
+    canDrag=1;
+    document.getElementById("a1图").src="/i/2264624/a/va11_a1.png";
+    document.getElementById("b1图").src="/i/2264624/a/va11_b1.png";
+    document.getElementById("b3图").src="/i/2264624/a/va11_b3.png";
+    document.getElementById("a1图").style="opacity:0.35;";
+    document.getElementById("b1图").style="opacity:0.35;";
+    for(let i=0;调料.length>i;i++){
+        document.getElementById(调料[i]).src="/i/2264624/a/va11_"+调料[i]+".png";
+        document.querySelectorAll('#'+调料[i]+'调料 > div').forEach(s=>s.className='');
+    }
+    document.querySelectorAll('#c3内容 > span').forEach(s=>s.className='');
+    document.getElementById("c3内容").innerHTML="<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>";
+    document.getElementById("c4按钮").innerHTML="调制";
+    document.getElementById("c4按钮").className="c4";
+}
+
+重做();
+
+let timer;
+function 调制(){
+    if(情况["all"]==0){//没有材料
+
+    }else if(canDrag==1){//调制
+        canDrag=0;
+        情况["调和"]=1;
+        document.getElementById("c4按钮").innerHTML="停止";
+        document.getElementById("b3图").style="animation: swing 0.5s linear infinite alternate;";
+        for(let i=0;调料.length>i;i++){
+            document.getElementById(调料[i]).src="/i/2264624/a/va11_a0.png";
+        }
+        timer=setTimeout(()=>{//调和
+            情况["调和"]=2;
+            document.getElementById("b3图").style="animation: swing 0.2s linear infinite alternate;";
+        },5000);
+    }else if(进度==0){//停止
+        clearTimeout(timer);
+        document.getElementById("b3图").style="";
+        document.getElementById("c4按钮").innerHTML="上酒";
+        document.getElementById("c4按钮").className="c4";
+
+        let 当前=[情况["a2"],情况["a3"],情况["a4"],情况["b2"],情况["b4"],情况["a"],情况["b"],情况["调和"]];
+        let result=酒.find(item=>isMatch(item,当前));
+        if(result){}else{
+            result=酒.find(item=>isMatch(item,当前,true));
+            if(result){}else{
+                result=["乱码饮料",乱码饮料[Math.floor(Math.random()*乱码饮料.length)]];
+                进度="乱码饮料";
+            }
+        }
+        if(进度==0){进度=result[1]}
+        document.getElementById("b3图").src="/i/2264624/"+result[0]+".png";
+        document.getElementById("c3内容").innerHTML=result[1].replace(new RegExp('_',"g")," ");
+    }else{//上酒
+        window.location.hash=进度;
+        重做();
+    }
+}
+
+document.querySelectorAll('.dragDiv').forEach(div=>{
+  div.addEventListener('mousedown',(e)=>{
+    if(canDrag!==1){
+      return;
+    }
+
+    e.preventDefault();
+    isDragging=true;
+    currentDragImage=div.querySelector('img');
+    currentDragImage.style.visibility='hidden';
+    floatingImg.src=currentDragImage.src;
+    floatingImg.style.display='block';
+    moveFloatingImg(e.pageX,e.pageY);
+  });
+});
+
+document.addEventListener('mousemove',(e)=>{
+  if(!isDragging) return;
+  moveFloatingImg(e.pageX,e.pageY);
+
+  const nowInTarget=isMouseInsideElement(e,targetArea);
+  if(nowInTarget&&!isInsideTarget){
+    isInsideTarget=true;
+    onDragEnterTarget();
+  }
+  if(!nowInTarget&&isInsideTarget){
+    isInsideTarget=false;
+    onDragLeaveTarget();
+  }
+});
+
+document.addEventListener('mouseup',(e)=>{
+  if(!isDragging) return;
+  isDragging=false;
+  isInsideTarget=false;
+
+  if(currentDragImage){
+    currentDragImage.style.visibility='visible';
+  }
+
+  floatingImg.style.display='none';
+  const isInTarget=isMouseInsideElement(e,targetArea);
+  if(isInTarget&&currentDragImage){
+    onDropSuccess(currentDragImage);
+  }
+});
+
+function moveFloatingImg(x,y){
+  floatingImg.style.left=x-50+'px';
+  floatingImg.style.top=y-50+'px';
+}
+
+function isMouseInsideElement(e,element){
+  const rect=element.getBoundingClientRect();
+  return(
+    e.clientX>=rect.left&&
+    e.clientX<=rect.right&&
+    e.clientY>=rect.top&&
+    e.clientY<=rect.bottom
+  );
+}
+
+function onDragEnterTarget(){ //进入区域
+  console.log('进入目标区域');
+  document.getElementById("b3图").src='/i/2264624/a/va11_b3b.png';
+  document.getElementById("b3图").style.top='-9px';
+}
+
+function onDragLeaveTarget(){ //离开区域
+  console.log('移出目标区域');
+  document.getElementById("b3图").src='/i/2264624/a/va11_b3.png';
+  document.getElementById("b3图").style.top='0';
+}
+
+function onDropSuccess(draggedImg){ //区域内松手
+    情况[draggedImg.id]+=1;
+    if(情况[draggedImg.id]<=10){
+        document.querySelectorAll('#'+draggedImg.id+'调料 > div:nth-child(-n+'+情况[draggedImg.id]+')').forEach(s=>s.className=draggedImg.id+'a');
+    }else{
+        document.querySelectorAll('#'+draggedImg.id+'调料 > div:nth-child(-n+'+(情况[draggedImg.id]-10)+')').forEach(s=>s.className=draggedImg.id+'b');
+        if(情况[draggedImg.id]<20){
+            document.querySelectorAll('#'+draggedImg.id+'调料 > div:nth-child(n+'+(情况[draggedImg.id]-9)+'):nth-child(-n+20)').forEach(s=>s.className=draggedImg.id+'a');
+        }
+    }
+    情况["all"]+=1;
+    if(情况["all"]<=10){
+        document.querySelectorAll('#c3内容 > span:nth-child(-n+'+情况["all"]+')').forEach(s=>s.className='c3a');
+    }else{
+        document.querySelectorAll('#c3内容 > span:nth-child(-n+'+(情况["all"]-10)+')').forEach(s=>s.className='c3b');
+        if(情况["all"]<20){
+            document.querySelectorAll('#c3内容 > div:nth-child(n+'+(情况["all"]-9)+'):nth-child(-n+20)').forEach(s=>s.className='c3a');
+        }else{
+            canDrag=0;
+        }
+    }
+    document.getElementById("c4按钮").className="c4b";
+    document.getElementById("b3图").src='/i/2264624/a/va11_b3.png';
+    document.getElementById("b3图").style.top='0';
 }
 </script>

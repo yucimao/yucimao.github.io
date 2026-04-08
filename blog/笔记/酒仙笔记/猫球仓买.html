@@ -23,7 +23,7 @@ table{border:2px solid var(--va);box-shadow:none;border-spacing:2px;border-colla
 .弹窗_1{position:relative;background:var(--vd);top:20px;width:60%;height:65%;margin:5% auto;padding:14px 50px 40px;font-size:1.15em;line-height:33px;border:2px solid var(--va);word-wrap:break-word;overflow:auto;}
 #nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important;}
 #nav a{color:#E1E1E1 !important;}
-#酒单 fieldset{transition:all 0.2s ease;transform-origin:center;cursor:pointer;margin:12px auto 1.3em 0;
+#酒单 fieldset{transition:all 0.2s ease;transform-origin:center;cursor:pointer;margin:12px auto 1.6em 0;
 padding:10px 15px 15px;width:fit-content;}
 #酒单 fieldset:hover{transform:translateY(-2px) scale(1.04);}
 a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after{content:" ⛛";font-size:0.5em;}
@@ -35,7 +35,7 @@ i[i]{font-size:0.8em;color:#5e5e5e;font-weight:normal;letter-spacing:2px;}
 legend{padding:0 7px 0;}
 .酒 legend b{color:var(--vb);font-size:1.1em;font-weight:bold;}
 .酒 legend small{font-size:0.9em;}
-#对话 img{width:300px;background-color:#232323;}
+#对话 img.ft{width:300px;height:300px;background-color:#232323;}
 hr{margin:30px auto 16px;}
 hr{border:0;height:1px;background-image:linear-gradient(to right,#ffffff00,#ffffffbf,#ffffff00);width:80%;}
 #酒单 h1,#酒单 h2,#酒单 h3,#酒单 h4,#酒单 h5{margin:16px auto 20px;display:inline;}
@@ -100,7 +100,7 @@ let 醉酒=0,打招呼次数=0,dy="",跳转="",stopTyping=false,速度,临时变
 function 按钮(a,b){return `{<a onclick="输入(通用['${a}'],'开场白',this)"> - ${b}</a>}`;}
 function 特殊(a,b){return `{<a onclick="输入(通用['${a}'](),'开场白',this)"> - ${b}</a>}`;}
 function 注释(o){return `{<small class='zhushi'>//${o}</small>}`}
-function 图(o){return `{<img src='/i/2264624/${o}'><br><br>}`}
+function 图(o){return `{<img class='ft' src='/i/2264624/${o}'><br><br>}`}
 let br="{<br class='del'>}";
 
 let 道具={
@@ -635,7 +635,6 @@ let 酒={
     ["- 225ѣ","星露谷","美味多汁的热带水果。稍甜，夹着酸味。<br>“请适度饮酒。”",{0:图('杨桃果酒.png')+名('星露谷',1)+`农民自酿的酒，天然，健康。${注释('出自«星露谷物语»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"木桶发酵的果酒，酸度明显，清爽，甜度适中。{<br>}"+通用["关闭"]}],
 "上古水果果酒":
     ["- 300ѣ","星露谷","千万年来冬眠中的水果。<br>“请适度饮酒。”",{0:图('上古水果果酒.png')+名('星露谷',1)+`农民自酿的酒，天然，健康。${注释('出自«星露谷物语»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"甜味很淡，更多的是酸涩，还带点苦味。{<br>}"+通用["关闭"]}],
-
 
 // "":["- ѣ","关键词","介绍",{0:图('.png')+`介绍。${注释('出自«»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]}],
 }
