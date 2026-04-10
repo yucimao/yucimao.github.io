@@ -60,7 +60,7 @@ hr{border:none;height:3px;background-color:var(--vc)}
 #nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important}
 #nav a{color:#E1E1E1 !important}
 .tjs{margin:1em auto auto;display:inline}
-a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after{content:" ⛛";font-size:0.5em}
+a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after,#开场按钮:after{content:" ⛛";font-size:0.5em}
 
 .Gillian{color:#8017CA}
 .Jill{color:#617EE8}
@@ -187,6 +187,9 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
     from{transform:rotate(-24deg)}
     to{transform:rotate(24deg)}
 }
+.x_table td{padding:6px;line-height:24px}
+.x_table img{width:40px}
+#返回调酒台{border-bottom:none}
 
 .手机{display:none}
 @media screen and (max-width:768px){
@@ -208,13 +211,13 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
     <li><a href="https://www.bilibili.com/opus/983248679880097793">道心融解</a>（官方调酒书的原图）</li>
     <li><a href="https://www.gcores.com/articles/194881">子旋</a>（官方调酒书的翻译版本）</li>
 </ul></fieldset><br>
-<span class='zhushi'>以下记录了«Karmotrine Dream»（现实中的官方调酒书）的内容，点击<a id="tjs1" style="display:none;" onclick="tjs(1)">显示</a><a id="tjs2" onclick="tjs(0)">隐藏</a>。</span><br>
+<span class='zhushi'>以下记录了«Karmotrine Dream»<small>（官方推出的调酒配方书）</small>的内容，点击<a id="tjs1" style="display:none;" onclick="tjs(1)">显示</a><a id="tjs2" onclick="tjs(0)">隐藏</a>。</span><br>
 
 <hr>
 
 <ul>
-    <li><a onclick="开场();this.style='display:none;'">开场</a><fieldset style="display:none;" id="开场"></fieldset></li>
-    <li>位于故障城（Glitch City），在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家BTC认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉，北欧神话里的“英灵殿”）。<br>
+    <li><a id='开场按钮' onclick="开场();this.style='display:none;'">开场</a><fieldset style="display:none;" id="开场"></fieldset></li>
+    <li>位于故障城（Glitch City），在距离城市主干道只有几步之遥的小路上，贫民区附近的某个地方，你可以找到这家<span class='提示' data-msg='不列颠商标理事会 British Trademark Council'>BTC</span>认证编号VA-11的酒吧的Hall A……但是全称过于拗口，因此人们称之为Valhalla（瓦尔哈拉，北欧神话里的“英灵殿”）。<br>
         为了让酒吧名字像是“Valhalla”，<span class="Dana">Dana</span>原本看中的编号是“VA1”，但被人耍手段抢走了，<span class="Dana">Dana</span>为了获得“VA11”这个编号，让酒吧延迟了5个月开业。</li>
     <li>酒吧会提供薄荷糖，帮助客人掩盖嘴里的酒精味。</li>
     <li><span class="Jill">Jill</span>会收藏陈年老酒，并感到自豪。从爷爷的藏酒库存起步，慢慢发展起来。由于债务缠身，藏酒事业举步维艰，但总在设法一点点增加收藏。</li>
@@ -227,10 +230,6 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
 </ul>
 
 <br>
-
-<style>
-    .x_table td{padding:6px;line-height:24px}
-</style>
 
 <table class="x_table">
     <tr><td><b>原料</b></td><td></td></tr>
@@ -255,15 +254,6 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
         酒精的替代品。它不会改变味道，但摄入过多能引发醉意。
     </td></tr>
 </table>
-
-
-
-<!-- 原料：<br>
-<span class="yla">Adelhyde</span><sup>阿德海德</sup>：甜味。<br>
-<span class="ylb">Bronson Extract</span><sup>布朗森提取物(<span class="ylb">Bronson Ex</span>)</sup>：苦味。原料来源于Bronson的根。<span class="Jill">Jill</span>的爷爷是个每天早晨都要生吃根茎的狠人，据说它的营养成分比大多数维生素补品多。<br>
-<span class="ylp">Powdered Delta</span><sup>德尔塔粉末(<span class="ylp">Pwd Delta</span>)</sup>：酸味。<br>
-<span class="ylf">Flanergide</span><sup>弗拉基德</sup>：辣味。<br>
-<span class="ylk">Karmotrine</span><sup>卡尔莫丁</sup>：酒精的替代品。它不会改变味道，但摄入过多能引发醉意。<br> -->
 
 工艺：<span class="gyb">加冰</span><sup>(<span class="gyb">Ice</span>)</sup>、<span class="gyc">陈化</span><sup>(<span class="gyc">Age</span>)</sup>。<br>
 制作：<span class="gyz">调制</span><sup>(摇晃不超过5秒)</sup>、<span class="gyh">调和</span><sup>(摇晃超过5秒)</sup><br>
@@ -304,7 +294,6 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <small>（<a onclick="分类('其他')">其他</a>）</small><br>
     <small>（<a onclick="分类('0')">显示全部</a>）</small>
 </fieldset><br>
-<br>
 
 <span class='zhushi 手机'>（调酒功能请用电脑操作）</span>
 <fieldset class="调酒台">
@@ -360,7 +349,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <br>
     “Bad Touch”也可以理解为“咸猪手”，当客人点这种酒，说「give me a Bad Touch」（给我一杯Bad Touch），也可以理解为「来摸我」……这种冷笑话总会逗笑<span class="Jill">Jill</span>。<br>
     <span class="Stella">Stella</span>曾在派对上见过为这酒命名的人，人们纷纷编造借口排着队抽打他。<br>
-    <span class="zhushi">名字来源于Bloodhound Gang乐队的«The Bad Touch»。</span><br>
+    <span class="zhushi">名字来源于Bloodhound Gang乐队的«The Bad Touch»，酒的介绍是一句歌词。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         金酒 1oz + 潘诺酒 0.5oz + 蓝橙利口酒 少许 + 单一糖浆 0.25oz + 青柠汁 0.5oz + 橙汁 0.75oz + 汤力水 1.5oz<ol>
             <li>将除汤力水外的所有配料放入装满冰块的摇壶中。</li>
@@ -789,6 +778,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     酸味，经典，时尚。<br>
     <br>
     复活节岛石像风格的提基马克杯。<br>
+    <span class='zhushi'>«辛普森一家»的彩蛋：“Flaming Moe's”一集里，Homer将家里所有剩下的酒混在一起，倒入咳嗽糖浆，机缘巧合之下点燃了这杯酒，味道很不错，Moe评价「这味道像是我嘴里有个派对，而所有人都来了」，Homer给这酒取名“Flaming Homer”，被Moe窃取，改名“Flaming Moe's”。</span><br>
     <span class='zhushi'>指南文档中不存在这杯酒，可以在第三章开始前给任意客人提供这杯酒来完成一个成就。</span><br>
     <fieldset class="tjs"><legend>调酒书</legend>
         黑朗姆酒 1oz + 天鹅绒法勒纳姆利口酒 0.5oz + 阿佩罗 0.25oz + 青柠汁 0.5oz + 姜汁啤酒 1oz + 汤力水 少许<ol>
@@ -804,7 +794,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
     <img src="/i/2264624/AFedora.png" alt="A Fedora"><br>
     “内含香水和李子。”<br>
     <br>
-    <span class="zhushi">«辛普森一家»的彩蛋：“Homer's Barbershop Quartet”一集里，Yoko Ono在Moe's Tavern里要一杯饮料，「一颗梅子，飘在香水上，装在男人的帽子里」。</span><br>
+    <span class="zhushi">«辛普森一家»的彩蛋：“Homer's Barbershop Quartet”一集里，Yoko Ono在Moe's Tavern里要一杯饮料，「一颗梅子，飘在香水上，装在男人的帽子里」，Moe立刻就拿了出来。</span><br>
 </fieldset>
 
 <fieldset class="酒 其他"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
@@ -817,6 +807,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
 <h5>Mulan Tea</h5> 木兰茶 - $500</legend>
+    <img src="/i/2264624/MulanTea.png" alt="Mulan Tea"><br>
     “一壶令人垂涎的茶酿烈酒，味道像是绿茶，但酒劲儿堪比威士忌。”<br>
     <br>
     需要在JC Elton's购买，价值$900。<br>
@@ -825,13 +816,16 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
 <h5>Cacique Rum</h5> 酋长朗姆酒 - $500</legend>
+    <img src="/i/2264624/CaciqueRum.png" alt="Cacique Rum"><br>
     “祖父级的酒。”<br>
     <br>
-    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<span class='zhushi'>需要在第3天给Stella调出正确的酒。</span><br>
+    <span class="Stella">Stella</span>送给<span class="Jill">Jill</span>的礼物。<br>
+    <span class='zhushi'>需要在第3天给Stella调出正确的酒。</span><br>
 </fieldset>
 
 <fieldset class="酒 瓶装"><legend style="background-image:linear-gradient(to right,var(--vb),var(--vb));">
 <h5>Absinthe</h5> 苦艾酒 - $500</legend>
+    <img src="/i/2264624/Absinthe.png" alt="Absinthe"><br>
     “像呕吐物一样绿的精灵。”<br>
     <br>
     <span class="Jill">Jill</span>从家里带来的，没有标签，并不值钱，但酒还是不错的。<br>
@@ -868,6 +862,7 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
 <h4>游戏外</h4><ul>
     <li>作者Kiri以前从没喝过酒，还是游戏发售之后去日本才第一次喝酒。</li>
     <li>官方中译的调酒指南里没有酒的中文名，只有对话里会用“啤酒（Beer）”这种形式，因为最初作者没考虑本地化，或者说压根没觉得自己的作品能发展到需要本地化的那一步，设计上没有翻译文本留位置。</li>
+    <li><a href="https://sukeban.moe/">官方博客</a>的对人物设计之类的杂谈：<a href="https://cowlevel.net/collection/2430805">中文翻译</a></li>
 </ul>
 
 <hr>
@@ -890,16 +885,16 @@ NDL：酒吧最基本的液体是Nutriogenic Dichometrical Lydogenol，简称NDL
         </fieldset>
 </fieldset><br>
 
-<a id="返回调酒台" onclick="返回调酒台()" style="position:fixed;top:200px;right:20px"><img src="/i/2264624/a/va11_btc.png" alt="返回调酒台" style="width:80px"></a>
+<a id="返回调酒台" class='提示' data-msg='B.T.C 调酒指南' onclick="返回调酒台()" style="position:fixed;top:200px;right:20px"><img src="/i/2264624/a/va11_btc.png" alt="返回调酒台" style="width:80px"></a>
 
 <script>
-    function 分类(o){
+    function 分类(o,b){
         if(o=="0"){
             document.getElementById("BTC分类").innerHTML="";
-            notyf.confirm("显示全部");
+            if(!b){notyf.confirm("显示全部")}
         }else{
             document.getElementById("BTC分类").innerHTML=".酒{display:none}."+o+"{display:block}";
-            notyf.confirm("只看"+o);
+            if(!b){notyf.confirm("只看"+o)}
         }
         document.querySelector('[name="酒单"]').scrollIntoView({behavior:"smooth"});
     }
@@ -1118,7 +1113,7 @@ function 调制(){
         document.getElementById("c3内容").style="";
         document.getElementById("c3内容").innerHTML=result[1].replace(new RegExp('_',"g")," ");
     }else{//上酒
-        分类('0');
+        分类('0',1);
         window.location.hash=进度;
         重做();
     }
@@ -1221,4 +1216,18 @@ function onDropSuccess(draggedImg){ //区域内松手
     document.getElementById("b3图").src='/i/2264624/a/va11_b3.png';
     document.getElementById("b3图").style.top='0';
 }
+
+
+document.addEventListener('keydown',function(e){
+  const key=e.key.toLowerCase();
+    if(key=='escape'){重做()}
+    if(key==' '){e.preventDefault();调制()}
+    if(key=="q"){onDropSuccess(document.getElementById("a2"))}
+    if(key=="w"){onDropSuccess(document.getElementById("a3"))}
+    if(key=="e"){onDropSuccess(document.getElementById("a4"))}
+    if(key=="r"){onDropSuccess(document.getElementById("b2"))}
+    if(key=="t"){onDropSuccess(document.getElementById("b4"))}
+    if(key=="a"){工艺("a")}
+    if(key=="s"){工艺("b")}
+});
 </script>
