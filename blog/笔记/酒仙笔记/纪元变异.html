@@ -1,0 +1,126 @@
+---
+layout: page2
+title: 纪元：变异
+nav_text: 纪元：变异
+nav_url: <a href="/jiuxian">酒仙笔记</a>
+permalink: i/17623880
+---
+<link rel="stylesheet" href="/css/all2.css">
+
+<style>
+    .wine-glass{
+      display:inline-block;
+      width:0;
+      height:0;
+      top:6px;
+      position:relative;
+      vertical-align:middle;
+      margin:0 2px;
+      --col_a:#000;
+    }
+
+    .wine-glass::before{
+      content:"";
+      position:absolute;
+      top:2px;
+      left:50%;
+      transform:translateX(-50%);
+      border-left:12px solid transparent;
+      border-right:12px solid transparent;
+      border-top:21px solid var(--col_b);
+      z-index:3;
+    }
+
+    .wine-glass::after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      border-left:16px solid transparent;
+      border-right:16px solid transparent;
+      border-top:28px solid var(--col_a);
+    }
+
+    .wine-glass .stem{
+      width:2px;
+      height:10px;
+      background:var(--col_a);
+      position:absolute;
+      top:24px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .wine-glass .base{
+      width:9px;
+      height:2px;
+      background:var(--col_a);
+      position:absolute;
+      top:33px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .结果{width:30px;height:60px;text-align:center;background-color:#202D27;}
+    td.红{color:#A02442;}
+    td.绿{color:#3D803B;}
+    td.蓝{color:#3459A1;}
+    td.td{text-align:center;vertical-align:middle;}
+
+    .wine-glass.白{--col_a:#FFFFFF;--col_b:#989A99;}
+    .wine-glass.红{--col_a:#FA3752;--col_b:#942934;}
+    .wine-glass.绿{--col_a:#52D513;--col_b:#327F1C;}
+    .wine-glass.蓝{--col_a:#2F92FA;--col_b:#205793;}
+    .wine-glass.紫{--col_a:#C94AF0;--col_b:#77308E;}
+    .wine-glass.黄{--col_a:#F0C644;--col_b:#8D752F;}
+    .wine-glass.浅蓝{--col_a:#2FFCF9;--col_b:#219693;}
+
+</style>
+
+<span class='zhushi'>只玩了个开头，到酒吧觉得失望就没继续玩了。<br>
+  之前听说这个游戏有«赛博朋克酒保行动»的彩蛋，也有酒吧场景，才感兴趣来玩的，结果调酒就是个很无聊的小游戏，就是跟着屏幕显示的三个颜色点击，然后找准机会按空格，主要是拼眼力和手速，对酒没什么设计，很失望。«赛博朋克酒保行动»的彩蛋也觉得做的不好，Jill每次抽烟都是去酒吧外面的，在这里做成了一直在酒吧里抽烟……</span><br>
+<br>
+
+科技极速发展……城市小镇的一切都在被金属覆盖，机械病毒大爆发后，连人类都会被金属覆盖……酒桶也不例外。<br>
+
+<hr>
+
+<h3>西西里罐头酒吧（The Slcilian Jar）</h3>
+老板：中村·弗洛雷斯<br>
+<br>
+
+三种基酒，分别是<b style="color:#A3284C">红色</b>、<b style="color:#408042">绿色</b>、<b style="color:#3258A1">蓝色</b>，按照特定顺序添加、摇和，即可制成不同颜色的鸡尾酒。<br>
+
+<table id="调酒"></table>
+
+<br>
+
+
+顾客台词：<ul>
+    <li>「这家有位传说中的调酒师很厉害的！据说喝了她的酒，晚上就会做好梦。第二天也不会有宿醉的感觉！不过，能喝到她的酒似乎要靠运气……」</li>
+    <li>「那杯热情古巴燃烧了我所有的毛孔！」</li>
+</ul>
+
+厨房里的纸条：<ul>
+    <li>伯特·伯登拜尔：「嘿，机器人老大，那些5万桶基因改良的蓝香蕉啤酒和喜庆的纳米动画跳跃小马即将过期，你还想不想要了？」</li>
+</ul>
+
+<script>
+    let 调酒=[
+        ["红","红","红","红"],
+        ["绿","绿","绿","绿"],
+        ["蓝","蓝","蓝","蓝"],
+        ["红","绿","蓝","白"],
+        ["红","红","蓝","紫"],
+        ["红","绿","绿","黄"],
+        ["蓝","绿","蓝","浅蓝"],
+        // ["","","",""],
+    ];
+    let dy="";
+    for(let i=0;调酒.length>i;i++){
+        dy+=`<tr><td class="td ${调酒[i][0]}"><b>${调酒[i][0]}</b></td><td class="td">+</td><td class="td ${调酒[i][1]}"><b>${调酒[i][1]}</b></td><td class="td">+</td><td class="td ${调酒[i][2]}"><b>${调酒[i][2]}</b></td><td class="td">=</td><td class="结果"><span class="wine-glass ${调酒[i][3]}"><span class="stem"></span><span class="base"></span></span></td></tr>`;
+    };
+    document.getElementById("调酒").innerHTML=dy;
+</script>
+
