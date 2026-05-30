@@ -1,0 +1,309 @@
+---
+layout: page2
+title: 粉丝、获奖、排名
+nav_text: 粉丝、获奖、排名
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/18013331
+---
+跳转：<a href="#粉丝数">粉丝数</a> . <a href="#获奖">获奖</a> . <a href="#排名">排名</a><br><br>
+<style>
+.jiacu{font-weight:bold;}.lanse{background-color:#e6f0ff !important;}.zise{background-color:#f0e6ff !important;}
+#fensi td:first-child,#huojiang td:first-child,#paiming td:first-child{font-size:0.7em;}
+#fensi td:nth-child(2),#huojiang td:nth-child(2),#paiming td:nth-child(2){text-align:right;}
+</style>
+<a name="粉丝数"></a><table><tr><td style="font-weight:bold" colspan="4">粉丝数</td></tr><tbody id="fensi"></tbody></table><br><table><tr><td style="font-weight:bold" colspan="2">全平台</td></tr><tbody id="fansTotal"></tbody></table><br><br><a name="获奖"></a><table><tr><td style="font-weight:bold" colspan="4">获奖</td></tr><tbody id="huojiang"></tbody></table><br><br><a name="排名"></a><table><tr><td style="font-weight:bold" colspan="4">排名</td></tr><tbody id="paiming"></tbody></table>
+
+<script>
+let 粉丝数=[
+["2020年4月","原神","B站","100万"],
+["2020年8月","原神","B站","200万"],
+["2020年12月","原神","YouTube","100万"],
+["2021年2月","原神","日本Twitter","100万"],
+["2021年2月","原神","B站","500万"],
+["2021年3月","原神","微博","100万"],
+["2021年5月","原神","INS","100万"],
+["2021年9月","原神","微博","200万"],
+["2021年9月","崩坏3","B站","300万"],
+["2022年3月","原神","B站","1000万"],
+["2022年4月","原神","YouTube","500万"],
+["2022年4月","原神","日本Twitter","200万"],
+["2022年4月","原神","抖音","500万"],
+["2022年5月","绝区零","B站","100万"],
+["2022年7月","原神","微博","500万"],
+["2022年9月","崩坏3","微博","100万"],
+["2022年12月","原神","B站","1500万"],
+["2023年2月","星穹铁道","B站","300万"],
+["2023年3月","原神","Twitter","500万"],
+["2023年4月","星穹铁道","微博","100万"],
+["2023年5月","星穹铁道","B站","600万"],
+["2023年5月","原神","B站","1700万"],
+["2023年6月","原神","微博","1000万"],
+["2023年7月","星穹铁道","微博","200万"],
+["2023年11月","绝区零","B站","300万"],
+["2023年12月","星穹铁道","微博","300万"],
+["2024年6月","星穹铁道","B站","1000万"],
+["2024年6月","绝区零","B站","500万"],
+["2024年12月","绝区零","微博","100万"],
+["2025年7月","原神","B站","2000万"],
+["2025年10月","原神","Twitter","800万"],
+// ["年月","","","万"],
+];
+let 获奖=[
+["2020年","原神","App Store 年度最佳","<b>年度游戏</b>"],
+["2020年","原神","Google Play 年度最佳","<b>年度最佳游戏</b>、最佳创新游戏"],
+["2020年","原神","TapTap 年度游戏大赏","<b>最佳游戏</b>"],
+["第十届","原神","纽约游戏大奖","最佳手机游戏"],
+["2020年","原神","金葡萄奖","年度最佳游戏、年度最佳视觉效果、年度最受关注游戏"],
+["2020年","米哈游","金葡萄奖","年度优秀出海企业、年度最受关注企业"],
+["2020年","原神","<b>Fami通电击游戏大赏</b>","<b>特别奖</b>"],
+["2021年","原神","Apple 设计大奖","视觉图像奖项"],
+["2021年","原神","<b>GDC</b>","最佳手游"],
+["2021年","原神","年度首届中国游戏创新大赛","最佳创新游戏大奖"],
+["2021年","原神","PlayStation Partner Awards","<b>年度大奖</b>、游戏音乐奖第二名"],
+["2021年","原神","<b>The Game Awards</b>","最佳移动游戏"],
+["2021年","原神","年度bilibili游戏大赏","最佳国产手游"],
+["2021年","原神","金葡萄奖","年度最佳营销案例（异世相遇，尽享美味）"],
+["2021年","米哈游","金葡萄奖","年度优秀出海企业、年度最受关注企业"],
+["2021年","星穹铁道","金葡萄奖","年度最受期待游戏"],
+["2021年","原神","TapTap 年度游戏大赏","最佳持续运营"],
+["2022年","原神","Epic年度回顾","最有影响力游戏"],
+["2022年","原神","GAME STAR 游戏之星","主机游戏金奖、PC游戏银奖、手机游戏铜奖"],
+["2020年","原神","SensorTower 年度亚洲奖项","最佳开放世界游戏"],
+["2022年","原神","国家年度十大IP 游戏赛道","金奖"],
+["第40届","原神","<b>金摇杆奖</b>","<b>最佳持续游玩奖</b>"],
+["2022年","原神","PlayStation Partner Awards","<b>年度大奖</b>"],
+["2022年","原神","<b>The Game Awards</b>","玩家之声"],
+["2022年","原神","Google Play 年度最佳","年度最佳持续影响力奖"],
+["2023年","原神","TapTap 年度游戏大赏","最佳持续运营、最受玩家欢迎角色（雷电将军）"],
+["2022年","原神","金葡萄奖","年度最佳音乐设计（智妙明论之林）"],
+["2022年","米哈游","金葡萄奖","年度优秀出海企业、年度最受关注企业"],
+["2022年","星穹铁道","金葡萄奖","年度最受期待游戏"],
+["2022年","绝区零","金葡萄奖","年度最受期待游戏"],
+["2022年","原神","世萌","原神表演赛（胡桃）"],
+["2022年","原神","微博ACGN次元大赏","年度游戏IP、年度热浪游戏"],
+["2022年","原神","中国游戏产业年会 游戏十强年度榜","优秀移动游戏"],
+["2022年","原神","GAME STAR 游戏之星","主机游戏银奖、PC游戏银奖、手机游戏铜奖"],
+["2023年","原神","Epic年度回顾","畅销和常玩游戏 神话级（1）"],
+["2023年","星穹铁道","Epic年度回顾","最受期待游戏"],
+["2023年","米哈游","国家版权局","全国版权示范单位"],
+["2023年","原神","腾讯音乐娱乐盛典","年度最佳游戏类音乐专辑"],
+["第三届","星穹铁道","中国游戏创新大赛","最佳创新游戏大奖"],
+["2023年","原神","PlayStation Partner Awards","<b>年度大奖</b>"],
+["2023年","星穹铁道","Google Play 年度最佳","<b>年度最佳游戏</b>、年度最佳剧情游戏、年度最佳平板电脑游戏"],
+["2023年","星穹铁道","App Store 年度精选","<b>年度游戏</b>"],
+["2023年","星穹铁道","<b>The Game Awards</b>","最佳移动游戏"],
+["2023年","原神","微博游戏大赏","年度卓越热游"],
+["2023年","星穹铁道","微博游戏大赏","年度卓越新游"],
+["2023年","绝区零","微博游戏大赏","年度期待游戏"],
+["2023年","原神","微博游戏大赏","最受欢迎游戏男角色（流浪者）"],
+["2023年","星穹铁道","TapTap年度游戏大赏","<b>最佳游戏</b>、最佳声音表现、最受玩家喜爱角色（卡芙卡）"],
+["2023年","绝区零","TapTap年度游戏大赏","最受玩家期待"],
+["2023年","原神","TapTap年度游戏大赏","最受玩家喜爱角色（芙宁娜）、优秀社会价值榜单（希望之壁捐赠）"],
+["2023年","原神","GAME STAR 游戏之星","主机游戏金奖、PC游戏金奖、手机游戏银奖"],
+["2024年","原神","Epic年度回顾","畅销和常玩游戏 神话级（1）"],
+["2024年","星穹铁道","Epic年度回顾","畅销和常玩游戏 史诗级（3）"],
+["2023年","星穹铁道","<b>Fami通电击游戏大赏</b>","最佳手游"],
+["2024年","星穹铁道","Pocket Gamer","最佳叙事"],
+["2024年","米哈游","Pocket Gamer","最佳开发商"],
+["2024年","原神","<b>Gamescom Award</b>","最佳移动游戏"],
+["2024年","原神","泰国电玩展","最佳持续运营"],
+["2024年","绝区零","泰国电玩展","最佳移动游戏"],
+["2024年","米哈游","泰国电玩展","最佳开发商"],
+["2024年","星穹铁道","Google Play 年度最佳","最佳持续运营"],
+["第42届","星穹铁道","<b>金摇杆奖</b>","最佳持续游玩奖"],
+["2024年","原神","PlayStation Partner Awards","<b>卓越大奖</b>"],
+["2024年","星穹铁道","PlayStation Partner Awards","合作伙伴奖"],
+["2024年","绝区零","PlayStation Partner Awards","合作伙伴奖"],
+["2024年","原神","上海全球文化IP产业发展大会","年度文化IP"],
+["2024年","原神","微博游戏大赏","年度最具影响力"],
+["2024年","绝区零","微博游戏大赏","年度最受玩家喜爱新游"],
+["2024年","绝区零","TapTap 年度游戏大赏","<b>最佳游戏</b>、最佳视觉、最佳音乐表现"],
+["2024年","绝区零","纽约游戏大奖","最佳手机游戏"],
+["2024年","原神","Epic年度回顾","畅销和常玩游戏 神话级(第1)"],
+["2024年","星穹铁道","Epic年度回顾","畅销和常玩游戏 神话级(第1)"],
+["2024年","绝区零","Fami通电击游戏大赏","最佳手游"],
+["2024年","绝区零","CEDEC AWARDS","视觉艺术优秀奖"],
+["2024年","原神","世萌","电子游戏表演赛（芙宁娜）"],
+["2025年","绝区零","MGA","最佳视觉成就"],
+["2025年","米哈游","泰国电玩展","最佳开发商"],
+["2025年","星穹铁道","泰国电玩展","最佳持续运营"],
+["2025年","绝区零","PlayStation Partner Awards","<b>年度大奖</b>"],
+["2025年","原神","Discord","最佳游戏社区"],
+["2025年","星穹铁道","音数协年度游戏十强","优秀游戏音乐设计"],
+["2025年","原神","索尼 PS Blog","最佳持续运营（白金奖）"],
+["2025年","星穹铁道","索尼 PS Blog","最佳持续运营（铜奖）"],
+["2025年","星穹铁道","TapTap 年度游戏大赏","最受玩家喜爱女角色(流萤)、最佳联动(xFate ubw)、最佳版本(3.2)"],
+["2025年","原神","Epic年度回顾","畅销和常玩游戏 神话级(第1)"],
+["2025年","星穹铁道","Epic年度回顾","畅销和常玩游戏 神话级(第1)"],
+["2025年","绝区零","Epic年度回顾","畅销和常玩游戏 传说级(第2)"],
+// ["年","","",""],
+];
+let 排名=[
+["2020年","原神","<b>谷歌</b>年度热搜","游戏榜 4"],
+["2020年","原神","<b>推特</b>年度榜单","游戏榜 8"],
+["2020年","原神","<b>bilibili</b>年度游戏大赏","最多观看 5 / 最多搜索 5 / 最受热议 1 / 用户最喜爱手游 2"],
+["2021年","米哈游","<b>BrandZ</b>中国全球化品牌","22"],
+["2021年","原神","<b>谷歌</b>年度热搜","游戏榜 6"],
+["2021年","原神","<b>Pornhub</b>年度盘点","最多搜索游戏 8"],
+["2021年","原神","<b>微博</b>游戏大赏","3"],
+["2021年","原神","<b>reddit</b>年榜","游戏板块 1"],
+["2021年","原神","<b>推特</b>年度榜单","游戏榜 1"],
+["2021年","原神","<b>bilibili</b>年度游戏大赏","最多创作 1 / 直播热度最高 2 / 最多观看 3 / 最受关注 6 / 最多搜索 1"],
+["2022年","米哈游","<b>BrandZ</b>中国全球化品牌","20"],
+["2022年","原神","<b>Pornhub</b>年度盘点","最多搜索游戏 3 / 最多搜索角色 7 10 14 15 17"],
+["2022年","原神","<b>reddit</b>年榜","游戏板块 5"],
+["2022年","原神","<b>推特</b>年度榜单","游戏榜 1"],
+["2022年","原神","<b>bilibili</b>年度游戏大赏","最多创作 1 / 直播热度最高 2 / 最多观看 1 / 最受关注 4 / 最多搜索 1 / 年度热门作品 1"],
+["2022年","原神","<b>bilibili</b>动画年度盘点","热门游戏 1"],
+["2023年","米哈游","<b>BrandZ</b>中国全球化品牌","18"],
+["2023年","米哈游","Pocket Gamer Biz全球手游开发商榜单","1"],
+["2023年","原神","<b>维基百科</b>全球IP价值榜","80"],
+["2023年","原神","<b>百度贴吧</b>年终游戏大赏","吧友最支持游戏 1"],
+["2023年","原神","<b>bilibili</b>年度游戏大赏","最多创作 1 / 直播热度最高 2 / 最多观看 1 / 最受关注 4 / 年度热门作品（视频） 4"],
+["2023年","星穹铁道","<b>bilibili</b>年度游戏大赏","最多创作 3 / 直播热度最高 3 / 最受关注 1 / 最受热议 10 / 年度热门作品（视频） 8"],
+["2023年","绝区零","<b>bilibili</b>年度游戏大赏","最受关注 5"],
+["2023年","未定事件簿","<b>bilibili</b>年度游戏大赏","最受关注 6"],
+["2023年","崩坏3","<b>bilibili</b>年度游戏大赏","最受关注 7"],
+["2023年","原神","<b>Pornhub</b>年度盘点","最多搜索游戏 6"],
+["2024年","米哈游","<b>胡润</b>独角兽榜","全球 12 / 中国 5"],
+["2024年","米哈游","<b>BrandZ</b>中国全球化品牌","18"],
+["2024年","米哈游","<b>胡润</b>中国500强","51"],
+["2024年","原神","<b>Pornhub</b>年度盘点","最多搜索游戏 2 / 最多搜索角色 10 14 17 20 22"],
+["2024年","原神","<b>维基百科</b>全球IP价值榜","69"],
+["2024年","米哈游","<b>中国品牌年度大奖</b>手游行业","1"],
+["2024年","米哈游","<b>胡润</b>中国500强","48"],
+["2025年","米哈游","<b>新华社</b>品牌全球传播力大会","品牌全球传播力 8"],
+["2025年","原神","<b>新华社</b>品牌全球传播力大会","游戏潮玩品牌全球传播力榜 1"],
+["2025年","星穹铁道","<b>新华社</b>品牌全球传播力大会","游戏潮玩品牌全球传播力榜 4"],
+["2025年","米哈游","<b>GYBrand</b>中国品牌500强","374"],
+["2025年","米哈游","<b>BrandZ</b>中国全球化品牌","17"],
+["2025年","米哈游","<b>胡润</b>独角兽榜","全球 17 / 中国 6"],
+["2025年","原神","<b>Pornhub</b>年度盘点","最多搜索游戏 1"],
+["2025年","原神","<b>维基百科</b>全球IP价值榜","70"],
+["2025年","米哈游","<b>胡润</b>中国500强","58"],
+// ["年","","",""],
+];
+
+(function renderFans() {
+    const tbody = document.getElementById('fensi');
+    const totalBox = document.getElementById('fansTotal');
+    const lastMap = new Map();
+    const rowList = [];
+
+    粉丝数.forEach((item, idx) => {
+        const [_, work, plat] = item;
+        lastMap.set(`${work}|${plat}`, idx);
+    });
+
+    粉丝数.forEach((row, idx) => {
+        const tr = document.createElement('tr');
+        const [time, work, plat, num] = row;
+        const isLast = lastMap.get(`${work}|${plat}`) === idx;
+
+        row.forEach((cell, cellIdx) => {
+            const td = document.createElement('td');
+            td.innerHTML = cell;
+            if (cellIdx === 3 && isLast) td.className = 'jiacu';
+            tr.appendChild(td);
+        });
+
+        tr.dataset.work = work;
+        tr.dataset.plat = plat;
+        tr.addEventListener('click', () => {
+            rowList.forEach(r => r.classList.remove('lanse', 'zise'));
+            rowList.forEach(r => {
+                const rWork = r.dataset.work;
+                const rPlat = r.dataset.plat;
+                if (rWork === work && rPlat === plat) {
+                    r.classList.add('zise');
+                } else if (rWork === work) {
+                    r.classList.add('lanse');
+                }
+            });
+        });
+        rowList.push(tr);
+        tbody.appendChild(tr);
+    });
+
+    let allSum = 0;
+    const workSum = {};
+    lastMap.forEach(idx => {
+        const numStr = 粉丝数[idx][3];
+        const num = parseInt(numStr);
+        const work = 粉丝数[idx][1];
+        workSum[work] = (workSum[work] || 0) + num;
+        allSum += num;
+    });
+
+    let html = '';
+    for (const w in workSum) {
+        html += `<tr><td>${w}</td><td>${workSum[w]}万</td></tr>`;
+    }
+    html += `<tr><td><b>总计</b></td><td>${allSum}万</td></tr>`;
+    totalBox.innerHTML = html;
+})();
+
+(function renderAward() {
+    const tbody = document.getElementById('huojiang');
+    const rowList = [];
+
+    获奖.forEach(row => {
+        const tr = document.createElement('tr');
+        const [year, work, award] = row;
+        row.forEach(cell => {
+            const td = document.createElement('td');
+            td.innerHTML = cell;
+            tr.appendChild(td);
+        });
+
+        tr.dataset.work = work;
+        tr.dataset.award = award;
+        tr.addEventListener('click', () => {
+            rowList.forEach(r => r.classList.remove('lanse', 'zise'));
+            rowList.forEach(r => {
+                const rWork = r.dataset.work;
+                const rAward = r.dataset.award;
+                if (rWork === work && rAward === award) {
+                    r.classList.add('zise');
+                } else if (rAward === award) {
+                    r.classList.add('lanse');
+                }
+            });
+        });
+        rowList.push(tr);
+        tbody.appendChild(tr);
+    });
+})();
+
+(function renderRank() {
+    const tbody = document.getElementById('paiming');
+    const rowList = [];
+
+    排名.forEach(row => {
+        const tr = document.createElement('tr');
+        const [year, work, board] = row;
+        row.forEach(cell => {
+            const td = document.createElement('td');
+            td.innerHTML = cell;
+            tr.appendChild(td);
+        });
+
+        tr.dataset.work = work;
+        tr.dataset.board = board;
+        tr.addEventListener('click', () => {
+            rowList.forEach(r => r.classList.remove('lanse', 'zise'));
+            rowList.forEach(r => {
+                const rWork = r.dataset.work;
+                const rBoard = r.dataset.board;
+                if (rWork === work && rBoard === board) {
+                    r.classList.add('zise');
+                } else if (rBoard === board) {
+                    r.classList.add('lanse');
+                }
+            });
+        });
+        rowList.push(tr);
+        tbody.appendChild(tr);
+    });
+})();
+</script>
