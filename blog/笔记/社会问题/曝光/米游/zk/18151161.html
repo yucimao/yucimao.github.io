@@ -1,0 +1,143 @@
+---
+layout: zk
+title: 18151161
+nav_text: 18151161
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/18151161
+---
+<link rel="stylesheet" href="/css/all2.css">
+（注：«鸣潮»视频发布于11:00，«原神»视频发布于12:00，以下“发布约xx分钟”以«原神»为准）
+
+  <style>
+    table { border-collapse: collapse; margin: 20px; }
+    th, td { border: 1px solid #999; padding: 6px 12px; text-align: center; }
+    th { background: #f5f5f5; }
+    .diff { font-size: 12px; color: #666; }
+  </style>
+
+  <div id="tableBox"></div>
+
+<script>
+    const data = [
+    ["发布约30分钟",
+        ["23.7万","4.8万","4.4万","1.5万","4万+"],
+        ["50.7万","4.7万","3.4万","0.9万","1.1万+"],
+    ],["发布约2小时10分钟",
+        ["92.5万","15.4万","16.1万","5.3万","1.5万+"],
+        ["92.5万","7.4万","5.2万","1.6万","5000+"],
+    ],["发布于2小时45分钟",
+        ["105.3万","17.1万","18.1万","5.9万","1.5万+"],
+        ["114万","8.2万","5.6万","1.7万","7000+"],
+    ],["发布约4小时20分钟",
+        ["140万","21.5万","23.1万","7.3万","1.3万+"],
+        ["186.8万","10.3万","6.6万","2.1万","6000+"],
+    ],["发布约5小时10分钟",
+        ["160.2万","23.8万","25.8万","8万","1.2万+"],
+        ["208.4万","11万","6.9万","2.3万","5000+"],
+    ],["发布约6小时",
+        ["188.7万","27.2万","28.6万","9万","1.6万+"],
+        ["216.8万","11.3万","7.2万","2.4万","5000+"],
+    ],["发布约7小时20分钟",
+        ["232.4万","32.6万","33.7万","10.8万","1.5万+"],
+        ["231.8万","12万","7.6万","2.5万","4000+"],
+    ],["发布约7小时40分钟",
+        ["240.7万","33.5万","34.6万","11.1万","1.5万+"],
+        ["234.5万","12.1万","7.7万","2.6万","4000+"],
+    ],["发布约8小时20分钟",
+        ["255万","35.2万","36.1万","11.7万","1.4万+"],
+        ["238.8万","12.3万","7.8万","2.6万","3000+"],
+    ],["发布约11小时45分钟",
+        ["324.4万","43.6万","44万","14.9万","1.1万"],
+        ["253.4万","13.1万","8.2万","2.8万","2000+"],
+    // ],["",
+    //     ["","","","",""],
+    //     ["","","","",""],
+    ],
+    ];
+
+function parseNum(str) {
+  if (str.includes("万")) {
+    let num = parseFloat(str);
+    return num * 10000;
+  }
+  return parseInt(str.replace("+", ""));
+}
+
+function numToWan(num) {
+  if (num === 0) return '0';
+  const isPositive = num > 0;
+  const val = Math.abs(num) / 10000;
+  let numStr = val % 1 === 0 ? val.toFixed(0) : val.toFixed(1);
+  return isPositive ? `+${numStr}万` : `-${numStr}万`;
+}
+
+function formatCell(originStr, diff) {
+  if (diff === 0) return originStr;
+  const diffText = numToWan(diff);
+  return `${originStr}<span class="diff"> (${diffText})</span>`;
+}
+
+function createTable(dataList) {
+  let html = '<table><tr style="font-weight:bold;position:sticky;top:0;"><td></td><td>播放 <span class="diff">(较上次)</span></td><td>点赞</td><td>投币</td><td>收藏</td><td>观看人数</td></tr>';
+  const colCount = dataList[0][1].length;
+
+  for (let i = 0; i < dataList.length; i++) {
+    const [timeText, gnsArr, mcArr] = dataList[i];
+
+    html += `<tr><td colspan="${colCount+1}"><b>${timeText}</b></td></tr>`;
+
+    html += '<tr><td>«原神»</td>';
+    const gnsDiffList = [];
+    for (let j = 0; j < colCount; j++) {
+      let curr = parseNum(gnsArr[j]);
+      let diff = 0;
+      if (i > 0) {
+        let prev = parseNum(dataList[i-1][1][j]);
+        diff = curr - prev;
+      }
+      gnsDiffList[j] = diff;
+      html += `<td>${formatCell(gnsArr[j], diff)}</td>`;
+    }
+    html += '</tr>';
+
+    html += '<tr><td>«鸣潮»</td>';
+    const mcDiffList = [];
+    for (let j = 0; j < colCount; j++) {
+      let curr = parseNum(mcArr[j]);
+      let diff = 0;
+      if (i > 0) {
+        let prev = parseNum(dataList[i-1][2][j]);
+        diff = curr - prev;
+      }
+      mcDiffList[j] = diff;
+      html += `<td>${formatCell(mcArr[j], diff)}</td>`;
+    }
+    html += '</tr>';
+
+    html += '<tr class="diff"><td>两者差值</td>';
+    for (let j = 0; j < colCount; j++) {
+      let gVal = parseNum(gnsArr[j]);
+      let mVal = parseNum(mcArr[j]);
+      let mainDiff = gVal - mVal;
+      let changeDiff = gnsDiffList[j] - mcDiffList[j];
+
+      let mainText = numToWan(mainDiff);
+      let changeText = numToWan(changeDiff);
+
+      if (changeDiff === 0) {
+        html += `<td>${mainText}</td>`;
+      } else {
+        html += `<td>${mainText}<span class="diff"> (${changeText})</span></td>`;
+      }
+    }
+    html += '</tr>';
+
+    html += `<tr><td colspan="${colCount+1}"><hr></td></tr>`;
+  }
+  return html;
+}
+
+document.getElementById('tableBox').innerHTML = createTable(data);
+
+console.log("本页代码由 豆包AI 生成")
+</script>

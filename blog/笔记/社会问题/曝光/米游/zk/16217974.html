@@ -1,0 +1,69 @@
+---
+layout: zk
+title: 原神杀手
+nav_text: 原神杀手
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/16217974
+---
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+    [红]{color:#ff0000;}
+    [凉]{color:#ff6600;}
+</style>
+
+上线前被称作“原神杀手”、“原神最大对手”、“爆杀原神”的游戏：
+<table id="table_dy"></table>
+
+
+<script>
+
+let data=[
+    // ["作品名","首曝","上线","现状"],
+    ["完美世界","幻塔","2020.06.10","2021.12.16","最初每个版本都“爆杀原神”，<span 凉>然后逐渐淡出视线</span>"],
+    ["腾讯","诺亚之心","2020.06.27","2022.04.13","<span 红>已停服，运营1年8月</span>"],
+    ["","玄中记","2021.07.28","2023.05.09","<span 红>已停服，运营1年7月</span>"],
+    ["西山居","尘白禁区","2021.09.02","2023.07.20","转型为ML游戏，被奉为“ML神游”，<span 凉>然后逐渐淡出视线</span>"],
+    ["腾讯","王者荣耀：世界","2021.10.30","2026.04.10","开服后很快卸任“原神杀手”一职"],
+    ["鹰角","明日方舟：终末地","2022.03.16","2026.01.22","开服后很快卸任“原神杀手”一职"],
+    ["库洛","鸣潮","2022.05.26","2024.05.23","被奉为“社区神游”，每个版本都在“封神”、“爆杀原神”"],
+    ["叠纸","无限暖暖","2022.11.30","2024.12.05","开服后很快卸任“原神杀手”一职"],
+    ["","归龙潮","2022.12.09","2024.09.13","<span 红>已停服，运营1年3月</span>"],
+    ["网易","无限大","2023.08.24","",""],
+    ["英雄游戏","二重螺旋","2023.10.20","2025.10.28","开服后没人再提“原神杀手”"],
+    ["","望月","2023.10.30","",""],
+    ["蛮啾","蓝色星原：旅谣","2024.03.20","",""],
+    ["网易","九畿：岐风之旅","2024.05.20","","<span 红>官方账号注销</span>"],
+    ["完美世界","异环","2024.07.16","",""],
+    ["","白银之城","2025.05.13","",""],
+    // ["","","","",""],
+];
+
+function getDateDiff(aStr, bStr) {
+    const parse = s => {
+        const [y, m, d] = s.split('.').map(Number);
+        return new Date(y, m - 1, d);
+    };
+    let d1 = parse(aStr), d2 = parse(bStr);
+    if (isNaN(d1) || isNaN(d2)) return "";
+    if (d1 > d2) [d1, d2] = [d2, d1];
+
+    let year = d2.getFullYear() - d1.getFullYear();
+    let month = d2.getMonth() - d1.getMonth();
+    let day = d2.getDate() - d1.getDate();
+
+    if (day < 0) month--;
+    if (month < 0) {
+        year--;
+        month += 12;
+    }
+
+    return `<small>（${year}年${month}月</small>）`.replace(new RegExp('年0月',"g"),"年");
+}
+
+let dy="<tr><td>作品名</td><td>首曝<small>（距原神首曝）</small></td><td>上线<small>（距原神上线）</small></td><td>现状</td></tr>";
+for(let i=0;data.length>i;i++){
+    dy+="<tr><td><small>"+data[i][0]+"</small>«"+data[i][1]+"»</td><td>"+data[i][2]+getDateDiff("2019.06.08",data[i][2])+"</td><td>"+data[i][3]+getDateDiff("2020.09.28",data[i][3])+"</td><td>"+data[i][4]+"</td></tr>"
+}
+document.getElementById("table_dy").innerHTML=dy;
+
+</script>
