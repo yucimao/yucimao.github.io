@@ -12,6 +12,7 @@ a,.anniu{background-color:#ffffff;color:#00a2ff;text-decoration:none;transition-
 .提示{position:relative;border-bottom:1.5px dashed #aaa}.提示:hover::before{white-space:nowrap;line-height:18px;content:attr(data-msg);position:absolute;padding:0px 8px;display:block;color:#ffffff;background:#898989;border-radius:6px;font-size:12px;top:-25px;left:50%;transform:translateX(-50%)}.提示:hover::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:6px solid #898989}
 .链接{text-decoration:none;color:#006699;cursor:pointer}.链接:hover,.链接:focus{color:#0085a1}
 .灰 a{color:#939393}
+a img{width:22px;position:relative;top:3px;margin:auto 3px auto auto}
 </style>
 
 <div id="dy"></div><textArea id='复制' style='position:absolute;top:-1000px'></textArea>
@@ -28,6 +29,7 @@ let p={//编辑html
 "本地":(本地)?"C:/mq/目录/本地搜索.html?":默认,
 "xsd":"https://像素点.cn/",
 "k":"C:/快捷方式/",
+"ico":"",
 };
 
 let d={
@@ -39,6 +41,7 @@ let d={
 // "／1／2" <a href='2'>1</a> // "／1／2／3" <a href='2'>1<small> (3)</small></a>
 // "／复制／按钮／内容"
 // "／打开／按钮／内容"
+// "／打开／<img src='"+p.ico+"图片.jpg'>按钮／程序的位置",
 // "":"／B", //A同B
 // "打开程序或文件夹":["打开","C:/mq/目录"],
 // "编辑html":["html","地址"],
@@ -46,6 +49,8 @@ let d={
 // ＼+原本的内容 会提示仅限本地查看
 
 // "":["",""],
+"机核":"／机核网",
+"机核网":["https://www.gcores.com","https://www.gcores.com/search?keyword=【】"],
 "站长素材":["https://sc.chinaz.com","https://aspx.sc.chinaz.com/query.aspx?keyword=【】"],
 "维基百科":["https://zh.wikipedia.org","https://zh.wikipedia.org/w/index.php?search=【】"],
 "爱发电":["https://afdian.com","https://afdian.com/search?q=【】"],
