@@ -375,20 +375,12 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 "粉丝":(o,i)=>{dy+=临时0[4]+"在"+临时0[1]+"粉丝数达到"+临时0[2]+"。"},
 "获奖":(o,i)=>{dy+=临时0[4]+"荣获"+临时0[1]+"：<b>"+临时0[2]+"</b>。"},
 "排行":(o,i)=>{dy+=临时0[4]+"登上"+临时0[1]+"：<b>"+临时0[2]+"</b>。"},
-// "粉丝":(o,i)=>{if(丝.indexOf(临时0[4]+临时0[1])!=-1){粉[临时0[4]+临时0[1]]=临时0[2].split("万")[0]}else{丝[丝.length]=临时0[4]+临时0[1];粉[临时0[4]+临时0[1]]=临时0[2].split("万")[0]}粉丝[粉丝.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"在"+临时0[1]+"粉丝数达到"+临时0[2]+"。"},
-// "dy_粉丝":(o,i)=>{dy+="<span id=\"粉丝_style\"></span><table class='粉丝 首小1'><tr><td colspan='3'><b>粉丝数</b> <small>点击高亮同作品</small></td></tr>";for(let i2=0;粉丝.length>i2;i2++){dy+="<tr><td>"+粉丝[i2][2]+"</td><td onclick=\"排行高亮('粉丝_"+粉丝[i2][3]+"')\" class='粉丝_"+粉丝[i2][3]+"'><small>"+粉丝[i2][3]+" </small>";if(粉[粉丝[i2][3]+粉丝[i2][0]]+"万"==粉丝[i2][1]&&官号[粉丝[i2][3]+粉丝[i2][0]]){dy+="<a href='"+官号[粉丝[i2][3]+粉丝[i2][0]]+"' target='_blank'>"+粉丝[i2][0]+"</a>"}else{dy+=粉丝[i2][0]}dy+="</td><td onclick=\"排行高亮('粉丝_"+粉丝[i2][3]+"')\" class='粉丝_"+粉丝[i2][3]+"'>";if(粉[粉丝[i2][3]+粉丝[i2][0]]+"万"==粉丝[i2][1]){dy+="<b>"+粉丝[i2][1]+"</b>"}else{dy+=粉丝[i2][1]}dy+="</td></tr>"}粉["粉丝数"]=0;for(let i2=1;丝.length>i2;i2++){粉["粉丝数"]+=粉[丝[i2]]*1}dy+="<tr style='display:none;'><td colspan='3' style='text-align:right'><small>各平台 共</small> <b>"+粉["粉丝数"]+"万</b></td></tr></table>"},
-// "获奖":(o,i)=>{获奖[获奖.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"荣获"+临时0[1]+"：<b>"+临时0[2]+"</b>。"},
-// "dy_获奖":(o,i)=>{dy+="<table class='获奖 首小1 首小2'><tr><td><b>获奖</b></td><td></td><td>活动</td><td>奖项</td></tr>";for(let i2=0;获奖.length>i2;i2++){dy+="<tr><td>"+获奖[i2][2]+"</td><td>"+获奖[i2][3]+"</td><td>"+获奖[i2][0]+"</td><td>"+获奖[i2][1]+"</td></tr>"}dy+="</table>"},
-// "排行":(o,i)=>{排行[排行.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"登上"+临时0[1]+"：<b>"+临时0[2]+"</b>。"},
-// "dy_排行":(o,i)=>{dy+="<span id=\"排行_style\"></span><table class='首小1 首小2'><tr><td><b>排行</b></td><td></td><td>项目 <small>点击高亮同名榜单</small></td><td>名次</td></tr>";for(let i2=0;排行.length>i2;i2++){let 临时3=排行[i2][0].replace(new RegExp('[<>/]',"g"),"").replace(new RegExp(' ',"g"),"_");dy+="<tr><td>"+排行[i2][2]+"</td><td>"+排行[i2][3]+"</td><td class=\"排行_"+临时3+"\" onclick=\"排行高亮('排行_"+临时3+"')\">"+排行[i2][0]+"</td><td class=\"排行_"+临时3+"\" onclick=\"排行高亮('排行_"+临时3+"')\">"+排行[i2][1]+"</td></tr>"}dy+="</table>"},
 "热搜":(o,i)=>{热搜[热搜.length]=[临时0[1],临时0[2],临时0[3],临时0[4]];dy+=临时0[4]+"在"+临时0[2]+"国家/地区登上热搜，热搜原因："+临时0[3]+"。"},
 "模糊":(o,i)=>{if(临时0[2]=="剧透"){dy+="<small class='灰'>可能剧透:</small>"}else if(临时0[2]=="内鬼"){dy+="<small class='灰'>暂未证实，可能剧透或者是假消息:</small>"}else if(临时0[2]){dy+="<small class='灰'>"+临时0[2]+":</small>"}dy+="<span class='mohumu'>"+临时0[1]+"</span>"},
 "table":(o,i)=>{dy+="<table>";for(let i2=1;临时0.length>i2;i2++){dy+="<tr>";let 临时3=临时0[i2].split("／");for(let i3=0;临时3.length>i3;i3++){if(i3!=0){dy+="</td>"}dy+="<td>"+临时3[i3]}dy+="</td></tr>"}dy+="</table>"},
 "百分比":(o,i)=>{dy+="<table><tr>";let 临时3=临时0[1].split("／");for(let i2=0;临时3.length>i2;i2++){dy+="<td>"+临时3[i2]+"</td>"}dy+="</tr>";for(let i2=2;临时0.length>i2;i2++){临时3=临时0[i2].split("／");dy+="<tr><td>"+临时3[0]+"</td>";let 临时4=0;for(let i3=1;临时3.length>i3;i3++){临时4+=临时3[i3]*1}for(let i3=1;临时3.length>i3;i3++){dy+="<td>"+临时3[i3]+"<br>("+(临时3[i3]/临时4*100+"").split(".")[0]+"%)</td>"}dy+="</tr>"}dy+="</table>"},
 "zk":(o,i)=>{if(!临时0[2]){临时0[2]="详情"}if(!临时0[3]){临时0[3]=临时0[2]}if(在线==0){dy+="<a onclick=\"dw(dwb='')\" href='zk/"+临时0[1].split("#")[0]+".html";if(临时0[1].indexOf("#")!=-1){dy+="#"+临时0[1].split("#")[1]}dy+="'>"+临时0[2]+"</a>"}else{dy+="<a onclick=\"dw(dwb='"+临时0[1].split("#")[0]+"',dwd='"+临时0[3]+"'";if(临时0[1].indexOf("#")!=-1){dy+=",dwe='#"+临时0[1].split("#")[1]+"'"}dy+=")\">"+临时0[2]+"</a>"}},
 "展开更多":(o,i)=>{let 临时3="";let 临时4="";for(let i2=1;临时0.length>i2;i2++){if(临时0[i2].indexOf("／")!=-1){临时0[i2]=临时0[i2].split("／");if(临时0[i2][0]!=""){if(i2!=1){临时3+=" "}临时3+=临时0[i2][0]}临时4+="〈li|"+临时0[i2][0]+"〉<small class='灰'>";临时4+="</small> "+临时0[i2][1]+"</li>"}}dy+="<li class='"+临时3+"' id='原其他"+o+i+"'><a onclick=\"展开其他('"+o+i+"')\">"+临时0[0]+"</a></li><div style='display:none;' id='其他"+o+i+"'>〈标题|展开更多|影响力或知名度并不高的事件〉"+临时4+"</div>"},
-// "dy_热搜":(o,i)=>{dy+="<h4>热搜记录</h4><small>1.上热搜过于频繁，低于10个国家/地区就不记录了。<br>2.由于某些原因我无法亲自统计外国热搜信息，这里的数据都来源于其他网友总结，可能不全或有误，请自行辨别。<br>3.我有时候可能会忘了还有这个记录……</small><table><tr><td><small>时间</small></td><td></td><td><small>国家/地区</small></td><td><small>上热搜原因</small></td></tr>";for(let i2=0;热搜.length>i2;i2++){dy+="<tr><td><small>"+热搜[i2][0]+"</small></td><td><small>"+热搜[i2][3]+"</small></td><td>"+热搜[i2][1]+"</td><td>"+热搜[i2][2]+"</td></tr>"}dy+="</table>"},
-// "dy_事件":(o,i)=>{dy+="<h4>事件数量</h4>";for(let i2=0;事件_只看.length>i2;i2++){if(事件_只看[i2][0]!="br"){dy+=事件_只看[i2][1]+"："+事件[事件_只看[i2][0]]+"条<small>（"+(事件[事件_只看[i2][0]]/事件["全部"]*100+"").split(".")[0]+"%）</small><br>"}}},
 "dy_只看":(o,i)=>{for(let i2=0;事件_只看.length-1>i2;i2++){if(事件_只看[i2][0]=="br"){dy+="<br>"}else{dy+=`<a onclick="只看('${事件_只看[i2][0]}')"`+((事件_只看[i2][2])?" class='提示' data-msg='"+事件_只看[i2][2]+"'":"")+`>${事件_只看[i2][1]}</a>　`}}},
 
 "dy_头":()=>{dy+=`<a name="相关事件"></a><h2>相关事件</h2><ol>
@@ -626,9 +618,11 @@ li.标题{position:relative;left:-1.2em;font-size:0.9em;color:#9d9d9d;margin:0.9
 .标题::marker{color:#c3c3c3;font-size:0.8em;}
 li.标题 span{font-size:1.1em;color:#8d0000}
   
-@media screen and (min-width: 768px){
+@media screen and (min-width:768px){
 body{background-color:#F4F8FB;}
 div.body{box-shadow: 2px 4px 8px #ddd;padding:20px;background-color:#fff;border-radius:25px}
+}
+@media screen and (max-width:767px){
 ol{padding-left:1em;list-style-type:disc;}
 }
 </style>`;}
