@@ -625,10 +625,11 @@ span.假{font-size:0.8em;color:#e2a8a8;}
 li.标题{position:relative;left:-1.2em;font-size:0.9em;color:#9d9d9d;margin:0.9em 0 0}
 .标题::marker{color:#c3c3c3;font-size:0.8em;}
 li.标题 span{font-size:1.1em;color:#8d0000}
-
+  
 @media screen and (min-width: 768px){
 body{background-color:#F4F8FB;}
 div.body{box-shadow: 2px 4px 8px #ddd;padding:20px;background-color:#fff;border-radius:25px}
+ol{padding-left:1em;list-style-type:disc;}
 }
 </style>`;}
 }
