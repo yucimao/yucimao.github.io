@@ -1,0 +1,158 @@
+---
+layout: zk
+title: 2026年BML单品视频记录
+nav_text: 2026年BML单品视频记录
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/18396107
+---
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+.small-text {font-size: 12px;}
+.星穹铁道 {background-color: #a3edff !important;}
+.绝区零 {background-color: #a0ccff !important;}
+.原神 {background-color: #9fa7ff !important;}
+.碧蓝航线 {background-color: #ffafec !important;}
+.终末地 {background-color: #ffa3a3 !important;}
+.明日方舟 {background-color: #ffdeaf !important;}
+.鸣潮 {background-color: #a7ffa4 !important;}
+</style>
+记录于2026年7月14日00:00<br>
+发布的第一个视频是7月12日20:00，最后一个视频是7月13日13:30，时间跨度较大，靠前的视频可能在数据上更占优。<br>
+发布顺序基本就是演出顺序，除了原神的«让风告诉你»被后移了4位。<br>
+可以点击表格顶部的文字切换排序方式，比如“顺序”、“播放量”。<br>
+“赞播比”指每多少个播放量1个赞；“币播比”指每多少个播放量1个币。<br>
+<br>
+
+<div id="dy"></div>
+
+<script>
+    let data = [
+        ["顺序", "游戏", "歌曲", "播放量", "点赞", "投币", "赞播比", "币播比"],
+        ["1", "星穹铁道", "不眠之夜", "574000", "66000", "8112"],
+        ["2", "绝区零", "覆灭重生Come Alive", "345000", "34000", "3782"],
+        ["3", "鸣潮", "RUNNING FOR YOUR LIFE", "244000", "13000", "877"],
+        ["4", "终末地", "New Frontier", "164000", "7443", "519"],
+        ["5", "明日方舟", "I Will Touch the Sky", "141000", "6986", "357"],
+        ["6", "原神", "神女劈观", "539000", "54000", "9646"],
+        ["7", "鸣潮", "Daisy Crown", "271000", "15000", "2287"],
+        ["8", "明日方舟", "Arsonist", "170000", "8227", "529"],
+        ["9", "明日方舟", "浸春芜", "260000", "19000", "1293"],
+        ["10", "终末地", "My World", "156000", "6076", "511"],
+        ["11", "原神", "未行之路", "218000", "18000", "1763"],
+        ["12", "碧蓝航线", "周年组曲大串烧", "103000", "5676", "364"],
+        ["13", "鸣潮", "愿戴荣光坠入天渊", "240000", "15000", "1090"],
+        ["14", "终末地", "万象将醒", "132000", "6334", "593"],
+        ["15", "明日方舟", "Radiant", "310000", "21000", "1573"],
+        ["16", "绝区零", "原色", "650000", "68000", "6878"],
+        ["17", "绝区零", "闪亮", "268000", "21000", "3873"],
+        ["18", "星穹铁道", "在银河中孤独摇摆", "503000", "61000", "6278"],
+        ["19", "星穹铁道", "希望有羽毛和翅膀", "470000", "43000", "8411"],
+        ["20", "终末地", "Under My Breath", "133000", "5682", "464"],
+        ["21", "鸣潮", "Catch Me If You Can", "279000", "20000", "4412"],
+        ["22", "绝区零", "Prophecy预言", "290000", "24000", "2753"],
+        ["23", "原神", "我不曾忘记", "940000", "97000", "34000"],
+        ["24", "碧蓝航线", "未来Compass", "115000", "3323", "326"],
+        ["25", "星穹铁道", "何者", "438000", "50000", "5662"],
+        ["26", "all", "LINK START!", "249000", "13000", "870"],
+        ["27", "原神", "让风告诉你", "356000", "56000", "12000"],
+    ];
+
+    let rows = data.slice(1).map(row => {
+        const order = row[0];
+        const game = row[1];
+        const song = row[2];
+        const play = Number(row[3]);
+        const like = Number(row[4]);
+        const coin = Number(row[5]);
+        const likePlayRatio = Math.round(play / like);
+        const coinPlayRatio = Math.round(play / coin);
+        return [order, game, song, play, like, coin, likePlayRatio, coinPlayRatio];
+    });
+
+    function formatNum(num) {
+        if (num >= 10000) {
+            return (num / 10000).toFixed(1) + '万';
+        }
+        return num.toString();
+    }
+
+    let sortKey = '顺序';
+
+    function renderTable() {
+        let sortedRows = [...rows];
+        switch (sortKey) {
+            case '顺序':
+                sortedRows.sort((a, b) => Number(a[0]) - Number(b[0]));
+                break;
+            case '播放量':
+                sortedRows.sort((a, b) => b[3] - a[3]);
+                break;
+            case '点赞':
+                sortedRows.sort((a, b) => b[4] - a[4]);
+                break;
+            case '投币':
+                sortedRows.sort((a, b) => b[5] - a[5]);
+                break;
+            case '赞播比':
+                sortedRows.sort((a, b) => a[6] - b[6]);
+                break;
+            case '币播比':
+                sortedRows.sort((a, b) => a[7] - b[7]);
+                break;
+        }
+
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let trHead = document.createElement('tr');
+        const thConfig = [
+            { text: '顺序', sortKey: '顺序' },
+            { text: '游戏', sortKey: null },
+            { text: '歌曲', sortKey: null },
+            { text: '播放量', sortKey: '播放量' },
+            { text: '点赞', sortKey: '点赞' },
+            { text: '投币', sortKey: '投币' },
+            { text: '赞播比', sortKey: '赞播比' },
+            { text: '币播比', sortKey: '币播比' }
+        ];
+        thConfig.forEach(item => {
+            let th = document.createElement('th');
+            th.textContent = item.text;
+            if (item.sortKey) {
+                th.onclick = () => {
+                    sortKey = item.sortKey;
+                    renderTable();
+                };
+            }
+            trHead.appendChild(th);
+        });
+        thead.appendChild(trHead);
+        table.appendChild(thead);
+
+        let tbody = document.createElement('tbody');
+        sortedRows.forEach(row => {
+            let tr = document.createElement('tr');
+            const [order, game, song, play, like, coin, likePlayRatio, coinPlayRatio] = row;
+            tr.className = game;
+            tr.innerHTML = `
+                    <td class="small-text">${order}</td>
+                    <td class="small-text">${game}</td>
+                    <td>${song}</td>
+                    <td>${formatNum(play)}</td>
+                    <td>${formatNum(like)}</td>
+                    <td>${formatNum(coin)}</td>
+                    <td>${likePlayRatio}</td>
+                    <td>${coinPlayRatio}</td>
+                `;
+            tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+
+        const dyContainer = document.getElementById('dy');
+        dyContainer.innerHTML = '';
+        dyContainer.appendChild(table);
+    }
+
+    renderTable();
+    
+    //代码使用了豆包AI
+</script>
