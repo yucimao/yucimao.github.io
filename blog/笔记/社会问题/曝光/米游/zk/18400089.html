@@ -1,0 +1,163 @@
+---
+layout: zk
+title: 
+nav_text: 
+nav_url: <a href="/biji/game">游戏笔记</a>
+permalink: i/18400089
+---
+<link rel="stylesheet" href="/css/all2.css">
+<style>
+.game-name {font-size: 12px;}
+.星穹铁道 {background-color: #d4f6ff !important;}
+.绝区零 {background-color: #d3e7ff !important;}
+.原神 {background-color: #d4d7ff !important;}
+.碧蓝航线 {background-color: #ffe0f8 !important;}
+.终末地 {background-color: #ffd4d4 !important;}
+.明日方舟 {background-color: #fff1dd !important;}
+.鸣潮 {background-color: #dbffda !important;}
+</style>
+    <div id="dy"></div>
+<br>
+    <div id="summaryTable"></div>
+
+    <script>
+        let data = [
+            ["游戏", "歌曲", "播放量", "在线人数"],
+            ["星穹铁道", "不眠之夜", "654000", "159"],
+            ["绝区零", "覆灭重生Come Alive", "390000", "75"],
+            ["鸣潮", "RUNNING FOR YOUR LIFE", "267000", "27"],
+            ["终末地", "New Frontier", "187000", "36"],
+            ["明日方舟", "I Will Touch the Sky", "158000", "15"],
+            ["原神", "神女劈观", "688000", "61"],
+            ["鸣潮", "Daisy Crown", "309000", "28"],
+            ["明日方舟", "Arsonist", "177000", "18"],
+            ["明日方舟", "浸春芜", "290000", "48"],
+            ["终末地", "My World", "169000", "23"],
+            ["原神", "未行之路", "230000", "18"],
+            ["碧蓝航线", "周年组曲大串烧", "108000", "16"],
+            ["鸣潮", "愿戴荣光坠入天渊", "278000", "28"],
+            ["终末地", "万象将醒", "137000", "13"],
+            ["明日方舟", "Radiant", "358000", "32"],
+            ["绝区零", "原色", "743000", "91"],
+            ["绝区零", "闪亮", "288000", "45"],
+            ["星穹铁道", "在银河中孤独摇摆", "579000", "90"],
+            ["星穹铁道", "希望有羽毛和翅膀", "535000", "110"],
+            ["终末地", "Under My Breath", "146000", "28"],
+            ["鸣潮", "Catch Me If You Can", "309000", "56"],
+            ["绝区零", "Prophecy预言", "346000", "65"],
+            ["原神", "我不曾忘记", "1068000", "263"],
+            ["碧蓝航线", "未来Compass", "125000", "18"],
+            ["星穹铁道", "何者", "546000", "147"],
+            ["all", "LINK START!", "288000", "71"],
+            ["原神", "让风告诉你", "667000", "538"],
+        ];
+
+        let rows = data.slice(1).map(item => ({
+            game: item[0],
+            song: item[1],
+            play: Number(item[2]),
+            online: Number(item[3])
+        }));
+
+        let sortKey = 'play';
+        let sortDesc = true;
+        let summarySortKey = 'totalPlay';
+        let summarySortDesc = true;
+
+        function formatNum(num) {
+            if (num >= 10000) {
+                return (num / 10000).toFixed(1) + '万';
+            }
+            return num.toString();
+        }
+
+        function renderMainTable() {
+            const sorted = [...rows].sort((a, b) => {
+                const valA = a[sortKey];
+                const valB = b[sortKey];
+                return sortDesc ? valB - valA : valA - valB;
+            });
+
+            let html = '<table><thead><tr>';
+            html += '<th>游戏</th><th>歌曲</th>';
+            html += `<th onclick="changeSort('play')">播放量 ${sortKey === 'play' ? (sortDesc ? '↓' : '↑') : ''}</th>`;
+            html += `<th onclick="changeSort('online')">在线人数 ${sortKey === 'online' ? (sortDesc ? '↓' : '↑') : ''}</th>`;
+            html += '</tr></thead><tbody>';
+
+            sorted.forEach(r => {
+                html += `<tr class="${r.game}">
+                    <td class="game-name">${r.game}</td>
+                    <td>${r.song}</td>
+                    <td>${formatNum(r.play)}</td>
+                    <td>${formatNum(r.online)}</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            document.getElementById('dy').innerHTML = html;
+        }
+
+        window.changeSort = function (key) {
+            if (sortKey === key) {
+                sortDesc = !sortDesc;
+            } else {
+                sortKey = key;
+                sortDesc = true;
+            }
+            renderMainTable();
+        }
+
+        function getSummaryData() {
+            const map = {};
+            rows.forEach(r => {
+                if (!map[r.game]) {
+                    map[r.game] = { totalPlay: 0, totalOnline: 0 };
+                }
+                map[r.game].totalPlay += r.play;
+                map[r.game].totalOnline += r.online;
+            });
+            return Object.entries(map).map(([game, val]) => ({
+                game,
+                totalPlay: val.totalPlay,
+                totalOnline: val.totalOnline
+            }));
+        }
+
+        function renderSummaryTable() {
+            let summary = getSummaryData();
+            summary = summary.sort((a, b) => {
+                const valA = a[summarySortKey];
+                const valB = b[summarySortKey];
+                return summarySortDesc ? valB - valA : valA - valB;
+            });
+
+            let html = '<table><thead><tr>';
+            html += '<th>游戏</th>';
+            html += `<th onclick="changeSummarySort('totalPlay')">总播放量 ${summarySortKey === 'totalPlay' ? (summarySortDesc ? '↓' : '↑') : ''}</th>`;
+            html += `<th onclick="changeSummarySort('totalOnline')">总在线人数 ${summarySortKey === 'totalOnline' ? (summarySortDesc ? '↓' : '↑') : ''}</th>`;
+            html += '</tr></thead><tbody>';
+
+            summary.forEach(r => {
+                html += `<tr class="${r.game}">
+                    <td class="game-name">${r.game}</td>
+                    <td>${formatNum(r.totalPlay)}</td>
+                    <td>${formatNum(r.totalOnline)}</td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            document.getElementById('summaryTable').innerHTML = html;
+        }
+
+        window.changeSummarySort = function (key) {
+            if (summarySortKey === key) {
+                summarySortDesc = !summarySortDesc;
+            } else {
+                summarySortKey = key;
+                summarySortDesc = true;
+            }
+            renderSummaryTable();
+        }
+
+        renderMainTable();
+        renderSummaryTable();
+        //代码由豆包AI生成
+    </script>
