@@ -416,7 +416,6 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <a href="/i/11654881">资料来源</a><br>
 <a href="/i/10246092?26">这些年发生了什么？</a><small>（节奏事件概述）</small><br>
 <a href="/wbiji/game/geng">社区梗</a><br>
-<a href="/i/7599677">其他游戏节奏</a><br>
 
 <hr>
 
@@ -425,7 +424,7 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <small><a href="#关键词">更多关键词</a></small><br>`},
 
 "dy_尾":()=>{dy+=`
-<a href="/miyou1">2024年及以前</a> . <a href="/miyou2">2025年</a> . <a href="/miyou3">2026年</a> . <a href="/miyou0">精选</a>
+<a href="/youxijiezou1">2024年及以前</a> . <a href="/youxijiezou2">2025年</a> . <a href="/youxijiezou3">2026年</a> . <a href="/youxijiezou0">精选</a>
 <hr>
 <a name="最新"></a>
 <a name="其他记录"></a><h2>其他记录</h2>
