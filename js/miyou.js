@@ -68,7 +68,7 @@ let 注={
 "IGN中国":"IGN的中国分部，由腾讯运营",
 "快手":"短视频平台",
 "幻塔":"完美世界旗下的游戏，国际服由腾讯运营",
-"NS":"switch游戏机",
+"NS":"任天堂switch游戏机",
 "PS":"PlayStation，索尼的游戏机",
 "吉田修平":"索尼全球工作室总裁",
 "极游组":"游戏区自媒体",
@@ -312,6 +312,7 @@ let 注={
 "犯罪预告":"米游社区忽然爆发玩家不理解的节奏，总是会在«鸣潮»的下一个版本出现同类的更严重的问题，被怀疑是提前带节奏转移注意力、消解«鸣潮»的问题",
 "犯罪预告_鸣潮":"原指米游社区忽然爆发玩家不理解的节奏，总是会在«鸣潮»的下一个版本出现同类的更严重的问题，被怀疑是提前带节奏转移注意力、消解«鸣潮»的问题。鸣潮社区会在自己出问题时找米游的类似问题，甚至直接造谣，然后说这是“犯罪预告”，试图抢夺这个词",
 "盒嫁祸":["有些人遭到开盒，米游社区并不支持也不知情，但反米群体会趁机宣传说是米游社区搞开盒，疑似是一种嫁祸行为","/i/18116098"],
+"原老院":["有部分原神玩家组成的分裂派组织，反对米游团结","/i/14636827"],
 "原神聊天室":["有部分原神玩家组成的分裂派组织，反对米游团结","/i/14636827"],
 "米黑团宠":"以米游玩家自居，活跃于米黑的直播间，发表一些离谱言论供米黑嘲笑",
 "睡觉流":["热爱联盟的手段，直播玩想抹黑的游戏，玩到睡着，制造这个游戏太无聊的节奏","/i/14720526#睡觉流"],
@@ -322,6 +323,12 @@ let 注={
 "手游红黑榜":"漫展会立一个板，放上各种游戏图标，游客可以在上面贴红点表达喜爱或贴黑点表达不满（规则并不严格，只是图一乐的东西）",
 "ANUNEKO":"蔡浩宇做的AI聊天网站，AI形象是一只毒舌的小猫",
 "CP节奏":"两个角色关系亲密（也可能只是同镜），就会被带节奏说这两人是情侣、玩家被绿了。如果两个角色是同性，就说是支持境外LGBT运动",
+"梦女":"认真幻想自己和角色谈恋爱的玩家",
+"女主党":"自己不代入主角，而是把女主当成一个角色",
+"代入党":"将自己代入成主角",
+"英雌":"女权认为“英雄”指男性而创造出了专指女性的“英雌”",
+"史同人":"喜欢历史角色的同人文的群体",
+"女拳":"极端女权",
 // "":"",
 // "":["",""],
 
@@ -332,7 +339,7 @@ let 注={
 let 代码={
 // "真":"<span 真></span>","假":"<span 假></span>",
 // "真":"🎯","假":"🎭",
-"灰字":["存疑","黑料","米哈游","法务部","崩坏学园","崩坏学园2","崩坏3","人工桌面","原神","未定事件簿","星穹铁道","绝区零","星布谷地","米游社","因缘精灵"],
+"灰字":["其他游戏","存疑","黑料","米哈游","法务部","崩坏学园","崩坏学园2","崩坏3","人工桌面","原神","未定事件簿","星穹铁道","绝区零","星布谷地","米游社","因缘精灵"],
 }
 let 事件_只看=[
 ["黑暗","<b>黑暗降临</b>","原神上线时被称作“黑暗降临”，后来这个梗被用来指米哈游取得的成就"],
@@ -348,19 +355,6 @@ let 事件_只看=[
 ["br"],
 ["全部","<b>全部</b>"],
 ];
-let 官号={
-"崩坏3微博":"https://weibo.com/benghuai3","崩坏3B站":"https://space.bilibili.com/27534330",
-
-"原神B站":"https://space.bilibili.com/401742377","原神微博":"https://weibo.com/6593199887","原神抖音":"https://www.douyin.com/user/MS4wLjABAAAAw6_Jq4rDqlUKujFUvw0mjwTE8Y4uYuqJoKIQWO43oBYTd5_FlhU3qZ-PbOS7MP35",
-"原神Twitter":"https://x.com/GenshinImpact","原神日本Twitter":"https://x.com/Genshin_7","原神YouTube":"https://www.youtube.com/c/GenshinImpact",
-
-
-"星穹铁道微博":"https://weibo.com/u/7643376782","星穹铁道B站":"https://space.bilibili.com/1340190821",
-"星穹铁道Twitter":"https://x.com/houkaistarrail","星穹铁道YouTube":"https://www.youtube.com/@HonkaiStarRail",
-
-"绝区零微博":"https://weibo.com/u/7632078520","绝区零B站":"https://space.bilibili.com/1636034895",
-"绝区零Twitter":"https://x.com/ZZZ_EN","绝区零日本Twitter":"https://x.com/ZZZ_JP","绝区零YouTube":"https://www.youtube.com/@ZZZ_Official",
-}
 
 let dy,内容,分={},得分=[],粉丝=[],粉={},丝=[],获奖=[],排行=[],热搜=[],事件={"全部":0},在线=1,盒=[],临时0,角色={};
 if(window.location.href.indexOf("file:///")!=-1){在线=0}
@@ -391,12 +385,12 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 "dy_只看":(o,i)=>{for(let i2=0;事件_只看.length-1>i2;i2++){if(事件_只看[i2][0]=="br"){dy+="<br>"}else{dy+=`<a onclick="只看('${事件_只看[i2][0]}')"`+((事件_只看[i2][2])?" class='提示' data-msg='"+事件_只看[i2][2]+"'":"")+`>${事件_只看[i2][1]}</a>　`}}},
 
 "dy_头":()=>{dy+=`<a name="相关事件"></a><h2>相关事件</h2><ol>
-<li>事件顺序不一定按时间排序，因为我也不清楚这些事件的具体时间。<br>
-    最初是因为原神才开始做这个页面，前期会按照原神的版本划分，2025年的新版本刚好从1月1日开始，那正好从2025年开始按月划分了。</li>
+<li>最初是因为原神才开始做这个页面，前期会按照原神的版本划分，2025年的新版本刚好从1月1日开始，那正好从2025年开始按月划分了。<br>
+后来发现游戏圈的事有时候互有关联，其他游戏的节奏事件也会记录在这里。</li>
+<li>事件顺序不一定按时间排序，因为我也不清楚这些事件的具体时间。</li>
 <li>以记录为主，不能保证完全准确，我会尽可能查证，标记为“〈真〉”是查证过基本可以确定为真的，“〈假〉”为确定的假消息。<br>
-    如有错漏欢迎指正和补充，QQ:<a onclick="复(制='123719932')">123719932</a>。</li>
+如有错漏欢迎指正和补充，QQ:<a onclick="复(制='123719932')">123719932</a>。</li>
 <li>不记录〈暗区〉的小规模争斗，太多太杂，而且很无聊，只记录影响较大或波及到普通玩家的。</li>
-<li>从2025年开始，一些几乎每次都会有的“例行节奏”就不一一记录了，只在年初统一记录整理，除非影响太大或有什么特别之处。</li>
 <li>不用怀疑我的身份，本网页纯个人兴趣，本人与米哈游无关，无恰饭，只有网友自发打赏，收益完全赶不上我耗费的时间和精力。</li>
 <li>辟谣和个人看法会用绿色文字标注：<span class='zhushi'>就像这样</span>（<a onclick="document.getElementById('隐藏标注').innerHTML='<style>.zhushi{display:none}</style>'">隐藏</a> / <a onclick="document.getElementById('隐藏标注').innerHTML=''">显示</a>）</li>
 </ol>
@@ -424,7 +418,7 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <small><a href="#关键词">更多关键词</a></small><br>`},
 
 "dy_尾":()=>{dy+=`
-<a href="/youxijiezou1">2024年及以前</a> . <a href="/youxijiezou2">2025年</a> . <a href="/youxijiezou3">2026年</a> . <a href="/youxijiezou0">精选</a>
+<a href="/youxijiezou">返回目录</a>
 <hr>
 <a name="最新"></a>
 <a name="其他记录"></a><h2>其他记录</h2>
@@ -433,14 +427,14 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <br>
 
 <h4>专题研究</h4>
+
+<h5>米哈游</h5>
 <a href="/i/18013331">粉丝数、获奖、排名</a><br>
 <a href="/i/11431911">米游评分</a><br>
 <a href="/i/11499319">对角色的评价</a><br>
-<a href="/i/13537564">中国游戏史上的光明与黑暗</a><br>
-<a href="/i/11798555">对比舆论对米哈游和其他游戏的区别</a><br>
 <a href="/i/16217974">“原神杀手”</a><br>
 <a href="/i/17841490">米哈游的巧合趣闻</a><br>
-<a href="/i/18489295">专属标准</a><br>
+<a href="/i/18489295">对米哈游的新标准</a><br>
 
 <br>
 
@@ -449,7 +443,7 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <a href="/i/7396705">米黑和米白的类型研究</a><br>
 <a href="/i/6804640">仙家军</a><br>
 <a href="/i/6795977">反米势力</a><br>
-<a href="/i/11411748">ML人</a><br>
+<a href="/i/11411748">ML</a><br>
 
 <br>
 
@@ -554,6 +548,7 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <b>〈第一定律〉</b>〈只看|第一定律〉<br>
 <b>英配</b>〈只看|英配〉<br>
 <b>敷衍玩家</b>〈只看|敷衍玩家〉<br>
+<b>碰瓷营销</b>〈只看|碰瓷营销〉<br>
 `},
 
 "dy_注意":()=>{dy+=`<h3 class="D">注意！</h3><br>
@@ -638,14 +633,38 @@ ol{padding-left:1em;list-style-type:disc;}
 
 function 显示(o){document.getElementById("隐藏"+o).style="";document.getElementById("显示"+o).style="display:none"}
 function 显示图片(o){o=o.split(",");o[1]="/i/o/ys/"+o[1];document.getElementById("显示"+o[0]).innerHTML="<a href='"+o[1]+"' target='_blank'><img src='"+o[1]+"' width='"+o[2]+"'></a>"}
-
-let 我只看="o";
-function 只看(o){if(o==0){我只看="o"}else{只看删除(o);我只看+=","+o;只看b()}只看a()}
-function 只看a(){if(我只看=="o"){document.getElementById("sty").innerHTML="";document.getElementById("只看已选").innerHTML="全部";document.getElementById("只看已选2").innerHTML="全部"}else{let 临时="";let 临时2=我只看.split(",");for(let i=0;临时2.length>i;i++){if(i!=0){临时+=","}临时+="li."+临时2[i]}document.getElementById("sty").innerHTML="<style>li[class]{display:none}"+临时+"{display:list-item}</style>"}}
-function 只看b(){let 临时="<a onclick=\"只看(0)\">显示全部</a>（<b>已选：</b>";let 临时2=我只看.split(",");for(let i=1;临时2.length>i;i++){if(i!=1){临时+="、"}临时+="<a onclick=\"只看删除('"+临时2[i]+"')\">"+临时2[i]+"</a>"}document.getElementById("只看已选").innerHTML=临时+"）";document.getElementById("只看已选2").innerHTML=临时+"）"}
-function 只看删除(o){我只看=我只看.split(",").filter(item=>item!==o).join(",");只看b();只看a()}
 function 展开其他(o){document.getElementById("其他"+o).style="";document.getElementById("原其他"+o).style="display:none"}
 function 排行高亮(o){document.getElementById(o.split("_")[0]+"_style").innerHTML="<style>."+o+"{background-color:#1A73E8;color:#ffffff}."+o+" a{color:#ffffff}</style>"}
 // function 名词解释(){let 临时=document.getElementById("名词解释").value.toUpperCase();let 临时2="";if(注[临时]){if(注[临时][0]=="／"){临时2="<b>"+临时+"</b>：";临时=注[注[临时].split("／")[1]]}else{临时2="<b>"+临时+"</b>："}if(typeof 注[临时]=="object"){临时2+=注[临时][0]+" <a href='"+注[临时][1]+"'>链接</a>"}else{临时2+=注[临时]}}else{临时2="无相关内容"}document.getElementById("名词解释_").innerHTML=临时2}
 
-if(window.location.href.indexOf("?")!=-1){let 临时=decodeURI(window.location.href.split("?")[1].split("#")[0]);只看(临时);window.location.href=window.location.href.split("#")[0]+"#只看特定内容"}
+let 我只看=[];
+
+function 只看(o){
+    if(o==0){我只看=[]}
+    else{
+        if(o.indexOf(",")!=-1){我只看=o.split(",")}
+        else if(我只看.indexOf(o)!=-1){
+            我只看.splice(o,1);
+        }else{
+            我只看.push(o);
+        }
+    }
+    if(我只看.length==0){
+        document.getElementById("sty").innerHTML="";
+        document.getElementById("只看已选").innerHTML="全部";
+        document.getElementById("只看已选2").innerHTML="全部";
+    }else{
+        document.getElementById("sty").innerHTML="<style>li[class]{display:none}li."+我只看.join(".")+"{display:list-item}</style>";
+        let 临时=`<a onclick="只看(0)">显示全部</a>（<b>已选：</b>`+我只看.map(item =>{return `<a onclick="只看删除('${item}')">${item}</a>`}).join("、")+"）";
+        document.getElementById("只看已选").innerHTML=临时;
+        document.getElementById("只看已选2").innerHTML=临时;
+    }
+}
+
+
+// function 只看(o){if(o==0){我只看="o"}else{只看删除(o);我只看+=","+o;只看b()}只看a()}
+// function 只看a(){if(我只看=="o"){document.getElementById("sty").innerHTML="";document.getElementById("只看已选").innerHTML="全部";document.getElementById("只看已选2").innerHTML="全部"}else{let 临时="";let 临时2=我只看.split(",");for(let i=0;临时2.length>i;i++){if(i!=0){临时+=","}临时+="li."+临时2[i]}document.getElementById("sty").innerHTML="<style>li[class]{display:none}"+临时+"{display:list-item}</style>"}}
+// function 只看b(){let 临时="<a onclick=\"只看(0)\">显示全部</a>（<b>已选：</b>";let 临时2=我只看.split(",");for(let i=1;临时2.length>i;i++){if(i!=1){临时+="、"}临时+="<a onclick=\"只看删除('"+临时2[i]+"')\">"+临时2[i]+"</a>"}document.getElementById("只看已选").innerHTML=临时+"）";document.getElementById("只看已选2").innerHTML=临时+"）"}
+// function 只看删除(o){我只看=我只看.split(",").filter(item=>item!==o).join(",");只看b();只看a()}
+
+if(window.location.href.indexOf("?")!=-1){只看(decodeURI(window.location.href.split("?")[1].split("#")[0]))}
