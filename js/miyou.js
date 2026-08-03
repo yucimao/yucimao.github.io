@@ -145,7 +145,7 @@ let 注={
 "米孝子":"对米哈游玩家的侮辱性称呼，指对厂商如同孝子一般",
 "MXZ":"／米孝子","米学长":"／米孝子","米小子":"／米孝子",
 "孝子":"对用户的侮辱性称呼，指对厂商如同孝子一般",
-"CP":"将两个角色说成是情侣关系",
+"CP":"将两个角色配对，比如原作里只是普通朋友，二创将两人塑造成情侣",
 "狂欢":"一种网络现象，群体会对某个事件或某个人的讨论热情高涨，甚至陷入疯狂",
 "ML人":["认为游戏里女角色必须都喜欢主角（玩家）的群体","/i/11411748",1],
 "ML":"角色都要爱上主角（玩家）的一类游戏，禁止有同性恋、与主角同性的角色",
@@ -497,6 +497,7 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <b>«原神»</b>〈只看|原神〉、
 <b>«星穹铁道»</b>〈只看|星穹铁道〉、
 <b>«绝区零»</b>〈只看|绝区零〉<br>
+<b>«星布谷地»</b>〈只看|星布谷地〉、
 <b>«因缘精灵»</b>〈只看|因缘精灵〉<br>
 
 <b><sub>个人标记：</sub></b>　<br>
@@ -529,9 +530,10 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 <b>完美世界</b>〈只看|完美世界〉<small>：幻塔 等</small><br>
 <b>西山居</b>〈只看|西山居〉<small>：剑网三、〈尘白禁区〉 等</small><br>
 <b>鹰角</b>〈只看|鹰角〉<small>：明日方舟、来自星尘 等</small><br>
+<b>游戏科学</b>〈只看|游戏科学〉<small>：黑神话悟空 等</small><br>
 <b>库洛</b>〈只看|库洛〉<small>：战双帕弥什、鸣潮 等</small><br>
 <b>任天堂</b>〈只看|任天堂〉<small>：塞尔达传说、宝可梦 等</small><br>
-<b>最终幻想</b>〈只看|最终幻想〉<br>
+<b>最终幻想</b>〈只看|最终幻想〉、<b>Fate</b>〈只看|Fate〉<br>
 
 <b><sub>其他：</sub></b>　<br>
 <b>〈时光机〉</b>〈只看|时光机〉<br>
@@ -602,7 +604,7 @@ h3{display:inline}
 .红{color:#DA1801}.蓝{color:#039BE5}.绿{color:#0be503}.灰{color:var(--灰)}
 [id^="隐藏"]{font-weight:normal}
 .S{color:#ffc800;font-weight:bold}.A{color:#2977DB;font-weight:bold}.B{color:#8cbaf7}.C{color:#ff9488}.D{color:#ea4631}.E{color:#932213;font-weight:bold}
-[onclick^="只看删除"]:hover{color:var(--灰);text-decoration:line-through}
+#只看已选 [onclick^="只看"]:hover,#只看已选2 [onclick^="只看"]:hover{color:var(--灰);text-decoration:line-through}
 a[onclick^="dw("]{font-size:0.85em;border: 1px solid #cfcfcf;padding:3px;border-radius:10px}
 .提示 sub.详{display:none}.提示:hover sub.详{display:inline}.提示:hover{border:none}.提示 sub.详:before{content:"["}.提示 sub.详:after{content:"]"}
 ol{line-height:2em}
@@ -655,7 +657,7 @@ function 只看(o){
         document.getElementById("只看已选2").innerHTML="全部";
     }else{
         document.getElementById("sty").innerHTML="<style>li[class]{display:none}li."+我只看.join(".")+"{display:list-item}</style>";
-        let 临时=`<a onclick="只看(0)">显示全部</a>（<b>已选：</b>`+我只看.map(item =>{return `<a onclick="只看删除('${item}')">${item}</a>`}).join("、")+"）";
+        let 临时=`<a onclick="只看(0)">显示全部</a>（<b>已选：</b>`+我只看.map(item =>{return `<a onclick="只看('${item}')">${item}</a>`}).join("、")+"）";
         document.getElementById("只看已选").innerHTML=临时;
         document.getElementById("只看已选2").innerHTML=临时;
     }
