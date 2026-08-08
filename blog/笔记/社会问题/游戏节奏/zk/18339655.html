@@ -5,6 +5,8 @@ nav_text: 社群
 nav_url: <a href="/biji/game">游戏笔记</a>
 permalink: i/18339655
 ---
+<link rel="stylesheet" href="/css/all2.css">
+
 <a href="/i/6804640">仙家军</a><br>
 <a href="/i/11473723">NGA</a><br>
 <a href="/i/12187843">原神内鬼吧</a><br>
@@ -24,6 +26,124 @@ permalink: i/18339655
     2026年7月，[三度笑话吧]吧主建立[鸣潮那些事儿吧]，自称是为鸣潮社区修史。
 </fieldset><br>
 
+<fieldset><legend><a name="dinner笑话吧"></a><b>dinner笑话吧</b></legend>
+    “dinner”谐音“低能儿”，自称是看各种人闹的离谱笑话，实际是反米贴吧，比如吧规明确禁止嘲笑除«原神»以外的其他二游；吧务同时是反原神吧、米游笑话吧、原批笑话吧的吧主；公告称发现米游玩家和反«鸣潮»人士可以联系吧务进行封禁。
+</fieldset><br>
+
 <!-- <fieldset><legend><a name=""></a><b></b></legend>
 
 </fieldset><br> -->
+
+<hr>
+
+<style>
+    td {border: 1px solid #ccc; padding: 8px; cursor: pointer;}
+    .tr-highlight {background: #ffebee !important;}
+    .td-highlight {background: #e3f2fd !important;}
+    small {color: #666; margin-left:4px;}
+</style>
+
+<h3>人口普查</h3>
+
+<div id="dy"></div>
+
+<script>
+let data=[
+    ["半壁江山雪之下吧","2023年7月","鹰角","明日方舟 16%","米哈游","星穹铁道 15%","碧蓝航线","9%"],
+    ["有男偷玩吧","2024年9月","库洛","鸣潮 17%","碧蓝航线","16%","少女前线","10%","鹰角","明日方舟 9%","米哈游","星穹铁道 8%"],
+    ["鸣潮内鬼吧","2024年5月(除鸣潮外还玩)","尘白禁区","28%","库洛","只玩鸣潮 25%","不玩鸣潮","23%"],
+    ["鸣潮内鬼吧","2024年9月(除鸣潮外还玩)","库洛","只玩鸣潮+战双 39%","米哈游","17%","其他","16%","不玩鸣潮","14%","尘白禁区","11%"],
+    ["碧蓝档案吧","2024年10月","尘白禁区","36%","碧蓝档案","31%","原神","21%"],
+    ["反尘白禁区吧","2024年12月","库洛","鸣潮 18%","尘白禁区","14%","反ML","13%"],
+    ["反鸣潮吧","2026年6月","米哈游","43%","鹰角","20%","其他游戏","18%","库洛","13%"],
+    ["mihoyo吧","2026年6月","库洛","31%","腾讯","12%","鹰角","9%"],
+    ["星穹铁道内鬼吧","2026年7月","库洛","鸣潮 52%","米哈游","星穹铁道 11%"],
+    // ["","年月","","%","","%"],
+];
+
+// 全局高亮状态
+let activeBarName = null;   // 当前选中贴吧名（整行高亮）
+let activeTag = null;       // 当前选中标签（单元格高亮，如鹰角）
+
+// 渲染表格
+function renderTable() {
+    const wrap = document.getElementById('dy');
+    let tableHtml = '<table>';
+
+    data.forEach((rowArr, rowIdx) => {
+        // 拆分：第一项贴吧，第二项日期，剩余是成对标签+数值
+        const barTitle = rowArr[0];
+        const dateStr = rowArr[1];
+        const tagList = rowArr.slice(2); // 剩下 [tag1,val1,tag2,val2...]
+
+        let trHtml = `<tr data-bar="${barTitle}" data-row-index="${rowIdx}">`;
+        // 第一列：贴吧名称
+        trHtml += `<td class="bar-cell" data-type="bar" data-val="${barTitle}">
+            ${barTitle}<small>(${dateStr})</small>
+        </td>`;
+
+        // 循环生成所有标签单元格（两两一组）
+        for(let i = 0; i < tagList.length; i += 2) {
+            const tagText = tagList[i];
+            const valText = tagList[i+1];
+            trHtml += `<td class="tag-cell" data-type="tag" data-val="${tagText}">
+                ${tagText}<small>(${valText})</small>
+            </td>`;
+        }
+        trHtml += '</tr>';
+        tableHtml += trHtml;
+    })
+    tableHtml += '</table>';
+    wrap.innerHTML = tableHtml;
+
+    bindClickEvent();
+}
+
+// 绑定点击事件
+function bindClickEvent() {
+    // 重置所有高亮
+    function clearAllHighlight() {
+        document.querySelectorAll('tr').forEach(tr => tr.classList.remove('tr-highlight'));
+        document.querySelectorAll('.tag-cell').forEach(td => td.classList.remove('td-highlight'));
+    }
+
+    // 所有单元格点击
+    document.querySelectorAll('#dy td').forEach(td => {
+        td.onclick = function() {
+            const cellType = this.dataset.type;
+            const cellVal = this.dataset.val;
+            clearAllHighlight();
+
+            // 1. 点击贴吧列：整行高亮相同贴吧
+            if(cellType === 'bar') {
+                // 重复点击取消高亮
+                if(activeBarName === cellVal) {
+                    activeBarName = null;
+                    return;
+                }
+                activeBarName = cellVal;
+                // 匹配所有同名贴吧行
+                document.querySelectorAll(`tr[data-bar="${activeBarName}"]`)
+                    .forEach(tr => tr.classList.add('tr-highlight'));
+                activeTag = null; // 清空标签高亮
+            }
+            // 2. 点击标签（鹰角/米哈游/库洛）：所有同名单元格高亮
+            else if(cellType === 'tag') {
+                // 重复点击取消高亮
+                if(activeTag === cellVal) {
+                    activeTag = null;
+                    return;
+                }
+                activeTag = cellVal;
+                // 匹配页面全部相同标签单元格
+                document.querySelectorAll(`.tag-cell[data-val="${activeTag}"]`)
+                    .forEach(td => td.classList.add('td-highlight'));
+                activeBarName = null; // 清空行高亮
+            }
+        }
+    })
+}
+
+// 初始化渲染
+renderTable();
+</script>
