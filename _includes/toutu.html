@@ -1,16 +1,18 @@
 <style>
 @media (max-width: 730px) { /*小于730px*/
-    .qbt {color: #fffffe;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;}
+    /* .qbt {color: #fffffe;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;} */
+    .qbt {color: #fffffe;-webkit-text-stroke: 5px #000;paint-order: stroke fill;cursor: default;font-weight: 600;letter-spacing:3px}
     .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 8%;font-size: 30px;}
 }
 
 @media (min-width: 730px) { /*大于730*/
-    .qbt {color: #fffffe;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;}
+    /* .qbt {color: #fffffe;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;} */
+    .qbt {color: #fffffe;-webkit-text-stroke: 9px #000;paint-order: stroke fill;cursor: default;font-weight: 600;letter-spacing:6px}
     .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
 }
 
 @media (min-width: 950px) { /*大于950*/
-    .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 25%;font-size: 70px;}
+    .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 22%;font-size: 80px;}
 }
 #head_img {background-repeat: no-repeat;background-size: 100%;}
 #head_img:after {content: "";display: block;padding-bottom: 40%;}</style>
