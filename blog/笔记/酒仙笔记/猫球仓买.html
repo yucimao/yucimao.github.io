@@ -7,17 +7,26 @@ permalink: cangmai
 footer_img: xsds
 ---
 <link rel="stylesheet" href="/css/all2.css">
+
 <style>
 :root{
     --va:#c4c4c4;
     --vb:#f6f6f6;
     --vc:#A9A9A9;
     --vd:#121212;
+    --ve:#E77F27;
+    --vf:#dddddd;
 }
 body,.body,td{background-color:var(--vd);color:var(--va);cursor:default}
+.biaotib{color:var(--vf);font-weight:normal}
 
-.biaotib{color:#0085A1}
-a,summary[onclick]{color:var(--vb)}
+h2{color:var(--ve);letter-spacing:2px}
+h2:before,h3:before{content:""}
+h4{color:var(--vf)}
+h4:before{content:"“ ";color:var(--ve)}h4:after{content:" ”\00A0";color:var(--ve)}
+#酒单 h1,#酒单 h2,#酒单 h3,#酒单 h4,#酒单 h5{margin:16px auto 20px;display:inline}
+h5{font-size:17px}
+
 table{border:2px solid var(--va);box-shadow:none;border-spacing:2px;border-collapse:separate;line-height:initial}
 #弹窗{position:fixed;left:0px;top:0px;background:#00000070;width:100%;height:100%;z-index:1001}
 .弹窗_0{width:100%;height:100%;position:absolute}
@@ -25,10 +34,14 @@ table{border:2px solid var(--va);box-shadow:none;border-spacing:2px;border-colla
 #nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important}
 #nav a{color:#E1E1E1 !important}
 #酒单 fieldset{transition:all 0.2s ease;transform-origin:center;cursor:pointer;margin:12px auto 1.6em 0;
+border: 2px solid #414141;
 padding:10px 15px 15px;width:fit-content}
 #酒单 fieldset:hover{transform:translateY(-2px) scale(1.04)}
+
 a[onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"]:after{content:" ⛛";font-size:0.5em}
 a.zhushi:after{content:""}
+a,summary[onclick]{color:var(--vb)}
+a[href^="#"]:after{content:" ↷";color:var(--va);font-size:12px;font-weight:normal}
 small.zhushi{font-weight:normal}
 summary{cursor:pointer}
 summary:hover{color:#0085A1}
@@ -40,11 +53,8 @@ i[x]{text-decoration:underline;text-underline-offset:4px}
 #对话 img.ft{width:300px;height:300px;background-color:#232323}
 hr{margin:30px auto 16px}
 hr{border:0;height:1px;background-image:linear-gradient(to right,#ffffff00,#ffffffbf,#ffffff00);width:80%}
-#酒单 h1,#酒单 h2,#酒单 h3,#酒单 h4,#酒单 h5{margin:16px auto 20px;display:inline}
-h5{font-size:17px}
 #酒单 ul{margin:0 auto 10px}
-#酒单 li{border-bottom:2px solid var(--va);display:table}
-a[href^="#"]:after{content:" ↷";color:var(--va);font-size:12px;font-weight:normal}
+#酒单 li{border-bottom:1px solid var(--ve);display:table}
 details .zhushi{font-size:0.78em}
 input{background-color:var(--vd);color:var(--va);border:1px solid var(--va);outline:none;font-size:1.01em}
 
@@ -68,8 +78,6 @@ input{background-color:var(--vd);color:var(--va);border:1px solid var(--va);outl
 <div id="开场白"></div>
 
 <hr>
-
-<h2>酒单</h2>
 
 <div id="跳转"></div>
 
@@ -180,7 +188,7 @@ let 通用={
 
     "喝一杯":"我其实不怎么喝酒，我喜欢酒，更多的是喜欢酒的来历和设计。{<br>}所以，如果你要送我什么有趣的酒，我会很开心的。{<br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('喝一杯2','要怎么把酒给你？')+br+按钮('知道了','知道了'),
     "喝一杯1":"诶嘿。{<br><br>}"+按钮('喝一杯2','要怎么把酒给你？')+br+按钮('知道了','知道了'),
-    "喝一杯2":"记住我的邮编：QQ-123719932。{<span class='zhushi'>（这是我的QQ号，请联系我，把酒有关的信息告诉我，你在什么作品里看到的，或是你原创的，都可以，也许就会被放进酒单里。）</span><br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('知道了','知道了'),
+    "喝一杯2":"记住我的邮编：123719932。{<span class='zhushi'>（这是我的QQ号，请联系我，把酒有关的信息告诉我，你在什么作品里看到的，或是你原创的，都可以，也许就会被放进酒单里。）</span><br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('知道了','知道了'),
 
     "隐藏酒单_输入":`{<br><br><input type="text" id="隐藏酒单" autocomplete="off" class='del'><a onclick="隐藏酒单_发送()" class='del'> 发送</a>}${br}`+按钮('开篇','算了'),
 
