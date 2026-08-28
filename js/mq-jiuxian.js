@@ -67,7 +67,8 @@ for(let i=1;正.length>i;i++){
 if(遗漏.length!=0){console.log("〈"+遗漏.join("〉〈")+"〉")}
 文=文.replace(new RegExp('\\[',"g"),"<i> [<\/i>").replace(new RegExp('\\]',"g"),"<i>] <\/i>").replace(new RegExp('〔',"g"),"[").replace(new RegExp('〕',"g"),"]");
 文=文.split("［跳转］");
-文=文[0]+跳转+"<br><a href='#"+表_代码["酒的列表"]+"'>"+表_代码["酒的列表"]+"</a>"+文[1]+"<hr><a name='"+表_代码["酒的列表"]+"'></a><h3>"+表_代码["酒的列表"]+"</h3><ol>"
+
+文=文[0]+跳转+((表_代码["酒的列表"]!="-")?"<br><a href='#"+表_代码["酒的列表"]+"'>"+表_代码["酒的列表"]+"</a>":"")+文[1]+((表_代码["酒的列表"]!="-")?"<hr><a name='"+表_代码["酒的列表"]+"'></a><h3>"+表_代码["酒的列表"]+"</h3><ol>":"");
 
 let keys=Object.keys(表);
 keys.sort((a,b)=>a.toLowerCase().localeCompare(b.toLowerCase()));
@@ -79,11 +80,13 @@ for(let i=0;keys.length>i;i++){
         let 临时3="";
         if(表_代码[keys[i]+"_跳转"]){临时3=" href=\"#"+表_代码[keys[i]+"_跳转"]+"\""}
 
-        if(临时.indexOf("／金／")!=-1){
-            临时=临时.split("／金／")[1].split("／")[0];
-            文+="<li><a"+临时3+" onmousemove=\"进入('"+keys[i]+"')\" onmouseout=\"离开()\">"+keys[i].split("_")[0]+"</a>："+临时+"</li>";
-        }else{
-            文+="<li><a"+临时3+" onmousemove=\"进入('"+keys[i]+"')\" onmouseout=\"离开()\">"+keys[i].split("_")[0]+"</a></li>";
+        if(表_代码["酒的列表"]!="-"){
+            if(临时.indexOf("／金／")!=-1){
+                临时=临时.split("／金／")[1].split("／")[0];
+                文+="<li><a"+临时3+" onmousemove=\"进入('"+keys[i]+"')\" onmouseout=\"离开()\">"+keys[i].split("_")[0]+"</a>："+临时+"</li>";
+            }else{
+                文+="<li><a"+临时3+" onmousemove=\"进入('"+keys[i]+"')\" onmouseout=\"离开()\">"+keys[i].split("_")[0]+"</a></li>";
+            }
         }
     }
 
@@ -111,7 +114,7 @@ for(let i=0;keys.length>i;i++){
     }
     表[keys[i]]=dy;
 }
-文+="</ol>";
+if(表_代码["酒的列表"]!="-"){文+="</ol>"}
 document.getElementById("正文").innerHTML=文;
 
 
