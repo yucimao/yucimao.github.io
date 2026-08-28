@@ -1,14 +1,20 @@
 <style>
 @media (max-width: 730px) { /*小于730px*/
-    /* .qbt {color: #fffffe;text-shadow: #000 3px 0 0, #000 0 3px 0, #000 -3px 0 0, #000 0 -3px 0;cursor: default;font-weight: 800;} */
-    .qbt {color: #fffffe;-webkit-text-fill-color:#fffffe;-webkit-text-stroke: 5px #000;paint-order: stroke fill;cursor: default;font-weight: 600;letter-spacing:3px}
-    .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 8%;font-size: 30px;}
+    .qbt{text-shadow:#000 3px 0 0,#000 0 3px 0,#000 -3px 0 0,#000 0 -3px 0;}
+    .qbt{color:#fffffe;paint-order:stroke fill;cursor:default;font-weight:600;letter-spacing:3px}
+    .qbt{position: absolute;left:{% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 8%;font-size: 30px;}
+    @supports (-webkit-text-stroke: 1px black){
+        .qbt{-webkit-text-fill-color:#fffffe;-webkit-text-stroke:5px #000;text-shadow:none;}
+    }
 }
 
 @media (min-width: 730px) { /*大于730*/
-    /* .qbt {color: #fffffe;text-shadow: #000 5px 0 0, #000 0 5px 0, #000 -5px 0 0, #000 0 -5px 0;cursor: default;font-weight: 800;} */
-    .qbt {color: #fffffe;-webkit-text-fill-color:#fffffe;-webkit-text-stroke: 9px #000;paint-order: stroke fill;cursor: default;font-weight: 600;letter-spacing:6px}
-    .qbt {position: absolute;left: {% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
+    .qbt{text-shadow:#000 5px 0 0,#000 0 5px 0,#000 -5px 0 0,#000 0 -5px 0;}
+    .qbt{color:#fffffe;paint-order:stroke fill;cursor:default;font-weight:600;letter-spacing:6px}
+    .qbt{position:absolute;left:{% if page.nav_qbt_left %}{{ page.nav_qbt_left }}{% else %}{{ site.nav_qbt_left }}{% endif %};top: 15%;font-size: 60px;}
+    @supports (-webkit-text-stroke:1px black){
+        .qbt{-webkit-text-fill-color:#fffffe;-webkit-text-stroke:9px #000;text-shadow:none;}
+    }
 }
 
 @media (min-width: 950px) { /*大于950*/
@@ -23,4 +29,4 @@ function 改头图(){
 head_img.style.backgroundImage= "url('/img/nav/{% if page.nav_img %}{{ page.nav_img }}{% else %}{{ site.nav_img }}{% endif %}')";
 }
 </script>
-<span class="qbt">{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
+<span class="qbt">（测试）{% if page.nav_text %}{{ page.nav_text }}{% else %}{% endif %}</span>
