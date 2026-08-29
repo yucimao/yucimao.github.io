@@ -60,11 +60,17 @@ function 作品分类(){
     }
     for(let i=0;排序.length>i;i++){
         //<span class="提示" data-msg="内容">表面</span>
-        dy+="<h3>"+排序[i]+" <small class='提示' data-msg='平均"+(作品[排序[i]][0]/(作品[排序[i]].length-1)*10+"").split(".")[0]/10+"'>♥"+作品[排序[i]][0]+"</small></h3><ol>"
+        dy+="<h3>"+排序[i]+" <small class='提示' data-msg='平均"+(作品[排序[i]][0]/(作品[排序[i]].length-1)*10+"").split(".")[0]/10+"'>♥"+作品[排序[i]][0]+"</small></h3><ol>";
         for(let o=1;作品[排序[i]].length>o;o++){
+            if(o==5){
+                // dy+="<li><a onclick=\"更多('"+y[i][1]+"')\">更多 <small>(共"+作品[排序[i]].length+")</small></a></li>"
+                dy+=`<li onclick="this.style.display='none';this.nextElementSibling.style.display='inline'"><a>更多 <small>(共${作品[排序[i]].length-1})</small></a></li><div style="display:none;">`;
+
+            }
             dy+="<li><b>"+作品[排序[i]][o][0]+"</b></li>";
             // dy+="<li><b>"+作品[排序[i]][o][0]+"</b> <small>"+作品[排序[i]][o][2]+"</small></li>";
         }
+        if(作品[排序[i]].length>4){dy+="</div>"}
         dy+="</ol>"
     }
     dy+="<h3>其他</h3><ol>";
