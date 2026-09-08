@@ -8,6 +8,7 @@ a[onclick^="this.style.display='none';document.getElementById('隐藏_"]:after,a
 legend{font-weight:bold}ul{margin:10px}
 h4{font-size:24px}
 a[onclick^="dw("]{font-size:0.85em;border: 1px solid #cfcfcf;padding:3px;border-radius:10px}
+[li] li{margin:0.7em auto}
 </style><div id=\"弹窗\" style=\"display:none;\"></div>`;
 
 let oo="";
