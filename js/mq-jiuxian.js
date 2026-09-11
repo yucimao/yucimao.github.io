@@ -65,7 +65,7 @@ for(let i=1;正.length>i;i++){
         遗漏[遗漏.length]=实际;表[实际]=[实际,"灰／“<b>"+实际+"</b>”条目存在错误，<br>请联系QQ<b>{{ site.mq_qq }}</b>反馈问题。"]}
     }
 }
-if(遗漏.length!=0){console.log("〈"+遗漏.join("〉〈")+"〉")}
+if(遗漏.length!=0){console.log('"'+遗漏.join('":["酒"],\n"')+'":["酒"],')}
 文=文.replace(new RegExp('\\[',"g"),"<i> [<\/i>").replace(new RegExp('\\]',"g"),"<i>] <\/i>").replace(new RegExp('〔',"g"),"[").replace(new RegExp('〕',"g"),"]");
 文=文.split("［跳转］");
 

@@ -9,45 +9,20 @@ permalink: biji/maoqiucanting
     <title>猫球餐厅</title>
 </head>
 <body>
+<script src="/js/maoqiuchufang.js"></script>
 <script>
-let data=[
-["【主食】","大米饭","蛋包饭","饭包"],
-["炒饭","蛋炒饭","酱油炒饭"],
-["粥","地瓜粥","黑米粥","胡萝卜瘦肉粥","皮蛋瘦肉粥"],
-["饼","鸡蛋饼","烙饼","糖饼"],
-["打卤面","韭菜鸡蛋打卤面","茄子打卤面","西红柿打卤面","炸酱面"],
 
-["【简单一顿】","番茄牛腩","炒鸡心","鸡汤","可乐鸡翅","柿子炒鸡蛋","麻辣鸡丝","公瑾爆蛋"],
-["猪肉","红烧肉","酱香五花肉","辣椒炒肉","土豆焖五花肉","香煎猪肉片","蒸五花肉","豆角炒肉"],
+let _data=[];
+for(let i=0;data.length>i;i++){
+    if(Array.isArray(data[i])){
+        _data[_data.length-1].push(data[i][0]);
+    }else{
+        data[i]=data[i].replace(new RegExp('\<h3\>',"g"),"<b>").replace(new RegExp('\<\/h3\>',"g"),"</b>").replace(new RegExp('\<br\>',"g"),"").replace(new RegExp('：',"g"),"")
+        _data[_data.length]=[data[i]];
+    }
+}
 
-["【主菜】","小鸡炖榛蘑"],
-
-["【配菜】","冬瓜汤"],
-
-["【零食】","拔丝地瓜","土豆泥","土豆条"],
-["卤蛋","茶叶卤蛋","可乐卤蛋","辣酱卤蛋","啤酒卤蛋"],
-];
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <style>
         * {
@@ -302,7 +277,7 @@ let data=[
             let navHtml = '';
             let contentHtml = '';
             
-            data.forEach((item, index) => {
+            _data.forEach((item, index) => {
                 const cateName = item[0];
                 const contentList = item.slice(1);
                 
