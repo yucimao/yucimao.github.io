@@ -1,5 +1,5 @@
 ---
-layout: zk
+layout: page2
 title: 崩坏：星穹铁道
 nav_text: 崩坏：星穹铁道
 nav_url: <a href="/jiuxian">酒仙笔记</a>
@@ -20,21 +20,7 @@ anchor: x
 <div id="正文">
 
 <span class='zhushi'>可能因为分级的原因，游戏里不能明牌出现酒，比如苏乐达，从文字说明上似乎是纯汽水，但却有人喝苏乐达喝醉了，还有调饮、麦芽果汁之类的，我感觉是酒，那就按酒记录了。</span><br>
-<br>
-
 <div id="显示出处"></div>
-<br>
-
-<script>
-    function 显示出处(o){
-        if(o==0){
-            document.getElementById("显示出处").innerHTML="<style>.出处{color:#6A9955;}span.出处:before{content:\"//出自\";}</style><a onclick=\"显示出处(1)\">隐藏资料出处</a>";
-        }else{
-            document.getElementById("显示出处").innerHTML="<style>.出处{display:none;}</style><a onclick=\"显示出处(0)\">显示资料出处</a>";
-        }
-    }
-    显示出处(0);
-</script>
 
 <h3>目录</h3>
 ［跳转］
@@ -1578,6 +1564,15 @@ let 表_代码={
     // "猫尾酒馆_跳转":"h4_猫尾酒馆",
 
 };
+
+function 显示出处(o){
+    if(o==0){
+        document.getElementById("显示出处").innerHTML="<style>.出处{color:#6A9955;}span.出处:before{content:\"//出自\";}</style><a onclick=\"显示出处(1)\">隐藏资料出处</a>";
+    }else{
+        document.getElementById("显示出处").innerHTML="<style>.出处{display:none;}</style><a onclick=\"显示出处(0)\">显示资料出处</a>";
+    }
+}
+显示出处(0);
 </script>
 <script src="/js/mq-jiuxian.js"></script>
 
