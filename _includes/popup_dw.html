@@ -1,13 +1,16 @@
 <style>
 .dw_zz{position:fixed;left:0px;top:0px;background:#00000050;width:100%;height:100%;z-index:1001}
-.dw_tk{position:relative;background:#fff;top:20px;width:60%;height:65%;border-radius:20px;margin:5% auto;padding:30px 50px;font-size:1.2em;line-height:33px;font-weight:bold}
-#dw_hd{height:100%;overflow:auto;background-color:#fff}
+.dw_tk{position:relative;background:#fff;top:16px;width:70%;height:70%;border-radius:20px;margin:5% auto;padding:26px 50px;font-size:1.2em;line-height:36px;font-weight:bold}
+#dw_hd{height:100%;margin:0;overflow:auto;background-color:#fff}
 #dw_hd_r{position:absolute;width:25px;height:25px;border-radius:5px;background:red;color:#fff;right:15px;top:15px;text-align:center;cursor:pointer}
 #dw_hd_r:hover{background-color:#ff5858}
 #dw_x{width:100%;height:100%;position:absolute}
 #dwc{background-color:#fff;font-size:16px;font-weight:normal}
 /* [onclick^="dw(dwb="]{ */
 .dw_lj{cursor:pointer;border-bottom:1.8px dotted #08f}
+@media (max-width: 730px) { /*小于730px*/
+    .dw_tk{width:90%;height:90%;padding:10px 16px}
+}
 </style>
 
 <div class="dw_zz" id='dw_zz'><div id="dw_x" onclick="dw_x()"></div><div class="dw_tk"><div id="dw_hd"><span id="dwd"></span><span id="dwc">
@@ -38,9 +41,9 @@ function dw(){
     }
     if(dwd!="0"){
         if(dwe>0){
-            document.getElementById("dwd").innerHTML=`<h3 onclick="window.location.href='/i/${dwe}'">${dwd} <small>⤴︎</small></h3>`;
+            document.getElementById("dwd").innerHTML=`<span onclick="window.location.href='/i/${dwe}'">${dwd} <small>⤴︎</small></span>`;
         }else{
-            document.getElementById("dwd").innerHTML="<h3>"+dwd+"</h3>";
+            document.getElementById("dwd").innerHTML="<span>"+dwd+"</span>";
         }
         dwd="0";
     }else{
