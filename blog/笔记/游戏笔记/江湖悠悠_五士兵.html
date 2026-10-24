@@ -1,0 +1,223 @@
+---
+permalink: i/19272003
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沙场点兵</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .input-box {
+    width: 280px;
+    padding: 12px 16px;
+    font-size: 20px;
+    letter-spacing: 8px;
+    text-align: center;
+    border: 2px solid #d0d7de;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .input-box:focus {
+    border-color: #0969da;
+  }
+  .hint {
+    margin-top: 10px;
+    color: #656d76;
+    font-size: 13px;
+  }
+  .result-area {
+    margin-top: 30px;
+    min-height: 220px;
+    width: 300px;
+  }
+  .grid-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+  }
+  .row-top{
+    display:flex;
+    gap:10px;
+  }
+  .row-bottom{
+    display:flex;
+    gap:10px;
+  }
+  .cell {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    background: #eaeef2;
+    color: #656d76;
+    transition: all .3s;
+  }
+  .cell.brave {
+    background: #ffd33d;
+    color: #9a6700;
+    box-shadow: 0 2px 8px rgba(255, 211, 61, 0.5);
+  }
+  .result-text {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 15px;
+    color: #333;
+    min-height: 22px;
+  }
+  .tip {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #8b949e;
+  }
+</style>
+</head>
+<body>
+
+<h1>沙场点兵</h1>
+<input type="text" class="input-box" id="input" maxlength="5" placeholder="输入5位数字" autocomplete="off">
+<div class="hint">顺序：左上、上中、右上、左下、右下</div>
+
+<div class="result-area">
+  <div class="grid-wrap" id="grid">
+    <div class="row-top">
+      <div class="cell" data-pos="0">?</div>
+      <div class="cell" data-pos="1">?</div>
+      <div class="cell" data-pos="2">?</div>
+    </div>
+    <div class="row-bottom">
+      <div class="cell" data-pos="3">?</div>
+      <div class="cell" data-pos="4">?</div>
+    </div>
+  </div>
+  <div class="result-text" id="resultText"></div>
+</div>
+
+<div class="tip">输入满5位自动出结果，按任意键或点击画面重新输入</div>
+
+<script>
+  const input = document.getElementById('input');
+  const cells = document.querySelectorAll('.cell[data-pos]');
+  const resultText = document.getElementById('resultText');
+
+  // 位置索引：0左上 1上中 2右上 3左下 4右下
+  // 每个人能看到的位置（含自己）
+  const vision = [
+    [0, 1, 3],       // 左上：自己 + 上中 + 左下
+    [0, 1, 2, 3, 4], // 上中：全部
+    [1, 2, 4],       // 右上：上中 + 自己 + 右下
+    [0, 1, 3, 4],    // 左下：左上 + 上中 + 自己 + 右下
+    [1, 2, 3, 4]     // 右下：上中 + 右上 + 左下 + 自己
+  ];
+
+  function solve(nums) {
+    // 穷举 00000 ~ 11111 共32种可能
+    for (let mask = 0; mask < 32; mask++) {
+      const state = [
+        (mask >> 4) & 1,
+        (mask >> 3) & 1,
+        (mask >> 2) & 1,
+        (mask >> 1) & 1,
+        mask & 1
+      ];
+      let ok = true;
+      for (let i = 0; i < 5; i++) {
+        const sum = vision[i].reduce((s, p) => s + state[p], 0);
+        if (sum !== nums[i]) {
+          ok = false;
+          break;
+        }
+      }
+      if (ok) return state;
+    }
+    return null;
+  }
+
+  function render(state) {
+    const names = ['左上', '上中', '右上', '左下', '右下'];
+    cells.forEach((cell, i) => {
+      if (state[i] === 1) {
+        cell.textContent = '勇';
+        cell.classList.add('brave');
+      } else {
+        cell.textContent = '兵';
+        cell.classList.remove('brave');
+      }
+    });
+    const braveList = names.filter((_, i) => state[i] === 1);
+    if (braveList.length === 0) {
+      resultText.textContent = '无人勇猛';
+    } else {
+      resultText.textContent = '勇猛：' + braveList.join('、');
+    }
+  }
+
+  function reset() {
+    input.value = '';
+    input.focus();
+    cells.forEach(cell => {
+      cell.textContent = '?';
+      cell.classList.remove('brave');
+    });
+    resultText.textContent = '';
+  }
+
+  input.addEventListener('input', () => {
+    // 只保留数字
+    input.value = input.value.replace(/\D/g, '');
+    if (input.value.length === 5) {
+      const nums = input.value.split('').map(Number);
+      const ans = solve(nums);
+      if (ans) {
+        render(ans);
+      } else {
+        resultText.textContent = '无解，请检查输入';
+        cells.forEach(cell => {
+          cell.textContent = '?';
+          cell.classList.remove('brave');
+        });
+      }
+    }
+  });
+
+  // 按任意键或点击画面清空重置
+  document.addEventListener('keydown', (e) => {
+    if (input.value.length === 5) {
+      e.preventDefault();
+      reset();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target !== input && input.value.length === 5) {
+      reset();
+    }
+  });
+
+  // 初始聚焦
+  input.focus();
+</script>
+</body>
+</html>

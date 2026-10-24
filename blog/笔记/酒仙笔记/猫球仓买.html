@@ -15,6 +15,7 @@ footer_img: xsds
     --vc:#A9A9A9;
     --vd:#121212;
     --ve:#E77F27;
+    --ve2:#E77F2792;
     --vf:#dddddd;
 }
 body,.body,td{background-color:var(--vd);color:var(--va);cursor:default}
@@ -34,7 +35,8 @@ table{border:2px solid var(--va);box-shadow:none;border-spacing:2px;border-colla
 #nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important}
 #nav a{color:#E1E1E1 !important}
 #酒单 fieldset{transition:all 0.2s ease;transform-origin:center;cursor:pointer;margin:12px auto 1.6em 0;
-border: 2px solid #414141;
+/* border: 2px solid #414141; */
+border: 1px solid var(--ve);
 padding:10px 15px 15px;width:fit-content}
 #酒单 fieldset:hover{transform:translateY(-2px) scale(1.04)}
 
@@ -42,6 +44,7 @@ a[onclick="this.style.display='none';this.nextElementSibling.style.display='inli
 a.zhushi:after{content:""}
 a,summary[onclick]{color:var(--vb)}
 a[href^="#"]:after{content:" ↷";color:var(--va);font-size:12px;font-weight:normal}
+sub a[href^="#"]:after{content:""}
 small.zhushi{font-weight:normal}
 summary{cursor:pointer}
 summary:hover{color:#0085A1}
@@ -53,19 +56,24 @@ i[x]{text-decoration:underline;text-underline-offset:4px}
 #对话 img.ft{width:300px;height:300px;background-color:#232323}
 hr{margin:30px auto 16px}
 hr{border:0;height:1px;background-image:linear-gradient(to right,#ffffff00,#ffffffbf,#ffffff00);width:80%}
-#酒单 ul{margin:0 auto 10px}
-#酒单 li{border-bottom:1px solid var(--ve);display:table}
+#酒单 ul,#酒单 ol{margin:0 auto 20px}
+#酒单 ul li{display:table}
+#酒单 li{margin:10px 0}
+/* #酒单 li .li{border-bottom:1px solid var(--ve);padding:5px 0;margin:5px 0} */
+#酒单 li .li{border-bottom:1px solid var(--ve);padding:5px 0;margin:5px 0}
+#酒单 li b{border: 1px solid var(--ve);padding:5px}
 details .zhushi{font-size:0.78em}
 input{background-color:var(--vd);color:var(--va);border:1px solid var(--va);outline:none;font-size:1.01em}
+b[斜]{font-style:italic;}
+span[x]{color:#00000000}
 
-.小醉{animation:小醉 5s linear forwards}
-@keyframes 小醉{0%,60%{filter:blur(0.5px)}100%{filter:blur(0px)}}
-.中醉{animation:中醉 5s linear forwards}
-@keyframes 中醉{0%,60%{filter:blur(1px)}100%{filter:blur(0px)}}
-.大醉{animation:大醉 5s linear forwards}
-@keyframes 大醉{0%,60%{filter:blur(2px)}100%{filter:blur(0px)}}
-.重醉{animation:重醉 2s linear forwards}
-@keyframes 重醉{0%,80%{filter:blur(5px)}100%{filter:blur(0px)}}
+#typeTipBox{position:fixed;z-index:9999;padding:8px 12px;background:#222;color:#fff;border-radius:6px;font-size:14px;white-space:nowrap;pointer-events:none;display:none}
+span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
+
+.小醉{animation:小醉 5s linear forwards}@keyframes 小醉{0%,60%{filter:blur(0.5px)}100%{filter:blur(0px)}}
+.中醉{animation:中醉 5s linear forwards}@keyframes 中醉{0%,60%{filter:blur(1px)}100%{filter:blur(0px)}}
+.大醉{animation:大醉 5s linear forwards}@keyframes 大醉{0%,60%{filter:blur(2px)}100%{filter:blur(0px)}}
+.重醉{animation:重醉 2s linear forwards}@keyframes 重醉{0%,80%{filter:blur(5px)}100%{filter:blur(0px)}}
 
 @media screen and (max-width:768px){
     .弹窗_1{width:90%;height:80%;padding:10px 10px 30px;font-size:1.05em}
@@ -89,12 +97,12 @@ input{background-color:var(--vd);color:var(--va);border:1px solid var(--va);outl
         　<a onclick="分类('烈酒')">烈酒</a><br>
     </fieldset></details>
     <details><summary>来源</summary><fieldset>
-        　<a onclick="分类('艾泽拉斯')">艾泽拉斯 <span class='zhushi'>«魔兽世界»</span></a><br>
-            <details><summary onclick="分类('虚数之树')">虚数之树 <span class='zhushi'>«星穹铁道»</span></summary><fieldset>
+        　<a onclick="分类('艾泽拉斯')">艾泽拉斯 <span onclick="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span></a><br>
+            <details><summary onclick="分类('虚数之树')">虚数之树 <span onclick="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span></summary><fieldset>
                 　<a onclick="分类('惊梦酒吧')">惊梦酒吧</a><br>
                 　<a onclick="分类('翁法罗斯')">翁法罗斯</a><br>
             </fieldset></details>
-        　<a onclick="分类('提瓦特')">提瓦特 <span class='zhushi'>«原神»</span></a><br>
+        　<a onclick="分类('提瓦特')">提瓦特 <span onclick="this.innerHTML='出自«原神»'" class='zhushi'></span></a><br>
         　<a onclick="分类('猫球仓买')">猫球仓买</a><br>
     </fieldset></details>
     <details><summary>其他</summary><fieldset>
@@ -103,9 +111,7 @@ input{background-color:var(--vd);color:var(--va);border:1px solid var(--va);outl
     </fieldset></details>
     <a onclick="分类('随机')">随机</a><br>
     <a onclick="分类('0')">显示全部</a>
-</fieldset><br>
-
-<a href="/jiujiao/cangku">酿酒材料仓库</a>
+</fieldset>
 
 <hr>
 
@@ -130,8 +136,9 @@ let 时=new Date().getHours();
 let 醉酒=0,打招呼次数=0,dy="",跳转="",stopTyping=false,速度,临时变量={},已有酒单=[];
 function 按钮(a,b){return `{<a onclick="输入(通用['${a}'],'开场白',this)"> - ${b}</a>}`}
 function 特殊(a,b){return `{<a onclick="输入(通用['${a}'](),'开场白',this)"> - ${b}</a>}`}
-function 注释(o){return `{<small class='zhushi'>//${o}</small>}`}
-function 图(o){return `{<img class='ft' src='${location.href.includes("yucimao.github")?"../../..":""}/i/2264624/${o}'><br><br>}`}
+function 说(a,b){return `<span onmouseover="tip('${b}')">${a}</span>`}
+function 注释(o){return `{<span onclick="this.innerHTML='${o}'" class='zhushi'></span>}`}
+function 图(o){return `{<img class='ft' onclick='openImgBlack(this.src)' src='${location.href.includes("yucimao.github")?"../../..":""}/i/2264624/${o}'><br><br>}`}
 function 名(o,k,l){
     if(道具[o]){
         o=((k)?"{":"")+"<span class='提示' data-msg='"+道具[o]+"'>"+o.split("_")[0]+"</span>"+((k)?"}":"");
@@ -176,12 +183,16 @@ let 通用={
     "开篇":
     特殊('打招呼','你好')+br+
     按钮('喝一杯','一起喝一杯？')+br+
+    按钮('我想','我想……')+br+
     按钮('问题','我有个问题')+br+
     按钮('隐藏酒单','我要酒单上没有的'),
     "知道了":按钮('开篇','对话'),
     "开场白":"欢迎来到“猫球仓买”。",
 
-    "问题":按钮('问题1','怎么点单？')+br+按钮('问题2','你是谁？')+br+按钮('问题3','这是哪里？'),
+    "我想":按钮('我想1','我想参观酿酒材料仓库')+br+按钮('知道了','算了'),
+    "我想1":`通常是不开放参观的……好吧，不过只许看，不许碰哦。{<br>}跟我来吧。{（<a href="/jiujiao/cangku">点击此处打开</a>）<br><br>}`+按钮('知道了','知道了'),
+
+    "问题":按钮('问题1','怎么点单？')+br+按钮('问题2','你是谁？')+br+按钮('问题3','这是哪里？')+br+按钮('知道了','算了'),
     "问题1":`下面有“酒单”，看看有没有感兴趣的，点击即可。{<br><br>}`+按钮('问题1-1','我要怎么付款？')+br+按钮('知道了','知道了'),
     "问题1-1":"点单之后，我会找你在真界的投影，收取相应的货币（ѣ）。{<br>}你可以简单理解为——你在想象的世界里自动付款了，也就不需要你额外做什么。{<br>}当然，如果你想的话，也可以在现世……我是说，现实世界，对我{<a href='/donate'>打赏</a>}，嘿嘿。{<br><br>}"+按钮('知道了','知道了'),
     "问题2":`我是李猫球，这家“猫球仓买”的老板。{<br><br>}`+按钮('知道了','知道了'),
@@ -295,7 +306,13 @@ let 开场白={"0":[[通用['开场白']+寒暄+"{<br><br>}"+按钮('开篇','�
 */
 
 let 酒单=[
-    ["h2","★★★★★"],
+
+    "蓝哇薄荷醉奶",
+    "电波",
+    ["hr"],["h5","夜路归途",],
+    "八百八狸梅子酒","六条般若汤","辉夜御神酒","蜃气酒",
+
+    ["hr"],["h2","★★★★★"],
     "锈湖鸡尾酒",
     "科尔戈的黄金",
 
@@ -312,10 +329,7 @@ let 酒单=[
     "旅途的终点",
     "恐惧老酒",
     "一杯酩酊的时代",
-
-    ["hr"],["h5","夜路归途",],
-    "八百八狸梅子酒","六条般若汤","辉夜御神酒","蜃气酒",
-
+    
     ["hr"],["h2","★★"],
     "窖藏达拉然红葡萄酒",
     "炎诛的烧酒",
@@ -344,34 +358,36 @@ let 酒单=[
     ["name","<small>见闻：</small>"],
 
     ["hr"],["h4","无价之宝"],
-    ["跳转","<a href='#酒神之酒'>酒神之酒</a>","<a href='#神血蜜露'>神血蜜露</a>"],
+    ["ul","<b>酒神之酒 <sub><a href='#酒神之酒'>跳转</a></sub></b>","<b>神血蜜露 <sub><a href='#神血蜜露'>跳转</a></sub></b>"],
     "把欢宴带去明天","美猴王的传奇",
 
     ["hr"],["h4","金光闪闪"],
-    ["跳转","<a href='#科尔戈的黄金'>科尔戈的黄金</a>"],
+    ["ul","<b>科尔戈的黄金 <sub><a href='#科尔戈的黄金'>跳转</a></sub></b>"],
     "金钱蜜酒","液态黄金","黄金香槟","金色日出",
 
     ["hr"],["h4","功能性"],
-    ["跳转","<a href='#神血蜜露 · 海洋'>神血蜜露 · 海洋</a>：使人更加清醒，有着让人从海妖的迷魂歌谣中唤醒的功效，能驱散一切迷雾。"],
+    ["ul","<b>神血蜜露 · 海洋 <sub><a href='#神血蜜露 · 海洋'>跳转</a></sub></b>　使人更加清醒，有着让人从海妖的迷魂歌谣中唤醒的功效，能驱散一切迷雾。"],
     "热烈赞同","人格成长","惊喜一刻","惊吓一刻","漆黑睡梦","缤纷美梦","二进制佳酿","洄梦仙酒",
 
-    ["hr"],["h4","年份","并不是年份越久越好，只是觉得有意思记录一下。"],["ol",
-    "500年 "+名('琥珀花雕',0,"“当女儿下地第一声啼哭，父亲便酿成三坛琥珀花雕，待到女儿出嫁之日再作为贺礼。”　“我这琥珀花雕已经酿成有五百年了，她还是没有找到对象。”"),
-    "45年 "+名('雷酒45年陈酿',0,'“你召唤了雷霆！”'),
-    "40年 "+名('<a href=\'#欣嫩子谷40年\'>欣嫩子谷40年</a>'),
-    "30年 "+名('<a href=\'#酒神之酒\'>酒神之酒</a>'),//游戏主线大概开始于星历1577年
-    "25年 "+名('<a href=\'#霍斯瓦尔德25年陈酿，符文林地装桶\'>霍斯瓦尔德25年陈酿，符文林地装桶</a>')+" 、 "+名('古典陈酿',0,"“艾伦达尔特别贮藏，25年。”"),
-    "18年 "+名('海兽之泪',0,"“18年陈酒，储藏在阳光无法穿透的深海。本产品生产过程中没有海兽受到伤害。”"),
-    "12年 "+名('<a href=\'#克莱因庄园12年陈酿\'>克莱因庄园12年陈酿</a>'),
-    "4年 "+名('陈年雪莓白兰地',0,"“四年陈的美酒。”"),
-    "3年 "+名('三年陈的蓝酒',0,"“‘三’难道不是一个每秒的数字吗？”"),
-    "2年 "+名('两年陈的蓝酒',0,"“人人都知道两年陈的总是更好。”"),
-    "1年 "+名('一年陈的蓝酒',0,"“一年陈的酒，但不是第一流的酒。”"),
-    // "年 "+名(''),
+    ["hr"],["h4","年份","并不是年份越久越好，只是觉得有意思就按照年份排序记录一下。"],["ul",
+    "</span><small>1000年</small>　<span class='提示' data-msg='“揭开泥封一看，酒凝成了琥珀色的酒膏，挖一勺兑水，满院子都是香。” （出自«开坛十里香»）'><b>千年酒</b></span>",
+    "</span><small><span x>0</span>500年</small>　<span class='提示' data-msg='“当女儿下地第一声啼哭，父亲便酿成三坛琥珀花雕，待到女儿出嫁之日再作为贺礼。”　“我这琥珀花雕已经酿成有五百年了，她还是没有找到对象。” （出自«星穹铁道»）'><b>琥珀花雕</b></span>",
+    "</span><small><span x>00</span>45年</small>　<span class='提示' data-msg='“你召唤了雷霆！” （出自«魔兽世界»）'><b>雷酒45年陈酿</b></span>",
+    "</span><small><span x>00</span>40年</small>　<b>欣嫩子谷40年 <sub><a href=\'#欣嫩子谷40年\'>跳转</a></b></sub>",
+    "</span><small><span x>00</span>30年</small>　<b>酒神之酒 <sub><a href=\'#酒神之酒\'>跳转</a></sub></b>",//游戏主线大概开始于星历1577年
+    "</span><small><span x>00</span>25年</small>　<b>霍斯瓦尔德25年陈酿，符文林地装桶 <sub><a href=\'#霍斯瓦尔德25年陈酿，符文林地装桶\'>跳转</a></sub></b>　<span class='提示' data-msg='“艾伦达尔特别贮藏，25年。” （出自«魔兽世界»）'><b>古典陈酿</b></span>",
+    "</span><small><span x>00</span>18年</small>　<span class='提示' data-msg='“18年陈酒，储藏在阳光无法穿透的深海。本产品生产过程中没有海兽受到伤害。” （出自«魔兽世界»）'><b>海兽之泪</b></span>",
+    "</span><small><span x>00</span>12年</small>　<b>克莱因庄园12年陈酿 <sub><a href=\'#克莱因庄园12年陈酿\'>跳转</a></sub></b>",
+    "</span><small><span x>000</span>4年</small>　<span class='提示' data-msg='“四年陈的美酒。” （出自«魔兽世界»）'><b>陈年雪莓白兰地</b></span>",
+    "</span><small><span x>000</span>3年</small>　<span class='提示' data-msg='“‘三’难道不是一个每秒的数字吗？” （出自«魔兽世界»）'><b>三年陈的蓝酒</b></span>",
+    "</span><small><span x>000</span>2年</small>　<span class='提示' data-msg='“人人都知道两年陈的总是更好。” （出自«魔兽世界»）'><b>两年陈的蓝酒</b></span>",
+    "</span><small><span x>000</span>1年</small>　<span class='提示' data-msg='“一年陈的酒，但不是第一流的酒。” （出自«魔兽世界»）'><b>一年陈的蓝酒</b></span>",
+    // "</span><small><span x>0</span>年</small>　<span class='提示' data-msg=''><b></b></span>",
+    // "</span><small><span x>0</span>年</small>　<b> <sub><a href=\'#\'>跳转</a></sub></b>",
     ],
     
     ["hr"],["h4","千奇百怪"],
-    ["跳转","<a href='#锈湖鸡尾酒'>锈湖鸡尾酒</a>","<a href='#恐惧老酒'>恐惧老酒</a>"],
+    ["ul","<b>锈湖鸡尾酒 <sub><a href='#锈湖鸡尾酒'>跳转</a></sub></b>","<b>恐惧老酒 <sub><a href='#恐惧老酒'>跳转</a></sub></b>"],
     "欣嫩子谷40年","苏打豆汁儿","起泡的海龟肉汤","闪电陈酿","暴风惊爽酒","法罗纳尔气泡酒","马克的深海烈酒","##20%!!","口嚼酒",
 
     ["hr"],["h4","烈！酒"],
@@ -392,17 +408,16 @@ let 酒={
     <tr><td></td><td>岩浆 + 空气 = 石头</td><td>石头 + 火 = 金属</td><td>云 + 土 = 植物</td><td></td></tr>
     <tr><td></td><td>石头 + 空气 = 沙子</td><td>金属 + 火 = 电</td><td>植物 + 空气 = 树</td><td>金属 + 石头 = 刀片</td></tr>
     <tr><td></td><td>沙子 + 火 = 玻璃瓶</td><td>电 + 玻璃瓶 = 灯泡</td><td>树 + 刀片 = 木头</td><td>刀片 + 木头 = 刀</td></tr>
-    <tr><td>植物 + 沙子 = 谷类</td><td>玻璃瓶 + 水 = 一瓶水</td><td>植物 + 灯泡 = 水果</td><td></td><td>电 + 刀 = 榨汁机</td></tr>
+    <tr><td>植物 + 沙子 = 谷类</td><td>玻璃瓶 + 水 = 一瓶水</td><td>植物 + 灯泡 = ${说('水果','我觉得它是仙人掌果。')}</td><td></td><td>电 + 刀 = 榨汁机</td></tr>
     <tr><td></td><td>谷类 + 一瓶水 = 伏特加</td><td>水果 + 榨汁机 = 果汁</td><td></td><td></td></tr>
     <tr><td></td><td style="text-align:right">伏特加</td><td> + 果汁 = <b>锈湖鸡尾酒</b></td><td></td><td></td></tr>
-    </table>
-    }其中的“水果”是仙人掌果。{<br>}`+通用["关闭"]}],
+    </table>}{<br>}`+通用["关闭"]}],
 "谋杀烈酒":
     ["- 60ѣ","苦 炼金术","原名"+名('大黑店黑桃J烈酒')+"，因其过于猛烈，喝下后仿佛受到持续伤害，像是要被谋杀一般，而有了"+名('谋杀烈酒')+"这个别名。",{
     0:图('谋杀烈酒.png')+`对身体健康可能有害，不要喝太多……最好一点也别喝。${注释('出自«我的世界»荒川镇')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}${br}{<a onclick="选择(3,this)"> - 我想要它的配方</a>}`+通用["算了"],
     1:`你拔出瓶塞，仿佛封印已久的腐烂气体冲了出来。{<br>}真的要喝么？{<br><br><a onclick="选择(2,this)"> - 喝</a>}`+通用["算了"],
     2:`你喝了一口，尝到了一股腥臭味，但幸好只是一瞬间，很快你的舌头就失去了味觉，只感觉到发麻，喉咙像是被火灼烧。{<br>}你感觉到天旋地转，但你不确定是喝醉了还是中毒了。{<br><br>}你甚至开始怀疑这东西是酒还是毒药。{<br>}`+通用["关闭"],
-    3:`这是我在${名('荒川镇',1)}最喜欢的酒，每天晚上都会去喝上一杯。可惜如今${名('荒川镇',1)}已经成了空城，幸好我得到了这酒的配方。{<br>}请帮我保密哦。{<br>}先把${名('烈焰粉',1)}作为燃料放进${名('酿造台',1)}，放上水瓶，加入${名('地狱疣',1)}，酿造成${名('粗制的药水',1)}，放入${名('蜘蛛眼',1)}酿制成${名('剧毒药水',1)}……不对，是${名('谋杀烈酒',1)}。{<br>}还可以加入${名('荧石粉',1)}增强效果。{<br>}`+通用["关闭"]}],
+    3:`这是我在${名('荒川镇',1)}最喜欢的酒，每天晚上都会去喝上一杯。可惜如今${名('荒川镇',1)}已经成了空城，幸好我得到了这酒的配方。{<br>}请帮我保密哦。{<br><br>}先把${名('烈焰粉',1)}作为燃料放进${名('酿造台',1)}，放上水瓶，加入${名('地狱疣',1)}，酿造成${名('粗制的药水',1)}，放入${名('蜘蛛眼',1)}酿制成${名('剧毒药水',1)}……不对，是${名('谋杀烈酒',1)}。{<br>}还可以加入${名('荧石粉',1)}增强效果。{<br>}`+通用["关闭"]}],
 "四德酒":
     ["- 700ѣ","艾泽拉斯","熊猫人酒仙"+名('云壬')+"常年游历与试验最终研制出的酒，可以令人的四种感官分别感到满意。",{
     0:图('四德酒.png')+`传说这酒已经失传了，不过我在游历${名('潘达利亚大陆',1)}时，在${名('不息山',1)}最高的山顶找到了${名('云壬',1)}的雕像，在雕像旁的石板上发现了配方。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
@@ -412,9 +427,9 @@ let 酒={
     0:图('酒神之酒.png')+`这瓶酒原本是一位酒厂老板的珍藏，比其他${名('酒神之酒',1)}还要更加难得。{<br>}酿制于${名('星历',1)}1547年，被誉为“最高级古典葡萄酒”，并被冠以“梦幻”之名，是比稀有更稀有、比珍贵更珍贵的酒。${注释('出自«最终幻想14»')}{<br><br><a onclick="选择(1,this)"> - 你是怎么获得它的？</a>}`+通用["关闭"],
     1:`我在${名('艾欧泽亚',1)}游历时接到委托，去寻找“三大美食”和“最上等的葡萄酒”，于是我决定去寻找${名('酒神之酒',1)}。但一通寻找无果，且酿造${名('酒神之酒',1)}所需的${名('酒神葡萄',1)}全部被毁。{<br>}正打算放弃，意外发现了${名('酒神葡萄',1)}的叶子，顺着线索找到${名('酒神葡萄',1)}的枝条，借此就有了重新培育出${名('酒神葡萄',1)}的希望。{<br>}我把枝条给了酒厂老板${名('比格莱恩特',1)}，他为表达感谢，将自己私藏的一瓶${名('酒神之酒',1)}给了我。{<br>}交付委托后发现这场宴会其实是为我准备的，在宴会上我吃光了三大美食，这瓶${名('酒神之酒',1)}我没舍得喝，留了下来。${注释('游戏可能出于分级制度，不让玩家喝酒，剧情里这宴会明明是给我准备的，可到了宴会上却没人再提到这酒了（-。-），那我就当作是被我偷偷收起来了吧。')}{<br>}`+通用["关闭"]}],
 "开拓者特调":
-    ["- 10ѣ","虚数之树 甜 惊梦酒吧","超级甜，气泡充足。<br>“你或许会离开，但你的故事永远不会被遗忘。”",{
+    ["- 10ѣ","虚数之树 甜 惊梦酒吧","“你或许会离开，但你的故事永远不会被遗忘。”",{
     0:图('开拓者特调.png')+`我在${名('惊梦酒吧',1)}调出的酒，以我的名字留在了${名('惊梦酒吧',1)}的酒单里。{<br>}使用了${名('星空香槟',1)}、${名('激梦果酱',1)}、${名('极致糖浆',1)}、${名('冰点苏乐达',1)}。${注释('出自«星穹铁道»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],
-    1:`你感觉自己在喝一杯糖浆——一杯气泡糖浆。{<br>}{j:1}{<br>}`+通用["关闭"]}],
+    1:`你感觉自己在喝一杯糖浆——一杯气泡糖浆。超级甜，气泡充足。{<br>}{j:1}{<br>}`+通用["关闭"]}],
 "科尔戈的黄金":
     ["- 非卖品","艾泽拉斯 非卖品","从"+名('天涯海滩')+"挖掘出的宝藏。",{0:图('科尔戈的黄金.png')+`很久之前我曾听过一个传说，在${名('天涯海滩',1)}有一处海盗的宝藏，当寻宝者历经千辛万苦凑齐藏宝图，踏遍险峰恶水，在死斗中斩杀其他寻宝的竞争者，终于打开宝箱——然而名为“黄金”的宝藏，只是一瓶酒而已。{<br>}我不知道那名寻宝者会是怎样的心情，也许是寻获宝藏的喜悦，也许是发财美梦破碎的失望？{<br>}但我很喜欢这个故事，在我看来这瓶酒具有令我着迷的传奇色彩。{<br>}经过多年的探寻，我终于得到了这瓶${名('科尔戈的黄金',1)}。${注释('出自«魔兽世界»')}{<br>}`+通用["关闭"]}],
 "“北极光”":
@@ -451,9 +466,9 @@ let 酒={
     ${名('树脂大师吴暮',1)}：「谢谢你的帮助。我们也许没有酿出最好的啤酒，不过我们倒是经历了一场惊心动魄的冒险。」{<br>}
     没错，过程也是酒重要的组成部分。{<br>}`+通用["关闭"]}],
 "窖藏达拉然红葡萄酒":
-    ["- 55ѣ","艾泽拉斯","“多年窖藏的极品。”",{0:图('一杯窖藏达拉然红葡萄酒.png')+`先买一桶${名('达拉然红葡萄酒',1)}，妥善贮藏起来，多年后变成“陈年”，再等待多年变成“窖藏”。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:`{j:魔兽,窖藏达拉然红葡萄酒,普通}{<br>}`+通用["关闭"]}],
+    ["- 55ѣ","艾泽拉斯","“多年窖藏的极品。”",{0:图('一杯窖藏达拉然红葡萄酒.png')+`先买一桶${名('达拉然红葡萄酒',1)}，妥善贮藏起来，多年后变成“陈年”，再等待多年变成“{${说('窖藏','不过我懒得等，更喜欢去搜罗现成的。')}}”。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:`{j:魔兽,窖藏达拉然红葡萄酒,普通}{<br>}`+通用["关闭"]}],
 "炎诛的烧酒":
-    ["- 70ѣ","烈酒 艾泽拉斯","“"+名('高老伯')+"的‘终极美酒’，极其辛辣，十分易燃。”",{0:图('炎诛的烧酒.png')+`${名('风暴烈酒酿造厂',1)}的掌权人${名('高老伯',1)}为了研制出他心目中的终极麦酒，沉迷于做实验，导致失去管理的酿酒厂被一群猢狲和兔妖侵占，在他的实验中还催生出了一种暴躁的酒灵生物${名('炎诛',1)}。{<br>}以这一切为代价，${名('高老伯',1)}终于完成了他的“完美之酒”。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:`{j:魔兽,炎诛的烧酒,烈性}{<br>}`+通用["关闭"]}],
+    ["- 70ѣ","烈酒 艾泽拉斯","“"+名('高老伯')+"的‘终极美酒’，极其辛辣，十分易燃。”",{0:图('炎诛的烧酒.png')+`${名('风暴烈酒酿造厂',1)}的掌权人${名('高老伯',1)}为了研制出他心目中的终极麦酒，沉迷于做实验，导致失去管理的酿酒厂被一群猢狲和兔妖侵占，在他的实验中还催生出了一种暴躁的酒灵生物${名('炎诛',1)}。{<br>}以这一切为代价，${名('高老伯',1)}终于完成了他的“{${说('完美之酒','高老伯是这么说的，我觉得挺普通的。')}}”。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:`{j:魔兽,炎诛的烧酒,烈性}{<br>}`+通用["关闭"]}],
 "黑铁啤酒":
     ["- 55ѣ","艾泽拉斯",名('黑铁矮人')+"最有名的酒。<br>“永恒的经典。”",{0:图('黑铁啤酒.png')+`来自${名('黑铁酒吧',1)}，这是我非常喜欢的酒吧。${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}${br}{<a onclick="选择(2,this)"> - 讲讲这个酒吧</a>}`+通用["算了"],
     1:`{j:魔兽,黑铁啤酒,普通}{<br>}`+通用["关闭"],
@@ -525,9 +540,9 @@ let 酒={
 "阿拉索孤桶":
     ["- 300ѣ","小粉的烈酒 艾泽拉斯","从古代的"+名('阿拉索帝国')+"留存的唯一一桶酒里斟出来的，年代古老到无法考量。",{0:图('阿拉索孤桶.png')+`${注释('出自«魔兽世界»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:`{j:魔兽,阿拉索孤桶,较高}{<br>}`+通用["关闭"]}],
 "神血蜜露 · 浪漫":
-    ["- 非卖品","虚数之树 翁法罗斯 非卖品","浪漫之泰坦"+名('墨涅塔')+"的神血浇灌的作物酿成，埋藏于海床之中，等待千年。",{0:图('神血蜜露浪漫.png')+`${名('阿格莱雅',1)}：「尚显生机的时代里，但凡众城邦有幸起获之，无一例外将其视作宝藏，在邦交仪式中启封更象征着无上礼遇。」${注释('出自«星穹铁道»')}{<br>}`+通用["关闭"]}],
+    ["- 非卖品","虚数之树 翁法罗斯 非卖品","浪漫之泰坦"+名('墨涅塔')+"的神血浇灌的作物酿成，埋藏于海床之中，等待千年。",{0:图('神血蜜露浪漫.png')+`{${说('阿格莱雅','我和她有些过节来着……所以我不是很喜欢这瓶酒。')}}：「尚显生机的时代里，但凡众城邦有幸起获之，无一例外将其视作宝藏，在邦交仪式中启封更象征着无上礼遇。」${注释('出自«星穹铁道»')}{<br>}`+通用["关闭"]}],
 "神血蜜露 · 海洋":
-    ["- 非卖品","虚数之树 翁法罗斯 非卖品","浪漫之泰坦"+名('法吉娜')+"的神血浇灌的作物酿成，埋藏于海床之中，等待千年。",{0:图('神血蜜露海洋.png')+`据说是其中最为甜美的一樽，与其他的${名('神血蜜露',1)}不同，这樽会使人更加清醒，有着让人从海妖的迷魂歌谣中唤醒的功效，能驱散一切迷雾。{<br>}${名('海瑟音',1)}介绍「时而平静、时而猛烈，这便是‘海洋’的滋味。」${注释('出自«星穹铁道»')}{<br>}`+通用["关闭"]}],
+    ["- 非卖品","虚数之树 翁法罗斯 非卖品","浪漫之泰坦"+名('法吉娜')+"的神血浇灌的作物酿成，埋藏于海床之中，等待千年。",{0:图('神血蜜露海洋.png')+`据说是其中最为甜美的一樽，与其他的${名('神血蜜露',1)}不同，{${说('这樽会使人更加清醒','这样的话，还算是酒么？')}}，有着让人从海妖的迷魂歌谣中唤醒的功效，能驱散一切迷雾。{<br>}${名('海瑟音',1)}介绍「时而平静、时而猛烈，这便是‘海洋’的滋味。」${注释('出自«星穹铁道»')}{<br>}`+通用["关闭"]}],
 "深海":
     ["- 非卖品","虚数之树 翁法罗斯 非卖品","“一瓶口感绝佳的蜜酿，堪比神庙里的精品…但似乎掺杂着硝烟、鲜血与泪水的味道。”",{0:图('专属心酿.png')+`${名('海瑟音',1)}的“专属心酿”。${注释('出自«星穹铁道»')}{<br>}`+通用["关闭"]}],
 "黯淡冥河":
@@ -754,6 +769,10 @@ let 酒={
     ["- 非卖品","虚数之树 非卖品","“此刻，一杯甘露与一杯鸩酒交融，一同灌醉了这个时代，用过去将未来毒害。”",{0:图('一杯酩酊的时代.png')+`一群信众踏遍千百星，寻来无数美酒的记忆，在梦中酿造他们的祭品。另一群信众以身作酒曲，发酵历史尘封的信仰，在梦中蒸馏他们的理想。${注释('出自«星穹铁道»')}{<br>}`+通用["关闭"]}],
 "海星啤酒":
     ["- 5ѣ","","狗狗用海星酿的酒。",{0:图('海星啤酒.png')+`材料里包含狗粮，所以对人类来说可能不是很美味。${注释('出自«狗酿»')}{<br>}`+通用["关闭"]}],
+"蓝哇薄荷醉奶":
+    ["- 30ѣ","二扯奶茶店",名('二扯奶茶店')+"的招牌特调。",{0:图('蓝哇薄荷醉奶.png')+`{<a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"度数很低。甜甜的牛奶，配上清凉的薄荷。{<br>}"+通用["关闭"]}],
+"电波":
+    ["- 42ѣ","猫球仓买","没有介绍。",{0:图('电波.png')+`{<a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"一种说不清的口感和味道。{<br>}"+通用["关闭"]}],
 // "":["- ѣ","关键词","介绍",{0:图('.png')+`介绍。${注释('出自«»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]}],
 }
 
@@ -768,6 +787,37 @@ let 酒={
 
     空格用[ ]代替
 */
+
+let 菜单=[// ѣ
+    ["hr","饮品"],
+    ["无酒精伏特加","免费","无色无味，没有酒精。"],
+    ["汽水","3ѣ","可乐果汽水、青柠松针汽水、薄荷汽水。"],
+    [说('0xCAFE','咖啡。猫球仓买禁止喝咖啡。'),"非卖品"],
+    ["一叶","100ѣ","经典月泪汁，清爽的薄荷风味。"],
+
+    ["hr","零食、甜品"],
+    ["海苔","1ѣ"],
+    ["提拉斯利精美巧克力","60ѣ",`“致力于味觉的艺术，献给钟爱巧克力的你。”<span onclick="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
+    ["蛋糕","30ѣ",`方形的蛋糕。<span onclick="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
+
+    ["hr","下酒菜"],
+    ["白灼章鱼","8ѣ"],
+    ["千年蛋","2ѣ"],
+    ["酱牛肉","8ѣ"],
+
+    ["hr","餐食"],
+    [说('茄子柿子汤','我的拿手好菜。'),"8ѣ"],
+    ["忆苦饭","220ѣ",`取野菜的嫩芽，熬鸡油、加火腿丝，旺火爆炒。<span onclick="this.innerHTML='出自«家有儿女»'" class='zhushi'></span>`],
+    ["烤马铃薯","1ѣ",`<span onclick="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
+    ["体力","10ѣ",`鱼子寿司。<span onclick="this.innerHTML='出自«阴阳师»'" class='zhushi'></span>`],
+    ["仙跳墙","700ѣ",`工艺复杂的璃月名菜。以高汤浸没精心挑选的食材，慢火熬煮而成。“仅仅是凭着回忆抄写食谱，就引得仙人动了凡心，归复人间。”<span onclick="this.innerHTML='出自«原神»'" class='zhushi'></span>`],
+    ["甜甜花酿鸡","10ѣ",`蜜酿后烤熟的禽肉。细嫩的禽肉里渗着甜甜花的丝丝蜜汁，香甜可口。<span onclick="this.innerHTML='出自«原神»'" class='zhushi'></span>`],
+    ["美味风蛇","30ѣ",`以变异鱼制作的食物，吃下会随机变成海盗、忍者、软泥怪。<span onclick="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
+
+    ["hr","其他"],
+    [说('附魔金苹果','以前可以消耗大量金块合成出来，现在已经不行了。'),"900ѣ",`伤害吸收、生命恢复、抗性提升。<span onclick="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
+    ["全面回复活力药剂","100ѣ",`治愈100%生命和法力。<span onclick="this.innerHTML='出自«暗黑破坏神2»，官方翻译是“完全复苏药剂”。'" class='zhushi'></span>`],
+];
 
 let 选定开场白=开场白[(new Date().getMonth()+1)+"."+new Date().getDate()]||开场白["0"];
 if(选定开场白[1]){
@@ -785,14 +835,10 @@ for(let i=0;酒单.length>i;i++){
     if(酒单[i][0]=="br"){
         if(酒单[i][1]){dy+="<spna>"+酒单[i][1]+"</span>"}
         else{dy+="<br class='酒'>"}
-    }else if(酒单[i][0]=="跳转"||酒单[i][0]=="ol"||酒单[i][0]=="ul"){
-        if(酒单[i][0]=="跳转"){
-            dy+="<small>　点击跳转：</small>";
-            酒单[i][0]="ul";
-        }
+    }else if(酒单[i][0]=="ol"||酒单[i][0]=="ul"){
         dy+="<"+酒单[i][0]+">";
         for(let ii=1;酒单[i].length>ii;ii++){
-            dy+="<li>"+酒单[i][ii]+"</li>";
+            dy+="<li><span class='li'>"+酒单[i][ii]+"</span></li>";
         }
         dy+="</"+酒单[i][0]+">";
     }else if(酒单[i][0]=="name"){
@@ -809,6 +855,21 @@ for(let i=0;酒单.length>i;i++){
         dy+=`<fieldset class="酒 ${酒[酒单[i]][1]} ${酒单[i].replace(new RegExp(' ',"g"),"_")}" onclick="选择('${酒单[i]}')"><legend><a name='${酒单[i].replace(new RegExp(' ',"g"),"_")}'></a><b>${酒单[i]}</b><small> ${酒[酒单[i]][0]}</small></legend>${酒[酒单[i]][2]}</fieldset>`;
     }
 }
+
+跳转+="<br><a href='#菜单'>菜单</a><br>";
+dy+="<hr><a name='菜单'></a><h2>菜单</h2><br>";
+for(let i=0;菜单.length>i;i++){
+    if(菜单[i][0]=="hr"){
+        if(i!=0){dy+="</ul>"}
+        dy+="<h4>"+菜单[i][1]+"</h4><ul>";
+    }else{
+        dy+="<li><span class='li'><b>"+菜单[i][0]+"<small> - "+菜单[i][1]+"</small></b>";
+        if(菜单[i][2]){dy+="&nbsp;&nbsp;"+菜单[i][2]}
+        dy+="</span></li>";
+    }
+}
+dy+="</ul>";
+
 DOM.跳转.innerHTML=跳转+"<br>";
 DOM.酒单.innerHTML=dy;
 
@@ -823,7 +884,7 @@ async function 输入(content,id,e){
     if(e){
         if(e.innerHTML==" - 对话"){e.outerHTML=""}
         else{
-            e.outerHTML="<b>"+e.innerHTML+"</b><br><br>";
+            e.outerHTML="<b 斜>"+e.innerHTML+"</b><br><br>";
             document.querySelectorAll('#'+id+' a[onclick*="输入"],#'+id+' .del,#'+id+' a[onclick*="关闭"],#'+id+' a[onclick*="选择"],#'+id+' a[onclick*="通用"]').forEach(el=>el.remove());
         }
     }
@@ -961,6 +1022,23 @@ function 隐藏酒单_发送(){
     }else{
         输入("{<br><br>}抱歉，这里没有叫这个名字的酒。"+通用["隐藏酒单_输入"],"开场白");
     }
+}
+
+let tipBox=null,typingTimer=null,autoHideTimer=null,currentText='',charIndex=0;
+function tip(text){
+  clearAllTimer();removeTipBox();currentText=text;charIndex=0;tipBox=document.createElement('div');tipBox.id='typeTipBox';document.body.appendChild(tipBox);tipBox.style.display='block';tipBox.innerText='';
+  typingTimer=setInterval(()=>{charIndex++;tipBox.innerText=currentText.slice(0,charIndex);if(charIndex>=currentText.length){clearInterval(typingTimer);autoHideTimer=setTimeout(()=>{removeTipBox();},3000)}},80);
+  function moveHandler(e){if(!tipBox) return;tipBox.style.left=(e.clientX+12)+'px';tipBox.style.top=(e.clientY+12)+'px'}
+  document.addEventListener('mousemove',moveHandler);
+  function clickHandler(){clearAllTimer();removeTipBox();document.removeEventListener('click',clickHandler);document.removeEventListener('mousemove',moveHandler)}
+  setTimeout(()=>{document.addEventListener('click',clickHandler)},0)}
+function clearAllTimer(){if(typingTimer) clearInterval(typingTimer);if(autoHideTimer) clearTimeout(autoHideTimer);typingTimer=null;autoHideTimer=null}
+function removeTipBox(){if(tipBox){tipBox.remove();tipBox=null}}
+
+function openImgBlack(src){
+    const w = window.open('','_blank');
+    w.document.write(`<!DOCTYPE html><html style="margin:0;padding:0"><head><meta charset="utf-8"><style>*{margin:0;padding:0}body{background:#232323; min-height:100vh; display:flex; align-items:center; justify-content:center;}img{max-width:100%; max-height:100vh; object-fit:contain;}</style></head><body><img src="${src}"></body></html>`);
+    w.document.close();
 }
 
 if(!window.notyf){window.notyf={confirm:function(msg){console.log(msg)},alert:function(msg){console.log(msg)}}}
