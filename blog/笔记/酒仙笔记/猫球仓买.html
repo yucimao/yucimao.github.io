@@ -89,7 +89,7 @@ span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
 
 <div id="跳转"></div>
 
-<a onclick="this.style.display='none';this.nextElementSibling.style.display='inline'">分类</a><fieldset style="display:none;min-width:9em"><legend>分类</legend>
+<fieldset style="display:inline;min-width:9em"><legend>分类</legend>
     <details><summary>口味</summary><fieldset>
         　<a onclick="分类('甜')">甜</a><br>
         　<a onclick="分类('苦')">苦</a><br>
@@ -98,10 +98,10 @@ span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
     </fieldset></details>
     <details><summary>来源</summary><fieldset>
         　<a onclick="分类('艾泽拉斯')">艾泽拉斯 <span onclick="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span></a><br>
-            <details><summary onclick="分类('虚数之树')">虚数之树 <span onclick="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span></summary><fieldset>
-                　<a onclick="分类('惊梦酒吧')">惊梦酒吧</a><br>
-                　<a onclick="分类('翁法罗斯')">翁法罗斯</a><br>
-            </fieldset></details>
+        <details><summary onclick="分类('虚数之树')">虚数之树 <span onclick="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span></summary><fieldset>
+            　<a onclick="分类('惊梦酒吧')">惊梦酒吧</a><br>
+            　<a onclick="分类('翁法罗斯')">翁法罗斯</a><br>
+        </fieldset></details>
         　<a onclick="分类('提瓦特')">提瓦特 <span onclick="this.innerHTML='出自«原神»'" class='zhushi'></span></a><br>
         　<a onclick="分类('猫球仓买')">猫球仓买</a><br>
     </fieldset></details>
@@ -791,9 +791,13 @@ let 酒={
 let 菜单=[// ѣ
     ["hr","饮品"],
     ["无酒精伏特加","免费","无色无味，没有酒精。"],
-    ["汽水","3ѣ","可乐果汽水、青柠松针汽水、薄荷汽水。"],
-    [说('0xCAFE','咖啡。猫球仓买禁止喝咖啡。'),"非卖品"],
+    ["小麦汽水","3ѣ","看着像啤酒，喝着像啤酒，不过没有酒精。"],
+    ["x","汽水<small> - 3ѣ</small>　<b>可乐果汽水</b><b>青柠松针汽水</b><b>薄荷汽水</b>"],
+    ["x",`苏乐达<small> - 5ѣ</small>　<b>经典苏乐达</b><b>冰点苏乐达</b><b>好梦气泡饮</b><b>聚爆苏乐达</b><span onclick="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span>`],
     ["一叶","100ѣ","经典月泪汁，清爽的薄荷风味。"],
+    ["卡亚可乐","10ѣ",`地精的饮料，据说能提升智力。<span onclick="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
+    ["燃油饮","10ѣ",`能量饮料。<span onclick="this.innerHTML='出自«绝区零»'" class='zhushi'></span>`],
+    [说('0xCAFE','仅展示，猫球仓买禁止喝咖啡。'),"非卖品"],
 
     ["hr","零食、甜品"],
     ["海苔","1ѣ"],
@@ -801,8 +805,8 @@ let 菜单=[// ѣ
     ["蛋糕","30ѣ",`方形的蛋糕。<span onclick="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
 
     ["hr","下酒菜"],
-    ["白灼章鱼","8ѣ"],
-    ["千年蛋","2ѣ"],
+    ["x","脆爽小菜<small> - 8ѣ</small>　<b>白灼章鱼足</b><b>泡椒鱼皮</b><b>芥末章鱼</b>"],
+    ["千年蛋","5ѣ"],
     ["酱牛肉","8ѣ"],
 
     ["hr","餐食"],
@@ -863,9 +867,13 @@ for(let i=0;菜单.length>i;i++){
         if(i!=0){dy+="</ul>"}
         dy+="<h4>"+菜单[i][1]+"</h4><ul>";
     }else{
-        dy+="<li><span class='li'><b>"+菜单[i][0]+"<small> - "+菜单[i][1]+"</small></b>";
-        if(菜单[i][2]){dy+="&nbsp;&nbsp;"+菜单[i][2]}
-        dy+="</span></li>";
+        if(菜单[i][0]=="x"){
+            dy+="<li>"+菜单[i][1]+"</li>";
+        }else{
+            dy+="<li><span class='li'><b>"+菜单[i][0]+"<small> - "+菜单[i][1]+"</small></b>";
+            if(菜单[i][2]){dy+="&nbsp;&nbsp;"+菜单[i][2]}
+            dy+="</span></li>";
+        }
     }
 }
 dy+="</ul>";
