@@ -35,7 +35,6 @@ table{border:2px solid var(--va);box-shadow:none;border-spacing:2px;border-colla
 #nav,.nav_drop_down,.nav_drop_down2{background-color:#1F1B2C !important}
 #nav a{color:#E1E1E1 !important}
 #酒单 fieldset{transition:all 0.2s ease;transform-origin:center;cursor:pointer;margin:12px auto 1.6em 0;
-/* border: 2px solid #414141; */
 border: 1px solid var(--ve);
 padding:10px 15px 15px;width:fit-content}
 #酒单 fieldset:hover{transform:translateY(-2px) scale(1.04)}
@@ -64,7 +63,7 @@ hr{border:0;height:1px;background-image:linear-gradient(to right,#ffffff00,#ffff
 #酒单 li b{border: 1px solid var(--ve);padding:5px}
 details .zhushi{font-size:0.78em}
 input{background-color:var(--vd);color:var(--va);border:1px solid var(--va);outline:none;font-size:1.01em}
-b[斜]{font-style:italic;}
+b[斜]{font-style:italic}
 span[x]{color:#00000000}
 
 #typeTipBox{position:fixed;z-index:9999;padding:8px 12px;background:#222;color:#fff;border-radius:6px;font-size:14px;white-space:nowrap;pointer-events:none;display:none}
@@ -120,6 +119,7 @@ span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
 <div id="酒单"></div>
 
 <script>
+dw(dwb='19293638',dwd='猫球仓买');
 const DOM={
     "html":document.documentElement,
     "跳转":document.getElementById("跳转"),
@@ -792,8 +792,8 @@ let 菜单=[// ѣ
     ["hr","饮品"],
     ["无酒精伏特加","免费","无色无味，没有酒精。"],
     ["小麦汽水","3ѣ","看着像啤酒，喝着像啤酒，不过没有酒精。"],
-    ["x","汽水<small> - 3ѣ</small>　<b>可乐果汽水</b><b>青柠松针汽水</b><b>薄荷汽水</b>"],
-    ["x",`苏乐达<small> - 5ѣ</small>　<b>经典苏乐达</b><b>冰点苏乐达</b><b>好梦气泡饮</b><b>聚爆苏乐达</b><span onclick="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span>`],
+    ["x","<span class='li'>汽水<small> - 3ѣ</small></span>　<b>可乐果汽水</b><b>青柠松针汽水</b><b>薄荷汽水</b>"],
+    ["x",`<span class='li'>苏乐达<small> - 5ѣ</small></span>　<b>经典苏乐达</b><b>冰点苏乐达</b><b>好梦气泡饮</b><b>聚爆苏乐达</b>　<span onclick="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span>`],
     ["一叶","100ѣ","经典月泪汁，清爽的薄荷风味。"],
     ["卡亚可乐","10ѣ",`地精的饮料，据说能提升智力。<span onclick="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
     ["燃油饮","10ѣ",`能量饮料。<span onclick="this.innerHTML='出自«绝区零»'" class='zhushi'></span>`],
@@ -805,7 +805,7 @@ let 菜单=[// ѣ
     ["蛋糕","30ѣ",`方形的蛋糕。<span onclick="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
 
     ["hr","下酒菜"],
-    ["x","脆爽小菜<small> - 8ѣ</small>　<b>白灼章鱼足</b><b>泡椒鱼皮</b><b>芥末章鱼</b>"],
+    ["x","<span class='li'>脆爽小菜<small> - 8ѣ</small></span>　<b>白灼章鱼足</b><b>泡椒鱼皮</b><b>芥末章鱼</b>"],
     ["千年蛋","5ѣ"],
     ["酱牛肉","8ѣ"],
 
@@ -917,10 +917,10 @@ if(str[0]>-1){
     }
     醉酒+=(str[0]*1);
     str="没感觉到醉意。";
-    if(醉酒>30){str=a["重"][Math.floor(Math.random()*a["重"].length)];DOM.html.className='重醉';醉酒=0;}
-    else if(醉酒>18){str=a["大"][Math.floor(Math.random()*a["大"].length)];DOM.html.className='大醉';}
-    else if(醉酒>10){str=a["中"][Math.floor(Math.random()*a["中"].length)];DOM.html.className='中醉';}
-    else if(醉酒>0){str=a["小"][Math.floor(Math.random()*a["小"].length)];DOM.html.className='小醉';}
+    if(醉酒>30){str=a["重"][Math.floor(Math.random()*a["重"].length)];DOM.html.className='重醉';醉酒=0}
+    else if(醉酒>18){str=a["大"][Math.floor(Math.random()*a["大"].length)];DOM.html.className='大醉'}
+    else if(醉酒>10){str=a["中"][Math.floor(Math.random()*a["中"].length)];DOM.html.className='中醉'}
+    else if(醉酒>0){str=a["小"][Math.floor(Math.random()*a["小"].length)];DOM.html.className='小醉'}
 }else if(str[0]=="+"){
     醉酒+=(str[1]*1);
     str="";
@@ -931,12 +931,11 @@ if(str[0]>-1){
     let a={"无":[0,'没什么酒精含量的'],"较少":[1,'酒精含量较少的'],"普通":[2,'普通的酒精'],"较高":[4,'酒精含量较高的'],"烈性":[8,'烈性酒类'],"几乎全空的瓶子":[10,'一种特殊的酒精类']}
     醉酒+=a[str[2]][0];
     let b="没感觉到醉意";
-    if(醉酒>30){b="严重醉酒，为了你的健康考虑，"+名('李猫球',1)+"对你施展了某种魔法，让再次感觉清醒";醉酒=0;DOM.html.className='重醉';}
-    else if(醉酒>18){b="烂醉如泥";DOM.html.className='大醉';}
-    else if(醉酒>10){b="酩酊大醉";DOM.html.className='中醉';}
-    else if(醉酒>0){b="有点醉醺醺的";DOM.html.className='小醉';}
-    str=a[str[2]][1]+"饮料。{<br>}你喝下"+名(str[1],1)+"之后"+b+"。";
-}
+    if(醉酒>30){b="严重醉酒，为了你的健康考虑，"+名('李猫球',1)+"对你施展了某种魔法，让再次感觉清醒";醉酒=0;DOM.html.className='重醉'}
+    else if(醉酒>18){b="烂醉如泥";DOM.html.className='大醉'}
+    else if(醉酒>10){b="酩酊大醉";DOM.html.className='中醉'}
+    else if(醉酒>0){b="有点醉醺醺的";DOM.html.className='小醉'}
+    str=a[str[2]][1]+"饮料。{<br>}你喝下"+名(str[1],1)+"之后"+b+"。"}
 
     let strParts = str.split(/(\{[^}]+\})/).filter(p=>p!=='');
     for(let p of strParts){
@@ -1035,7 +1034,7 @@ function 隐藏酒单_发送(){
 let tipBox=null,typingTimer=null,autoHideTimer=null,currentText='',charIndex=0;
 function tip(text){
   clearAllTimer();removeTipBox();currentText=text;charIndex=0;tipBox=document.createElement('div');tipBox.id='typeTipBox';document.body.appendChild(tipBox);tipBox.style.display='block';tipBox.innerText='';
-  typingTimer=setInterval(()=>{charIndex++;tipBox.innerText=currentText.slice(0,charIndex);if(charIndex>=currentText.length){clearInterval(typingTimer);autoHideTimer=setTimeout(()=>{removeTipBox();},3000)}},80);
+  typingTimer=setInterval(()=>{charIndex++;tipBox.innerText=currentText.slice(0,charIndex);if(charIndex>=currentText.length){clearInterval(typingTimer);autoHideTimer=setTimeout(()=>{removeTipBox()},3000)}},80);
   function moveHandler(e){if(!tipBox) return;tipBox.style.left=(e.clientX+12)+'px';tipBox.style.top=(e.clientY+12)+'px'}
   document.addEventListener('mousemove',moveHandler);
   function clickHandler(){clearAllTimer();removeTipBox();document.removeEventListener('click',clickHandler);document.removeEventListener('mousemove',moveHandler)}
@@ -1044,8 +1043,8 @@ function clearAllTimer(){if(typingTimer) clearInterval(typingTimer);if(autoHideT
 function removeTipBox(){if(tipBox){tipBox.remove();tipBox=null}}
 
 function openImgBlack(src){
-    const w = window.open('','_blank');
-    w.document.write(`<!DOCTYPE html><html style="margin:0;padding:0"><head><meta charset="utf-8"><style>*{margin:0;padding:0}body{background:#232323; min-height:100vh; display:flex; align-items:center; justify-content:center;}img{max-width:100%; max-height:100vh; object-fit:contain;}</style></head><body><img src="${src}"></body></html>`);
+    const w=window.open('','_blank');
+    w.document.write(`<!DOCTYPE html><html style="margin:0;padding:0"><head><meta charset="utf-8"><style>*{margin:0;padding:0}body{background:#232323;min-height:100vh;display:flex;align-items:center;justify-content:center}img{max-width:100%;max-height:100vh;object-fit:contain}</style></head><body><img src="${src}"></body></html>`);
     w.document.close();
 }
 
