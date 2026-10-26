@@ -32,7 +32,7 @@ transform:translate(-50%,-50%);
 transition:transform 0.15s ease,background 0.2s ease;
 z-index:9999
 }
-.cursor.click{transform:translate(-50%,-50%) scale(0.6)}
+.cursor.click{transform:translate(-50%,-50%) scale(0.3)}
 .cursor.hover-link{background-color:var(--ve2);transform:translate(-50%,-50%) scale(1.8)}
 .cursor.hover-link.click{transform:translate(-50%,-50%) scale(0.6)}
 
@@ -67,13 +67,14 @@ legend{padding:0 7px 0}
 i[x]{text-decoration:underline;text-underline-offset:4px}
 .酒 legend b{color:var(--vb);font-size:1.1em;font-weight:bold}
 .酒 legend small{font-size:0.9em}
-#对话 img.ft{width:300px;height:300px;background-color:#232323}
+#对话 img.ft{width:300px;height:300px;background-color:#232323;transition:all 1.2s ease}
+#对话 img.ft:hover{background-color:#efefef}
+
 hr{margin:30px auto 16px}
 hr{border:0;height:1px;background-image:linear-gradient(to right,#ffffff00,#ffffffbf,#ffffff00);width:80%}
 #酒单 ul,#酒单 ol{margin:0 auto 20px}
 #酒单 ul li{display:table}
 #酒单 li{margin:10px 0}
-/* #酒单 li .li{border-bottom:1px solid var(--ve);padding:5px 0;margin:5px 0} */
 #酒单 li .li{border-bottom:1px solid var(--ve);padding:5px 0;margin:5px 0}
 #酒单 li b{border: 1px solid var(--ve);padding:5px}
 details .zhushi{font-size:0.78em}
@@ -93,15 +94,12 @@ span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
     .弹窗_1{width:90%;height:80%;padding:10px 10px 30px;font-size:1.05em}
 }
 </style>
-<style id="分类"></style>
 
+<style id="分类"></style>
 <div id="弹窗" style="display:none;"><div onclick="关闭()" class="弹窗_0"></div><div class="弹窗_1"><h3 id="对话标题"></h3><div id="对话"></div><br></div></div>
 <div class="cursor"></div>
-
 <div id="开场白"></div>
-
 <hr>
-
 <div id="跳转"></div>
 
 <fieldset style="display:inline;min-width:9em"><legend>分类</legend>
@@ -129,30 +127,10 @@ span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
 </fieldset>
 
 <hr>
-
 <h2 id='当前分类' style="display:none;"></h2>
-
 <div id="酒单"></div>
 
 <script>
-const cursor=document.querySelector('.cursor');
-const links=document.querySelectorAll('a');
-document.addEventListener('mousemove',(e)=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'})
-document.addEventListener('mousedown',()=>{cursor.classList.add('click')})
-document.addEventListener('mouseup',()=>{cursor.classList.remove('click')})
-links.forEach(link=>{
-link.addEventListener('mouseenter',()=>{cursor.classList.add('hover-link')})
-link.addEventListener('mouseleave',()=>{cursor.classList.remove('hover-link')})
-})
-function isHoverTarget(el){
-if(!el) return false;
-const target=el.closest('a,summary');
-if(target) return true;
-const field=el.closest('#酒单 fieldset');if (field) return true;return false}
-document.body.addEventListener('mouseover',(e)=>{if(isHoverTarget(e.target)){cursor.classList.add('hover-link')}})
-document.body.addEventListener('mouseout',(e)=>{if(isHoverTarget(e.target)){cursor.classList.remove('hover-link')}})
-
-// dw(dwb='19293638',dwd='0');
 const DOM={
     "html":document.documentElement,
     "跳转":document.getElementById("跳转"),
@@ -162,16 +140,28 @@ const DOM={
     "弹窗":document.getElementById("弹窗"),
     "分类":document.getElementById("分类"),
     "当前分类":document.getElementById("当前分类"),
+    "鼠标":document.querySelector('.cursor'),
+    "links":document.querySelectorAll('a'),
 }
+
+document.addEventListener('mousemove',(e)=>{DOM.鼠标.style.left=e.clientX+'px';DOM.鼠标.style.top=e.clientY+'px'})
+document.addEventListener('mousedown',()=>{DOM.鼠标.classList.add('click')})
+document.addEventListener('mouseup',()=>{DOM.鼠标.classList.remove('click')})
+DOM.links.forEach(link=>{link.addEventListener('mouseenter',()=>{DOM.鼠标.classList.add('hover-link')});link.addEventListener('mouseleave',()=>{DOM.鼠标.classList.remove('hover-link')})});function isHoverTarget(el){if(!el) return false;const target=el.closest('a,summary');if(target) return true;const field=el.closest('#酒单 fieldset');if (field) return true;return false}
+document.body.addEventListener('mouseover',(e)=>{if(isHoverTarget(e.target)){DOM.鼠标.classList.add('hover-link')}})
+document.body.addEventListener('mouseout',(e)=>{if(isHoverTarget(e.target)){DOM.鼠标.classList.remove('hover-link')}})
+
+// dw(dwb='19293638',dwd='0');
+
 let 今日=((d=new Date())=>d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate())();
 let 时=new Date().getHours();
 
-let 醉酒=0,打招呼次数=0,dy="",跳转="",stopTyping=false,速度,临时变量={},已有酒单=[];
+let 醉酒=0,打招呼次数=0,dy="",跳转="",stopTyping=false,速度,临时变量={},已有酒单=[],图src=(location.href.includes("yucimao.github")?"../../..":"")+"/i/2264624/";
 function 按钮(a,b){return `{<a onclick="输入(通用['${a}'],'开场白',this)"> - ${b}</a>}`}
 function 特殊(a,b){return `{<a onclick="输入(通用['${a}'](),'开场白',this)"> - ${b}</a>}`}
 function 说(a,b){return `<span onmouseover="tip('${b}')">${a}</span>`}
 function 注释(o){return `{<span onmouseover="this.innerHTML='${o}'" class='zhushi'></span>}`}
-function 图(o){return `{<img class='ft' onclick='openImgBlack(this.src)' src='${location.href.includes("yucimao.github")?"../../..":""}/i/2264624/${o}'><br><br>}`}
+function 图(o){return `{<img class='ft' src='${图src}${o}'><br><br>}`}
 function 名(o,k,l){
     if(道具[o]){
         o=((k)?"{":"")+"<span class='提示' data-msg='"+道具[o]+"'>"+o.split("_")[0]+"</span>"+((k)?"}":"");
@@ -183,7 +173,6 @@ function 名(o,k,l){
     return o;
 }
 function 线(o){return "{<i x>"+o+"</i>}"}
-function fieldset酒(o){}
 let br="{<br class='del'>}";
 
 let 道具={
@@ -203,8 +192,6 @@ let 道具={
     "冰点苏乐达":"“冰冰凉凉的苏乐达汽水，市面上并不多见。”",
     "传统老豆汁儿":"“来自匹诺康尼外的特产，它为何会出现在这始终是个谜。”",
     // "":"",
-    // "":"",
-    // "":"",
 
 /*
     名('文字') 会自动转换成 [文字]
@@ -219,24 +206,28 @@ let 通用={
     按钮('我想','我想……')+br+
     按钮('问题','我有个问题')+br+
     按钮('隐藏酒单','我要酒单上没有的'),
-    "知道了":按钮('开篇','对话'),
+    "ok":按钮('开篇','对话'),
     "开场白":"欢迎来到“猫球仓买”。",
 
-    "我想":按钮('我想1','我想参观酿酒材料仓库')+br+按钮('知道了','算了'),
-    "我想1":`通常是不开放参观的……好吧，不过只许看，不许碰哦。{<br>}跟我来吧。{（<a href="/jiujiao/cangku">点击此处打开</a>）<br><br>}`+按钮('知道了','知道了'),
+    "我想":按钮('我想0','我想变清醒')+br+按钮('我想1','我想参观酿酒材料仓库')+br+按钮('我想2','我想听音乐')+br+按钮('我想3','我想了解猫球仓买的历史')+br+按钮('我想4','我想看看店规')+br+按钮('ok','算了'),
+    "我想0":"我会对你施展某种魔法，让你完全清醒。{j:=,0}{<br><br>}"+按钮('ok','好了'),
+    "我想1":`通常是不开放参观的……好吧，不过只许看，不许碰哦。{<br>}跟我来吧。{（<a href="/jiujiao/cangku" target="_blank">点击此处打开</a>）<br><br>}`+按钮('ok','知道了'),
+    "我想2":`我找找……歌单……猫球仓买……找到了。{<br>（<a href="https://music.163.com/#/playlist?id=17857498024" target="_blank">点击此处打开</a>）<br><br>}`+按钮('ok','好的'),
+    "我想3":`给你，这是“猫球仓买”的更新日志：{（<a onclick="dw(dwb='19300033',dwd='更新日志')">点击此处查看</a>）<br><br>}`+按钮('ok','好的'),
+    "我想4":`我希望猫球仓买可以让人放松。虽然的确有一份店规，不过那只是偶尔随便写的，并不需要真的严格遵守。{（<a onclick="dw(dwb='19300151',dwd='店规')">点击此处查看</a>）<br><br>}`+按钮('ok','好的'),
 
-    "问题":按钮('问题1','怎么点单？')+br+按钮('问题2','你是谁？')+br+按钮('问题3','这是哪里？')+br+按钮('知道了','算了'),
-    "问题1":`下面有“酒单”，看看有没有感兴趣的，点击即可。{<br><br>}`+按钮('问题1-1','我要怎么付款？')+br+按钮('知道了','知道了'),
-    "问题1-1":"点单之后，我会找你在真界的投影，收取相应的货币（ѣ）。{<br>}你可以简单理解为——你在想象的世界里自动付款了，也就不需要你额外做什么。{<br>}当然，如果你想的话，也可以在现世……我是说，现实世界，对我{<a href='/donate'>打赏</a>}，嘿嘿。{<br><br>}"+按钮('知道了','知道了'),
-    "问题2":`我是李猫球，这家“猫球仓买”的老板。{<br><br>}`+按钮('知道了','知道了'),
-    "问题3":`这里是“猫球仓买”。不过和别的“仓买”不太一样，我这里只卖饮品。{<br><br>}`+按钮('问题3-1','为什么要开这家店？')+br+按钮('知道了','知道了'),
-    "问题3-1":`一方面，开一家“仓买”是我多年的心愿。{<br>}另一方面，我收藏了许多有趣的酒，却只能藏在酒窖里自己独赏，有些可惜。开一个小店，等碰巧过路的旅人进来歇歇脚，喝上一杯，或是听我讲讲那些珍藏的来历，想想都觉得惬意。{<br><br>}`+按钮('知道了','知道了'),
+    "问题":按钮('问题1','怎么点单？')+br+按钮('问题2','你是谁？')+br+按钮('问题3','这是哪里？')+br+按钮('ok','算了'),
+    "问题1":`下面有“酒单”，看看有没有感兴趣的，点击即可。{<br><br>}`+按钮('问题1-1','我要怎么付款？')+br+按钮('ok','知道了'),
+    "问题1-1":"点单之后，我会找你在真界的投影，收取相应的货币（ѣ）。{<br>}你可以简单理解为——你在想象的世界里自动付款了，也就不需要你额外做什么。{<br>}当然，如果你想的话，也可以在现世……我是说，现实世界，对我{<a href='/donate'>打赏</a>}，嘿嘿。{<br><br>}"+按钮('ok','知道了'),
+    "问题2":`我是李猫球，这家“猫球仓买”的老板。{<br><br>}`+按钮('ok','知道了'),
+    "问题3":`这里是“猫球仓买”。不过和别的“仓买”不太一样，我这里只卖饮品。{<br><br>}`+按钮('问题3-1','为什么要开这家店？')+br+按钮('ok','知道了'),
+    "问题3-1":`一方面，开一家“仓买”是我多年的心愿。{<br>}另一方面，我收藏了许多有趣的酒，却只能藏在酒窖里自己独赏，有些可惜。开一个小店，等碰巧过路的旅人进来歇歇脚，喝上一杯，或是听我讲讲那些珍藏的来历，想想都觉得惬意。{<br><br>}`+按钮('ok','知道了'),
 
-    "喝一杯":"我其实不怎么喝酒，我喜欢酒，更多的是喜欢酒的来历和设计。{<br>}所以，如果你要送我什么有趣的酒，我会很开心的。{<br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('喝一杯2','要怎么把酒给你？')+br+按钮('知道了','知道了'),
-    "喝一杯1":"诶嘿。{<br><br>}"+按钮('喝一杯2','要怎么把酒给你？')+br+按钮('知道了','知道了'),
-    "喝一杯2":"记住我的邮编：123719932。{<span class='zhushi'>（这是我的QQ号，请联系我，把酒有关的信息告诉我，你在什么作品里看到的，或是你原创的，都可以，也许就会被放进酒单里。）</span><br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('知道了','知道了'),
+    "喝一杯":"我其实不怎么喝酒，我喜欢酒，更多的是喜欢酒的来历和设计。{<br>}所以，如果你要送我什么有趣的酒，我会很开心的。{<br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('喝一杯2','要怎么把酒给你？')+br+按钮('ok','知道了'),
+    "喝一杯1":"诶嘿。{<br><br>}"+按钮('喝一杯2','要怎么把酒给你？')+br+按钮('ok','知道了'),
+    "喝一杯2":"记住我的邮编：123719932。{<span class='zhushi'>（这是我的QQ号，请联系我，把酒有关的信息告诉我，你在什么作品里看到的，或是你原创的，都可以，也许就会被放进酒单里。）</span><br><br>}"+按钮('喝一杯1','想的挺美')+br+按钮('ok','知道了'),
 
-    "隐藏酒单_输入":`{<br><br><input type="text" id="隐藏酒单" autocomplete="off" class='del'><a onclick="隐藏酒单_发送()" class='del'> 发送</a>}${br}`+按钮('开篇','算了'),
+    "隐藏酒单_输入":`{<br><br><input type="text" id="隐藏酒单" autocomplete="off" class='del'><a onclick="隐藏酒单_发送()" class='del'> 发送</a>}${br}`+按钮('ok','算了'),
 
     "算了":br+`{<a onclick='关闭()'> - 算了</a>}`,
     "关闭":br+`{<a onclick='关闭()'> - 关闭</a>}`,
@@ -256,12 +247,13 @@ let 通用={
     "复活节2":"也许不是。{<br>}每年复活节日期不固定，我懒得算，就当作是3月25日吧，325是他们给复活节日期设计出那套复杂计算方式的年份。{<br><br>}"+按钮('复活节3','我不过复活节')+br+按钮('复活节','好的'),
     "复活节3":"我也不过复活节，但，管他呢。{<br>}有时候节日只是人们做某事的借口，那我们就把复活节当作喝"+名('兔子蛋酒',1)+"的借口好了。{<br><br>}"+按钮('复活节1-1','蛋奶酒不是复活节的习俗')+br+按钮('复活节1-2','兔子……蛋？')+br+按钮('复活节','好的'),
 
-    "Jill_1":"不是，她是"+名('Valhalla',1)+"的调酒师，在"+名('故障城',1)+"，如果有机会路过的话，推荐你去坐一坐。{<br><br>}"+按钮('Jill_2','以后还能喝到这些酒么？')+br+按钮('知道了','知道了'),
-    "Jill_2":"只限今天。{<br>}其实……这些酒的版权归属于"+名('B.T.C',1)+"，偶尔偷偷售卖一下应该没什么问题，但如果一直留在酒单里，可能会有麻烦。{<br>}如果以后你想喝，可以偷偷跟我说。{<br>}（小声）记住"+线('Valhalla')+"这个词。{<br><br>}"+按钮('Jill_1','Jill是这里的酒保么？')+br+按钮('知道了','知道了'),
+    "Jill_1":"不是，她是"+名('Valhalla',1)+"的调酒师，在"+名('故障城',1)+"，如果有机会路过的话，推荐你去坐一坐。{<br><br>}"+按钮('Jill_2','以后还能喝到这些酒么？')+br+按钮('ok','知道了'),
+    "Jill_2":"只限今天。{<br>}其实……这些酒的版权归属于"+名('B.T.C',1)+"，偶尔偷偷售卖一下应该没什么问题，但如果一直留在酒单里，可能会有麻烦。{<br>}如果以后你想喝，可以偷偷跟我说。{<br>}（小声）记住"+线('Valhalla')+"这个词。{<br><br>}"+按钮('Jill_1','Jill是这里的酒保么？')+br+按钮('ok','知道了'),
 
 }
 通用["隐藏酒单"]=`你想要什么？`+通用["隐藏酒单_输入"];
 通用["通用"]=(a,e)=>{输入(通用[a],"对话",e)};
+通用["购买"]=(o)=>`{<a onclick="关闭('${o}')"> - 购买</a>}`;
 
 通用["豆狸的酒宴"]=`一群狸猫围着火堆​跳舞，它们见到我也不惊慌，继续着它们的舞蹈。{<br>}我走近几步，正要开口，一只狸猫先对我招了招手：{<br>}「别急，马上就好，先去那边稍等片刻吧。」{<br>}这时我才注意到，旁边有一个亭子，摆着许多酒坛。{<br>}我在亭子里坐下，等着将要发生的事，心中难免有些不安。{<br>}「豆狸虽没什么妖力，寻美酒的本事倒是不错。」{<br>}不知何时，亭子里多了一位俊秀的美少年，他皮肤白皙，上衣微敞，随意的半躺着。像是自言自语，也像在与我搭话。{<br>}忽然天空下起细雨，却不见乌云，月亮照常挂在天上。{<br>}「成了，成了！」狸猫们欢呼着，一窝蜂的跑去争抢酒坛里的酒喝，很快就醉倒一片。{<br>}远处一个有些佝偻的身影，迈着悠然的步伐，如闲庭信步般悄悄接近，走近了才看清，是一位衣着名贵的光头老者。{<br>}「抱歉抱歉，来晚了。」老人说着抱歉，却丝毫没有道歉的意思，反而带着一抹似有似无的笑意。{<br>}他自顾自的在亭子里找了个位置坐下，笑了笑：「我自罚三杯。」{<br>}美少年抬了抬眉，目光有些不善：「这个酒宴没有邀请你。」{<br>}老头泰然自若的回敬：「但，也没有邀请你。」{<br>}美少年瞥了老头一眼，冷笑道：「这天下的美酒本王想喝就喝，不需要邀请。」{<br>}我忽闻一股烟味。回头望去，原先热烈跳动的火焰此刻变得无精打采，光芒黯淡。{<br>}一缕青烟袅袅升起，如纱一般轻盈，飘进亭子，缭绕片刻后又忽然消散。一片朦胧间，竟走出了一位身姿婀娜、尽显魅惑的美女。{<br>}她款步走到我身旁，轻轻拍了拍我的肩膀，妩媚一笑：「不用理他们，先和姐姐喝一杯吧。」{<br>}`+通用["关闭"];
 
@@ -319,7 +311,7 @@ let 开场白={"0":[[通用['开场白']+寒暄+"{<br><br>}"+按钮('开篇','�
 开场白["1.25"]=[[通用['鹈鹕镇']('冬日星盛宴')],通用['鹈鹕镇的酒']];
 开场白["3.24"]=[[通用['鹈鹕镇']('花舞节')],通用['鹈鹕镇的酒']];
 开场白["3.25"]=[["复活节快乐。{<br><br>}"+通用["复活节"]],["兔子蛋酒"]];
-开场白["6.27"]=[["调制饮料，改变人生。     {<br><br>}哈哈，我一直想试试这个开场白来着。{<br>}今天是我的朋友——调酒师"+名('Jill',1)+"的生日，这句话就是她总说的，我还在她那里偷偷学来了一些调酒配方呢。{<br>}对了，既然今天是她的生日，就把这些酒暂时加进酒单里吧。:D{<br><br>}"+按钮('Jill_1','Jill是这里的酒保么？')+br+按钮('Jill_2','以后还能喝到这些酒么？')+br+按钮('知道了','知道了')],通用["Valhalla的酒"]];
+开场白["6.27"]=[["调制饮料，改变人生。     {<br><br>}哈哈，我一直想试试这个开场白来着。{<br>}今天是我的朋友——调酒师"+名('Jill',1)+"的生日，这句话就是她总说的，我还在她那里偷偷学来了一些调酒配方呢。{<br>}对了，既然今天是她的生日，就把这些酒暂时加进酒单里吧。:D{<br><br>}"+按钮('Jill_1','Jill是这里的酒保么？')+br+按钮('Jill_2','以后还能喝到这些酒么？')+br+按钮('ok','知道了')],通用["Valhalla的酒"]];
 开场白["7.11"]=[[通用['鹈鹕镇']('夏威夷宴会')],通用['鹈鹕镇的酒']];
 开场白["7.28"]=[[通用['鹈鹕镇']('月光水母起舞日')],通用['鹈鹕镇的酒']];
 开场白["10.16"]=[[通用['鹈鹕镇']('星露谷展览会')],通用['鹈鹕镇的酒']];
@@ -339,7 +331,7 @@ let 开场白={"0":[[通用['开场白']+寒暄+"{<br><br>}"+按钮('开篇','�
 */
 
 let 酒单=[
-
+    ["h3","猫球仓买"],
     "蓝哇薄荷醉奶",
     "电波",
     ["hr"],["h5","夜路归途",],
@@ -806,7 +798,25 @@ let 酒={
     ["- 30ѣ","二扯奶茶店",名('二扯奶茶店')+"的招牌特调。",{0:图('蓝哇薄荷醉奶.png')+`{<a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"度数很低。甜甜的牛奶，配上清凉的薄荷。{<br>}"+通用["关闭"]}],
 "电波":
     ["- 42ѣ","猫球仓买","没有介绍。",{0:图('电波.png')+`{<a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"],1:"一种说不清的口感和味道。{<br>}"+通用["关闭"]}],
+"无酒精伏特加":["x","","",{0:图('无酒精伏特加.png')+通用["购买"]('无酒精伏特加')+通用["算了"]}],
+"小麦汽水":["x","","",{0:图('小麦汽水.png')+通用["购买"]('小麦汽水')+通用["算了"]}],
+"可乐果汽水":["x","","",{0:图('可乐果汽水.png')+通用["购买"]('可乐果汽水')+通用["算了"]}],
+"青柠松针汽水":["x","","",{0:图('青柠松针汽水.png')+通用["购买"]('青柠松针汽水')+通用["算了"]}],
+"薄荷汽水":["x","","",{0:图('薄荷汽水.png')+通用["购买"]('薄荷汽水')+通用["算了"]}],
+"经典苏乐达":["x","","",{0:图('经典苏乐达.png')+通用["购买"]('经典苏乐达')+通用["算了"]}],
+"好梦气泡饮":["x","","",{0:图('好梦气泡饮.png')+通用["购买"]('好梦气泡饮')+通用["算了"]}],
+"冰点苏乐达":["x","","",{0:图('冰点苏乐达.png')+通用["购买"]('冰点苏乐达')+通用["算了"]}],
+"燃油饮":["x","","",{0:图('燃油饮.png')+通用["购买"]('燃油饮')+通用["算了"]}],
+"卡亚可乐":["x","","",{0:图('卡亚可乐.png')+通用["购买"]('卡亚可乐')+通用["算了"]}],
+"一叶":["x","","",{0:图('一叶.png')+通用["购买"]('一叶')+通用["算了"]}],
+"0xCAFE":["x","","",{0:图('0xCAFE.png')+通用["关闭"]}],
+"海苔":["x","","",{0:图('海苔.png')+通用["购买"]('海苔')+通用["算了"]}],
+"提拉斯利精美巧克力":["x","","",{0:图('提拉斯利精美巧克力.png')+通用["购买"]('提拉斯利精美巧克力')+通用["算了"]}],
+"蛋糕":["x","","",{0:图('蛋糕.png')+通用["购买"]('蛋糕')+通用["算了"]}],
+"白灼章鱼足":["x","","",{0:图('白灼章鱼足.png')+通用["购买"]('白灼章鱼足')+`{<a onclick="document.querySelector('.ft').src='${图src}切开的白灼章鱼足.png';this.style='display:none'"><br> - 请把它切开</a>}`+通用["算了"]}],
+"泡椒鱼皮":["x","","",{0:图('泡椒鱼皮.png')+通用["购买"]('泡椒鱼皮')+通用["算了"]}],
 // "":["- ѣ","关键词","介绍",{0:图('.png')+`介绍。${注释('出自«»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]}],
+// "":["x","","",{0:图('.png')+通用["购买"]('')+通用["算了"]}],
 //[0]如果是"x"，不会被加入进酒单
 }
 
@@ -824,24 +834,23 @@ let 酒={
 
 let 菜单=[// ѣ
     ["hr","饮品"],
-    ["无酒精伏特加","免费","无色无味，没有酒精。"],
-    ["小麦汽水","3ѣ","看着像啤酒，喝着像啤酒，不过没有酒精。"],
-    ["x","<span class='li'>汽水<small> - 3ѣ</small></span>　<b>可乐果汽水</b><b>青柠松针汽水</b><b>薄荷汽水</b>"],
-    ["x",`<span class='li'>苏乐达<small> - 5ѣ</small></span>　<b>经典苏乐达</b><b>冰点苏乐达</b><b>好梦气泡饮</b><b>聚爆苏乐达</b>　<span onmouseover="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span>`],
-    ["一叶","100ѣ","经典月泪汁，清爽的薄荷风味。"],
-    ["卡亚可乐","10ѣ",`地精的饮料，据说能提升智力。<span onmouseover="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
-    ["燃油饮","10ѣ",`能量饮料。<span onmouseover="this.innerHTML='出自«绝区零»'" class='zhushi'></span>`],
-    [说('0xCAFE','仅展示，猫球仓买禁止喝咖啡。'),"非卖品"],
+    [`<a onclick="选择('无酒精伏特加')">无酒精伏特加</a>`,"免费","无色无味，没有酒精。"],
+    [`<a onclick="选择('小麦汽水')">小麦汽水</a>`,"3ѣ","看着像啤酒，喝着像啤酒，不过没有酒精。"],
+    ["x",`<span class='li'>汽水<small> - 3ѣ</small></span>　<b><a onclick="选择('可乐果汽水')">可乐果汽水</a></b><b><a onclick="选择('青柠松针汽水')">青柠松针汽水</a></b><b><a onclick="选择('薄荷汽水')">薄荷汽水</a></b>`],
+    ["x",`<span class='li'>苏乐达<small> - 5ѣ</small></span>　<b><a onclick="选择('经典苏乐达')">经典苏乐达</a></b><b><a onclick="选择('冰点苏乐达')">冰点苏乐达</a></b><b><a onclick="选择('好梦气泡饮')">好梦气泡饮</a></b>　<span onmouseover="this.innerHTML='出自«星穹铁道»'" class='zhushi'></span>`],
+    [`<a onclick="选择('一叶')">一叶</a>`,"100ѣ","经典月泪汁，清爽的薄荷风味。"],
+    [`<a onclick="选择('卡亚可乐')">卡亚可乐</a>`,"10ѣ",`地精的饮料，据说能提升智力。<span onmouseover="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
+    [`<a onclick="选择('燃油饮')">燃油饮</a>`,"10ѣ",`能量饮料。<span onmouseover="this.innerHTML='出自«绝区零»'" class='zhushi'></span>`],
+    [`<a onclick="选择('0xCAFE')">0xCAFE</a>`,"非卖品","仅展示，猫球仓买禁止喝咖啡。"],
 
     ["hr","零食、甜品"],
-    ["海苔","1ѣ"],
-    ["提拉斯利精美巧克力","60ѣ",`“致力于味觉的艺术，献给钟爱巧克力的你。”<span onmouseover="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
-    ["蛋糕","30ѣ",`方形的蛋糕。<span onmouseover="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
+    [`<a onclick="选择('海苔')">海苔</a>`,"1ѣ"],
+    [`<a onclick="选择('提拉斯利精美巧克力')">提拉斯利精美巧克力</a>`,"60ѣ",`“致力于味觉的艺术，献给钟爱巧克力的你。”<span onmouseover="this.innerHTML='出自«魔兽世界»'" class='zhushi'></span>`],
+    [`<a onclick="选择('蛋糕')">蛋糕</a>`,"30ѣ",`方形的蛋糕。<span onmouseover="this.innerHTML='出自«我的世界»'" class='zhushi'></span>`],
 
     ["hr","下酒菜"],
-    ["x","<span class='li'>脆爽小菜<small> - 8ѣ</small></span>　<b>白灼章鱼足</b><b>泡椒鱼皮</b><b>芥末章鱼</b>"],
-    ["千年蛋","5ѣ"],
-    ["酱牛肉","8ѣ"],
+    ["x",`<span class='li'>脆爽小菜<small> - 8ѣ</small></span>　<b><a onclick="选择('白灼章鱼足')">白灼章鱼足</a></b><b><a onclick="选择('泡椒鱼皮')">泡椒鱼皮</a></b><b>芥末章鱼</b><b>生呛虾</b>`],
+    ["x","<span class='li'>中式<small> - 8ѣ</small></span>　<b>千年蛋</b><b>酱牛肉</b>"],
 
     ["hr","餐食"],
     [说('茄子柿子汤','我的拿手好菜。'),"8ѣ"],
@@ -931,7 +940,7 @@ async function 输入(content,id,e){
             document.querySelectorAll('#'+id+' a[onclick*="输入"],#'+id+' .del,#'+id+' a[onclick*="关闭"],#'+id+' a[onclick*="选择"],#'+id+' a[onclick*="通用"]').forEach(el=>el.remove());
         }
     }
-    cursor.classList.remove('hover-link')
+    DOM.鼠标.classList.remove('hover-link')
     
     const output=document.getElementById(id);
     // output.innerHTML='';
@@ -946,7 +955,7 @@ async function 输入(content,id,e){
 /* {j:x} js里增加醉酒度，最后的str是会写上去的说明文字 */
 if(str[0]>-1){
     let a={
-        "重":["你严重醉酒，为了你的健康考虑，"+名('李猫球',1)+"对你施展了某种魔法，让再次感觉清醒。"],
+        "重":["你严重醉酒，为了你的健康考虑，"+名('李猫球',1)+"对你施展了某种魔法，让你再次感觉清醒。"],
         "大":["你感觉头晕目眩、天旋地转。","你烂醉如泥。"],
         "中":["你的视线有些模糊。","你感觉有点飘飘然的。"],
         "小":["你的脸颊微微发热。","你感觉稍有醉意。"],
@@ -970,12 +979,12 @@ if(str[0]>-1){
     醉酒+=a[str[2]][0];
     let b="没感觉到醉意";
 
-    if(醉酒>30){b="严重醉酒，为了你的健康考虑，"+名('李猫球',1)+"对你施展了某种魔法，让再次感觉清醒";醉酒=0;DOM.html.className='重醉'}
+    if(醉酒>30){b="严重醉酒，为了你的健康考虑，"+名('李猫球',1)+"对你施展了某种魔法，让你再次感觉清醒";醉酒=0;DOM.html.className='重醉'}
     else if(醉酒>18){b="烂醉如泥";DOM.html.className='大醉'}
     else if(醉酒>10){b="酩酊大醉";DOM.html.className='中醉'}
     else if(醉酒>0){b="有点醉醺醺的";DOM.html.className='小醉'}
     str=a[str[2]][1]+"饮料。{<br>}你喝下"+名(str[1],1)+"之后"+b+"。"}
-cursor.style.filter = `blur(${醉酒/10}px)`;
+DOM.鼠标.style.filter = `blur(${醉酒/10}px)`;
 
     let strParts=str.split(/(\{[^}]+\})/).filter(p=>p!=='');for(let p of strParts){if(stopTyping) return;if(p.startsWith('{')&&p.endsWith('}')){output.insertAdjacentHTML('beforeend',p.slice(1,-1))}else{await typeCharacters(p,output)}}}else{output.insertAdjacentHTML('beforeend',inner)}}else{await typeCharacters(part,output)}}}async function typeCharacters(text,element){const textNode=document.createTextNode('');element.appendChild(textNode);for(const char of text){if(stopTyping){return}await new Promise(resolve=>setTimeout(resolve,速度));textNode.data+=char}}
 
@@ -992,62 +1001,64 @@ function 选择(o,e){
     if(Array.isArray(酒[当前][3][o])){输入(酒[当前][3][o][0]+酒[当前][3][o][1][Math.floor(Math.random()*酒[当前][3][o][1].length)]+酒[当前][3][o][2],"对话",e)}
     else{输入(酒[当前][3][o],"对话",e)}
 }
-function 关闭(){
+function 关闭(o){
     stopTyping=true;
     当前="x";
     DOM.对话.innerHTML="";
     DOM.弹窗.style='display:none;';
+    if(o){notyf.confirm("你购买了<b>"+o+"</b>")}
 }
 
 function 分类(o){
-    if(o=="0"||o=="随机"){
-        document.querySelectorAll('details').forEach(detail=>{detail.open=false});
-        DOM.当前分类.style="display:none;";
-        DOM.当前分类.innerHTML="";
-    }else{
-        notyf.confirm(o);
-        DOM.当前分类.style="";
-        DOM.当前分类.innerHTML=o;
-    }
-    if(o=="随机"){
-        notyf.confirm('随机');
-        o=酒单.filter(x=>!Array.isArray(x))[Math.floor(Math.random()*酒单.filter(x=>!Array.isArray(x)).length)];
-    }
-    if(o=="0"){
-        notyf.confirm("显示全部");
-        DOM.分类.innerHTML="";
-    }else{
-        DOM.分类.innerHTML=`.酒,#酒单 span,#酒单 hr,#酒单 a,#酒单 small,#酒单 ul,#酒单 ol,#酒单 h1,#酒单 h2,#酒单 h3,#酒单 h4,#酒单 h5,#跳转{display:none}.${o}{display:block}`;
-    }
+if(o=="0"||o=="随机"){
+    document.querySelectorAll('details').forEach(detail=>{detail.open=false});
+    DOM.当前分类.style="display:none;";
+    DOM.当前分类.innerHTML="";
+}else{
+    notyf.confirm(o);
+    DOM.当前分类.style="";
+    DOM.当前分类.innerHTML=o;
+}
+if(o=="随机"){
+    notyf.confirm('随机');
+    o=酒单.filter(x=>!Array.isArray(x))[Math.floor(Math.random()*酒单.filter(x=>!Array.isArray(x)).length)];
+}
+if(o=="0"){
+    notyf.confirm("显示全部");
+    DOM.分类.innerHTML="";
+}else{
+    DOM.分类.innerHTML=`.酒,#酒单 span,#酒单 hr,#酒单 a,#酒单 small,#酒单 ul,#酒单 ol,#酒单 h1,#酒单 h2,#酒单 h3,#酒单 h4,#酒单 h5,#跳转{display:none}.${o}{display:block}`;
+}
 }
 
 function 隐藏酒单_发送(){
     let o=document.getElementById("隐藏酒单").value;
     document.querySelectorAll('#开场白 a[onclick*="输入"],#开场白 .del').forEach(el=>el.remove());
     document.getElementById("开场白").insertAdjacentHTML('beforeend',"<b> - "+o+"</b>");
-    if(酒单.indexOf(o)!=-1||已有酒单.indexOf(o)!=-1){
-        输入("{<br><br>}你说的这个，酒单里已经有了。{<br><br>}"+按钮('开篇','对话'),"开场白");
-    }else if(酒[o]&&酒[o][0]!="x"){
-        dy=`<fieldset class="酒 ${酒[o][1]} ${o.replace(new RegExp(' ',"g"),"_")}" onclick="选择('${o}')"><legend><a name='${o.replace(new RegExp(' ',"g"),"_")}'></a><b>${o}</b><small> ${酒[o][0]}</small></legend>${酒[o][2]}</fieldset>`+dy;
-        DOM.酒单.innerHTML=dy;
-        酒单.push(o);
-        输入("{<br><br>}好的，已经添加进酒单了。{<br><br>}"+按钮('开篇','对话'),"开场白");
-    }else if(隐藏酒单[o]){
-        已有酒单.push(o);
-        dy="<hr>"+dy;
-        for(let i=0;隐藏酒单[o].length>i;i++){
-            if(酒单.indexOf(隐藏酒单[o][i])!=-1){}else{
-            dy=`<fieldset class="酒 ${酒[隐藏酒单[o][i]][1]} ${隐藏酒单[o][i].replace(new RegExp(' ',"g"),"_")} ${o}" onclick="选择('${隐藏酒单[o][i]}')"><legend><a name='${隐藏酒单[o][i].replace(new RegExp(' ',"g"),"_")}'></a><b>${隐藏酒单[o][i]}</b><small> ${酒[隐藏酒单[o][i]][0]}</small></legend>${酒[隐藏酒单[o][i]][2]}</fieldset>`+dy;
-            酒单.push(隐藏酒单[o][i]);
-            }
-        }
-        dy="<h4>"+o+"</h4>"+dy;
-        DOM.酒单.innerHTML=dy;
-        输入("{<br><br>}好的，已经添加进酒单了。{<br><br>}"+按钮('开篇','对话'),"开场白");
-    }else{
-        输入("{<br><br>}抱歉，这里没有叫这个名字的酒。"+通用["隐藏酒单_输入"],"开场白");
+if(o=="炒饭"){
+    输入("{<br><br>}抱歉，这里没有","开场白");
+    window.location.href="http://猫.cafe/㫒梦/404"
+}else if(酒单.indexOf(o)!=-1||已有酒单.indexOf(o)!=-1){
+    输入("{<br><br>}你说的这个，酒单里已经有了。{<br><br>}"+按钮('开篇','对话'),"开场白");
+}else if(酒[o]&&酒[o][0]!="x"){
+    dy=`<fieldset class="酒 ${酒[o][1]} ${o.replace(new RegExp(' ',"g"),"_")}" onclick="选择('${o}')"><legend><a name='${o.replace(new RegExp(' ',"g"),"_")}'></a><b>${o}</b><small> ${酒[o][0]}</small></legend>${酒[o][2]}</fieldset>`+dy;
+    DOM.酒单.innerHTML=dy;
+    酒单.push(o);
+    输入("{<br><br>}好的，已经添加进酒单了。{<br><br>}"+按钮('开篇','对话'),"开场白");
+}else if(隐藏酒单[o]){
+    已有酒单.push(o);
+    dy="<hr>"+dy;
+    for(let i=0;隐藏酒单[o].length>i;i++){
+        if(酒单.indexOf(隐藏酒单[o][i])!=-1){}else{
+        dy=`<fieldset class="酒 ${酒[隐藏酒单[o][i]][1]} ${隐藏酒单[o][i].replace(new RegExp(' ',"g"),"_")} ${o}" onclick="选择('${隐藏酒单[o][i]}')"><legend><a name='${隐藏酒单[o][i].replace(new RegExp(' ',"g"),"_")}'></a><b>${隐藏酒单[o][i]}</b><small> ${酒[隐藏酒单[o][i]][0]}</small></legend>${酒[隐藏酒单[o][i]][2]}</fieldset>`+dy;
+        酒单.push(隐藏酒单[o][i])}
     }
-}
+    dy="<h4>"+o+"</h4>"+dy;
+    DOM.酒单.innerHTML=dy;
+    输入("{<br><br>}好的，已经添加进酒单了。{<br><br>}"+按钮('开篇','对话'),"开场白");
+}else{
+    输入("{<br><br>}抱歉，这里没有叫这个名字的酒。"+通用["隐藏酒单_输入"],"开场白");
+}}
 
 let tipBox=null,typingTimer=null,autoHideTimer=null,currentText='',charIndex=0;
 function tip(text){
@@ -1059,12 +1070,6 @@ function tip(text){
   setTimeout(()=>{document.addEventListener('click',clickHandler)},0)}
 function clearAllTimer(){if(typingTimer) clearInterval(typingTimer);if(autoHideTimer) clearTimeout(autoHideTimer);typingTimer=null;autoHideTimer=null}
 function removeTipBox(){if(tipBox){tipBox.remove();tipBox=null}}
-
-function openImgBlack(src){
-    const w=window.open('','_blank');
-    w.document.write(`<!DOCTYPE html><html style="margin:0;padding:0"><head><meta charset="utf-8"><style>*{margin:0;padding:0}body{background:#232323;min-height:100vh;display:flex;align-items:center;justify-content:center}img{max-width:100%;max-height:100vh;object-fit:contain}</style></head><body><img src="${src}"></body></html>`);
-    w.document.close();
-}
 
 if(!window.notyf){window.notyf={confirm:function(msg){console.log(msg)},alert:function(msg){console.log(msg)}}}
 </script>
