@@ -346,7 +346,8 @@ let 注={
 "人鸡验证":"鸣潮玩家会装作米游玩家参与节奏，这时候说一句「爱弥斯是鸡」，对方往往就会忍不住暴露身份",
 "WUWA脸":"«鸣潮»女角色被诟病使用同一套五官模板，在外网被称作“wuwa face（脸）”，鸣潮社区带节奏说米游女角色也是，会用更宽泛的标准，比如眼睛狭长或冷脸",
 "转发机":"用脚本批量转发帖子，触发审查机制，让原本没问题的帖子被封禁，数量通常是51的倍数，如510、5.1万",
-"热搜11位":"米游相关内容无论热度多高，热搜排名总是刚好维持在11位不再上升，刚好卡在首页排行之外",
+"卡11位":"米游相关内容无论热度多高，热搜排名总是刚好卡在11位不再上升，刚好被排除首页前十之外",
+"乙代":"想象自己是女主角，与男角色谈恋爱",
 // "":["",""],
 
 // "A":"／b", //使用b的解释
@@ -422,7 +423,7 @@ if(代码["灰字"].indexOf(临时3[0])!=-1){dy+="<small class='灰'>"+临时3[0
 
 如果不喜欢我这个风格，还有其他“史官”可选：<br>
 “我想看支持米哈游的”👉<a href="https://www.bilibili.com/read/cv5189274">原神往事</a>、<a href="https://zhuanlan.zhihu.com/p/447860817">原神往事II</a>、<a href="https://zhuanlan.zhihu.com/p/569536891">原神往事III</a>、<a href="https://space.bilibili.com/1903716905/lists/541588?type=series">版本节奏史</a> <small>等（<a href="/i/11654881">其他</a>）</small><br>
-“我想看反对米哈游的”👉<a href="https://space.bilibili.com/3196602/article">原神玩家集体记忆名录</a><small>(大</small><span class="redX"><small>翻译运动)</small></span><small>（<a href="https://space.bilibili.com/1054756248">小号1</a>.<a href="https://space.bilibili.com/300827055">小号2</a>.<a href="https://space.bilibili.com/4806579">小号3</a>）</small>、<a href="https://hoyo.life">世界树</a><small>（<a href="https://irminsul-dup.github.io">新站</a>）</small>、<a href="/i/6795977#其他账号">其他反米势力</a><br>
+“我想看反对米哈游的”👉<a href="https://space.bilibili.com/3196602/article">原神玩家集体记忆名录</a><small>（<a href="https://space.bilibili.com/1054756248">小号1</a>.<a href="https://space.bilibili.com/300827055">小号2</a>.<a href="https://space.bilibili.com/4806579">小号3</a>）</small>、<a href="https://hoyo.life">世界树</a><small>（<a href="https://irminsul-dup.github.io">新站</a>）</small>、<a href="/i/6795977#其他账号">其他反米势力</a><br>
 “我想保持中立”👉暂时没见到完全中立的史官 <span class='zhushi'>毕竟按照〈一粒米原则〉只要玩原神就是“〈OP〉”了，所以没有人能在不是OP的同时客观了解原神</span><br>
 <br>
 
