@@ -1,7 +1,7 @@
 let 页面=document.getElementById("游戏厅").innerHTML.split("／");
 let 页面dy="<h1 style='display:inline;'>"+页面[0]+"</h1>";
 
-if(页面[0]=="猫球游戏厅"){页面dy+=" <a href='/'>猫球博客</a>"}
+if(页面[0]=="猫球游戏厅"){页面dy+=" <a href='/cangmai'>猫球仓买</a>"}
 else if(页面[1]){页面dy+=" <a href='"+页面[2]+".html'>"+页面[1]+"</a>"}
 else{页面dy+=" <a href='0.html'>返回游戏厅</a>"}
 

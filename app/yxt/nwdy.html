@@ -1,7 +1,7 @@
 <div id="游戏厅">女巫毒药</div><script src="0.js"></script>
 <small>
-    电脑会在其中一个苹果里藏毒药，玩家也要偷偷藏一个毒药，要记住自己的毒药在哪里。<br>
-    玩家和电脑轮流选择一个苹果并吃掉，直到其中一方吃到有毒的苹果，即为失败。<br>
+    猫球会在其中一个苹果里藏毒药，你也要偷偷藏一个毒药，要记住自己的毒药在哪里。<br>
+    你和猫球轮流选择一个苹果并吃掉，直到其中一方吃到有毒的苹果，即为失败。<br>
     获胜赚10币，失败没有损失。
 </small><br><br>
 
@@ -34,7 +34,7 @@ let dy,毒药1,毒药2,剩余,回合;
         arr=剩余;随机();剩余=arr;
         document.getElementById("开始按钮").style.display='none';
         document.getElementById("棋盘").innerHTML=dy;
-        document.getElementById("提示").innerHTML="电脑已经藏好了毒药，该你藏毒药了。";
+        document.getElementById("提示").innerHTML="猫球已经藏好了毒药，该你藏毒药了。";
     }
 
     function 按下(o){
@@ -72,7 +72,7 @@ let dy,毒药1,毒药2,剩余,回合;
             回合=3;
             document.getElementById(剩余[临时]).innerHTML="☠️";
             document.getElementById(剩余[临时]).className="cuo fanka";
-            document.getElementById("提示").innerHTML="电脑吃到了毒药，恭喜你获胜了。";
+            document.getElementById("提示").innerHTML="猫球吃到了毒药，恭喜你获胜了。";
             余额(10)
             document.getElementById("开始按钮").style.display='inline';
             document.getElementById("开始按钮").innerHTML="重新开始";
@@ -89,7 +89,7 @@ let dy,毒药1,毒药2,剩余,回合;
 
     document.getElementById("棋盘").addEventListener('animationend',()=>{
         if(回合==2){
-            document.getElementById("提示").innerHTML="电脑的回合。";
+            document.getElementById("提示").innerHTML="猫球的回合。";
             继续();
         }else if(回合==1){
             回合=0;

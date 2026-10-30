@@ -5,9 +5,9 @@
     抽到大王、小王可以任选一个位置翻开。
 </small><br><br>
 
-<span id="电脑桌"></span>　<span id="电脑新"></span><br>
+<span id="猫球桌"></span>　<span id="猫球新"></span><br>
 <br>
-<span id="电脑抽到"></span> <span id="卡背"></span><span id="抽到"></span> <span id="裁判桌"></span><br>
+<span id="猫球抽到"></span> <span id="卡背"></span><span id="抽到"></span> <span id="裁判桌"></span><br>
 <br>
 <span id="玩家桌"></span>　<span id="玩家新"></span><br>
 
@@ -23,9 +23,9 @@
 
     let 回合;
     let dy;
-    let 电脑;
-    let 电脑表;
-    let 电脑数;
+    let 猫球;
+    let 猫球表;
+    let 猫球数;
     let 玩家;
     let 玩家表;
     let 玩家数;
@@ -36,29 +36,29 @@
     function 开始游戏(){
         document.getElementById("卡背").innerHTML=卡堆;
         document.getElementById("抽到").innerHTML="";
-        document.getElementById("电脑抽到").innerHTML="";
-        电脑=[],玩家=[],电脑表=[],玩家表=[],封印="x",电脑数=0,玩家数=0;
+        document.getElementById("猫球抽到").innerHTML="";
+        猫球=[],玩家=[],猫球表=[],玩家表=[],封印="x",猫球数=0,玩家数=0;
         回合=20;
         洗牌(0);
-        for(let i=0;10>i;i++){电脑[i]=牌堆[i];}for(let i=10;20>i;i++){玩家[i-10]=牌堆[i];}
+        for(let i=0;10>i;i++){猫球[i]=牌堆[i];}for(let i=10;20>i;i++){玩家[i-10]=牌堆[i];}
         打印();
 
         document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a>";
         
     }
     function 打印(o){
-        dy="电脑：";
+        dy="猫球：";
         for(let i=0;10>i;i++){
             if(i%5==0){dy+="<br>";}
-            if(o=="全部"){电脑表[i]=1;o[1]=i;}
-            if(电脑表[i]){
-                if(o[0]=="电脑"&&o[1]==i){dy+="<img class='fanka' src='img/"+电脑[i]+".png' width='50px'> ";}
-                else{dy+="<img src='img/"+电脑[i]+".png' width='50px'> ";}
+            if(o=="全部"){猫球表[i]=1;o[1]=i;}
+            if(猫球表[i]){
+                if(o[0]=="猫球"&&o[1]==i){dy+="<img class='fanka' src='img/"+猫球[i]+".png' width='50px'> ";}
+                else{dy+="<img src='img/"+猫球[i]+".png' width='50px'> ";}
             }
             else{dy+="<img src='img/背.png' width='50px'> ";}
         }
-        document.getElementById("电脑桌").innerHTML=dy;
-        dy="玩家：";
+        document.getElementById("猫球桌").innerHTML=dy;
+        dy="你：";
         for(let i=0;10>i;i++){
             if(i%5==0){dy+="<br>";}
             if(o=="全部"){玩家表[i]=1;o[1]=i;}
@@ -83,7 +83,7 @@
                 document.getElementById("裁判桌").innerHTML="已经没有牌了，游戏结束。<a onclick='开始游戏()'>重新开始</a>";
             }else{
                 临时=牌堆[回合];
-                document.getElementById("电脑抽到").innerHTML="";
+                document.getElementById("猫球抽到").innerHTML="";
                 document.getElementById("抽到").innerHTML="<img class='fanka' src='img/"+临时+".png' width='50px'>";
                 回合+=1;
                 if(回合+1==牌堆.length){document.getElementById("卡背").innerHTML=单卡;}
@@ -138,7 +138,7 @@
     }
     function 失败(){
         document.getElementById("抽到").className="ssfd";
-        document.getElementById("裁判桌").innerHTML="<a onclick='电脑抽卡()'>继续</a> <span class='cuo'>很遗憾，轮到电脑了。</span>";
+        document.getElementById("裁判桌").innerHTML="<a onclick='猫球抽卡()'>继续</a> <span class='cuo'>很遗憾，轮到猫球了。</span>";
     }
     function 按钮(o){
         document.getElementById("抽到").className="";
@@ -159,10 +159,10 @@
         }
     }
 
-    function 电脑抽卡(o){
-        document.getElementById("电脑抽到").className="";
+    function 猫球抽卡(o){
+        document.getElementById("猫球抽到").className="";
         if(o){
-            电脑翻卡(o);
+            猫球翻卡(o);
         }else{
             let 临时;
             if(牌堆.length==回合){
@@ -170,69 +170,69 @@
                 document.getElementById("裁判桌").innerHTML="已经没有牌了，游戏结束。<a onclick='开始游戏()'>重新开始</a>";
             }else{
                 临时=牌堆[回合];
-                document.getElementById("电脑抽到").innerHTML="<img class='fanka' src='img/"+临时+".png' width='50px'>";
+                document.getElementById("猫球抽到").innerHTML="<img class='fanka' src='img/"+临时+".png' width='50px'>";
                 document.getElementById("抽到").innerHTML="";
                 回合+=1;
                 if(回合+1==牌堆.length){document.getElementById("卡背").innerHTML=单卡;}
                 if(回合==牌堆.length){document.getElementById("卡背").innerHTML="";}
-                if(临时=="J"||临时=="Q"||临时=="K"||临时=="A"&&电脑表[0]||电脑表[临时-1]){
+                if(临时=="J"||临时=="Q"||临时=="K"||临时=="A"&&猫球表[0]||猫球表[临时-1]){
                     // document.getElementById("抽到").innerHTML="";
-                    document.getElementById("电脑抽到").className="ssfd";
-                    document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a> <span class='dui'>轮到玩家了。</span>";
+                    document.getElementById("猫球抽到").className="ssfd";
+                    document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a> <span class='dui'>轮到你了。</span>";
                 }else if(临时=="小王"||临时=="大王"){
                     for(let i=0;10>i;i++){
-                    if(!电脑表[i]){
+                    if(!猫球表[i]){
                         o=i+1;
                         break;
                     }
                 }
-                // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+o+"')\">继续</a> 电脑抽到了王牌，它选择翻开……";
-                document.getElementById("裁判桌").innerHTML="电脑抽到了王牌，它选择翻开……";
-                setTimeout("电脑翻卡('"+o+"')",1000)
+                // document.getElementById("裁判桌").innerHTML="<a onclick=\"猫球翻卡('"+o+"')\">继续</a> 猫球抽到了王牌，它选择翻开……";
+                document.getElementById("裁判桌").innerHTML="猫球抽到了王牌，它选择翻开……";
+                setTimeout("猫球翻卡('"+o+"')",1000)
                 }else{
-                    // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+临时+"')\">继续</a> （电脑的回合）";
-                    document.getElementById("裁判桌").innerHTML="（电脑的回合）";
-                    setTimeout("电脑翻卡('"+临时+"')",500)
+                    // document.getElementById("裁判桌").innerHTML="<a onclick=\"猫球翻卡('"+临时+"')\">继续</a> （猫球的回合）";
+                    document.getElementById("裁判桌").innerHTML="（猫球的回合）";
+                    setTimeout("猫球翻卡('"+临时+"')",500)
                 }
             }
         }
     }
-    function 电脑翻卡(o){
-        document.getElementById("电脑抽到").className="";
+    function 猫球翻卡(o){
+        document.getElementById("猫球抽到").className="";
         if(o=="A"){o=1;}
-        if(o>0&&!电脑表[o-1]){
-            电脑表[o-1]=1;
-            电脑数+=1;
-            打印(["电脑",(o-1)]);
-            if(电脑数==10){
-                try{notyf.alert("电脑获胜");}catch(e){alert("电脑获胜");}
+        if(o>0&&!猫球表[o-1]){
+            猫球表[o-1]=1;
+            猫球数+=1;
+            打印(["猫球",(o-1)]);
+            if(猫球数==10){
+                try{notyf.alert("猫球获胜");}catch(e){alert("猫球获胜");}
                 打印("全部");
-                document.getElementById("裁判桌").innerHTML="<span class='cuo'>电脑获胜。</span><a onclick='开始游戏()'>重新开始</a>";
+                document.getElementById("裁判桌").innerHTML="<span class='cuo'>猫球获胜。</span><a onclick='开始游戏()'>重新开始</a>";
             }else{
-                // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+电脑[o-1]+"')\">继续</a> （电脑的回合）";
-                document.getElementById("裁判桌").innerHTML="（电脑的回合）";
-                setTimeout("电脑翻卡('"+电脑[o-1]+"')",500)
+                // document.getElementById("裁判桌").innerHTML="<a onclick=\"猫球翻卡('"+猫球[o-1]+"')\">继续</a> （猫球的回合）";
+                document.getElementById("裁判桌").innerHTML="（猫球的回合）";
+                setTimeout("猫球翻卡('"+猫球[o-1]+"')",500)
             }
         }else if(o=="小王"||o=="大王"){
             for(let i=10;i>0;i--){
-                if(!电脑表[i-1]){
+                if(!猫球表[i-1]){
                     o=i;
                     break;
                 }
             }
             // for(let i=0;20>i;i++){
-            //     if(!电脑表[i]){
+            //     if(!猫球表[i]){
             //         o=i+1;
             //         break;
             //     }
             // }
-            // document.getElementById("裁判桌").innerHTML="<a onclick=\"电脑翻卡('"+o+"')\">继续</a> 电脑抽到了王牌，它选择翻开……";
-            document.getElementById("裁判桌").innerHTML="电脑抽到了王牌，它选择翻开……";
-            setTimeout("电脑翻卡('"+o+"')",1000)
+            // document.getElementById("裁判桌").innerHTML="<a onclick=\"猫球翻卡('"+o+"')\">继续</a> 猫球抽到了王牌，它选择翻开……";
+            document.getElementById("裁判桌").innerHTML="猫球抽到了王牌，它选择翻开……";
+            setTimeout("猫球翻卡('"+o+"')",1000)
         }else{
             // document.getElementById("抽到").innerHTML="";
-            document.getElementById("电脑抽到").className="ssfd";
-            document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a> <span class='dui'>轮到玩家了。</span>";
+            document.getElementById("猫球抽到").className="ssfd";
+            document.getElementById("裁判桌").innerHTML="<a onclick='抽卡()'>抽卡</a> <span class='dui'>轮到你了。</span>";
         }
     }
 </script>

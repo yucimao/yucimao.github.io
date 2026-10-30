@@ -1,6 +1,6 @@
 <div id="游戏厅">三公 骰子版</div><script src="0.js"></script>
 <small>
-    下注后，电脑和玩家各掷3个骰子，根据自己手中的骰子决定要不要加倍下注。<br>
+    下注后，你和猫球各掷3个骰子，根据自己手中的骰子决定要不要加倍下注。<br>
     最后双方展示并比较大小。<br>
     如果有三个“3”为“大三公”，大于其他数字和小三公。<br>
     如果有三个“1”为“小三公”，大于其他数字。
@@ -12,9 +12,9 @@
     <input type="text" placeholder="输入赌注" autocomplete="off" id="输入赌注"> <a onclick="开始(0)">确定</a>
 </div>
 <div id="桌" style="display:none;">
-    电脑的骰子：
+    猫球的骰子：
     <span id="电脑的牌"></span><br>
-    玩家的骰子：
+    你的骰子：
     <span id="玩家的牌"></span>
     <div id="结束"></div>
 </div>
@@ -23,7 +23,7 @@
     预加载('骰子')
     let 下注,电脑牌型,玩家牌型,结局,电脑点数,玩家点数;
     let 牌型=["无","小三公","大三公"];
-    let 结局类型=["平局","恭喜，玩家获胜","很遗憾，玩家失败"];
+    let 结局类型=["平局","恭喜，你赢了","很遗憾，你输了"];
     let 本局;
 
     function 开始(o){
@@ -66,7 +66,7 @@
     }
     function 加倍(){
         if(钱>=下注){
-            if(电脑牌型==0&&电脑点数<5&&玩家牌型==0){try{notyf.alert("电脑拒绝了你的加倍下注");}catch(e){alert("电脑拒绝了你的加倍下注");}}else{余额(-下注);下注+=下注*1;try{notyf.confirm("加倍成功")}catch(e){alert("加倍成功");}}
+            if(电脑牌型==0&&电脑点数<5&&玩家牌型==0){try{notyf.alert("猫球拒绝了你的加倍下注");}catch(e){alert("猫球拒绝了你的加倍下注");}}else{余额(-下注);下注+=下注*1;try{notyf.confirm("加倍成功")}catch(e){alert("加倍成功");}}
         }else{try{notyf.alert("余额不足");}catch(e){alert("余额不足");}}
         document.getElementById("结束").innerHTML="<button onclick='结束()'>判定</button>";
     }
@@ -93,7 +93,7 @@
         }else{
             try{notyf.alert(结局类型[结局]);}catch(e){alert(结局类型[结局]);}
         }
-        document.getElementById("结束").innerHTML="电脑牌型："+牌型[电脑牌型]+"，点数："+电脑点数+"<br>玩家牌型："+牌型[玩家牌型]+"，点数："+玩家点数+"<br><b>"+结局类型[结局]+"</b><br><br><button onclick='重新开始()'>重新开始</button>";
+        document.getElementById("结束").innerHTML="猫球牌型："+牌型[电脑牌型]+"，点数："+电脑点数+"<br>你的牌型："+牌型[玩家牌型]+"，点数："+玩家点数+"<br><b>"+结局类型[结局]+"</b><br><br><button onclick='重新开始()'>重新开始</button>";
     }
 
     function 重新开始(){
