@@ -922,7 +922,7 @@ if(选定开场白[1]){
     if(!酒单.includes(选定开场白[1][i])){酒单.unshift(选定开场白[1][i])}
 }
 if(选定开场白[2]){
-    document.querySelector('.biaotib').src=图src+"a/biaotib_"+选定开场白[2]+".png"
+    document.querySelector('.biaotib').style="background-image:url('"+图src+"a/biaotib_"+选定开场白[2]+".png')"
 }
 }
 if(选定开场白[0].length==0){
