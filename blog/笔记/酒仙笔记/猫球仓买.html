@@ -140,6 +140,7 @@ const DOM={
     "当前分类":document.getElementById("当前分类"),
     "鼠标":document.querySelector('.cursor'),
     "links":document.querySelectorAll('a'),
+    "biaotib":document.querySelector('.biaotib'),
 }
 
 document.addEventListener('mousemove',(e)=>{DOM.鼠标.style.left=e.clientX+'px';DOM.鼠标.style.top=e.clientY+'px'})
@@ -842,6 +843,7 @@ let 酒={
 "苦力怕":通用["默认租"]('苦力怕','出自«我的世界»'),
 "卡芙卡":通用["默认租"]('卡芙卡','出自«星穹铁道»'),
 "薯片":通用["默认购买"]('薯片'),
+"无酒精莫吉托":通用["默认购买"]('无酒精莫吉托'),
 // "":["ѣ","关键词","介绍",{0:图('.png')+`介绍。${注释('出自«»')}{<br><br><a onclick="选择(1,this)"> - 喝</a>}`+通用["算了"]}],
 // "":["x","","",{0:图('.png')+通用["购买"]('')+通用["算了"]}],
 //[0]如果是"x"，不会被加入进酒单
@@ -866,6 +868,7 @@ let 菜单=[
     // ["标题","标题名","价格","菜名1","菜名2"],
     ["hr","饮品"],
     ["无酒精伏特加","免费","无色无味，没有酒精。"],
+    ["无酒精莫吉托","10ѣ"],
     ["一叶","100ѣ","经典月泪汁，清爽的薄荷风味。"],
     ["燃油饮","10ѣ",`能量饮料。`],
     ["0xCAFE","非卖品","仅展示，猫球仓买禁止喝咖啡。"],
@@ -920,14 +923,9 @@ if(选定开场白[1]){
     酒单.unshift(["hr"]);
     for(let i=选定开场白[1].length-1;i>=0;i--){
     if(!酒单.includes(选定开场白[1][i])){酒单.unshift(选定开场白[1][i])}
-}
-if(选定开场白[2]){
-    document.querySelector('.biaotib').style="background-image:url('"+图src+"a/biaotib_"+选定开场白[2]+".png')"
-}
-}
-if(选定开场白[0].length==0){
-    选定开场白=开场白["0"];
-}
+}}
+if(选定开场白[2]&&DOM.biaotib){DOM.biaotib.style="background-image:url('"+图src+"a/biaotib_"+选定开场白[2]+".png')"}
+if(选定开场白[0].length==0){选定开场白=开场白["0"]}
 选定开场白=选定开场白[0][Math.floor(Math.random()*选定开场白[0].length)];
 
 for(let i=0;酒单.length>i;i++){
