@@ -12,8 +12,8 @@ footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
 .footer_anniu{background-color:#ffffff;text-decoration:none;color:#37474f;transition-duration:.3s;transition-property:transform;display:inline-block;vertical-align:middle;padding:10px 20px;margin:.4em;cursor:pointer;border-radius:20px;border:2px solid #888;transform:translateZ(0);box-shadow:0 0 1px #000;}.footer_anniu:hover{transform:scale(1.2);color:#fff;background-color:#2b95ca;}
 }
 @media screen and (max-width: 730px){
-footer {display:none;}
-#sidebar_fz6m {position:relative;top:300px;z-index:999;float:left;width:100%;}
+footer{display:none;}
+#sidebar_fz6m{position:relative;top:300px;z-index:999;float:left;width:100%;}
 .sidebar_fz6m{display:none;}
 .footer_me_m{position:absolute;bottom:0;left:0;}
 .footer_me_e{position:absolute;bottom:0;right:0;}
@@ -26,6 +26,7 @@ footer {display:none;}
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
     {% elsif page.footer_mb == "打赏" %}<a href="/donate"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
     {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% elsif page.footer_mb == "百变猫球" %}<a href="/maoqiu"><img class="tubiao" id="百变猫球" onmouseover="百变猫球()" alt="关于我" title="关于我" width="118px"/></a>
     {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
     {% endif %}
 
@@ -38,6 +39,7 @@ footer {display:none;}
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
     {% elsif page.footer_mb == "打赏" %}<a href="/donate"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
     {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% elsif page.footer_mb == "百变猫球" %}<a href="/maoqiu"><img class="tubiao" id="百变猫球" onmouseover="百变猫球()" alt="关于我" title="关于我" width="118px"/></a>
     {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
     {% endif %}
     
@@ -46,6 +48,18 @@ footer {display:none;}
 </div>
 
 <script>
+
+{% if page.footer_mb == "百变猫球" %}
+let baibian猫球=["INFJ","VA11","蝙蝠睡衣","陈风暴烈酒","调酒师","反恐精英"];
+for(let i=baibian猫球.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[baibian猫球[i],baibian猫球[j]]=[baibian猫球[j],baibian猫球[i]]};
+function 百变猫球(){
+let 临时=baibian猫球.shift();
+document.getElementById("百变猫球").src="/img/i/footer/百变猫球/"+临时+".png";
+baibian猫球.push(临时);
+}
+百变猫球();
+{% endif %}
+
 $('#footer_me_e').click(function() {
     $('body,html').animate({
         scrollTop: 0
@@ -113,8 +127,6 @@ if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
 }else{
     分享_fo_m="<h3 class=\"dn_inline\">分享本页</h3>（点击复制链接）<br><span class=\"jinshouji\"><hr></span><span class=\"jindiannao\">　 </span><a class=\"footer_anniu\" onclick=\"footer分享_b(footer分享_a='"+分享_fo_m+"')\">"+分享_fo_m+"</a>";
 }
-// 分享_fo_m+="<br><br><span id=\"/{{ page.permalink }}\" class=\"leancloud_visitors\" data-flag-title=\"{{ page.title }}\"><em class=\"post-meta-item-text\">本页访问次数 </em><i class=\"leancloud-visitors-count\">1000000</i></span>";
-
 
 let footer分享_a;
 function footer分享_b(){
