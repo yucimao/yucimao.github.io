@@ -18,16 +18,17 @@ footer{display:none;}
 .footer_me_m{position:absolute;bottom:0;left:0;}
 .footer_me_e{position:absolute;bottom:0;right:0;}
 }
+#百变猫球,#百变猫球2{background-color:#E77F27;border-radius:20px}
 </style>
     <div class="sidebar_fz6m" id="footer_me_m"></div>
     <div class="sidebar_fz6m" id="footer_me_e"></div>
 <footer class="bukexuanzhong">
 
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
-    {% elsif page.footer_mb == "打赏" %}<a href="/donate"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
-    {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
-    {% elsif page.footer_mb == "百变猫球" %}<a href="/maoqiu"><img class="tubiao" id="百变猫球" onmouseover="百变猫球()" alt="关于我" title="关于我" width="118px"/></a>
-    {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% elsif page.footer_mb == "打赏" %}<a href="/donate"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" width="180px"/></a>
+    {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" width="118px"/></a>
+    {% elsif page.footer_mb == "百变猫球" %}<a href="/maoqiu"><img class="tubiao" id="百变猫球" onmouseout="百变猫球()" width="118px"/></a>
+    {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" width="118px"/></a>
     {% endif %}
 
 </footer>
@@ -37,10 +38,10 @@ footer{display:none;}
     <div style="position: absolute;bottom:140px;left:30%;">
 
     {% if page.footer_fo %}<a {{ page.footer_fo[3] }}><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/{{ page.footer_fo[1] }}" onerror="this.src='/img/i/footer/{{ page.footer_fo[1] }}';this.onerror=null;" alt="{{ page.footer_fo[0] }}" title="{{ page.footer_fo[0] }}" width="{{ page.footer_fo[2] }}"/></a>
-    {% elsif page.footer_mb == "打赏" %}<a href="/donate"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" alt="打赏" title="打赏" width="180px"/></a>
-    {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
-    {% elsif page.footer_mb == "百变猫球" %}<a href="/maoqiu"><img class="tubiao" id="百变猫球" onmouseover="百变猫球()" alt="关于我" title="关于我" width="118px"/></a>
-    {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" alt="关于我" title="关于我" width="118px"/></a>
+    {% elsif page.footer_mb == "打赏" %}<a href="/donate"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/ds1.jpg" onerror="this.src='/img/i/footer/ds1.jpg';this.onerror=null;" width="180px"/></a>
+    {% elsif page.footer_mb == "白" %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/2.png" onerror="this.src='/img/i/footer/2.png';this.onerror=null;" width="118px"/></a>
+    {% elsif page.footer_mb == "百变猫球" %}<a href="/maoqiu"><img class="tubiao" id="百变猫球2" onmouseout="百变猫球()" width="118px"/></a>
+    {% else %}<a href="/maoqiu"><img class="tubiao" src="{{ site.mq_d }}/img/i/footer/1.png" onerror="this.src='/img/i/footer/1.png';this.onerror=null;" width="118px"/></a>
     {% endif %}
     
 </div>
@@ -55,6 +56,7 @@ for(let i=baibian猫球.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));
 function 百变猫球(){
 let 临时=baibian猫球.shift();
 document.getElementById("百变猫球").src="/img/i/footer/百变猫球/"+临时+".png";
+document.getElementById("百变猫球2").src="/img/i/footer/百变猫球/"+临时+".png";
 baibian猫球.push(临时);
 }
 百变猫球();
