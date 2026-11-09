@@ -162,16 +162,16 @@ permalink: i/19272003
         cell.textContent = '勇';
         cell.classList.add('brave');
       } else {
-        cell.textContent = '兵';
+        cell.textContent = '逃';
         cell.classList.remove('brave');
       }
     });
     const braveList = names.filter((_, i) => state[i] === 1);
-    if (braveList.length === 0) {
-      resultText.textContent = '无人勇猛';
-    } else {
-      resultText.textContent = '勇猛：' + braveList.join('、');
-    }
+    // if (braveList.length === 0) {
+    //   resultText.textContent = '无人勇猛';
+    // } else {
+    //   resultText.textContent = '勇猛：' + braveList.join('、');
+    // }
   }
 
   function reset() {
@@ -203,12 +203,24 @@ permalink: i/19272003
   });
 
   // 按任意键或点击画面清空重置
-  document.addEventListener('keydown', (e) => {
-    if (input.value.length === 5) {
-      e.preventDefault();
-      reset();
+  // document.addEventListener('keydown', (e) => {
+  //   if (input.value.length === 5) {
+  //     e.preventDefault();
+  //     reset();
+  //   }
+  // });
+
+document.addEventListener('keydown', (e) => {
+  if (input.value.length === 5) {
+    e.preventDefault(); // 全部阻止原生输入，杜绝重复
+    const isDigit = /^\d$/.test(e.key);
+    reset();
+    if (isDigit) {
+      input.value = e.key;
+      input.dispatchEvent(new Event('input'));
     }
-  });
+  }
+});
 
   document.addEventListener('click', (e) => {
     if (e.target !== input && input.value.length === 5) {

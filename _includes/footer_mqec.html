@@ -1,7 +1,7 @@
 <style>
-@media (min-width: 730px) {
-footer {position: relative;top: 300px;z-index: -1001;}
-footer img {position: absolute;bottom: 50px;display: block;margin: 0 auto;}
+@media (min-width:730px){
+footer{position:relative;top:300px;z-index:-1001;}
+footer img{position:absolute;bottom:50px;display:block;margin:0 auto;}
 .sidebar_fz6m{position:fixed;bottom:0;z-index:999;line-height:0;cursor:pointer;}
 #footer_me_e:hover{-webkit-transform:translate(0,0);transform:translate(0,0);-ms-transform:translate(0,0)}
 #footer_me_e{right:0;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-transform:translate(0,45px);transform:translate(0,45px);-ms-transform:translate(0,45px)}
@@ -51,7 +51,11 @@ footer{display:none;}
 <script>
 
 {% if page.footer_mb == "百变猫球" %}
-let baibian猫球=["INFJ","VA11","蝙蝠睡衣","陈风暴烈酒","调酒师","反恐精英"];
+let baibian猫球=["INFJ","VA11","蝙蝠睡衣","陈风暴烈酒","调酒师","反恐精英","歌手",
+    "灰太狼","火影忍者","开拓者","奎格迈尔","路飞","马里奥","迈克尔杰克逊","米老鼠",
+    "木乃伊","虐杀原形","圣诞老人","双人成行","孙悟空","我的世界","小飞侠","校服","锈湖",
+    "以撒的结合","勇者","元气骑士","元气骑士牧师","植物大战僵尸",
+];
 for(let i=baibian猫球.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[baibian猫球[i],baibian猫球[j]]=[baibian猫球[j],baibian猫球[i]]};
 function 百变猫球(){
 let 临时=baibian猫球.shift();
@@ -110,13 +114,13 @@ footer_b=footer_b%footer_a.length;
 footer_b=footer_a[footer_b];
 footer_b="/img/i/footer/"+footer_b;
 
-document.getElementById("footer_me_m").innerHTML = "<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
-document.getElementById("footer_me_e").innerHTML = "<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
-document.getElementById("footer_dy").innerHTML = "<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
+document.getElementById("footer_me_m").innerHTML="<img width=\"150px\" src=\""+footer_b+"1.png\" alt=\"分享\" onclick=\"dw(dwb=分享_fo_m)\" onmouseover=\"this.src='"+footer_b+"2.png'\" onmouseout=\"this.src='"+footer_b+"1.png'\">";
+document.getElementById("footer_me_e").innerHTML="<img width=\"150px\" src=\""+footer_b+"3.png\" alt=\"回到顶部\" onmouseover=\"this.src='"+footer_b+"4.png'\" onmouseout=\"this.src='"+footer_b+"3.png'\">";
+document.getElementById("footer_dy").innerHTML="<a onclick=\"dw(dwb=分享_fo_m)\"><img class=\"footer_me_m\" width=\"150px\" src=\""+footer_b+"2.png\" alt=\"分享\"></a><a href=\"#top\"><img class=\"footer_me_e\" width=\"150px\" src=\""+footer_b+"4.png\" alt=\"回到顶部\"></a>";
 
 let 分享_fo_m=window.location.href;
-分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g, "李猫球");
-分享_fo_m=分享_fo_m.replace(/http:\/\//g, "https://");
+分享_fo_m=分享_fo_m.replace(/xn--7qvz7xssa/g,"李猫球");
+分享_fo_m=分享_fo_m.replace(/http:\/\//g,"https://");
 分享_fo_m=decodeURI(分享_fo_m);
 
 if(分享_fo_m=="{{ site.mq_url }}/{{ page.permalink }}"){
