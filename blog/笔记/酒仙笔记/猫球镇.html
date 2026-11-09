@@ -2,14 +2,13 @@
 layout: page2
 title: 猫球镇
 nav_text: 猫球镇
-nav_url: 当前位置：猫草国 / 薄荷汽水岛 / 猫球镇
 permalink: maocaoguo/boheqishuidao/maoqiuzhen
 ---
 <link rel="stylesheet" href="/css/all2.css">
 
 <style>
 body{background:#222;color:#fff}
-#mapWrap{display:grid;grid-template-columns:repeat(10,100px);}
+#mapWrap{display:grid;grid-template-columns:repeat(9,100px);}
 #mapWrap div{
   box-sizing:border-box;
   width:100px;height:100px;
@@ -20,13 +19,21 @@ body{background:#222;color:#fff}
 #mapWrap .a{background:#3474bb;border:2px solid #88b8ff;color:#fff}
 #mapWrap .a:hover{background:#4888dd}
 #mapWrap .b{background:#555;cursor:default}
+
+#nav{display:none;}
+.biaotib{color:#ffffff;}
 </style>
 
 <div id="mapWrap"></div>
 
 <script>
   let data=[
-    0,0,0,0,0,"猫球仓买","猫球11111仓买",
+    0,0,"测试",0,0,"猫球仓买","猫球11111仓买",
+    0,0,0,0,"测试","猫球仓买","猫球11111仓买",
+    0,0,"测试",0,0,"猫球仓买","猫球11111仓买",
+    0,0,0,0,"测试","猫球仓买","猫球11111仓买",
+    0,0,"测试",0,0,"猫球仓买","猫球11111仓买",
+    0,0,0,0,"测试","猫球仓买","猫球11111仓买",
   ]
   let shuju={
     "猫球仓买":"／/cangmai",
