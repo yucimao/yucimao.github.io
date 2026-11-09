@@ -1,0 +1,53 @@
+---
+layout: page2
+title: 猫球镇
+nav_text: 猫球镇
+nav_url: 当前位置：猫草国 / 薄荷汽水岛 / 猫球镇
+permalink: maocaoguo/boheqishuidao/maoqiuzhen
+---
+<link rel="stylesheet" href="/css/all2.css">
+
+<style>
+body{background:#222;color:#fff}
+#mapWrap{display:grid;grid-template-columns:repeat(10,100px);}
+#mapWrap div{
+  box-sizing:border-box;
+  width:100px;height:100px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;cursor:pointer;
+  padding:5px
+}
+#mapWrap .a{background:#3474bb;border:2px solid #88b8ff;color:#fff}
+#mapWrap .a:hover{background:#4888dd}
+#mapWrap .b{background:#555;cursor:default}
+</style>
+
+<div id="mapWrap"></div>
+
+<script>
+  let data=[
+    0,0,0,0,0,"猫球仓买","猫球11111仓买",
+  ]
+  let shuju={
+    "猫球仓买":"／/cangmai",
+  }
+  let dy="";
+  for(let i=0;data.length>i;i++){
+    if(data[i]==0){
+      dy+="<div class='b'></div>";
+    }else{
+      if(shuju[data[i]]){
+        if(shuju[data[i]][0]=="／"){
+          dy+="<a href='"+shuju[data[i]].split("／")[1]+"'><div class='a'>"+data[i]+"</div></a>";
+        }else{
+          dy+=`<a onclick="dw(dwb='${shuju[data[i]]}',dwd='${data[i]}')"><div class='a'>${data[i]}</div></a>`;
+        }
+      }else{
+        dy+="<div class='a' onclick='"+data[i]+"()'>"+data[i]+"</div>";
+      }
+    }
+  }
+  document.getElementById("mapWrap").innerHTML=dy;
+</script>
+
+
