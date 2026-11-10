@@ -134,11 +134,12 @@ span[onmouseover^="tip("]{border-bottom:1.5px dashed #aaa}
 <div id="酒单"></div>
 
 <script>
-let 今日=((d=new Date())=>d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate())(),时=new Date().getHours(),醉酒=0,打招呼次数=0,dy="",跳转="",stopTyping=false,速度,已有酒单=[],图src=(location.href.includes("yucimao.github")?"../../..":"")+"/i/2264624/",br="{<br class='del'>}";
+let 今日=((d=new Date())=>d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate())(),时=new Date().getHours(),醉酒=0,打招呼次数=0,dy="",跳转="",stopTyping=false,速度,已有酒单=[],图src="/i/2264624/",br="{<br class='del'>}";
 
 let 测试=(window.location.href.split("?ceshi=")[1])||null;
 if(测试){
-    document.getElementById("测试").innerHTML=`<div class='biaotib' style='background-image:url("../../../i/2264624/a/b.png");'></div>`;
+    图src="../../.."+图src;
+    document.getElementById("测试").innerHTML=`<div class='biaotib' style='background-image:url("${图src}a/b.png");'></div>`;
     if(测试!="0"){今日=测试}
 }
 
@@ -198,13 +199,12 @@ let 通用={
     "ok":按钮('开篇','对话'),
     "开场白":"欢迎来到“猫球仓买”。",
 
-    "我想":按钮('我想0','我想变<b>清醒</b>')+br+按钮('我想1','我想参观<b>酿酒材料仓库</b>')+br+按钮('我想5','我想玩<b>游戏</b>')+br+按钮('我想2','我想听<b>音乐</b>')+br+按钮('我想3','我想了解猫球仓买的<b>历史</b>')+br+按钮('我想4','我想看看<b>店规</b>')+br+按钮('ok','算了'),
+    "我想":按钮('我想0','我想变<b>清醒</b>')+br+按钮('我想1','我想<b>出去转转</b>')+br+按钮('我想2','我想听<b>音乐</b>')+br+按钮('我想3','我想了解猫球仓买的<b>历史</b>')+br+按钮('我想4','我想看看<b>店规</b>')+br+按钮('ok','算了'),
     "我想0":"我会对你施展某种魔法，让你完全清醒。{<br>}......      {j:=,0}{<br><br>}成功了！{<br><br>}"+按钮('ok','好了'),
-    "我想1":`通常是不开放参观的……好吧，不过只许看，不许碰哦。{<br>}跟我来吧。{（<a href="/jiujiao/cangku" target="_blank">点击此处打开</a>）<br><br>}`+按钮('我想','知道了'),
+    "我想1":`好的，期待下次再会。{（<a href="/maocaoguo/boheqishuidao/maoqiuxiaozhen" target="_blank">点击此处回到猫球小镇</a>）<br><br>}`+按钮('我想','算了'),
     "我想2":`我找找……歌单……猫球仓买……找到了。{<br>（<a href="https://music.163.com/#/playlist?id=17857498024" target="_blank">点击此处打开</a>）<br><br>}`+按钮('我想','好的'),
     "我想3":`给你，这是“猫球仓买”的更新日志：{（<a onclick="dw(dwb='19300033',dwd='更新日志')">点击此处查看</a>）<br><br>}`+按钮('我想','好的'),
     "我想4":`我希望猫球仓买可以让人放松。虽然的确有一份店规，不过那只是偶尔随便写的，并不需要真的严格遵守。{（<a onclick="dw(dwb='19300151',dwd='店规')">点击此处查看</a>）<br><br>}`+按钮('我想','好的'),
-    "我想5":`终于有人陪我玩了，嘿嘿。{（<a href="/app/yxt/0.html" target="_blank">点击此处打开</a>）<br><br>}`+按钮('我想','好的'),
 
     "问题":按钮('问题1','怎么点单？')+br+按钮('问题2','你是谁？')+br+按钮('问题3','这是哪里？')+br+按钮('ok','没事了'),
     "问题1":`下面有“酒单”，看看有没有感兴趣的，点击即可。{<br><br>}`+按钮('问题1-1','我要怎么付款？')+br+按钮('问题','知道了'),
