@@ -7,35 +7,58 @@ permalink: maocaoguo/boheqishuidao/maoqiuxiaozhen
 <link rel="stylesheet" href="/css/all2.css">
 
 <style>
-body{background:#121212;color:#c4c4c4}
+body{
+  background:#121212;color:#c4c4c4;
+  /* cursor:none; */
+}
 a{color:#f6f6f6}
 #mapWrap{display:grid;grid-template-columns:repeat(6,100px);}
 #mapWrap div{
   box-sizing:border-box;
   width:100px;height:100px;
   display:flex;align-items:center;justify-content:center;
-  font-size:18px;cursor:pointer;
+  font-size:18px;
   padding:5px;
-  line-height:26px
+  line-height:26px;
+  cursor:default;
 }
-#mapWrap .a{background:#333;cursor:default}
-#mapWrap .b{background:#333;cursor:default;border:1px solid #676767}
-#mapWrap .b2{color:#fff;background:#333;cursor:default;border:1px solid #676767}
+#mapWrap .a{background:#333;}
+#mapWrap .b{background:#333;border:1px solid #676767}
+#mapWrap .b2{color:#fff;background:#333;border:1px solid #676767}
 #mapWrap .b2:hover{background:#585858}
 #mapWrap .c{background:#35c554;border:1px solid #88fff7;color:#fff}
 #mapWrap .c:hover{background:#48dd7c}
 #mapWrap .d{background:#3474bb;border:1px solid #88fff7;color:#fff}
 #mapWrap .d:hover{background:#4888dd}
+#mapWrap .e{background:#00000000;}
 
-.ft{width:300px;height:300px;}
+.ft{width:300px;height:300px}
 
 #弹窗{position:fixed;left:0px;top:0px;background:#00000070;width:100%;height:100%;z-index:1001}
 .弹窗_0{width:100%;height:100%;position:absolute}
 .弹窗_1{position:relative;background:#121212;top:0px;width:60%;height:68%;margin:4% auto;padding:14px 50px 40px;font-size:1.15em;line-height:33px;border:2px solid #c4c4c4;word-wrap:break-word;overflow:auto;overscroll-behavior:contain}
 .提示{border:none}
+[name]{scroll-margin-top:100px}
+b.标题{font-size:1.6em}
+
+#鼠标{
+  position:fixed;
+  pointer-events:none;
+  z-index:9999;
+  width:64px;
+  height:64px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  transform:translate(-45%,-15%);
+  transform:translate(-48%,-95%);
+}
+#鼠标.flip{
+  transform:translate(-45%,-15%) scaleX(-1);
+  transform:translate(-48%,-95%) scaleX(-1);
+}
 
 @media screen and (max-width:768px){
-  #mapWrap{display:grid;grid-template-columns:repeat(6,60px);}
+  #mapWrap{display:grid;grid-template-columns:repeat(6,60px)}
   #mapWrap div{
     box-sizing:border-box;
     width:60px;height:60px;
@@ -45,13 +68,15 @@ a{color:#f6f6f6}
   .弹窗_1{width:90%;height:80%;padding:10px 10px 30px;font-size:1.05em}
 }
 
-#nav{display:none;}
-.biaotib{color:#ffffff;}
+#nav{display:none !important}
+.biaotib{color:#ffffff}
 </style>
 
 <small>当前位置：猫草国 - 薄荷汽水岛 - 猫球小镇</small><br>
 
 <div id="mapWrap"></div>
+
+<div id="鼠标"></div>
 
 <div id="弹窗" style="display:none;"><div onclick="关闭()" class="弹窗_0"></div><div class="弹窗_1"><h3 id="对话标题"></h3><div id="对话"></div></div></div>
 
@@ -60,17 +85,18 @@ a{color:#f6f6f6}
 <script>
   let 离开=`<a onclick='关闭()'> - 离开</a>`,
   逛="x",arr,
-  图src="/i/2264624/z/";
+  图src="/i/2264624/z/",
+  空=Array(6*6).fill(1);
   let 测试=(window.location.href.split("?ceshi=")[1])||null;
   if(测试){
     图src="../../.."+图src;
   }
 
   let data=[//6
-    "酿酒材料仓库","<b>猫球仓买</b>",0,"<b>游戏厅</b>","商场","便利店",
+    "酿酒材料仓库","<b>猫球仓买</b>",0,"<b>游戏厅</b>","／<a name='离开_商场'></a>商场／商场","便利店",
     0,0,0,0,0,0,
-    "<b>动物园</b>",0,"广场","猫球雕像",0,0,
-    "山",0,"／13路／墓园",0,0,0,
+    "<b>动物园</b>",0,"广场","猫球雕像",0,"KTV",
+    "山",0,"／13路<br>公交车／墓园",0,0,"饭店",
     "树林",0,0,0,0,0,
     0,0,0,0,0,0,
     "后院","<b>幻想庄园</b>",0,0,0,0,
@@ -80,9 +106,29 @@ a{color:#f6f6f6}
     0,0,0,0,0,0,
     0,0,0,0,0,0,
     0,0,0,0,0,0,
+    0,0,0,0,"医院",0,
     0,0,0,0,0,0,
     0,0,0,0,0,0,
-    0,0,0,0,0,"墓园",
+    0,0,0,0,0,0,
+    0,0,"／3路／动物园",0,0,0,
+    0,0,"猫球二扯的家",0,0,"山_2",
+    0,0,"便利店_2",0,0,"墓园",
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    ...空,
+    "／hr／<a name='商场'></a><b class='标题'>商场</b>",1,1,1,1,1,
+    1,1,"／离开／离开_商场",1,1,1,
+    1,"汉堡店",0,"咖啡厅",1,1,
+    1,"服装店",0,0,"卫生间",1,
+    1,"装修中",0,"披萨店",1,1,
+    1,"面包店",0,"奢侈品店",1,1,
+    1,"服务中心",0,"金店",1,1,
+    "扭蛋机",0,0,0,"潮玩店",1,
+    "抓娃娃机",0,"喷泉",0,"侧街",1,
+    "电梯",0,0,0,"奶茶店",1,1,
+    "日用品店","杂货店","运动品店",1,1,
+    ...空,
   ];
   let 提示={
 
@@ -96,6 +142,7 @@ a{color:#f6f6f6}
 
     "动物园_":[//新在前
     "熊","河豚","黄鼠狼","河马","花枝鼠","鹦鹉","海鸥","狗","猫","狐狸","大熊猫","松鼠","变色龙",],
+    "动物园_2":["外星人"],
     "动物园":()=>{
       let 临时;
       if(逛=="x"){
@@ -105,7 +152,9 @@ a{color:#f6f6f6}
         逛=0;
         临时=`你又看到了<b>${数据["动物园_"][0]}</b>，你已经把动物园逛完了。<br><img class="ft" src="${图src}动物园/${数据["动物园_"][0]}.png"><br><br><a onclick="弹窗('动物园')"> - 再逛一遍</a><br>${离开}`;
       }else{
-        临时=`你看到了<b>${数据["动物园_"][逛]}</b>。<br><img class="ft" src="${图src}动物园/${数据["动物园_"][逛]}.png"><br><br><a onclick="弹窗('动物园')"> - 继续逛</a><br>${离开}`;
+        临时=Math.floor(Math.random()*(数据["动物园_"].length*5));
+        if(临时==0){临时=数据["动物园_2"][Math.floor(Math.random()*数据["动物园_2"].length)];逛-=1}else{临时=数据["动物园_"][逛]}
+        临时=`你看到了<b>${临时}</b>。<br><img class="ft" src="${图src}动物园/${临时}.png"><br><br><a onclick="弹窗('动物园')"> - 继续逛</a><br>${离开}`;
       }
       逛+=1;
       return 临时;
@@ -176,10 +225,15 @@ a{color:#f6f6f6}
     if(提示[a]){临时=[" 提示"," data-msg='"+提示[a]+"'"]}
     if(a=="0"){//街道
       dy+="<div class='a'></div>";
-    }else if(a[0]=="／"){//公交车
-      临时=a.split("／");
-      dy+=`<div class='b2 提示' data-msg='前往：${临时[2]}' onclick="window.location.href='#${临时[2]}'">${临时[1]}<br>公交车</div>`;
-
+    }else if(a=="1"){//纯空
+      dy+="<div class='e'></div>";
+    }else if(a[0]=="／"){
+      临时=[a.split("／"),data[i].split("／")];
+      if(临时[0][1]=="hr"){//标题
+        dy+="<div class='e'>"+临时[1][2]+"</div>";
+      }else{//公交车
+        dy+=`<div class='b2 提示' data-msg='前往：${临时[0][2].split("_")[0]}' onclick="document.querySelector('[name=${临时[0][2]}]')?.scrollIntoView({behavior:'smooth',block:'start'});">${临时[1][1]}</div>`;
+      }
     }else if(!数据[a]){//无数据
       dy+="<div class='b "+临时[0]+"'"+临时[1]+">"+"<a name='"+a+"'></a>"+b+"</div>";
     }else if(typeof 数据[a]=="function"){//本页触发
@@ -203,7 +257,52 @@ a{color:#f6f6f6}
     逛="x";
   }
 
+const 鼠标=document.getElementById('鼠标');
+let isAnimating=false;
+let frameToggle=false;
+let animTimer=null;
+let idleTimer=null;
+const FRAME_DELAY=220;//动画
+const IDLE_DELAY=400;//静止
+let lastX=0;
 
+function setStatic(){
+  鼠标.style.backgroundImage=`url(${图src}鼠标1.png)`;
+}
+function toggleFrame(){
+  鼠标.style.backgroundImage=frameToggle 
+    ? `url(${图src}鼠标2.png)` 
+    :`url(${图src}鼠标3.png)`;
+  frameToggle=!frameToggle;
+}
+
+document.addEventListener('mousemove',(e)=>{
+  鼠标.style.left=e.clientX+'px';
+  鼠标.style.top=e.clientY+'px';
+
+  if(e.clientX>lastX){
+    鼠标.classList.add('flip');
+  }else if(e.clientX<lastX){
+    鼠标.classList.remove('flip');
+  }
+  lastX=e.clientX;
+
+  clearTimeout(idleTimer);
+  if(!isAnimating){
+    isAnimating=true;
+    toggleFrame();
+    animTimer=setInterval(toggleFrame,FRAME_DELAY);
+  }
+
+  idleTimer=setTimeout(()=>{
+    isAnimating=false;
+    clearInterval(animTimer);
+    animTimer=null;
+    setStatic();
+  }, IDLE_DELAY);
+});
+
+setStatic();
 </script>
 
 
