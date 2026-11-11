@@ -2,7 +2,7 @@
 layout: page2
 title: 猫球小镇
 nav_text: 猫球小镇
-permalink: maocaoguo/boheqishuidao/maoqiuxiaozhen
+permalink: maoqiuxiaozhen
 ---
 <link rel="stylesheet" href="/css/all2.css">
 
@@ -32,7 +32,8 @@ a{color:#f6f6f6}
 #mapWrap .d:hover{background:#4888dd}
 #mapWrap .e{background:#00000000;}
 
-.ft{width:300px;height:300px}
+img.ft{width:300px;height:300px}
+a.ft{border:2px solid #bdbdbd;padding:4px}
 
 #弹窗{position:fixed;left:0px;top:0px;background:#00000070;width:100%;height:100%;z-index:1001}
 .弹窗_0{width:100%;height:100%;position:absolute}
@@ -93,10 +94,10 @@ b.标题{font-size:1.6em}
   }
 
   let data=[//6
-    "酿酒材料仓库","<b>猫球仓买</b>",0,"<b>游戏厅</b>","／<a name='离开_商场'></a>商场／商场","便利店",
+    "酿酒材料仓库","<b>猫球仓买</b>",0,"<b>游戏厅</b>","／<a name='离开_商场'></a>商场／商场","二扯<br>奶茶店",
     0,0,0,0,0,0,
     "<b>动物园</b>",0,"广场","猫球雕像",0,"KTV",
-    "山",0,"／13路<br>公交车／墓园",0,0,"饭店",
+    "山",0,"／13路<br>公交车／墓园",0,0,"猫球厨房<br>（饭店）",
     "树林",0,0,0,0,0,
     0,0,0,0,0,0,
     "后院","<b>幻想庄园</b>",0,0,0,0,
@@ -105,14 +106,15 @@ b.标题{font-size:1.6em}
     0,0,0,0,0,0,
     0,0,0,0,0,0,
     0,0,0,0,0,0,
-    0,0,0,0,0,0,
+    "花店",0,0,0,"居民楼",0,
     0,0,0,0,"医院",0,
-    0,0,0,0,0,0,
-    0,0,0,0,0,0,
-    0,0,0,0,0,0,
-    0,0,"／3路／动物园",0,0,0,
+    "银行",0,0,0,0,0,
+    "超市",0,0,0,0,0,
+    "理发店",0,0,0,0,0,
+    "网吧",0,0,0,0,0,
+    0,0,"／3路／动物园",0,0,"墓园",
     0,0,"猫球二扯的家",0,0,"山_2",
-    0,0,"便利店_2",0,0,"墓园",
+    0,0,"便利店",0,0,0,
     0,0,0,0,0,0,
     0,0,0,0,0,0,
     0,0,0,0,0,0,
@@ -133,12 +135,19 @@ b.标题{font-size:1.6em}
   let 提示={
 
   }
+
+  let 预设={
+
+  }
+
   let 数据={
     1:"暂无",
     "猫球仓买":"/cangmai",
     "游戏厅":"/app/yxt/0.html",
     "猫球的秘密仓库":"/jnp",
     "酿酒材料仓库":"/jiujiao/cangku",
+    "二扯奶茶店":"/biji/erchenaichadian",
+    "猫球厨房（饭店）":"/biji/chufang",
 
     "动物园_":[//新在前
     "熊","河豚","黄鼠狼","河马","花枝鼠","鹦鹉","海鸥","狗","猫","狐狸","大熊猫","松鼠","变色龙",],
@@ -157,6 +166,41 @@ b.标题{font-size:1.6em}
         临时=`你看到了<b>${临时}</b>。<br><img class="ft" src="${图src}动物园/${临时}.png"><br><br><a onclick="弹窗('动物园')"> - 继续逛</a><br>${离开}`;
       }
       逛+=1;
+      return 临时;
+    },
+
+    "墓园_":[,
+      ["3-0","奥尔什方","「奥尔什方<br>灰石<br><br>待到重逢之时<br>我的挚友」","献花"],
+      ["3-6","章鱼哥","「这里长眠着<br>章鱼哥的<br>希望<br>与<br>梦想」","献花"],
+      ["7-23","多比","「这里长眠着<br>多比<br>一个<br>自由的小精灵」","送上袜子"],
+      ["8-10","绿箭侠","「奥利弗.奎恩<br>1985-2019<br>亲爱的儿子，兄弟，<br>丈夫和父亲，<br>星城的英雄，<br>绿箭侠。」","合影"],
+      ["25","萩原研二","「萩原家之墓」","献花"],
+      ["32-50","老六","墓碑雕刻出“6”的手势。","献花"],
+      ["590","艾斯和白胡子","「波特卡斯-D-艾斯」<br>「爱德华-纽盖特」","敬酒"],
+      /*
+
+      */
+    ],
+
+    "墓园":()=>{
+      let 临时;
+      if(逛=="x"){
+        临时=`一座静谧的墓园。<br><br>${离开}<br><br>查看墓碑：<br>`;
+        for(let i=1;数据["墓园_"].length>i;i++){
+          临时+=`<a class='ft' onclick="逛=${i};弹窗('墓园')">${数据["墓园_"][i][0]}</a>　`;
+        }
+      }else if(逛>=0){
+        document.getElementById("对话标题").innerHTML=数据["墓园_"][逛][0];
+        临时="";
+        if(数据["墓园_"][逛][3]){
+          临时=`<a onclick="逛=-${逛};弹窗('墓园')"> - ${数据["墓园_"][逛][3]}</a><br>`;
+        }
+        临时=`<img src="${图src}墓园/${数据["墓园_"][逛][1]}.png" class="ft"><br>${数据["墓园_"][逛][2]}<br><br>${临时}<a onclick="逛='x';弹窗('墓园')"> - 回到门口</a><br>${离开}`;
+      }else{
+        逛=逛*-1;
+        document.getElementById("对话标题").innerHTML=数据["墓园_"][逛][0];
+        临时=`<div style='position:relative;height:300px'><img src="${图src}墓园/${数据["墓园_"][逛][1]}.png" class="ft" style='position:absolute;top:0;z-index:1'><img src="${图src}墓园/${数据["墓园_"][逛][1]}_.png" class="ft" style='position:absolute;top:0;z-index:2'></div><br><a onclick="逛='x';弹窗('墓园')"> - 回到门口</a><br>${离开}`;
+      }
       return 临时;
     },
 
@@ -181,7 +225,6 @@ b.标题{font-size:1.6em}
         ["刚田武","主唱。强壮的淘气小男孩。"],
         ["一之濑琴美","小提琴。喜欢读书的天才少女。"],
       ]
-
     ],
     "幻想庄园":()=>{
       let 临时;
@@ -245,14 +288,14 @@ b.标题{font-size:1.6em}
   document.getElementById("mapWrap").innerHTML=dy;
 
   function 弹窗(o){
-      document.getElementById("对话标题").scrollIntoView();
+      document.querySelector(".弹窗_1").scrollTop=0;
       document.getElementById("弹窗").style="";
       document.getElementById("对话标题").innerHTML=o;
       document.getElementById("对话").innerHTML=数据[o]();
   }
 
   function 关闭(){
-    document.getElementById("对话标题").scrollIntoView();
+    // document.getElementById("对话标题").scrollIntoView();
     document.getElementById("弹窗").style="display:none;";
     逛="x";
   }
