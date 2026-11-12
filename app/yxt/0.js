@@ -1,7 +1,7 @@
 let 页面=document.getElementById("游戏厅").innerHTML.split("／");
 let 页面dy="<h1 style='display:inline;'>"+页面[0]+"</h1>";
 
-if(页面[0]=="猫球游戏厅"){页面dy+=" <a href='/cangmai'>猫球仓买</a>"}
+if(页面[0]=="猫球游戏厅"){页面dy+=" <a href='/maoqiuxiaozhen'>猫球小镇</a>"}
 else if(页面[1]){页面dy+=" <a href='"+页面[2]+".html'>"+页面[1]+"</a>"}
 else{页面dy+=" <a href='0.html'>返回游戏厅</a>"}
 
@@ -28,7 +28,7 @@ function 余额(o){
     钱=localStorage.getItem("猫球游戏厅")*1;
     if(o){if(钱+o<=0){钱=0;}else{钱=钱+o*1;}}
     localStorage.setItem("猫球游戏厅",钱);
-    页面dy="余额："+(钱+"").split(".")[0]+"币";
+    页面dy="余额："+(钱+"").split(".")[0]+"ѣ";
     if(钱>钱_页面变化){
         页面dy+=" <small class='dui ycql' style='color:#00ff00'>+"+(钱-钱_页面变化)+"</small>";
     }else if(钱<钱_页面变化){

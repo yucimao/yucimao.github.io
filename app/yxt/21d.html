@@ -8,7 +8,7 @@
 <div id="桌1">
     <span id="桌1b">
         开始游戏，请下注：</span><br>
-    <a onclick="开始(1)">1币</a>、<a onclick="开始(10)">10币</a>、<a onclick="开始(50)">50币</a>、<a onclick="开始(100)">100币</a>、<a onclick="开始(1000)">1000币</a><br>
+    <a onclick="开始(1)">1ѣ</a>、<a onclick="开始(10)">10ѣ</a>、<a onclick="开始(50)">50ѣ</a>、<a onclick="开始(100)">100ѣ</a>、<a onclick="开始(1000)">1000ѣ</a><br>
     <input type="text" placeholder="输入赌注" autocomplete="off" id="输入赌注"> <a onclick="开始(0)">确定</a>
 </div>
 <div id="桌2" style="display:none;">
@@ -109,7 +109,7 @@
                 }
                 if(玩家牌型.length>4){倍数+=1;额外+=" 过五关";if(玩家牌型.length>5){倍数+=1;额外+=" 斩六将";}}
                 
-                回合+="<b class='dui'>你赢了</b>，获得"+倍数+"倍赌注（"+(赌注*倍数)+"币）。";
+                回合+="<b class='dui'>你赢了</b>，获得"+倍数+"倍赌注（"+(赌注*倍数)+"ѣ）。";
                 if(额外!=""){回合+="<br>（<small>触发牌型：</small>"+额外+"）"}
                 余额(赌注*倍数);
             }

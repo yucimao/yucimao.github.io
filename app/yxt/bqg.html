@@ -1,0 +1,147 @@
+<div id="游戏厅">柏青哥</div><script src="0.js"></script>
+<small>
+    点击发射钢珠，每颗消耗10ѣ，落到底部获得对应数量的ѣ。
+</small><br><br>
+
+<style>#canvas{border:3px solid #888;background:#111;border-radius:8px}</style>
+<canvas id="canvas" width="390" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const W = canvas.width;
+const H = canvas.height;
+
+const gravity = 0.25;
+const bounce = 0.75;
+const friction = 0.995;
+
+let balls = [];
+let pegs = [];
+let buckets = [];
+
+function initPegs(){
+  pegs = [];
+  const rows = 12;
+  for(let r=1;r<=rows;r++){
+    const y = r * 45;
+    const count = r % 2 ? 7 : 6;
+    const offset = r % 2 ? 0 : 30;
+    for(let i=0;i<count;i++){
+      const x = 40 + offset + i * 50;
+      pegs.push({x,y,r:5});
+    }
+  }
+  buckets = [
+    {x:20,w:60,score:5},
+    {x:100,w:60,score:20},
+    {x:180,w:60,score:10},
+    {x:260,w:60,score:30},
+    {x:340,w:60,score:5},
+  ]
+}
+
+class Ball{
+  constructor(x,y){
+    this.x = x;
+    this.y = y;
+    this.r = 7;
+    this.vx = (Math.random()-0.5)*3;
+    this.vy = 0;
+    this.active = true;
+  }
+  update(){
+    if(!this.active) return;
+    this.vy += gravity;
+    this.vx *= friction;
+    this.vy *= friction;
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if(this.x - this.r < 0){
+      this.x = this.r;
+      this.vx *= -bounce;
+    }
+    if(this.x + this.r > W){
+      this.x = W - this.r;
+      this.vx *= -bounce;
+    }
+
+    for(let p of pegs){
+      const dx = this.x - p.x;
+      const dy = this.y - p.y;
+      const dist = Math.hypot(dx,dy);
+      const minDist = this.r + p.r;
+      if(dist < minDist){
+        const nx = dx/dist;
+        const ny = dy/dist;
+        this.x = p.x + nx * minDist;
+        this.y = p.y + ny * minDist;
+        const dot = this.vx*nx + this.vy*ny;
+        this.vx = (this.vx - 2*dot*nx)*bounce;
+        this.vy = (this.vy - 2*dot*ny)*bounce;
+      }
+    }
+
+    if(this.y + this.r > H - 20){
+      for(let b of buckets){
+        if(this.x > b.x && this.x < b.x + b.w){
+          余额(b.score)
+          break;
+        }
+      }
+      this.active = false;
+    }
+  }
+  draw(){
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+    ctx.fillStyle='#ffd700';
+    ctx.fill();
+    ctx.strokeStyle='#fff';
+    ctx.stroke();
+  }
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#aaa';
+  for(let p of pegs){
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+  }
+  for(let b of buckets){
+    ctx.fillStyle='#336699';
+    ctx.fillRect(b.x,H-20,b.w,20);
+    ctx.fillStyle='#fff';
+    ctx.font="12px sans-serif";
+    ctx.fillText(b.score, b.x+15, H-5);
+  }
+  for(let b of balls){
+    if(b.active) b.draw();
+  }
+}
+
+function loop(){
+  for(let b of balls){
+    if(b.active) b.update();
+  }
+  draw();
+  requestAnimationFrame(loop);
+}
+
+canvas.onclick = e=>{
+  if(钱 > 10){
+    余额(-10)
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    balls.push(new Ball(mx, 10));
+  }else{
+    notyf.alert("余额不足");
+  }
+}
+
+initPegs();
+loop();
+</script>
