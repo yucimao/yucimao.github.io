@@ -39,7 +39,11 @@ a{color:#f6f6f6}
   border-bottom:10px solid #333;
   border-right:10px solid #676767;
 }
+#mapWrap div:has(.小,.空){border:none}
+#mapWrap div .小{width:60px;height:60px;border:1px solid #676767}
+#mapWrap div .空{font-size:3em}
 
+img.ft,img.tf{margin:4px auto;background-color:#ffffff}
 img.ft{height:300px}
 img.tf{width:300px}
 a.ft{border:2px solid #bdbdbd;padding:4px}
@@ -69,6 +73,41 @@ b.标题{font-size:1.6em}
 .biaotib{color:#ffffff}
 @keyframes 轮换{0%,49%{opacity:1}50%,100%{opacity:0}}
 
+#说框{
+  position:absolute;
+  max-width:240px;
+  background:#fff;
+  color:#222;
+  padding:8px 14px;
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.4;
+  box-shadow:0 4px 14px #00000026;
+  z-index:1004;
+  pointer-events:none;
+  white-space:normal;
+  word-break:break-all;
+  opacity:0;
+  transform:translate(-50%,10px);
+}
+
+#说框::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-8px;
+  transform:translateX(-50%);
+  border:8px solid transparent;
+  border-top-color:#fff;
+  border-bottom:0;
+}
+.说{animation: 说2 4s ease-in-out infinite;}
+@keyframes 说1{
+  0%,2%{opacity:0;transform:translate(-50%,10px)}26%{opacity:1;transform:translate(-50%,0)}
+  80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,0)}
+}
+@keyframes 说2{0%,12%,24%,100%{transform:scale(1,1)}6%,18%{transform: scale(0.85, 1.15)}}
+
 @media screen and (max-width:768px){
   #mapWrap{display:grid;grid-template-columns:repeat(6,60px)}
   #mapWrap div{
@@ -77,14 +116,19 @@ b.标题{font-size:1.6em}
     font-size:12px;
     line-height:20px
   }
+  #mapWrap div .小{width:36px;height:36px;border:1px solid #676767}
+  #mapWrap div .横{width:60px;height:36px;border:1px solid #676767}
+  #mapWrap div .竖{width:36px;height:60px;border:1px solid #676767}
   .弹窗_1{width:90%;height:80%;padding:10px 10px 30px;font-size:1.05em}
 }
 </style>
 
+
+
 <small id="当前位置"></small><br>
 <a name="top"></a><div id="mapWrap"></div>
 <div id="鼠标"></div>
-<div id="弹窗" style="display:none;"><div onclick="关闭()" class="弹窗_0"></div><div class="弹窗_1"><h3 id="对话标题"></h3><div id="对话"></div></div></div>
+<div id="弹窗" style="display:none;"><div id="说框"></div><div onclick="关闭()" class="弹窗_0"></div><div class="弹窗_1"><h3 id="对话标题"></h3><div id="对话"></div></div></div>
 
 <script>
   let 离开=`<a onclick='关闭()'> - 离开</a>`,
@@ -105,6 +149,39 @@ b.标题{font-size:1.6em}
     }
     return arr;
   }
+  function 标题(o){
+    document.getElementById("对话标题").innerHTML=o;
+  }
+
+function 说(o){
+  const popup=document.getElementById("说框");
+    clearTimeout(说.t1);
+    if(popup){popup.style.display="none"}
+  if(o==='停'){popup.textContent="";
+    return}
+
+  if(!Array.isArray(o)) return;
+
+  const targetImg=document.getElementById("说");
+  if(!targetImg) return;
+
+  popup.textContent=o[Math.floor(Math.random()*o.length)];
+  const rect=targetImg.getBoundingClientRect();
+  popup.style.left=rect.left+rect.width/2+"px";
+  popup.style.top=rect.top-52+"px";
+  popup.style.display="block";
+
+  popup.style.animation="none";
+  requestAnimationFrame(()=>{
+    popup.style.animation="说1 3s ease-out forwards";
+  });
+  说.t1=setTimeout(()=>{
+    popup.style.display="none";
+    说(o);
+  },4000);
+}
+
+
 
   let 地图={
     /*
@@ -117,6 +194,14 @@ b.标题{font-size:1.6em}
       // 蓝（打开新页面） 绿（本页） 白（不重要的东西）
       "",
       "文字／提示"
+      ["小","文字"] //小框
+
+ ┬
+├┼┤
+ ┴
+┌─┐
+│ │
+└─┘
     */
   0:[当前位置,
     ["蓝","酿酒材料仓库"],["蓝","<b>猫球仓买</b>"],0,["蓝","<b>游戏厅</b>"],["前往","<a name='商场'></a>商场","商场"],["蓝","二扯<br>奶茶店"],
@@ -125,7 +210,7 @@ b.标题{font-size:1.6em}
     ["白","山"],0,["bus","13路<br>公交车","墓园"],0,0,["蓝","猫球厨房<br>饭店"],
     "树林",0,0,0,0,0,
     "河",0,0,0,0,["前往","地铁1号线","地铁1号线","动物园站"],
-    0,0,0,0,0,["白","公共厕所"],
+    0,0,0,0,0,0,
     ["蓝","后院"],["绿","<b>幻想庄园</b>",,"幻想庄园"],0,0,0,0,
     ["白","？","传送门"],["蓝","猫球的<br>秘密仓库"],0,0,0,0,
     0,0,0,0,0,0,
@@ -157,7 +242,7 @@ b.标题{font-size:1.6em}
     0,0,0,0,0,0,
     0,0,0,0,0,["白","警局"],
     0,0,0,0,0,0,
-    0,0,0,0,0,0,
+    0,0,0,0,0,["白","公共厕所"],
     0,0,0,0,0,0,
     0,["前往","地铁1号线","地铁1号线","体育馆站"],0,0,"自动贩卖机",0,
     0,0,0,0,["绿","体育馆",,"体育馆"],["白","卢的酒馆"],
@@ -182,28 +267,67 @@ b.标题{font-size:1.6em}
 
   "六分街":["新艾利都 - 雅努斯区 - 六分街",
     1,1,"桶之贤者",0,["绿","404演播厅"],1,
-    1,1,0,0,0,["返回","地铁","0","幻想庄园"],
+    1,1,0,0,0,["前往","地铁","地铁2号线","六分街站"],
     1,1,0,"BOX<br>GALAXY／玩具店",1,1,
-    1,"141杂货店",0,1,1,1,
-    1,1,0,"汀曼咖啡",1,1,
+    1,["白","141杂货店"],0,1,1,1,
+    1,1,0,["白","汀曼咖啡"],1,1,
     1,"金手指<br>电玩店",0,0,0,0,
     0,0,0,"锦鲤面馆",1,1,
-    "BARDIC NCCDIC／音像店","报刊亭",0,0,0,0,
+    ["白","微醺缪斯<br>音像店"],["白","嗷呜<br>报刊亭"],0,0,0,0,
     1,0,0,"Random Play／录像店",1,1,
     1,0,"涡轮<br>改装店",1,1,1,
   ],
 
   "地铁1号线":["地铁1号线",
-    1,0,0,0,0,1,
-    1,["前往","<a name='动物园站'></a>动物园站","0","动物园"],1,1,0,1,
+    1,0,0,0,0,0,
+    1,["前往","<a name='动物园站'></a>动物园站","0","动物园"],1,1,1,0,
     // 1,0,1,1,1,1,
-    1,["前往","<a name='墓园站'></a>墓园站","0","墓园"],1,1,0,1,
-    1,["前往","<a name='游乐园站'></a>游乐园站","0","游乐园"],1,1,0,1,
-    1,0,1,1,0,1,
-    1,["前往","<a name='体育馆站'></a>体育馆站","0","体育馆"],1,1,0,1,
-    1,0,1,1,0,1,
-    1,0,0,0,0,1,
+    1,["前往","<a name='墓园站'></a>墓园站","0","墓园"],1,["前往","转2号线","地铁2号线"],1,0,
+    1,["前往","<a name='游乐园站'></a>游乐园站","0","游乐园"],1,1,1,0,
+    1,0,1,1,1,0,
+    1,["前往","<a name='体育馆站'></a>体育馆站","0","体育馆"],1,1,1,0,
+    1,0,1,1,1,0,
+    1,0,0,0,0,0,
     1,1,1,1,1,1,
+  ],
+  "地铁2号线":["地铁2号线",
+    1,0,0,0,0,0,
+    1,["前往","<a name='六分街站'></a>六分街站","六分街"],1,1,1,0,
+    1,0,1,["前往","转1号线","地铁1号线"],1,0,
+    1,["前往","<a name='大草原站'></a>大草原站","大草原"],1,1,1,0,
+    1,0,1,1,1,0,
+    1,0,1,1,1,0,
+    1,0,1,1,1,0,
+    1,0,0,0,0,0,
+    1,1,1,1,1,1,
+  ],
+  "大草原":["猫草国 - 大草原",
+    ["前往","托马斯<br>小火车","地铁2号线","大草原站站"],0,0,0,0,0,
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    0,0,0,["小","兔子"],0,0,
+    0,0,"宝宝屋",0,0,0,
+    0,0,0,0,["小","兔子"],0,
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    "┌","─","─","─","─","┐",
+    "│",0,0,0,"实验室","│",
+    "│","医院",0,"大肥羊<br>学校",0,"│",
+    "│",0,0,0,0,"│",
+    "└","─","─","羊村大门","─","┘",
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
+    1,1,1,"桥",1,1,
+    ["小","树"],["小","树"],["小","树"],0,["小","树"],["小","树"],
+    ["小","树"],0,0,0,["小","树"],["小","树"],
+    ["小","树"],"狼堡",0,["小","树"],0,["小","树"],
+    ["小","树"],["小","树"],["小","树"],["小","树"],0,["小","树"],
+    ["小","树"],["小","树"],["小","树"],0,0,["小","树"],
+    ["小","树"],["小","树"],0,0,0,0,
+    0,0,0,0,0,0,
+    0,0,0,0,0,0,
   ],
   }
 
@@ -218,22 +342,37 @@ let d={
   "后院":"/aibo",
   "夜路归途":"https://猫.cafe/w/13978817",
 
-  "动物园_":[//新在前
-  "鸽子","熊","河豚","黄鼠狼","河马","花枝鼠","鹦鹉","海鸥","狗","猫","狐狸","大熊猫","松鼠","变色龙"],
-  "动物园_2":["ET","空知英秋","霸王龙"],
+  "动物园_":["变色龙",//新在前 ["动物","介绍",["随机1","随机2"]]
+    ["企鹅",,["泥宠Q币马？","嘿？咕咕嘎嘎！"]],
+    ["绵羊",,["比比安慕希~"]],["老鼠",,["密斯卡，莫斯卡~"]],"鸽子","熊","河豚","黄鼠狼","河马","花枝鼠",["鹦鹉",,["会说话吗？","谁呀？","如果感到幸福你就拍拍手~","啊！","peekaboo~"]],"海鸥",["狗",,["我的刀盾"]],["猫",,["老吴——"]],["狐狸",,["大楚兴，陈胜王","叮叮叮叮叮叮叮叮"]],"大熊猫","松鼠"],
+
+  "动物园_2":[
+    "ET","空知英秋","霸王龙","卡库库"],
+
   "动物园":()=>{
-    let 临时;
+    let 临时=[];
     if(逛=="x"){
-      临时=`进入动物园，你看到了<b>${d["动物园_"][0]}</b>。<br><img class="ft" src="${图src}${d["动物园_"][0]}.png"><br><br><a onclick="弹窗('动物园')"> - 继续逛</a><br>${离开}`;
+      临时=["进入动物园，你看到了","。","继续逛",d["动物园_"][0]]
       逛=0;
     }else if(逛==d["动物园_"].length){
+      临时=["你又看到了","，你已经把动物园逛完了。","再逛一遍",d["动物园_"][0]]
       逛=0;
-      临时=`你又看到了<b>${d["动物园_"][0]}</b>，你已经把动物园逛完了。<br><img class="ft" src="${图src}${d["动物园_"][0]}.png"><br><br><a onclick="弹窗('动物园')"> - 再逛一遍</a><br>${离开}`;
     }else{
-      临时=Math.floor(Math.random()*(d["动物园_"].length*5));
-      if(临时==0){临时=d["动物园_2"][Math.floor(Math.random()*d["动物园_2"].length)];逛-=1}else{临时=d["动物园_"][逛]}
-      临时=`你看到了<b>${临时}</b>。<br><img class="ft" src="${图src}${临时}.png"><br><br><a onclick="弹窗('动物园')"> - 继续逛</a><br>${离开}`;
+      临时=["你看到了","。","继续逛",d["动物园_"][逛]]
     }
+    if(逛!=0){
+      if(Math.floor(Math.random()*(d["动物园_"].length*5))==0){临时[3]=d["动物园_2"][Math.floor(Math.random()*d["动物园_2"].length)];逛-=1}
+    }
+
+    if(typeof 临时[3]=="object"){
+      if(临时[3][1]&&临时[3][1]!=""){临时[1]+="<br>"+临时[3][1]}
+      if(临时[3][2]){
+        临时[4]=1;
+        说(临时[3][2])
+      }
+      临时[3]=临时[3][0];
+    }
+    临时=`${临时[0]}<b>${临时[3]}</b>${临时[1]}<br><img class="ft${(临时[4])?" 说":""}" id='说' src="${图src}${临时[3]}.png"><br><br><a onclick="说('停');弹窗('动物园')"> - ${临时[2]}</a><br>${离开}`;
     逛+=1;
     return 临时;
   },
@@ -259,7 +398,7 @@ let d={
         临时+=`<a class='提示下 ft${(d["墓园_"][i][5])?" tf":""}' data-msg='${d["墓园_"][i][2]}' onclick="逛=${i};弹窗('墓园')">${d["墓园_"][i][0]}</a>　`;
       }
     }else if(逛>=0){
-      document.getElementById("对话标题").innerHTML=d["墓园_"][逛][0];
+      标题(d["墓园_"][逛][0])
       d["墓园_"][逛][5]=1;
       临时="";
       if(d["墓园_"][逛][4]){
@@ -268,7 +407,7 @@ let d={
       临时=`<img src="${图src}墓/${d["墓园_"][逛][1]}.png" class="ft"><br>${d["墓园_"][逛][3]}<br><br>${临时}<a onclick="逛='x';弹窗('墓园')"> - 回到门口</a><br>${离开}`;
     }else{
       逛=逛*-1;
-      document.getElementById("对话标题").innerHTML=d["墓园_"][逛][0];
+      标题(d["墓园_"][逛][0])
       临时=`<div style='position:relative;height:300px'><img src="${图src}墓/${d["墓园_"][逛][1]}.png" class="ft" style='position:absolute;top:0;z-index:1'><img src="${图src}墓/${d["墓园_"][逛][1]}_.png" class="ft" style='position:absolute;top:0;z-index:2'></div><br><a onclick="逛='x';弹窗('墓园')"> - 回到门口</a><br>${离开}`;
     }
     return 临时;
@@ -305,12 +444,12 @@ let d={
       临时=`已经逛完了。<br><br>${离开}`;
     }else if(逛[1]==0){
       临时=d["幻想庄园_"][逛[0]][0].split("／");
-      document.getElementById("对话标题").innerHTML=临时[0];
+      标题(临时[0])
       临时=临时[1]+`<br><a onclick="弹窗('幻想庄园',逛[0]+=1,逛[1]=0)"> - 去下一个地方</a><br>`+离开;
       逛[1]=1;
     }else{
       临时=d["幻想庄园_"][逛[0]][逛[1]];
-      document.getElementById("对话标题").innerHTML=临时[0];
+      标题(临时[0])
       临时=临时[1]+`<br><img class="ft" src="${图src}${临时[0]}.png"><br><br>`;
       逛[1]+=1;
       if(逛[1]!=d["幻想庄园_"][逛[0]].length){
@@ -399,7 +538,7 @@ let d={
     ],
   ],
   "传送门_2":()=>{
-      document.getElementById("对话标题").innerHTML=d["传送门_"][逛][0].split("_")[0];
+    标题(d["传送门_"][逛][0].split("_")[0])
     if(d["传送门_"][逛][1]=="to"){
       dy地图(d["传送门_"][逛][0]);
       return d["传送门_"][逛][2]+"<br><br><a onclick='关闭()'> - 逛逛</a>";
@@ -427,9 +566,10 @@ let d={
   },
 
   "扭蛋餐厅_":[
-    "海霸棒","蛋黄酱盖饭",
+    "海霸棒","蛋黄酱盖饭","烤龙尾","可燃乌龙茶","钻石肉饼","强力牛奶","吉尔三明治","宫廷玉液酒","水煮黑背鲈鱼","仰望星空派",
     "醋昆布／据说是老爷爷腋下的味道。",
     "皮鞋牛排／似乎真的是个皮鞋，只是按照牛排的烹饪方法处理了一下，并在鞋里塞进米饭。",
+    ["比比多味豆",,"吃一颗"],
   ],
   "扭蛋餐厅":()=>{
     if(d['扭蛋餐厅_'].length==0){
@@ -437,11 +577,34 @@ let d={
     }else if(逛=="x"){
       return `这里没有菜单。交钱，随机掉落一个扭蛋，打开它，里面就是你的美餐了。<br>有时候也会开出不能吃的纪念品，至于是不可食用的纪念品还是制作成不可食用纪念品外形的食物，就需要顾客自行辨别了。<br><img src="${图src}扭蛋餐厅.png" class="ft"><br><br><a onclick="逛=0;d['扭蛋餐厅_']=随机打乱(d['扭蛋餐厅_']);弹窗('扭蛋餐厅')"> - 买一个</a><br>${离开}`;
     }else if(逛==0){
+      标题('扭蛋')
       return `<img src="${图src}开扭蛋.gif" class="ft"><br><br><a onclick="逛=1;弹窗('扭蛋餐厅')"> - 打开</a>`;
     }else if(逛==1){
-      let 临时=d['扭蛋餐厅_'].shift().split("／");
-      return `扭蛋里是<b>${临时[0]}</b>。<br>${(临时[1]?临时[1]+"<br>":"")}<img src="${图src}${临时[0]}.png" class="ft"><br><br><a onclick="逛=0;弹窗('扭蛋餐厅')"> - 再买一个</a><br>${离开}`;
+      let 临时=d['扭蛋餐厅_'].shift();
+      if(typeof 临时=="object"){
+        //["食物","说明"]
+        if(临时[1]&&临时[1]!=""){临时[1]+="<br>"}else{临时[1]=""}
+        临时[2]=`<a onclick="弹窗('${临时[0]}')"> - ${临时[2]}</a><br>`;
+      }else if(临时.indexOf("／")!=-1){
+        临时=临时.split("／");
+        临时[1]+="<br>";
+        临时[2]="";
+      }else{
+        临时=[临时,"",""];
+      }
+      标题(临时[0])
+      return `${临时[1]}<img src="${图src}${临时[0]}.png" class="ft"><br><br>${临时[2]}<a onclick="逛=0;弹窗('扭蛋餐厅')"> - 再买一个</a><br>${离开}`;
     }
+  },
+  "比比多味豆":()=>{
+    let 临时=[
+      "草莓","巧克力","香蕉","蓝莓","苹果","柠檬","樱桃","椰子","咖啡","香草",
+      "薄荷","桃子","橘子","西瓜","葡萄","棉花糖","太妃糖",
+      "耳屎","鼻屎","呕吐物","臭鸡蛋","蚯蚓","泥土","肥皂","草","黑胡椒","肉桂",
+      "大蒜","纳豆","龙粪","甲虫眼睛","蛞蝓","头发","蜡烛","橡胶","煤炭","灰尘",
+      "黄油啤酒","沙子","猫毛",
+    ];
+    return `<img src="${图src}比比多味豆.png" class="ft"><br>你吃下一颗，是<b>${临时[Math.floor(Math.random()*临时.length)]}味</b>的。<br><br><a onclick="弹窗('比比多味豆')"> - 再吃一颗</a><br>${离开}`;
   },
 
   "公共厕所":()=>{
@@ -449,11 +612,41 @@ let d={
   },
 
   "警局":()=>{
-    return `你得到了炸猪排盖饭和一杯茶。<br><img src="${图src}炸猪排盖饭.png" class="ft"><img src="${图src}警茶.png" style="width:200px;height:200px"><br><br>${离开}`;
+    return `你得到了一顿饭。<br><br>主食：炸猪排盖饭。<br><img src="${图src}炸猪排盖饭.png" class="ft"><br><br>饮品：茶。<br><img src="${图src}警茶.png" style="width:200px;height:200px"><br><br>甜品：甜甜圈。<br><img src="${图src}甜甜圈.png" style="width:200px;height:200px"><br><br>${离开}`;
   },
 
   "广场":()=>{
     return `<style>.临时1{width:300px;height:300px;position:relative;background:url('${图src}白.png') no-repeat center / cover;overflow:hidden}.临时2{width:240px;height:240px;position:absolute;left:20px;bottom:30px;background:url("${图src}鸽子.png") no-repeat center / cover}@keyframes 临时4{0%{bottom:30px}50%{bottom:60px}100%{bottom:30px}}.临时2.临时3{animation:临时4 0.3s ease-in-out 3}</style>广场上有一群鸽子，其中一只落在你面前。<div class='临时1'><div class="临时2" id="临时5"></div></div><br><a onclick="let 临时=document.getElementById('临时5');临时.classList.remove('临时3');void 临时.offsetWidth;临时.classList.add('临时3')"> - 喂鸽子</a><br>${离开}`;
+  },
+
+
+  "随机说话":(a,b,c)=>{
+    return `<img class="ft" src="${图src}${a}.png"><br>${b}：「${c[Math.floor(Math.random()*c.length)]}」<br><br>${离开}`
+  },
+  "汀曼咖啡":()=>{
+    return d["随机说话"]('汀曼大师',"汀曼大师",["来杯咖啡吧，品尝过苦味，才更懂得珍稀生活的甜。","咖啡不是必须的，平静惬意的心情才是必须的。","你喜欢更酸一些的咖啡，还是更苦一些的？","感到迷茫的时候，就来这里喝杯咖啡吧。","来一杯汀曼特调，帮你抵消生活的疲劳。","偶尔停下脚步休息一下，能够走得更远。","智能构造体做的手磨咖啡，当然也是手磨。"])
+  },
+  "141杂货店":()=>{
+    return d["随机说话"]('141杂货店','邦布',["嗯呐哒，嗯呐嗯呐。","嗯呐哒？嗯呐哒？","哇哒咿呐~哇哒哞哒咿呐。","嗯呐~嗯呐！"]);
+  },
+  "微醺缪斯音像店":()=>{
+    return d["随机说话"]('埃珐','埃珐',["这首曲子，散发着干马提尼的气息。","难以忘怀，这是丰富曲调带来的余韵。","我会同这些醇香的曲调一起，静候您的光临。","早晨的空气就像舒缓的乐曲一样，让人回味无穷。","中午的阳光格外舒适，就像嗅到了d小调的沉香。","今天的特调是蓝调基底配电音玛格丽特。","一首沉香的曲调，让人百般回味。","今天想尝点什么味道的曲子？"]);
+  },
+
+  "嗷呜报刊亭_":[
+    "100菲林","60菲林","40菲林","20菲林","10菲林",
+    "12888丁尼","8888丁尼","5888丁尼","2888丁尼",
+  ],
+  "嗷呜报刊亭":()=>{
+    if(逛=="x"&&d['嗷呜报刊亭_']!=0){
+      return `<img src="${图src}嗷呜.png" class="ft"><br>它是报刊亭的摊主。<br>要不要买一张刮刮卡？<br><br><a onclick="逛=1;弹窗('嗷呜报刊亭')"> - 买一张</a><br>${离开}`;
+    }else if(逛=="x"){
+      return `<img src="${图src}嗷呜.png" class="ft"><br>它是报刊亭的摊主。<br>你今天已经买过一张刮刮卡了。<br><br>${离开}`;
+    }else{
+      let 临时=d["嗷呜报刊亭_"][Math.floor(Math.random()*d["嗷呜报刊亭_"].length)];
+      d["嗷呜报刊亭_"]=0;
+      return `<img src="${图src}报刊亭奖券.png" class="ft"><br>刮出了${临时}。<br><br>${离开}`;
+    }
   },
 
 }
@@ -488,6 +681,9 @@ function dy地图(o,b){
         临时[0]="绿";
         临时[1]=地图[o][i][1];
         临时[3]=`dw(dwb='${地图[o][i][3]}',dwd='${地图[o][i][2]}')`;
+      }else if(地图[o][i][0]=="小"){//小
+        临时[0]="b";
+        临时[1]=`<div class='小'>${地图[o][i][1]}</div>`
       }else{
         //颜色,文字,词条,name,提示
         if(!地图[o][i][2]){地图[o][i][2]=地图[o][i][1]}
@@ -507,7 +703,11 @@ function dy地图(o,b){
         临时[1]=地图[o][i].split("／")[0];
         临时[2]=地图[o][i].split("／")[1];
       }else{
-        临时[1]=地图[o][i];
+        if(地图[o][i]=="|"){临时[1]=`<div class='竖'></div>`
+        }else if(地图[o][i]=="-"){临时[1]=`<div class='横'></div>`
+        }else if(["┌","┐","└","┘","─","│","┬","├","┼","┤","┴"].indexOf(地图[o][i])!=-1){临时[1]=`<div class='空'>${地图[o][i]}</div>`
+        }else{临时[1]=地图[o][i];
+        }
       }
     }
       //0 <div class='【】'>
@@ -534,8 +734,10 @@ dy地图(本页url[1]);
   }
 
   function 关闭(){
+    document.querySelector(".弹窗_1").scrollTop=0;
     document.getElementById("弹窗").style="display:none;";
     逛="x";
+    说('停')
   }
 
 const 鼠标=document.getElementById('鼠标');
