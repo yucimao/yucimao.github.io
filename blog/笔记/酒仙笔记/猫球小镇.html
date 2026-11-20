@@ -140,6 +140,12 @@ b.标题{font-size:1.6em}
   当前位置="猫草国 - 薄荷汽水岛 - 猫球小镇",
   逛="x",当前="",arr,图src="/i/2264624/z/",空=Array(6*6).fill(1),
   今日=((d=new Date())=>d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate())(),时=new Date().getHours(),分=new Date().getMinutes();
+
+  // localStorage.setItem("猫球小镇测试","1")
+  if(localStorage.getItem("猫球小镇测试")){
+    图src="../../.."+图src;
+  }
+
   function 跳(o){window.open(o,'_blank')}
   function 跳转(o){document.querySelector("[name='"+o+"']")?.scrollIntoView({behavior:'smooth',block:'start'})}
   function 随机打乱(arr){
@@ -223,7 +229,7 @@ function 说(o){
     "理发店",0,0,0,0,0,
     "网吧",0,["前往","地铁1号线","地铁1号线","墓园站"],0,0,0,
     0,0,0,0,0,["绿","墓园",,"墓园"],
-    0,["白","车库","猫球二扯的乐队"],"猫球二扯的家",0,0,"山",
+    0,0,["绿","猫球二扯<br>的家"],0,0,"山",
     0,0,"便利店",0,0,0,
     0,0,["bus","400路<br>公交车","体育馆"],0,0,0,
     0,0,0,0,0,0,
@@ -342,9 +348,18 @@ let d={
   "后院":"/aibo",
   "夜路归途":"https://猫.cafe/w/13978817",
 
-  "猫球二扯的乐队":()=>{
-    标题("猫球二扯猪又胡糊的薄荷汽水岛乐队")
-    return "<b>猫球</b>：主唱、吉他<br><b>二扯</b>：贝斯<br><b>猪又</b>：架子鼓<br><b>胡糊</b>：键盘<br><br>"+离开;
+  "猫球二扯的家_":[
+      `<b>猫球二扯猪又胡糊的薄荷汽水岛乐队</b>正在排练。<br><img src="${图src}猫球乐队.png" style="height:400px">`,
+      `在玩斗地主，<b>猪又</b>看起来很嚣张。<br><img src="${图src}猫球家玩斗地主.png" style="height:400px">`,
+      `<b>猪又</b>在表演摘头术。<br><img src="${图src}猪又表演摘头.gif" style="height:300px">`,
+      `<b>胡糊</b>在和小鸟玩。<br><img src="${图src}胡糊招鸟.gif" style="height:300px">`,
+  ],
+  "猫球二扯的家":()=>{
+    标题('猫球和二扯的家');
+    let 临时=d["猫球二扯的家_"].shift();
+    d["猫球二扯的家_"].push(临时);
+
+    return 临时+"<br><br>"+离开;
   },
   /*主唱 吉他 键盘 鼓 贝斯*/
 
@@ -429,10 +444,11 @@ let d={
   "墓园":()=>{
     let 临时;
     if(逛=="x"){
-      临时=`一座静谧的墓园。<br><span class='zhushi'>纪念各种作品里那些去世的角色。鼠标移动到选项上，会显示它出自什么作品，请确保这个作品你已经看完了，否则不要点开，以免被剧透。</span><br><br>${离开}<br><br>查看墓碑：<br>`;
+      临时=`一座静谧的墓园。<br><span class='zhushi'>纪念各种作品里那些去世的角色。鼠标移动到选项上，会显示它出自什么作品，请确保这个作品你已经看完了，否则不要点开，以免被剧透。</span><br><br>查看墓碑：<br>`;
       for(let i=1;d["墓园_"].length>i;i++){
         临时+=`<a class='提示下 ft${(d["墓园_"][i][5])?" tf":""}' data-msg='${d["墓园_"][i][2]}' onclick="逛=${i};弹窗('墓园')">${d["墓园_"][i][0]}</a>　`;
       }
+      临时+="<br><br>"+离开
     }else if(逛>=0){
       标题(d["墓园_"][逛][0])
       d["墓园_"][逛][5]=1;
@@ -828,9 +844,7 @@ let 本页url=window.location.href.split("?");
 if(本页url[1]){
   let 临时=decodeURI(本页url[1]).split(".");
   for(let i=0;临时.length>i;i+=2){
-    if(临时[i]=="ceshi"){
-      图src="../../.."+图src;本页url[1]="0"
-    }else if(临时[i]=="d"){dy地图(临时[i+1])
+    if(临时[i]=="d"){dy地图(临时[i+1])
     }else if(临时[i]=="t"){弹窗(临时[i+1])
     }else if(临时[i]=="b"){eval(临时[i+1])
     }else if(临时[i]=="u"){eval(d[临时[i+1]])
@@ -838,5 +852,3 @@ if(本页url[1]){
   }
 }
 </script>
-
-
