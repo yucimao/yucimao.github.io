@@ -105,7 +105,7 @@ for(let i=0;data.length>i;i++){
         if(data[i][1][0]!=""){data[i][1][0]+="<br>";}
         data[i][1][0]+="<small>点击展开说明</small>";
     }
-    if(data[i][1][0]!=""){data[i][1][0]=`<span class=／标题 ${S[data[i][2][1]]}／>${data[i][0]}</span>`+((data[i][2][2]!='')?" —— "+data[i][2][2]:'')+`<br>${data[i][1][0]}`;}
+    data[i][1][0]=`<span class=／标题 ${S[data[i][2][1]]}／>${data[i][0]}</span>`+((data[i][2][2]!='')?" —— "+data[i][2][2]:'')+`<br>${data[i][1][0]}`;
     data[i][1]="<a class='"+S[data[i][2][1]]+"' "+((data[i][1][1]!="")?`onclick="dw(dwb='${data[i][1][1]}',dwd='${data[i][0]}')"`:'')+" "+((data[i][1][0]!="")?` onmousemove="进入('${data[i][1][0]}')" onmouseout="离开()"`:'')+">"+data[i][0]+"</a>";
 }
 

@@ -197,7 +197,7 @@ for(let i=0;data.length>i;i++){
         if(data[i][1][0]!=""){data[i][1][0]+="<br>";}
         data[i][1][0]+="<small>点击展开说明</small>";
     }
-    if(data[i][1][0]!=""){data[i][1][0]=`<span class=／标题 ${S[data[i][2][1]]}／>${data[i][0]}</span>`+((data[i][2][2]!='')?" —— "+data[i][2][2]:'')+`<br>${data[i][1][0]}`;}
+    data[i][1][0]=`<span class=／标题 ${S[data[i][2][1]]}／>${data[i][0]}</span>`+((data[i][2][2]!='')?" —— "+data[i][2][2]:'')+`<br>${data[i][1][0]}`;
     临时="<a class='"+S[data[i][2][1]]+"' ";
     if(data[i][1][1]!=""){
         if(data[i][1][1][0]=="/"){临时+=`href="${data[i][1][1]}" target="_blank"`}
